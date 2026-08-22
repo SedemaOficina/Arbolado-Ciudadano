@@ -1,0 +1,254 @@
+/* ============================================================
+   Arbolado Ciudadano · SEDEMA CDMX
+   tokens.css — Identidad institucional GCDMX 2024-2030.
+   Archivo único de tokens: color, tipografía, espaciado y fuentes.
+   ============================================================ */
+
+/* ============================================================
+   SEDEMA / GCDMX — Tipografías institucionales
+   Roboto  = cuerpo y comunicación (todos los pesos)
+   Cabin   = logotipo y firma de dependencia (Bold/Regular)
+   ============================================================ */
+
+/* ---------- Roboto ---------- */
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ---------- Cabin (logotipo / firma) ---------- */
+@font-face {
+  font-family: "Cabin";
+  src: url("../fonts/Cabin-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Cabin";
+  src: url("../fonts/Cabin-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Cabin";
+  src: url("../fonts/Cabin-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Cabin";
+  src: url("../fonts/Cabin-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ============================================================
+   SEDEMA / GCDMX — Color
+   Manual de Identidad Institucional GCDMX 2024–2030
+   ============================================================ */
+:root {
+  /* ---- Institucionales (dominantes) ---- */
+  --guinda: #9D2148;        /* Pantone 7420 C — dominante: títulos, botones primarios, plecas */
+  --dorado: #B28E5C;        /* Pantone 465 C — acentos, contornos, botones secundarios */
+
+  /* Escalas de marca */
+  --guinda-100: #9D2148;
+  --guinda-80:  #B14D6C;
+  --guinda-60:  #C57991;
+  --guinda-40:  #D8A4B6;
+  --guinda-20:  #ECD2DA;
+  --guinda-oscuro: #6E1733; /* fondos profundos, hover de primario */
+
+  --dorado-100: #B28E5C;
+  --dorado-80:  #C1A47D;
+  --dorado-60:  #D1BB9D;
+  --dorado-40:  #E0D1BE;
+  --dorado-20:  #F0E8DE;
+
+  /* ---- Secundarios (del símbolo; solo apoyo/patrones, nunca dominantes) ---- */
+  --amarillo:   #FDC60A;
+  --naranja:    #F08217;
+  --cafe:       #AC6D14;
+  --rosa:       #F5AEB8;
+  --magenta:    #D72F89;
+  --rojo:       #E5074C;
+  --azul-claro: #73CAE6;
+  --azul:       #266CB4;
+  --morado:     #8F4889;
+  --verde:      #027A35;
+  --gris-simbolo: #55585A;
+  --marfil-simbolo: #FFFDF0;
+
+  /* ---- Neutros / texto ---- */
+  --gris-100: #55585A;      /* texto principal */
+  --gris-80:  #818788;      /* texto de menor jerarquía */
+  --gris-60:  #A9ADAE;
+  --gris-40:  #D0D2D3;
+  --gris-20:  #E9EAEB;
+  --gris-10:  #F4F5F5;
+  --blanco:   #FFFFFF;
+  --negro:    #1A1A1A;
+
+  /* ---- Fondos ---- */
+  --marfil:   #FFFAE9;      /* banners, cards institucionales */
+  --fondo-pagina: #FFFFFF;
+
+  /* ---- Énfasis / estado ---- */
+  --estado-error:   #E5074C;
+  --estado-exito:   #027A35;
+  --estado-alerta:  #FDC60A;
+  --estado-info:    #266CB4;
+
+  /* ============================================================
+     Alias semánticos (usar en componentes y plantillas)
+     ============================================================ */
+  --color-primario:        var(--guinda-100);
+  --color-primario-hover:   var(--guinda-oscuro);
+  --color-primario-activo:  var(--guinda-oscuro);
+  --color-secundario:       var(--dorado-100);
+  --color-acento:           var(--dorado-100);
+
+  --texto-fuerte:   var(--gris-100);
+  --texto-suave:    var(--gris-80);
+  --texto-inverso:  var(--blanco);
+  --texto-enlace:   var(--guinda-100);
+
+  --superficie-pagina:  var(--fondo-pagina);
+  --superficie-card:    var(--blanco);
+  --superficie-marfil:  var(--marfil);
+  --superficie-guinda:  var(--guinda-100);
+  --superficie-suave:   var(--gris-10);
+
+  --borde-sutil:   var(--gris-20);
+  --borde-medio:   var(--gris-40);
+  --borde-acento:  var(--dorado-100);
+
+  --foco-anillo:   var(--guinda-100);
+}
+
+/* ============================================================
+   SEDEMA / GCDMX — Tipografía (escala web del manual)
+   ============================================================ */
+:root {
+  /* Familias */
+  --font-cuerpo: "Roboto", "Helvetica Neue", Arial, sans-serif;   /* comunicación */
+  --font-firma:  "Cabin", "Trebuchet MS", sans-serif;            /* logotipo / firma de dependencia */
+
+  /* Tamaños — escala web del manual */
+  --fs-titulo-1:   32px;   /* Título 1 — Bold */
+  --fs-titulo-2:   24px;   /* Título 2 — Bold */
+  --fs-subtitulo-1:24px;   /* Subtítulo 1 — Semibold */
+  --fs-subtitulo-2:20px;   /* Subtítulo 2 — Medium */
+  --fs-cuerpo-1:   20px;   /* Cuerpo 1 — Regular */
+  --fs-cuerpo-2:   16px;   /* Cuerpo 2 — Regular */
+  --fs-pie:        14px;   /* notas, pies, metadatos */
+  --fs-micro:      12px;   /* mínimo legal / créditos */
+
+  /* Display (presentaciones, mamparas, lonas) */
+  --fs-display-1:  64px;
+  --fs-display-2:  48px;
+
+  /* Pesos */
+  --fw-thin:    100; /* @kind font */
+  --fw-light:   300; /* @kind font */
+  --fw-regular: 400; /* @kind font */
+  --fw-medium:  500; /* @kind font */
+  --fw-bold:    700; /* @kind font */
+
+  /* Interlineado */
+  --lh-apretado: 1.1; /* @kind font */
+  --lh-titulo:   1.2; /* @kind font */
+  --lh-cuerpo:   1.5; /* @kind font */
+  --lh-amplio:   1.65; /* @kind font */
+
+  /* Tracking */
+  --ls-titulo:   -0.01em; /* @kind font */
+  --ls-normal:   0; /* @kind font */
+  --ls-pleca:    0.04em;   /* @kind font */
+}
+
+/* ============================================================
+   SEDEMA / GCDMX — Espaciado, retícula, radios, sombras
+   ============================================================ */
+:root {
+  /* Espaciado (escala del manual: 8 / 16 / 20 / 24 / 48) */
+  --esp-0:  0; /* @kind spacing */
+  --esp-1:  8px;
+  --esp-2:  16px;
+  --esp-3:  20px;
+  --esp-4:  24px;
+  --esp-5:  48px;
+  --esp-6:  64px;
+  --esp-7:  96px;
+
+  /* Retícula */
+  --grid-cols-desktop: 12; /* @kind other */
+  --grid-gutter-desktop: 20px; /* @kind spacing */
+  --grid-cols-mobile: 4; /* @kind other */
+  --grid-gutter-mobile: 24px; /* @kind spacing */
+  --contenedor-max: 1200px; /* @kind other */
+  --contenedor-pad: 24px; /* @kind spacing */
+
+  /* Border-radius (manual: 0 banners · 4 botones · 32 menú accesibilidad) */
+  --radio-0: 0px;     /* banners, plecas, lonas */
+  --radio-1: 4px;     /* botones, inputs, cards */
+  --radio-2: 8px;     /* cards mayores */
+  --radio-accesibilidad: 32px;
+  --radio-completo: 999px;
+
+  /* Sombra (manual: x0 y4 blur8) */
+  --sombra-1: 0 4px 8px rgba(85, 88, 90, 0.16);
+  --sombra-2: 0 6px 16px rgba(85, 88, 90, 0.20);
+  --sombra-foco: 0 0 0 3px rgba(157, 33, 72, 0.30);
+
+  /* Grosores de pleca / borde */
+  --pleca: 4px; /* @kind spacing */
+  --borde-fino: 1px; /* @kind spacing */
+  --borde-grueso: 2px; /* @kind spacing */
+
+  /* Transiciones (institucional: sobrio, sin rebotes) */
+  --trans-rapida: 120ms ease; /* @kind other */
+  --trans-media:  180ms ease; /* @kind other */
+}

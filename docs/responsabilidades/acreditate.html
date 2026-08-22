@@ -1,40 +1,178 @@
 <!DOCTYPE html>
-<html>
+<html lang="es-MX" data-raiz="../">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
+<title>Quiero acreditarme como podador o dictaminador · SEDEMA CDMX</title>
+<meta name="description" content="Requisitos, pasos y obligaciones para obtener la acreditación de podador o de dictaminador de arbolado urbano ante la Secretaría del Medio Ambiente.">
+<meta name="author" content="Secretaría del Medio Ambiente de la Ciudad de México">
+<link rel="canonical" href="https://sedemaoficina.github.io/Arbolado-Ciudadano/responsabilidades/acreditate.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="El ABC del arbolado urbano · SEDEMA CDMX">
+<meta property="og:title" content="Quiero acreditarme como podador o dictaminador · SEDEMA CDMX">
+<meta property="og:description" content="Requisitos, pasos y obligaciones para obtener la acreditación de podador o de dictaminador de arbolado urbano ante la Secretaría del Medio Ambiente.">
+<meta property="og:url" content="https://sedemaoficina.github.io/Arbolado-Ciudadano/responsabilidades/acreditate.html">
+<meta property="og:locale" content="es_MX">
+<meta name="theme-color" content="#9D2148">
+<link rel="icon" href="../assets/img/logos/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/sitio.css">
+<style>
+a:hover { color: var(--guinda-oscuro); }
+    html { scroll-behavior: smooth; }
+</style>
+<script src="../assets/js/sitio.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.15.0/dist/cdn.min.js"></script>
 </head>
 <body>
-<x-dc>
-<helmet>
-  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/fonts.css">
-  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/colors.css">
-  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/typography.css">
-  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/spacing.css">
-  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/base.css">
-  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/styles.css">
-  <script src="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/_ds_bundle.js"></script>
-  <style>
-    body { margin: 0; background: var(--blanco); color: var(--gris-100); font-family: Roboto, system-ui, sans-serif; }
-    a { color: var(--guinda-100); text-decoration: underline; text-underline-offset: 2px; }
-    a:hover { color: var(--guinda-oscuro); }
-    *:focus-visible { outline: 3px solid var(--guinda-100); outline-offset: 2px; }
-    html { scroll-behavior: smooth; }
-  </style>
-</helmet>
+
+
 
 <div style="min-height: 100vh; display: flex; flex-direction: column; background: var(--blanco)">
 
-  <dc-import name="CabeceraSitio" activo="responsabilidades" hint-size="100%,190px"></dc-import>
+  
 
-  <nav aria-label="Ruta de navegación" style="background: var(--blanco)">
+
+<div x-data="dcCabecera({&quot;activo&quot;:&quot;responsabilidades&quot;,&quot;conEmergencia&quot;:false})" style="background: var(--blanco)">
+
+  <a class="if0" style="position: absolute; left: -9999px; top: 0; z-index: 60; background: var(--guinda-100); color: var(--blanco); padding: 12px 20px; font-size: 16px; font-weight: 700; text-decoration: none" href="#contenido">Saltar al contenido</a>
+
+  <header style="border-bottom: 1px solid var(--gris-20)">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 16px 20px; display: flex; align-items: center; gap: clamp(14px, 2vw, 24px); flex-wrap: wrap">
+      <a style="display: block; text-decoration: none" href="../index.html">
+        <img style="height: clamp(38px, 5vw, 50px); width: auto; display: block" src="../assets/img/logos/firma-sedema-rgb.svg" alt="Gobierno de la Ciudad de México · Secretaría del Medio Ambiente">
+      </a>
+      <div class="om-divisor" style="width: 1px; height: 44px; background: var(--gris-20)"></div>
+      <div>
+        <div style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gris-100); font-weight: 700">Guía ciudadana</div>
+        <div style="font-size: clamp(18px, 2.2vw, 21px); font-weight: 700; color: var(--guinda-100); line-height: 1.2">El ABC del arbolado urbano</div>
+      </div>
+      <search class="om-buscador" style="margin-left: auto; flex: 1 1 260px; max-width: 400px; position: relative">
+        <label style="display: block; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--gris-100); margin-bottom: 6px" for="buscador-sitio">Buscar en el sitio</label>
+        <input style="width: 100%; box-sizing: border-box; font-family: Roboto, sans-serif; font-size: 16px; padding: 11px 14px; border: 1px solid var(--gris-40); border-radius: 4px; min-height: 44px; background: var(--blanco); color: var(--gris-100)" type="search" id="buscador-sitio" onchange="e => this.setState({ q: e.target.value })" placeholder="poda, denuncia, permiso, vivero" autocomplete="off" aria-controls="resultados-sitio" :value="v.q" :onchange="v.escribir" :aria-expanded="v.abierto">
+        <div x-show="v.abierto" style="position: absolute; top: 100%; left: 0; right: 0; z-index: 50; margin-top: 4px; background: var(--blanco); border: 1px solid var(--gris-40); box-shadow: 0 8px 20px rgba(26,26,26,0.16); max-height: 62vh; overflow-y: auto; display:none" id="resultados-sitio">
+            <ul x-show="v.hayResultados" style="list-style: none; margin: 0; padding: 0; display:none">
+                <template x-for="(r, _k845317270) in v.resultados" :key="_k845317270">
+                  <li style="border-bottom: 1px solid var(--gris-20)">
+                    <a class="ih1" style="display: block; padding: 13px 16px; text-decoration: none; color: var(--gris-100); transition: background 150ms ease" :href="dcRuta(r.href)">
+                      <span style="display: block; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--gris-100)" x-html="r.seccion"></span>
+                      <span style="display: block; font-size: 17px; font-weight: 700; color: var(--guinda-100); line-height: 1.3; margin-top: 2px" x-html="r.titulo"></span>
+                      <span style="display: block; font-size: 15px; line-height: 1.45; margin-top: 2px" x-html="r.detalle"></span>
+                    </a>
+                  </li>
+                </template>
+              </ul>
+            <p x-show="v.sinResultados" style="margin: 0; padding: 16px; font-size: 16px; line-height: 1.55; color: var(--gris-100); display:none">No encontramos esa palabra. Prueba con poda, derribo, permiso, denuncia, vivero o el nombre de tu alcaldía.</p>
+          </div>
+      </search>
+    </div>
+    <nav style="border-top: 1px solid var(--gris-20); background: var(--gris-10)" aria-label="Navegación principal">
+      <div class="om-nav-ancha" style="max-width: 1240px; margin: 0 auto; padding: 0 24px; display: flex; flex-wrap: wrap">
+        
+          <a class="ih2" style="padding: 15px 18px; font-size: 16px; font-weight: 700; color: var(--gris-100); text-decoration: none; border-bottom: 3px solid transparent; background: transparent; transition: background 150ms ease, color 150ms ease" href="../index.html" :href="dcRuta(s.href)" :aria-current="s.actual" x-html="s.etiqueta" data-pr :style="`padding: 15px 18px; font-size: 16px; font-weight: 700; color: ${s.color}; text-decoration: none; border-bottom: 3px solid ${s.borde}; background: ${s.fondo}; transition: background 150ms ease, color 150ms ease`">Inicio</a>
+        
+          <a class="ih2" style="padding: 15px 18px; font-size: 16px; font-weight: 700; color: var(--gris-100); text-decoration: none; border-bottom: 3px solid transparent; background: transparent; transition: background 150ms ease, color 150ms ease" href="../hazlo.html" :href="dcRuta(s.href)" :aria-current="s.actual" x-html="s.etiqueta" data-pr :style="`padding: 15px 18px; font-size: 16px; font-weight: 700; color: ${s.color}; text-decoration: none; border-bottom: 3px solid ${s.borde}; background: ${s.fondo}; transition: background 150ms ease, color 150ms ease`">Qué necesito hacer</a>
+        
+          <a class="ih2" style="padding: 15px 18px; font-size: 16px; font-weight: 700; color: var(--guinda-100); text-decoration: none; border-bottom: 3px solid var(--guinda-100); background: var(--blanco); transition: background 150ms ease, color 150ms ease" href="../responsabilidades.html" aria-current="page" :href="dcRuta(s.href)" :aria-current="s.actual" x-html="s.etiqueta" data-pr :style="`padding: 15px 18px; font-size: 16px; font-weight: 700; color: ${s.color}; text-decoration: none; border-bottom: 3px solid ${s.borde}; background: ${s.fondo}; transition: background 150ms ease, color 150ms ease`">Responsabilidades</a>
+        
+          <a class="ih2" style="padding: 15px 18px; font-size: 16px; font-weight: 700; color: var(--gris-100); text-decoration: none; border-bottom: 3px solid transparent; background: transparent; transition: background 150ms ease, color 150ms ease" href="../emergencias.html" :href="dcRuta(s.href)" :aria-current="s.actual" x-html="s.etiqueta" data-pr :style="`padding: 15px 18px; font-size: 16px; font-weight: 700; color: ${s.color}; text-decoration: none; border-bottom: 3px solid ${s.borde}; background: ${s.fondo}; transition: background 150ms ease, color 150ms ease`">Emergencias</a>
+        
+          <a class="ih2" style="padding: 15px 18px; font-size: 16px; font-weight: 700; color: var(--gris-100); text-decoration: none; border-bottom: 3px solid transparent; background: transparent; transition: background 150ms ease, color 150ms ease" href="../programas.html" :href="dcRuta(s.href)" :aria-current="s.actual" x-html="s.etiqueta" data-pr :style="`padding: 15px 18px; font-size: 16px; font-weight: 700; color: ${s.color}; text-decoration: none; border-bottom: 3px solid ${s.borde}; background: ${s.fondo}; transition: background 150ms ease, color 150ms ease`">Programas</a>
+        
+          <a class="ih2" style="padding: 15px 18px; font-size: 16px; font-weight: 700; color: var(--gris-100); text-decoration: none; border-bottom: 3px solid transparent; background: transparent; transition: background 150ms ease, color 150ms ease" href="../directorio.html" :href="dcRuta(s.href)" :aria-current="s.actual" x-html="s.etiqueta" data-pr :style="`padding: 15px 18px; font-size: 16px; font-weight: 700; color: ${s.color}; text-decoration: none; border-bottom: 3px solid ${s.borde}; background: ${s.fondo}; transition: background 150ms ease, color 150ms ease`">Directorio</a>
+        
+          <a class="ih2" style="padding: 15px 18px; font-size: 16px; font-weight: 700; color: var(--gris-100); text-decoration: none; border-bottom: 3px solid transparent; background: transparent; transition: background 150ms ease, color 150ms ease" href="../politica.html" :href="dcRuta(s.href)" :aria-current="s.actual" x-html="s.etiqueta" data-pr :style="`padding: 15px 18px; font-size: 16px; font-weight: 700; color: ${s.color}; text-decoration: none; border-bottom: 3px solid ${s.borde}; background: ${s.fondo}; transition: background 150ms ease, color 150ms ease`">Política de arbolado</a>
+        <template x-for="(s, _k476983897) in v.secciones" :key="_k476983897">
+          <a class="ih2" :href="dcRuta(s.href)" :aria-current="s.actual" x-html="s.etiqueta" :style="`padding: 15px 18px; font-size: 16px; font-weight: 700; color: ${s.color}; text-decoration: none; border-bottom: 3px solid ${s.borde}; background: ${s.fondo}; transition: background 150ms ease, color 150ms ease`"></a>
+        </template>
+      </div>
+
+      <div class="om-nav-movil" style="max-width: 1240px; margin: 0 auto; padding: 10px 20px">
+        <button class="ih3" style="width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 14px; min-height: 52px; padding: 12px 16px; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; font-family: Roboto, sans-serif; font-size: 17px; font-weight: 700; color: var(--guinda-100); cursor: pointer; transition: background 150ms ease" onclick="() => this.setState(s => ({ menu: !s.menu }))" aria-controls="menu-movil" :onclick="v.alternarMenu" :aria-expanded="v.menuAbierto">
+          <span style="display: flex; align-items: center; gap: 12px">
+            <span style="display: flex; flex-direction: column; gap: 4px; flex: none" aria-hidden="true">
+              <span style="display: block; width: 20px; height: 2px; background: var(--guinda-100)"></span>
+              <span style="display: block; width: 20px; height: 2px; background: var(--guinda-100)"></span>
+              <span style="display: block; width: 20px; height: 2px; background: var(--guinda-100)"></span>
+            </span>
+            <span x-html="v.etiquetaMenu">Secciones del sitio</span>
+          </span>
+          <span style="font-size: 15px; color: var(--gris-100)" aria-hidden="true" x-html="v.signoMenu">▼</span>
+        </button>
+
+        <ul x-show="v.menuAbierto" style="list-style: none; margin: 10px 0 0; padding: 0; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; overflow: hidden; display:none" id="menu-movil">
+            
+              <li style="border-bottom: 1px solid var(--gris-20)" data-pr>
+                <a style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 14px 18px; font-size: 17px; font-weight: 700; text-decoration: none; color: var(--gris-100); border-left: 4px solid transparent; background: transparent" href="../index.html" :href="dcRuta(s.href)" :aria-current="s.actual" :style="`display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 14px 18px; font-size: 17px; font-weight: 700; text-decoration: none; color: ${s.color}; border-left: 4px solid ${s.borde}; background: ${s.fondo}`">
+                  <span x-html="s.etiqueta">Inicio</span>
+                  <span style="color: var(--dorado-100)" aria-hidden="true">›</span>
+                </a>
+              </li>
+            
+              <li style="border-bottom: 1px solid var(--gris-20)" data-pr>
+                <a style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 14px 18px; font-size: 17px; font-weight: 700; text-decoration: none; color: var(--gris-100); border-left: 4px solid transparent; background: transparent" href="../hazlo.html" :href="dcRuta(s.href)" :aria-current="s.actual" :style="`display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 14px 18px; font-size: 17px; font-weight: 700; text-decoration: none; color: ${s.color}; border-left: 4px solid ${s.borde}; background: ${s.fondo}`">
+                  <span x-html="s.etiqueta">Qué necesito hacer</span>
+                  <span style="color: var(--dorado-100)" aria-hidden="true">›</span>
+                </a>
+              </li>
+            
+              <li style="border-bottom: 1px solid var(--gris-20)" data-pr>
+                <a style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 14px 18px; font-size: 17px; font-weight: 700; text-decoration: none; color: var(--guinda-100); border-left: 4px solid var(--guinda-100); background: var(--blanco)" href="../responsabilidades.html" aria-current="page" :href="dcRuta(s.href)" :aria-current="s.actual" :style="`display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 14px 18px; font-size: 17px; font-weight: 700; text-decoration: none; color: ${s.color}; border-left: 4px solid ${s.borde}; background: ${s.fondo}`">
+                  <span x-html="s.etiqueta">Responsabilidades</span>
+                  <span style="color: var(--dorado-100)" aria-hidden="true">›</span>
+                </a>
+              </li>
+            
+              <li style="border-bottom: 1px solid var(--gris-20)" data-pr>
+                <a style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 14px 18px; font-size: 17px; font-weight: 700; text-decoration: none; color: var(--gris-100); border-left: 4px solid transparent; background: transparent" href="../emergencias.html" :href="dcRuta(s.href)" :aria-current="s.actual" :style="`display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 14px 18px; font-size: 17px; font-weight: 700; text-decoration: none; color: ${s.color}; border-left: 4px solid ${s.borde}; background: ${s.fondo}`">
+                  <span x-html="s.etiqueta">Emergencias</span>
+                  <span style="color: var(--dorado-100)" aria-hidden="true">›</span>
+                </a>
+              </li>
+            
+              <li style="border-bottom: 1px solid var(--gris-20)" data-pr>
+                <a style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 14px 18px; font-size: 17px; font-weight: 700; text-decoration: none; color: var(--gris-100); border-left: 4px solid transparent; background: transparent" href="../programas.html" :href="dcRuta(s.href)" :aria-current="s.actual" :style="`display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 14px 18px; font-size: 17px; font-weight: 700; text-decoration: none; color: ${s.color}; border-left: 4px solid ${s.borde}; background: ${s.fondo}`">
+                  <span x-html="s.etiqueta">Programas</span>
+                  <span style="color: var(--dorado-100)" aria-hidden="true">›</span>
+                </a>
+              </li>
+            
+              <li style="border-bottom: 1px solid var(--gris-20)" data-pr>
+                <a style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 14px 18px; font-size: 17px; font-weight: 700; text-decoration: none; color: var(--gris-100); border-left: 4px solid transparent; background: transparent" href="../directorio.html" :href="dcRuta(s.href)" :aria-current="s.actual" :style="`display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 14px 18px; font-size: 17px; font-weight: 700; text-decoration: none; color: ${s.color}; border-left: 4px solid ${s.borde}; background: ${s.fondo}`">
+                  <span x-html="s.etiqueta">Directorio</span>
+                  <span style="color: var(--dorado-100)" aria-hidden="true">›</span>
+                </a>
+              </li>
+            
+              <li style="border-bottom: 1px solid var(--gris-20)" data-pr>
+                <a style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 14px 18px; font-size: 17px; font-weight: 700; text-decoration: none; color: var(--gris-100); border-left: 4px solid transparent; background: transparent" href="../politica.html" :href="dcRuta(s.href)" :aria-current="s.actual" :style="`display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 14px 18px; font-size: 17px; font-weight: 700; text-decoration: none; color: ${s.color}; border-left: 4px solid ${s.borde}; background: ${s.fondo}`">
+                  <span x-html="s.etiqueta">Política de arbolado</span>
+                  <span style="color: var(--dorado-100)" aria-hidden="true">›</span>
+                </a>
+              </li>
+            <template x-for="(s, _k476983897) in v.secciones" :key="_k476983897">
+              <li style="border-bottom: 1px solid var(--gris-20)">
+                <a :href="dcRuta(s.href)" :aria-current="s.actual" :style="`display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 14px 18px; font-size: 17px; font-weight: 700; text-decoration: none; color: ${s.color}; border-left: 4px solid ${s.borde}; background: ${s.fondo}`">
+                  <span x-html="s.etiqueta"></span>
+                  <span style="color: var(--dorado-100)" aria-hidden="true">›</span>
+                </a>
+              </li>
+            </template>
+          </ul>
+      </div>
+    </nav>
+  </header>
+</div>
+
+
+
+  <nav style="background: var(--blanco)" aria-label="Ruta de navegación">
     <div style="max-width: 1240px; margin: 0 auto; padding: 14px 24px 12px; font-size: 14px; color: var(--gris-100)">
-      <a href="portada.dc.html">Inicio</a> <span aria-hidden="true" style="padding: 0 8px">·</span> <a href="responsabilidades.dc.html">Responsabilidades</a> <span aria-hidden="true" style="padding: 0 8px">·</span> <span style="color: var(--gris-100); font-weight: 700">Quiero ser podador o dictaminador</span>
+      <a href="../index.html">Inicio</a> <span style="padding: 0 8px" aria-hidden="true">·</span> <a href="../responsabilidades.html">Responsabilidades</a> <span style="padding: 0 8px" aria-hidden="true">·</span> <span style="color: var(--gris-100); font-weight: 700">Quiero ser podador o dictaminador</span>
     </div>
   </nav>
 
-  <main id="contenido" style="flex: 1">
+  <main style="flex: 1" id="contenido">
 
     <section style="background: var(--marfil); border-bottom: 1px solid var(--dorado-40)">
       <div style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 60px) 24px">
@@ -43,18 +181,18 @@
       </div>
     </section>
 
-    <nav aria-label="Índice de la sección" style="position: sticky; top: 0; z-index: 20; background: var(--gris-10); border-top: 1px solid var(--gris-20); border-bottom: 1px solid var(--gris-40); box-shadow: 0 4px 8px rgba(26,26,26,0.06)">
+    <nav style="position: sticky; top: 0; z-index: 20; background: var(--gris-10); border-top: 1px solid var(--gris-20); border-bottom: 1px solid var(--gris-40); box-shadow: 0 4px 8px rgba(26,26,26,0.06)" aria-label="Índice de la sección">
       <div style="max-width: 1240px; margin: 0 auto; padding: 10px 24px">
         <ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; overflow-x: auto">
-          <li style="flex: none"><a href="#cual" style="display: flex; align-items: center; gap: 10px; padding: 11px 16px; text-decoration: none; color: var(--gris-100); min-height: 44px; box-sizing: border-box; white-space: nowrap; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; transition: background 150ms ease, border-color 150ms ease" style-hover="background: var(--marfil); border-color: var(--guinda-100); color: var(--guinda-100)"><span aria-hidden="true" style="width: 26px; height: 26px; flex: none; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; border: 1px solid var(--gris-40)">1</span><span style="font-size: 17px; font-weight: 700">¿Cuál me toca?</span></a></li>
-          <li style="flex: none"><a href="#requisitos" style="display: flex; align-items: center; gap: 10px; padding: 11px 16px; text-decoration: none; color: var(--gris-100); min-height: 44px; box-sizing: border-box; white-space: nowrap; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; transition: background 150ms ease, border-color 150ms ease" style-hover="background: var(--marfil); border-color: var(--guinda-100); color: var(--guinda-100)"><span aria-hidden="true" style="width: 26px; height: 26px; flex: none; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; border: 1px solid var(--gris-40)">2</span><span style="font-size: 17px; font-weight: 700">Requisitos</span></a></li>
-          <li style="flex: none"><a href="#tramite" style="display: flex; align-items: center; gap: 10px; padding: 11px 16px; text-decoration: none; color: var(--gris-100); min-height: 44px; box-sizing: border-box; white-space: nowrap; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; transition: background 150ms ease, border-color 150ms ease" style-hover="background: var(--marfil); border-color: var(--guinda-100); color: var(--guinda-100)"><span aria-hidden="true" style="width: 26px; height: 26px; flex: none; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; border: 1px solid var(--gris-40)">3</span><span style="font-size: 17px; font-weight: 700">El trámite</span></a></li>
-          <li style="flex: none"><a href="#obligaciones" style="display: flex; align-items: center; gap: 10px; padding: 11px 16px; text-decoration: none; color: var(--gris-100); min-height: 44px; box-sizing: border-box; white-space: nowrap; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; transition: background 150ms ease, border-color 150ms ease" style-hover="background: var(--marfil); border-color: var(--guinda-100); color: var(--guinda-100)"><span aria-hidden="true" style="width: 26px; height: 26px; flex: none; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; border: 1px solid var(--gris-40)">4</span><span style="font-size: 17px; font-weight: 700">Ya acreditado</span></a></li>
+          <li style="flex: none"><a class="ih12" style="display: flex; align-items: center; gap: 10px; padding: 11px 16px; text-decoration: none; color: var(--gris-100); min-height: 44px; box-sizing: border-box; white-space: nowrap; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; transition: background 150ms ease, border-color 150ms ease" href="#cual"><span style="width: 26px; height: 26px; flex: none; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; border: 1px solid var(--gris-40)" aria-hidden="true">1</span><span style="font-size: 17px; font-weight: 700">¿Cuál me toca?</span></a></li>
+          <li style="flex: none"><a class="ih12" style="display: flex; align-items: center; gap: 10px; padding: 11px 16px; text-decoration: none; color: var(--gris-100); min-height: 44px; box-sizing: border-box; white-space: nowrap; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; transition: background 150ms ease, border-color 150ms ease" href="#requisitos"><span style="width: 26px; height: 26px; flex: none; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; border: 1px solid var(--gris-40)" aria-hidden="true">2</span><span style="font-size: 17px; font-weight: 700">Requisitos</span></a></li>
+          <li style="flex: none"><a class="ih12" style="display: flex; align-items: center; gap: 10px; padding: 11px 16px; text-decoration: none; color: var(--gris-100); min-height: 44px; box-sizing: border-box; white-space: nowrap; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; transition: background 150ms ease, border-color 150ms ease" href="#tramite"><span style="width: 26px; height: 26px; flex: none; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; border: 1px solid var(--gris-40)" aria-hidden="true">3</span><span style="font-size: 17px; font-weight: 700">El trámite</span></a></li>
+          <li style="flex: none"><a class="ih12" style="display: flex; align-items: center; gap: 10px; padding: 11px 16px; text-decoration: none; color: var(--gris-100); min-height: 44px; box-sizing: border-box; white-space: nowrap; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; transition: background 150ms ease, border-color 150ms ease" href="#obligaciones"><span style="width: 26px; height: 26px; flex: none; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; border: 1px solid var(--gris-40)" aria-hidden="true">4</span><span style="font-size: 17px; font-weight: 700">Ya acreditado</span></a></li>
         </ol>
       </div>
     </nav>
 
-    <section id="cual" style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 60px) 24px; scroll-margin-top: 84px">
+    <section style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 60px) 24px; scroll-margin-top: 84px" id="cual">
       <div style="max-width: 42em; margin-bottom: 32px">
         <h2 style="margin: 0 0 12px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(26px, 3.2vw, 36px); line-height: 1.15; font-weight: 700; color: var(--guinda-100)">¿Cuál acreditación me toca?</h2>
         <p style="margin: 0; font-size: 19px; line-height: 1.6">Son dos y no son intercambiables: una ejecuta el trabajo, la otra lo justifica técnicamente.</p>
@@ -68,9 +206,9 @@
           <div style="border-top: 1px solid var(--gris-20); padding-top: 16px">
             <span style="display: block; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 10px">Qué puedes hacer</span>
             <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px">
-              <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start"><span aria-hidden="true" style="margin-top: 8px; width: 8px; height: 8px; background: var(--dorado-100); display: block"></span><span style="font-size: 17px; line-height: 1.55">Ejecutar los trabajos que autorice la resolución</span></li>
-              <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start"><span aria-hidden="true" style="margin-top: 8px; width: 8px; height: 8px; background: var(--dorado-100); display: block"></span><span style="font-size: 17px; line-height: 1.55">Supervisar a la cuadrilla durante los cortes</span></li>
-              <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start"><span aria-hidden="true" style="margin-top: 8px; width: 8px; height: 8px; background: var(--dorado-100); display: block"></span><span style="font-size: 17px; line-height: 1.55">Realizar la plantación de la restitución</span></li>
+              <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start"><span style="margin-top: 8px; width: 8px; height: 8px; background: var(--dorado-100); display: block" aria-hidden="true"></span><span style="font-size: 17px; line-height: 1.55">Ejecutar los trabajos que autorice la resolución</span></li>
+              <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start"><span style="margin-top: 8px; width: 8px; height: 8px; background: var(--dorado-100); display: block" aria-hidden="true"></span><span style="font-size: 17px; line-height: 1.55">Supervisar a la cuadrilla durante los cortes</span></li>
+              <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start"><span style="margin-top: 8px; width: 8px; height: 8px; background: var(--dorado-100); display: block" aria-hidden="true"></span><span style="font-size: 17px; line-height: 1.55">Realizar la plantación de la restitución</span></li>
             </ul>
             <p style="margin: 16px 0 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)"><span style="font-weight: 700">NADF-001-RNAT-2015, numeral 4</span></p>
           </div>
@@ -83,22 +221,22 @@
           <div style="border-top: 1px solid var(--dorado-40); padding-top: 16px">
             <span style="display: block; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 10px">Qué puedes hacer</span>
             <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px">
-              <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start"><span aria-hidden="true" style="margin-top: 8px; width: 8px; height: 8px; background: var(--dorado-100); display: block"></span><span style="font-size: 17px; line-height: 1.55">Emitir el dictamen técnico que sustenta la autorización</span></li>
-              <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start"><span aria-hidden="true" style="margin-top: 8px; width: 8px; height: 8px; background: var(--dorado-100); display: block"></span><span style="font-size: 17px; line-height: 1.55">Valorar riesgo, condición sanitaria y viabilidad de trasplante</span></li>
-              <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start"><span aria-hidden="true" style="margin-top: 8px; width: 8px; height: 8px; background: var(--dorado-100); display: block"></span><span style="font-size: 17px; line-height: 1.55">Aplicar la valoración que determina la restitución</span></li>
+              <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start"><span style="margin-top: 8px; width: 8px; height: 8px; background: var(--dorado-100); display: block" aria-hidden="true"></span><span style="font-size: 17px; line-height: 1.55">Emitir el dictamen técnico que sustenta la autorización</span></li>
+              <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start"><span style="margin-top: 8px; width: 8px; height: 8px; background: var(--dorado-100); display: block" aria-hidden="true"></span><span style="font-size: 17px; line-height: 1.55">Valorar riesgo, condición sanitaria y viabilidad de trasplante</span></li>
+              <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start"><span style="margin-top: 8px; width: 8px; height: 8px; background: var(--dorado-100); display: block" aria-hidden="true"></span><span style="font-size: 17px; line-height: 1.55">Aplicar la valoración que determina la restitución</span></li>
             </ul>
             <p style="margin: 16px 0 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)"><span style="font-weight: 700">NADF-001-RNAT-2015, numeral 5.4</span></p>
           </div>
         </article>
       </div>
 
-      <div role="status" style="margin-top: 28px; background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--estado-info); padding: 22px 26px">
+      <div style="margin-top: 28px; background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--estado-info); padding: 22px 26px" role="status">
         <strong style="display: block; font-size: 19px; margin-bottom: 8px; color: var(--negro)">Quien recoge esquilmos no necesita acreditación</strong>
         <span style="font-size: 18px; line-height: 1.6">El personal de limpieza y de retiro de residuo vegetal está exento. Pero quien ejecuta y quien supervisa los cortes siempre debe estar acreditado.</span>
       </div>
     </section>
 
-    <section id="requisitos" style="background: var(--gris-10); border-top: 1px solid var(--gris-20); border-bottom: 1px solid var(--gris-20); scroll-margin-top: 84px">
+    <section style="background: var(--gris-10); border-top: 1px solid var(--gris-20); border-bottom: 1px solid var(--gris-20); scroll-margin-top: 84px" id="requisitos">
       <div style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 60px) 24px">
         <div style="max-width: 42em; margin-bottom: 28px">
           <h2 style="margin: 0 0 12px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(26px, 3.2vw, 36px); line-height: 1.15; font-weight: 700; color: var(--guinda-100)">Requisitos</h2>
@@ -109,19 +247,55 @@
           <table style="width: 100%; border-collapse: collapse; font-size: 17px; min-width: 640px">
             <thead>
               <tr>
-                <th scope="col" style="text-align: left; padding: 14px 20px; background: var(--guinda-100); color: var(--blanco); font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase">Requisito</th>
-                <th scope="col" style="text-align: left; padding: 14px 20px; background: var(--guinda-100); color: var(--blanco); font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase">Podador</th>
-                <th scope="col" style="text-align: left; padding: 14px 20px; background: var(--guinda-100); color: var(--blanco); font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase">Dictaminador</th>
+                <th style="text-align: left; padding: 14px 20px; background: var(--guinda-100); color: var(--blanco); font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase" scope="col">Requisito</th>
+                <th style="text-align: left; padding: 14px 20px; background: var(--guinda-100); color: var(--blanco); font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase" scope="col">Podador</th>
+                <th style="text-align: left; padding: 14px 20px; background: var(--guinda-100); color: var(--blanco); font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase" scope="col">Dictaminador</th>
               </tr>
             </thead>
             <tbody>
-              <sc-for list="{{ requisitos }}" as="r" hint-placeholder-count="7">
+              
                 <tr>
-                  <th scope="row" style="text-align: left; padding: 16px 20px; border-bottom: 1px solid var(--gris-20); font-weight: 700; color: var(--gris-100); background: {{ r.fondo }}">{{ r.requisito }}</th>
-                  <td style="padding: 16px 20px; border-bottom: 1px solid var(--gris-20); line-height: 1.5; color: var(--gris-100); background: {{ r.fondo }}">{{ r.podador }}</td>
-                  <td style="padding: 16px 20px; border-bottom: 1px solid var(--gris-20); line-height: 1.5; color: var(--gris-100); background: {{ r.fondo }}">{{ r.dictaminador }}</td>
+                  <th style="text-align: left; padding: 16px 20px; border-bottom: 1px solid var(--gris-20); font-weight: 700; color: var(--gris-100); background: var(--blanco)" scope="row">Edad</th>
+                  <td style="padding: 16px 20px; border-bottom: 1px solid var(--gris-20); line-height: 1.5; color: var(--gris-100); background: var(--blanco)">Mayor de edad</td>
+                  <td style="padding: 16px 20px; border-bottom: 1px solid var(--gris-20); line-height: 1.5; color: var(--gris-100); background: var(--blanco)">Mayor de edad</td>
                 </tr>
-              </sc-for>
+              
+                <tr>
+                  <th style="text-align: left; padding: 16px 20px; border-bottom: 1px solid var(--gris-20); font-weight: 700; color: var(--gris-100); background: var(--gris-10)" scope="row">Identificación</th>
+                  <td style="padding: 16px 20px; border-bottom: 1px solid var(--gris-20); line-height: 1.5; color: var(--gris-100); background: var(--gris-10)">Identificación oficial vigente</td>
+                  <td style="padding: 16px 20px; border-bottom: 1px solid var(--gris-20); line-height: 1.5; color: var(--gris-100); background: var(--gris-10)">Identificación oficial vigente</td>
+                </tr>
+              
+                <tr>
+                  <th style="text-align: left; padding: 16px 20px; border-bottom: 1px solid var(--gris-20); font-weight: 700; color: var(--gris-100); background: var(--blanco)" scope="row">Formación profesional</th>
+                  <td style="padding: 16px 20px; border-bottom: 1px solid var(--gris-20); line-height: 1.5; color: var(--gris-100); background: var(--blanco)">No se exige título</td>
+                  <td style="padding: 16px 20px; border-bottom: 1px solid var(--gris-20); line-height: 1.5; color: var(--gris-100); background: var(--blanco)">Licenciatura en biología, ingeniería forestal, agronomía o carrera afín</td>
+                </tr>
+              
+                <tr>
+                  <th style="text-align: left; padding: 16px 20px; border-bottom: 1px solid var(--gris-20); font-weight: 700; color: var(--gris-100); background: var(--gris-10)" scope="row">Experiencia</th>
+                  <td style="padding: 16px 20px; border-bottom: 1px solid var(--gris-20); line-height: 1.5; color: var(--gris-100); background: var(--gris-10)">Experiencia comprobable en trabajos de arbolado</td>
+                  <td style="padding: 16px 20px; border-bottom: 1px solid var(--gris-20); line-height: 1.5; color: var(--gris-100); background: var(--gris-10)">Dos años de experiencia comprobable</td>
+                </tr>
+              
+                <tr>
+                  <th style="text-align: left; padding: 16px 20px; border-bottom: 1px solid var(--gris-20); font-weight: 700; color: var(--gris-100); background: var(--blanco)" scope="row">Curso oficial</th>
+                  <td style="padding: 16px 20px; border-bottom: 1px solid var(--gris-20); line-height: 1.5; color: var(--gris-100); background: var(--blanco)">Curso de capacitación aprobado</td>
+                  <td style="padding: 16px 20px; border-bottom: 1px solid var(--gris-20); line-height: 1.5; color: var(--gris-100); background: var(--blanco)">Curso oficial aprobado</td>
+                </tr>
+              
+                <tr>
+                  <th style="text-align: left; padding: 16px 20px; border-bottom: 1px solid var(--gris-20); font-weight: 700; color: var(--gris-100); background: var(--gris-10)" scope="row">Evaluación</th>
+                  <td style="padding: 16px 20px; border-bottom: 1px solid var(--gris-20); line-height: 1.5; color: var(--gris-100); background: var(--gris-10)">Evaluación teórica y práctica</td>
+                  <td style="padding: 16px 20px; border-bottom: 1px solid var(--gris-20); line-height: 1.5; color: var(--gris-100); background: var(--gris-10)">Evaluación teórica</td>
+                </tr>
+              
+                <tr>
+                  <th style="text-align: left; padding: 16px 20px; border-bottom: 1px solid var(--gris-20); font-weight: 700; color: var(--gris-100); background: var(--blanco)" scope="row">Documentación del expediente</th>
+                  <td style="padding: 16px 20px; border-bottom: 1px solid var(--gris-20); line-height: 1.5; color: var(--gris-100); background: var(--blanco)">Solicitud, comprobante de domicilio y fotografías</td>
+                  <td style="padding: 16px 20px; border-bottom: 1px solid var(--gris-20); line-height: 1.5; color: var(--gris-100); background: var(--blanco)">Solicitud, título o cédula, comprobante de domicilio y fotografías</td>
+                </tr>
+              
             </tbody>
           </table>
         </div>
@@ -130,25 +304,68 @@
       </div>
     </section>
 
-    <section id="tramite" style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 60px) 24px; scroll-margin-top: 84px">
+    <section style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 60px) 24px; scroll-margin-top: 84px" id="tramite">
       <div style="max-width: 42em; margin-bottom: 32px">
         <h2 style="margin: 0 0 12px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(26px, 3.2vw, 36px); line-height: 1.15; font-weight: 700; color: var(--guinda-100)">El trámite, paso a paso</h2>
         <p style="margin: 0; font-size: 19px; line-height: 1.6">Se hace ante SEDEMA. Nadie puede gestionar tu acreditación por ti.</p>
       </div>
 
       <ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 16px">
-        <sc-for list="{{ pasos }}" as="p" hint-placeholder-count="6">
+        
           <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--guinda-100); padding: 24px 28px; display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 20px; align-items: start">
-            <span aria-hidden="true" style="width: 44px; height: 44px; background: var(--guinda-100); color: var(--blanco); font-family: Cabin, Roboto, sans-serif; font-size: 19px; font-weight: 700; display: flex; align-items: center; justify-content: center">{{ p.n }}</span>
+            <span style="width: 44px; height: 44px; background: var(--guinda-100); color: var(--blanco); font-family: Cabin, Roboto, sans-serif; font-size: 19px; font-weight: 700; display: flex; align-items: center; justify-content: center" aria-hidden="true">1</span>
             <span>
-              <span style="display: block; font-size: 21px; font-weight: 700; color: var(--guinda-100); margin-bottom: 8px; line-height: 1.3">{{ p.titulo }}</span>
-              <span style="display: block; font-size: 18px; line-height: 1.6">{{ p.texto }}</span>
-              <sc-if value="{{ p.tieneNota }}" hint-placeholder-val="{{ false }}">
-                <span style="display: block; margin-top: 12px; background: var(--marfil); border-left: 3px solid var(--dorado-100); padding: 12px 16px; font-size: 17px; line-height: 1.55; color: var(--gris-100)">{{ p.nota }}</span>
-              </sc-if>
+              <span style="display: block; font-size: 21px; font-weight: 700; color: var(--guinda-100); margin-bottom: 8px; line-height: 1.3">Verifica qué acreditación necesitas</span>
+              <span style="display: block; font-size: 18px; line-height: 1.6">Si vas a ejecutar cortes, es podador. Si vas a emitir dictámenes, es dictaminador y necesitas formación profesional. Nada impide obtener las dos, pero se tramitan por separado.</span>
+              <span style="display: block; margin-top: 12px; background: var(--marfil); border-left: 3px solid var(--dorado-100); padding: 12px 16px; font-size: 17px; line-height: 1.55; color: var(--gris-100); display:none"></span>
             </span>
           </li>
-        </sc-for>
+        
+          <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--guinda-100); padding: 24px 28px; display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 20px; align-items: start">
+            <span style="width: 44px; height: 44px; background: var(--guinda-100); color: var(--blanco); font-family: Cabin, Roboto, sans-serif; font-size: 19px; font-weight: 700; display: flex; align-items: center; justify-content: center" aria-hidden="true">2</span>
+            <span>
+              <span style="display: block; font-size: 21px; font-weight: 700; color: var(--guinda-100); margin-bottom: 8px; line-height: 1.3">Reúne tu expediente</span>
+              <span style="display: block; font-size: 18px; line-height: 1.6">Identificación oficial, comprobante de domicilio, fotografías recientes y la documentación que acredite tu experiencia. Si vas por dictaminador, también título o cédula profesional.</span>
+              <span style="display: block; margin-top: 12px; background: var(--marfil); border-left: 3px solid var(--dorado-100); padding: 12px 16px; font-size: 17px; line-height: 1.55; color: var(--gris-100)">Los documentos se presentan en original para cotejo y en copia para el expediente.</span>
+            </span>
+          </li>
+        
+          <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--guinda-100); padding: 24px 28px; display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 20px; align-items: start">
+            <span style="width: 44px; height: 44px; background: var(--guinda-100); color: var(--blanco); font-family: Cabin, Roboto, sans-serif; font-size: 19px; font-weight: 700; display: flex; align-items: center; justify-content: center" aria-hidden="true">3</span>
+            <span>
+              <span style="display: block; font-size: 21px; font-weight: 700; color: var(--guinda-100); margin-bottom: 8px; line-height: 1.3">Consulta la convocatoria del curso</span>
+              <span style="display: block; font-size: 18px; line-height: 1.6">El curso oficial se abre por convocatoria. Ahí se publican las fechas, la sede, el costo vigente y los cupos disponibles. Sin curso aprobado no hay acreditación.</span>
+              <span style="display: block; margin-top: 12px; background: var(--marfil); border-left: 3px solid var(--dorado-100); padding: 12px 16px; font-size: 17px; line-height: 1.55; color: var(--gris-100); display:none"></span>
+            </span>
+          </li>
+        
+          <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--guinda-100); padding: 24px 28px; display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 20px; align-items: start">
+            <span style="width: 44px; height: 44px; background: var(--guinda-100); color: var(--blanco); font-family: Cabin, Roboto, sans-serif; font-size: 19px; font-weight: 700; display: flex; align-items: center; justify-content: center" aria-hidden="true">4</span>
+            <span>
+              <span style="display: block; font-size: 21px; font-weight: 700; color: var(--guinda-100); margin-bottom: 8px; line-height: 1.3">Presenta tu solicitud</span>
+              <span style="display: block; font-size: 18px; line-height: 1.6">En atención ciudadana de SEDEMA, con el expediente completo. Ahí se revisa que cumplas y se te informa la fecha de evaluación.</span>
+              <span style="display: block; margin-top: 12px; background: var(--marfil); border-left: 3px solid var(--dorado-100); padding: 12px 16px; font-size: 17px; line-height: 1.55; color: var(--gris-100); display:none"></span>
+            </span>
+          </li>
+        
+          <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--guinda-100); padding: 24px 28px; display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 20px; align-items: start">
+            <span style="width: 44px; height: 44px; background: var(--guinda-100); color: var(--blanco); font-family: Cabin, Roboto, sans-serif; font-size: 19px; font-weight: 700; display: flex; align-items: center; justify-content: center" aria-hidden="true">5</span>
+            <span>
+              <span style="display: block; font-size: 21px; font-weight: 700; color: var(--guinda-100); margin-bottom: 8px; line-height: 1.3">Aprueba la evaluación</span>
+              <span style="display: block; font-size: 18px; line-height: 1.6">Para podador hay una parte práctica: se evalúa el corte, el uso del equipo de protección y las medidas de seguridad del área de trabajo. Para dictaminador la evaluación es teórica.</span>
+              <span style="display: block; margin-top: 12px; background: var(--marfil); border-left: 3px solid var(--dorado-100); padding: 12px 16px; font-size: 17px; line-height: 1.55; color: var(--gris-100); display:none"></span>
+            </span>
+          </li>
+        
+          <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--guinda-100); padding: 24px 28px; display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 20px; align-items: start">
+            <span style="width: 44px; height: 44px; background: var(--guinda-100); color: var(--blanco); font-family: Cabin, Roboto, sans-serif; font-size: 19px; font-weight: 700; display: flex; align-items: center; justify-content: center" aria-hidden="true">6</span>
+            <span>
+              <span style="display: block; font-size: 21px; font-weight: 700; color: var(--guinda-100); margin-bottom: 8px; line-height: 1.3">Recibe tu credencial</span>
+              <span style="display: block; font-size: 18px; line-height: 1.6">La credencial trae tu nombre, fotografía, huella digital, número de folio, fecha de expedición, vigencia y firma del titular de SEDEMA. Es única, personal e intransferible.</span>
+              <span style="display: block; margin-top: 12px; background: var(--marfil); border-left: 3px solid var(--dorado-100); padding: 12px 16px; font-size: 17px; line-height: 1.55; color: var(--gris-100)">Al recibirla, tu folio queda en el padrón público: cualquier persona podrá verificarte.</span>
+            </span>
+          </li>
+        
       </ol>
 
       <div style="margin-top: 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px">
@@ -170,7 +387,7 @@
       </div>
     </section>
 
-    <section id="obligaciones" style="background: var(--gris-10); border-top: 1px solid var(--gris-20)">
+    <section style="background: var(--gris-10); border-top: 1px solid var(--gris-20)" id="obligaciones">
       <div style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 60px) 24px; scroll-margin-top: 84px">
         <div style="max-width: 42em; margin-bottom: 28px">
           <h2 style="margin: 0 0 12px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(26px, 3.2vw, 36px); line-height: 1.15; font-weight: 700; color: var(--guinda-100)">Ya estoy acreditado: qué me obliga</h2>
@@ -178,15 +395,45 @@
         </div>
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 28px">
-          <sc-for list="{{ obligaciones }}" as="o" hint-placeholder-count="6">
+          
             <div style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--guinda-100); padding: 24px">
-              <h3 style="margin: 0 0 10px; font-size: 20px; font-weight: 700; color: var(--guinda-100); line-height: 1.3">{{ o.titulo }}</h3>
-              <p style="margin: 0; font-size: 17px; line-height: 1.55">{{ o.texto }}</p>
+              <h3 style="margin: 0 0 10px; font-size: 20px; font-weight: 700; color: var(--guinda-100); line-height: 1.3">Portarla siempre</h3>
+              <p style="margin: 0; font-size: 17px; line-height: 1.55">Durante los trabajos debes traer contigo la credencial vigente y la autorización del trabajo. La ciudadanía tiene derecho a pedirte las dos.</p>
             </div>
-          </sc-for>
+          
+            <div style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--guinda-100); padding: 24px">
+              <h3 style="margin: 0 0 10px; font-size: 20px; font-weight: 700; color: var(--guinda-100); line-height: 1.3">Renovarla antes de que venza</h3>
+              <p style="margin: 0; font-size: 17px; line-height: 1.55">Una acreditación vencida no habilita. Tramita la renovación con anticipación para no interrumpir tu trabajo.</p>
+            </div>
+          
+            <div style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--guinda-100); padding: 24px">
+              <h3 style="margin: 0 0 10px; font-size: 20px; font-weight: 700; color: var(--guinda-100); line-height: 1.3">No prestarla</h3>
+              <p style="margin: 0; font-size: 17px; line-height: 1.55">Es personal e intransferible. Prestarla o permitir que alguien más la use es causa de suspensión.</p>
+            </div>
+          
+            <div style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--guinda-100); padding: 24px">
+              <h3 style="margin: 0 0 10px; font-size: 20px; font-weight: 700; color: var(--guinda-100); line-height: 1.3">Respetar el porcentaje autorizado</h3>
+              <p style="margin: 0; font-size: 17px; line-height: 1.55">Una poda no debe superar la cuarta parte del ejemplar, y solo si el dictamen lo justifica. El desmoche se sanciona como derribo.</p>
+            </div>
+          
+            <div style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--guinda-100); padding: 24px">
+              <h3 style="margin: 0 0 10px; font-size: 20px; font-weight: 700; color: var(--guinda-100); line-height: 1.3">Trabajar con seguridad</h3>
+              <p style="margin: 0; font-size: 17px; line-height: 1.55">Equipo de protección completo, área acordonada y señalizada, y descenso de ramas con cuerdas. La supervisión puede detener los trabajos.</p>
+            </div>
+          
+            <div style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--guinda-100); padding: 24px">
+              <h3 style="margin: 0 0 10px; font-size: 20px; font-weight: 700; color: var(--guinda-100); line-height: 1.3">Cumplir la restitución</h3>
+              <p style="margin: 0; font-size: 17px; line-height: 1.55">Cuando el trabajo autorizado obliga a restituir arbolado, la medida es parte del trabajo, no un trámite aparte. El procedimiento completo, con el número de árboles que corresponde y los plazos, está en el módulo de procedimientos.</p>
+            </div>
+          
+            <div style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--guinda-100); padding: 24px">
+              <h3 style="margin: 0 0 10px; font-size: 20px; font-weight: 700; color: var(--guinda-100); line-height: 1.3">Manejar bien el residuo</h3>
+              <p style="margin: 0; font-size: 17px; line-height: 1.55">Retiro dentro de las veinticuatro horas siguientes. Si el ejemplar tenía plaga, el residuo va a disposición final designada, no a acolchado.</p>
+            </div>
+          
         </div>
 
-        <div role="alert" style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--estado-error); padding: 24px 28px; margin-bottom: 28px">
+        <div style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--estado-error); padding: 24px 28px; margin-bottom: 28px" role="alert">
           <span style="display: block; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--estado-error); margin-bottom: 8px">Alerta grave</span>
           <strong style="display: block; font-size: 20px; margin-bottom: 10px; color: var(--negro)">Trabajar sin acreditación vigente es una infracción</strong>
           <p style="margin: 0 0 12px; font-size: 18px; line-height: 1.6">Los trabajos son irregulares, procede sanción y quien contrató también responde. Si tu acreditación venció, no ejerzas hasta renovarla.</p>
@@ -194,59 +441,104 @@
         </div>
 
         <div style="display: flex; gap: 16px; flex-wrap: wrap">
-          <a href="responsabilidades.dc.html#verificador" style="background: var(--guinda-100); color: var(--blanco); border-radius: 4px; padding: 14px 24px; font-size: 17px; font-weight: 700; text-decoration: none; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center; transition: background 150ms ease" style-hover="background: var(--guinda-oscuro); color: var(--blanco)">Consultar el padrón</a>
-          <a href="hazlo.dc.html#procedimientos" style="background: transparent; color: var(--guinda-100); border: 2px solid var(--dorado-100); border-radius: 4px; padding: 13px 23px; font-size: 17px; font-weight: 700; text-decoration: none; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center; transition: background 150ms ease" style-hover="background: var(--dorado-20)">Ver los procedimientos</a>
+          <a class="ih4" style="background: var(--guinda-100); color: var(--blanco); border-radius: 4px; padding: 14px 24px; font-size: 17px; font-weight: 700; text-decoration: none; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center; transition: background 150ms ease" href="../responsabilidades.html#verificador">Consultar el padrón</a>
+          <a class="ih8" style="background: transparent; color: var(--guinda-100); border: 2px solid var(--dorado-100); border-radius: 4px; padding: 13px 23px; font-size: 17px; font-weight: 700; text-decoration: none; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center; transition: background 150ms ease" href="../hazlo.html#procedimientos">Ver los procedimientos</a>
         </div>
       </div>
     </section>
 
   </main>
 
-  <dc-import name="Utilidad" fecha="18 de agosto de 2026" hint-size="100%,200px"></dc-import>
+  
 
-  <dc-import name="PieSitio" hint-size="100%,440px"></dc-import>
+
+<section x-data="dcUtilidad({&quot;fecha&quot;:&quot;18 de agosto de 2026&quot;})" style="background: var(--gris-10); border-top: 1px solid var(--gris-20); border-bottom: 1px solid var(--gris-20); font-family: Roboto, system-ui, sans-serif; color: var(--gris-100)" aria-labelledby="utilidad">
+  <div style="max-width: 1240px; margin: 0 auto; padding: clamp(26px, 3vw, 36px) 24px; display: flex; gap: 28px; flex-wrap: wrap; align-items: flex-start; justify-content: space-between">
+
+    <div style="flex: 1 1 320px; max-width: 42em">
+      <h2 style="margin: 0 0 10px; font-family: Cabin, Roboto, sans-serif; font-size: 23px; line-height: 1.25; font-weight: 700; color: var(--guinda-100)" id="utilidad">¿Te sirvió esta página?</h2>
+      <div x-show="v.sinResponder">
+          <p style="margin: 0 0 16px; font-size: 17px; line-height: 1.6">Tu respuesta nos dice qué información falta o no se entiende. No pedimos datos personales.</p>
+          <div style="display: flex; gap: 12px; flex-wrap: wrap">
+            <button class="ih9" style="background: var(--guinda-100); color: var(--blanco); border: 0; border-radius: 4px; padding: 13px 26px; font-family: Roboto, sans-serif; font-size: 17px; font-weight: 700; cursor: pointer; min-height: 48px; transition: background 150ms ease" onclick="() => this.setState({ voto: &quot;si&quot; })" :onclick="v.votarSi">Sí</button>
+            <button class="ih8" style="background: transparent; color: var(--guinda-100); border: 2px solid var(--dorado-100); border-radius: 4px; padding: 12px 25px; font-family: Roboto, sans-serif; font-size: 17px; font-weight: 700; cursor: pointer; min-height: 48px; transition: background 150ms ease" onclick="() => this.setState({ voto: &quot;no&quot; })" :onclick="v.votarNo">No</button>
+          </div>
+        </div>
+      <p x-show="v.dijoSi" style="margin: 0; font-size: 18px; line-height: 1.6; background: var(--blanco); border-left: 4px solid var(--estado-exito); padding: 16px 20px; display:none" role="status">Gracias. Si algo quedó pendiente, puedes escribir a <a href="mailto:atencionciudadana@sedema.cdmx.gob.mx">atencionciudadana@sedema.cdmx.gob.mx</a>.</p>
+      <div x-show="v.dijoNo" style="background: var(--blanco); border-left: 4px solid var(--estado-alerta); padding: 16px 20px; display:none" role="status">
+          <p style="margin: 0 0 10px; font-size: 18px; line-height: 1.6">Gracias por decirlo. Mientras lo corregimos, estas son las dos vías directas:</p>
+          <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px">
+            <li style="font-size: 17px; line-height: 1.55">Atención ciudadana de SEDEMA · <strong style="color: var(--guinda-100)">55 5345 8187</strong></li>
+            <li style="font-size: 17px; line-height: 1.55">LOCATEL, las veinticuatro horas · <strong style="color: var(--guinda-100)">55 5658 1111</strong></li>
+          </ul>
+        </div>
+    </div>
+
+    <dl style="margin: 0; padding: 0; flex: 0 1 260px; border-left: 3px solid var(--dorado-100); padding-left: 18px">
+      <dt style="font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--gris-100); margin-bottom: 4px">Última actualización</dt>
+      <dd style="margin: 0 0 14px; font-size: 18px; font-weight: 700; color: var(--gris-100)" x-html="v.fecha">18 de agosto de 2026</dd>
+      <dt style="font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--gris-100); margin-bottom: 4px">Responsable de la información</dt>
+      <dd style="margin: 0; font-size: 17px; line-height: 1.5; color: var(--gris-100)">Secretaría del Medio Ambiente de la Ciudad de México</dd>
+    </dl>
+
+  </div>
+</section>
+
+
+
+  
+
+
+<footer style="background: var(--guinda-oscuro); color: var(--blanco)">
+  <div style="height: 4px; background: var(--dorado-100)"></div>
+  <div style="max-width: 1240px; margin: 0 auto; padding: clamp(40px, 5vw, 56px) 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 40px">
+
+    <div>
+      <h2 style="margin: 0 0 14px; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--dorado-60)">SEDEMA</h2>
+      <p style="margin: 0 0 12px; font-size: 17px; line-height: 1.6; color: var(--blanco)">Secretaría del Medio Ambiente de la Ciudad de México</p>
+      <p style="margin: 0; font-size: 17px; line-height: 1.6; color: var(--blanco)">Plaza de la Constitución 1, 3.er piso<br>Centro, Cuauhtémoc<br>Ciudad de México, CP 06000</p>
+    </div>
+
+    <div>
+      <h2 style="margin: 0 0 14px; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--dorado-60)">Atención ciudadana</h2>
+      <p style="margin: 0 0 12px; font-size: 17px; line-height: 1.6; color: var(--blanco)">Atención ciudadana · 55 5345 8187<br>55 5345 8188<br>LOCATEL · 55 5658 1111</p>
+      <p style="margin: 0 0 12px; font-size: 17px; line-height: 1.6"><a class="ih10" style="color: var(--blanco); text-decoration: underline; text-underline-offset: 3px; word-break: break-word" href="mailto:atencionciudadana@sedema.cdmx.gob.mx">atencionciudadana@sedema.cdmx.gob.mx</a></p>
+      <p style="margin: 0; font-size: 17px; line-height: 1.6; color: var(--dorado-40)">Atención presencial: martes, de 10 a 13 h</p>
+    </div>
+
+    <div>
+      <h2 style="margin: 0 0 14px; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--dorado-60)">Denuncias</h2>
+      <p style="margin: 0 0 12px; font-size: 17px; line-height: 1.6; color: var(--blanco)">Emergencias · 911<br>PAOT · 55 5265 0780<br>Fiscalía Ambiental · 55 5345 5000</p>
+      <p style="margin: 0"><a class="ih10" style="font-size: 17px; line-height: 1.5; color: var(--blanco); text-decoration: underline; text-underline-offset: 3px" href="https://www.paot.cdmx.gob.mx" target="_blank" rel="noopener">denuncia.paot.cdmx.gob.mx</a></p>
+    </div>
+
+    <div>
+      <h2 style="margin: 0 0 14px; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--dorado-60)">Marco normativo</h2>
+      <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px">
+        <li><a class="ih10" style="font-size: 17px; line-height: 1.5; color: var(--blanco); text-decoration: underline; text-underline-offset: 3px" href="https://data.consejeria.cdmx.gob.mx/index.php/leyes/leyes#ley-ambiental-de-la-ciudad-de-m%C3%A9xico" target="_blank" rel="noopener">Ley Ambiental de Protección a la Tierra en el Distrito Federal</a></li>
+        <li><a class="ih10" style="font-size: 17px; line-height: 1.5; color: var(--blanco); text-decoration: underline; text-underline-offset: 3px" href="http://data.sedema.cdmx.gob.mx/sedema/images/archivos/sedema/leyes-reglamentos/normas/locales/NADF-001-RNAT-2016.pdf" target="_blank" rel="noopener">NADF-001-RNAT-2015 · poda, derribo y trasplante</a></li>
+        <li><a class="ih10" style="font-size: 17px; line-height: 1.5; color: var(--blanco); text-decoration: underline; text-underline-offset: 3px" href="http://data.sedema.cdmx.gob.mx/sitios/conadf/documentos/NADF-006-RNAT-2016.pdf" target="_blank" rel="noopener">NADF-006-RNAT-2012 · plantación y mantenimiento</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div style="border-top: 1px solid rgba(255,255,255,0.2)">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 20px 24px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap">
+      <span style="font-size: 15px; color: var(--dorado-40)">Gobierno de la Ciudad de México · Secretaría del Medio Ambiente · 2026</span>
+      <ul style="margin: 0; padding: 0; list-style: none; display: flex; align-items: center; gap: 8px">
+        <li><a class="ih11" style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border: 1px solid rgba(255,255,255,0.35); border-radius: 4px; color: var(--blanco); transition: background 150ms ease" href="https://x.com/SEDEMA_CDMX" target="_blank" rel="noopener" aria-label="SEDEMA en X"><svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor" aria-hidden="true"><path d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.41l-5.8-7.58-6.64 7.58H.47l8.6-9.83L0 1.15h7.59l5.25 6.93ZM17.61 20.64h2.04L6.49 3.24H4.3Z"></path></svg></a></li>
+        <li><a class="ih11" style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border: 1px solid rgba(255,255,255,0.35); border-radius: 4px; color: var(--blanco); transition: background 150ms ease" href="https://www.facebook.com/SEDEMACDMX" target="_blank" rel="noopener" aria-label="SEDEMA en Facebook"><svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor" aria-hidden="true"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.25h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07Z"></path></svg></a></li>
+        <li><a class="ih11" style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border: 1px solid rgba(255,255,255,0.35); border-radius: 4px; color: var(--blanco); transition: background 150ms ease" href="https://www.instagram.com/sedema_cdmx" target="_blank" rel="noopener" aria-label="SEDEMA en Instagram"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"></circle></svg></a></li>
+        <li><a class="ih11" style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border: 1px solid rgba(255,255,255,0.35); border-radius: 4px; color: var(--blanco); transition: background 150ms ease" href="https://www.youtube.com/@SEDEMACDMX" target="_blank" rel="noopener" aria-label="SEDEMA en YouTube"><svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor" aria-hidden="true"><path d="M23.5 6.85a3.02 3.02 0 0 0-2.12-2.14C19.5 4.2 12 4.2 12 4.2s-7.5 0-9.38.51A3.02 3.02 0 0 0 .5 6.85C0 8.74 0 12 0 12s0 3.26.5 5.15a3.02 3.02 0 0 0 2.12 2.14C4.5 19.8 12 19.8 12 19.8s7.5 0 9.38-.51a3.02 3.02 0 0 0 2.12-2.14C24 15.26 24 12 24 12s0-3.26-.5-5.15ZM9.55 15.57V8.43L15.82 12l-6.27 3.57Z"></path></svg></a></li>
+        <li><a class="ih11" style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border: 1px solid rgba(255,255,255,0.35); border-radius: 4px; color: var(--blanco); transition: background 150ms ease" href="https://www.tiktok.com/@sedemacdmx" target="_blank" rel="noopener" aria-label="SEDEMA en TikTok"><svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor" aria-hidden="true"><path d="M16.6 0h-3.3v16.2a2.85 2.85 0 1 1-2.85-2.85c.3 0 .58.05.85.13v-3.36a6.2 6.2 0 0 0-.85-.06 6.2 6.2 0 1 0 6.2 6.2V6.63a6.7 6.7 0 0 0 4.05 1.35V4.62A4.05 4.05 0 0 1 16.6 0Z"></path></svg></a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+
 </div>
 
-</x-dc>
-<script type="text/x-dc" data-dc-script>
-const REQUISITOS = [
-  { requisito: "Edad", podador: "Mayor de edad", dictaminador: "Mayor de edad" },
-  { requisito: "Identificación", podador: "Identificación oficial vigente", dictaminador: "Identificación oficial vigente" },
-  { requisito: "Formación profesional", podador: "No se exige título", dictaminador: "Licenciatura en biología, ingeniería forestal, agronomía o carrera afín" },
-  { requisito: "Experiencia", podador: "Experiencia comprobable en trabajos de arbolado", dictaminador: "Dos años de experiencia comprobable" },
-  { requisito: "Curso oficial", podador: "Curso de capacitación aprobado", dictaminador: "Curso oficial aprobado" },
-  { requisito: "Evaluación", podador: "Evaluación teórica y práctica", dictaminador: "Evaluación teórica" },
-  { requisito: "Documentación del expediente", podador: "Solicitud, comprobante de domicilio y fotografías", dictaminador: "Solicitud, título o cédula, comprobante de domicilio y fotografías" }
-];
 
-const PASOS = [
-  { n: "1", titulo: "Verifica qué acreditación necesitas", texto: "Si vas a ejecutar cortes, es podador. Si vas a emitir dictámenes, es dictaminador y necesitas formación profesional. Nada impide obtener las dos, pero se tramitan por separado." },
-  { n: "2", titulo: "Reúne tu expediente", texto: "Identificación oficial, comprobante de domicilio, fotografías recientes y la documentación que acredite tu experiencia. Si vas por dictaminador, también título o cédula profesional.", nota: "Los documentos se presentan en original para cotejo y en copia para el expediente." },
-  { n: "3", titulo: "Consulta la convocatoria del curso", texto: "El curso oficial se abre por convocatoria. Ahí se publican las fechas, la sede, el costo vigente y los cupos disponibles. Sin curso aprobado no hay acreditación." },
-  { n: "4", titulo: "Presenta tu solicitud", texto: "En atención ciudadana de SEDEMA, con el expediente completo. Ahí se revisa que cumplas y se te informa la fecha de evaluación." },
-  { n: "5", titulo: "Aprueba la evaluación", texto: "Para podador hay una parte práctica: se evalúa el corte, el uso del equipo de protección y las medidas de seguridad del área de trabajo. Para dictaminador la evaluación es teórica." },
-  { n: "6", titulo: "Recibe tu credencial", texto: "La credencial trae tu nombre, fotografía, huella digital, número de folio, fecha de expedición, vigencia y firma del titular de SEDEMA. Es única, personal e intransferible.", nota: "Al recibirla, tu folio queda en el padrón público: cualquier persona podrá verificarte." }
-];
-
-const OBLIGACIONES = [
-  { titulo: "Portarla siempre", texto: "Durante los trabajos debes traer contigo la credencial vigente y la autorización del trabajo. La ciudadanía tiene derecho a pedirte las dos." },
-  { titulo: "Renovarla antes de que venza", texto: "Una acreditación vencida no habilita. Tramita la renovación con anticipación para no interrumpir tu trabajo." },
-  { titulo: "No prestarla", texto: "Es personal e intransferible. Prestarla o permitir que alguien más la use es causa de suspensión." },
-  { titulo: "Respetar el porcentaje autorizado", texto: "Una poda no debe superar la cuarta parte del ejemplar, y solo si el dictamen lo justifica. El desmoche se sanciona como derribo." },
-  { titulo: "Trabajar con seguridad", texto: "Equipo de protección completo, área acordonada y señalizada, y descenso de ramas con cuerdas. La supervisión puede detener los trabajos." },
-  { titulo: "Cumplir la restitución", texto: "Cuando el trabajo autorizado obliga a restituir arbolado, la medida es parte del trabajo, no un trámite aparte. El procedimiento completo, con el número de árboles que corresponde y los plazos, está en el módulo de procedimientos." },
-  { titulo: "Manejar bien el residuo", texto: "Retiro dentro de las veinticuatro horas siguientes. Si el ejemplar tenía plaga, el residuo va a disposición final designada, no a acolchado." }
-];
-
-class Component extends DCLogic {
-  renderVals() {
-    return {
-      requisitos: REQUISITOS.map((r, i) => Object.assign({}, r, { fondo: i % 2 === 1 ? "var(--gris-10)" : "var(--blanco)" })),
-      pasos: PASOS.map(p => ({ n: p.n, titulo: p.titulo, texto: p.texto, tieneNota: !!p.nota, nota: p.nota || "" })),
-      obligaciones: OBLIGACIONES
-    };
-  }
-}
-</script>
 </body>
 </html>

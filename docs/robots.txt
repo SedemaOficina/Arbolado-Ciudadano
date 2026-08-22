@@ -1,0 +1,9 @@
+# Arbolado Ciudadano · Secretaría del Medio Ambiente de la Ciudad de México
+User-agent: *
+Allow: /
+Disallow: /interno/
+Disallow: /PENDIENTES.html
+Disallow: /biblioteca.html
+Disallow: /assets/data/
+
+Sitemap: https://sedemaoficina.github.io/Arbolado-Ciudadano/sitemap.xml

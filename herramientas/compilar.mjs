@@ -51,6 +51,7 @@ function reescribirEnlace(href, profundidad){
   let r = ruta;
   // Corrección de rutas heredadas: los logotipos viven en assets/img/logos/
   if(r.startsWith('assets/logos/')) r = 'assets/img/logos/' + r.slice('assets/logos/'.length);
+  if(/^assets\/img\/logos\/.+\.(png|jpg|jpeg)$/i.test(r)) r = r.replace(/\.(png|jpg|jpeg)$/i, '.svg');
   if(r.startsWith('assets/')) return '../'.repeat(profundidad) + r + hash;
   aviso('Enlace sin ruta conocida: ' + href);
   return href;
@@ -222,13 +223,14 @@ function emitirElemento(n, ctx){
     if(nom === 'style-focus'){ clases.push(clasePseudo(val,'focus')); continue; }
     if(nom.startsWith('hint-')) continue;
     if(nom === 'class'){ clases.push(val); continue; }
-    if(/^on[A-Z]/.test(nom)){
+    // parse5 normaliza los nombres a minúsculas: onClick llega como onclick
+    if(/^on[a-z]+$/.test(nom)){
       if(!tieneMus(val)) continue;
       const js = aJS(val.replace(/[{}]/g,'').trim(), ctx.locales);
-      const esSelect = tag === 'select';
-      const ev = nom === 'onClick' ? 'click'
-        : nom === 'onChange' ? (esSelect ? 'change' : 'input')
-        : nom.slice(2).toLowerCase();
+      const manual = tag === 'select' || (tag === 'input' && ['radio','checkbox','file'].includes(atr(n,'type')));
+      const ev = nom === 'onclick' ? 'click'
+        : nom === 'onchange' ? (manual ? 'change' : 'input')
+        : nom.slice(2);
       extra.push('@' + ev + '="' + escAtr(js + '($event)') + '"');
       continue;
     }
@@ -241,7 +243,10 @@ function emitirElemento(n, ctx){
     }
     if(tieneMus(val)){
       const p = partir(val, ctx.locales, ctx.ambito, ctx.modo === 'estatico');
-      if(ctx.alpine || ctx.modo === 'plantilla') extra.push(':' + nom + '="' + escAtr(p.js) + '"');
+      if(ctx.alpine || ctx.modo === 'plantilla'){
+        const enlace = (nom === 'href' || nom === 'src');
+        extra.push(':' + nom + '="' + escAtr(enlace ? 'dcRuta(' + p.js + ')' : p.js) + '"');
+      }
       if(ctx.modo === 'estatico'){
         const v = p.unica ? evalJS(p.js, ctx.ambito) : p.estatico;
         if(v !== undefined && v !== null && v !== '' && v !== false){
@@ -398,7 +403,7 @@ function compilarPagina(relFuente, relSalida){
   const url = BASE_URL + (relSalida === 'index.html' ? '' : relSalida);
   const usaJS = /x-data=/.test(contenido);
 
-  const doc = '<!DOCTYPE html>\n<html lang="es-MX">\n<head>\n'
+  const doc = '<!DOCTYPE html>\n<html lang="es-MX" data-raiz="' + raiz + '">\n<head>\n'
 + '<meta charset="utf-8">\n'
 + '<meta name="viewport" content="width=device-width, initial-scale=1">\n'
 + '<title>' + escTxt(meta.titulo) + '</title>\n'

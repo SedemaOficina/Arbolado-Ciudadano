@@ -81,6 +81,14 @@
     };
   };
 
+  /* --- Rutas relativas según la profundidad de la página --- */
+  var RAIZ = (document.documentElement.getAttribute('data-raiz') || '');
+  window.dcRuta = function (h) {
+    if (!h || typeof h !== 'string') return h;
+    if (/^(https?:|mailto:|tel:|data:|#|\/)/.test(h)) return h;
+    return RAIZ + h;
+  };
+
   /* --- Limpieza del prerenderizado estático antes de que Alpine hidrate --- */
   function limpiar() {
     var nodos = document.querySelectorAll('[data-pr]');

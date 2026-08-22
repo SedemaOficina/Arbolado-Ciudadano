@@ -1,40 +1,178 @@
 <!DOCTYPE html>
-<html>
+<html lang="es-MX" data-raiz="">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
+<title>Quién hace qué · Competencias y acreditaciones · SEDEMA CDMX</title>
+<meta name="description" content="Competencias de SEDEMA, las alcaldías, la PAOT, Bomberos y la Fiscalía Ambiental sobre el arbolado urbano. Incluye verificador del padrón de podadores y dictaminadores.">
+<meta name="author" content="Secretaría del Medio Ambiente de la Ciudad de México">
+<link rel="canonical" href="https://sedemaoficina.github.io/Arbolado-Ciudadano/responsabilidades.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="El ABC del arbolado urbano · SEDEMA CDMX">
+<meta property="og:title" content="Quién hace qué · Competencias y acreditaciones · SEDEMA CDMX">
+<meta property="og:description" content="Competencias de SEDEMA, las alcaldías, la PAOT, Bomberos y la Fiscalía Ambiental sobre el arbolado urbano. Incluye verificador del padrón de podadores y dictaminadores.">
+<meta property="og:url" content="https://sedemaoficina.github.io/Arbolado-Ciudadano/responsabilidades.html">
+<meta property="og:locale" content="es_MX">
+<meta name="theme-color" content="#9D2148">
+<link rel="icon" href="assets/img/logos/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/sitio.css">
+<style>
+a:hover { color: var(--guinda-oscuro); }
+    html { scroll-behavior: smooth; }
+</style>
+<script src="assets/js/sitio.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.15.0/dist/cdn.min.js"></script>
 </head>
 <body>
-<x-dc>
-<helmet>
-  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/fonts.css">
-  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/colors.css">
-  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/typography.css">
-  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/spacing.css">
-  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/base.css">
-  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/styles.css">
-  <script src="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/_ds_bundle.js"></script>
-  <style>
-    body { margin: 0; background: var(--blanco); color: var(--gris-100); font-family: Roboto, system-ui, sans-serif; }
-    a { color: var(--guinda-100); text-decoration: underline; text-underline-offset: 2px; }
-    a:hover { color: var(--guinda-oscuro); }
-    *:focus-visible { outline: 3px solid var(--guinda-100); outline-offset: 2px; }
-    html { scroll-behavior: smooth; }
-  </style>
-</helmet>
 
-<div style="min-height: 100vh; display: flex; flex-direction: column; background: var(--blanco)">
 
-  <dc-import name="CabeceraSitio" activo="responsabilidades" con-emergencia="{{ verdadero }}" hint-size="100%,190px"></dc-import>
 
-  <nav aria-label="Ruta de navegación" style="background: var(--blanco)">
+<div x-data="dcresponsabilidades()" style="min-height: 100vh; display: flex; flex-direction: column; background: var(--blanco)">
+
+  
+
+
+<div x-data="dcCabecera({&quot;activo&quot;:&quot;responsabilidades&quot;,&quot;conEmergencia&quot;:true})" style="background: var(--blanco)">
+
+  <a class="if0" style="position: absolute; left: -9999px; top: 0; z-index: 60; background: var(--guinda-100); color: var(--blanco); padding: 12px 20px; font-size: 16px; font-weight: 700; text-decoration: none" href="#contenido">Saltar al contenido</a>
+
+  <header style="border-bottom: 1px solid var(--gris-20)">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 16px 20px; display: flex; align-items: center; gap: clamp(14px, 2vw, 24px); flex-wrap: wrap">
+      <a style="display: block; text-decoration: none" href="index.html">
+        <img style="height: clamp(38px, 5vw, 50px); width: auto; display: block" src="assets/img/logos/firma-sedema-rgb.svg" alt="Gobierno de la Ciudad de México · Secretaría del Medio Ambiente">
+      </a>
+      <div class="om-divisor" style="width: 1px; height: 44px; background: var(--gris-20)"></div>
+      <div>
+        <div style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gris-100); font-weight: 700">Guía ciudadana</div>
+        <div style="font-size: clamp(18px, 2.2vw, 21px); font-weight: 700; color: var(--guinda-100); line-height: 1.2">El ABC del arbolado urbano</div>
+      </div>
+      <search class="om-buscador" style="margin-left: auto; flex: 1 1 260px; max-width: 400px; position: relative">
+        <label style="display: block; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--gris-100); margin-bottom: 6px" for="buscador-sitio">Buscar en el sitio</label>
+        <input style="width: 100%; box-sizing: border-box; font-family: Roboto, sans-serif; font-size: 16px; padding: 11px 14px; border: 1px solid var(--gris-40); border-radius: 4px; min-height: 44px; background: var(--blanco); color: var(--gris-100)" type="search" id="buscador-sitio" onchange="e => this.setState({ q: e.target.value })" placeholder="poda, denuncia, permiso, vivero" autocomplete="off" aria-controls="resultados-sitio" :value="v.q" :onchange="v.escribir" :aria-expanded="v.abierto">
+        <div x-show="v.abierto" style="position: absolute; top: 100%; left: 0; right: 0; z-index: 50; margin-top: 4px; background: var(--blanco); border: 1px solid var(--gris-40); box-shadow: 0 8px 20px rgba(26,26,26,0.16); max-height: 62vh; overflow-y: auto; display:none" id="resultados-sitio">
+            <ul x-show="v.hayResultados" style="list-style: none; margin: 0; padding: 0; display:none">
+                <template x-for="(r, _k845317270) in v.resultados" :key="_k845317270">
+                  <li style="border-bottom: 1px solid var(--gris-20)">
+                    <a class="ih1" style="display: block; padding: 13px 16px; text-decoration: none; color: var(--gris-100); transition: background 150ms ease" :href="dcRuta(r.href)">
+                      <span style="display: block; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--gris-100)" x-html="r.seccion"></span>
+                      <span style="display: block; font-size: 17px; font-weight: 700; color: var(--guinda-100); line-height: 1.3; margin-top: 2px" x-html="r.titulo"></span>
+                      <span style="display: block; font-size: 15px; line-height: 1.45; margin-top: 2px" x-html="r.detalle"></span>
+                    </a>
+                  </li>
+                </template>
+              </ul>
+            <p x-show="v.sinResultados" style="margin: 0; padding: 16px; font-size: 16px; line-height: 1.55; color: var(--gris-100); display:none">No encontramos esa palabra. Prueba con poda, derribo, permiso, denuncia, vivero o el nombre de tu alcaldía.</p>
+          </div>
+      </search>
+    </div>
+    <nav style="border-top: 1px solid var(--gris-20); background: var(--gris-10)" aria-label="Navegación principal">
+      <div class="om-nav-ancha" style="max-width: 1240px; margin: 0 auto; padding: 0 24px; display: flex; flex-wrap: wrap">
+        
+          <a class="ih2" style="padding: 15px 18px; font-size: 16px; font-weight: 700; color: var(--gris-100); text-decoration: none; border-bottom: 3px solid transparent; background: transparent; transition: background 150ms ease, color 150ms ease" href="index.html" :href="dcRuta(s.href)" :aria-current="s.actual" x-html="s.etiqueta" data-pr :style="`padding: 15px 18px; font-size: 16px; font-weight: 700; color: ${s.color}; text-decoration: none; border-bottom: 3px solid ${s.borde}; background: ${s.fondo}; transition: background 150ms ease, color 150ms ease`">Inicio</a>
+        
+          <a class="ih2" style="padding: 15px 18px; font-size: 16px; font-weight: 700; color: var(--gris-100); text-decoration: none; border-bottom: 3px solid transparent; background: transparent; transition: background 150ms ease, color 150ms ease" href="hazlo.html" :href="dcRuta(s.href)" :aria-current="s.actual" x-html="s.etiqueta" data-pr :style="`padding: 15px 18px; font-size: 16px; font-weight: 700; color: ${s.color}; text-decoration: none; border-bottom: 3px solid ${s.borde}; background: ${s.fondo}; transition: background 150ms ease, color 150ms ease`">Qué necesito hacer</a>
+        
+          <a class="ih2" style="padding: 15px 18px; font-size: 16px; font-weight: 700; color: var(--guinda-100); text-decoration: none; border-bottom: 3px solid var(--guinda-100); background: var(--blanco); transition: background 150ms ease, color 150ms ease" href="responsabilidades.html" aria-current="page" :href="dcRuta(s.href)" :aria-current="s.actual" x-html="s.etiqueta" data-pr :style="`padding: 15px 18px; font-size: 16px; font-weight: 700; color: ${s.color}; text-decoration: none; border-bottom: 3px solid ${s.borde}; background: ${s.fondo}; transition: background 150ms ease, color 150ms ease`">Responsabilidades</a>
+        
+          <a class="ih2" style="padding: 15px 18px; font-size: 16px; font-weight: 700; color: var(--gris-100); text-decoration: none; border-bottom: 3px solid transparent; background: transparent; transition: background 150ms ease, color 150ms ease" href="emergencias.html" :href="dcRuta(s.href)" :aria-current="s.actual" x-html="s.etiqueta" data-pr :style="`padding: 15px 18px; font-size: 16px; font-weight: 700; color: ${s.color}; text-decoration: none; border-bottom: 3px solid ${s.borde}; background: ${s.fondo}; transition: background 150ms ease, color 150ms ease`">Emergencias</a>
+        
+          <a class="ih2" style="padding: 15px 18px; font-size: 16px; font-weight: 700; color: var(--gris-100); text-decoration: none; border-bottom: 3px solid transparent; background: transparent; transition: background 150ms ease, color 150ms ease" href="programas.html" :href="dcRuta(s.href)" :aria-current="s.actual" x-html="s.etiqueta" data-pr :style="`padding: 15px 18px; font-size: 16px; font-weight: 700; color: ${s.color}; text-decoration: none; border-bottom: 3px solid ${s.borde}; background: ${s.fondo}; transition: background 150ms ease, color 150ms ease`">Programas</a>
+        
+          <a class="ih2" style="padding: 15px 18px; font-size: 16px; font-weight: 700; color: var(--gris-100); text-decoration: none; border-bottom: 3px solid transparent; background: transparent; transition: background 150ms ease, color 150ms ease" href="directorio.html" :href="dcRuta(s.href)" :aria-current="s.actual" x-html="s.etiqueta" data-pr :style="`padding: 15px 18px; font-size: 16px; font-weight: 700; color: ${s.color}; text-decoration: none; border-bottom: 3px solid ${s.borde}; background: ${s.fondo}; transition: background 150ms ease, color 150ms ease`">Directorio</a>
+        
+          <a class="ih2" style="padding: 15px 18px; font-size: 16px; font-weight: 700; color: var(--gris-100); text-decoration: none; border-bottom: 3px solid transparent; background: transparent; transition: background 150ms ease, color 150ms ease" href="politica.html" :href="dcRuta(s.href)" :aria-current="s.actual" x-html="s.etiqueta" data-pr :style="`padding: 15px 18px; font-size: 16px; font-weight: 700; color: ${s.color}; text-decoration: none; border-bottom: 3px solid ${s.borde}; background: ${s.fondo}; transition: background 150ms ease, color 150ms ease`">Política de arbolado</a>
+        <template x-for="(s, _k476983897) in v.secciones" :key="_k476983897">
+          <a class="ih2" :href="dcRuta(s.href)" :aria-current="s.actual" x-html="s.etiqueta" :style="`padding: 15px 18px; font-size: 16px; font-weight: 700; color: ${s.color}; text-decoration: none; border-bottom: 3px solid ${s.borde}; background: ${s.fondo}; transition: background 150ms ease, color 150ms ease`"></a>
+        </template>
+      </div>
+
+      <div class="om-nav-movil" style="max-width: 1240px; margin: 0 auto; padding: 10px 20px">
+        <button class="ih3" style="width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 14px; min-height: 52px; padding: 12px 16px; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; font-family: Roboto, sans-serif; font-size: 17px; font-weight: 700; color: var(--guinda-100); cursor: pointer; transition: background 150ms ease" onclick="() => this.setState(s => ({ menu: !s.menu }))" aria-controls="menu-movil" :onclick="v.alternarMenu" :aria-expanded="v.menuAbierto">
+          <span style="display: flex; align-items: center; gap: 12px">
+            <span style="display: flex; flex-direction: column; gap: 4px; flex: none" aria-hidden="true">
+              <span style="display: block; width: 20px; height: 2px; background: var(--guinda-100)"></span>
+              <span style="display: block; width: 20px; height: 2px; background: var(--guinda-100)"></span>
+              <span style="display: block; width: 20px; height: 2px; background: var(--guinda-100)"></span>
+            </span>
+            <span x-html="v.etiquetaMenu">Secciones del sitio</span>
+          </span>
+          <span style="font-size: 15px; color: var(--gris-100)" aria-hidden="true" x-html="v.signoMenu">▼</span>
+        </button>
+
+        <ul x-show="v.menuAbierto" style="list-style: none; margin: 10px 0 0; padding: 0; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; overflow: hidden; display:none" id="menu-movil">
+            
+              <li style="border-bottom: 1px solid var(--gris-20)" data-pr>
+                <a style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 14px 18px; font-size: 17px; font-weight: 700; text-decoration: none; color: var(--gris-100); border-left: 4px solid transparent; background: transparent" href="index.html" :href="dcRuta(s.href)" :aria-current="s.actual" :style="`display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 14px 18px; font-size: 17px; font-weight: 700; text-decoration: none; color: ${s.color}; border-left: 4px solid ${s.borde}; background: ${s.fondo}`">
+                  <span x-html="s.etiqueta">Inicio</span>
+                  <span style="color: var(--dorado-100)" aria-hidden="true">›</span>
+                </a>
+              </li>
+            
+              <li style="border-bottom: 1px solid var(--gris-20)" data-pr>
+                <a style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 14px 18px; font-size: 17px; font-weight: 700; text-decoration: none; color: var(--gris-100); border-left: 4px solid transparent; background: transparent" href="hazlo.html" :href="dcRuta(s.href)" :aria-current="s.actual" :style="`display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 14px 18px; font-size: 17px; font-weight: 700; text-decoration: none; color: ${s.color}; border-left: 4px solid ${s.borde}; background: ${s.fondo}`">
+                  <span x-html="s.etiqueta">Qué necesito hacer</span>
+                  <span style="color: var(--dorado-100)" aria-hidden="true">›</span>
+                </a>
+              </li>
+            
+              <li style="border-bottom: 1px solid var(--gris-20)" data-pr>
+                <a style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 14px 18px; font-size: 17px; font-weight: 700; text-decoration: none; color: var(--guinda-100); border-left: 4px solid var(--guinda-100); background: var(--blanco)" href="responsabilidades.html" aria-current="page" :href="dcRuta(s.href)" :aria-current="s.actual" :style="`display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 14px 18px; font-size: 17px; font-weight: 700; text-decoration: none; color: ${s.color}; border-left: 4px solid ${s.borde}; background: ${s.fondo}`">
+                  <span x-html="s.etiqueta">Responsabilidades</span>
+                  <span style="color: var(--dorado-100)" aria-hidden="true">›</span>
+                </a>
+              </li>
+            
+              <li style="border-bottom: 1px solid var(--gris-20)" data-pr>
+                <a style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 14px 18px; font-size: 17px; font-weight: 700; text-decoration: none; color: var(--gris-100); border-left: 4px solid transparent; background: transparent" href="emergencias.html" :href="dcRuta(s.href)" :aria-current="s.actual" :style="`display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 14px 18px; font-size: 17px; font-weight: 700; text-decoration: none; color: ${s.color}; border-left: 4px solid ${s.borde}; background: ${s.fondo}`">
+                  <span x-html="s.etiqueta">Emergencias</span>
+                  <span style="color: var(--dorado-100)" aria-hidden="true">›</span>
+                </a>
+              </li>
+            
+              <li style="border-bottom: 1px solid var(--gris-20)" data-pr>
+                <a style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 14px 18px; font-size: 17px; font-weight: 700; text-decoration: none; color: var(--gris-100); border-left: 4px solid transparent; background: transparent" href="programas.html" :href="dcRuta(s.href)" :aria-current="s.actual" :style="`display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 14px 18px; font-size: 17px; font-weight: 700; text-decoration: none; color: ${s.color}; border-left: 4px solid ${s.borde}; background: ${s.fondo}`">
+                  <span x-html="s.etiqueta">Programas</span>
+                  <span style="color: var(--dorado-100)" aria-hidden="true">›</span>
+                </a>
+              </li>
+            
+              <li style="border-bottom: 1px solid var(--gris-20)" data-pr>
+                <a style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 14px 18px; font-size: 17px; font-weight: 700; text-decoration: none; color: var(--gris-100); border-left: 4px solid transparent; background: transparent" href="directorio.html" :href="dcRuta(s.href)" :aria-current="s.actual" :style="`display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 14px 18px; font-size: 17px; font-weight: 700; text-decoration: none; color: ${s.color}; border-left: 4px solid ${s.borde}; background: ${s.fondo}`">
+                  <span x-html="s.etiqueta">Directorio</span>
+                  <span style="color: var(--dorado-100)" aria-hidden="true">›</span>
+                </a>
+              </li>
+            
+              <li style="border-bottom: 1px solid var(--gris-20)" data-pr>
+                <a style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 14px 18px; font-size: 17px; font-weight: 700; text-decoration: none; color: var(--gris-100); border-left: 4px solid transparent; background: transparent" href="politica.html" :href="dcRuta(s.href)" :aria-current="s.actual" :style="`display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 14px 18px; font-size: 17px; font-weight: 700; text-decoration: none; color: ${s.color}; border-left: 4px solid ${s.borde}; background: ${s.fondo}`">
+                  <span x-html="s.etiqueta">Política de arbolado</span>
+                  <span style="color: var(--dorado-100)" aria-hidden="true">›</span>
+                </a>
+              </li>
+            <template x-for="(s, _k476983897) in v.secciones" :key="_k476983897">
+              <li style="border-bottom: 1px solid var(--gris-20)">
+                <a :href="dcRuta(s.href)" :aria-current="s.actual" :style="`display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 14px 18px; font-size: 17px; font-weight: 700; text-decoration: none; color: ${s.color}; border-left: 4px solid ${s.borde}; background: ${s.fondo}`">
+                  <span x-html="s.etiqueta"></span>
+                  <span style="color: var(--dorado-100)" aria-hidden="true">›</span>
+                </a>
+              </li>
+            </template>
+          </ul>
+      </div>
+    </nav>
+  </header>
+</div>
+
+
+
+  <nav style="background: var(--blanco)" aria-label="Ruta de navegación">
     <div style="max-width: 1240px; margin: 0 auto; padding: 14px 24px 12px; font-size: 14px; color: var(--gris-100)">
-      <a href="portada.dc.html">Inicio</a> <span aria-hidden="true" style="padding: 0 8px">·</span> <span style="color: var(--gris-100); font-weight: 700">Responsabilidades</span>
+      <a href="index.html">Inicio</a> <span style="padding: 0 8px" aria-hidden="true">·</span> <span style="color: var(--gris-100); font-weight: 700">Responsabilidades</span>
     </div>
   </nav>
 
-  <main id="contenido" style="flex: 1">
+  <main style="flex: 1" id="contenido">
 
     <section style="background: var(--marfil); border-bottom: 1px solid var(--dorado-40)">
       <div style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 60px) 24px">
@@ -43,18 +181,18 @@
       </div>
     </section>
 
-    <nav aria-label="Índice de la sección" style="position: sticky; top: 0; z-index: 20; background: var(--gris-10); border-top: 1px solid var(--gris-20); border-bottom: 1px solid var(--gris-40); box-shadow: 0 4px 8px rgba(26,26,26,0.06)">
+    <nav style="position: sticky; top: 0; z-index: 20; background: var(--gris-10); border-top: 1px solid var(--gris-20); border-bottom: 1px solid var(--gris-40); box-shadow: 0 4px 8px rgba(26,26,26,0.06)" aria-label="Índice de la sección">
       <div style="max-width: 1240px; margin: 0 auto; padding: 10px 24px">
         <ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; overflow-x: auto">
-          <li style="flex: none"><a href="#logica" style="display: flex; align-items: center; gap: 10px; padding: 11px 16px; text-decoration: none; color: var(--gris-100); min-height: 44px; box-sizing: border-box; white-space: nowrap; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; transition: background 150ms ease, border-color 150ms ease" style-hover="background: var(--marfil); border-color: var(--guinda-100); color: var(--guinda-100)"><span aria-hidden="true" style="width: 26px; height: 26px; flex: none; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; border: 1px solid var(--gris-40)">1</span><span style="font-size: 17px; font-weight: 700">La lógica de competencias</span></a></li>
-          <li style="flex: none"><a href="#matriz" style="display: flex; align-items: center; gap: 10px; padding: 11px 16px; text-decoration: none; color: var(--gris-100); min-height: 44px; box-sizing: border-box; white-space: nowrap; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; transition: background 150ms ease, border-color 150ms ease" style-hover="background: var(--marfil); border-color: var(--guinda-100); color: var(--guinda-100)"><span aria-hidden="true" style="width: 26px; height: 26px; flex: none; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; border: 1px solid var(--gris-40)">2</span><span style="font-size: 17px; font-weight: 700">Matriz de autoridades</span></a></li>
-          <li style="flex: none"><a href="#verificador" style="display: flex; align-items: center; gap: 10px; padding: 11px 16px; text-decoration: none; color: var(--gris-100); min-height: 44px; box-sizing: border-box; white-space: nowrap; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; transition: background 150ms ease, border-color 150ms ease" style-hover="background: var(--marfil); border-color: var(--guinda-100); color: var(--guinda-100)"><span aria-hidden="true" style="width: 26px; height: 26px; flex: none; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; border: 1px solid var(--gris-40)">3</span><span style="font-size: 17px; font-weight: 700">Verificar acreditaciones</span></a></li>
-          <li style="flex: none"><a href="#denunciar" style="display: flex; align-items: center; gap: 10px; padding: 11px 16px; text-decoration: none; color: var(--gris-100); min-height: 44px; box-sizing: border-box; white-space: nowrap; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; transition: background 150ms ease, border-color 150ms ease" style-hover="background: var(--marfil); border-color: var(--guinda-100); color: var(--guinda-100)"><span aria-hidden="true" style="width: 26px; height: 26px; flex: none; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; border: 1px solid var(--gris-40)">4</span><span style="font-size: 17px; font-weight: 700">Cómo denunciar</span></a></li>
+          <li style="flex: none"><a class="ih12" style="display: flex; align-items: center; gap: 10px; padding: 11px 16px; text-decoration: none; color: var(--gris-100); min-height: 44px; box-sizing: border-box; white-space: nowrap; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; transition: background 150ms ease, border-color 150ms ease" href="#logica"><span style="width: 26px; height: 26px; flex: none; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; border: 1px solid var(--gris-40)" aria-hidden="true">1</span><span style="font-size: 17px; font-weight: 700">La lógica de competencias</span></a></li>
+          <li style="flex: none"><a class="ih12" style="display: flex; align-items: center; gap: 10px; padding: 11px 16px; text-decoration: none; color: var(--gris-100); min-height: 44px; box-sizing: border-box; white-space: nowrap; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; transition: background 150ms ease, border-color 150ms ease" href="#matriz"><span style="width: 26px; height: 26px; flex: none; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; border: 1px solid var(--gris-40)" aria-hidden="true">2</span><span style="font-size: 17px; font-weight: 700">Matriz de autoridades</span></a></li>
+          <li style="flex: none"><a class="ih12" style="display: flex; align-items: center; gap: 10px; padding: 11px 16px; text-decoration: none; color: var(--gris-100); min-height: 44px; box-sizing: border-box; white-space: nowrap; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; transition: background 150ms ease, border-color 150ms ease" href="#verificador"><span style="width: 26px; height: 26px; flex: none; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; border: 1px solid var(--gris-40)" aria-hidden="true">3</span><span style="font-size: 17px; font-weight: 700">Verificar acreditaciones</span></a></li>
+          <li style="flex: none"><a class="ih12" style="display: flex; align-items: center; gap: 10px; padding: 11px 16px; text-decoration: none; color: var(--gris-100); min-height: 44px; box-sizing: border-box; white-space: nowrap; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; transition: background 150ms ease, border-color 150ms ease" href="#denunciar"><span style="width: 26px; height: 26px; flex: none; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; border: 1px solid var(--gris-40)" aria-hidden="true">4</span><span style="font-size: 17px; font-weight: 700">Cómo denunciar</span></a></li>
         </ol>
       </div>
     </nav>
 
-    <section id="logica" style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 60px) 24px; scroll-margin-top: 72px">
+    <section style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 60px) 24px; scroll-margin-top: 72px" id="logica">
       <div style="max-width: 42em; margin-bottom: 32px">
         <h2 style="margin: 0 0 12px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(27px, 3.2vw, 36px); line-height: 1.15; font-weight: 700; color: var(--guinda-100)">La lógica de competencias</h2>
         <p style="margin: 0; font-size: 19px; line-height: 1.6">No se reparte por tipo de trabajo ni por tamaño del árbol. Se reparte por el suelo donde crece. Con entender eso resuelves la mayoría de los casos.</p>
@@ -115,13 +253,13 @@
         <p style="margin: 0; font-size: 16px; line-height: 1.55; color: var(--gris-100)">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículos 9 y 10 · Ley Orgánica de Alcaldías, artículo 32 fracción V</p>
       </div>
 
-      <div role="status" style="margin-top: 24px; background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--estado-info); padding: 22px 26px; max-width: 46em">
+      <div style="margin-top: 24px; background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--estado-info); padding: 22px 26px; max-width: 46em" role="status">
         <strong style="display: block; font-size: 19px; margin-bottom: 8px; color: var(--negro)">Autorizar y ejecutar no son lo mismo</strong>
         <span style="font-size: 17px; line-height: 1.6">Quien autoriza revisa el dictamen y emite la resolución. Quien ejecuta hace el trabajo físico. En vialidad primaria son dos instituciones distintas, y por eso el trámite no se resuelve en una sola ventanilla.</span>
       </div>
     </section>
 
-    <section id="matriz" style="background: var(--gris-10); border-top: 1px solid var(--gris-20); border-bottom: 1px solid var(--gris-20); scroll-margin-top: 72px">
+    <section style="background: var(--gris-10); border-top: 1px solid var(--gris-20); border-bottom: 1px solid var(--gris-20); scroll-margin-top: 72px" id="matriz">
       <div style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 60px) 24px">
         <div style="max-width: 42em; margin-bottom: 28px">
           <h2 style="margin: 0 0 12px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(27px, 3.2vw, 36px); line-height: 1.15; font-weight: 700; color: var(--guinda-100)">Matriz de autoridades</h2>
@@ -131,43 +269,240 @@
         <fieldset style="border: 0; margin: 0 0 24px; padding: 0">
           <legend style="font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--gris-100); margin-bottom: 12px">Filtra por ubicación o caso</legend>
           <div style="display: flex; flex-wrap: wrap; gap: 8px">
-            <sc-for list="{{ filtros }}" as="f" hint-placeholder-count="7">
-              <button onClick="{{ f.activar }}" aria-pressed="{{ f.activo }}" style="font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: {{ f.bg }}; color: {{ f.fg }}; border: 1px solid {{ f.borde }}; transition: background 150ms ease">{{ f.etiqueta }} <span style="font-size: 14px; opacity: 0.75">{{ f.cuenta }}</span></button>
-            </sc-for>
+            
+              <button style="font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: var(--guinda-100); color: var(--blanco); border: 1px solid var(--guinda-100); transition: background 150ms ease" onclick="() => this.setState({ filtro: f.id })" aria-pressed="true" :onclick="f.activar" :aria-pressed="f.activo" data-pr :style="`font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `">Todas </span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta">5</span></button>
+            
+              <button style="font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: var(--blanco); color: var(--gris-100); border: 1px solid var(--gris-40); transition: background 150ms ease" onclick="() => this.setState({ filtro: f.id })" :onclick="f.activar" :aria-pressed="f.activo" data-pr :style="`font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `">Vialidad primaria </span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta">1</span></button>
+            
+              <button style="font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: var(--blanco); color: var(--gris-100); border: 1px solid var(--gris-40); transition: background 150ms ease" onclick="() => this.setState({ filtro: f.id })" :onclick="f.activar" :aria-pressed="f.activo" data-pr :style="`font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `">Vialidad secundaria </span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta">2</span></button>
+            
+              <button style="font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: var(--blanco); color: var(--gris-100); border: 1px solid var(--gris-40); transition: background 150ms ease" onclick="() => this.setState({ filtro: f.id })" :onclick="f.activar" :aria-pressed="f.activo" data-pr :style="`font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `">Predio privado </span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta">2</span></button>
+            
+              <button style="font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: var(--blanco); color: var(--gris-100); border: 1px solid var(--gris-40); transition: background 150ms ease" onclick="() => this.setState({ filtro: f.id })" :onclick="f.activar" :aria-pressed="f.activo" data-pr :style="`font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `">Áreas protegidas </span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta">1</span></button>
+            
+              <button style="font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: var(--blanco); color: var(--gris-100); border: 1px solid var(--gris-40); transition: background 150ms ease" onclick="() => this.setState({ filtro: f.id })" :onclick="f.activar" :aria-pressed="f.activo" data-pr :style="`font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `">Emergencia </span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta">1</span></button>
+            
+              <button style="font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: var(--blanco); color: var(--gris-100); border: 1px solid var(--gris-40); transition: background 150ms ease" onclick="() => this.setState({ filtro: f.id })" :onclick="f.activar" :aria-pressed="f.activo" data-pr :style="`font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `">Denuncia </span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta">2</span></button>
+            <template x-for="(f, _k321900499) in v.filtros" :key="_k321900499">
+              <button :onclick="f.activar" :aria-pressed="f.activo" :style="`font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `"></span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta"></span></button>
+            </template>
           </div>
         </fieldset>
 
-        <p style="margin: 0 0 20px; font-size: 19px; font-weight: 700; color: var(--guinda-100)">{{ conteo }}</p>
+        <p style="margin: 0 0 20px; font-size: 19px; font-weight: 700; color: var(--guinda-100)" x-html="v.conteo">Las cinco autoridades</p>
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 24px">
-          <sc-for list="{{ autoridades }}" as="a" hint-placeholder-count="5">
-            <article style="background: var(--blanco); border: 1px solid var(--gris-20); border-top: 4px solid var(--guinda-100); padding: 26px 24px; display: flex; flex-direction: column; box-shadow: 0 4px 8px rgba(26,26,26,0.06)">
-              <div style="height: 76px; margin-bottom: 18px; display: flex; align-items: center">{{ a.logoEl }}</div>
-              <span style="font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700">{{ a.rol }}</span>
-              <h3 style="margin: 8px 0 4px; font-family: Cabin, Roboto, sans-serif; font-size: 26px; font-weight: 700; color: var(--guinda-100); line-height: 1.2">{{ a.sigla }}</h3>
-              <p style="margin: 0 0 18px; font-size: 16px; line-height: 1.5; color: var(--gris-100)">{{ a.nombre }}</p>
+          
+            <article style="background: var(--blanco); border: 1px solid var(--gris-20); border-top: 4px solid var(--guinda-100); padding: 26px 24px; display: flex; flex-direction: column; box-shadow: 0 4px 8px rgba(26,26,26,0.06)" data-pr>
+              <div style="height: 76px; margin-bottom: 18px; display: flex; align-items: center" x-html="a.logoEl"><span style="display:flex;flex-direction:column;justify-content:center;gap:10px;height:100%"><img src="assets/img/logos/firma-sedema-rgb.svg" alt="" style="max-height:60px;max-width:100%;width:auto;display:block"></span></div>
+              <span style="font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700" x-html="a.rol">Autoridad ambiental</span>
+              <h3 style="margin: 8px 0 4px; font-family: Cabin, Roboto, sans-serif; font-size: 26px; font-weight: 700; color: var(--guinda-100); line-height: 1.2" x-html="a.sigla">SEDEMA</h3>
+              <p style="margin: 0 0 18px; font-size: 16px; line-height: 1.5; color: var(--gris-100)" x-html="a.nombre">Secretaría del Medio Ambiente de la Ciudad de México</p>
               <ul style="margin: 0 0 20px; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px">
-                <sc-for list="{{ a.funciones }}" as="f" hint-placeholder-count="3">
-                  <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start">
-                    <span aria-hidden="true" style="margin-top: 8px; width: 8px; height: 8px; background: var(--dorado-100); display: block"></span>
-                    <span style="font-size: 17px; line-height: 1.55">{{ f.texto }}</span>
+                
+                  <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start" data-pr>
+                    <span style="margin-top: 8px; width: 8px; height: 8px; background: var(--dorado-100); display: block" aria-hidden="true"></span>
+                    <span style="font-size: 17px; line-height: 1.55" x-html="f.texto">Emite las normas ambientales y los lineamientos técnicos</span>
                   </li>
-                </sc-for>
+                
+                  <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start" data-pr>
+                    <span style="margin-top: 8px; width: 8px; height: 8px; background: var(--dorado-100); display: block" aria-hidden="true"></span>
+                    <span style="font-size: 17px; line-height: 1.55" x-html="f.texto">Acredita a podadores y a dictaminadores</span>
+                  </li>
+                
+                  <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start" data-pr>
+                    <span style="margin-top: 8px; width: 8px; height: 8px; background: var(--dorado-100); display: block" aria-hidden="true"></span>
+                    <span style="font-size: 17px; line-height: 1.55" x-html="f.texto">Autoriza derribo, poda y trasplante en proyectos sujetos a evaluación de impacto ambiental</span>
+                  </li>
+                
+                  <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start" data-pr>
+                    <span style="margin-top: 8px; width: 8px; height: 8px; background: var(--dorado-100); display: block" aria-hidden="true"></span>
+                    <span style="font-size: 17px; line-height: 1.55" x-html="f.texto">Administra directamente bosques urbanos, barrancas y áreas naturales protegidas locales</span>
+                  </li>
+                <template x-for="(f, _k1791468575) in a.funciones" :key="_k1791468575">
+                  <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start">
+                    <span style="margin-top: 8px; width: 8px; height: 8px; background: var(--dorado-100); display: block" aria-hidden="true"></span>
+                    <span style="font-size: 17px; line-height: 1.55" x-html="f.texto"></span>
+                  </li>
+                </template>
               </ul>
               <div style="margin-top: auto; border-top: 1px solid var(--gris-20); padding-top: 16px">
                 <span style="display: block; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 8px">Fundamento</span>
-                <p style="margin: 0; font-size: 16px; line-height: 1.55; color: var(--gris-100)">{{ a.fundamento }}</p>
-                <sc-if value="{{ a.tieneAviso }}" hint-placeholder-val="{{ false }}">
-                  <p style="margin: 14px 0 0; background: var(--marfil); border-left: 3px solid var(--dorado-100); padding: 12px 16px; font-size: 16px; line-height: 1.55; color: var(--gris-100)">{{ a.aviso }}</p>
-                </sc-if>
+                <p style="margin: 0; font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="a.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículos 7.º, 18, 34, 108, 111, 121 y 136 · Reglamento de Impacto Ambiental y Riesgo, artículos 137 a 141 · NADF-001-RNAT-2015</p>
+                <p x-show="a.tieneAviso" style="margin: 14px 0 0; background: var(--marfil); border-left: 3px solid var(--dorado-100); padding: 12px 16px; font-size: 16px; line-height: 1.55; color: var(--gris-100); display:none" x-html="a.aviso"></p>
               </div>
             </article>
-          </sc-for>
+          
+            <article style="background: var(--blanco); border: 1px solid var(--gris-20); border-top: 4px solid var(--guinda-100); padding: 26px 24px; display: flex; flex-direction: column; box-shadow: 0 4px 8px rgba(26,26,26,0.06)" data-pr>
+              <div style="height: 76px; margin-bottom: 18px; display: flex; align-items: center" x-html="a.logoEl"><span style="display:inline-flex;align-items:center;height:44px;padding:0 16px;background:var(--guinda-100);color:var(--blanco);font-size:17px;font-weight:700;letter-spacing:0.04em">LAS 16 ALCALDÍAS</span></div>
+              <span style="font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700" x-html="a.rol">Autoridad territorial</span>
+              <h3 style="margin: 8px 0 4px; font-family: Cabin, Roboto, sans-serif; font-size: 26px; font-weight: 700; color: var(--guinda-100); line-height: 1.2" x-html="a.sigla">Alcaldías</h3>
+              <p style="margin: 0 0 18px; font-size: 16px; line-height: 1.5; color: var(--gris-100)" x-html="a.nombre">Las dieciséis alcaldías de la Ciudad de México</p>
+              <ul style="margin: 0 0 20px; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px">
+                
+                  <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start" data-pr>
+                    <span style="margin-top: 8px; width: 8px; height: 8px; background: var(--dorado-100); display: block" aria-hidden="true"></span>
+                    <span style="font-size: 17px; line-height: 1.55" x-html="f.texto">Conservan, mantienen y protegen el arbolado de vialidad secundaria y de los predios de su demarcación</span>
+                  </li>
+                
+                  <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start" data-pr>
+                    <span style="margin-top: 8px; width: 8px; height: 8px; background: var(--dorado-100); display: block" aria-hidden="true"></span>
+                    <span style="font-size: 17px; line-height: 1.55" x-html="f.texto">Autorizan poda, derribo o trasplante por riesgo, saneamiento, mantenimiento o afectación a la infraestructura</span>
+                  </li>
+                
+                  <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start" data-pr>
+                    <span style="margin-top: 8px; width: 8px; height: 8px; background: var(--dorado-100); display: block" aria-hidden="true"></span>
+                    <span style="font-size: 17px; line-height: 1.55" x-html="f.texto">Reciben y resuelven solicitudes ciudadanas en un plazo no mayor a veinte días hábiles</span>
+                  </li>
+                
+                  <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start" data-pr>
+                    <span style="margin-top: 8px; width: 8px; height: 8px; background: var(--dorado-100); display: block" aria-hidden="true"></span>
+                    <span style="font-size: 17px; line-height: 1.55" x-html="f.texto">Toda autorización debe sustentarse en un dictamen técnico</span>
+                  </li>
+                <template x-for="(f, _k1791468575) in a.funciones" :key="_k1791468575">
+                  <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start">
+                    <span style="margin-top: 8px; width: 8px; height: 8px; background: var(--dorado-100); display: block" aria-hidden="true"></span>
+                    <span style="font-size: 17px; line-height: 1.55" x-html="f.texto"></span>
+                  </li>
+                </template>
+              </ul>
+              <div style="margin-top: auto; border-top: 1px solid var(--gris-20); padding-top: 16px">
+                <span style="display: block; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 8px">Fundamento</span>
+                <p style="margin: 0; font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="a.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículo 106 · Ley Orgánica de Alcaldías, artículo 32 fracción V</p>
+                <p x-show="a.tieneAviso" style="margin: 14px 0 0; background: var(--marfil); border-left: 3px solid var(--dorado-100); padding: 12px 16px; font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="a.aviso">Excepción: si el árbol está en un bosque urbano, una barranca o un área natural protegida, la competencia es de SEDEMA.</p>
+              </div>
+            </article>
+          
+            <article style="background: var(--blanco); border: 1px solid var(--gris-20); border-top: 4px solid var(--guinda-100); padding: 26px 24px; display: flex; flex-direction: column; box-shadow: 0 4px 8px rgba(26,26,26,0.06)" data-pr>
+              <div style="height: 76px; margin-bottom: 18px; display: flex; align-items: center" x-html="a.logoEl"><span style="display:flex;flex-direction:column;justify-content:center;gap:10px;height:100%"><img src="assets/img/logos/paot.svg" alt="" style="max-height:60px;max-width:100%;width:auto;display:block"></span></div>
+              <span style="font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700" x-html="a.rol">Procuraduría ambiental</span>
+              <h3 style="margin: 8px 0 4px; font-family: Cabin, Roboto, sans-serif; font-size: 26px; font-weight: 700; color: var(--guinda-100); line-height: 1.2" x-html="a.sigla">PAOT</h3>
+              <p style="margin: 0 0 18px; font-size: 16px; line-height: 1.5; color: var(--gris-100)" x-html="a.nombre">Procuraduría Ambiental y del Ordenamiento Territorial</p>
+              <ul style="margin: 0 0 20px; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px">
+                
+                  <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start" data-pr>
+                    <span style="margin-top: 8px; width: 8px; height: 8px; background: var(--dorado-100); display: block" aria-hidden="true"></span>
+                    <span style="font-size: 17px; line-height: 1.55" x-html="f.texto">Recibe y atiende denuncias ambientales y de ordenamiento territorial</span>
+                  </li>
+                
+                  <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start" data-pr>
+                    <span style="margin-top: 8px; width: 8px; height: 8px; background: var(--dorado-100); display: block" aria-hidden="true"></span>
+                    <span style="font-size: 17px; line-height: 1.55" x-html="f.texto">Formula y valida dictámenes técnicos y periciales de daño ambiental</span>
+                  </li>
+                
+                  <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start" data-pr>
+                    <span style="margin-top: 8px; width: 8px; height: 8px; background: var(--dorado-100); display: block" aria-hidden="true"></span>
+                    <span style="font-size: 17px; line-height: 1.55" x-html="f.texto">Emite opiniones para restauración o compensación ambiental</span>
+                  </li>
+                
+                  <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start" data-pr>
+                    <span style="margin-top: 8px; width: 8px; height: 8px; background: var(--dorado-100); display: block" aria-hidden="true"></span>
+                    <span style="font-size: 17px; line-height: 1.55" x-html="f.texto">Investiga intervenciones irregulares al arbolado</span>
+                  </li>
+                <template x-for="(f, _k1791468575) in a.funciones" :key="_k1791468575">
+                  <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start">
+                    <span style="margin-top: 8px; width: 8px; height: 8px; background: var(--dorado-100); display: block" aria-hidden="true"></span>
+                    <span style="font-size: 17px; line-height: 1.55" x-html="f.texto"></span>
+                  </li>
+                </template>
+              </ul>
+              <div style="margin-top: auto; border-top: 1px solid var(--gris-20); padding-top: 16px">
+                <span style="display: block; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 8px">Fundamento</span>
+                <p style="margin: 0; font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="a.fundamento">Ley Orgánica de la Procuraduría Ambiental y del Ordenamiento Territorial, artículo 5 fracciones I y XV</p>
+                <p x-show="a.tieneAviso" style="margin: 14px 0 0; background: var(--marfil); border-left: 3px solid var(--dorado-100); padding: 12px 16px; font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="a.aviso">La denuncia es ciudadana y puede ser anónima. No necesitas ser el dueño del predio.</p>
+              </div>
+            </article>
+          
+            <article style="background: var(--blanco); border: 1px solid var(--gris-20); border-top: 4px solid var(--guinda-100); padding: 26px 24px; display: flex; flex-direction: column; box-shadow: 0 4px 8px rgba(26,26,26,0.06)" data-pr>
+              <div style="height: 76px; margin-bottom: 18px; display: flex; align-items: center" x-html="a.logoEl"><span style="display:flex;flex-direction:column;justify-content:center;gap:10px;height:100%"><img src="assets/img/logos/bomberos.svg" alt="" style="max-height:60px;max-width:100%;width:auto;display:block"></span></div>
+              <span style="font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700" x-html="a.rol">Emergencia</span>
+              <h3 style="margin: 8px 0 4px; font-family: Cabin, Roboto, sans-serif; font-size: 26px; font-weight: 700; color: var(--guinda-100); line-height: 1.2" x-html="a.sigla">Bomberos</h3>
+              <p style="margin: 0 0 18px; font-size: 16px; line-height: 1.5; color: var(--gris-100)" x-html="a.nombre">Heroico Cuerpo de Bomberos de la Ciudad de México</p>
+              <ul style="margin: 0 0 20px; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px">
+                
+                  <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start" data-pr>
+                    <span style="margin-top: 8px; width: 8px; height: 8px; background: var(--dorado-100); display: block" aria-hidden="true"></span>
+                    <span style="font-size: 17px; line-height: 1.55" x-html="f.texto">Secciona y retira árboles cuando representan riesgo inminente para personas o bienes</span>
+                  </li>
+                
+                  <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start" data-pr>
+                    <span style="margin-top: 8px; width: 8px; height: 8px; background: var(--dorado-100); display: block" aria-hidden="true"></span>
+                    <span style="font-size: 17px; line-height: 1.55" x-html="f.texto">Actúa en coordinación con Protección Civil y con la autoridad competente</span>
+                  </li>
+                <template x-for="(f, _k1791468575) in a.funciones" :key="_k1791468575">
+                  <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start">
+                    <span style="margin-top: 8px; width: 8px; height: 8px; background: var(--dorado-100); display: block" aria-hidden="true"></span>
+                    <span style="font-size: 17px; line-height: 1.55" x-html="f.texto"></span>
+                  </li>
+                </template>
+              </ul>
+              <div style="margin-top: auto; border-top: 1px solid var(--gris-20); padding-top: 16px">
+                <span style="display: block; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 8px">Fundamento</span>
+                <p style="margin: 0; font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="a.fundamento">Ley del Heroico Cuerpo de Bomberos de la Ciudad de México, artículo 6 fracción IX</p>
+                <p x-show="a.tieneAviso" style="margin: 14px 0 0; background: var(--marfil); border-left: 3px solid var(--dorado-100); padding: 12px 16px; font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="a.aviso">El acceso es por el 911. Si el árbol está dañado pero sin riesgo activo, acude a tu alcaldía o a SEDEMA.</p>
+              </div>
+            </article>
+          
+            <article style="background: var(--blanco); border: 1px solid var(--gris-20); border-top: 4px solid var(--guinda-100); padding: 26px 24px; display: flex; flex-direction: column; box-shadow: 0 4px 8px rgba(26,26,26,0.06)" data-pr>
+              <div style="height: 76px; margin-bottom: 18px; display: flex; align-items: center" x-html="a.logoEl"><span style="display:flex;flex-direction:column;justify-content:center;gap:10px;height:100%"><img src="assets/img/logos/fiscalia.svg" alt="" style="max-height:32px;max-width:100%;width:auto;display:block"><img src="assets/img/logos/ssc.svg" alt="" style="max-height:32px;max-width:100%;width:auto;display:block"></span></div>
+              <span style="font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700" x-html="a.rol">Investigación penal</span>
+              <h3 style="margin: 8px 0 4px; font-family: Cabin, Roboto, sans-serif; font-size: 26px; font-weight: 700; color: var(--guinda-100); line-height: 1.2" x-html="a.sigla">Fiscalía Ambiental</h3>
+              <p style="margin: 0 0 18px; font-size: 16px; line-height: 1.5; color: var(--gris-100)" x-html="a.nombre">Fiscalía General de Justicia y Secretaría de Seguridad Ciudadana</p>
+              <ul style="margin: 0 0 20px; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px">
+                
+                  <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start" data-pr>
+                    <span style="margin-top: 8px; width: 8px; height: 8px; background: var(--dorado-100); display: block" aria-hidden="true"></span>
+                    <span style="font-size: 17px; line-height: 1.55" x-html="f.texto">Investiga el derribo, la poda o el trasplante que contravienen la normatividad</span>
+                  </li>
+                
+                  <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start" data-pr>
+                    <span style="margin-top: 8px; width: 8px; height: 8px; background: var(--dorado-100); display: block" aria-hidden="true"></span>
+                    <span style="font-size: 17px; line-height: 1.55" x-html="f.texto">Aplica las disposiciones del Código Penal en materia de delitos ambientales</span>
+                  </li>
+                
+                  <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start" data-pr>
+                    <span style="margin-top: 8px; width: 8px; height: 8px; background: var(--dorado-100); display: block" aria-hidden="true"></span>
+                    <span style="font-size: 17px; line-height: 1.55" x-html="f.texto">Actúa en flagrancia cuando hay trabajos sin autorización</span>
+                  </li>
+                <template x-for="(f, _k1791468575) in a.funciones" :key="_k1791468575">
+                  <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start">
+                    <span style="margin-top: 8px; width: 8px; height: 8px; background: var(--dorado-100); display: block" aria-hidden="true"></span>
+                    <span style="font-size: 17px; line-height: 1.55" x-html="f.texto"></span>
+                  </li>
+                </template>
+              </ul>
+              <div style="margin-top: auto; border-top: 1px solid var(--gris-20); padding-top: 16px">
+                <span style="display: block; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 8px">Fundamento</span>
+                <p style="margin: 0; font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="a.fundamento">Código Penal para el Distrito Federal, artículos 343 a 350 · Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículo 112</p>
+                <p x-show="a.tieneAviso" style="margin: 14px 0 0; background: var(--marfil); border-left: 3px solid var(--dorado-100); padding: 12px 16px; font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="a.aviso">Si una persona servidora pública participa en el ilícito, la sanción se agrava conforme al artículo 350 del Código Penal.</p>
+              </div>
+            </article>
+          <template x-for="(a, _k1905416534) in v.autoridades" :key="_k1905416534">
+            <article style="background: var(--blanco); border: 1px solid var(--gris-20); border-top: 4px solid var(--guinda-100); padding: 26px 24px; display: flex; flex-direction: column; box-shadow: 0 4px 8px rgba(26,26,26,0.06)">
+              <div style="height: 76px; margin-bottom: 18px; display: flex; align-items: center" x-html="a.logoEl"></div>
+              <span style="font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700" x-html="a.rol"></span>
+              <h3 style="margin: 8px 0 4px; font-family: Cabin, Roboto, sans-serif; font-size: 26px; font-weight: 700; color: var(--guinda-100); line-height: 1.2" x-html="a.sigla"></h3>
+              <p style="margin: 0 0 18px; font-size: 16px; line-height: 1.5; color: var(--gris-100)" x-html="a.nombre"></p>
+              <ul style="margin: 0 0 20px; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px">
+                <template x-for="(f, _k1791468575) in a.funciones" :key="_k1791468575">
+                  <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start">
+                    <span style="margin-top: 8px; width: 8px; height: 8px; background: var(--dorado-100); display: block" aria-hidden="true"></span>
+                    <span style="font-size: 17px; line-height: 1.55" x-html="f.texto"></span>
+                  </li>
+                </template>
+              </ul>
+              <div style="margin-top: auto; border-top: 1px solid var(--gris-20); padding-top: 16px">
+                <span style="display: block; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 8px">Fundamento</span>
+                <p style="margin: 0; font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="a.fundamento"></p>
+                <p x-show="a.tieneAviso" style="margin: 14px 0 0; background: var(--marfil); border-left: 3px solid var(--dorado-100); padding: 12px 16px; font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="a.aviso"></p>
+              </div>
+            </article>
+          </template>
         </div>
       </div>
     </section>
 
-    <section id="verificador" style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 60px) 24px; scroll-margin-top: 72px">
+    <section style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 60px) 24px; scroll-margin-top: 72px" id="verificador">
       <div style="max-width: 42em; margin-bottom: 28px">
         <h2 style="margin: 0 0 12px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(27px, 3.2vw, 36px); line-height: 1.15; font-weight: 700; color: var(--guinda-100)">Verificar acreditaciones</h2>
         <p style="margin: 0; font-size: 19px; line-height: 1.6">Quien pode, derribe, trasplante o dictamine arbolado urbano debe tener acreditación vigente de SEDEMA. Antes de contratar o de aceptar un dictamen, verifícalo.</p>
@@ -179,65 +514,81 @@
             <h3 style="margin: 0 0 8px; font-size: 22px; font-weight: 700; color: var(--guinda-100)">Consulta el padrón</h3>
             <p style="margin: 0 0 22px; font-size: 17px; line-height: 1.55; color: var(--gris-100)">Busca por folio o por nombre completo. La acreditación es información pública conforme al artículo 6 fracción I de la Ley de Transparencia, Acceso a la Información Pública y Rendición de Cuentas de la Ciudad de México.</p>
 
-            <div role="tablist" aria-label="Forma de búsqueda" style="display: flex; gap: 4px; border-bottom: 1px solid var(--gris-20); margin-bottom: 22px">
-              <sc-for list="{{ pestanas }}" as="p" hint-placeholder-count="2">
-                <button role="tab" aria-selected="{{ p.activo }}" onClick="{{ p.activar }}" style="background: transparent; border: 0; border-bottom: 3px solid {{ p.borde }}; padding: 12px 16px; font-family: Roboto, sans-serif; font-size: 17px; font-weight: 700; color: {{ p.color }}; cursor: pointer; min-height: 44px">{{ p.etiqueta }}</button>
-              </sc-for>
+            <div style="display: flex; gap: 4px; border-bottom: 1px solid var(--gris-20); margin-bottom: 22px" role="tablist" aria-label="Forma de búsqueda">
+              
+                <button style="background: transparent; border: 0; border-bottom: 3px solid var(--guinda-100); padding: 12px 16px; font-family: Roboto, sans-serif; font-size: 17px; font-weight: 700; color: var(--guinda-100); cursor: pointer; min-height: 44px" role="tab" aria-selected="true" onclick="() => this.setState({ pestana: p.id, resultado: null })" :aria-selected="p.activo" :onclick="p.activar" x-html="p.etiqueta" data-pr :style="`background: transparent; border: 0; border-bottom: 3px solid ${p.borde}; padding: 12px 16px; font-family: Roboto, sans-serif; font-size: 17px; font-weight: 700; color: ${p.color}; cursor: pointer; min-height: 44px`">Por número de folio</button>
+              
+                <button style="background: transparent; border: 0; border-bottom: 3px solid transparent; padding: 12px 16px; font-family: Roboto, sans-serif; font-size: 17px; font-weight: 700; color: var(--gris-100); cursor: pointer; min-height: 44px" role="tab" onclick="() => this.setState({ pestana: p.id, resultado: null })" :aria-selected="p.activo" :onclick="p.activar" x-html="p.etiqueta" data-pr :style="`background: transparent; border: 0; border-bottom: 3px solid ${p.borde}; padding: 12px 16px; font-family: Roboto, sans-serif; font-size: 17px; font-weight: 700; color: ${p.color}; cursor: pointer; min-height: 44px`">Por nombre</button>
+              <template x-for="(p, _k280156573) in v.pestanas" :key="_k280156573">
+                <button role="tab" :aria-selected="p.activo" :onclick="p.activar" x-html="p.etiqueta" :style="`background: transparent; border: 0; border-bottom: 3px solid ${p.borde}; padding: 12px 16px; font-family: Roboto, sans-serif; font-size: 17px; font-weight: 700; color: ${p.color}; cursor: pointer; min-height: 44px`"></button>
+              </template>
             </div>
 
             <div style="display: flex; gap: 16px; align-items: flex-end; flex-wrap: wrap">
               <div style="flex: 2 1 220px">
-                <label for="consulta" style="display: block; font-size: 16px; font-weight: 700; margin-bottom: 8px">{{ etiquetaCampo }}</label>
-                <input type="text" id="consulta" value="{{ consulta }}" onChange="{{ escribir }}" placeholder="{{ ejemploCampo }}" autocomplete="off" style="width: 100%; box-sizing: border-box; font-family: Roboto, sans-serif; font-size: 17px; padding: 12px 14px; border: 1px solid var(--gris-40); border-radius: 4px; min-height: 48px; background: var(--blanco); color: var(--gris-100)">
+                <label style="display: block; font-size: 16px; font-weight: 700; margin-bottom: 8px" for="consulta" x-html="v.etiquetaCampo">Número de folio</label>
+                <input style="width: 100%; box-sizing: border-box; font-family: Roboto, sans-serif; font-size: 17px; padding: 12px 14px; border: 1px solid var(--gris-40); border-radius: 4px; min-height: 48px; background: var(--blanco); color: var(--gris-100)" type="text" id="consulta" onchange="e => this.setState({ consulta: e.target.value })" placeholder="SEDEMA-POD-2024-00125" autocomplete="off" :value="v.consulta" :onchange="v.escribir" :placeholder="v.ejemploCampo">
               </div>
               <div style="flex: 1 1 150px">
-                <label for="tipo" style="display: block; font-size: 16px; font-weight: 700; margin-bottom: 8px">Tipo</label>
-                <select id="tipo" value="{{ tipo }}" onChange="{{ cambiarTipo }}" style="width: 100%; box-sizing: border-box; font-family: Roboto, sans-serif; font-size: 17px; padding: 12px 14px; border: 1px solid var(--gris-40); border-radius: 4px; min-height: 48px; background: var(--blanco); color: var(--gris-100)">
+                <label style="display: block; font-size: 16px; font-weight: 700; margin-bottom: 8px" for="tipo">Tipo</label>
+                <select style="width: 100%; box-sizing: border-box; font-family: Roboto, sans-serif; font-size: 17px; padding: 12px 14px; border: 1px solid var(--gris-40); border-radius: 4px; min-height: 48px; background: var(--blanco); color: var(--gris-100)" id="tipo" value="cualquiera" onchange="e => this.setState({ tipo: e.target.value })" :value="v.tipo" :onchange="v.cambiarTipo">
                   <option value="cualquiera">Cualquiera</option>
                   <option value="podador">Podador</option>
                   <option value="dictaminador">Dictaminador</option>
                 </select>
               </div>
-              <button onClick="{{ verificar }}" style="background: var(--guinda-100); color: var(--blanco); border: 0; border-radius: 4px; padding: 14px 26px; font-family: Roboto, sans-serif; font-size: 17px; font-weight: 700; cursor: pointer; min-height: 48px; white-space: nowrap; transition: background 150ms ease" style-hover="background: var(--guinda-oscuro)">Verificar</button>
+              <button class="ih9" style="background: var(--guinda-100); color: var(--blanco); border: 0; border-radius: 4px; padding: 14px 26px; font-family: Roboto, sans-serif; font-size: 17px; font-weight: 700; cursor: pointer; min-height: 48px; white-space: nowrap; transition: background 150ms ease" onclick="() => {
+        const q = st.consulta.trim().toLowerCase();
+        if (!q) { this.setState({ resultado: null }); return; }
+        const hit = PADRON.find(p => {
+          const campo = st.pestana === &quot;folio&quot; ? p.folio : p.nombre;
+          const coincide = campo.toLowerCase().indexOf(q) > -1;
+          const tipoOk = st.tipo === &quot;cualquiera&quot; || st.tipo === p.tipo;
+          return coincide &amp;&amp; tipoOk;
+        });
+        this.setState({ resultado: hit || { estado: &quot;ninguna&quot; } });
+      }" :onclick="v.verificar">Verificar</button>
             </div>
 
             <div style="margin-top: 18px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap">
               <span style="font-size: 16px; color: var(--gris-100)">Prueba con un folio:</span>
-              <sc-for list="{{ ejemplos }}" as="e" hint-placeholder-count="3">
-                <button onClick="{{ e.usar }}" style="background: var(--gris-10); border: 1px solid var(--gris-40); border-radius: 4px; padding: 8px 12px; font-family: Roboto, sans-serif; font-size: 15px; color: var(--gris-100); cursor: pointer; min-height: 44px; transition: border-color 150ms ease" style-hover="border-color: var(--guinda-100); color: var(--guinda-100)">{{ e.folio }}</button>
-              </sc-for>
+              
+                <button class="ih13" style="background: var(--gris-10); border: 1px solid var(--gris-40); border-radius: 4px; padding: 8px 12px; font-family: Roboto, sans-serif; font-size: 15px; color: var(--gris-100); cursor: pointer; min-height: 44px; transition: border-color 150ms ease" onclick="() => this.setState({ pestana: &quot;folio&quot;, consulta: p.folio, resultado: null })" :onclick="e.usar" x-html="e.folio" data-pr>SEDEMA-POD-2024-00125</button>
+              
+                <button class="ih13" style="background: var(--gris-10); border: 1px solid var(--gris-40); border-radius: 4px; padding: 8px 12px; font-family: Roboto, sans-serif; font-size: 15px; color: var(--gris-100); cursor: pointer; min-height: 44px; transition: border-color 150ms ease" onclick="() => this.setState({ pestana: &quot;folio&quot;, consulta: p.folio, resultado: null })" :onclick="e.usar" x-html="e.folio" data-pr>SEDEMA-POD-2021-00342</button>
+              
+                <button class="ih13" style="background: var(--gris-10); border: 1px solid var(--gris-40); border-radius: 4px; padding: 8px 12px; font-family: Roboto, sans-serif; font-size: 15px; color: var(--gris-100); cursor: pointer; min-height: 44px; transition: border-color 150ms ease" onclick="() => this.setState({ pestana: &quot;folio&quot;, consulta: p.folio, resultado: null })" :onclick="e.usar" x-html="e.folio" data-pr>SEDEMA-DIC-2022-00521</button>
+              <template x-for="(e, _k1475623904) in v.ejemplos" :key="_k1475623904">
+                <button class="ih13" style="background: var(--gris-10); border: 1px solid var(--gris-40); border-radius: 4px; padding: 8px 12px; font-family: Roboto, sans-serif; font-size: 15px; color: var(--gris-100); cursor: pointer; min-height: 44px; transition: border-color 150ms ease" :onclick="e.usar" x-html="e.folio"></button>
+              </template>
             </div>
 
             <div style="margin-top: 22px; border-top: 1px solid var(--gris-20); padding-top: 18px; display: flex; gap: 20px; flex-wrap: wrap; font-size: 16px; color: var(--gris-100)">
-              <span style="display: inline-flex; align-items: center; gap: 8px"><span aria-hidden="true" style="width: 10px; height: 10px; background: var(--estado-exito); display: inline-block"></span>Vigente</span>
-              <span style="display: inline-flex; align-items: center; gap: 8px"><span aria-hidden="true" style="width: 10px; height: 10px; background: var(--estado-alerta); display: inline-block"></span>Vencida</span>
-              <span style="display: inline-flex; align-items: center; gap: 8px"><span aria-hidden="true" style="width: 10px; height: 10px; background: var(--estado-error); display: inline-block"></span>Suspendida</span>
-              <span style="display: inline-flex; align-items: center; gap: 8px"><span aria-hidden="true" style="width: 10px; height: 10px; background: var(--gris-60); display: inline-block"></span>No registrada</span>
+              <span style="display: inline-flex; align-items: center; gap: 8px"><span style="width: 10px; height: 10px; background: var(--estado-exito); display: inline-block" aria-hidden="true"></span>Vigente</span>
+              <span style="display: inline-flex; align-items: center; gap: 8px"><span style="width: 10px; height: 10px; background: var(--estado-alerta); display: inline-block" aria-hidden="true"></span>Vencida</span>
+              <span style="display: inline-flex; align-items: center; gap: 8px"><span style="width: 10px; height: 10px; background: var(--estado-error); display: inline-block" aria-hidden="true"></span>Suspendida</span>
+              <span style="display: inline-flex; align-items: center; gap: 8px"><span style="width: 10px; height: 10px; background: var(--gris-60); display: inline-block" aria-hidden="true"></span>No registrada</span>
             </div>
           </div>
 
-          <sc-if value="{{ hayResultado }}" hint-placeholder-val="{{ false }}">
-            <div role="status" style="margin-top: 22px; background: var(--blanco); border: 1px solid var(--gris-20); border-top: 4px solid {{ resColor }}">
+          <div x-show="v.hayResultado" style="margin-top: 22px; background: var(--blanco); border: 1px solid var(--gris-20); border-top: 4px solid var(--gris-60); display:none" role="status" :style="`margin-top: 22px; background: var(--blanco); border: 1px solid var(--gris-20); border-top: 4px solid ${v.resColor}`">
               <div style="padding: 22px clamp(20px, 3vw, 30px); border-bottom: 1px solid var(--gris-20)">
                 <span style="display: block; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 8px">Resultado de la consulta</span>
-                <h3 style="margin: 0 0 6px; font-size: 25px; font-weight: 700; color: {{ resColor }}; line-height: 1.25">{{ resTitulo }}</h3>
-                <p style="margin: 0; font-size: 18px; line-height: 1.55">{{ resSub }}</p>
+                <h3 style="margin: 0 0 6px; font-size: 25px; font-weight: 700; color: var(--gris-60); line-height: 1.25" x-html="v.resTitulo" :style="`margin: 0 0 6px; font-size: 25px; font-weight: 700; color: ${v.resColor}; line-height: 1.25`"></h3>
+                <p style="margin: 0; font-size: 18px; line-height: 1.55" x-html="v.resSub"></p>
               </div>
-              <sc-if value="{{ hayDatos }}" hint-placeholder-val="{{ false }}">
-                <dl style="margin: 0; padding: 22px clamp(20px, 3vw, 30px); display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 20px">
-                  <sc-for list="{{ resDatos }}" as="d" hint-placeholder-count="5">
+              <dl x-show="v.hayDatos" style="margin: 0; padding: 22px clamp(20px, 3vw, 30px); display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 20px; display:none">
+                  <template x-for="(d, _k974105263) in v.resDatos" :key="_k974105263">
                     <div>
-                      <dt style="font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 6px">{{ d.clave }}</dt>
-                      <dd style="margin: 0; font-size: 18px; font-weight: 700; color: var(--gris-100); line-height: 1.4">{{ d.valor }}</dd>
+                      <dt style="font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 6px" x-html="d.clave"></dt>
+                      <dd style="margin: 0; font-size: 18px; font-weight: 700; color: var(--gris-100); line-height: 1.4" x-html="d.valor"></dd>
                     </div>
-                  </sc-for>
+                  </template>
                 </dl>
-              </sc-if>
-              <p style="margin: 0; padding: 0 clamp(20px, 3vw, 30px) 22px; font-size: 16px; line-height: 1.6; color: var(--gris-100)">{{ resNota }}</p>
+              <p style="margin: 0; padding: 0 clamp(20px, 3vw, 30px) 22px; font-size: 16px; line-height: 1.6; color: var(--gris-100)" x-html="v.resNota"></p>
             </div>
-          </sc-if>
 
-          <div role="alert" style="margin-top: 22px; background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--estado-error); padding: 22px 26px">
+          <div style="margin-top: 22px; background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--estado-error); padding: 22px 26px" role="alert">
             <span style="display: block; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--estado-error); margin-bottom: 8px">Alerta grave</span>
             <strong style="display: block; font-size: 19px; margin-bottom: 8px; color: var(--negro)">Una credencial con tachaduras o que no coincide con la persona no es válida</strong>
             <span style="font-size: 17px; line-height: 1.6">Debe traer fotografía, huella digital, folio, vigencia y firma del titular de SEDEMA. Quien solo recoge esquilmos y limpia está exento de acreditación, pero quien ejecuta y supervisa los cortes siempre debe estar acreditado.</span>
@@ -262,19 +613,19 @@
             <h3 style="margin: 0 0 12px; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--gris-100)">Podador y dictaminador no son lo mismo</h3>
             <p style="margin: 0 0 12px; font-size: 17px; line-height: 1.55"><strong style="color: var(--guinda-100)">El podador</strong> ejecuta la poda, el derribo y el trasplante.</p>
             <p style="margin: 0 0 12px; font-size: 17px; line-height: 1.55"><strong style="color: var(--guinda-100)">El dictaminador</strong> emite el dictamen técnico que justifica la intervención. Requiere licenciatura en biología, ingeniería forestal, agronomía o carrera afín, dos años de experiencia y el curso oficial.</p>
-            <a href="acreditate.dc.html" style="font-size: 17px; font-weight: 700">Quiero acreditarme: requisitos y trámite →</a>
+            <a style="font-size: 17px; font-weight: 700" href="responsabilidades/acreditate.html">Quiero acreditarme: requisitos y trámite →</a>
           </div>
 
           <div style="margin-top: 20px; background: var(--guinda-100); color: var(--blanco); padding: 22px">
             <h3 style="margin: 0 0 10px; font-size: 20px; font-weight: 700; color: var(--blanco)">¿Te ofrecieron servicios sin acreditación?</h3>
             <p style="margin: 0 0 16px; font-size: 17px; line-height: 1.55; color: var(--blanco)">Denuncia ante la Procuraduría Ambiental. Tu denuncia es ciudadana y puede ser anónima.</p>
-            <a href="https://www.paot.cdmx.gob.mx" target="_blank" rel="noopener" style="background: var(--blanco); color: var(--guinda-100); border-radius: 4px; padding: 13px 20px; font-size: 17px; font-weight: 700; text-decoration: none; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center; transition: background 150ms ease" style-hover="background: var(--dorado-20); color: var(--guinda-oscuro)">Denunciar en la PAOT</a>
+            <a class="ih17" style="background: var(--blanco); color: var(--guinda-100); border-radius: 4px; padding: 13px 20px; font-size: 17px; font-weight: 700; text-decoration: none; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center; transition: background 150ms ease" href="https://www.paot.cdmx.gob.mx" target="_blank" rel="noopener">Denunciar en la PAOT</a>
           </div>
         </aside>
       </div>
     </section>
 
-    <section id="denunciar" style="background: var(--gris-10); border-top: 1px solid var(--gris-20); scroll-margin-top: 72px">
+    <section style="background: var(--gris-10); border-top: 1px solid var(--gris-20); scroll-margin-top: 72px" id="denunciar">
       <div style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 60px) 24px">
         <div style="max-width: 44em; margin-bottom: 28px">
           <h2 style="margin: 0 0 12px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(27px, 3.2vw, 36px); line-height: 1.15; font-weight: 700; color: var(--guinda-100)">Cómo denuncias ante la PAOT</h2>
@@ -285,11 +636,11 @@
           <h3 style="margin: 0 0 20px; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--gris-100)">Las dos preguntas que debes hacer</h3>
           <ol style="list-style: none; margin: 0 0 24px; padding: 0; display: flex; flex-direction: column; gap: 18px">
             <li style="display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 18px; align-items: start">
-              <span aria-hidden="true" style="font-family: Cabin, Roboto, sans-serif; font-size: 32px; font-weight: 700; color: var(--dorado-100); line-height: 1">01</span>
+              <span style="font-family: Cabin, Roboto, sans-serif; font-size: 32px; font-weight: 700; color: var(--dorado-100); line-height: 1" aria-hidden="true">01</span>
               <span style="font-size: clamp(19px, 2vw, 22px); line-height: 1.45; font-weight: 700; color: var(--guinda-100)">¿Cuenta con la autorización de la Alcaldía o de SEDEMA?</span>
             </li>
             <li style="display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 18px; align-items: start">
-              <span aria-hidden="true" style="font-family: Cabin, Roboto, sans-serif; font-size: 32px; font-weight: 700; color: var(--dorado-100); line-height: 1">02</span>
+              <span style="font-family: Cabin, Roboto, sans-serif; font-size: 32px; font-weight: 700; color: var(--dorado-100); line-height: 1" aria-hidden="true">02</span>
               <span style="font-size: clamp(19px, 2vw, 22px); line-height: 1.45; font-weight: 700; color: var(--guinda-100)">¿Cuenta con acreditación de podador emitida por SEDEMA?</span>
             </li>
           </ol>
@@ -311,12 +662,12 @@
           <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-top: 4px solid var(--guinda-100); padding: 24px 22px">
             <h4 style="margin: 0 0 10px; font-size: 20px; font-weight: 700; color: var(--guinda-100)">Por internet</h4>
             <p style="margin: 0 0 14px; font-size: 17px; line-height: 1.55">Desde el portal de la Procuraduría, a cualquier hora.</p>
-            <a href="https://www.paot.cdmx.gob.mx" target="_blank" rel="noopener" style="font-size: 17px; font-weight: 700">paot.cdmx.gob.mx →</a>
+            <a style="font-size: 17px; font-weight: 700" href="https://www.paot.cdmx.gob.mx" target="_blank" rel="noopener">paot.cdmx.gob.mx →</a>
           </li>
           <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-top: 4px solid var(--guinda-100); padding: 24px 22px">
             <h4 style="margin: 0 0 10px; font-size: 20px; font-weight: 700; color: var(--guinda-100)">Por teléfono</h4>
             <p style="margin: 0 0 12px; font-size: 17px; line-height: 1.55">Llama y presenta tu denuncia por voz.</p>
-            <a href="tel:5552650780" style="font-size: 26px; font-weight: 700; text-decoration: none; color: var(--guinda-100); line-height: 1.2">55 5265 0780</a>
+            <a style="font-size: 26px; font-weight: 700; text-decoration: none; color: var(--guinda-100); line-height: 1.2" href="tel:5552650780">55 5265 0780</a>
           </li>
           <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-top: 4px solid var(--guinda-100); padding: 24px 22px">
             <h4 style="margin: 0 0 10px; font-size: 20px; font-weight: 700; color: var(--guinda-100)">Presencial</h4>
@@ -325,20 +676,20 @@
           </li>
         </ul>
 
-        <div role="status" style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--estado-info); padding: 22px 26px; margin-bottom: 20px">
+        <div style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--estado-info); padding: 22px 26px; margin-bottom: 20px" role="status">
           <strong style="display: block; font-size: 19px; margin-bottom: 8px; color: var(--negro)">Qué hace la PAOT con tu denuncia</strong>
           <span style="font-size: 18px; line-height: 1.6">Investiga la legalidad de las acciones de autoridades y de particulares. No atiende emergencias ni detiene los trabajos en el momento.</span>
         </div>
 
-        <div role="alert" style="background: var(--guinda-100); color: var(--blanco); padding: clamp(24px, 3vw, 32px); margin-bottom: 20px">
+        <div style="background: var(--guinda-100); color: var(--blanco); padding: clamp(24px, 3vw, 32px); margin-bottom: 20px" role="alert">
           <strong style="display: block; font-size: clamp(21px, 2.4vw, 26px); margin-bottom: 12px; color: var(--blanco); line-height: 1.25">Si es una emergencia, llama al 911</strong>
           <p style="margin: 0 0 16px; font-size: 18px; line-height: 1.6; color: var(--blanco); max-width: 46em">Los oficiales de la Secretaría de Seguridad Ciudadana están facultados para pedirle al probable infractor que muestre sus acreditaciones y autorizaciones.</p>
           <p style="margin: 0; padding: 14px 18px; background: var(--blanco); color: var(--guinda-100); font-size: 18px; line-height: 1.55; font-weight: 700; max-width: 46em">Recuerda: no detengas los trabajos antes de que los oficiales se presenten. Para ellos es importante la flagrancia de los hechos.</p>
         </div>
 
         <div style="display: flex; gap: 16px; flex-wrap: wrap">
-          <a href="https://www.paot.cdmx.gob.mx" target="_blank" rel="noopener" style="background: var(--guinda-100); color: var(--blanco); border-radius: 4px; padding: 14px 26px; font-size: 17px; font-weight: 700; text-decoration: none; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center; transition: background 150ms ease" style-hover="background: var(--guinda-oscuro); color: var(--blanco)">Presentar la denuncia</a>
-          <a href="#verificador" style="background: transparent; color: var(--guinda-100); border: 2px solid var(--dorado-100); border-radius: 4px; padding: 13px 25px; font-size: 17px; font-weight: 700; text-decoration: none; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center; transition: background 150ms ease" style-hover="background: var(--dorado-20)">Verificar una acreditación</a>
+          <a class="ih4" style="background: var(--guinda-100); color: var(--blanco); border-radius: 4px; padding: 14px 26px; font-size: 17px; font-weight: 700; text-decoration: none; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center; transition: background 150ms ease" href="https://www.paot.cdmx.gob.mx" target="_blank" rel="noopener">Presentar la denuncia</a>
+          <a class="ih8" style="background: transparent; color: var(--guinda-100); border: 2px solid var(--dorado-100); border-radius: 4px; padding: 13px 25px; font-size: 17px; font-weight: 700; text-decoration: none; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center; transition: background 150ms ease" href="#verificador">Verificar una acreditación</a>
         </div>
 
         <p style="margin: 22px 0 0; padding-left: 16px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)"><span style="font-weight: 700">Artículo 5, fracción I, de la Ley Orgánica de la Procuraduría Ambiental y del Ordenamiento Territorial de la Ciudad de México</span> · la PAOT recibe y atiende denuncias ciudadanas por violaciones a la normatividad ambiental y de ordenamiento territorial</p>
@@ -347,210 +698,96 @@
 
   </main>
 
-  <dc-import name="Utilidad" fecha="18 de agosto de 2026" hint-size="100%,200px"></dc-import>
+  
 
-  <dc-import name="PieSitio" hint-size="100%,440px"></dc-import>
+
+<section x-data="dcUtilidad({&quot;fecha&quot;:&quot;18 de agosto de 2026&quot;})" style="background: var(--gris-10); border-top: 1px solid var(--gris-20); border-bottom: 1px solid var(--gris-20); font-family: Roboto, system-ui, sans-serif; color: var(--gris-100)" aria-labelledby="utilidad">
+  <div style="max-width: 1240px; margin: 0 auto; padding: clamp(26px, 3vw, 36px) 24px; display: flex; gap: 28px; flex-wrap: wrap; align-items: flex-start; justify-content: space-between">
+
+    <div style="flex: 1 1 320px; max-width: 42em">
+      <h2 style="margin: 0 0 10px; font-family: Cabin, Roboto, sans-serif; font-size: 23px; line-height: 1.25; font-weight: 700; color: var(--guinda-100)" id="utilidad">¿Te sirvió esta página?</h2>
+      <div x-show="v.sinResponder">
+          <p style="margin: 0 0 16px; font-size: 17px; line-height: 1.6">Tu respuesta nos dice qué información falta o no se entiende. No pedimos datos personales.</p>
+          <div style="display: flex; gap: 12px; flex-wrap: wrap">
+            <button class="ih9" style="background: var(--guinda-100); color: var(--blanco); border: 0; border-radius: 4px; padding: 13px 26px; font-family: Roboto, sans-serif; font-size: 17px; font-weight: 700; cursor: pointer; min-height: 48px; transition: background 150ms ease" onclick="() => this.setState({ voto: &quot;si&quot; })" :onclick="v.votarSi">Sí</button>
+            <button class="ih8" style="background: transparent; color: var(--guinda-100); border: 2px solid var(--dorado-100); border-radius: 4px; padding: 12px 25px; font-family: Roboto, sans-serif; font-size: 17px; font-weight: 700; cursor: pointer; min-height: 48px; transition: background 150ms ease" onclick="() => this.setState({ voto: &quot;no&quot; })" :onclick="v.votarNo">No</button>
+          </div>
+        </div>
+      <p x-show="v.dijoSi" style="margin: 0; font-size: 18px; line-height: 1.6; background: var(--blanco); border-left: 4px solid var(--estado-exito); padding: 16px 20px; display:none" role="status">Gracias. Si algo quedó pendiente, puedes escribir a <a href="mailto:atencionciudadana@sedema.cdmx.gob.mx">atencionciudadana@sedema.cdmx.gob.mx</a>.</p>
+      <div x-show="v.dijoNo" style="background: var(--blanco); border-left: 4px solid var(--estado-alerta); padding: 16px 20px; display:none" role="status">
+          <p style="margin: 0 0 10px; font-size: 18px; line-height: 1.6">Gracias por decirlo. Mientras lo corregimos, estas son las dos vías directas:</p>
+          <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px">
+            <li style="font-size: 17px; line-height: 1.55">Atención ciudadana de SEDEMA · <strong style="color: var(--guinda-100)">55 5345 8187</strong></li>
+            <li style="font-size: 17px; line-height: 1.55">LOCATEL, las veinticuatro horas · <strong style="color: var(--guinda-100)">55 5658 1111</strong></li>
+          </ul>
+        </div>
+    </div>
+
+    <dl style="margin: 0; padding: 0; flex: 0 1 260px; border-left: 3px solid var(--dorado-100); padding-left: 18px">
+      <dt style="font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--gris-100); margin-bottom: 4px">Última actualización</dt>
+      <dd style="margin: 0 0 14px; font-size: 18px; font-weight: 700; color: var(--gris-100)" x-html="v.fecha">18 de agosto de 2026</dd>
+      <dt style="font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--gris-100); margin-bottom: 4px">Responsable de la información</dt>
+      <dd style="margin: 0; font-size: 17px; line-height: 1.5; color: var(--gris-100)">Secretaría del Medio Ambiente de la Ciudad de México</dd>
+    </dl>
+
+  </div>
+</section>
+
+
+
+  
+
+
+<footer style="background: var(--guinda-oscuro); color: var(--blanco)">
+  <div style="height: 4px; background: var(--dorado-100)"></div>
+  <div style="max-width: 1240px; margin: 0 auto; padding: clamp(40px, 5vw, 56px) 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 40px">
+
+    <div>
+      <h2 style="margin: 0 0 14px; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--dorado-60)">SEDEMA</h2>
+      <p style="margin: 0 0 12px; font-size: 17px; line-height: 1.6; color: var(--blanco)">Secretaría del Medio Ambiente de la Ciudad de México</p>
+      <p style="margin: 0; font-size: 17px; line-height: 1.6; color: var(--blanco)">Plaza de la Constitución 1, 3.er piso<br>Centro, Cuauhtémoc<br>Ciudad de México, CP 06000</p>
+    </div>
+
+    <div>
+      <h2 style="margin: 0 0 14px; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--dorado-60)">Atención ciudadana</h2>
+      <p style="margin: 0 0 12px; font-size: 17px; line-height: 1.6; color: var(--blanco)">Atención ciudadana · 55 5345 8187<br>55 5345 8188<br>LOCATEL · 55 5658 1111</p>
+      <p style="margin: 0 0 12px; font-size: 17px; line-height: 1.6"><a class="ih10" style="color: var(--blanco); text-decoration: underline; text-underline-offset: 3px; word-break: break-word" href="mailto:atencionciudadana@sedema.cdmx.gob.mx">atencionciudadana@sedema.cdmx.gob.mx</a></p>
+      <p style="margin: 0; font-size: 17px; line-height: 1.6; color: var(--dorado-40)">Atención presencial: martes, de 10 a 13 h</p>
+    </div>
+
+    <div>
+      <h2 style="margin: 0 0 14px; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--dorado-60)">Denuncias</h2>
+      <p style="margin: 0 0 12px; font-size: 17px; line-height: 1.6; color: var(--blanco)">Emergencias · 911<br>PAOT · 55 5265 0780<br>Fiscalía Ambiental · 55 5345 5000</p>
+      <p style="margin: 0"><a class="ih10" style="font-size: 17px; line-height: 1.5; color: var(--blanco); text-decoration: underline; text-underline-offset: 3px" href="https://www.paot.cdmx.gob.mx" target="_blank" rel="noopener">denuncia.paot.cdmx.gob.mx</a></p>
+    </div>
+
+    <div>
+      <h2 style="margin: 0 0 14px; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--dorado-60)">Marco normativo</h2>
+      <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px">
+        <li><a class="ih10" style="font-size: 17px; line-height: 1.5; color: var(--blanco); text-decoration: underline; text-underline-offset: 3px" href="https://data.consejeria.cdmx.gob.mx/index.php/leyes/leyes#ley-ambiental-de-la-ciudad-de-m%C3%A9xico" target="_blank" rel="noopener">Ley Ambiental de Protección a la Tierra en el Distrito Federal</a></li>
+        <li><a class="ih10" style="font-size: 17px; line-height: 1.5; color: var(--blanco); text-decoration: underline; text-underline-offset: 3px" href="http://data.sedema.cdmx.gob.mx/sedema/images/archivos/sedema/leyes-reglamentos/normas/locales/NADF-001-RNAT-2016.pdf" target="_blank" rel="noopener">NADF-001-RNAT-2015 · poda, derribo y trasplante</a></li>
+        <li><a class="ih10" style="font-size: 17px; line-height: 1.5; color: var(--blanco); text-decoration: underline; text-underline-offset: 3px" href="http://data.sedema.cdmx.gob.mx/sitios/conadf/documentos/NADF-006-RNAT-2016.pdf" target="_blank" rel="noopener">NADF-006-RNAT-2012 · plantación y mantenimiento</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div style="border-top: 1px solid rgba(255,255,255,0.2)">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 20px 24px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap">
+      <span style="font-size: 15px; color: var(--dorado-40)">Gobierno de la Ciudad de México · Secretaría del Medio Ambiente · 2026</span>
+      <ul style="margin: 0; padding: 0; list-style: none; display: flex; align-items: center; gap: 8px">
+        <li><a class="ih11" style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border: 1px solid rgba(255,255,255,0.35); border-radius: 4px; color: var(--blanco); transition: background 150ms ease" href="https://x.com/SEDEMA_CDMX" target="_blank" rel="noopener" aria-label="SEDEMA en X"><svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor" aria-hidden="true"><path d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.41l-5.8-7.58-6.64 7.58H.47l8.6-9.83L0 1.15h7.59l5.25 6.93ZM17.61 20.64h2.04L6.49 3.24H4.3Z"></path></svg></a></li>
+        <li><a class="ih11" style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border: 1px solid rgba(255,255,255,0.35); border-radius: 4px; color: var(--blanco); transition: background 150ms ease" href="https://www.facebook.com/SEDEMACDMX" target="_blank" rel="noopener" aria-label="SEDEMA en Facebook"><svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor" aria-hidden="true"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.25h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07Z"></path></svg></a></li>
+        <li><a class="ih11" style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border: 1px solid rgba(255,255,255,0.35); border-radius: 4px; color: var(--blanco); transition: background 150ms ease" href="https://www.instagram.com/sedema_cdmx" target="_blank" rel="noopener" aria-label="SEDEMA en Instagram"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"></circle></svg></a></li>
+        <li><a class="ih11" style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border: 1px solid rgba(255,255,255,0.35); border-radius: 4px; color: var(--blanco); transition: background 150ms ease" href="https://www.youtube.com/@SEDEMACDMX" target="_blank" rel="noopener" aria-label="SEDEMA en YouTube"><svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor" aria-hidden="true"><path d="M23.5 6.85a3.02 3.02 0 0 0-2.12-2.14C19.5 4.2 12 4.2 12 4.2s-7.5 0-9.38.51A3.02 3.02 0 0 0 .5 6.85C0 8.74 0 12 0 12s0 3.26.5 5.15a3.02 3.02 0 0 0 2.12 2.14C4.5 19.8 12 19.8 12 19.8s7.5 0 9.38-.51a3.02 3.02 0 0 0 2.12-2.14C24 15.26 24 12 24 12s0-3.26-.5-5.15ZM9.55 15.57V8.43L15.82 12l-6.27 3.57Z"></path></svg></a></li>
+        <li><a class="ih11" style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border: 1px solid rgba(255,255,255,0.35); border-radius: 4px; color: var(--blanco); transition: background 150ms ease" href="https://www.tiktok.com/@sedemacdmx" target="_blank" rel="noopener" aria-label="SEDEMA en TikTok"><svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor" aria-hidden="true"><path d="M16.6 0h-3.3v16.2a2.85 2.85 0 1 1-2.85-2.85c.3 0 .58.05.85.13v-3.36a6.2 6.2 0 0 0-.85-.06 6.2 6.2 0 1 0 6.2 6.2V6.63a6.7 6.7 0 0 0 4.05 1.35V4.62A4.05 4.05 0 0 1 16.6 0Z"></path></svg></a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+
 </div>
 
-</x-dc>
-<script type="text/x-dc" data-dc-script>
-const LEY = "Ley Ambiental de Protección a la Tierra en el Distrito Federal";
-const N = "NADF-001-RNAT-2015";
 
-const FILTROS = [
-  { id: "todos", etiqueta: "Todas" },
-  { id: "primaria", etiqueta: "Vialidad primaria" },
-  { id: "secundaria", etiqueta: "Vialidad secundaria" },
-  { id: "privado", etiqueta: "Predio privado" },
-  { id: "protegida", etiqueta: "Áreas protegidas" },
-  { id: "emergencia", etiqueta: "Emergencia" },
-  { id: "denuncia", etiqueta: "Denuncia" }
-];
-
-const AUTORIDADES = [
-  {
-    sigla: "SEDEMA",
-    nombre: "Secretaría del Medio Ambiente de la Ciudad de México",
-    rol: "Autoridad ambiental",
-    logos: ["assets/logos/firma-sedema-rgb.jpg"],
-    ambitos: ["primaria", "secundaria", "privado", "protegida"],
-    funciones: [
-      "Emite las normas ambientales y los lineamientos técnicos",
-      "Acredita a podadores y a dictaminadores",
-      "Autoriza derribo, poda y trasplante en proyectos sujetos a evaluación de impacto ambiental",
-      "Administra directamente bosques urbanos, barrancas y áreas naturales protegidas locales"
-    ],
-    fundamento: LEY + ", artículos 7.º, 18, 34, 108, 111, 121 y 136 · Reglamento de Impacto Ambiental y Riesgo, artículos 137 a 141 · " + N
-  },
-  {
-    sigla: "Alcaldías",
-    nombre: "Las dieciséis alcaldías de la Ciudad de México",
-    rol: "Autoridad territorial",
-    marca: "LAS 16 ALCALDÍAS",
-    ambitos: ["secundaria", "privado"],
-    funciones: [
-      "Conservan, mantienen y protegen el arbolado de vialidad secundaria y de los predios de su demarcación",
-      "Autorizan poda, derribo o trasplante por riesgo, saneamiento, mantenimiento o afectación a la infraestructura",
-      "Reciben y resuelven solicitudes ciudadanas en un plazo no mayor a veinte días hábiles",
-      "Toda autorización debe sustentarse en un dictamen técnico"
-    ],
-    fundamento: LEY + ", artículo 106 · Ley Orgánica de Alcaldías, artículo 32 fracción V",
-    aviso: "Excepción: si el árbol está en un bosque urbano, una barranca o un área natural protegida, la competencia es de SEDEMA."
-  },
-  {
-    sigla: "PAOT",
-    nombre: "Procuraduría Ambiental y del Ordenamiento Territorial",
-    rol: "Procuraduría ambiental",
-    logos: ["assets/logos/paot.png"],
-    ambitos: ["denuncia"],
-    funciones: [
-      "Recibe y atiende denuncias ambientales y de ordenamiento territorial",
-      "Formula y valida dictámenes técnicos y periciales de daño ambiental",
-      "Emite opiniones para restauración o compensación ambiental",
-      "Investiga intervenciones irregulares al arbolado"
-    ],
-    fundamento: "Ley Orgánica de la Procuraduría Ambiental y del Ordenamiento Territorial, artículo 5 fracciones I y XV",
-    aviso: "La denuncia es ciudadana y puede ser anónima. No necesitas ser el dueño del predio."
-  },
-  {
-    sigla: "Bomberos",
-    nombre: "Heroico Cuerpo de Bomberos de la Ciudad de México",
-    rol: "Emergencia",
-    logos: ["assets/logos/bomberos.png"],
-    ambitos: ["emergencia"],
-    funciones: [
-      "Secciona y retira árboles cuando representan riesgo inminente para personas o bienes",
-      "Actúa en coordinación con Protección Civil y con la autoridad competente"
-    ],
-    fundamento: "Ley del Heroico Cuerpo de Bomberos de la Ciudad de México, artículo 6 fracción IX",
-    aviso: "El acceso es por el 911. Si el árbol está dañado pero sin riesgo activo, acude a tu alcaldía o a SEDEMA."
-  },
-  {
-    sigla: "Fiscalía Ambiental",
-    nombre: "Fiscalía General de Justicia y Secretaría de Seguridad Ciudadana",
-    rol: "Investigación penal",
-    logos: ["assets/logos/fiscalia.png", "assets/logos/ssc.png"],
-    ambitos: ["denuncia"],
-    funciones: [
-      "Investiga el derribo, la poda o el trasplante que contravienen la normatividad",
-      "Aplica las disposiciones del Código Penal en materia de delitos ambientales",
-      "Actúa en flagrancia cuando hay trabajos sin autorización"
-    ],
-    fundamento: "Código Penal para el Distrito Federal, artículos 343 a 350 · " + LEY + ", artículo 112",
-    aviso: "Si una persona servidora pública participa en el ilícito, la sanción se agrava conforme al artículo 350 del Código Penal."
-  }
-];
-
-// Datos de demostración: el padrón definitivo se conecta al sistema de SEDEMA
-const PADRON = [
-  { folio: "SEDEMA-POD-2024-00125", nombre: "María Fernanda López García", tipo: "podador", estado: "vigente", expedicion: "15 de marzo de 2024", vigencia: "15 de marzo de 2027" },
-  { folio: "SEDEMA-POD-2021-00342", nombre: "Jorge Alberto Ramírez Solís", tipo: "podador", estado: "vencida", expedicion: "2 de febrero de 2021", vigencia: "2 de febrero de 2024" },
-  { folio: "SEDEMA-DIC-2022-00521", nombre: "Claudia Elena Torres Nava", tipo: "dictaminador", estado: "suspendida", expedicion: "9 de junio de 2022", vigencia: "9 de junio de 2025" }
-];
-
-const ESTADOS = {
-  vigente: { color: "var(--estado-exito)", titulo: "Acreditación vigente", sub: "La persona está autorizada para realizar estos trabajos.", nota: "Pide ver la credencial física y confirma que la fotografía corresponda a la persona." },
-  vencida: { color: "var(--cafe)", titulo: "Acreditación vencida", sub: "La persona no puede ejercer hasta renovar su acreditación.", nota: "Si te ofrece servicios con una acreditación vencida, no la contrates y denuncia ante la PAOT." },
-  suspendida: { color: "var(--estado-error)", titulo: "Acreditación suspendida", sub: "La persona no puede realizar trabajos de arbolado.", nota: "Los trabajos ejecutados con una acreditación suspendida son irregulares y procede sanción." },
-  ninguna: { color: "var(--gris-60)", titulo: "No aparece en el padrón", sub: "No encontramos ese folio ni ese nombre en el padrón de SEDEMA.", nota: "Revisa que el dato esté completo. Si la persona insiste en que está acreditada, llama a atención ciudadana de SEDEMA al 55 5345 8187 antes de contratarla." }
-};
-
-class Component extends DCLogic {
-  state = { filtro: "todos", pestana: "folio", consulta: "", tipo: "cualquiera", resultado: null };
-
-  renderVals() {
-    const st = this.state;
-    const lista = st.filtro === "todos" ? AUTORIDADES : AUTORIDADES.filter(a => a.ambitos.indexOf(st.filtro) > -1);
-    const r = st.resultado ? (ESTADOS[st.resultado.estado] || ESTADOS.ninguna) : null;
-
-    return {
-      verdadero: true,
-      filtros: FILTROS.map(f => {
-        const on = st.filtro === f.id;
-        const n = f.id === "todos" ? AUTORIDADES.length : AUTORIDADES.filter(a => a.ambitos.indexOf(f.id) > -1).length;
-        return {
-          etiqueta: f.etiqueta,
-          cuenta: String(n),
-          activo: on,
-          bg: on ? "var(--guinda-100)" : "var(--blanco)",
-          fg: on ? "var(--blanco)" : "var(--gris-100)",
-          borde: on ? "var(--guinda-100)" : "var(--gris-40)",
-          activar: () => this.setState({ filtro: f.id })
-        };
-      }),
-      conteo: lista.length === AUTORIDADES.length
-        ? "Las cinco autoridades"
-        : lista.length === 1 ? "1 autoridad para este caso" : lista.length + " autoridades para este caso",
-      autoridades: lista.map(a => ({
-        sigla: a.sigla,
-        nombre: a.nombre,
-        rol: a.rol,
-        funciones: a.funciones.map(texto => ({ texto })),
-        fundamento: a.fundamento,
-        tieneAviso: !!a.aviso,
-        aviso: a.aviso || "",
-        logoEl: a.logos
-          ? React.createElement(
-              "span",
-              { style: { display: "flex", flexDirection: "column", justifyContent: "center", gap: 10, height: "100%" } },
-              a.logos.map((src, i) => React.createElement("img", {
-                key: i, src, alt: "",
-                style: { maxHeight: a.logos.length > 1 ? 32 : 60, maxWidth: "100%", width: "auto", display: "block" }
-              }))
-            )
-          : React.createElement(
-              "span",
-              { style: { display: "inline-flex", alignItems: "center", height: 44, padding: "0 16px", background: "var(--guinda-100)", color: "var(--blanco)", fontSize: 17, fontWeight: 700, letterSpacing: "0.04em" } },
-              a.marca || ""
-            )
-      })),
-      pestanas: [
-        { id: "folio", etiqueta: "Por número de folio" },
-        { id: "nombre", etiqueta: "Por nombre" }
-      ].map(p => {
-        const on = st.pestana === p.id;
-        return {
-          etiqueta: p.etiqueta,
-          activo: on,
-          color: on ? "var(--guinda-100)" : "var(--gris-100)",
-          borde: on ? "var(--guinda-100)" : "transparent",
-          activar: () => this.setState({ pestana: p.id, resultado: null })
-        };
-      }),
-      etiquetaCampo: st.pestana === "folio" ? "Número de folio" : "Nombre completo",
-      ejemploCampo: st.pestana === "folio" ? "SEDEMA-POD-2024-00125" : "María Fernanda López García",
-      consulta: st.consulta,
-      tipo: st.tipo,
-      escribir: e => this.setState({ consulta: e.target.value }),
-      cambiarTipo: e => this.setState({ tipo: e.target.value }),
-      ejemplos: PADRON.map(p => ({ folio: p.folio, usar: () => this.setState({ pestana: "folio", consulta: p.folio, resultado: null }) })),
-      verificar: () => {
-        const q = st.consulta.trim().toLowerCase();
-        if (!q) { this.setState({ resultado: null }); return; }
-        const hit = PADRON.find(p => {
-          const campo = st.pestana === "folio" ? p.folio : p.nombre;
-          const coincide = campo.toLowerCase().indexOf(q) > -1;
-          const tipoOk = st.tipo === "cualquiera" || st.tipo === p.tipo;
-          return coincide && tipoOk;
-        });
-        this.setState({ resultado: hit || { estado: "ninguna" } });
-      },
-      hayResultado: !!st.resultado,
-      hayDatos: !!(st.resultado && st.resultado.folio),
-      resColor: r ? r.color : "var(--gris-60)",
-      resTitulo: r ? r.titulo : "",
-      resSub: r ? r.sub : "",
-      resNota: r ? r.nota + "" : "",
-      resDatos: st.resultado && st.resultado.folio ? [
-        { clave: "Nombre", valor: st.resultado.nombre },
-        { clave: "Folio", valor: st.resultado.folio },
-        { clave: "Tipo", valor: st.resultado.tipo === "podador" ? "Podador" : "Dictaminador" },
-        { clave: "Expedición", valor: st.resultado.expedicion },
-        { clave: "Vigencia hasta", valor: st.resultado.vigencia }
-      ] : []
-    };
-  }
-}
-</script>
 </body>
 </html>

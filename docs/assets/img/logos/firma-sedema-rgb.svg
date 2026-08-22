@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 120" width="460" height="120" role="img" aria-label="Logotipo pendiente: Firma GCDMX · Secretaría del Medio Ambiente">
+  <defs>
+    <pattern id="d" width="16" height="16" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="16" height="16" fill="#FFFAE9"/>
+      <rect width="8" height="16" fill="#FEF3C7"/>
+    </pattern>
+  </defs>
+  <rect x="1" y="1" width="458" height="118" fill="url(#d)" stroke="#FDC60A" stroke-width="2" stroke-dasharray="7 5"/>
+  <text x="230" y="50.4" text-anchor="middle" font-family="Cabin, Trebuchet MS, sans-serif" font-size="17" font-weight="700" letter-spacing="1.6" fill="#1A1A1A">FALTA EL DATO</text>
+  <text x="230" y="81.60000000000001" text-anchor="middle" font-family="Roboto, Arial, sans-serif" font-size="15" fill="#55585A">Firma GCDMX · Secretaría del Medio Ambiente</text>
+  <text x="230" y="105.6" text-anchor="middle" font-family="Roboto, Arial, sans-serif" font-size="14" fill="#8B6F47">firma-sedema-rgb.svg</text>
+</svg>

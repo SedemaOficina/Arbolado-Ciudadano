@@ -1,40 +1,177 @@
 <!DOCTYPE html>
-<html>
+<html lang="es-MX" data-raiz="../">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
+<title>Viveros de la Ciudad de México · SEDEMA CDMX</title>
+<meta name="description" content="Viveros Nezahualcóyotl y Yecapixtla: dirección, servicios, horarios y cómo solicitar planta.">
+<meta name="author" content="Secretaría del Medio Ambiente de la Ciudad de México">
+<link rel="canonical" href="https://sedemaoficina.github.io/Arbolado-Ciudadano/programas/viveros.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="El ABC del arbolado urbano · SEDEMA CDMX">
+<meta property="og:title" content="Viveros de la Ciudad de México · SEDEMA CDMX">
+<meta property="og:description" content="Viveros Nezahualcóyotl y Yecapixtla: dirección, servicios, horarios y cómo solicitar planta.">
+<meta property="og:url" content="https://sedemaoficina.github.io/Arbolado-Ciudadano/programas/viveros.html">
+<meta property="og:locale" content="es_MX">
+<meta name="theme-color" content="#9D2148">
+<link rel="icon" href="../assets/img/logos/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/sitio.css">
+<style>
+a:hover { color: var(--guinda-oscuro); }
+</style>
+<script src="../assets/js/sitio.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.15.0/dist/cdn.min.js"></script>
 </head>
 <body>
-<x-dc>
-<helmet>
-  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/fonts.css">
-  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/colors.css">
-  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/typography.css">
-  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/spacing.css">
-  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/base.css">
-  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/styles.css">
-  <script src="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/_ds_bundle.js"></script>
-  <script src="./image-slot.js"></script>
-  <style>
-    body { margin: 0; background: var(--blanco); color: var(--gris-100); font-family: Roboto, system-ui, sans-serif; }
-    a { color: var(--guinda-100); text-decoration: underline; text-underline-offset: 2px; }
-    a:hover { color: var(--guinda-oscuro); }
-    *:focus-visible { outline: 3px solid var(--guinda-100); outline-offset: 2px; }
-  </style>
-</helmet>
+
+
 
 <div style="min-height: 100vh; display: flex; flex-direction: column; background: var(--blanco)">
 
-  <dc-import name="CabeceraSitio" activo="programas" hint-size="100%,190px"></dc-import>
+  
 
-  <nav aria-label="Ruta de navegación" style="background: var(--blanco)">
+
+<div x-data="dcCabecera({&quot;activo&quot;:&quot;programas&quot;,&quot;conEmergencia&quot;:false})" style="background: var(--blanco)">
+
+  <a class="if0" style="position: absolute; left: -9999px; top: 0; z-index: 60; background: var(--guinda-100); color: var(--blanco); padding: 12px 20px; font-size: 16px; font-weight: 700; text-decoration: none" href="#contenido">Saltar al contenido</a>
+
+  <header style="border-bottom: 1px solid var(--gris-20)">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 16px 20px; display: flex; align-items: center; gap: clamp(14px, 2vw, 24px); flex-wrap: wrap">
+      <a style="display: block; text-decoration: none" href="../index.html">
+        <img style="height: clamp(38px, 5vw, 50px); width: auto; display: block" src="../assets/img/logos/firma-sedema-rgb.svg" alt="Gobierno de la Ciudad de México · Secretaría del Medio Ambiente">
+      </a>
+      <div class="om-divisor" style="width: 1px; height: 44px; background: var(--gris-20)"></div>
+      <div>
+        <div style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gris-100); font-weight: 700">Guía ciudadana</div>
+        <div style="font-size: clamp(18px, 2.2vw, 21px); font-weight: 700; color: var(--guinda-100); line-height: 1.2">El ABC del arbolado urbano</div>
+      </div>
+      <search class="om-buscador" style="margin-left: auto; flex: 1 1 260px; max-width: 400px; position: relative">
+        <label style="display: block; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--gris-100); margin-bottom: 6px" for="buscador-sitio">Buscar en el sitio</label>
+        <input style="width: 100%; box-sizing: border-box; font-family: Roboto, sans-serif; font-size: 16px; padding: 11px 14px; border: 1px solid var(--gris-40); border-radius: 4px; min-height: 44px; background: var(--blanco); color: var(--gris-100)" type="search" id="buscador-sitio" onchange="e => this.setState({ q: e.target.value })" placeholder="poda, denuncia, permiso, vivero" autocomplete="off" aria-controls="resultados-sitio" :value="v.q" :onchange="v.escribir" :aria-expanded="v.abierto">
+        <div x-show="v.abierto" style="position: absolute; top: 100%; left: 0; right: 0; z-index: 50; margin-top: 4px; background: var(--blanco); border: 1px solid var(--gris-40); box-shadow: 0 8px 20px rgba(26,26,26,0.16); max-height: 62vh; overflow-y: auto; display:none" id="resultados-sitio">
+            <ul x-show="v.hayResultados" style="list-style: none; margin: 0; padding: 0; display:none">
+                <template x-for="(r, _k845317270) in v.resultados" :key="_k845317270">
+                  <li style="border-bottom: 1px solid var(--gris-20)">
+                    <a class="ih1" style="display: block; padding: 13px 16px; text-decoration: none; color: var(--gris-100); transition: background 150ms ease" :href="dcRuta(r.href)">
+                      <span style="display: block; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--gris-100)" x-html="r.seccion"></span>
+                      <span style="display: block; font-size: 17px; font-weight: 700; color: var(--guinda-100); line-height: 1.3; margin-top: 2px" x-html="r.titulo"></span>
+                      <span style="display: block; font-size: 15px; line-height: 1.45; margin-top: 2px" x-html="r.detalle"></span>
+                    </a>
+                  </li>
+                </template>
+              </ul>
+            <p x-show="v.sinResultados" style="margin: 0; padding: 16px; font-size: 16px; line-height: 1.55; color: var(--gris-100); display:none">No encontramos esa palabra. Prueba con poda, derribo, permiso, denuncia, vivero o el nombre de tu alcaldía.</p>
+          </div>
+      </search>
+    </div>
+    <nav style="border-top: 1px solid var(--gris-20); background: var(--gris-10)" aria-label="Navegación principal">
+      <div class="om-nav-ancha" style="max-width: 1240px; margin: 0 auto; padding: 0 24px; display: flex; flex-wrap: wrap">
+        
+          <a class="ih2" style="padding: 15px 18px; font-size: 16px; font-weight: 700; color: var(--gris-100); text-decoration: none; border-bottom: 3px solid transparent; background: transparent; transition: background 150ms ease, color 150ms ease" href="../index.html" :href="dcRuta(s.href)" :aria-current="s.actual" x-html="s.etiqueta" data-pr :style="`padding: 15px 18px; font-size: 16px; font-weight: 700; color: ${s.color}; text-decoration: none; border-bottom: 3px solid ${s.borde}; background: ${s.fondo}; transition: background 150ms ease, color 150ms ease`">Inicio</a>
+        
+          <a class="ih2" style="padding: 15px 18px; font-size: 16px; font-weight: 700; color: var(--gris-100); text-decoration: none; border-bottom: 3px solid transparent; background: transparent; transition: background 150ms ease, color 150ms ease" href="../hazlo.html" :href="dcRuta(s.href)" :aria-current="s.actual" x-html="s.etiqueta" data-pr :style="`padding: 15px 18px; font-size: 16px; font-weight: 700; color: ${s.color}; text-decoration: none; border-bottom: 3px solid ${s.borde}; background: ${s.fondo}; transition: background 150ms ease, color 150ms ease`">Qué necesito hacer</a>
+        
+          <a class="ih2" style="padding: 15px 18px; font-size: 16px; font-weight: 700; color: var(--gris-100); text-decoration: none; border-bottom: 3px solid transparent; background: transparent; transition: background 150ms ease, color 150ms ease" href="../responsabilidades.html" :href="dcRuta(s.href)" :aria-current="s.actual" x-html="s.etiqueta" data-pr :style="`padding: 15px 18px; font-size: 16px; font-weight: 700; color: ${s.color}; text-decoration: none; border-bottom: 3px solid ${s.borde}; background: ${s.fondo}; transition: background 150ms ease, color 150ms ease`">Responsabilidades</a>
+        
+          <a class="ih2" style="padding: 15px 18px; font-size: 16px; font-weight: 700; color: var(--gris-100); text-decoration: none; border-bottom: 3px solid transparent; background: transparent; transition: background 150ms ease, color 150ms ease" href="../emergencias.html" :href="dcRuta(s.href)" :aria-current="s.actual" x-html="s.etiqueta" data-pr :style="`padding: 15px 18px; font-size: 16px; font-weight: 700; color: ${s.color}; text-decoration: none; border-bottom: 3px solid ${s.borde}; background: ${s.fondo}; transition: background 150ms ease, color 150ms ease`">Emergencias</a>
+        
+          <a class="ih2" style="padding: 15px 18px; font-size: 16px; font-weight: 700; color: var(--guinda-100); text-decoration: none; border-bottom: 3px solid var(--guinda-100); background: var(--blanco); transition: background 150ms ease, color 150ms ease" href="../programas.html" aria-current="page" :href="dcRuta(s.href)" :aria-current="s.actual" x-html="s.etiqueta" data-pr :style="`padding: 15px 18px; font-size: 16px; font-weight: 700; color: ${s.color}; text-decoration: none; border-bottom: 3px solid ${s.borde}; background: ${s.fondo}; transition: background 150ms ease, color 150ms ease`">Programas</a>
+        
+          <a class="ih2" style="padding: 15px 18px; font-size: 16px; font-weight: 700; color: var(--gris-100); text-decoration: none; border-bottom: 3px solid transparent; background: transparent; transition: background 150ms ease, color 150ms ease" href="../directorio.html" :href="dcRuta(s.href)" :aria-current="s.actual" x-html="s.etiqueta" data-pr :style="`padding: 15px 18px; font-size: 16px; font-weight: 700; color: ${s.color}; text-decoration: none; border-bottom: 3px solid ${s.borde}; background: ${s.fondo}; transition: background 150ms ease, color 150ms ease`">Directorio</a>
+        
+          <a class="ih2" style="padding: 15px 18px; font-size: 16px; font-weight: 700; color: var(--gris-100); text-decoration: none; border-bottom: 3px solid transparent; background: transparent; transition: background 150ms ease, color 150ms ease" href="../politica.html" :href="dcRuta(s.href)" :aria-current="s.actual" x-html="s.etiqueta" data-pr :style="`padding: 15px 18px; font-size: 16px; font-weight: 700; color: ${s.color}; text-decoration: none; border-bottom: 3px solid ${s.borde}; background: ${s.fondo}; transition: background 150ms ease, color 150ms ease`">Política de arbolado</a>
+        <template x-for="(s, _k476983897) in v.secciones" :key="_k476983897">
+          <a class="ih2" :href="dcRuta(s.href)" :aria-current="s.actual" x-html="s.etiqueta" :style="`padding: 15px 18px; font-size: 16px; font-weight: 700; color: ${s.color}; text-decoration: none; border-bottom: 3px solid ${s.borde}; background: ${s.fondo}; transition: background 150ms ease, color 150ms ease`"></a>
+        </template>
+      </div>
+
+      <div class="om-nav-movil" style="max-width: 1240px; margin: 0 auto; padding: 10px 20px">
+        <button class="ih3" style="width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 14px; min-height: 52px; padding: 12px 16px; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; font-family: Roboto, sans-serif; font-size: 17px; font-weight: 700; color: var(--guinda-100); cursor: pointer; transition: background 150ms ease" onclick="() => this.setState(s => ({ menu: !s.menu }))" aria-controls="menu-movil" :onclick="v.alternarMenu" :aria-expanded="v.menuAbierto">
+          <span style="display: flex; align-items: center; gap: 12px">
+            <span style="display: flex; flex-direction: column; gap: 4px; flex: none" aria-hidden="true">
+              <span style="display: block; width: 20px; height: 2px; background: var(--guinda-100)"></span>
+              <span style="display: block; width: 20px; height: 2px; background: var(--guinda-100)"></span>
+              <span style="display: block; width: 20px; height: 2px; background: var(--guinda-100)"></span>
+            </span>
+            <span x-html="v.etiquetaMenu">Secciones del sitio</span>
+          </span>
+          <span style="font-size: 15px; color: var(--gris-100)" aria-hidden="true" x-html="v.signoMenu">▼</span>
+        </button>
+
+        <ul x-show="v.menuAbierto" style="list-style: none; margin: 10px 0 0; padding: 0; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; overflow: hidden; display:none" id="menu-movil">
+            
+              <li style="border-bottom: 1px solid var(--gris-20)" data-pr>
+                <a style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 14px 18px; font-size: 17px; font-weight: 700; text-decoration: none; color: var(--gris-100); border-left: 4px solid transparent; background: transparent" href="../index.html" :href="dcRuta(s.href)" :aria-current="s.actual" :style="`display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 14px 18px; font-size: 17px; font-weight: 700; text-decoration: none; color: ${s.color}; border-left: 4px solid ${s.borde}; background: ${s.fondo}`">
+                  <span x-html="s.etiqueta">Inicio</span>
+                  <span style="color: var(--dorado-100)" aria-hidden="true">›</span>
+                </a>
+              </li>
+            
+              <li style="border-bottom: 1px solid var(--gris-20)" data-pr>
+                <a style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 14px 18px; font-size: 17px; font-weight: 700; text-decoration: none; color: var(--gris-100); border-left: 4px solid transparent; background: transparent" href="../hazlo.html" :href="dcRuta(s.href)" :aria-current="s.actual" :style="`display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 14px 18px; font-size: 17px; font-weight: 700; text-decoration: none; color: ${s.color}; border-left: 4px solid ${s.borde}; background: ${s.fondo}`">
+                  <span x-html="s.etiqueta">Qué necesito hacer</span>
+                  <span style="color: var(--dorado-100)" aria-hidden="true">›</span>
+                </a>
+              </li>
+            
+              <li style="border-bottom: 1px solid var(--gris-20)" data-pr>
+                <a style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 14px 18px; font-size: 17px; font-weight: 700; text-decoration: none; color: var(--gris-100); border-left: 4px solid transparent; background: transparent" href="../responsabilidades.html" :href="dcRuta(s.href)" :aria-current="s.actual" :style="`display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 14px 18px; font-size: 17px; font-weight: 700; text-decoration: none; color: ${s.color}; border-left: 4px solid ${s.borde}; background: ${s.fondo}`">
+                  <span x-html="s.etiqueta">Responsabilidades</span>
+                  <span style="color: var(--dorado-100)" aria-hidden="true">›</span>
+                </a>
+              </li>
+            
+              <li style="border-bottom: 1px solid var(--gris-20)" data-pr>
+                <a style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 14px 18px; font-size: 17px; font-weight: 700; text-decoration: none; color: var(--gris-100); border-left: 4px solid transparent; background: transparent" href="../emergencias.html" :href="dcRuta(s.href)" :aria-current="s.actual" :style="`display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 14px 18px; font-size: 17px; font-weight: 700; text-decoration: none; color: ${s.color}; border-left: 4px solid ${s.borde}; background: ${s.fondo}`">
+                  <span x-html="s.etiqueta">Emergencias</span>
+                  <span style="color: var(--dorado-100)" aria-hidden="true">›</span>
+                </a>
+              </li>
+            
+              <li style="border-bottom: 1px solid var(--gris-20)" data-pr>
+                <a style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 14px 18px; font-size: 17px; font-weight: 700; text-decoration: none; color: var(--guinda-100); border-left: 4px solid var(--guinda-100); background: var(--blanco)" href="../programas.html" aria-current="page" :href="dcRuta(s.href)" :aria-current="s.actual" :style="`display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 14px 18px; font-size: 17px; font-weight: 700; text-decoration: none; color: ${s.color}; border-left: 4px solid ${s.borde}; background: ${s.fondo}`">
+                  <span x-html="s.etiqueta">Programas</span>
+                  <span style="color: var(--dorado-100)" aria-hidden="true">›</span>
+                </a>
+              </li>
+            
+              <li style="border-bottom: 1px solid var(--gris-20)" data-pr>
+                <a style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 14px 18px; font-size: 17px; font-weight: 700; text-decoration: none; color: var(--gris-100); border-left: 4px solid transparent; background: transparent" href="../directorio.html" :href="dcRuta(s.href)" :aria-current="s.actual" :style="`display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 14px 18px; font-size: 17px; font-weight: 700; text-decoration: none; color: ${s.color}; border-left: 4px solid ${s.borde}; background: ${s.fondo}`">
+                  <span x-html="s.etiqueta">Directorio</span>
+                  <span style="color: var(--dorado-100)" aria-hidden="true">›</span>
+                </a>
+              </li>
+            
+              <li style="border-bottom: 1px solid var(--gris-20)" data-pr>
+                <a style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 14px 18px; font-size: 17px; font-weight: 700; text-decoration: none; color: var(--gris-100); border-left: 4px solid transparent; background: transparent" href="../politica.html" :href="dcRuta(s.href)" :aria-current="s.actual" :style="`display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 14px 18px; font-size: 17px; font-weight: 700; text-decoration: none; color: ${s.color}; border-left: 4px solid ${s.borde}; background: ${s.fondo}`">
+                  <span x-html="s.etiqueta">Política de arbolado</span>
+                  <span style="color: var(--dorado-100)" aria-hidden="true">›</span>
+                </a>
+              </li>
+            <template x-for="(s, _k476983897) in v.secciones" :key="_k476983897">
+              <li style="border-bottom: 1px solid var(--gris-20)">
+                <a :href="dcRuta(s.href)" :aria-current="s.actual" :style="`display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 14px 18px; font-size: 17px; font-weight: 700; text-decoration: none; color: ${s.color}; border-left: 4px solid ${s.borde}; background: ${s.fondo}`">
+                  <span x-html="s.etiqueta"></span>
+                  <span style="color: var(--dorado-100)" aria-hidden="true">›</span>
+                </a>
+              </li>
+            </template>
+          </ul>
+      </div>
+    </nav>
+  </header>
+</div>
+
+
+
+  <nav style="background: var(--blanco)" aria-label="Ruta de navegación">
     <div style="max-width: 1240px; margin: 0 auto; padding: 14px 24px 12px; font-size: 14px; color: var(--gris-100)">
-      <a href="portada.dc.html">Inicio</a> <span aria-hidden="true" style="padding: 0 8px">·</span> <a href="programas.dc.html">Programas</a> <span aria-hidden="true" style="padding: 0 8px">·</span> <span style="color: var(--gris-100); font-weight: 700">Viveros Nezahualcóyotl y Yecapixtla</span>
+      <a href="../index.html">Inicio</a> <span style="padding: 0 8px" aria-hidden="true">·</span> <a href="../programas.html">Programas</a> <span style="padding: 0 8px" aria-hidden="true">·</span> <span style="color: var(--gris-100); font-weight: 700">Viveros Nezahualcóyotl y Yecapixtla</span>
     </div>
   </nav>
 
-  <main id="contenido" style="flex: 1">
+  <main style="flex: 1" id="contenido">
 
     <section style="background: var(--marfil); border-bottom: 1px solid var(--dorado-40)">
       <div style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 60px) 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: clamp(28px, 4vw, 52px); align-items: center">
@@ -45,7 +182,7 @@
         </div>
         <figure style="margin: 0">
           <div style="position: relative; width: 100%; aspect-ratio: 4 / 3; background: var(--gris-10); border: 1px solid var(--dorado-40)">
-            <image-slot id="viveros-hero" shape="rect" fit="cover" placeholder="Arrastra una fotografía de la producción en vivero"></image-slot>
+            <div class="falta-dato falta-dato--imagen" data-forma="rect" role="img" aria-label="Imagen institucional pendiente"><span class="falta-dato__sello">Falta el dato</span><span class="falta-dato__texto">Arrastra una fotografía de la producción en vivero</span></div>
           </div>
           <figcaption style="margin-top: 12px; padding-left: 12px; border-left: 3px solid var(--dorado-100); font-size: 15px; line-height: 1.5; color: var(--gris-100)">Producción de planta en vivero. Fotografía institucional.</figcaption>
         </figure>
@@ -59,36 +196,71 @@
       </div>
 
       <div style="display: flex; flex-direction: column; gap: clamp(32px, 4vw, 56px)">
-        <sc-for list="{{ viveros }}" as="v" hint-placeholder-count="2">
+        
           <article style="border: 1px solid var(--gris-20); border-top: 4px solid var(--guinda-100); background: var(--blanco); box-shadow: 0 4px 8px rgba(26,26,26,0.06)">
             <div style="padding: clamp(24px, 3vw, 32px)">
-              <span style="display: block; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700">{{ v.rol }}</span>
-              <h3 style="margin: 8px 0 12px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(24px, 2.8vw, 32px); font-weight: 700; color: var(--guinda-100); line-height: 1.2">{{ v.nombre }}</h3>
-              <p style="margin: 0; font-size: 18px; line-height: 1.6; max-width: 44em">{{ v.texto }}</p>
+              <span style="display: block; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700">Producción de arbolado urbano</span>
+              <h3 style="margin: 8px 0 12px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(24px, 2.8vw, 32px); font-weight: 700; color: var(--guinda-100); line-height: 1.2">Vivero Nezahualcóyotl</h3>
+              <p style="margin: 0; font-size: 18px; line-height: 1.6; max-width: 44em">Produce el arbolado que se planta en calles, camellones y parques de la ciudad. De aquí salen los ejemplares de las jornadas de plantación y los que cumplen medidas de restitución.</p>
             </div>
 
             <div style="border-top: 1px solid var(--gris-20); display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))">
               <div style="padding: clamp(22px, 2.6vw, 28px); border-right: 1px solid var(--gris-20)">
                 <h4 style="margin: 0 0 16px; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--gris-100)">Dirección y horarios</h4>
                 <dl style="margin: 0; padding: 0; display: flex; flex-direction: column; gap: 16px">
-                  <sc-for list="{{ v.datos }}" as="d" hint-placeholder-count="4">
+                  
                     <div>
-                      <dt style="font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 4px">{{ d.clave }}</dt>
-                      <dd style="margin: 0; font-size: 18px; line-height: 1.5; color: {{ d.color }}; background: {{ d.fondo }}; padding: {{ d.pad }}; display: inline-block; font-weight: {{ d.peso }}">{{ d.valor }}</dd>
+                      <dt style="font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 4px">Dirección</dt>
+                      <dd style="margin: 0; font-size: 18px; line-height: 1.5; color: var(--negro); background: var(--estado-alerta); padding: 2px 8px; display: inline-block; font-weight: 700">Falta el dato</dd>
                     </div>
-                  </sc-for>
+                  
+                    <div>
+                      <dt style="font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 4px">Alcaldía</dt>
+                      <dd style="margin: 0; font-size: 18px; line-height: 1.5; color: var(--negro); background: var(--estado-alerta); padding: 2px 8px; display: inline-block; font-weight: 700">Falta el dato</dd>
+                    </div>
+                  
+                    <div>
+                      <dt style="font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 4px">Horario de atención</dt>
+                      <dd style="margin: 0; font-size: 18px; line-height: 1.5; color: var(--negro); background: var(--estado-alerta); padding: 2px 8px; display: inline-block; font-weight: 700">Falta el dato</dd>
+                    </div>
+                  
+                    <div>
+                      <dt style="font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 4px">Teléfono y extensión</dt>
+                      <dd style="margin: 0; font-size: 18px; line-height: 1.5; color: var(--negro); background: var(--estado-alerta); padding: 2px 8px; display: inline-block; font-weight: 700">Falta el dato</dd>
+                    </div>
+                  
+                    <div>
+                      <dt style="font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 4px">Destino de la planta</dt>
+                      <dd style="margin: 0; font-size: 18px; line-height: 1.5; color: var(--gris-100); background: transparent; padding: 0; display: inline-block; font-weight: 400">Programas institucionales, alcaldías y restitución</dd>
+                    </div>
+                  
                 </dl>
               </div>
 
               <div style="padding: clamp(22px, 2.6vw, 28px)">
                 <h4 style="margin: 0 0 16px; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--gris-100)">Servicios que se dan aquí</h4>
                 <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px">
-                  <sc-for list="{{ v.servicios }}" as="sv" hint-placeholder-count="4">
+                  
                     <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start">
-                      <span aria-hidden="true" style="margin-top: 8px; width: 8px; height: 8px; background: var(--dorado-100); display: block"></span>
-                      <span style="font-size: 17px; line-height: 1.55">{{ sv }}</span>
+                      <span style="margin-top: 8px; width: 8px; height: 8px; background: var(--dorado-100); display: block" aria-hidden="true"></span>
+                      <span style="font-size: 17px; line-height: 1.55">Producción de arbolado urbano en contenedor</span>
                     </li>
-                  </sc-for>
+                  
+                    <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start">
+                      <span style="margin-top: 8px; width: 8px; height: 8px; background: var(--dorado-100); display: block" aria-hidden="true"></span>
+                      <span style="font-size: 17px; line-height: 1.55">Entrega de planta a programas institucionales y alcaldías</span>
+                    </li>
+                  
+                    <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start">
+                      <span style="margin-top: 8px; width: 8px; height: 8px; background: var(--dorado-100); display: block" aria-hidden="true"></span>
+                      <span style="font-size: 17px; line-height: 1.55">Entrega de planta para cumplir medidas de restitución</span>
+                    </li>
+                  
+                    <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start">
+                      <span style="margin-top: 8px; width: 8px; height: 8px; background: var(--dorado-100); display: block" aria-hidden="true"></span>
+                      <span style="font-size: 17px; line-height: 1.55">Poda de formación y seguimiento sanitario de la planta</span>
+                    </li>
+                  
                 </ul>
               </div>
             </div>
@@ -96,10 +268,10 @@
             <div style="border-top: 1px solid var(--gris-20); padding: clamp(22px, 2.6vw, 28px)">
               <div style="display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; margin-bottom: 14px">
                 <h4 style="margin: 0; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--gris-100)">Cómo llegar</h4>
-                <a href="{{ v.mapaLink }}" target="_blank" rel="noopener" style="font-size: 16px; font-weight: 700">Abrir en Google Maps →</a>
+                <a style="font-size: 16px; font-weight: 700" href="https://www.google.com/maps/search/?api=1&amp;query=Vivero%20Nezahualc%C3%B3yotl%20Ciudad%20de%20M%C3%A9xico" target="_blank" rel="noopener">Abrir en Google Maps →</a>
               </div>
               <div style="width: 100%; aspect-ratio: 16 / 7; border: 1px solid var(--gris-20); background: var(--gris-10); overflow: hidden">
-                <iframe src="{{ v.mapaEmbed }}" title="{{ v.mapaTitulo }}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="width: 100%; height: 100%; border: 0; display: block"></iframe>
+                <iframe style="width: 100%; height: 100%; border: 0; display: block" src="https://maps.google.com/maps?q=Vivero%20Nezahualc%C3%B3yotl%20Ciudad%20de%20M%C3%A9xico&amp;z=13&amp;output=embed" title="Mapa de ubicación del Vivero Nezahualcóyotl" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
               </div>
               <p style="margin: 12px 0 0; font-size: 16px; line-height: 1.5; color: var(--negro); background: var(--estado-alerta); padding: 8px 12px; display: inline-block; font-weight: 700">Falta la ubicación exacta: el mapa se centra en la zona, no en la entrada del vivero</p>
             </div>
@@ -107,19 +279,156 @@
             <div style="border-top: 1px solid var(--gris-20); padding: clamp(22px, 2.6vw, 28px); background: var(--gris-10)">
               <h4 style="margin: 0 0 16px; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--gris-100)">Galería</h4>
               <ul style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px">
-                <sc-for list="{{ v.galeria }}" as="g" hint-placeholder-count="4">
+                
                   <li>
                     <div style="position: relative; width: 100%; aspect-ratio: 4 / 3; background: var(--blanco); border: 1px solid var(--gris-20)">
-                      <image-slot id="{{ g.id }}" shape="rect" fit="cover" placeholder="{{ g.pie }}"></image-slot>
+                      <div class="falta-dato falta-dato--imagen" data-forma="rect" role="img" aria-label="Imagen institucional pendiente"><span class="falta-dato__sello">Falta el dato</span><span class="falta-dato__texto">Vista general del vivero</span></div>
                     </div>
-                    <p style="margin: 8px 0 0; font-size: 15px; line-height: 1.45; color: var(--gris-100)">{{ g.pie }}</p>
+                    <p style="margin: 8px 0 0; font-size: 15px; line-height: 1.45; color: var(--gris-100)">Vista general del vivero</p>
                   </li>
-                </sc-for>
+                
+                  <li>
+                    <div style="position: relative; width: 100%; aspect-ratio: 4 / 3; background: var(--blanco); border: 1px solid var(--gris-20)">
+                      <div class="falta-dato falta-dato--imagen" data-forma="rect" role="img" aria-label="Imagen institucional pendiente"><span class="falta-dato__sello">Falta el dato</span><span class="falta-dato__texto">Producción en contenedor</span></div>
+                    </div>
+                    <p style="margin: 8px 0 0; font-size: 15px; line-height: 1.45; color: var(--gris-100)">Producción en contenedor</p>
+                  </li>
+                
+                  <li>
+                    <div style="position: relative; width: 100%; aspect-ratio: 4 / 3; background: var(--blanco); border: 1px solid var(--gris-20)">
+                      <div class="falta-dato falta-dato--imagen" data-forma="rect" role="img" aria-label="Imagen institucional pendiente"><span class="falta-dato__sello">Falta el dato</span><span class="falta-dato__texto">Poda de formación</span></div>
+                    </div>
+                    <p style="margin: 8px 0 0; font-size: 15px; line-height: 1.45; color: var(--gris-100)">Poda de formación</p>
+                  </li>
+                
+                  <li>
+                    <div style="position: relative; width: 100%; aspect-ratio: 4 / 3; background: var(--blanco); border: 1px solid var(--gris-20)">
+                      <div class="falta-dato falta-dato--imagen" data-forma="rect" role="img" aria-label="Imagen institucional pendiente"><span class="falta-dato__sello">Falta el dato</span><span class="falta-dato__texto">Carga de planta para entrega</span></div>
+                    </div>
+                    <p style="margin: 8px 0 0; font-size: 15px; line-height: 1.45; color: var(--gris-100)">Carga de planta para entrega</p>
+                  </li>
+                
               </ul>
               <p style="margin: 16px 0 0; font-size: 16px; line-height: 1.5; color: var(--negro); background: var(--estado-alerta); padding: 8px 12px; display: inline-block; font-weight: 700">Faltan las fotografías institucionales de este vivero</p>
             </div>
           </article>
-        </sc-for>
+        
+          <article style="border: 1px solid var(--gris-20); border-top: 4px solid var(--guinda-100); background: var(--blanco); box-shadow: 0 4px 8px rgba(26,26,26,0.06)">
+            <div style="padding: clamp(24px, 3vw, 32px)">
+              <span style="display: block; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700">Producción y endurecimiento de planta</span>
+              <h3 style="margin: 8px 0 12px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(24px, 2.8vw, 32px); font-weight: 700; color: var(--guinda-100); line-height: 1.2">Vivero Yecapixtla</h3>
+              <p style="margin: 0; font-size: 18px; line-height: 1.6; max-width: 44em">Complementa la producción con planta de mayor talla y con el endurecimiento previo al traslado, para que el árbol llegue a la ciudad con la resistencia que necesita.</p>
+            </div>
+
+            <div style="border-top: 1px solid var(--gris-20); display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))">
+              <div style="padding: clamp(22px, 2.6vw, 28px); border-right: 1px solid var(--gris-20)">
+                <h4 style="margin: 0 0 16px; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--gris-100)">Dirección y horarios</h4>
+                <dl style="margin: 0; padding: 0; display: flex; flex-direction: column; gap: 16px">
+                  
+                    <div>
+                      <dt style="font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 4px">Dirección</dt>
+                      <dd style="margin: 0; font-size: 18px; line-height: 1.5; color: var(--negro); background: var(--estado-alerta); padding: 2px 8px; display: inline-block; font-weight: 700">Falta el dato</dd>
+                    </div>
+                  
+                    <div>
+                      <dt style="font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 4px">Municipio y estado</dt>
+                      <dd style="margin: 0; font-size: 18px; line-height: 1.5; color: var(--gris-100); background: transparent; padding: 0; display: inline-block; font-weight: 400">Yecapixtla, Morelos</dd>
+                    </div>
+                  
+                    <div>
+                      <dt style="font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 4px">Horario de atención</dt>
+                      <dd style="margin: 0; font-size: 18px; line-height: 1.5; color: var(--negro); background: var(--estado-alerta); padding: 2px 8px; display: inline-block; font-weight: 700">Falta el dato</dd>
+                    </div>
+                  
+                    <div>
+                      <dt style="font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 4px">Teléfono y extensión</dt>
+                      <dd style="margin: 0; font-size: 18px; line-height: 1.5; color: var(--negro); background: var(--estado-alerta); padding: 2px 8px; display: inline-block; font-weight: 700">Falta el dato</dd>
+                    </div>
+                  
+                    <div>
+                      <dt style="font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 4px">Destino de la planta</dt>
+                      <dd style="margin: 0; font-size: 18px; line-height: 1.5; color: var(--gris-100); background: transparent; padding: 0; display: inline-block; font-weight: 400">Programas institucionales y reforestación</dd>
+                    </div>
+                  
+                </dl>
+              </div>
+
+              <div style="padding: clamp(22px, 2.6vw, 28px)">
+                <h4 style="margin: 0 0 16px; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--gris-100)">Servicios que se dan aquí</h4>
+                <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px">
+                  
+                    <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start">
+                      <span style="margin-top: 8px; width: 8px; height: 8px; background: var(--dorado-100); display: block" aria-hidden="true"></span>
+                      <span style="font-size: 17px; line-height: 1.55">Producción de planta de mayor talla</span>
+                    </li>
+                  
+                    <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start">
+                      <span style="margin-top: 8px; width: 8px; height: 8px; background: var(--dorado-100); display: block" aria-hidden="true"></span>
+                      <span style="font-size: 17px; line-height: 1.55">Endurecimiento previo al traslado a la ciudad</span>
+                    </li>
+                  
+                    <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start">
+                      <span style="margin-top: 8px; width: 8px; height: 8px; background: var(--dorado-100); display: block" aria-hidden="true"></span>
+                      <span style="font-size: 17px; line-height: 1.55">Resguardo de planta en espera de jornada de plantación</span>
+                    </li>
+                  
+                    <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start">
+                      <span style="margin-top: 8px; width: 8px; height: 8px; background: var(--dorado-100); display: block" aria-hidden="true"></span>
+                      <span style="font-size: 17px; line-height: 1.55">Seguimiento sanitario antes de la salida</span>
+                    </li>
+                  
+                </ul>
+              </div>
+            </div>
+
+            <div style="border-top: 1px solid var(--gris-20); padding: clamp(22px, 2.6vw, 28px)">
+              <div style="display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; margin-bottom: 14px">
+                <h4 style="margin: 0; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--gris-100)">Cómo llegar</h4>
+                <a style="font-size: 16px; font-weight: 700" href="https://www.google.com/maps/search/?api=1&amp;query=Yecapixtla%2C%20Morelos" target="_blank" rel="noopener">Abrir en Google Maps →</a>
+              </div>
+              <div style="width: 100%; aspect-ratio: 16 / 7; border: 1px solid var(--gris-20); background: var(--gris-10); overflow: hidden">
+                <iframe style="width: 100%; height: 100%; border: 0; display: block" src="https://maps.google.com/maps?q=Yecapixtla%2C%20Morelos&amp;z=13&amp;output=embed" title="Mapa de ubicación del Vivero Yecapixtla" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+              <p style="margin: 12px 0 0; font-size: 16px; line-height: 1.5; color: var(--negro); background: var(--estado-alerta); padding: 8px 12px; display: inline-block; font-weight: 700">Falta la ubicación exacta: el mapa se centra en la zona, no en la entrada del vivero</p>
+            </div>
+
+            <div style="border-top: 1px solid var(--gris-20); padding: clamp(22px, 2.6vw, 28px); background: var(--gris-10)">
+              <h4 style="margin: 0 0 16px; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--gris-100)">Galería</h4>
+              <ul style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px">
+                
+                  <li>
+                    <div style="position: relative; width: 100%; aspect-ratio: 4 / 3; background: var(--blanco); border: 1px solid var(--gris-20)">
+                      <div class="falta-dato falta-dato--imagen" data-forma="rect" role="img" aria-label="Imagen institucional pendiente"><span class="falta-dato__sello">Falta el dato</span><span class="falta-dato__texto">Vista general del vivero</span></div>
+                    </div>
+                    <p style="margin: 8px 0 0; font-size: 15px; line-height: 1.45; color: var(--gris-100)">Vista general del vivero</p>
+                  </li>
+                
+                  <li>
+                    <div style="position: relative; width: 100%; aspect-ratio: 4 / 3; background: var(--blanco); border: 1px solid var(--gris-20)">
+                      <div class="falta-dato falta-dato--imagen" data-forma="rect" role="img" aria-label="Imagen institucional pendiente"><span class="falta-dato__sello">Falta el dato</span><span class="falta-dato__texto">Planta de mayor talla</span></div>
+                    </div>
+                    <p style="margin: 8px 0 0; font-size: 15px; line-height: 1.45; color: var(--gris-100)">Planta de mayor talla</p>
+                  </li>
+                
+                  <li>
+                    <div style="position: relative; width: 100%; aspect-ratio: 4 / 3; background: var(--blanco); border: 1px solid var(--gris-20)">
+                      <div class="falta-dato falta-dato--imagen" data-forma="rect" role="img" aria-label="Imagen institucional pendiente"><span class="falta-dato__sello">Falta el dato</span><span class="falta-dato__texto">Área de endurecimiento</span></div>
+                    </div>
+                    <p style="margin: 8px 0 0; font-size: 15px; line-height: 1.45; color: var(--gris-100)">Área de endurecimiento</p>
+                  </li>
+                
+                  <li>
+                    <div style="position: relative; width: 100%; aspect-ratio: 4 / 3; background: var(--blanco); border: 1px solid var(--gris-20)">
+                      <div class="falta-dato falta-dato--imagen" data-forma="rect" role="img" aria-label="Imagen institucional pendiente"><span class="falta-dato__sello">Falta el dato</span><span class="falta-dato__texto">Traslado de planta a la ciudad</span></div>
+                    </div>
+                    <p style="margin: 8px 0 0; font-size: 15px; line-height: 1.45; color: var(--gris-100)">Traslado de planta a la ciudad</p>
+                  </li>
+                
+              </ul>
+              <p style="margin: 16px 0 0; font-size: 16px; line-height: 1.5; color: var(--negro); background: var(--estado-alerta); padding: 8px 12px; display: inline-block; font-weight: 700">Faltan las fotografías institucionales de este vivero</p>
+            </div>
+          </article>
+        
       </div>
     </section>
 
@@ -131,15 +440,47 @@
         </div>
 
         <ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 16px">
-          <sc-for list="{{ etapas }}" as="e" hint-placeholder-count="5">
+          
             <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--guinda-100); padding: 24px 28px; display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 20px; align-items: start">
-              <span aria-hidden="true" style="width: 44px; height: 44px; background: var(--guinda-100); color: var(--blanco); font-family: Cabin, Roboto, sans-serif; font-size: 19px; font-weight: 700; display: flex; align-items: center; justify-content: center">{{ e.n }}</span>
+              <span style="width: 44px; height: 44px; background: var(--guinda-100); color: var(--blanco); font-family: Cabin, Roboto, sans-serif; font-size: 19px; font-weight: 700; display: flex; align-items: center; justify-content: center" aria-hidden="true">1</span>
               <span>
-                <span style="display: block; font-size: 21px; font-weight: 700; color: var(--guinda-100); margin-bottom: 8px; line-height: 1.3">{{ e.titulo }}</span>
-                <span style="display: block; font-size: 18px; line-height: 1.6">{{ e.texto }}</span>
+                <span style="display: block; font-size: 21px; font-weight: 700; color: var(--guinda-100); margin-bottom: 8px; line-height: 1.3">Semilla y germinación</span>
+                <span style="display: block; font-size: 18px; line-height: 1.6">Se colecta semilla de árboles sanos de la región y se germina en condiciones controladas. La procedencia importa: define qué tan bien se adapta el árbol después.</span>
               </span>
             </li>
-          </sc-for>
+          
+            <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--guinda-100); padding: 24px 28px; display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 20px; align-items: start">
+              <span style="width: 44px; height: 44px; background: var(--guinda-100); color: var(--blanco); font-family: Cabin, Roboto, sans-serif; font-size: 19px; font-weight: 700; display: flex; align-items: center; justify-content: center" aria-hidden="true">2</span>
+              <span>
+                <span style="display: block; font-size: 21px; font-weight: 700; color: var(--guinda-100); margin-bottom: 8px; line-height: 1.3">Producción en contenedor</span>
+                <span style="display: block; font-size: 18px; line-height: 1.6">La planta crece en contenedor con sustrato y riego programados, con seguimiento sanitario para detectar plagas antes de que se propaguen.</span>
+              </span>
+            </li>
+          
+            <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--guinda-100); padding: 24px 28px; display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 20px; align-items: start">
+              <span style="width: 44px; height: 44px; background: var(--guinda-100); color: var(--blanco); font-family: Cabin, Roboto, sans-serif; font-size: 19px; font-weight: 700; display: flex; align-items: center; justify-content: center" aria-hidden="true">3</span>
+              <span>
+                <span style="display: block; font-size: 21px; font-weight: 700; color: var(--guinda-100); margin-bottom: 8px; line-height: 1.3">Formación</span>
+                <span style="display: block; font-size: 18px; line-height: 1.6">Se hace poda de formación para que el árbol desarrolle un solo eje y una estructura firme. Un árbol mal formado en vivero será un árbol riesgoso en la calle.</span>
+              </span>
+            </li>
+          
+            <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--guinda-100); padding: 24px 28px; display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 20px; align-items: start">
+              <span style="width: 44px; height: 44px; background: var(--guinda-100); color: var(--blanco); font-family: Cabin, Roboto, sans-serif; font-size: 19px; font-weight: 700; display: flex; align-items: center; justify-content: center" aria-hidden="true">4</span>
+              <span>
+                <span style="display: block; font-size: 21px; font-weight: 700; color: var(--guinda-100); margin-bottom: 8px; line-height: 1.3">Endurecimiento</span>
+                <span style="display: block; font-size: 18px; line-height: 1.6">Antes de salir se reduce el riego y se expone la planta a condiciones parecidas a las de su sitio final, para que resista el trasplante.</span>
+              </span>
+            </li>
+          
+            <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--guinda-100); padding: 24px 28px; display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 20px; align-items: start">
+              <span style="width: 44px; height: 44px; background: var(--guinda-100); color: var(--blanco); font-family: Cabin, Roboto, sans-serif; font-size: 19px; font-weight: 700; display: flex; align-items: center; justify-content: center" aria-hidden="true">5</span>
+              <span>
+                <span style="display: block; font-size: 21px; font-weight: 700; color: var(--guinda-100); margin-bottom: 8px; line-height: 1.3">Entrega y plantación</span>
+                <span style="display: block; font-size: 18px; line-height: 1.6">La planta se entrega con la talla mínima que exige la norma y se planta en el cajete preparado, con riego inmediato y mantenimiento los primeros años.</span>
+              </span>
+            </li>
+          
         </ol>
       </div>
     </section>
@@ -150,7 +491,7 @@
           <h2 style="margin: 0 0 14px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(24px, 2.8vw, 32px); line-height: 1.15; font-weight: 700; color: var(--guinda-100)">¿Puedo pedir un árbol?</h2>
           <p style="margin: 0 0 18px; font-size: 18px; line-height: 1.6">La planta del vivero se destina a programas institucionales, a jornadas de plantación y a cumplir medidas de restitución. No hay venta al público.</p>
           <p style="margin: 0 0 20px; font-size: 18px; line-height: 1.6">Si quieres un árbol para tu calle, la vía es tu alcaldía: ella solicita la planta y define la especie según el ancho de banqueta y el cableado.</p>
-          <a href="directorio.dc.html#alcaldias" style="background: var(--guinda-100); color: var(--blanco); border-radius: 4px; padding: 14px 24px; font-size: 17px; font-weight: 700; text-decoration: none; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center; transition: background 150ms ease" style-hover="background: var(--guinda-oscuro); color: var(--blanco)">Ver el directorio de alcaldías</a>
+          <a class="ih4" style="background: var(--guinda-100); color: var(--blanco); border-radius: 4px; padding: 14px 24px; font-size: 17px; font-weight: 700; text-decoration: none; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center; transition: background 150ms ease" href="../directorio.html#alcaldias">Ver el directorio de alcaldías</a>
         </div>
         <div>
           <h2 style="margin: 0 0 14px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(24px, 2.8vw, 32px); line-height: 1.15; font-weight: 700; color: var(--guinda-100)">Visitas y contacto</h2>
@@ -159,113 +500,13 @@
             <span style="display: block; font-size: 19px; font-weight: 700; color: var(--guinda-100)">Por publicar</span>
             <span style="display: block; margin-top: 6px; font-size: 16px; line-height: 1.5; color: var(--gris-100)">El calendario y las condiciones de visita se publicarán aquí. Mientras tanto, la solicitud se hace por atención ciudadana.</span>
           </div>
-          <div role="status" style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--estado-info); padding: 22px 26px">
+          <div style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--estado-info); padding: 22px 26px" role="status">
             <strong style="display: block; font-size: 19px; margin-bottom: 8px; color: var(--negro)">Atención ciudadana de SEDEMA</strong>
             <span style="font-size: 18px; line-height: 1.6">55 5345 8187 y 55 5345 8188 · atencionciudadana@sedema.cdmx.gob.mx · atención presencial los martes, de 10 a 13 h</span>
           </div>
         </div>
       </div>
     
-</x-dc>
-<script type="text/x-dc" data-dc-script>
-const FALTA = "Falta el dato";
-
-const VIVEROS = [
-  {
-    id: "neza",
-    rol: "Producción de arbolado urbano",
-    nombre: "Vivero Nezahualcóyotl",
-    texto: "Produce el arbolado que se planta en calles, camellones y parques de la ciudad. De aquí salen los ejemplares de las jornadas de plantación y los que cumplen medidas de restitución.",
-    consulta: "Vivero Nezahualcóyotl Ciudad de México",
-    datos: [
-      { clave: "Dirección", valor: FALTA, falta: true },
-      { clave: "Alcaldía", valor: FALTA, falta: true },
-      { clave: "Horario de atención", valor: FALTA, falta: true },
-      { clave: "Teléfono y extensión", valor: FALTA, falta: true },
-      { clave: "Destino de la planta", valor: "Programas institucionales, alcaldías y restitución" }
-    ],
-    servicios: [
-      "Producción de arbolado urbano en contenedor",
-      "Entrega de planta a programas institucionales y alcaldías",
-      "Entrega de planta para cumplir medidas de restitución",
-      "Poda de formación y seguimiento sanitario de la planta"
-    ],
-    galeria: [
-      "Vista general del vivero",
-      "Producción en contenedor",
-      "Poda de formación",
-      "Carga de planta para entrega"
-    ]
-  },
-  {
-    id: "yecapixtla",
-    rol: "Producción y endurecimiento de planta",
-    nombre: "Vivero Yecapixtla",
-    texto: "Complementa la producción con planta de mayor talla y con el endurecimiento previo al traslado, para que el árbol llegue a la ciudad con la resistencia que necesita.",
-    consulta: "Yecapixtla, Morelos",
-    datos: [
-      { clave: "Dirección", valor: FALTA, falta: true },
-      { clave: "Municipio y estado", valor: "Yecapixtla, Morelos" },
-      { clave: "Horario de atención", valor: FALTA, falta: true },
-      { clave: "Teléfono y extensión", valor: FALTA, falta: true },
-      { clave: "Destino de la planta", valor: "Programas institucionales y reforestación" }
-    ],
-    servicios: [
-      "Producción de planta de mayor talla",
-      "Endurecimiento previo al traslado a la ciudad",
-      "Resguardo de planta en espera de jornada de plantación",
-      "Seguimiento sanitario antes de la salida"
-    ],
-    galeria: [
-      "Vista general del vivero",
-      "Planta de mayor talla",
-      "Área de endurecimiento",
-      "Traslado de planta a la ciudad"
-    ]
-  }
-];
-
-
-
-const ETAPAS = [
-  { n: "1", titulo: "Semilla y germinación", texto: "Se colecta semilla de árboles sanos de la región y se germina en condiciones controladas. La procedencia importa: define qué tan bien se adapta el árbol después." },
-  { n: "2", titulo: "Producción en contenedor", texto: "La planta crece en contenedor con sustrato y riego programados, con seguimiento sanitario para detectar plagas antes de que se propaguen." },
-  { n: "3", titulo: "Formación", texto: "Se hace poda de formación para que el árbol desarrolle un solo eje y una estructura firme. Un árbol mal formado en vivero será un árbol riesgoso en la calle." },
-  { n: "4", titulo: "Endurecimiento", texto: "Antes de salir se reduce el riego y se expone la planta a condiciones parecidas a las de su sitio final, para que resista el trasplante." },
-  { n: "5", titulo: "Entrega y plantación", texto: "La planta se entrega con la talla mínima que exige la norma y se planta en el cajete preparado, con riego inmediato y mantenimiento los primeros años." }
-];
-
-class Component extends DCLogic {
-  renderVals() {
-    const viveros = VIVEROS.map(v => ({
-      rol: v.rol,
-      nombre: v.nombre,
-      texto: v.texto,
-      servicios: v.servicios,
-      mapaEmbed: "https://maps.google.com/maps?q=" + encodeURIComponent(v.consulta) + "&z=13&output=embed",
-      mapaLink: "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(v.consulta),
-      mapaTitulo: "Mapa de ubicación del " + v.nombre,
-      datos: v.datos.map(d => ({
-        clave: d.clave,
-        valor: d.valor,
-        color: d.falta ? "var(--negro)" : "var(--gris-100)",
-        fondo: d.falta ? "var(--estado-alerta)" : "transparent",
-        pad: d.falta ? "2px 8px" : "0",
-        peso: d.falta ? "700" : "400"
-      })),
-      galeria: v.galeria.map((pie, i) => ({ id: "vivero-" + v.id + "-foto-" + (i + 1), pie: pie }))
-    }));
-    return { viveros: viveros, etapas: ETAPAS };
-  }
-}
-</script>
+</section></main></div>
 </body>
 </html>
-    </section>
-
-  </main>
-
-  <dc-import name="Utilidad" fecha="18 de agosto de 2026" hint-size="100%,200px"></dc-import>
-
-  <dc-import name="PieSitio" hint-size="100%,440px"></dc-import>
-</div>

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Arbolado Ciudadano SEDEMA">
+  <rect width="64" height="64" fill="#9D2148"/>
+  <path d="M32 12 L44 34 H36 L44 50 H20 L28 34 H20 Z" fill="#FFFAE9"/>
+  <rect x="29" y="46" width="6" height="8" fill="#B28E5C"/>
+</svg>
