@@ -48,7 +48,10 @@ function reescribirEnlace(href, profundidad){
   const hash = frag ? '#'+frag : '';
   const base = path.basename(ruta).replace(/\.dc\.html$/,'').replace(/\.html$/,'');
   if(RUTAS[base]) return '../'.repeat(profundidad) + RUTAS[base] + hash;
-  if(ruta.startsWith('assets/')) return '../'.repeat(profundidad) + ruta + hash;
+  let r = ruta;
+  // Corrección de rutas heredadas: los logotipos viven en assets/img/logos/
+  if(r.startsWith('assets/logos/')) r = 'assets/img/logos/' + r.slice('assets/logos/'.length);
+  if(r.startsWith('assets/')) return '../'.repeat(profundidad) + r + hash;
   aviso('Enlace sin ruta conocida: ' + href);
   return href;
 }
@@ -322,12 +325,18 @@ function emitirCondicional(n, ctx){
 }
 
 function emitirImagen(n, ctx){
-  const ph = atr(n,'placeholder') || 'Fotografía institucional pendiente';
+  const bruto = atr(n,'placeholder') || 'Fotografía institucional pendiente';
   const forma = atr(n,'shape') || 'rect';
+  let texto = bruto, din = '';
+  if(tieneMus(bruto)){
+    const p = partir(bruto, ctx.locales, ctx.ambito, ctx.modo === 'estatico');
+    texto = ctx.modo === 'estatico' ? p.estatico : '';
+    if(ctx.alpine || ctx.modo === 'plantilla') din = ' x-html="' + escAtr(p.js) + '"';
+  }
   return '<div class="falta-dato falta-dato--imagen" data-forma="' + escAtr(forma) + '" role="img"'
-    + ' aria-label="Imagen pendiente. ' + escAtr(ph) + '">'
+    + ' aria-label="Imagen institucional pendiente">'
     + '<span class="falta-dato__sello">Falta el dato</span>'
-    + '<span class="falta-dato__texto">' + escTxt(ph) + '</span></div>';
+    + '<span class="falta-dato__texto"' + din + '>' + escTxt(texto) + '</span></div>';
 }
 
 function emitirImport(n, ctx){
@@ -383,6 +392,9 @@ function compilarPagina(relFuente, relSalida){
 
   const meta = META[relSalida] || {titulo:'Arbolado Ciudadano · SEDEMA CDMX', desc:''};
   const raiz = '../'.repeat(profundidad);
+  // Logotipos construidos dentro de la lógica (React.createElement): se corrigen aquí
+  contenido = contenido.replace(/(src|href)="assets\/logos\/([^"]+?)\.(png|jpg|jpeg)"/g,
+    (m,a,nombre)=> a + '="' + raiz + 'assets/img/logos/' + nombre + '.svg"');
   const url = BASE_URL + (relSalida === 'index.html' ? '' : relSalida);
   const usaJS = /x-data=/.test(contenido);
 
@@ -440,6 +452,8 @@ for(const c of Object.values(COMPONENTES)){
 for(const p of PAGINAS_JS){
   bloques += '\nwindow.' + p.fabrica + ' = function(props){ return dcAdaptar(props, function(DCLogic){\n' + p.codigo + '\nreturn Component; }); };\n';
 }
+bloques = bloques.replace(/assets\/logos\/([\w-]+)\.(png|jpg|jpeg)/g, 'assets/img/logos/$1.svg');
+bloques = bloques.replace(/["']([\w-]+)\.dc\.html/g, (m,base)=> m[0] + (RUTAS[base] || (base + '.html')));
 fs.mkdirSync(path.join(SALIDA,'assets/js'),{recursive:true});
 fs.writeFileSync(path.join(SALIDA,'assets/js/sitio.js'), js.replace('/*__COMPONENTES__*/', bloques));
 
