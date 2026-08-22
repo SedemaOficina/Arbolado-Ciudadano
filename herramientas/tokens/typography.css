@@ -1,0 +1,40 @@
+/* ============================================================
+   SEDEMA / GCDMX — Tipografía (escala web del manual)
+   ============================================================ */
+:root {
+  /* Familias */
+  --font-cuerpo: "Roboto", "Helvetica Neue", Arial, sans-serif;   /* comunicación */
+  --font-firma:  "Cabin", "Trebuchet MS", sans-serif;            /* logotipo / firma de dependencia */
+
+  /* Tamaños — escala web del manual */
+  --fs-titulo-1:   32px;   /* Título 1 — Bold */
+  --fs-titulo-2:   24px;   /* Título 2 — Bold */
+  --fs-subtitulo-1:24px;   /* Subtítulo 1 — Semibold */
+  --fs-subtitulo-2:20px;   /* Subtítulo 2 — Medium */
+  --fs-cuerpo-1:   20px;   /* Cuerpo 1 — Regular */
+  --fs-cuerpo-2:   16px;   /* Cuerpo 2 — Regular */
+  --fs-pie:        14px;   /* notas, pies, metadatos */
+  --fs-micro:      12px;   /* mínimo legal / créditos */
+
+  /* Display (presentaciones, mamparas, lonas) */
+  --fs-display-1:  64px;
+  --fs-display-2:  48px;
+
+  /* Pesos */
+  --fw-thin:    100; /* @kind font */
+  --fw-light:   300; /* @kind font */
+  --fw-regular: 400; /* @kind font */
+  --fw-medium:  500; /* @kind font */
+  --fw-bold:    700; /* @kind font */
+
+  /* Interlineado */
+  --lh-apretado: 1.1; /* @kind font */
+  --lh-titulo:   1.2; /* @kind font */
+  --lh-cuerpo:   1.5; /* @kind font */
+  --lh-amplio:   1.65; /* @kind font */
+
+  /* Tracking */
+  --ls-titulo:   -0.01em; /* @kind font */
+  --ls-normal:   0; /* @kind font */
+  --ls-pleca:    0.04em;   /* @kind font */
+}

@@ -1,0 +1,43 @@
+/* ============================================================
+   SEDEMA / GCDMX — Espaciado, retícula, radios, sombras
+   ============================================================ */
+:root {
+  /* Espaciado (escala del manual: 8 / 16 / 20 / 24 / 48) */
+  --esp-0:  0; /* @kind spacing */
+  --esp-1:  8px;
+  --esp-2:  16px;
+  --esp-3:  20px;
+  --esp-4:  24px;
+  --esp-5:  48px;
+  --esp-6:  64px;
+  --esp-7:  96px;
+
+  /* Retícula */
+  --grid-cols-desktop: 12; /* @kind other */
+  --grid-gutter-desktop: 20px; /* @kind spacing */
+  --grid-cols-mobile: 4; /* @kind other */
+  --grid-gutter-mobile: 24px; /* @kind spacing */
+  --contenedor-max: 1200px; /* @kind other */
+  --contenedor-pad: 24px; /* @kind spacing */
+
+  /* Border-radius (manual: 0 banners · 4 botones · 32 menú accesibilidad) */
+  --radio-0: 0px;     /* banners, plecas, lonas */
+  --radio-1: 4px;     /* botones, inputs, cards */
+  --radio-2: 8px;     /* cards mayores */
+  --radio-accesibilidad: 32px;
+  --radio-completo: 999px;
+
+  /* Sombra (manual: x0 y4 blur8) */
+  --sombra-1: 0 4px 8px rgba(85, 88, 90, 0.16);
+  --sombra-2: 0 6px 16px rgba(85, 88, 90, 0.20);
+  --sombra-foco: 0 0 0 3px rgba(157, 33, 72, 0.30);
+
+  /* Grosores de pleca / borde */
+  --pleca: 4px; /* @kind spacing */
+  --borde-fino: 1px; /* @kind spacing */
+  --borde-grueso: 2px; /* @kind spacing */
+
+  /* Transiciones (institucional: sobrio, sin rebotes) */
+  --trans-rapida: 120ms ease; /* @kind other */
+  --trans-media:  180ms ease; /* @kind other */
+}

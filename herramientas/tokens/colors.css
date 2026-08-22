@@ -1,0 +1,83 @@
+/* ============================================================
+   SEDEMA / GCDMX — Color
+   Manual de Identidad Institucional GCDMX 2024–2030
+   ============================================================ */
+:root {
+  /* ---- Institucionales (dominantes) ---- */
+  --guinda: #9D2148;        /* Pantone 7420 C — dominante: títulos, botones primarios, plecas */
+  --dorado: #B28E5C;        /* Pantone 465 C — acentos, contornos, botones secundarios */
+
+  /* Escalas de marca */
+  --guinda-100: #9D2148;
+  --guinda-80:  #B14D6C;
+  --guinda-60:  #C57991;
+  --guinda-40:  #D8A4B6;
+  --guinda-20:  #ECD2DA;
+  --guinda-oscuro: #6E1733; /* fondos profundos, hover de primario */
+
+  --dorado-100: #B28E5C;
+  --dorado-80:  #C1A47D;
+  --dorado-60:  #D1BB9D;
+  --dorado-40:  #E0D1BE;
+  --dorado-20:  #F0E8DE;
+
+  /* ---- Secundarios (del símbolo; solo apoyo/patrones, nunca dominantes) ---- */
+  --amarillo:   #FDC60A;
+  --naranja:    #F08217;
+  --cafe:       #AC6D14;
+  --rosa:       #F5AEB8;
+  --magenta:    #D72F89;
+  --rojo:       #E5074C;
+  --azul-claro: #73CAE6;
+  --azul:       #266CB4;
+  --morado:     #8F4889;
+  --verde:      #027A35;
+  --gris-simbolo: #55585A;
+  --marfil-simbolo: #FFFDF0;
+
+  /* ---- Neutros / texto ---- */
+  --gris-100: #55585A;      /* texto principal */
+  --gris-80:  #818788;      /* texto de menor jerarquía */
+  --gris-60:  #A9ADAE;
+  --gris-40:  #D0D2D3;
+  --gris-20:  #E9EAEB;
+  --gris-10:  #F4F5F5;
+  --blanco:   #FFFFFF;
+  --negro:    #1A1A1A;
+
+  /* ---- Fondos ---- */
+  --marfil:   #FFFAE9;      /* banners, cards institucionales */
+  --fondo-pagina: #FFFFFF;
+
+  /* ---- Énfasis / estado ---- */
+  --estado-error:   #E5074C;
+  --estado-exito:   #027A35;
+  --estado-alerta:  #FDC60A;
+  --estado-info:    #266CB4;
+
+  /* ============================================================
+     Alias semánticos (usar en componentes y plantillas)
+     ============================================================ */
+  --color-primario:        var(--guinda-100);
+  --color-primario-hover:   var(--guinda-oscuro);
+  --color-primario-activo:  var(--guinda-oscuro);
+  --color-secundario:       var(--dorado-100);
+  --color-acento:           var(--dorado-100);
+
+  --texto-fuerte:   var(--gris-100);
+  --texto-suave:    var(--gris-80);
+  --texto-inverso:  var(--blanco);
+  --texto-enlace:   var(--guinda-100);
+
+  --superficie-pagina:  var(--fondo-pagina);
+  --superficie-card:    var(--blanco);
+  --superficie-marfil:  var(--marfil);
+  --superficie-guinda:  var(--guinda-100);
+  --superficie-suave:   var(--gris-10);
+
+  --borde-sutil:   var(--gris-20);
+  --borde-medio:   var(--gris-40);
+  --borde-acento:  var(--dorado-100);
+
+  --foco-anillo:   var(--guinda-100);
+}
