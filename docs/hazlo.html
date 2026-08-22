@@ -49,7 +49,7 @@ a:hover { color: var(--guinda-oscuro); }
       </div>
       <search class="om-buscador" style="margin-left: auto; flex: 1 1 260px; max-width: 400px; position: relative">
         <label style="display: block; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--gris-100); margin-bottom: 6px" for="buscador-sitio">Buscar en el sitio</label>
-        <input style="width: 100%; box-sizing: border-box; font-family: Roboto, sans-serif; font-size: 16px; padding: 11px 14px; border: 1px solid var(--gris-40); border-radius: 4px; min-height: 44px; background: var(--blanco); color: var(--gris-100)" type="search" id="buscador-sitio" onchange="e => this.setState({ q: e.target.value })" placeholder="poda, denuncia, permiso, vivero" autocomplete="off" aria-controls="resultados-sitio" :value="v.q" :onchange="v.escribir" :aria-expanded="v.abierto">
+        <input style="width: 100%; box-sizing: border-box; font-family: Roboto, sans-serif; font-size: 16px; padding: 11px 14px; border: 1px solid var(--gris-40); border-radius: 4px; min-height: 44px; background: var(--blanco); color: var(--gris-100)" type="search" id="buscador-sitio" placeholder="poda, denuncia, permiso, vivero" autocomplete="off" aria-controls="resultados-sitio" :value="v.q" @input="v.escribir($event)" :aria-expanded="v.abierto">
         <div x-show="v.abierto" style="position: absolute; top: 100%; left: 0; right: 0; z-index: 50; margin-top: 4px; background: var(--blanco); border: 1px solid var(--gris-40); box-shadow: 0 8px 20px rgba(26,26,26,0.16); max-height: 62vh; overflow-y: auto; display:none" id="resultados-sitio">
             <ul x-show="v.hayResultados" style="list-style: none; margin: 0; padding: 0; display:none">
                 <template x-for="(r, _k845317270) in v.resultados" :key="_k845317270">
@@ -88,7 +88,7 @@ a:hover { color: var(--guinda-oscuro); }
       </div>
 
       <div class="om-nav-movil" style="max-width: 1240px; margin: 0 auto; padding: 10px 20px">
-        <button class="ih3" style="width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 14px; min-height: 52px; padding: 12px 16px; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; font-family: Roboto, sans-serif; font-size: 17px; font-weight: 700; color: var(--guinda-100); cursor: pointer; transition: background 150ms ease" onclick="() => this.setState(s => ({ menu: !s.menu }))" aria-controls="menu-movil" :onclick="v.alternarMenu" :aria-expanded="v.menuAbierto">
+        <button class="ih3" style="width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 14px; min-height: 52px; padding: 12px 16px; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; font-family: Roboto, sans-serif; font-size: 17px; font-weight: 700; color: var(--guinda-100); cursor: pointer; transition: background 150ms ease" aria-controls="menu-movil" @click="v.alternarMenu($event)" :aria-expanded="v.menuAbierto">
           <span style="display: flex; align-items: center; gap: 12px">
             <span style="display: flex; flex-direction: column; gap: 4px; flex: none" aria-hidden="true">
               <span style="display: block; width: 20px; height: 2px; background: var(--guinda-100)"></span>
@@ -206,8 +206,8 @@ a:hover { color: var(--guinda-oscuro); }
               <span style="flex: 1; height: 10px; background: var(--guinda-100); border: 1px solid var(--guinda-100)" :style="`flex: 1; height: 10px; background: ${v.seg1}; border: 1px solid ${v.seg1borde}`"></span>
               <span style="flex: 1; height: 10px; background: var(--blanco); border: 1px solid var(--gris-40)" :style="`flex: 1; height: 10px; background: ${v.seg2}; border: 1px solid ${v.seg2borde}`"></span>
             </div>
-            <button x-show="v.puedeVolver" class="ih13" style="background: transparent; border: 1px solid var(--gris-40); border-radius: 4px; padding: 10px 16px; font-family: Roboto, sans-serif; font-size: 15px; font-weight: 500; color: var(--gris-100); cursor: pointer; min-height: 44px; white-space: nowrap; transition: border-color 150ms ease; display:none" onclick="() => this.setState(s => (s.accion ? { accion: null } : { lugar: null }))" :onclick="v.volver">← Volver</button>
-            <button x-show="v.puedeVolver" style="background: transparent; border: 0; padding: 10px 4px; font-family: Roboto, sans-serif; font-size: 15px; font-weight: 700; color: var(--guinda-100); cursor: pointer; text-decoration: underline; min-height: 44px; display:none" onclick="() => this.setState({ lugar: null, accion: null })" :onclick="v.reiniciar">Empezar de nuevo</button>
+            <button x-show="v.puedeVolver" class="ih13" style="background: transparent; border: 1px solid var(--gris-40); border-radius: 4px; padding: 10px 16px; font-family: Roboto, sans-serif; font-size: 15px; font-weight: 500; color: var(--gris-100); cursor: pointer; min-height: 44px; white-space: nowrap; transition: border-color 150ms ease; display:none" @click="v.volver($event)">← Volver</button>
+            <button x-show="v.puedeVolver" style="background: transparent; border: 0; padding: 10px 4px; font-family: Roboto, sans-serif; font-size: 15px; font-weight: 700; color: var(--guinda-100); cursor: pointer; text-decoration: underline; min-height: 44px; display:none" @click="v.reiniciar($event)">Empezar de nuevo</button>
           </div>
 
           <div x-show="v.hayRuta" style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; display:none">
@@ -221,7 +221,7 @@ a:hover { color: var(--guinda-oscuro); }
               <p style="margin: 0 0 24px; font-size: 18px; line-height: 1.55; color: var(--gris-100); max-width: 40em" x-html="v.ayuda">De quién es el suelo donde crece el árbol define qué autoridad puede autorizar o atender el caso.</p>
               <div style="display: flex; flex-direction: column; gap: 12px">
                 
-                  <button class="ih14" style="text-align: left; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; padding: 18px 20px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: center; min-height: 44px; transition: border-color 150ms ease, background 150ms ease, box-shadow 150ms ease" onclick="() => this.setState(primera ? { lugar: o.id } : { accion: o.id })" :onclick="o.elegir" data-pr>
+                  <button class="ih14" style="text-align: left; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; padding: 18px 20px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: center; min-height: 44px; transition: border-color 150ms ease, background 150ms ease, box-shadow 150ms ease" @click="o.elegir($event)" data-pr>
                     <span style="flex: 1">
                       <span style="display: block; font-size: 19px; font-weight: 700; color: var(--guinda-100); line-height: 1.3" x-html="o.etiqueta">En la banqueta, camellón o vía pública</span>
                       <span style="display: block; margin-top: 6px; font-size: 17px; line-height: 1.5; color: var(--gris-100)" x-html="o.detalle">Frente a tu casa, en la calle o en un camellón</span>
@@ -229,7 +229,7 @@ a:hover { color: var(--guinda-oscuro); }
                     <span style="flex: none; font-size: 22px; color: var(--dorado-100)" aria-hidden="true">→</span>
                   </button>
                 
-                  <button class="ih14" style="text-align: left; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; padding: 18px 20px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: center; min-height: 44px; transition: border-color 150ms ease, background 150ms ease, box-shadow 150ms ease" onclick="() => this.setState(primera ? { lugar: o.id } : { accion: o.id })" :onclick="o.elegir" data-pr>
+                  <button class="ih14" style="text-align: left; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; padding: 18px 20px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: center; min-height: 44px; transition: border-color 150ms ease, background 150ms ease, box-shadow 150ms ease" @click="o.elegir($event)" data-pr>
                     <span style="flex: 1">
                       <span style="display: block; font-size: 19px; font-weight: 700; color: var(--guinda-100); line-height: 1.3" x-html="o.etiqueta">Dentro de mi predio</span>
                       <span style="display: block; margin-top: 6px; font-size: 17px; line-height: 1.5; color: var(--gris-100)" x-html="o.detalle">En tu jardín, patio o terreno, incluido un predio en obra</span>
@@ -237,7 +237,7 @@ a:hover { color: var(--guinda-oscuro); }
                     <span style="flex: none; font-size: 22px; color: var(--dorado-100)" aria-hidden="true">→</span>
                   </button>
                 
-                  <button class="ih14" style="text-align: left; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; padding: 18px 20px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: center; min-height: 44px; transition: border-color 150ms ease, background 150ms ease, box-shadow 150ms ease" onclick="() => this.setState(primera ? { lugar: o.id } : { accion: o.id })" :onclick="o.elegir" data-pr>
+                  <button class="ih14" style="text-align: left; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; padding: 18px 20px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: center; min-height: 44px; transition: border-color 150ms ease, background 150ms ease, box-shadow 150ms ease" @click="o.elegir($event)" data-pr>
                     <span style="flex: 1">
                       <span style="display: block; font-size: 19px; font-weight: 700; color: var(--guinda-100); line-height: 1.3" x-html="o.etiqueta">En un parque o área verde pública</span>
                       <span style="display: block; margin-top: 6px; font-size: 17px; line-height: 1.5; color: var(--gris-100)" x-html="o.detalle">Parque, deportivo, barranca o área natural protegida</span>
@@ -245,7 +245,7 @@ a:hover { color: var(--guinda-oscuro); }
                     <span style="flex: none; font-size: 22px; color: var(--dorado-100)" aria-hidden="true">→</span>
                   </button>
                 
-                  <button class="ih14" style="text-align: left; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; padding: 18px 20px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: center; min-height: 44px; transition: border-color 150ms ease, background 150ms ease, box-shadow 150ms ease" onclick="() => this.setState(primera ? { lugar: o.id } : { accion: o.id })" :onclick="o.elegir" data-pr>
+                  <button class="ih14" style="text-align: left; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; padding: 18px 20px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: center; min-height: 44px; transition: border-color 150ms ease, background 150ms ease, box-shadow 150ms ease" @click="o.elegir($event)" data-pr>
                     <span style="flex: 1">
                       <span style="display: block; font-size: 19px; font-weight: 700; color: var(--guinda-100); line-height: 1.3" x-html="o.etiqueta">No sé de quién es ese terreno</span>
                       <span style="display: block; margin-top: 6px; font-size: 17px; line-height: 1.5; color: var(--gris-100)" x-html="o.detalle">No distingues si es vía pública, predio o área pública</span>
@@ -253,7 +253,7 @@ a:hover { color: var(--guinda-oscuro); }
                     <span style="flex: none; font-size: 22px; color: var(--dorado-100)" aria-hidden="true">→</span>
                   </button>
                 <template x-for="(o, _k1901197859) in v.opciones" :key="_k1901197859">
-                  <button class="ih14" style="text-align: left; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; padding: 18px 20px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: center; min-height: 44px; transition: border-color 150ms ease, background 150ms ease, box-shadow 150ms ease" :onclick="o.elegir">
+                  <button class="ih14" style="text-align: left; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; padding: 18px 20px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: center; min-height: 44px; transition: border-color 150ms ease, background 150ms ease, box-shadow 150ms ease" @click="o.elegir($event)">
                     <span style="flex: 1">
                       <span style="display: block; font-size: 19px; font-weight: 700; color: var(--guinda-100); line-height: 1.3" x-html="o.etiqueta"></span>
                       <span style="display: block; margin-top: 6px; font-size: 17px; line-height: 1.5; color: var(--gris-100)" x-html="o.detalle"></span>
@@ -314,7 +314,7 @@ a:hover { color: var(--guinda-oscuro); }
                   </template>
                 </div>
                 <div style="margin-top: 22px; display: flex; gap: 16px; flex-wrap: wrap">
-                  <button class="ih9" style="background: var(--guinda-100); color: var(--blanco); border: 0; border-radius: 4px; padding: 14px 24px; font-family: Roboto, sans-serif; font-size: 17px; font-weight: 700; cursor: pointer; min-height: 48px; transition: background 150ms ease" onclick="() => this.setState({ lugar: null, accion: null })" :onclick="v.reiniciar">Consultar otro caso</button>
+                  <button class="ih9" style="background: var(--guinda-100); color: var(--blanco); border: 0; border-radius: 4px; padding: 14px 24px; font-family: Roboto, sans-serif; font-size: 17px; font-weight: 700; cursor: pointer; min-height: 48px; transition: background 150ms ease" @click="v.reiniciar($event)">Consultar otro caso</button>
                   <a class="ih8" style="background: transparent; color: var(--guinda-100); border: 2px solid var(--dorado-100); border-radius: 4px; padding: 13px 23px; font-size: 17px; font-weight: 700; text-decoration: none; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center; transition: background 150ms ease" href="#procedimientos">Ver el procedimiento completo</a>
                 </div>
               </div>
@@ -352,7 +352,7 @@ a:hover { color: var(--guinda-oscuro); }
         <div style="display: flex; flex-direction: column; gap: 16px">
           
             <article style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--dorado-100)" data-pr :style="`background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid ${p.color}`">
-              <button class="ih15" style="width: 100%; text-align: left; background: transparent; border: 0; padding: 22px clamp(20px, 3vw, 28px); font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 20px; align-items: center; min-height: 44px" onclick="() => this.setState(s => ({ proc: s.proc === p.id ? null : p.id }))" aria-expanded="true" :onclick="p.alternar" :aria-expanded="p.abierto">
+              <button class="ih15" style="width: 100%; text-align: left; background: transparent; border: 0; padding: 22px clamp(20px, 3vw, 28px); font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 20px; align-items: center; min-height: 44px" aria-expanded="true" @click="p.alternar($event)" :aria-expanded="p.abierto">
                 <span style="flex: 1">
                   <span style="display: block; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 8px" x-html="p.orden">Procedimiento 01</span>
                   <span style="display: block; font-family: Cabin, Roboto, sans-serif; font-size: 25px; font-weight: 700; color: var(--guinda-100); line-height: 1.25" x-html="p.nombre">Poda</span>
@@ -456,7 +456,7 @@ a:hover { color: var(--guinda-oscuro); }
             </article>
           
             <article style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--estado-error)" data-pr :style="`background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid ${p.color}`">
-              <button class="ih15" style="width: 100%; text-align: left; background: transparent; border: 0; padding: 22px clamp(20px, 3vw, 28px); font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 20px; align-items: center; min-height: 44px" onclick="() => this.setState(s => ({ proc: s.proc === p.id ? null : p.id }))" :onclick="p.alternar" :aria-expanded="p.abierto">
+              <button class="ih15" style="width: 100%; text-align: left; background: transparent; border: 0; padding: 22px clamp(20px, 3vw, 28px); font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 20px; align-items: center; min-height: 44px" @click="p.alternar($event)" :aria-expanded="p.abierto">
                 <span style="flex: 1">
                   <span style="display: block; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 8px" x-html="p.orden">Procedimiento 02</span>
                   <span style="display: block; font-family: Cabin, Roboto, sans-serif; font-size: 25px; font-weight: 700; color: var(--guinda-100); line-height: 1.25" x-html="p.nombre">Derribo</span>
@@ -570,7 +570,7 @@ a:hover { color: var(--guinda-oscuro); }
             </article>
           
             <article style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--guinda-100)" data-pr :style="`background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid ${p.color}`">
-              <button class="ih15" style="width: 100%; text-align: left; background: transparent; border: 0; padding: 22px clamp(20px, 3vw, 28px); font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 20px; align-items: center; min-height: 44px" onclick="() => this.setState(s => ({ proc: s.proc === p.id ? null : p.id }))" :onclick="p.alternar" :aria-expanded="p.abierto">
+              <button class="ih15" style="width: 100%; text-align: left; background: transparent; border: 0; padding: 22px clamp(20px, 3vw, 28px); font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 20px; align-items: center; min-height: 44px" @click="p.alternar($event)" :aria-expanded="p.abierto">
                 <span style="flex: 1">
                   <span style="display: block; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 8px" x-html="p.orden">Procedimiento 03</span>
                   <span style="display: block; font-family: Cabin, Roboto, sans-serif; font-size: 25px; font-weight: 700; color: var(--guinda-100); line-height: 1.25" x-html="p.nombre">Trasplante</span>
@@ -674,7 +674,7 @@ a:hover { color: var(--guinda-oscuro); }
             </article>
           <template x-for="(p, _k1699750407) in v.procedimientos" :key="_k1699750407">
             <article :style="`background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid ${p.color}`">
-              <button class="ih15" style="width: 100%; text-align: left; background: transparent; border: 0; padding: 22px clamp(20px, 3vw, 28px); font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 20px; align-items: center; min-height: 44px" :onclick="p.alternar" :aria-expanded="p.abierto">
+              <button class="ih15" style="width: 100%; text-align: left; background: transparent; border: 0; padding: 22px clamp(20px, 3vw, 28px); font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 20px; align-items: center; min-height: 44px" @click="p.alternar($event)" :aria-expanded="p.abierto">
                 <span style="flex: 1">
                   <span style="display: block; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 8px" x-html="p.orden"></span>
                   <span style="display: block; font-family: Cabin, Roboto, sans-serif; font-size: 25px; font-weight: 700; color: var(--guinda-100); line-height: 1.25" x-html="p.nombre"></span>
@@ -721,19 +721,19 @@ a:hover { color: var(--guinda-oscuro); }
         <legend style="font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--gris-100); margin-bottom: 12px">Filtra por perfil</legend>
         <div style="display: flex; flex-wrap: wrap; gap: 8px">
           
-            <button style="font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: var(--guinda-100); color: var(--blanco); border: 1px solid var(--guinda-100); transition: background 150ms ease" onclick="() => this.setState({ perfil: pf.id })" aria-pressed="true" :onclick="f.activar" :aria-pressed="f.activo" data-pr :style="`font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `">Todos los perfiles </span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta">10</span></button>
+            <button style="font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: var(--guinda-100); color: var(--blanco); border: 1px solid var(--guinda-100); transition: background 150ms ease" aria-pressed="true" @click="f.activar($event)" :aria-pressed="f.activo" data-pr :style="`font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `">Todos los perfiles </span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta">10</span></button>
           
-            <button style="font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: var(--blanco); color: var(--gris-100); border: 1px solid var(--gris-40); transition: background 150ms ease" onclick="() => this.setState({ perfil: pf.id })" :onclick="f.activar" :aria-pressed="f.activo" data-pr :style="`font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `">Vecino preocupado </span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta">2</span></button>
+            <button style="font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: var(--blanco); color: var(--gris-100); border: 1px solid var(--gris-40); transition: background 150ms ease" @click="f.activar($event)" :aria-pressed="f.activo" data-pr :style="`font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `">Vecino preocupado </span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta">2</span></button>
           
-            <button style="font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: var(--blanco); color: var(--gris-100); border: 1px solid var(--gris-40); transition: background 150ms ease" onclick="() => this.setState({ perfil: pf.id })" :onclick="f.activar" :aria-pressed="f.activo" data-pr :style="`font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `">Voy a construir </span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta">2</span></button>
+            <button style="font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: var(--blanco); color: var(--gris-100); border: 1px solid var(--gris-40); transition: background 150ms ease" @click="f.activar($event)" :aria-pressed="f.activo" data-pr :style="`font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `">Voy a construir </span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta">2</span></button>
           
-            <button style="font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: var(--blanco); color: var(--gris-100); border: 1px solid var(--gris-40); transition: background 150ms ease" onclick="() => this.setState({ perfil: pf.id })" :onclick="f.activar" :aria-pressed="f.activo" data-pr :style="`font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `">Árbol en mi jardín </span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta">2</span></button>
+            <button style="font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: var(--blanco); color: var(--gris-100); border: 1px solid var(--gris-40); transition: background 150ms ease" @click="f.activar($event)" :aria-pressed="f.activo" data-pr :style="`font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `">Árbol en mi jardín </span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta">2</span></button>
           
-            <button style="font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: var(--blanco); color: var(--gris-100); border: 1px solid var(--gris-40); transition: background 150ms ease" onclick="() => this.setState({ perfil: pf.id })" :onclick="f.activar" :aria-pressed="f.activo" data-pr :style="`font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `">Vi algo irregular </span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta">2</span></button>
+            <button style="font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: var(--blanco); color: var(--gris-100); border: 1px solid var(--gris-40); transition: background 150ms ease" @click="f.activar($event)" :aria-pressed="f.activo" data-pr :style="`font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `">Vi algo irregular </span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta">2</span></button>
           
-            <button style="font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: var(--blanco); color: var(--gris-100); border: 1px solid var(--gris-40); transition: background 150ms ease" onclick="() => this.setState({ perfil: pf.id })" :onclick="f.activar" :aria-pressed="f.activo" data-pr :style="`font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `">Protejo un árbol </span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta">2</span></button>
+            <button style="font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: var(--blanco); color: var(--gris-100); border: 1px solid var(--gris-40); transition: background 150ms ease" @click="f.activar($event)" :aria-pressed="f.activo" data-pr :style="`font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `">Protejo un árbol </span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta">2</span></button>
           <template x-for="(f, _k1561135948) in v.perfiles" :key="_k1561135948">
-            <button :onclick="f.activar" :aria-pressed="f.activo" :style="`font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `"></span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta"></span></button>
+            <button @click="f.activar($event)" :aria-pressed="f.activo" :style="`font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `"></span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta"></span></button>
           </template>
         </div>
       </fieldset>
@@ -743,7 +743,7 @@ a:hover { color: var(--guinda-oscuro); }
       <ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 16px">
         
           <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--estado-error); scroll-margin-top: 84px" :id="c.ancla" data-pr :style="`background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid ${c.color}; scroll-margin-top: 84px`">
-            <button class="ih15" style="width: 100%; text-align: left; background: transparent; border: 0; padding: 20px clamp(18px, 3vw, 26px); font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: flex-start; min-height: 44px" onclick="() => this.setState(s => ({ casos: Object.assign({}, s.casos, { [c.titulo]: !s.casos[c.titulo] }) }))" :onclick="c.alternar" :aria-expanded="c.abierto">
+            <button class="ih15" style="width: 100%; text-align: left; background: transparent; border: 0; padding: 20px clamp(18px, 3vw, 26px); font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: flex-start; min-height: 44px" @click="c.alternar($event)" :aria-expanded="c.abierto">
               <span style="flex: 1">
                 <span style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 10px">
                   <span style="font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--blanco); background: var(--estado-error); padding: 5px 10px; display: inline-flex; align-items: center; white-space: nowrap" x-html="c.urgencia" :style="`font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--blanco); background: ${c.color}; padding: 5px 10px; display: inline-flex; align-items: center; white-space: nowrap`">Emergencia</span>
@@ -790,7 +790,7 @@ a:hover { color: var(--guinda-oscuro); }
           </li>
         
           <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--cafe); scroll-margin-top: 84px" :id="c.ancla" data-pr :style="`background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid ${c.color}; scroll-margin-top: 84px`">
-            <button class="ih15" style="width: 100%; text-align: left; background: transparent; border: 0; padding: 20px clamp(18px, 3vw, 26px); font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: flex-start; min-height: 44px" onclick="() => this.setState(s => ({ casos: Object.assign({}, s.casos, { [c.titulo]: !s.casos[c.titulo] }) }))" :onclick="c.alternar" :aria-expanded="c.abierto">
+            <button class="ih15" style="width: 100%; text-align: left; background: transparent; border: 0; padding: 20px clamp(18px, 3vw, 26px); font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: flex-start; min-height: 44px" @click="c.alternar($event)" :aria-expanded="c.abierto">
               <span style="flex: 1">
                 <span style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 10px">
                   <span style="font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--blanco); background: var(--cafe); padding: 5px 10px; display: inline-flex; align-items: center; white-space: nowrap" x-html="c.urgencia" :style="`font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--blanco); background: ${c.color}; padding: 5px 10px; display: inline-flex; align-items: center; white-space: nowrap`">Atención pronta</span>
@@ -837,7 +837,7 @@ a:hover { color: var(--guinda-oscuro); }
           </li>
         
           <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--guinda-100); scroll-margin-top: 84px" id="caso-construccion" :id="c.ancla" data-pr :style="`background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid ${c.color}; scroll-margin-top: 84px`">
-            <button class="ih15" style="width: 100%; text-align: left; background: transparent; border: 0; padding: 20px clamp(18px, 3vw, 26px); font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: flex-start; min-height: 44px" onclick="() => this.setState(s => ({ casos: Object.assign({}, s.casos, { [c.titulo]: !s.casos[c.titulo] }) }))" :onclick="c.alternar" :aria-expanded="c.abierto">
+            <button class="ih15" style="width: 100%; text-align: left; background: transparent; border: 0; padding: 20px clamp(18px, 3vw, 26px); font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: flex-start; min-height: 44px" @click="c.alternar($event)" :aria-expanded="c.abierto">
               <span style="flex: 1">
                 <span style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 10px">
                   <span style="font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--blanco); background: var(--guinda-100); padding: 5px 10px; display: inline-flex; align-items: center; white-space: nowrap" x-html="c.urgencia" :style="`font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--blanco); background: ${c.color}; padding: 5px 10px; display: inline-flex; align-items: center; white-space: nowrap`">Trámite ordinario</span>
@@ -884,7 +884,7 @@ a:hover { color: var(--guinda-oscuro); }
           </li>
         
           <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--guinda-100); scroll-margin-top: 84px" :id="c.ancla" data-pr :style="`background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid ${c.color}; scroll-margin-top: 84px`">
-            <button class="ih15" style="width: 100%; text-align: left; background: transparent; border: 0; padding: 20px clamp(18px, 3vw, 26px); font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: flex-start; min-height: 44px" onclick="() => this.setState(s => ({ casos: Object.assign({}, s.casos, { [c.titulo]: !s.casos[c.titulo] }) }))" :onclick="c.alternar" :aria-expanded="c.abierto">
+            <button class="ih15" style="width: 100%; text-align: left; background: transparent; border: 0; padding: 20px clamp(18px, 3vw, 26px); font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: flex-start; min-height: 44px" @click="c.alternar($event)" :aria-expanded="c.abierto">
               <span style="flex: 1">
                 <span style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 10px">
                   <span style="font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--blanco); background: var(--guinda-100); padding: 5px 10px; display: inline-flex; align-items: center; white-space: nowrap" x-html="c.urgencia" :style="`font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--blanco); background: ${c.color}; padding: 5px 10px; display: inline-flex; align-items: center; white-space: nowrap`">Trámite ordinario</span>
@@ -931,7 +931,7 @@ a:hover { color: var(--guinda-oscuro); }
           </li>
         
           <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--guinda-100); scroll-margin-top: 84px" id="caso-jardin-privado" :id="c.ancla" data-pr :style="`background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid ${c.color}; scroll-margin-top: 84px`">
-            <button class="ih15" style="width: 100%; text-align: left; background: transparent; border: 0; padding: 20px clamp(18px, 3vw, 26px); font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: flex-start; min-height: 44px" onclick="() => this.setState(s => ({ casos: Object.assign({}, s.casos, { [c.titulo]: !s.casos[c.titulo] }) }))" :onclick="c.alternar" :aria-expanded="c.abierto">
+            <button class="ih15" style="width: 100%; text-align: left; background: transparent; border: 0; padding: 20px clamp(18px, 3vw, 26px); font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: flex-start; min-height: 44px" @click="c.alternar($event)" :aria-expanded="c.abierto">
               <span style="flex: 1">
                 <span style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 10px">
                   <span style="font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--blanco); background: var(--guinda-100); padding: 5px 10px; display: inline-flex; align-items: center; white-space: nowrap" x-html="c.urgencia" :style="`font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--blanco); background: ${c.color}; padding: 5px 10px; display: inline-flex; align-items: center; white-space: nowrap`">Trámite ordinario</span>
@@ -978,7 +978,7 @@ a:hover { color: var(--guinda-oscuro); }
           </li>
         
           <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--guinda-100); scroll-margin-top: 84px" :id="c.ancla" data-pr :style="`background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid ${c.color}; scroll-margin-top: 84px`">
-            <button class="ih15" style="width: 100%; text-align: left; background: transparent; border: 0; padding: 20px clamp(18px, 3vw, 26px); font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: flex-start; min-height: 44px" onclick="() => this.setState(s => ({ casos: Object.assign({}, s.casos, { [c.titulo]: !s.casos[c.titulo] }) }))" :onclick="c.alternar" :aria-expanded="c.abierto">
+            <button class="ih15" style="width: 100%; text-align: left; background: transparent; border: 0; padding: 20px clamp(18px, 3vw, 26px); font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: flex-start; min-height: 44px" @click="c.alternar($event)" :aria-expanded="c.abierto">
               <span style="flex: 1">
                 <span style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 10px">
                   <span style="font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--blanco); background: var(--guinda-100); padding: 5px 10px; display: inline-flex; align-items: center; white-space: nowrap" x-html="c.urgencia" :style="`font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--blanco); background: ${c.color}; padding: 5px 10px; display: inline-flex; align-items: center; white-space: nowrap`">Trámite ordinario</span>
@@ -1023,7 +1023,7 @@ a:hover { color: var(--guinda-oscuro); }
           </li>
         
           <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--cafe); scroll-margin-top: 84px" :id="c.ancla" data-pr :style="`background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid ${c.color}; scroll-margin-top: 84px`">
-            <button class="ih15" style="width: 100%; text-align: left; background: transparent; border: 0; padding: 20px clamp(18px, 3vw, 26px); font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: flex-start; min-height: 44px" onclick="() => this.setState(s => ({ casos: Object.assign({}, s.casos, { [c.titulo]: !s.casos[c.titulo] }) }))" :onclick="c.alternar" :aria-expanded="c.abierto">
+            <button class="ih15" style="width: 100%; text-align: left; background: transparent; border: 0; padding: 20px clamp(18px, 3vw, 26px); font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: flex-start; min-height: 44px" @click="c.alternar($event)" :aria-expanded="c.abierto">
               <span style="flex: 1">
                 <span style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 10px">
                   <span style="font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--blanco); background: var(--cafe); padding: 5px 10px; display: inline-flex; align-items: center; white-space: nowrap" x-html="c.urgencia" :style="`font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--blanco); background: ${c.color}; padding: 5px 10px; display: inline-flex; align-items: center; white-space: nowrap`">Atención pronta</span>
@@ -1070,7 +1070,7 @@ a:hover { color: var(--guinda-oscuro); }
           </li>
         
           <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--cafe); scroll-margin-top: 84px" :id="c.ancla" data-pr :style="`background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid ${c.color}; scroll-margin-top: 84px`">
-            <button class="ih15" style="width: 100%; text-align: left; background: transparent; border: 0; padding: 20px clamp(18px, 3vw, 26px); font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: flex-start; min-height: 44px" onclick="() => this.setState(s => ({ casos: Object.assign({}, s.casos, { [c.titulo]: !s.casos[c.titulo] }) }))" :onclick="c.alternar" :aria-expanded="c.abierto">
+            <button class="ih15" style="width: 100%; text-align: left; background: transparent; border: 0; padding: 20px clamp(18px, 3vw, 26px); font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: flex-start; min-height: 44px" @click="c.alternar($event)" :aria-expanded="c.abierto">
               <span style="flex: 1">
                 <span style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 10px">
                   <span style="font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--blanco); background: var(--cafe); padding: 5px 10px; display: inline-flex; align-items: center; white-space: nowrap" x-html="c.urgencia" :style="`font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--blanco); background: ${c.color}; padding: 5px 10px; display: inline-flex; align-items: center; white-space: nowrap`">Atención pronta</span>
@@ -1115,7 +1115,7 @@ a:hover { color: var(--guinda-oscuro); }
           </li>
         
           <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--guinda-100); scroll-margin-top: 84px" :id="c.ancla" data-pr :style="`background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid ${c.color}; scroll-margin-top: 84px`">
-            <button class="ih15" style="width: 100%; text-align: left; background: transparent; border: 0; padding: 20px clamp(18px, 3vw, 26px); font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: flex-start; min-height: 44px" onclick="() => this.setState(s => ({ casos: Object.assign({}, s.casos, { [c.titulo]: !s.casos[c.titulo] }) }))" :onclick="c.alternar" :aria-expanded="c.abierto">
+            <button class="ih15" style="width: 100%; text-align: left; background: transparent; border: 0; padding: 20px clamp(18px, 3vw, 26px); font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: flex-start; min-height: 44px" @click="c.alternar($event)" :aria-expanded="c.abierto">
               <span style="flex: 1">
                 <span style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 10px">
                   <span style="font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--blanco); background: var(--guinda-100); padding: 5px 10px; display: inline-flex; align-items: center; white-space: nowrap" x-html="c.urgencia" :style="`font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--blanco); background: ${c.color}; padding: 5px 10px; display: inline-flex; align-items: center; white-space: nowrap`">Trámite ordinario</span>
@@ -1162,7 +1162,7 @@ a:hover { color: var(--guinda-oscuro); }
           </li>
         
           <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--estado-error); scroll-margin-top: 84px" :id="c.ancla" data-pr :style="`background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid ${c.color}; scroll-margin-top: 84px`">
-            <button class="ih15" style="width: 100%; text-align: left; background: transparent; border: 0; padding: 20px clamp(18px, 3vw, 26px); font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: flex-start; min-height: 44px" onclick="() => this.setState(s => ({ casos: Object.assign({}, s.casos, { [c.titulo]: !s.casos[c.titulo] }) }))" :onclick="c.alternar" :aria-expanded="c.abierto">
+            <button class="ih15" style="width: 100%; text-align: left; background: transparent; border: 0; padding: 20px clamp(18px, 3vw, 26px); font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: flex-start; min-height: 44px" @click="c.alternar($event)" :aria-expanded="c.abierto">
               <span style="flex: 1">
                 <span style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 10px">
                   <span style="font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--blanco); background: var(--estado-error); padding: 5px 10px; display: inline-flex; align-items: center; white-space: nowrap" x-html="c.urgencia" :style="`font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--blanco); background: ${c.color}; padding: 5px 10px; display: inline-flex; align-items: center; white-space: nowrap`">Emergencia</span>
@@ -1207,7 +1207,7 @@ a:hover { color: var(--guinda-oscuro); }
           </li>
         <template x-for="(c, _k296089474) in v.casos" :key="_k296089474">
           <li :id="c.ancla" :style="`background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid ${c.color}; scroll-margin-top: 84px`">
-            <button class="ih15" style="width: 100%; text-align: left; background: transparent; border: 0; padding: 20px clamp(18px, 3vw, 26px); font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: flex-start; min-height: 44px" :onclick="c.alternar" :aria-expanded="c.abierto">
+            <button class="ih15" style="width: 100%; text-align: left; background: transparent; border: 0; padding: 20px clamp(18px, 3vw, 26px); font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: flex-start; min-height: 44px" @click="c.alternar($event)" :aria-expanded="c.abierto">
               <span style="flex: 1">
                 <span style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 10px">
                   <span x-html="c.urgencia" :style="`font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--blanco); background: ${c.color}; padding: 5px 10px; display: inline-flex; align-items: center; white-space: nowrap`"></span>
@@ -1260,7 +1260,7 @@ a:hover { color: var(--guinda-oscuro); }
                   <li style="border-bottom: 1px solid var(--gris-40); scroll-margin-top: 80px" id="p01" :id="f.ancla" data-pr>
                     <div style="display: flex; align-items: baseline; gap: 14px">
                       <a class="ih16" style="flex: none; padding: 20px 0; font-size: 16px; font-weight: 700; color: var(--guinda-100); text-decoration: none; min-width: 32px" href="#p01" aria-label="Enlace a esta pregunta" :href="dcRuta(f.hash)" x-html="f.num">01</a>
-                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" onclick="() => this.setState(s => ({ faqs: Object.assign({}, s.faqs, { [f.p]: !s.faqs[f.p] }) }))" :onclick="f.alternar" :aria-expanded="f.abierto">
+                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
                         <span style="flex: 1; font-size: 19px; font-weight: 500; color: var(--gris-100); line-height: 1.35" x-html="f.pregunta">¿A quién le toca el árbol de mi calle?</span>
                         <span style="flex: none; font-size: 26px; line-height: 1; color: var(--dorado-100); font-weight: 700" aria-hidden="true" x-html="f.signo">+</span>
                       </button>
@@ -1274,7 +1274,7 @@ a:hover { color: var(--guinda-oscuro); }
                   <li style="border-bottom: 1px solid var(--gris-40); scroll-margin-top: 80px" id="p02" :id="f.ancla" data-pr>
                     <div style="display: flex; align-items: baseline; gap: 14px">
                       <a class="ih16" style="flex: none; padding: 20px 0; font-size: 16px; font-weight: 700; color: var(--guinda-100); text-decoration: none; min-width: 32px" href="#p02" aria-label="Enlace a esta pregunta" :href="dcRuta(f.hash)" x-html="f.num">02</a>
-                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" onclick="() => this.setState(s => ({ faqs: Object.assign({}, s.faqs, { [f.p]: !s.faqs[f.p] }) }))" :onclick="f.alternar" :aria-expanded="f.abierto">
+                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
                         <span style="flex: 1; font-size: 19px; font-weight: 500; color: var(--gris-100); line-height: 1.35" x-html="f.pregunta">¿Cuánto tarda una autorización?</span>
                         <span style="flex: none; font-size: 26px; line-height: 1; color: var(--dorado-100); font-weight: 700" aria-hidden="true" x-html="f.signo">+</span>
                       </button>
@@ -1288,7 +1288,7 @@ a:hover { color: var(--guinda-oscuro); }
                   <li style="border-bottom: 1px solid var(--gris-40); scroll-margin-top: 80px" id="p03" :id="f.ancla" data-pr>
                     <div style="display: flex; align-items: baseline; gap: 14px">
                       <a class="ih16" style="flex: none; padding: 20px 0; font-size: 16px; font-weight: 700; color: var(--guinda-100); text-decoration: none; min-width: 32px" href="#p03" aria-label="Enlace a esta pregunta" :href="dcRuta(f.hash)" x-html="f.num">03</a>
-                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" onclick="() => this.setState(s => ({ faqs: Object.assign({}, s.faqs, { [f.p]: !s.faqs[f.p] }) }))" :onclick="f.alternar" :aria-expanded="f.abierto">
+                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
                         <span style="flex: 1; font-size: 19px; font-weight: 500; color: var(--gris-100); line-height: 1.35" x-html="f.pregunta">El árbol de la banqueta dañó mi coche al caer, ¿quién paga?</span>
                         <span style="flex: none; font-size: 26px; line-height: 1; color: var(--dorado-100); font-weight: 700" aria-hidden="true" x-html="f.signo">+</span>
                       </button>
@@ -1302,7 +1302,7 @@ a:hover { color: var(--guinda-oscuro); }
                   <li style="border-bottom: 1px solid var(--gris-40); scroll-margin-top: 80px" id="p04" :id="f.ancla" data-pr>
                     <div style="display: flex; align-items: baseline; gap: 14px">
                       <a class="ih16" style="flex: none; padding: 20px 0; font-size: 16px; font-weight: 700; color: var(--guinda-100); text-decoration: none; min-width: 32px" href="#p04" aria-label="Enlace a esta pregunta" :href="dcRuta(f.hash)" x-html="f.num">04</a>
-                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" onclick="() => this.setState(s => ({ faqs: Object.assign({}, s.faqs, { [f.p]: !s.faqs[f.p] }) }))" :onclick="f.alternar" :aria-expanded="f.abierto">
+                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
                         <span style="flex: 1; font-size: 19px; font-weight: 500; color: var(--gris-100); line-height: 1.35" x-html="f.pregunta">¿Puedo plantar un árbol frente a mi casa?</span>
                         <span style="flex: none; font-size: 26px; line-height: 1; color: var(--dorado-100); font-weight: 700" aria-hidden="true" x-html="f.signo">+</span>
                       </button>
@@ -1316,7 +1316,7 @@ a:hover { color: var(--guinda-oscuro); }
                   <li style="border-bottom: 1px solid var(--gris-40); scroll-margin-top: 80px" :id="f.ancla">
                     <div style="display: flex; align-items: baseline; gap: 14px">
                       <a class="ih16" style="flex: none; padding: 20px 0; font-size: 16px; font-weight: 700; color: var(--guinda-100); text-decoration: none; min-width: 32px" aria-label="Enlace a esta pregunta" :href="dcRuta(f.hash)" x-html="f.num"></a>
-                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" :onclick="f.alternar" :aria-expanded="f.abierto">
+                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
                         <span style="flex: 1; font-size: 19px; font-weight: 500; color: var(--gris-100); line-height: 1.35" x-html="f.pregunta"></span>
                         <span style="flex: none; font-size: 26px; line-height: 1; color: var(--dorado-100); font-weight: 700" aria-hidden="true" x-html="f.signo"></span>
                       </button>
@@ -1337,7 +1337,7 @@ a:hover { color: var(--guinda-oscuro); }
                   <li style="border-bottom: 1px solid var(--gris-40); scroll-margin-top: 80px" id="p05" :id="f.ancla" data-pr>
                     <div style="display: flex; align-items: baseline; gap: 14px">
                       <a class="ih16" style="flex: none; padding: 20px 0; font-size: 16px; font-weight: 700; color: var(--guinda-100); text-decoration: none; min-width: 32px" href="#p05" aria-label="Enlace a esta pregunta" :href="dcRuta(f.hash)" x-html="f.num">05</a>
-                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" onclick="() => this.setState(s => ({ faqs: Object.assign({}, s.faqs, { [f.p]: !s.faqs[f.p] }) }))" :onclick="f.alternar" :aria-expanded="f.abierto">
+                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
                         <span style="flex: 1; font-size: 19px; font-weight: 500; color: var(--gris-100); line-height: 1.35" x-html="f.pregunta">Voy a construir, ¿el arbolado va aparte?</span>
                         <span style="flex: none; font-size: 26px; line-height: 1; color: var(--dorado-100); font-weight: 700" aria-hidden="true" x-html="f.signo">+</span>
                       </button>
@@ -1351,7 +1351,7 @@ a:hover { color: var(--guinda-oscuro); }
                   <li style="border-bottom: 1px solid var(--gris-40); scroll-margin-top: 80px" id="p06" :id="f.ancla" data-pr>
                     <div style="display: flex; align-items: baseline; gap: 14px">
                       <a class="ih16" style="flex: none; padding: 20px 0; font-size: 16px; font-weight: 700; color: var(--guinda-100); text-decoration: none; min-width: 32px" href="#p06" aria-label="Enlace a esta pregunta" :href="dcRuta(f.hash)" x-html="f.num">06</a>
-                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" onclick="() => this.setState(s => ({ faqs: Object.assign({}, s.faqs, { [f.p]: !s.faqs[f.p] }) }))" :onclick="f.alternar" :aria-expanded="f.abierto">
+                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
                         <span style="flex: 1; font-size: 19px; font-weight: 500; color: var(--gris-100); line-height: 1.35" x-html="f.pregunta">¿Cuántos árboles tengo que plantar si derribo uno?</span>
                         <span style="flex: none; font-size: 26px; line-height: 1; color: var(--dorado-100); font-weight: 700" aria-hidden="true" x-html="f.signo">+</span>
                       </button>
@@ -1365,7 +1365,7 @@ a:hover { color: var(--guinda-oscuro); }
                   <li style="border-bottom: 1px solid var(--gris-40); scroll-margin-top: 80px" id="p07" :id="f.ancla" data-pr>
                     <div style="display: flex; align-items: baseline; gap: 14px">
                       <a class="ih16" style="flex: none; padding: 20px 0; font-size: 16px; font-weight: 700; color: var(--guinda-100); text-decoration: none; min-width: 32px" href="#p07" aria-label="Enlace a esta pregunta" :href="dcRuta(f.hash)" x-html="f.num">07</a>
-                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" onclick="() => this.setState(s => ({ faqs: Object.assign({}, s.faqs, { [f.p]: !s.faqs[f.p] }) }))" :onclick="f.alternar" :aria-expanded="f.abierto">
+                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
                         <span style="flex: 1; font-size: 19px; font-weight: 500; color: var(--gris-100); line-height: 1.35" x-html="f.pregunta">¿Puedo pagar en lugar de plantar?</span>
                         <span style="flex: none; font-size: 26px; line-height: 1; color: var(--dorado-100); font-weight: 700" aria-hidden="true" x-html="f.signo">+</span>
                       </button>
@@ -1379,7 +1379,7 @@ a:hover { color: var(--guinda-oscuro); }
                   <li style="border-bottom: 1px solid var(--gris-40); scroll-margin-top: 80px" id="p08" :id="f.ancla" data-pr>
                     <div style="display: flex; align-items: baseline; gap: 14px">
                       <a class="ih16" style="flex: none; padding: 20px 0; font-size: 16px; font-weight: 700; color: var(--guinda-100); text-decoration: none; min-width: 32px" href="#p08" aria-label="Enlace a esta pregunta" :href="dcRuta(f.hash)" x-html="f.num">08</a>
-                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" onclick="() => this.setState(s => ({ faqs: Object.assign({}, s.faqs, { [f.p]: !s.faqs[f.p] }) }))" :onclick="f.alternar" :aria-expanded="f.abierto">
+                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
                         <span style="flex: 1; font-size: 19px; font-weight: 500; color: var(--gris-100); line-height: 1.35" x-html="f.pregunta">¿El trasplante es mejor que el derribo?</span>
                         <span style="flex: none; font-size: 26px; line-height: 1; color: var(--dorado-100); font-weight: 700" aria-hidden="true" x-html="f.signo">+</span>
                       </button>
@@ -1393,7 +1393,7 @@ a:hover { color: var(--guinda-oscuro); }
                   <li style="border-bottom: 1px solid var(--gris-40); scroll-margin-top: 80px" :id="f.ancla">
                     <div style="display: flex; align-items: baseline; gap: 14px">
                       <a class="ih16" style="flex: none; padding: 20px 0; font-size: 16px; font-weight: 700; color: var(--guinda-100); text-decoration: none; min-width: 32px" aria-label="Enlace a esta pregunta" :href="dcRuta(f.hash)" x-html="f.num"></a>
-                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" :onclick="f.alternar" :aria-expanded="f.abierto">
+                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
                         <span style="flex: 1; font-size: 19px; font-weight: 500; color: var(--gris-100); line-height: 1.35" x-html="f.pregunta"></span>
                         <span style="flex: none; font-size: 26px; line-height: 1; color: var(--dorado-100); font-weight: 700" aria-hidden="true" x-html="f.signo"></span>
                       </button>
@@ -1414,7 +1414,7 @@ a:hover { color: var(--guinda-oscuro); }
                   <li style="border-bottom: 1px solid var(--gris-40); scroll-margin-top: 80px" id="p09" :id="f.ancla" data-pr>
                     <div style="display: flex; align-items: baseline; gap: 14px">
                       <a class="ih16" style="flex: none; padding: 20px 0; font-size: 16px; font-weight: 700; color: var(--guinda-100); text-decoration: none; min-width: 32px" href="#p09" aria-label="Enlace a esta pregunta" :href="dcRuta(f.hash)" x-html="f.num">09</a>
-                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" onclick="() => this.setState(s => ({ faqs: Object.assign({}, s.faqs, { [f.p]: !s.faqs[f.p] }) }))" :onclick="f.alternar" :aria-expanded="f.abierto">
+                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
                         <span style="flex: 1; font-size: 19px; font-weight: 500; color: var(--gris-100); line-height: 1.35" x-html="f.pregunta">¿Necesito permiso si el árbol está en mi jardín?</span>
                         <span style="flex: none; font-size: 26px; line-height: 1; color: var(--dorado-100); font-weight: 700" aria-hidden="true" x-html="f.signo">+</span>
                       </button>
@@ -1428,7 +1428,7 @@ a:hover { color: var(--guinda-oscuro); }
                   <li style="border-bottom: 1px solid var(--gris-40); scroll-margin-top: 80px" id="p10" :id="f.ancla" data-pr>
                     <div style="display: flex; align-items: baseline; gap: 14px">
                       <a class="ih16" style="flex: none; padding: 20px 0; font-size: 16px; font-weight: 700; color: var(--guinda-100); text-decoration: none; min-width: 32px" href="#p10" aria-label="Enlace a esta pregunta" :href="dcRuta(f.hash)" x-html="f.num">10</a>
-                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" onclick="() => this.setState(s => ({ faqs: Object.assign({}, s.faqs, { [f.p]: !s.faqs[f.p] }) }))" :onclick="f.alternar" :aria-expanded="f.abierto">
+                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
                         <span style="flex: 1; font-size: 19px; font-weight: 500; color: var(--gris-100); line-height: 1.35" x-html="f.pregunta">¿Cuánto se le puede quitar a un árbol en una poda?</span>
                         <span style="flex: none; font-size: 26px; line-height: 1; color: var(--dorado-100); font-weight: 700" aria-hidden="true" x-html="f.signo">+</span>
                       </button>
@@ -1442,7 +1442,7 @@ a:hover { color: var(--guinda-oscuro); }
                   <li style="border-bottom: 1px solid var(--gris-40); scroll-margin-top: 80px" id="p11" :id="f.ancla" data-pr>
                     <div style="display: flex; align-items: baseline; gap: 14px">
                       <a class="ih16" style="flex: none; padding: 20px 0; font-size: 16px; font-weight: 700; color: var(--guinda-100); text-decoration: none; min-width: 32px" href="#p11" aria-label="Enlace a esta pregunta" :href="dcRuta(f.hash)" x-html="f.num">11</a>
-                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" onclick="() => this.setState(s => ({ faqs: Object.assign({}, s.faqs, { [f.p]: !s.faqs[f.p] }) }))" :onclick="f.alternar" :aria-expanded="f.abierto">
+                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
                         <span style="flex: 1; font-size: 19px; font-weight: 500; color: var(--gris-100); line-height: 1.35" x-html="f.pregunta">¿Puedo cortar las raíces que levantan mi piso?</span>
                         <span style="flex: none; font-size: 26px; line-height: 1; color: var(--dorado-100); font-weight: 700" aria-hidden="true" x-html="f.signo">+</span>
                       </button>
@@ -1456,7 +1456,7 @@ a:hover { color: var(--guinda-oscuro); }
                   <li style="border-bottom: 1px solid var(--gris-40); scroll-margin-top: 80px" id="p12" :id="f.ancla" data-pr>
                     <div style="display: flex; align-items: baseline; gap: 14px">
                       <a class="ih16" style="flex: none; padding: 20px 0; font-size: 16px; font-weight: 700; color: var(--guinda-100); text-decoration: none; min-width: 32px" href="#p12" aria-label="Enlace a esta pregunta" :href="dcRuta(f.hash)" x-html="f.num">12</a>
-                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" onclick="() => this.setState(s => ({ faqs: Object.assign({}, s.faqs, { [f.p]: !s.faqs[f.p] }) }))" :onclick="f.alternar" :aria-expanded="f.abierto">
+                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
                         <span style="flex: 1; font-size: 19px; font-weight: 500; color: var(--gris-100); line-height: 1.35" x-html="f.pregunta">¿Qué documentos necesito si el árbol está en mi predio?</span>
                         <span style="flex: none; font-size: 26px; line-height: 1; color: var(--dorado-100); font-weight: 700" aria-hidden="true" x-html="f.signo">+</span>
                       </button>
@@ -1470,7 +1470,7 @@ a:hover { color: var(--guinda-oscuro); }
                   <li style="border-bottom: 1px solid var(--gris-40); scroll-margin-top: 80px" :id="f.ancla">
                     <div style="display: flex; align-items: baseline; gap: 14px">
                       <a class="ih16" style="flex: none; padding: 20px 0; font-size: 16px; font-weight: 700; color: var(--guinda-100); text-decoration: none; min-width: 32px" aria-label="Enlace a esta pregunta" :href="dcRuta(f.hash)" x-html="f.num"></a>
-                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" :onclick="f.alternar" :aria-expanded="f.abierto">
+                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
                         <span style="flex: 1; font-size: 19px; font-weight: 500; color: var(--gris-100); line-height: 1.35" x-html="f.pregunta"></span>
                         <span style="flex: none; font-size: 26px; line-height: 1; color: var(--dorado-100); font-weight: 700" aria-hidden="true" x-html="f.signo"></span>
                       </button>
@@ -1491,7 +1491,7 @@ a:hover { color: var(--guinda-oscuro); }
                   <li style="border-bottom: 1px solid var(--gris-40); scroll-margin-top: 80px" id="p13" :id="f.ancla" data-pr>
                     <div style="display: flex; align-items: baseline; gap: 14px">
                       <a class="ih16" style="flex: none; padding: 20px 0; font-size: 16px; font-weight: 700; color: var(--guinda-100); text-decoration: none; min-width: 32px" href="#p13" aria-label="Enlace a esta pregunta" :href="dcRuta(f.hash)" x-html="f.num">13</a>
-                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" onclick="() => this.setState(s => ({ faqs: Object.assign({}, s.faqs, { [f.p]: !s.faqs[f.p] }) }))" :onclick="f.alternar" :aria-expanded="f.abierto">
+                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
                         <span style="flex: 1; font-size: 19px; font-weight: 500; color: var(--gris-100); line-height: 1.35" x-html="f.pregunta">¿Dónde denuncio una poda o un derribo irregular?</span>
                         <span style="flex: none; font-size: 26px; line-height: 1; color: var(--dorado-100); font-weight: 700" aria-hidden="true" x-html="f.signo">+</span>
                       </button>
@@ -1505,7 +1505,7 @@ a:hover { color: var(--guinda-oscuro); }
                   <li style="border-bottom: 1px solid var(--gris-40); scroll-margin-top: 80px" id="p14" :id="f.ancla" data-pr>
                     <div style="display: flex; align-items: baseline; gap: 14px">
                       <a class="ih16" style="flex: none; padding: 20px 0; font-size: 16px; font-weight: 700; color: var(--guinda-100); text-decoration: none; min-width: 32px" href="#p14" aria-label="Enlace a esta pregunta" :href="dcRuta(f.hash)" x-html="f.num">14</a>
-                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" onclick="() => this.setState(s => ({ faqs: Object.assign({}, s.faqs, { [f.p]: !s.faqs[f.p] }) }))" :onclick="f.alternar" :aria-expanded="f.abierto">
+                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
                         <span style="flex: 1; font-size: 19px; font-weight: 500; color: var(--gris-100); line-height: 1.35" x-html="f.pregunta">¿Necesito pruebas para denunciar?</span>
                         <span style="flex: none; font-size: 26px; line-height: 1; color: var(--dorado-100); font-weight: 700" aria-hidden="true" x-html="f.signo">+</span>
                       </button>
@@ -1519,7 +1519,7 @@ a:hover { color: var(--guinda-oscuro); }
                   <li style="border-bottom: 1px solid var(--gris-40); scroll-margin-top: 80px" id="p15" :id="f.ancla" data-pr>
                     <div style="display: flex; align-items: baseline; gap: 14px">
                       <a class="ih16" style="flex: none; padding: 20px 0; font-size: 16px; font-weight: 700; color: var(--guinda-100); text-decoration: none; min-width: 32px" href="#p15" aria-label="Enlace a esta pregunta" :href="dcRuta(f.hash)" x-html="f.num">15</a>
-                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" onclick="() => this.setState(s => ({ faqs: Object.assign({}, s.faqs, { [f.p]: !s.faqs[f.p] }) }))" :onclick="f.alternar" :aria-expanded="f.abierto">
+                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
                         <span style="flex: 1; font-size: 19px; font-weight: 500; color: var(--gris-100); line-height: 1.35" x-html="f.pregunta">¿De cuánto es la multa por derribar sin permiso?</span>
                         <span style="flex: none; font-size: 26px; line-height: 1; color: var(--dorado-100); font-weight: 700" aria-hidden="true" x-html="f.signo">+</span>
                       </button>
@@ -1533,7 +1533,7 @@ a:hover { color: var(--guinda-oscuro); }
                   <li style="border-bottom: 1px solid var(--gris-40); scroll-margin-top: 80px" id="p16" :id="f.ancla" data-pr>
                     <div style="display: flex; align-items: baseline; gap: 14px">
                       <a class="ih16" style="flex: none; padding: 20px 0; font-size: 16px; font-weight: 700; color: var(--guinda-100); text-decoration: none; min-width: 32px" href="#p16" aria-label="Enlace a esta pregunta" :href="dcRuta(f.hash)" x-html="f.num">16</a>
-                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" onclick="() => this.setState(s => ({ faqs: Object.assign({}, s.faqs, { [f.p]: !s.faqs[f.p] }) }))" :onclick="f.alternar" :aria-expanded="f.abierto">
+                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
                         <span style="flex: 1; font-size: 19px; font-weight: 500; color: var(--gris-100); line-height: 1.35" x-html="f.pregunta">¿Cómo verifico que un podador esté acreditado?</span>
                         <span style="flex: none; font-size: 26px; line-height: 1; color: var(--dorado-100); font-weight: 700" aria-hidden="true" x-html="f.signo">+</span>
                       </button>
@@ -1547,7 +1547,7 @@ a:hover { color: var(--guinda-oscuro); }
                   <li style="border-bottom: 1px solid var(--gris-40); scroll-margin-top: 80px" :id="f.ancla">
                     <div style="display: flex; align-items: baseline; gap: 14px">
                       <a class="ih16" style="flex: none; padding: 20px 0; font-size: 16px; font-weight: 700; color: var(--guinda-100); text-decoration: none; min-width: 32px" aria-label="Enlace a esta pregunta" :href="dcRuta(f.hash)" x-html="f.num"></a>
-                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" :onclick="f.alternar" :aria-expanded="f.abierto">
+                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
                         <span style="flex: 1; font-size: 19px; font-weight: 500; color: var(--gris-100); line-height: 1.35" x-html="f.pregunta"></span>
                         <span style="flex: none; font-size: 26px; line-height: 1; color: var(--dorado-100); font-weight: 700" aria-hidden="true" x-html="f.signo"></span>
                       </button>
@@ -1568,7 +1568,7 @@ a:hover { color: var(--guinda-oscuro); }
                   <li style="border-bottom: 1px solid var(--gris-40); scroll-margin-top: 80px" id="p17" :id="f.ancla" data-pr>
                     <div style="display: flex; align-items: baseline; gap: 14px">
                       <a class="ih16" style="flex: none; padding: 20px 0; font-size: 16px; font-weight: 700; color: var(--guinda-100); text-decoration: none; min-width: 32px" href="#p17" aria-label="Enlace a esta pregunta" :href="dcRuta(f.hash)" x-html="f.num">17</a>
-                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" onclick="() => this.setState(s => ({ faqs: Object.assign({}, s.faqs, { [f.p]: !s.faqs[f.p] }) }))" :onclick="f.alternar" :aria-expanded="f.abierto">
+                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
                         <span style="flex: 1; font-size: 19px; font-weight: 500; color: var(--gris-100); line-height: 1.35" x-html="f.pregunta">¿Qué es un árbol patrimonial?</span>
                         <span style="flex: none; font-size: 26px; line-height: 1; color: var(--dorado-100); font-weight: 700" aria-hidden="true" x-html="f.signo">+</span>
                       </button>
@@ -1582,7 +1582,7 @@ a:hover { color: var(--guinda-oscuro); }
                   <li style="border-bottom: 1px solid var(--gris-40); scroll-margin-top: 80px" id="p18" :id="f.ancla" data-pr>
                     <div style="display: flex; align-items: baseline; gap: 14px">
                       <a class="ih16" style="flex: none; padding: 20px 0; font-size: 16px; font-weight: 700; color: var(--guinda-100); text-decoration: none; min-width: 32px" href="#p18" aria-label="Enlace a esta pregunta" :href="dcRuta(f.hash)" x-html="f.num">18</a>
-                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" onclick="() => this.setState(s => ({ faqs: Object.assign({}, s.faqs, { [f.p]: !s.faqs[f.p] }) }))" :onclick="f.alternar" :aria-expanded="f.abierto">
+                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
                         <span style="flex: 1; font-size: 19px; font-weight: 500; color: var(--gris-100); line-height: 1.35" x-html="f.pregunta">¿Se puede derribar un árbol patrimonial?</span>
                         <span style="flex: none; font-size: 26px; line-height: 1; color: var(--dorado-100); font-weight: 700" aria-hidden="true" x-html="f.signo">+</span>
                       </button>
@@ -1596,7 +1596,7 @@ a:hover { color: var(--guinda-oscuro); }
                   <li style="border-bottom: 1px solid var(--gris-40); scroll-margin-top: 80px" id="p19" :id="f.ancla" data-pr>
                     <div style="display: flex; align-items: baseline; gap: 14px">
                       <a class="ih16" style="flex: none; padding: 20px 0; font-size: 16px; font-weight: 700; color: var(--guinda-100); text-decoration: none; min-width: 32px" href="#p19" aria-label="Enlace a esta pregunta" :href="dcRuta(f.hash)" x-html="f.num">19</a>
-                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" onclick="() => this.setState(s => ({ faqs: Object.assign({}, s.faqs, { [f.p]: !s.faqs[f.p] }) }))" :onclick="f.alternar" :aria-expanded="f.abierto">
+                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
                         <span style="flex: 1; font-size: 19px; font-weight: 500; color: var(--gris-100); line-height: 1.35" x-html="f.pregunta">¿Cómo propongo un árbol al registro?</span>
                         <span style="flex: none; font-size: 26px; line-height: 1; color: var(--dorado-100); font-weight: 700" aria-hidden="true" x-html="f.signo">+</span>
                       </button>
@@ -1610,7 +1610,7 @@ a:hover { color: var(--guinda-oscuro); }
                   <li style="border-bottom: 1px solid var(--gris-40); scroll-margin-top: 80px" id="p20" :id="f.ancla" data-pr>
                     <div style="display: flex; align-items: baseline; gap: 14px">
                       <a class="ih16" style="flex: none; padding: 20px 0; font-size: 16px; font-weight: 700; color: var(--guinda-100); text-decoration: none; min-width: 32px" href="#p20" aria-label="Enlace a esta pregunta" :href="dcRuta(f.hash)" x-html="f.num">20</a>
-                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" onclick="() => this.setState(s => ({ faqs: Object.assign({}, s.faqs, { [f.p]: !s.faqs[f.p] }) }))" :onclick="f.alternar" :aria-expanded="f.abierto">
+                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
                         <span style="flex: 1; font-size: 19px; font-weight: 500; color: var(--gris-100); line-height: 1.35" x-html="f.pregunta">¿Qué es el desmoche y por qué está prohibido?</span>
                         <span style="flex: none; font-size: 26px; line-height: 1; color: var(--dorado-100); font-weight: 700" aria-hidden="true" x-html="f.signo">+</span>
                       </button>
@@ -1624,7 +1624,7 @@ a:hover { color: var(--guinda-oscuro); }
                   <li style="border-bottom: 1px solid var(--gris-40); scroll-margin-top: 80px" :id="f.ancla">
                     <div style="display: flex; align-items: baseline; gap: 14px">
                       <a class="ih16" style="flex: none; padding: 20px 0; font-size: 16px; font-weight: 700; color: var(--guinda-100); text-decoration: none; min-width: 32px" aria-label="Enlace a esta pregunta" :href="dcRuta(f.hash)" x-html="f.num"></a>
-                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" :onclick="f.alternar" :aria-expanded="f.abierto">
+                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
                         <span style="flex: 1; font-size: 19px; font-weight: 500; color: var(--gris-100); line-height: 1.35" x-html="f.pregunta"></span>
                         <span style="flex: none; font-size: 26px; line-height: 1; color: var(--dorado-100); font-weight: 700" aria-hidden="true" x-html="f.signo"></span>
                       </button>
@@ -1645,7 +1645,7 @@ a:hover { color: var(--guinda-oscuro); }
                   <li style="border-bottom: 1px solid var(--gris-40); scroll-margin-top: 80px" :id="f.ancla">
                     <div style="display: flex; align-items: baseline; gap: 14px">
                       <a class="ih16" style="flex: none; padding: 20px 0; font-size: 16px; font-weight: 700; color: var(--guinda-100); text-decoration: none; min-width: 32px" aria-label="Enlace a esta pregunta" :href="dcRuta(f.hash)" x-html="f.num"></a>
-                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" :onclick="f.alternar" :aria-expanded="f.abierto">
+                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
                         <span style="flex: 1; font-size: 19px; font-weight: 500; color: var(--gris-100); line-height: 1.35" x-html="f.pregunta"></span>
                         <span style="flex: none; font-size: 26px; line-height: 1; color: var(--dorado-100); font-weight: 700" aria-hidden="true" x-html="f.signo"></span>
                       </button>
@@ -1676,8 +1676,8 @@ a:hover { color: var(--guinda-oscuro); }
       <div x-show="v.sinResponder">
           <p style="margin: 0 0 16px; font-size: 17px; line-height: 1.6">Tu respuesta nos dice qué información falta o no se entiende. No pedimos datos personales.</p>
           <div style="display: flex; gap: 12px; flex-wrap: wrap">
-            <button class="ih9" style="background: var(--guinda-100); color: var(--blanco); border: 0; border-radius: 4px; padding: 13px 26px; font-family: Roboto, sans-serif; font-size: 17px; font-weight: 700; cursor: pointer; min-height: 48px; transition: background 150ms ease" onclick="() => this.setState({ voto: &quot;si&quot; })" :onclick="v.votarSi">Sí</button>
-            <button class="ih8" style="background: transparent; color: var(--guinda-100); border: 2px solid var(--dorado-100); border-radius: 4px; padding: 12px 25px; font-family: Roboto, sans-serif; font-size: 17px; font-weight: 700; cursor: pointer; min-height: 48px; transition: background 150ms ease" onclick="() => this.setState({ voto: &quot;no&quot; })" :onclick="v.votarNo">No</button>
+            <button class="ih9" style="background: var(--guinda-100); color: var(--blanco); border: 0; border-radius: 4px; padding: 13px 26px; font-family: Roboto, sans-serif; font-size: 17px; font-weight: 700; cursor: pointer; min-height: 48px; transition: background 150ms ease" @click="v.votarSi($event)">Sí</button>
+            <button class="ih8" style="background: transparent; color: var(--guinda-100); border: 2px solid var(--dorado-100); border-radius: 4px; padding: 12px 25px; font-family: Roboto, sans-serif; font-size: 17px; font-weight: 700; cursor: pointer; min-height: 48px; transition: background 150ms ease" @click="v.votarNo($event)">No</button>
           </div>
         </div>
       <p x-show="v.dijoSi" style="margin: 0; font-size: 18px; line-height: 1.6; background: var(--blanco); border-left: 4px solid var(--estado-exito); padding: 16px 20px; display:none" role="status">Gracias. Si algo quedó pendiente, puedes escribir a <a href="mailto:atencionciudadana@sedema.cdmx.gob.mx">atencionciudadana@sedema.cdmx.gob.mx</a>.</p>
