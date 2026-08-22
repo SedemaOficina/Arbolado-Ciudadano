@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/base.css">
+  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/styles.css">
+  <script src="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/_ds_bundle.js"></script>
+  <script src="./image-slot.js"></script>
+  <style>
+    body { margin: 0; background: var(--blanco); color: var(--gris-100); font-family: Roboto, system-ui, sans-serif; }
+    a { color: var(--guinda-100); text-decoration: underline; text-underline-offset: 2px; }
+    a:hover { color: var(--guinda-oscuro); }
+    *:focus-visible { outline: 3px solid var(--guinda-100); outline-offset: 2px; }
+    html { scroll-behavior: smooth; }
+  </style>
+</helmet>
+
+<div style="min-height: 100vh; display: flex; flex-direction: column; background: var(--blanco)">
+
+  <dc-import name="CabeceraSitio" activo="politica" hint-size="100%,190px"></dc-import>
+
+  <nav aria-label="Ruta de navegación" style="background: var(--blanco)">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 14px 24px 12px; font-size: 14px; color: var(--gris-100)">
+      <a href="portada.dc.html">Inicio</a> <span aria-hidden="true" style="padding: 0 8px">·</span> <span style="color: var(--gris-100); font-weight: 700">Política de arbolado urbano</span>
+    </div>
+  </nav>
+
+  <main id="contenido" style="flex: 1">
+
+    <section style="background: var(--marfil); border-bottom: 1px solid var(--dorado-40)">
+      <div style="max-width: 1240px; margin: 0 auto; padding: clamp(44px, 6vw, 88px) 24px">
+        <div style="max-width: 30em">
+          <h1 style="margin: 0 0 26px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(36px, 5.2vw, 62px); line-height: 1.02; letter-spacing: -0.02em; font-weight: 700; color: var(--guinda-100); text-wrap: pretty">Una ciudad se mide por <em style="font-style: italic; color: var(--cafe)">la sombra</em> que deja a quien viene.</h1>
+          <p style="margin: 0; font-size: clamp(19px, 2vw, 24px); line-height: 1.5; text-wrap: pretty">La política de arbolado urbano de la Ciudad de México: qué se busca, con qué metas, cómo se mide y dónde consultar todo lo que la sustenta.</p>
+        </div>
+      </div>
+    </section>
+
+    <figure style="margin: 0; position: relative">
+      <div style="position: relative; width: 100%; aspect-ratio: 21 / 9; min-height: 260px; background: var(--gris-10); border-bottom: 1px solid var(--gris-20)">
+        <image-slot id="politica-portada" shape="rect" fit="cover" placeholder="Arrastra una fotografía documental de la política de arbolado"></image-slot>
+      </div>
+      <figcaption style="max-width: 1240px; margin: 0 auto; padding: 12px 24px 0; font-size: 15px; line-height: 1.5; color: var(--gris-100)">Jornada de plantación en la Ciudad de México. Fotografía institucional.</figcaption>
+    </figure>
+
+    <nav aria-label="Índice de la sección" style="position: sticky; top: 0; z-index: 20; background: var(--gris-10); border-top: 1px solid var(--gris-20); border-bottom: 1px solid var(--gris-40); box-shadow: 0 4px 8px rgba(26,26,26,0.06); margin-top: clamp(28px, 3vw, 40px)">
+      <div style="max-width: 1240px; margin: 0 auto; padding: 10px 24px">
+        <ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; overflow-x: auto">
+          <sc-for list="{{ indice }}" as="i" hint-placeholder-count="5">
+            <li style="flex: none"><a href="{{ i.href }}" style="display: flex; align-items: center; gap: 10px; padding: 11px 16px; text-decoration: none; color: var(--gris-100); min-height: 44px; box-sizing: border-box; white-space: nowrap; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; transition: background 150ms ease, border-color 150ms ease" style-hover="background: var(--marfil); border-color: var(--guinda-100); color: var(--guinda-100)"><span aria-hidden="true" style="width: 26px; height: 26px; flex: none; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; border: 1px solid var(--gris-40)">{{ i.n }}</span><span style="font-size: 17px; font-weight: 700">{{ i.etiqueta }}</span></a></li>
+          </sc-for>
+        </ol>
+      </div>
+    </nav>
+
+    <section id="sexenal" style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 64px) 24px; scroll-margin-top: 72px">
+      <div style="max-width: 40em; margin-bottom: 36px">
+        <h2 style="margin: 0 0 14px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(28px, 3.4vw, 40px); line-height: 1.12; font-weight: 700; color: var(--guinda-100)">Política sexenal</h2>
+        <p style="margin: 0; font-size: 20px; line-height: 1.6">Visión, metas al 2030 e indicadores de avance.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: clamp(28px, 4vw, 48px); margin-bottom: 40px">
+        <div>
+          <h3 style="margin: 0 0 14px; font-family: Cabin, Roboto, sans-serif; font-size: 26px; font-weight: 700; color: var(--guinda-100); line-height: 1.25">La visión</h3>
+          <p style="margin: 0 0 16px; font-size: 19px; line-height: 1.65">La Ciudad de México trabaja para que su arbolado urbano crezca en cantidad, en salud y en distribución justa entre alcaldías, con manejo técnico y participación de quienes viven cada calle.</p>
+        </div>
+        <div style="background: var(--gris-10); border-left: 4px solid var(--guinda-100); padding: 24px 28px">
+          <h3 style="margin: 0 0 14px; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--gris-100)">Los tres ejes</h3>
+          <ol style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 16px">
+            <li style="display: grid; grid-template-columns: 30px minmax(0, 1fr); gap: 14px; align-items: start"><span style="font-size: 18px; font-weight: 700; color: var(--guinda-100)">1</span><span style="font-size: 18px; line-height: 1.55">Más árboles y mejor cuidados</span></li>
+            <li style="display: grid; grid-template-columns: 30px minmax(0, 1fr); gap: 14px; align-items: start"><span style="font-size: 18px; font-weight: 700; color: var(--guinda-100)">2</span><span style="font-size: 18px; line-height: 1.55">Manejo técnico y personal acreditado</span></li>
+            <li style="display: grid; grid-template-columns: 30px minmax(0, 1fr); gap: 14px; align-items: start"><span style="font-size: 18px; font-weight: 700; color: var(--guinda-100)">3</span><span style="font-size: 18px; line-height: 1.55">Participación ciudadana informada</span></li>
+          </ol>
+        </div>
+      </div>
+
+      <h3 style="margin: 0 0 20px; font-family: Cabin, Roboto, sans-serif; font-size: 26px; font-weight: 700; color: var(--guinda-100)">Metas 2024–2030</h3>
+      <div style="overflow-x: auto; border: 1px solid var(--gris-20); margin-bottom: 40px">
+        <table style="width: 100%; border-collapse: collapse; font-size: 17px; min-width: 620px">
+          <thead>
+            <tr>
+              <th scope="col" style="text-align: left; padding: 14px 20px; background: var(--guinda-100); color: var(--blanco); font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase">Meta</th>
+              <th scope="col" style="text-align: left; padding: 14px 20px; background: var(--guinda-100); color: var(--blanco); font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase">Línea base</th>
+              <th scope="col" style="text-align: left; padding: 14px 20px; background: var(--guinda-100); color: var(--blanco); font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase">Meta al 2030</th>
+            </tr>
+          </thead>
+          <tbody>
+            <sc-for list="{{ metas }}" as="m" hint-placeholder-count="4">
+              <tr>
+                <th scope="row" style="text-align: left; padding: 16px 20px; border-bottom: 1px solid var(--gris-20); font-weight: 700; color: var(--gris-100); background: {{ m.fondo }}">{{ m.meta }}</th>
+                <td style="padding: 16px 20px; border-bottom: 1px solid var(--gris-20); color: var(--gris-100); background: {{ m.fondo }}">{{ m.base }}</td>
+                <td style="padding: 16px 20px; border-bottom: 1px solid var(--gris-20); font-weight: 700; color: var(--guinda-100); background: {{ m.fondo }}">{{ m.objetivo }}</td>
+              </tr>
+            </sc-for>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="margin: 0 0 20px; font-family: Cabin, Roboto, sans-serif; font-size: 26px; font-weight: 700; color: var(--guinda-100)">Indicadores de avance</h3>
+      <ul style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px">
+        <sc-for list="{{ indicadores }}" as="i" hint-placeholder-count="4">
+          <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-top: 4px solid var(--dorado-100); padding: 24px">
+            <span style="display: block; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 10px">{{ i.nombre }}</span>
+            <span style="display: block; font-family: Cabin, Roboto, sans-serif; font-size: clamp(30px, 5vw, 40px); font-weight: 700; color: var(--guinda-100); line-height: 1">{{ i.valor }}</span>
+            <span style="display: block; margin: 12px 0 10px; height: 8px; background: var(--gris-20)"><span style="display: block; height: 8px; background: var(--guinda-100); width: {{ i.pct }}"></span></span>
+            <span style="display: block; font-size: 16px; line-height: 1.5; color: var(--gris-100)">{{ i.nota }}</span>
+          </li>
+        </sc-for>
+      </ul>
+    </section>
+
+    <section id="programas" style="background: var(--gris-10); border-top: 1px solid var(--gris-20); border-bottom: 1px solid var(--gris-20); scroll-margin-top: 72px">
+      <div style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 64px) 24px">
+        <div style="max-width: 40em; margin-bottom: 32px">
+          <h2 style="margin: 0 0 14px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(28px, 3.4vw, 40px); line-height: 1.12; font-weight: 700; color: var(--guinda-100)">Programas vigentes</h2>
+          <p style="margin: 0; font-size: 20px; line-height: 1.6">Los programas institucionales con los que se ejecuta la política.</p>
+        </div>
+
+        <ul style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px">
+          <sc-for list="{{ programas }}" as="p" hint-placeholder-count="4">
+            <li style="background: var(--blanco); border: 1px solid var(--gris-20); display: flex; flex-direction: column; overflow: hidden">
+              <div style="position: relative; width: 100%; aspect-ratio: 3 / 2; background: var(--gris-10); border-bottom: 1px solid var(--gris-20)">
+                <image-slot id="{{ p.slot }}" shape="rect" fit="cover" placeholder="Arrastra la fotografía del programa"></image-slot>
+              </div>
+              <div style="padding: 24px; display: flex; flex-direction: column; flex: 1">
+                <span style="font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700">{{ p.etapa }}</span>
+                <h3 style="margin: 8px 0 10px; font-size: 22px; font-weight: 700; color: var(--guinda-100); line-height: 1.25">{{ p.nombre }}</h3>
+                <p style="margin: 0 0 16px; font-size: 17px; line-height: 1.55">{{ p.texto }}</p>
+                <span style="margin-top: auto; padding-top: 14px; border-top: 1px solid var(--gris-20); font-size: 16px; color: var(--gris-100)">{{ p.nota }}</span>
+              </div>
+            </li>
+          </sc-for>
+        </ul>
+      </div>
+    </section>
+
+    <section id="publicaciones" style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 64px) 24px; scroll-margin-top: 72px">
+      <div style="max-width: 40em; margin-bottom: 32px">
+        <h2 style="margin: 0 0 14px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(28px, 3.4vw, 40px); line-height: 1.12; font-weight: 700; color: var(--guinda-100)">Publicaciones rectoras</h2>
+        <p style="margin: 0; font-size: 20px; line-height: 1.6">Los documentos que fijan el marco de todo lo demás.</p>
+      </div>
+
+      <ul style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px">
+        <sc-for list="{{ publicaciones }}" as="d" hint-placeholder-count="3">
+          <li style="background: var(--blanco); border: 1px solid var(--gris-20); box-shadow: 0 4px 8px rgba(26,26,26,0.06); display: flex; gap: 20px; padding: 22px">
+            <div style="flex: none; width: 92px; aspect-ratio: 3 / 4; background: var(--marfil); border: 1px solid var(--dorado-40); box-shadow: 0 4px 8px rgba(26,26,26,0.12); display: flex; flex-direction: column">
+              <div style="height: 8px; background: var(--guinda-100)"></div>
+              <div style="flex: 1; padding: 10px 8px; display: flex; flex-direction: column; justify-content: space-between">
+                <span style="font-family: Cabin, Roboto, sans-serif; font-size: 11px; font-weight: 700; line-height: 1.2; color: var(--guinda-100)">{{ d.corto }}</span>
+                <span style="font-size: 8px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gris-100); font-weight: 700">SEDEMA</span>
+              </div>
+            </div>
+            <div style="flex: 1; min-width: 0; display: flex; flex-direction: column">
+              <span style="font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gris-100); font-weight: 700">{{ d.formato }}</span>
+              <h3 style="margin: 6px 0 8px; font-size: 19px; font-weight: 700; color: var(--guinda-100); line-height: 1.3">{{ d.titulo }}</h3>
+              <p style="margin: 0 0 16px; font-size: 16px; line-height: 1.5; color: var(--gris-100)">{{ d.texto }}</p>
+              <sc-if value="{{ d.disponible }}" hint-placeholder-val="{{ false }}">
+                <a href="{{ d.url }}" target="_blank" rel="noopener" style="margin-top: auto; align-self: flex-start; background: var(--guinda-100); color: var(--blanco); border-radius: 4px; padding: 11px 18px; font-size: 16px; font-weight: 700; text-decoration: none; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 8px; transition: background 150ms ease" style-hover="background: var(--guinda-oscuro); color: var(--blanco)">Consultar <span aria-hidden="true">↓</span></a>
+              </sc-if>
+              <sc-if value="{{ d.pendiente }}" hint-placeholder-val="{{ true }}">
+                <span style="margin-top: auto; align-self: flex-start; font-size: 15px; font-weight: 700; color: var(--gris-100); background: var(--gris-10); border: 1px solid var(--gris-40); padding: 10px 16px; display: inline-flex; align-items: center; min-height: 44px; box-sizing: border-box">Aún no disponible</span>
+              </sc-if>
+            </div>
+          </li>
+        </sc-for>
+      </ul>
+    </section>
+
+    <section id="recursos" style="background: var(--gris-10); border-top: 1px solid var(--gris-20); border-bottom: 1px solid var(--gris-20); scroll-margin-top: 72px">
+      <div style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 64px) 24px">
+        <div style="max-width: 40em; margin-bottom: 28px">
+          <h2 style="margin: 0 0 14px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(28px, 3.4vw, 40px); line-height: 1.12; font-weight: 700; color: var(--guinda-100)">Centro de recursos</h2>
+          <p style="margin: 0; font-size: 20px; line-height: 1.6">Documentos, libros, guías, listados, fotografías y videos. Cada ficha muestra su portada o su miniatura antes de que la abras.</p>
+        </div>
+
+        <fieldset style="border: 0; margin: 0 0 22px; padding: 0">
+          <legend style="font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--gris-100); margin-bottom: 12px">Filtra por tipo</legend>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px">
+            <sc-for list="{{ filtros }}" as="f" hint-placeholder-count="7">
+              <button onClick="{{ f.activar }}" aria-pressed="{{ f.activo }}" style="font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: {{ f.bg }}; color: {{ f.fg }}; border: 1px solid {{ f.borde }}; transition: background 150ms ease">{{ f.etiqueta }} <span style="font-size: 14px; opacity: 0.75">{{ f.cuenta }}</span></button>
+            </sc-for>
+          </div>
+        </fieldset>
+
+        <p style="margin: 0 0 22px; font-size: 19px; font-weight: 700; color: var(--guinda-100)">{{ conteo }}</p>
+
+        <ul style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 22px">
+          <sc-for list="{{ recursos }}" as="r" hint-placeholder-count="9">
+            <li style="background: var(--blanco); border: 1px solid var(--gris-20); display: flex; flex-direction: column; overflow: hidden">
+              <div style="position: relative; width: 100%; aspect-ratio: 3 / 2; background: var(--gris-10); border-bottom: 1px solid var(--gris-20); overflow: hidden">
+
+                <sc-if value="{{ r.esDocumento }}" hint-placeholder-val="{{ true }}">
+                  <div style="position: absolute; inset: 0; display: flex; align-items: flex-end; justify-content: center; padding-top: 18px">
+                    <div style="width: 42%; height: 88%; background: var(--marfil); border: 1px solid var(--dorado-40); border-bottom: 0; box-shadow: 0 4px 8px rgba(26,26,26,0.18); display: flex; flex-direction: column">
+                      <div style="height: 7px; background: {{ r.color }}"></div>
+                      <div style="flex: 1; padding: 12px 10px; display: flex; flex-direction: column; gap: 8px">
+                        <span style="font-family: Cabin, Roboto, sans-serif; font-size: 11px; font-weight: 700; line-height: 1.25; color: var(--guinda-100)">{{ r.corto }}</span>
+                        <span style="display: block; height: 2px; width: 60%; background: var(--dorado-40)"></span>
+                        <span style="display: block; height: 2px; width: 84%; background: var(--gris-20)"></span>
+                        <span style="display: block; height: 2px; width: 76%; background: var(--gris-20)"></span>
+                        <span style="display: block; height: 2px; width: 88%; background: var(--gris-20)"></span>
+                      </div>
+                    </div>
+                  </div>
+                </sc-if>
+
+                <sc-if value="{{ r.esVideo }}" hint-placeholder-val="{{ false }}">
+                  <div style="position: absolute; inset: 0; background: var(--gris-10)">
+                    <image-slot id="{{ r.slot }}" shape="rect" fit="cover" placeholder="Arrastra la miniatura del video"></image-slot>
+                  </div>
+                  <div aria-hidden="true" style="position: absolute; left: 14px; bottom: 12px; pointer-events: none">
+                    <span style="width: 52px; height: 52px; border-radius: 50%; background: var(--guinda-100); box-shadow: 0 4px 8px rgba(0,0,0,0.35); display: flex; align-items: center; justify-content: center">
+                      <span style="width: 0; height: 0; margin-left: 4px; border-left: 16px solid var(--blanco); border-top: 10px solid transparent; border-bottom: 10px solid transparent"></span>
+                    </span>
+                  </div>
+                  <span style="position: absolute; right: 10px; bottom: 10px; background: rgba(26,26,26,0.85); color: var(--blanco); font-size: 14px; font-weight: 700; padding: 4px 8px; pointer-events: none">{{ r.duracion }}</span>
+                </sc-if>
+
+                <sc-if value="{{ r.esImagen }}" hint-placeholder-val="{{ false }}">
+                  <div style="position: absolute; inset: 0">
+                    <image-slot id="{{ r.slot }}" shape="rect" fit="cover" placeholder="Arrastra la imagen del material"></image-slot>
+                  </div>
+                </sc-if>
+
+                <sc-if value="{{ r.esDatos }}" hint-placeholder-val="{{ false }}">
+                  <div aria-hidden="true" style="position: absolute; inset: 0; padding: 22px; display: flex; flex-direction: column; justify-content: flex-end; gap: 10px; background: var(--gris-10)">
+                    <div style="display: flex; align-items: flex-end; gap: 8px; height: 58%">
+                      <span style="flex: 1; height: 42%; background: var(--dorado-40)"></span>
+                      <span style="flex: 1; height: 66%; background: var(--dorado-100)"></span>
+                      <span style="flex: 1; height: 34%; background: var(--dorado-40)"></span>
+                      <span style="flex: 1; height: 88%; background: var(--guinda-100)"></span>
+                      <span style="flex: 1; height: 54%; background: var(--dorado-100)"></span>
+                      <span style="flex: 1; height: 72%; background: var(--dorado-40)"></span>
+                    </div>
+                    <span style="display: block; height: 2px; background: var(--gris-40)"></span>
+                    <span style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gris-100); font-weight: 700">Serie de datos</span>
+                  </div>
+                </sc-if>
+
+                <span style="position: absolute; left: 0; top: 0; background: {{ r.color }}; color: var(--blanco); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; padding: 6px 10px; pointer-events: none">{{ r.formato }}</span>
+              </div>
+
+              <div style="padding: 22px; display: flex; flex-direction: column; flex: 1">
+                <span style="font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gris-100); font-weight: 700">{{ r.categoria }}</span>
+                <h3 style="margin: 8px 0; font-size: 20px; font-weight: 700; color: var(--guinda-100); line-height: 1.3">{{ r.titulo }}</h3>
+                <p style="margin: 0 0 18px; font-size: 17px; line-height: 1.55">{{ r.texto }}</p>
+                <div style="margin-top: auto; border-top: 1px solid var(--gris-20); padding-top: 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap">
+                  <span style="font-size: 15px; color: var(--gris-100)">{{ r.peso }}</span>
+                  <sc-if value="{{ r.disponible }}" hint-placeholder-val="{{ false }}">
+                    <a href="{{ r.url }}" target="_blank" rel="noopener" style="background: var(--guinda-100); color: var(--blanco); border-radius: 4px; padding: 12px 20px; font-size: 16px; font-weight: 700; text-decoration: none; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 8px; transition: background 150ms ease" style-hover="background: var(--guinda-oscuro); color: var(--blanco)">Descargar <span aria-hidden="true">↓</span></a>
+                  </sc-if>
+                  <sc-if value="{{ r.pendiente }}" hint-placeholder-val="{{ true }}">
+                    <span style="font-size: 15px; font-weight: 700; color: var(--gris-100); background: var(--gris-10); border: 1px solid var(--gris-40); padding: 10px 16px; display: inline-flex; align-items: center; min-height: 44px; box-sizing: border-box; white-space: nowrap">Aún no disponible</span>
+                  </sc-if>
+                </div>
+              </div>
+            </li>
+          </sc-for>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <dc-import name="Utilidad" fecha="18 de agosto de 2026" hint-size="100%,200px"></dc-import>
+
+  <dc-import name="PieSitio" hint-size="100%,440px"></dc-import>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const INDICE = [
+  { n: "1", etiqueta: "Política sexenal", href: "#sexenal" },
+  { n: "2", etiqueta: "Programas vigentes", href: "#programas" },
+  { n: "3", etiqueta: "Publicaciones rectoras", href: "#publicaciones" },
+  { n: "4", etiqueta: "Centro de recursos", href: "#recursos" }
+];
+
+const METAS = [
+  { meta: "Plantación de arbolado urbano", base: "Por publicar", objetivo: "Por publicar" },
+  { meta: "Cobertura de copa por habitante", base: "Por publicar", objetivo: "Por publicar" },
+  { meta: "Atención de reportes ciudadanos", base: "Por publicar", objetivo: "Por publicar" },
+  { meta: "Personas acreditadas en manejo de arbolado", base: "Por publicar", objetivo: "Por publicar" }
+];
+
+const INDICADORES = [
+  { nombre: "Plantación anual", valor: "Por publicar", pct: "38%", nota: "Avance por publicar" },
+  { nombre: "Reportes atendidos", valor: "Por publicar", pct: "62%", nota: "Avance por publicar" },
+  { nombre: "Cobertura de copa", valor: "Por publicar", pct: "24%", nota: "Avance por publicar" },
+  { nombre: "Personas acreditadas", valor: "Por publicar", pct: "80%", nota: "Avance por publicar" }
+];
+
+const PROGRAMAS = [
+  { slot: "programa-1", etapa: "Programa vigente", nombre: "Programa por publicar", texto: "La ficha de este programa se publicará con su objetivo, su cobertura y a quién está dirigido.", nota: "Periodo y área responsable por publicar" },
+  { slot: "programa-2", etapa: "Programa vigente", nombre: "Programa por publicar", texto: "La ficha de este programa se publicará con su objetivo, su cobertura y a quién está dirigido.", nota: "Periodo y área responsable por publicar" },
+  { slot: "programa-3", etapa: "Programa vigente", nombre: "Programa por publicar", texto: "La ficha de este programa se publicará con su objetivo, su cobertura y a quién está dirigido.", nota: "Periodo y área responsable por publicar" },
+  { slot: "programa-4", etapa: "Programa vigente", nombre: "Programa por publicar", texto: "La ficha de este programa se publicará con su objetivo, su cobertura y a quién está dirigido.", nota: "Periodo y área responsable por publicar" }
+];
+
+const PUBLICACIONES = [
+  { corto: "Programa ambiental", formato: "Documento rector", titulo: "Programa ambiental y de cambio climático", texto: "El instrumento que enmarca la política ambiental de la ciudad para el sexenio." },
+  { corto: "Arbolado urbano", formato: "Documento rector", titulo: "Estrategia de arbolado urbano", texto: "Los criterios técnicos y las metas de manejo del arbolado de la ciudad." },
+  { corto: "Informe anual", formato: "Informe", titulo: "Informe anual de avance", texto: "Los resultados del año, con indicadores y ejecución por alcaldía." }
+];
+
+const CATEGORIAS = [
+  { id: "todos", etiqueta: "Todos" },
+  { id: "documentos", etiqueta: "Documentos", color: "var(--guinda-100)" },
+  { id: "libros", etiqueta: "Libros", color: "var(--guinda-oscuro)" },
+  { id: "guias", etiqueta: "Guías", color: "var(--dorado-100)" },
+  { id: "listados", etiqueta: "Listados", color: "var(--cafe)" },
+  { id: "fotografias", etiqueta: "Fotografías", color: "var(--azul)" },
+  { id: "videos", etiqueta: "Videos", color: "var(--estado-error)" }
+];
+
+const RECURSOS = [
+  { cat: "documentos", tipo: "doc", corto: "Ley Ambiental", titulo: "Ley Ambiental de Protección a la Tierra en el Distrito Federal", texto: "Texto vigente. Los artículos 104 a 118 bis rigen todo lo relativo al arbolado urbano.", formato: "Sitio oficial", peso: "Consejería Jurídica", url: "https://data.consejeria.cdmx.gob.mx/index.php/leyes/leyes#ley-ambiental-de-la-ciudad-de-m%C3%A9xico" },
+  { cat: "documentos", tipo: "doc", corto: "NADF-001", titulo: "NADF-001-RNAT-2015", texto: "Requisitos técnicos para poda, derribo, trasplante y restitución de arbolado urbano.", formato: "PDF", peso: "Documento oficial", url: "http://data.sedema.cdmx.gob.mx/sedema/images/archivos/sedema/leyes-reglamentos/normas/locales/NADF-001-RNAT-2016.pdf" },
+  { cat: "documentos", tipo: "doc", corto: "NADF-006", titulo: "NADF-006-RNAT-2012", texto: "Requisitos para la plantación y el mantenimiento de arbolado en la ciudad.", formato: "PDF", peso: "Documento oficial", url: "http://data.sedema.cdmx.gob.mx/sitios/conadf/documentos/NADF-006-RNAT-2016.pdf" },
+  { cat: "documentos", tipo: "doc", corto: "Código Penal", titulo: "Código Penal · delitos ambientales", texto: "Artículos 343 a 350: las conductas y las penas por daño al arbolado.", formato: "PDF", peso: "Pendiente" },
+  { cat: "libros", tipo: "doc", corto: "Árboles de la ciudad", titulo: "Los árboles de la Ciudad de México", texto: "Publicación institucional de divulgación sobre las especies del arbolado urbano.", formato: "Libro", peso: "Pendiente" },
+  { cat: "libros", tipo: "doc", corto: "Barrancas", titulo: "Barrancas y áreas de valor ambiental", texto: "Publicación institucional sobre el sistema de barrancas de la ciudad.", formato: "Libro", peso: "Pendiente" },
+  { cat: "guias", tipo: "doc", corto: "Poda correcta", titulo: "Guía de poda correcta", texto: "Cortes permitidos, cortes prohibidos y el límite de la cuarta parte del ejemplar.", formato: "Guía", peso: "Pendiente" },
+  { cat: "guias", tipo: "doc", corto: "Leer un dictamen", titulo: "Cómo se lee un dictamen técnico", texto: "Qué significa cada sección y qué revisar antes de aceptarlo.", formato: "Guía", peso: "Pendiente" },
+  { cat: "guias", tipo: "imagen", slot: "recurso-riesgo-7", corto: "Riesgo arbóreo", titulo: "Identificación de riesgo arbóreo", texto: "Señales visibles de que un árbol puede caer: grietas, inclinación, hongos y raíz expuesta.", formato: "Ficha visual", peso: "Pendiente" },
+  { cat: "guias", tipo: "doc", corto: "Árbol de banqueta", titulo: "Cuidados del árbol de banqueta", texto: "Riego, cajete, acolchado y qué no hacer con el arbolado frente a tu casa.", formato: "Guía", peso: "Pendiente" },
+  { cat: "listados", tipo: "datos", corto: "Padrón de podadores", titulo: "Padrón de podadores acreditados", texto: "Listado vigente con folio, nombre y vigencia de la acreditación.", formato: "Hoja de cálculo", peso: "Pendiente" },
+  { cat: "listados", tipo: "datos", corto: "Padrón de dictaminadores", titulo: "Padrón de dictaminadores acreditados", texto: "Listado vigente de personas autorizadas para emitir dictámenes.", formato: "Hoja de cálculo", peso: "Pendiente" },
+  { cat: "listados", tipo: "doc", corto: "Especies", titulo: "Especies recomendadas para banqueta", texto: "Especies por ancho de banqueta, con notas sobre raíz y porte.", formato: "Listado", peso: "Pendiente" },
+  { cat: "listados", tipo: "doc", corto: "Registro patrimonial", titulo: "Registro de árboles patrimoniales", texto: "Los trece ejemplares reconocidos como patrimonio natural de la ciudad.", formato: "Listado", peso: "Pendiente" },
+  { cat: "listados", tipo: "datos", corto: "Inventario", titulo: "Inventario de arbolado urbano", texto: "Datos abiertos del arbolado registrado, por alcaldía y especie.", formato: "Datos abiertos", peso: "Pendiente" },
+  { cat: "fotografias", tipo: "imagen", slot: "foto-jornadas", corto: "Jornadas", titulo: "Jornadas de plantación", texto: "Galería institucional de las jornadas de plantación en las dieciséis alcaldías.", formato: "Galería", peso: "Pendiente" },
+  { cat: "fotografias", tipo: "imagen", slot: "foto-patrimoniales", corto: "Patrimoniales", titulo: "Los trece ejemplares patrimoniales", texto: "Retratos de los árboles reconocidos como patrimonio natural.", formato: "Galería", peso: "Pendiente" },
+  { cat: "fotografias", tipo: "imagen", slot: "foto-barrancas", corto: "Barrancas", titulo: "Barrancas y bosques urbanos", texto: "Fotografía documental de las áreas de valor ambiental de la ciudad.", formato: "Galería", peso: "Pendiente" },
+  { cat: "videos", tipo: "video", slot: "video-caida-7", duracion: "2:14", corto: "Video", titulo: "Qué hacer si un árbol cae", texto: "La ruta de reporte según el nivel de riesgo, explicada en dos minutos.", formato: "Video", peso: "Pendiente" },
+  { cat: "videos", tipo: "video", slot: "video-poda-7", duracion: "3:40", corto: "Video", titulo: "Una poda bien hecha", texto: "Qué se ve en una poda correcta y qué señales indican que debes detenerla.", formato: "Video", peso: "Pendiente" },
+  { cat: "videos", tipo: "video", slot: "video-patrimonio-7", duracion: "5:02", corto: "Video", titulo: "Guardianes del tiempo", texto: "Los ejemplares patrimoniales contados por quienes los cuidan.", formato: "Video", peso: "Pendiente" }
+];
+
+class Component extends DCLogic {
+  state = { cat: "todos" };
+
+  renderVals() {
+    const st = this.state;
+    const filtrados = RECURSOS.filter(r => st.cat === "todos" || r.cat === st.cat);
+    const meta = id => CATEGORIAS.find(c => c.id === id) || {};
+
+    return {
+      indice: INDICE,
+      metas: METAS.map((m, i) => Object.assign({}, m, { fondo: i % 2 === 1 ? "var(--gris-10)" : "var(--blanco)" })),
+      indicadores: INDICADORES,
+      programas: PROGRAMAS,
+      publicaciones: PUBLICACIONES.map(p => Object.assign({}, p, { disponible: false, pendiente: true, url: "#" })),
+      filtros: CATEGORIAS.map(c => {
+        const on = st.cat === c.id;
+        const n = c.id === "todos" ? RECURSOS.length : RECURSOS.filter(r => r.cat === c.id).length;
+        return {
+          etiqueta: c.etiqueta,
+          cuenta: String(n),
+          activo: on,
+          bg: on ? "var(--guinda-100)" : "var(--blanco)",
+          fg: on ? "var(--blanco)" : "var(--gris-100)",
+          borde: on ? "var(--guinda-100)" : "var(--gris-40)",
+          activar: () => this.setState({ cat: c.id })
+        };
+      }),
+      conteo: filtrados.length === RECURSOS.length
+        ? "Los " + RECURSOS.length + " recursos"
+        : filtrados.length === 1 ? "1 recurso" : filtrados.length + " recursos",
+      recursos: filtrados.map((r, i) => ({
+        titulo: r.titulo,
+        corto: r.corto,
+        texto: r.texto,
+        formato: r.formato,
+        peso: r.peso,
+        duracion: r.duracion || "",
+        categoria: meta(r.cat).etiqueta || "",
+        color: meta(r.cat).color || "var(--guinda-100)",
+        esDocumento: r.tipo === "doc",
+        esVideo: r.tipo === "video",
+        esImagen: r.tipo === "imagen",
+        esDatos: r.tipo === "datos",
+        slot: r.slot || ("recurso7-" + i),
+        disponible: !!r.url,
+        pendiente: !r.url,
+        url: r.url || "#"
+      }))
+    };
+  }
+}
+</script>
+</body>
+</html>

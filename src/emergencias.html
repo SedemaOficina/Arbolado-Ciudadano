@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/base.css">
+  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/styles.css">
+  <script src="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/_ds_bundle.js"></script>
+  <style>
+    body { margin: 0; background: var(--blanco); color: var(--gris-100); font-family: Roboto, system-ui, sans-serif; }
+    a { color: var(--guinda-100); text-decoration: underline; text-underline-offset: 2px; }
+    a:hover { color: var(--guinda-oscuro); }
+    *:focus-visible { outline: 3px solid var(--guinda-100); outline-offset: 2px; }
+    html { scroll-behavior: smooth; }
+  </style>
+</helmet>
+
+<div style="min-height: 100vh; display: flex; flex-direction: column; background: var(--blanco)">
+
+  <dc-import name="CabeceraSitio" activo="emergencias" hint-size="100%,190px"></dc-import>
+
+  <nav aria-label="Ruta de navegación" style="background: var(--blanco)">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 14px 24px 12px; font-size: 14px; color: var(--gris-100)">
+      <a href="portada.dc.html">Inicio</a> <span aria-hidden="true" style="padding: 0 8px">·</span> <span style="color: var(--gris-100); font-weight: 700">Emergencias</span>
+    </div>
+  </nav>
+
+  <main id="contenido" style="flex: 1">
+
+    <section style="border-bottom: 1px solid var(--gris-20)">
+      <div style="max-width: 1240px; margin: 0 auto; padding: clamp(24px, 3vw, 36px) 24px clamp(20px, 2.5vw, 28px)">
+        <h1 style="margin: 0 0 12px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(30px, 4vw, 46px); line-height: 1.06; letter-spacing: -0.015em; font-weight: 700; color: var(--guinda-100); text-wrap: pretty">Cuando hay <em style="font-style: italic; color: var(--cafe)">riesgo</em></h1>
+        <p style="margin: 0; font-size: clamp(17px, 1.8vw, 20px); line-height: 1.5; max-width: 40em; text-wrap: pretty">Identifica el nivel y llama al número de ese nivel. Elegir bien evita saturar las líneas de emergencia y, sobre todo, evita subestimar un riesgo real.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="niveles-titulo" style="background: var(--gris-10); border-bottom: 1px solid var(--gris-20)">
+      <div style="max-width: 1240px; margin: 0 auto; padding: clamp(24px, 3vw, 36px) 24px">
+        <h2 id="niveles-titulo" style="position: absolute; left: -9999px">Los tres niveles de respuesta</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 20px">
+
+          <article style="background: var(--blanco); border: 1px solid var(--gris-20); border-top: 8px solid var(--estado-error); display: flex; flex-direction: column">
+            <div style="padding: 22px 22px 18px">
+              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px">
+                <span aria-hidden="true" style="width: 40px; height: 40px; flex: none; background: var(--estado-error); color: var(--blanco); font-family: Cabin, Roboto, sans-serif; font-size: 21px; font-weight: 700; display: flex; align-items: center; justify-content: center">1</span>
+                <span style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--estado-error)">Riesgo inminente</span>
+              </div>
+              <p style="margin: 0 0 16px; font-size: 18px; line-height: 1.5; color: var(--gris-100)">El daño ya ocurrió o va a ocurrir en minutos.</p>
+              <a href="tel:911" style="display: block; text-decoration: none; background: var(--estado-error); color: var(--blanco); padding: 16px 20px; transition: background 150ms ease" style-hover="background: var(--guinda-oscuro); color: var(--blanco)">
+                <span style="display: block; font-size: clamp(32px, 6vw, 44px); font-weight: 700; line-height: 1">911</span>
+                <span style="display: block; margin-top: 4px; font-size: 16px; line-height: 1.4">Bomberos y Protección Civil</span>
+              </a>
+              <p style="margin: 14px 0 0; font-size: 17px; line-height: 1.5; color: var(--gris-100)">También por el botón de auxilio del C5. Si hay cables, llama además a la CFE al <strong style="color: var(--guinda-100)">071</strong>.</p>
+            </div>
+            <div style="margin-top: auto; border-top: 1px solid var(--gris-20); padding: 16px 22px; background: var(--gris-10)">
+              <span style="display: block; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 4px">Tiempo de respuesta</span>
+              <span style="font-size: 19px; font-weight: 700; color: var(--guinda-100)">Inmediato</span>
+            </div>
+          </article>
+
+          <article style="background: var(--blanco); border: 1px solid var(--gris-20); border-top: 8px solid var(--estado-alerta); display: flex; flex-direction: column">
+            <div style="padding: 22px 22px 18px">
+              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px">
+                <span aria-hidden="true" style="width: 40px; height: 40px; flex: none; background: var(--cafe); color: var(--blanco); font-family: Cabin, Roboto, sans-serif; font-size: 21px; font-weight: 700; display: flex; align-items: center; justify-content: center">2</span>
+                <span style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--gris-100)">Riesgo próximo</span>
+              </div>
+              <p style="margin: 0 0 16px; font-size: 18px; line-height: 1.5; color: var(--gris-100)">El árbol está dañado y puede fallar en días o semanas.</p>
+              <a href="directorio.dc.html#alcaldias" style="display: block; text-decoration: none; background: var(--guinda-100); color: var(--blanco); padding: 16px 20px; transition: background 150ms ease" style-hover="background: var(--guinda-oscuro); color: var(--blanco)">
+                <span style="display: block; font-size: 30px; font-weight: 700; line-height: 1.1">Tu alcaldía</span>
+                <span style="display: block; margin-top: 4px; font-size: 16px; line-height: 1.4">Ver los dieciséis contactos →</span>
+              </a>
+              <p style="margin: 14px 0 0; font-size: 17px; line-height: 1.5; color: var(--gris-100)">Si no localizas a tu alcaldía, LOCATEL canaliza el reporte al <strong style="color: var(--guinda-100)">55 5658 1111</strong>, las veinticuatro horas.</p>
+            </div>
+            <div style="margin-top: auto; border-top: 1px solid var(--gris-20); padding: 16px 22px; background: var(--gris-10)">
+              <span style="display: block; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 4px">Tiempo de respuesta</span>
+              <span style="font-size: 19px; font-weight: 700; color: var(--guinda-100)">De 24 a 72 horas</span>
+            </div>
+          </article>
+
+          <article style="background: var(--blanco); border: 1px solid var(--gris-20); border-top: 8px solid var(--dorado-100); display: flex; flex-direction: column">
+            <div style="padding: 22px 22px 18px">
+              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px">
+                <span aria-hidden="true" style="width: 40px; height: 40px; flex: none; background: var(--dorado-100); color: var(--blanco); font-family: Cabin, Roboto, sans-serif; font-size: 21px; font-weight: 700; display: flex; align-items: center; justify-content: center">3</span>
+                <span style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--gris-100)">Riesgo evaluable</span>
+              </div>
+              <p style="margin: 0 0 16px; font-size: 18px; line-height: 1.5; color: var(--gris-100)">No hay peligro inmediato: hace falta una valoración técnica.</p>
+              <a href="tel:5553458187" style="display: block; text-decoration: none; background: var(--marfil); color: var(--guinda-100); border: 1px solid var(--dorado-40); padding: 16px 20px; transition: background 150ms ease" style-hover="background: var(--dorado-20); color: var(--guinda-oscuro)">
+                <span style="display: block; font-size: 27px; font-weight: 700; line-height: 1.1">55 5345 8187</span>
+                <span style="display: block; margin-top: 4px; font-size: 16px; line-height: 1.4; color: var(--gris-100)">Atención ciudadana de SEDEMA · de lunes a viernes, de 9 a 18 h</span>
+              </a>
+              <p style="margin: 14px 0 0; font-size: 17px; line-height: 1.5; color: var(--gris-100)">También para casos en bosques urbanos, barrancas y áreas naturales protegidas.</p>
+            </div>
+            <div style="margin-top: auto; border-top: 1px solid var(--gris-20); padding: 16px 22px; background: var(--gris-10)">
+              <span style="display: block; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 4px">Tiempo de respuesta</span>
+              <span style="font-size: 19px; font-weight: 700; color: var(--guinda-100)">De 3 a 20 días hábiles</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 56px) 24px">
+      <h2 style="margin: 0 0 12px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(24px, 3vw, 32px); line-height: 1.15; font-weight: 700; color: var(--guinda-100)">¿Cuál es mi nivel?</h2>
+      <p style="margin: 0 0 24px; font-size: 19px; line-height: 1.6; max-width: 42em">Busca lo que estás viendo en la primera columna.</p>
+      <div style="overflow-x: auto; border: 1px solid var(--gris-20)">
+        <table style="width: 100%; border-collapse: collapse; font-size: 17px; min-width: 640px">
+          <thead>
+            <tr>
+              <th scope="col" style="text-align: left; padding: 14px 20px; background: var(--guinda-100); color: var(--blanco); font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase">Lo que estás viendo</th>
+              <th scope="col" style="text-align: left; padding: 14px 20px; background: var(--guinda-100); color: var(--blanco); font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase">Nivel</th>
+              <th scope="col" style="text-align: left; padding: 14px 20px; background: var(--guinda-100); color: var(--blanco); font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase">A quién llamas</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row" style="text-align: left; padding: 16px 20px; border-bottom: 1px solid var(--gris-20); font-weight: 700; color: var(--gris-100)">El árbol ya cayó sobre una persona, un auto o una vivienda</th><td style="padding: 16px 20px; border-bottom: 1px solid var(--gris-20); font-weight: 700; color: var(--estado-error)">Nivel 1</td><td style="padding: 16px 20px; border-bottom: 1px solid var(--gris-20)">911</td></tr>
+            <tr><th scope="row" style="text-align: left; padding: 16px 20px; border-bottom: 1px solid var(--gris-20); font-weight: 700; color: var(--gris-100); background: var(--gris-10)">Toca un cable de energía o hay chispas</th><td style="padding: 16px 20px; border-bottom: 1px solid var(--gris-20); font-weight: 700; color: var(--estado-error); background: var(--gris-10)">Nivel 1</td><td style="padding: 16px 20px; border-bottom: 1px solid var(--gris-20); background: var(--gris-10)">911 y CFE 071</td></tr>
+            <tr><th scope="row" style="text-align: left; padding: 16px 20px; border-bottom: 1px solid var(--gris-20); font-weight: 700; color: var(--gris-100)">Una rama mayor se desprendió y bloquea la vía</th><td style="padding: 16px 20px; border-bottom: 1px solid var(--gris-20); font-weight: 700; color: var(--estado-error)">Nivel 1</td><td style="padding: 16px 20px; border-bottom: 1px solid var(--gris-20)">911 o tu alcaldía</td></tr>
+            <tr><th scope="row" style="text-align: left; padding: 16px 20px; border-bottom: 1px solid var(--gris-20); font-weight: 700; color: var(--gris-100); background: var(--gris-10)">Quedó inclinado o el suelo se levantó tras la lluvia</th><td style="padding: 16px 20px; border-bottom: 1px solid var(--gris-20); font-weight: 700; color: var(--cafe); background: var(--gris-10)">Nivel 2</td><td style="padding: 16px 20px; border-bottom: 1px solid var(--gris-20); background: var(--gris-10)">Tu alcaldía</td></tr>
+            <tr><th scope="row" style="text-align: left; padding: 16px 20px; border-bottom: 1px solid var(--gris-20); font-weight: 700; color: var(--gris-100)">Tiene grietas, cavidades, hongos o una rama seca grande</th><td style="padding: 16px 20px; border-bottom: 1px solid var(--gris-20); font-weight: 700; color: var(--cafe)">Nivel 2</td><td style="padding: 16px 20px; border-bottom: 1px solid var(--gris-20)">Tu alcaldía</td></tr>
+            <tr><th scope="row" style="text-align: left; padding: 16px 20px; border-bottom: 1px solid var(--gris-20); font-weight: 700; color: var(--gris-100); background: var(--gris-10)">Está plagado, descortezado o murió en pie</th><td style="padding: 16px 20px; border-bottom: 1px solid var(--gris-20); font-weight: 700; color: var(--cafe); background: var(--gris-10)">Nivel 2</td><td style="padding: 16px 20px; border-bottom: 1px solid var(--gris-20); background: var(--gris-10)">Tu alcaldía, con dictamen</td></tr>
+            <tr><th scope="row" style="text-align: left; padding: 16px 20px; border-bottom: 1px solid var(--gris-20); font-weight: 700; color: var(--gris-100)">Necesitas poda preventiva o de mantenimiento</th><td style="padding: 16px 20px; border-bottom: 1px solid var(--gris-20); font-weight: 700; color: var(--guinda-100)">Nivel 3</td><td style="padding: 16px 20px; border-bottom: 1px solid var(--gris-20)">Tu alcaldía</td></tr>
+            <tr><th scope="row" style="text-align: left; padding: 16px 20px; font-weight: 700; color: var(--gris-100); background: var(--gris-10)">El caso está en un parque, barranca o área protegida</th><td style="padding: 16px 20px; font-weight: 700; color: var(--guinda-100); background: var(--gris-10)">Nivel 3</td><td style="padding: 16px 20px; background: var(--gris-10)">SEDEMA</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section style="background: var(--marfil); border-top: 1px solid var(--dorado-40); border-bottom: 1px solid var(--dorado-40)">
+      <div style="max-width: 1240px; margin: 0 auto; padding: clamp(32px, 4vw, 52px) 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 28px">
+        <div>
+          <h2 style="margin: 0 0 14px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(23px, 2.6vw, 30px); line-height: 1.2; font-weight: 700; color: var(--guinda-100)">Mientras llega la ayuda</h2>
+          <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 14px">
+            <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start"><span aria-hidden="true" style="margin-top: 9px; width: 8px; height: 8px; background: var(--guinda-100); display: block"></span><span style="font-size: 18px; line-height: 1.55">Aleja a las personas a una distancia de una vez y media la altura del árbol</span></li>
+            <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start"><span aria-hidden="true" style="margin-top: 9px; width: 8px; height: 8px; background: var(--guinda-100); display: block"></span><span style="font-size: 18px; line-height: 1.55">Si puedes hacerlo sin riesgo, impide el paso de autos y peatones por debajo</span></li>
+            <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start"><span aria-hidden="true" style="margin-top: 9px; width: 8px; height: 8px; background: var(--guinda-100); display: block"></span><span style="font-size: 18px; line-height: 1.55">Fotografía desde lejos: te servirá para el seguro y para el reporte</span></li>
+            <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start"><span aria-hidden="true" style="margin-top: 9px; width: 8px; height: 8px; background: var(--guinda-100); display: block"></span><span style="font-size: 18px; line-height: 1.55">Anota la dirección exacta y guarda el folio del reporte</span></li>
+          </ul>
+        </div>
+        <div role="alert" style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--estado-error); padding: 24px 28px">
+          <span style="display: block; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--estado-error); margin-bottom: 8px">Alerta grave</span>
+          <strong style="display: block; font-size: 20px; margin-bottom: 10px; color: var(--negro)">Nunca intervengas el árbol por tu cuenta</strong>
+          <p style="margin: 0 0 12px; font-size: 18px; line-height: 1.6">Hay riesgo de electrocución, de caída secundaria y de lesión por motosierra, además de responsabilidad penal por intervención no autorizada.</p>
+          <p style="margin: 0; font-size: 16px; line-height: 1.55; color: var(--gris-100)">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículo 118 fracción III</p>
+        </div>
+      </div>
+    </section>
+
+    <section style="max-width: 1240px; margin: 0 auto; padding: clamp(32px, 4vw, 52px) 24px">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px">
+        <a href="hazlo.dc.html#procedimientos" style="text-decoration: none; background: var(--blanco); border: 1px solid var(--gris-20); border-top: 4px solid var(--guinda-100); padding: 24px; display: flex; flex-direction: column; gap: 8px; transition: box-shadow 150ms ease" style-hover="box-shadow: 0 4px 16px rgba(26,26,26,0.14)">
+          <span style="font-size: 20px; font-weight: 700; color: var(--guinda-100); line-height: 1.3">Ya pasó la emergencia</span>
+          <span style="font-size: 17px; line-height: 1.5; color: var(--gris-100)">El trámite que sigue está en los procedimientos de Qué necesito hacer.</span>
+        </a>
+        <a href="responsabilidades.dc.html" style="text-decoration: none; background: var(--blanco); border: 1px solid var(--gris-20); border-top: 4px solid var(--guinda-100); padding: 24px; display: flex; flex-direction: column; gap: 8px; transition: box-shadow 150ms ease" style-hover="box-shadow: 0 4px 16px rgba(26,26,26,0.14)">
+          <span style="font-size: 20px; font-weight: 700; color: var(--guinda-100); line-height: 1.3">No sé de quién es el árbol</span>
+          <span style="font-size: 17px; line-height: 1.5; color: var(--gris-100)">La matriz de competencias lo resuelve por tipo de suelo.</span>
+        </a>
+        <a href="directorio.dc.html" style="text-decoration: none; background: var(--blanco); border: 1px solid var(--gris-20); border-top: 4px solid var(--guinda-100); padding: 24px; display: flex; flex-direction: column; gap: 8px; transition: box-shadow 150ms ease" style-hover="box-shadow: 0 4px 16px rgba(26,26,26,0.14)">
+          <span style="font-size: 20px; font-weight: 700; color: var(--guinda-100); line-height: 1.3">Necesito otro teléfono</span>
+          <span style="font-size: 17px; line-height: 1.5; color: var(--gris-100)">El directorio tiene las sedes, los horarios y los correos.</span>
+        </a>
+      </div>
+    </section>
+
+    <section style="max-width: 1240px; margin: 0 auto; padding: 0 24px clamp(32px, 4vw, 48px)">
+        <p style="margin: 0; background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--dorado-100); padding: 18px 22px; font-size: 18px; line-height: 1.6">Si lo que viste parece irregular y no hay riesgo inmediato, la vía es la denuncia ambiental ante la PAOT. <a href="responsabilidades.dc.html#denunciar" style="font-weight: 700">Ver cómo se denuncia, paso a paso →</a></p>
+    </section>
+
+  </main>
+
+  <dc-import name="Utilidad" fecha="18 de agosto de 2026" hint-size="100%,200px"></dc-import>
+
+  <dc-import name="PieSitio" hint-size="100%,440px"></dc-import>
+</div>
+
+</x-dc>
+</body>
+</html>

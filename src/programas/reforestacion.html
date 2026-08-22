@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/base.css">
+  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/styles.css">
+  <script src="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/_ds_bundle.js"></script>
+  <script src="./image-slot.js"></script>
+  <style>
+    body { margin: 0; background: var(--blanco); color: var(--gris-100); font-family: Roboto, system-ui, sans-serif; }
+    a { color: var(--guinda-100); text-decoration: underline; text-underline-offset: 2px; }
+    a:hover { color: var(--guinda-oscuro); }
+    *:focus-visible { outline: 3px solid var(--guinda-100); outline-offset: 2px; }
+    html { scroll-behavior: smooth; }
+  </style>
+</helmet>
+
+<div style="min-height: 100vh; display: flex; flex-direction: column; background: var(--blanco)">
+
+  <dc-import name="CabeceraSitio" activo="programas" hint-size="100%,190px"></dc-import>
+
+  <nav aria-label="Ruta de navegación" style="background: var(--blanco)">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 14px 24px 12px; font-size: 14px; color: var(--gris-100)">
+      <a href="portada.dc.html">Inicio</a> <span aria-hidden="true" style="padding: 0 8px">·</span> <a href="programas.dc.html">Programas</a> <span aria-hidden="true" style="padding: 0 8px">·</span> <span style="color: var(--gris-100); font-weight: 700">Reforestación urbana</span>
+    </div>
+  </nav>
+
+  <main id="contenido" style="flex: 1">
+
+    <section style="background: var(--marfil); border-bottom: 1px solid var(--dorado-40)">
+      <div style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 60px) 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: clamp(28px, 4vw, 52px); align-items: center">
+        <div>
+          <h1 style="margin: 0 0 20px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(32px, 4.4vw, 50px); line-height: 1.06; letter-spacing: -0.015em; font-weight: 700; color: var(--guinda-100); text-wrap: pretty"><em style="font-style: italic; color: var(--cafe)">Reforestación</em> urbana</h1>
+          <p style="margin: 0 0 16px; font-size: clamp(18px, 1.9vw, 22px); line-height: 1.5; max-width: 32em; text-wrap: pretty">Plantar donde más falta, no donde es más fácil. El programa lleva árboles nuevos a las colonias con menos sombra por habitante y reporta su avance de forma abierta.</p>
+          <p style="margin: 0; font-size: 18px; line-height: 1.6; max-width: 34em">La sombra no está repartida por igual en la ciudad. Corregir esa desigualdad es el criterio que ordena el programa.</p>
+        </div>
+        <figure style="margin: 0">
+          <div style="position: relative; width: 100%; aspect-ratio: 4 / 3; background: var(--gris-10); border: 1px solid var(--dorado-40)">
+            <image-slot id="reforestacion-hero" shape="rect" fit="cover" placeholder="Arrastra una fotografía de una jornada de plantación"></image-slot>
+          </div>
+          <figcaption style="margin-top: 12px; padding-left: 12px; border-left: 3px solid var(--dorado-100); font-size: 15px; line-height: 1.5; color: var(--gris-100)">Jornada de plantación en la Ciudad de México. Fotografía institucional.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <nav aria-label="Índice de la sección" style="position: sticky; top: 0; z-index: 20; background: var(--gris-10); border-top: 1px solid var(--gris-20); border-bottom: 1px solid var(--gris-40); box-shadow: 0 4px 8px rgba(26,26,26,0.06)">
+      <div style="max-width: 1240px; margin: 0 auto; padding: 10px 24px">
+        <ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; overflow-x: auto">
+          <li style="flex: none"><a href="#justicia" style="display: flex; align-items: center; gap: 10px; padding: 11px 16px; text-decoration: none; color: var(--gris-100); min-height: 44px; box-sizing: border-box; white-space: nowrap; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; transition: background 150ms ease, border-color 150ms ease" style-hover="background: var(--marfil); border-color: var(--guinda-100); color: var(--guinda-100)"><span aria-hidden="true" style="width: 26px; height: 26px; flex: none; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; border: 1px solid var(--gris-40)">1</span><span style="font-size: 17px; font-weight: 700">Cómo se prioriza</span></a></li>
+          <li style="flex: none"><a href="#avance" style="display: flex; align-items: center; gap: 10px; padding: 11px 16px; text-decoration: none; color: var(--gris-100); min-height: 44px; box-sizing: border-box; white-space: nowrap; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; transition: background 150ms ease, border-color 150ms ease" style-hover="background: var(--marfil); border-color: var(--guinda-100); color: var(--guinda-100)"><span aria-hidden="true" style="width: 26px; height: 26px; flex: none; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; border: 1px solid var(--gris-40)">2</span><span style="font-size: 17px; font-weight: 700">Avance</span></a></li>
+          <li style="flex: none"><a href="#participar" style="display: flex; align-items: center; gap: 10px; padding: 11px 16px; text-decoration: none; color: var(--gris-100); min-height: 44px; box-sizing: border-box; white-space: nowrap; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; transition: background 150ms ease, border-color 150ms ease" style-hover="background: var(--marfil); border-color: var(--guinda-100); color: var(--guinda-100)"><span aria-hidden="true" style="width: 26px; height: 26px; flex: none; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; border: 1px solid var(--gris-40)">3</span><span style="font-size: 17px; font-weight: 700">Participar</span></a></li>
+        </ol>
+      </div>
+    </nav>
+
+    <section id="justicia" style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 60px) 24px; scroll-margin-top: 84px">
+      <div style="max-width: 44em; margin-bottom: 32px">
+        <h2 style="margin: 0 0 12px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(26px, 3.2vw, 36px); line-height: 1.15; font-weight: 700; color: var(--guinda-100)">Cómo se prioriza: enfoque de justicia ambiental</h2>
+        <p style="margin: 0 0 16px; font-size: 19px; line-height: 1.6">Las colonias con menos árboles suelen ser las que tienen menos ingreso, más calor y menos áreas verdes cerca. Plantar por igual en toda la ciudad mantendría esa brecha.</p>
+        <p style="margin: 0; font-size: 19px; line-height: 1.6">Por eso el programa no reparte parejo: ordena las zonas con cinco criterios y atiende primero a las que están peor.</p>
+      </div>
+
+      <ol style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 28px">
+        <sc-for list="{{ criterios }}" as="c" hint-placeholder-count="5">
+          <li style="background: {{ c.fondo }}; border: 1px solid {{ c.borde }}; border-top: 4px solid {{ c.pleca }}; padding: 24px 22px">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px">
+              <span aria-hidden="true" style="width: 36px; height: 36px; flex: none; background: {{ c.pleca }}; color: var(--blanco); font-family: Cabin, Roboto, sans-serif; font-size: 17px; font-weight: 700; display: flex; align-items: center; justify-content: center">{{ c.n }}</span>
+              <h3 style="margin: 0; font-size: 20px; font-weight: 700; color: var(--guinda-100); line-height: 1.25">{{ c.titulo }}</h3>
+            </div>
+            <p style="margin: 0 0 12px; font-size: 17px; line-height: 1.55">{{ c.texto }}</p>
+            <p style="margin: 0; font-size: 16px; line-height: 1.5; color: var(--gris-100)"><span style="font-weight: 700">Se mide con:</span> {{ c.medida }}</p>
+          </li>
+        </sc-for>
+      </ol>
+
+      <div style="background: var(--gris-10); border-left: 4px solid var(--guinda-100); padding: 24px 28px; margin-bottom: 28px">
+        <h3 style="margin: 0 0 10px; font-size: 21px; font-weight: 700; color: var(--guinda-100)">La regla del programa en una oración</h3>
+        <p style="margin: 0; font-size: 19px; line-height: 1.6">Entre dos calles que necesitan árboles, primero la que tiene menos sombra por habitante, más calor y menos área verde a menos de cuatrocientos metros.</p>
+      </div>
+
+      <div role="status" style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--estado-info); padding: 22px 26px">
+        <strong style="display: block; font-size: 19px; margin-bottom: 8px; color: var(--negro)">Priorizar no es excluir</strong>
+        <span style="font-size: 18px; line-height: 1.6">Toda la ciudad recibe mantenimiento y atención de riesgo. La priorización aplica a dónde se plantan primero los árboles nuevos, no a quién se le atiende un reporte.</span>
+      </div>
+    </section>
+
+    <section id="avance" style="background: var(--gris-10); border-top: 1px solid var(--gris-20); border-bottom: 1px solid var(--gris-20); scroll-margin-top: 84px">
+      <div style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 60px) 24px">
+        <div style="max-width: 44em; margin-bottom: 28px">
+          <h2 style="margin: 0 0 12px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(26px, 3.2vw, 36px); line-height: 1.15; font-weight: 700; color: var(--guinda-100)">Avance del programa</h2>
+          <p style="margin: 0; font-size: 19px; line-height: 1.6">Cuatro cifras que se actualizan con cada corte.</p>
+        </div>
+
+        <ul style="list-style: none; margin: 0 0 28px; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px">
+          <sc-for list="{{ indicadores }}" as="i" hint-placeholder-count="4">
+            <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-top: 4px solid var(--dorado-100); padding: 24px">
+              <span style="display: block; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 10px">{{ i.nombre }}</span>
+              <span style="display: block; font-family: Cabin, Roboto, sans-serif; font-size: 34px; font-weight: 700; color: var(--guinda-100); line-height: 1.1">{{ i.valor }}</span>
+              <span style="display: block; margin: 14px 0 10px; height: 10px; background: var(--gris-20)"><span style="display: block; height: 10px; background: var(--guinda-100); width: {{ i.pct }}"></span></span>
+              <span style="display: block; font-size: 16px; line-height: 1.5; color: var(--gris-100)">{{ i.nota }}</span>
+            </li>
+          </sc-for>
+        </ul>
+
+        <h3 style="margin: 0 0 12px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(21px, 2.4vw, 27px); font-weight: 700; color: var(--guinda-100)">Dónde se está plantando</h3>
+        <p style="margin: 0 0 16px; font-size: 18px; line-height: 1.6; max-width: 44em">Vista provisional por alcaldía. Cuando se integren los datos del inventario, el mapa mostrará las colonias con su nivel de prioridad.</p>
+        <div style="border: 1px solid var(--gris-20); background: var(--blanco)">
+          <div style="padding: 20px; background: var(--gris-10); border-bottom: 1px solid var(--gris-20)">
+            <ul style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(148px, 1fr)); gap: 8px; max-width: 1000px">
+              <sc-for list="{{ mapa }}" as="m" hint-placeholder-count="16">
+                <li style="background: {{ m.color }}; color: {{ m.texto }}; padding: 18px 14px; min-height: 86px; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid var(--gris-20)">
+                  <span style="font-size: 15px; font-weight: 700; line-height: 1.25">{{ m.nombre }}</span>
+                  <span style="font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; opacity: 0.9">{{ m.prioridad }}</span>
+                </li>
+              </sc-for>
+            </ul>
+          </div>
+          <div style="padding: 16px 20px; display: flex; gap: 20px; flex-wrap: wrap; align-items: center">
+            <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 16px; color: var(--gris-100)"><span aria-hidden="true" style="width: 14px; height: 14px; background: var(--guinda-100); display: inline-block"></span>Prioridad alta</span>
+            <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 16px; color: var(--gris-100)"><span aria-hidden="true" style="width: 14px; height: 14px; background: var(--guinda-oscuro); display: inline-block"></span>Prioridad media</span>
+            <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 16px; color: var(--gris-100)"><span aria-hidden="true" style="width: 14px; height: 14px; background: var(--dorado-40); display: inline-block"></span>Seguimiento</span>
+          </div>
+        </div>
+        <p style="margin: 12px 0 28px; font-size: 16px; line-height: 1.5; color: var(--negro); background: var(--estado-alerta); padding: 8px 12px; display: inline-block; font-weight: 700">Mapa provisional: son bloques por alcaldía, no geografía real. Los polígonos por colonia se integran con los datos del inventario</p>
+
+        <h3 style="margin: 0 0 18px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(21px, 2.4vw, 27px); font-weight: 700; color: var(--guinda-100)">Avance por alcaldía prioritaria</h3>
+        <div style="overflow-x: auto; border: 1px solid var(--gris-20); background: var(--blanco)">
+          <table style="width: 100%; border-collapse: collapse; font-size: 17px; min-width: 620px">
+            <thead>
+              <tr>
+                <th scope="col" style="text-align: left; padding: 14px 20px; background: var(--guinda-100); color: var(--blanco); font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase">Alcaldía</th>
+                <th scope="col" style="text-align: left; padding: 14px 20px; background: var(--guinda-100); color: var(--blanco); font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase">Prioridad</th>
+                <th scope="col" style="text-align: left; padding: 14px 20px; background: var(--guinda-100); color: var(--blanco); font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase">Meta del año</th>
+                <th scope="col" style="text-align: left; padding: 14px 20px; background: var(--guinda-100); color: var(--blanco); font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase">Plantado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <sc-for list="{{ filas }}" as="f" hint-placeholder-count="5">
+                <tr>
+                  <th scope="row" style="text-align: left; padding: 16px 20px; border-bottom: 1px solid var(--gris-20); font-weight: 700; color: var(--gris-100); background: {{ f.fondo }}">{{ f.alcaldia }}</th>
+                  <td style="padding: 16px 20px; border-bottom: 1px solid var(--gris-20); background: {{ f.fondo }}"><span style="font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; color: var(--blanco); background: {{ f.color }}; padding: 4px 10px; display: inline-flex; align-items: center; white-space: nowrap">{{ f.prioridad }}</span></td>
+                  <td style="padding: 16px 20px; border-bottom: 1px solid var(--gris-20); color: var(--gris-100); background: {{ f.fondo }}">{{ f.meta }}</td>
+                  <td style="padding: 16px 20px; border-bottom: 1px solid var(--gris-20); color: var(--gris-100); background: {{ f.fondo }}">{{ f.plantado }}</td>
+                </tr>
+              </sc-for>
+            </tbody>
+          </table>
+        </div>
+        <p style="margin: 18px 0 0; font-size: 16px; line-height: 1.55; color: var(--gris-100)">Las cifras del avance se publican con cada corte. La tabla completa de las dieciséis alcaldías se descargará como datos abiertos.</p>
+      </div>
+    </section>
+
+    <section id="participar" style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 60px) 24px; scroll-margin-top: 84px">
+      <div style="max-width: 44em; margin-bottom: 28px">
+        <h2 style="margin: 0 0 12px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(26px, 3.2vw, 36px); line-height: 1.15; font-weight: 700; color: var(--guinda-100)">Cómo participo</h2>
+        <p style="margin: 0; font-size: 19px; line-height: 1.6">Puedes proponer un sitio, sumarte a una jornada o adoptar el cuidado de un árbol recién plantado.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 28px">
+        <div style="background: var(--blanco); border: 1px solid var(--gris-20); border-top: 4px solid var(--guinda-100); padding: 24px">
+          <h3 style="margin: 0 0 10px; font-size: 21px; font-weight: 700; color: var(--guinda-100)">Propón un sitio</h3>
+          <p style="margin: 0 0 14px; font-size: 17px; line-height: 1.55">Manda la dirección y una fotografía del espacio. Se revisa el ancho de banqueta, el cableado y el suelo antes de aprobarlo.</p>
+          <a href="directorio.dc.html#alcaldias" style="font-size: 17px; font-weight: 700">Reportar a mi alcaldía →</a>
+        </div>
+        <div style="background: var(--blanco); border: 1px solid var(--gris-20); border-top: 4px solid var(--guinda-100); padding: 24px">
+          <h3 style="margin: 0 0 10px; font-size: 21px; font-weight: 700; color: var(--guinda-100)">Súmate a una jornada</h3>
+          <p style="margin: 0 0 14px; font-size: 17px; line-height: 1.55">Las jornadas se convocan por alcaldía. Se planta con acompañamiento técnico: la especie y el sitio ya vienen definidos.</p>
+          <span style="font-size: 17px; font-weight: 700; color: var(--gris-100)">Calendario por publicar</span>
+        </div>
+        <div style="background: var(--marfil); border: 1px solid var(--dorado-40); border-top: 4px solid var(--guinda-100); padding: 24px">
+          <h3 style="margin: 0 0 10px; font-size: 21px; font-weight: 700; color: var(--guinda-100)">Adopta un árbol</h3>
+          <p style="margin: 0 0 14px; font-size: 17px; line-height: 1.55">Los primeros tres años definen si un árbol sobrevive. Riego en secas, cajete libre y aviso si algo le pasa: eso es adoptarlo.</p>
+          <a href="hazlo.dc.html#casos" style="font-size: 17px; font-weight: 700">Cómo se cuida un árbol nuevo →</a>
+        </div>
+      </div>
+
+      <div role="status" style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--estado-info); padding: 22px 26px; margin-bottom: 28px">
+        <strong style="display: block; font-size: 19px; margin-bottom: 8px; color: var(--negro)">Plantar por tu cuenta en la vía pública no cuenta como reforestación</strong>
+        <span style="font-size: 18px; line-height: 1.6">Un árbol en el sitio equivocado termina retirado, rompiendo la banqueta o tocando cables. La especie y el lugar se definen antes de plantar, y eso se coordina con tu alcaldía.</span>
+      </div>
+
+      <div style="display: flex; gap: 16px; flex-wrap: wrap">
+        <a href="directorio.dc.html#alcaldias" style="background: var(--guinda-100); color: var(--blanco); border-radius: 4px; padding: 14px 24px; font-size: 17px; font-weight: 700; text-decoration: none; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center; transition: background 150ms ease" style-hover="background: var(--guinda-oscuro); color: var(--blanco)">Contactar a mi alcaldía</a>
+        <a href="viveros.dc.html" style="background: transparent; color: var(--guinda-100); border: 2px solid var(--dorado-100); border-radius: 4px; padding: 13px 23px; font-size: 17px; font-weight: 700; text-decoration: none; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center; transition: background 150ms ease" style-hover="background: var(--dorado-20)">De dónde sale la planta</a>
+      </div>
+    </section>
+
+  </main>
+
+  <dc-import name="Utilidad" fecha="18 de agosto de 2026" hint-size="100%,200px"></dc-import>
+
+  <dc-import name="PieSitio" hint-size="100%,440px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const CRITERIOS = [
+  { n: "1", titulo: "Sombra por habitante", texto: "Cuántos metros cuadrados de copa hay por persona en la colonia. Es el criterio que más pesa: mide directamente lo que falta.", medida: "Cobertura de copa del inventario, dividida entre población" },
+  { n: "2", titulo: "Temperatura de superficie", texto: "Las colonias sin árboles concentran calor. Se identifican las islas de calor y se atienden primero.", medida: "Temperatura de superficie por manzana" },
+  { n: "3", titulo: "Distancia a un área verde", texto: "Si no hay un parque a menos de cuatrocientos metros caminando, la colonia sube de prioridad.", medida: "Distancia a pie al área verde pública más cercana" },
+  { n: "4", titulo: "Grado de marginación", texto: "Las colonias con mayor marginación han recibido históricamente menos inversión en área verde. El programa corrige esa deuda.", medida: "Índice de marginación por unidad territorial" },
+  { n: "5", titulo: "Espacio para que el árbol viva", texto: "No basta querer plantar: hace falta banqueta suficiente, suelo permeable y ausencia de cableado. Si no hay espacio, se busca otro sitio en la misma colonia.", medida: "Ancho de banqueta, tipo de suelo y cableado aéreo" }
+];
+
+const INDICADORES = [
+  { nombre: "Árboles plantados", valor: "Por publicar", pct: "0%", nota: "Acumulado del año en curso" },
+  { nombre: "Sobrevivencia a tres años", valor: "Por publicar", pct: "0%", nota: "Del total plantado en el ciclo anterior" },
+  { nombre: "Plantación en zonas prioritarias", valor: "Por publicar", pct: "0%", nota: "Proporción que se planta en las colonias de prioridad alta" },
+  { nombre: "Colonias atendidas", valor: "Por publicar", pct: "0%", nota: "De las que la priorización identificó" }
+];
+
+const FILAS = [
+  { alcaldia: "Iztapalapa", prioridad: "Alta", meta: "Por publicar", plantado: "Por publicar" },
+  { alcaldia: "Gustavo A. Madero", prioridad: "Alta", meta: "Por publicar", plantado: "Por publicar" },
+  { alcaldia: "Tláhuac", prioridad: "Alta", meta: "Por publicar", plantado: "Por publicar" },
+  { alcaldia: "Xochimilco", prioridad: "Media", meta: "Por publicar", plantado: "Por publicar" },
+  { alcaldia: "Milpa Alta", prioridad: "Seguimiento", meta: "Por publicar", plantado: "Por publicar" }
+];
+
+const COLOR = { Alta: "var(--guinda-100)", Media: "var(--guinda-oscuro)", Seguimiento: "var(--dorado-100)" };
+
+const MAPA = [
+  ["Iztapalapa", "Alta"], ["Gustavo A. Madero", "Alta"], ["Tláhuac", "Alta"], ["Venustiano Carranza", "Alta"],
+  ["Iztacalco", "Alta"], ["Azcapotzalco", "Media"], ["Xochimilco", "Media"], ["Álvaro Obregón", "Media"],
+  ["Cuauhtémoc", "Media"], ["Tlalpan", "Media"], ["La Magdalena Contreras", "Media"], ["Milpa Alta", "Seguimiento"],
+  ["Cuajimalpa de Morelos", "Seguimiento"], ["Coyoacán", "Seguimiento"], ["Benito Juárez", "Seguimiento"], ["Miguel Hidalgo", "Seguimiento"]
+];
+
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      criterios: CRITERIOS.map((c, i) => Object.assign({}, c, {
+        fondo: i === 0 ? "var(--marfil)" : "var(--blanco)",
+        borde: i === 0 ? "var(--dorado-40)" : "var(--gris-20)",
+        pleca: i === 0 ? "var(--guinda-100)" : "var(--dorado-100)"
+      })),
+      indicadores: INDICADORES,
+      mapa: MAPA.map(m => ({
+        nombre: m[0],
+        prioridad: m[1],
+        color: m[1] === "Alta" ? "var(--guinda-100)" : m[1] === "Media" ? "var(--guinda-oscuro)" : "var(--dorado-40)",
+        texto: m[1] === "Seguimiento" ? "var(--gris-100)" : "var(--blanco)"
+      })),
+      filas: FILAS.map((f, i) => Object.assign({}, f, {
+        fondo: i % 2 === 1 ? "var(--gris-10)" : "var(--blanco)",
+        color: COLOR[f.prioridad]
+      }))
+    };
+  }
+}
+</script>
+</body>
+</html>

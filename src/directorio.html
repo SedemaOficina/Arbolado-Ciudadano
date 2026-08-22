@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/base.css">
+  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/styles.css">
+  <script src="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/_ds_bundle.js"></script>
+  <style>
+    body { margin: 0; background: var(--blanco); color: var(--gris-100); font-family: Roboto, system-ui, sans-serif; }
+    a { color: var(--guinda-100); text-decoration: underline; text-underline-offset: 2px; }
+    a:hover { color: var(--guinda-oscuro); }
+    *:focus-visible { outline: 3px solid var(--guinda-100); outline-offset: 2px; }
+    html { scroll-behavior: smooth; }
+  </style>
+</helmet>
+
+<div style="min-height: 100vh; display: flex; flex-direction: column; background: var(--blanco)">
+
+  <dc-import name="CabeceraSitio" activo="directorio" hint-size="100%,190px"></dc-import>
+
+  <nav aria-label="Ruta de navegación" style="background: var(--blanco)">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 14px 24px 12px; font-size: 14px; color: var(--gris-100)">
+      <a href="portada.dc.html">Inicio</a> <span aria-hidden="true" style="padding: 0 8px">·</span> <span style="color: var(--gris-100); font-weight: 700">Directorio</span>
+    </div>
+  </nav>
+
+  <main id="contenido" style="flex: 1">
+
+    <section style="border-bottom: 1px solid var(--gris-20)">
+      <div style="max-width: 1240px; margin: 0 auto; padding: clamp(28px, 4vw, 48px) 24px">
+        <h1 style="margin: 0 0 14px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(32px, 4.2vw, 48px); line-height: 1.06; letter-spacing: -0.015em; font-weight: 700; color: var(--guinda-100); text-wrap: pretty">Directorio <em style="font-style: italic; color: var(--cafe)">institucional</em></h1>
+        <p style="margin: 0; font-size: clamp(17px, 1.8vw, 21px); line-height: 1.5; max-width: 38em; text-wrap: pretty">Teléfonos, correos, sedes y horarios. Primero las áreas de SEDEMA, las líneas de emergencia y las instituciones que intervienen; después las dieciséis alcaldías.</p>
+      </div>
+    </section>
+
+    <section style="background: var(--gris-10); border-bottom: 1px solid var(--gris-20)">
+      <div style="max-width: 1240px; margin: 0 auto; padding: clamp(24px, 3vw, 36px) 24px">
+        <div style="display: flex; gap: 16px; align-items: flex-end; flex-wrap: wrap; margin-bottom: 20px">
+          <div style="flex: 2 1 320px">
+            <label for="busqueda" style="display: block; font-size: 16px; font-weight: 700; margin-bottom: 8px">Busca un área, una institución o tu alcaldía</label>
+            <input type="text" id="busqueda" value="{{ busqueda }}" onChange="{{ escribir }}" placeholder="Coyoacán, PAOT, impacto ambiental, vivero" autocomplete="off" style="width: 100%; box-sizing: border-box; font-family: Roboto, sans-serif; font-size: 17px; padding: 13px 16px; border: 1px solid var(--gris-40); border-radius: 4px; min-height: 48px; background: var(--blanco); color: var(--gris-100)">
+          </div>
+          <button onClick="{{ limpiar }}" style="background: transparent; color: var(--guinda-100); border: 2px solid var(--dorado-100); border-radius: 4px; padding: 13px 22px; font-family: Roboto, sans-serif; font-size: 17px; font-weight: 700; cursor: pointer; min-height: 48px; white-space: nowrap; transition: background 150ms ease" style-hover="background: var(--dorado-20)">Limpiar</button>
+        </div>
+        <fieldset style="border: 0; margin: 0; padding: 0">
+          <legend style="font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--gris-100); margin-bottom: 12px">Filtra por tipo</legend>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px">
+            <sc-for list="{{ filtros }}" as="f" hint-placeholder-count="3">
+              <button onClick="{{ f.activar }}" aria-pressed="{{ f.activo }}" style="font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: {{ f.bg }}; color: {{ f.fg }}; border: 1px solid {{ f.borde }}; transition: background 150ms ease">{{ f.etiqueta }} <span style="font-size: 14px; opacity: 0.75">{{ f.cuenta }}</span></button>
+            </sc-for>
+          </div>
+        </fieldset>
+      </div>
+    </section>
+
+    <sc-if value="{{ haySedema }}" hint-placeholder-val="{{ true }}">
+      <section id="sedema" style="background: var(--marfil); border-bottom: 1px solid var(--dorado-40); scroll-margin-top: 24px">
+        <div style="max-width: 1240px; margin: 0 auto; padding: clamp(32px, 4vw, 52px) 24px">
+          <div style="display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap; border-bottom: 2px solid var(--guinda-100); padding-bottom: 14px; margin-bottom: 20px">
+            <h2 style="margin: 0; font-family: Cabin, Roboto, sans-serif; font-size: clamp(24px, 3vw, 32px); line-height: 1.15; font-weight: 700; color: var(--guinda-100)">Áreas de SEDEMA</h2>
+            <span style="font-size: 17px; color: var(--gris-100)">{{ conteoSedema }}</span>
+          </div>
+          <p style="margin: 0 0 26px; font-size: 18px; line-height: 1.6; max-width: 44em">Todas comparten sede y conmutador. Cada una resuelve un asunto distinto.</p>
+        <ul style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr)); gap: 20px">
+          <sc-for list="{{ sedema }}" as="c" hint-placeholder-count="6">
+            <li style="background: var(--blanco); border: 1px solid var(--dorado-40); border-top: 4px solid {{ c.color }}; padding: 24px; display: flex; flex-direction: column; box-shadow: 0 4px 8px rgba(26,26,26,0.06)">
+              <span style="font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700">{{ c.rol }}</span>
+              <h3 style="margin: 8px 0 6px; font-size: 21px; font-weight: 700; color: var(--guinda-100); line-height: 1.3">{{ c.nombre }}</h3>
+              <p style="margin: 0 0 18px; font-size: 16px; line-height: 1.5; color: var(--gris-100)">{{ c.atiende }}</p>
+              <dl style="margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; border-top: 1px solid var(--gris-20); padding-top: 16px">
+                <div style="display: flex; gap: 10px; align-items: flex-start">
+                  <dt style="flex: none">
+                    <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 2px; color: var(--gris-100)"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    <span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap">Teléfono</span>
+                  </dt>
+                  <dd style="margin: 0; font-size: 20px; font-weight: 700; color: var(--gris-100)">{{ c.tel }}</dd>
+                </div>
+                <sc-if value="{{ c.tieneCorreo }}" hint-placeholder-val="{{ false }}">
+                <div style="display: flex; gap: 10px; align-items: flex-start">
+                  <dt style="flex: none">
+                    <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 2px; color: var(--gris-100)"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+                    <span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap">Correo</span>
+                  </dt>
+                  <dd style="margin: 0; font-size: 17px; line-height: 1.45; word-break: break-word; color: var(--guinda-100)">{{ c.correo }}</dd>
+                </div>
+                </sc-if>
+                <sc-if value="{{ c.tieneSede }}" hint-placeholder-val="{{ false }}">
+                <div style="display: flex; gap: 10px; align-items: flex-start">
+                  <dt style="flex: none">
+                    <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 2px; color: var(--gris-100)"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap">Sede</span>
+                  </dt>
+                  <dd style="margin: 0; font-size: 17px; line-height: 1.5">{{ c.sede }}</dd>
+                </div>
+                </sc-if>
+                <div style="display: flex; gap: 10px; align-items: flex-start">
+                  <dt style="flex: none">
+                    <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 2px; color: var(--gris-100)"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                    <span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap">Horario</span>
+                  </dt>
+                  <dd style="margin: 0; font-size: 17px; line-height: 1.5">{{ c.horario }}</dd>
+                </div>
+              </dl>
+              <sc-if value="{{ c.tieneNota }}" hint-placeholder-val="{{ false }}">
+                <p style="margin: 16px 0 0; background: var(--marfil); border-left: 3px solid var(--dorado-100); padding: 12px 16px; font-size: 16px; line-height: 1.5; color: var(--gris-100)">{{ c.nota }}</p>
+              </sc-if>
+            </li>
+          </sc-for>
+        </ul>
+        </div>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ hayDependencias }}" hint-placeholder-val="{{ true }}">
+      <section id="dependencias" style="scroll-margin-top: 24px">
+        <div style="max-width: 1240px; margin: 0 auto; padding: clamp(32px, 4vw, 52px) 24px">
+          <div style="display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap; border-bottom: 2px solid var(--guinda-100); padding-bottom: 14px; margin-bottom: 20px">
+            <h2 style="margin: 0; font-family: Cabin, Roboto, sans-serif; font-size: clamp(24px, 3vw, 32px); line-height: 1.15; font-weight: 700; color: var(--guinda-100)">Otras instituciones</h2>
+            <span style="font-size: 17px; color: var(--gris-100)">{{ conteoDependencias }}</span>
+          </div>
+          <p style="margin: 0 0 26px; font-size: 18px; line-height: 1.6; max-width: 44em">Otras instituciones que intervienen en el arbolado. Las líneas de emergencia van en rojo.</p>
+        <ul style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr)); gap: 20px">
+          <sc-for list="{{ dependencias }}" as="c" hint-placeholder-count="5">
+            <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-top: 4px solid {{ c.color }}; padding: 24px; display: flex; flex-direction: column; box-shadow: 0 4px 8px rgba(26,26,26,0.06)">
+              <span style="font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700">{{ c.rol }}</span>
+              <h3 style="margin: 8px 0 6px; font-size: 21px; font-weight: 700; color: var(--guinda-100); line-height: 1.3">{{ c.nombre }}</h3>
+              <p style="margin: 0 0 18px; font-size: 16px; line-height: 1.5; color: var(--gris-100)">{{ c.atiende }}</p>
+              <dl style="margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; border-top: 1px solid var(--gris-20); padding-top: 16px">
+                <div style="display: flex; gap: 10px; align-items: flex-start">
+                  <dt style="flex: none">
+                    <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 2px; color: var(--gris-100)"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    <span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap">Teléfono</span>
+                  </dt>
+                  <dd style="margin: 0; font-size: 20px; font-weight: 700; color: var(--gris-100)">{{ c.tel }}</dd>
+                </div>
+                <sc-if value="{{ c.tieneCorreo }}" hint-placeholder-val="{{ false }}">
+                <div style="display: flex; gap: 10px; align-items: flex-start">
+                  <dt style="flex: none">
+                    <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 2px; color: var(--gris-100)"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+                    <span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap">Correo</span>
+                  </dt>
+                  <dd style="margin: 0; font-size: 17px; line-height: 1.45; word-break: break-word; color: var(--guinda-100)">{{ c.correo }}</dd>
+                </div>
+                </sc-if>
+                <sc-if value="{{ c.tieneSede }}" hint-placeholder-val="{{ false }}">
+                <div style="display: flex; gap: 10px; align-items: flex-start">
+                  <dt style="flex: none">
+                    <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 2px; color: var(--gris-100)"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap">Sede</span>
+                  </dt>
+                  <dd style="margin: 0; font-size: 17px; line-height: 1.5">{{ c.sede }}</dd>
+                </div>
+                </sc-if>
+                <div style="display: flex; gap: 10px; align-items: flex-start">
+                  <dt style="flex: none">
+                    <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 2px; color: var(--gris-100)"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                    <span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap">Horario</span>
+                  </dt>
+                  <dd style="margin: 0; font-size: 17px; line-height: 1.5">{{ c.horario }}</dd>
+                </div>
+              </dl>
+              <sc-if value="{{ c.tieneNota }}" hint-placeholder-val="{{ false }}">
+                <p style="margin: 16px 0 0; background: var(--marfil); border-left: 3px solid var(--dorado-100); padding: 12px 16px; font-size: 16px; line-height: 1.5; color: var(--gris-100)">{{ c.nota }}</p>
+              </sc-if>
+            </li>
+          </sc-for>
+        </ul>
+        </div>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ hayAlcaldias }}" hint-placeholder-val="{{ true }}">
+      <section id="alcaldias" style="background: var(--gris-10); border-top: 1px solid var(--gris-20); margin-top: clamp(32px, 4vw, 52px); scroll-margin-top: 24px">
+        <div style="max-width: 1240px; margin: 0 auto; padding: clamp(32px, 4vw, 52px) 24px">
+          <div style="display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap; border-bottom: 2px solid var(--dorado-100); padding-bottom: 14px; margin-bottom: 20px">
+            <h2 style="margin: 0; font-family: Cabin, Roboto, sans-serif; font-size: clamp(24px, 3vw, 32px); line-height: 1.15; font-weight: 700; color: var(--guinda-100)">Alcaldías</h2>
+            <span style="font-size: 17px; color: var(--gris-100)">{{ conteoAlcaldias }}</span>
+          </div>
+          <p style="margin: 0 0 26px; font-size: 18px; line-height: 1.6; max-width: 44em">Tu alcaldía atiende el arbolado de la vialidad secundaria y de los predios de su demarcación.</p>
+          <ul style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px">
+            <sc-for list="{{ alcaldias }}" as="a" hint-placeholder-count="16">
+              <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--dorado-100); padding: 20px 22px">
+                <h3 style="margin: 0 0 10px; font-size: 20px; font-weight: 700; color: var(--guinda-100); line-height: 1.3">{{ a.nombre }}</h3>
+                <dl style="margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px">
+                  <div style="display: flex; gap: 10px; align-items: flex-start">
+                    <dt style="flex: none">
+                      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 2px; color: var(--gris-100)"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                      <span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap">Teléfono y extensión</span>
+                    </dt>
+                    <dd style="margin: 0; font-size: 17px; line-height: 1.5; color: {{ a.tel.color }}; background: {{ a.tel.fondo }}; padding: {{ a.tel.pad }}; font-weight: {{ a.tel.peso }}">{{ a.tel.valor }}</dd>
+                  </div>
+                  <div style="display: flex; gap: 10px; align-items: flex-start">
+                    <dt style="flex: none">
+                      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 2px; color: var(--gris-100)"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+                      <span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap">Correo</span>
+                    </dt>
+                    <dd style="margin: 0; font-size: 17px; line-height: 1.5; color: {{ a.correo.color }}; background: {{ a.correo.fondo }}; padding: {{ a.correo.pad }}; font-weight: {{ a.correo.peso }}">{{ a.correo.valor }}</dd>
+                  </div>
+                  <div style="display: flex; gap: 10px; align-items: flex-start">
+                    <dt style="flex: none">
+                      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 2px; color: var(--gris-100)"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                      <span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap">Dirección</span>
+                    </dt>
+                    <dd style="margin: 0; font-size: 17px; line-height: 1.5; color: {{ a.direccion.color }}; background: {{ a.direccion.fondo }}; padding: {{ a.direccion.pad }}; font-weight: {{ a.direccion.peso }}">{{ a.direccion.valor }}</dd>
+                  </div>
+                  <div style="display: flex; gap: 10px; align-items: flex-start">
+                    <dt style="flex: none">
+                      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 2px; color: var(--gris-100)"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                      <span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap">Horario de atención</span>
+                    </dt>
+                    <dd style="margin: 0; font-size: 17px; line-height: 1.5; color: {{ a.horario.color }}; background: {{ a.horario.fondo }}; padding: {{ a.horario.pad }}; font-weight: {{ a.horario.peso }}">{{ a.horario.valor }}</dd>
+                  </div>
+                </dl>
+              </li>
+            </sc-for>
+          </ul>
+        </div>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ sinResultados }}" hint-placeholder-val="{{ false }}">
+      <section style="max-width: 1240px; margin: 0 auto; padding: clamp(32px, 4vw, 52px) 24px">
+        <div style="background: var(--marfil); border: 1px solid var(--dorado-40); padding: 32px">
+          <p style="margin: 0 0 10px; font-size: 21px; font-weight: 700; color: var(--guinda-100)">No encontramos ese contacto</p>
+          <p style="margin: 0 0 18px; font-size: 18px; line-height: 1.6">Prueba con el nombre de tu alcaldía o quita el filtro de tipo. Si no sabes a quién llamar, LOCATEL canaliza al 55 5658 1111.</p>
+          <button onClick="{{ limpiar }}" style="background: var(--guinda-100); color: var(--blanco); border: 0; border-radius: 4px; padding: 14px 24px; font-family: Roboto, sans-serif; font-size: 17px; font-weight: 700; cursor: pointer; min-height: 48px; transition: background 150ms ease" style-hover="background: var(--guinda-oscuro)">Limpiar</button>
+        </div>
+      </section>
+    </sc-if>
+
+    <section style="max-width: 1240px; margin: 0 auto; padding: clamp(32px, 4vw, 48px) 24px">
+      <div role="status" style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--estado-info); padding: 22px 26px">
+        <strong style="display: block; font-size: 19px; margin-bottom: 8px; color: var(--negro)">¿No sabes a quién llamar?</strong>
+        <span style="font-size: 18px; line-height: 1.6">La <a href="responsabilidades.dc.html">matriz de competencias</a> lo resuelve por tipo de suelo, y las <a href="hazlo.dc.html#decisiones">dos preguntas que resuelven tu caso</a> te llevan a la autoridad correcta.</span>
+      </div>
+    </section>
+
+  </main>
+
+  <dc-import name="Utilidad" fecha="18 de agosto de 2026" hint-size="100%,200px"></dc-import>
+
+  <dc-import name="PieSitio" hint-size="100%,440px"></dc-import>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const HOFICINA = "De lunes a viernes, de 9 a 18 h";
+
+const ALCALDIAS = [
+  "Álvaro Obregón", "Azcapotzalco", "Benito Juárez", "Coyoacán",
+  "Cuajimalpa de Morelos", "Cuauhtémoc", "Gustavo A. Madero", "Iztacalco",
+  "Iztapalapa", "La Magdalena Contreras", "Miguel Hidalgo", "Milpa Alta",
+  "Tláhuac", "Tlalpan", "Venustiano Carranza", "Xochimilco"
+].sort((a, b) => a.localeCompare(b, "es")).map(a => ({
+  tipo: "alcaldia",
+  nombre: a,
+  atiende: "Arbolado de vialidad secundaria y de predios de su demarcación",
+  campos: [
+    { clave: "Teléfono y extensión", valor: "Falta el dato", falta: true },
+    { clave: "Correo", valor: "Falta el dato", falta: true },
+    { clave: "Dirección", valor: "Falta el dato", falta: true },
+    { clave: "Horario de atención", valor: "Falta el dato", falta: true }
+  ]
+}));
+
+const DEPENDENCIAS = [
+  {
+    tipo: "sedema",
+    rol: "Atención al público",
+    nombre: "Atención ciudadana",
+    atiende: "Solicitudes, propuestas de árboles patrimoniales, acreditaciones y seguimiento de trámites",
+    tel: "55 5345 8187 · 55 5345 8188",
+    correo: "atencionciudadana@sedema.cdmx.gob.mx",
+    sede: "Plaza de la Constitución 1, 3.er piso, Centro, Cuauhtémoc, CP 06000",
+    horario: "Atención presencial los martes, de 10 a 13 h"
+  },
+  {
+    tipo: "sedema",
+    rol: "Impacto ambiental",
+    nombre: "DGEIRA",
+    atiende: "Dirección General de Evaluación de Impacto y Regulación Ambiental. Resuelve el arbolado que se afecta por obras y proyectos sujetos a evaluación de impacto ambiental",
+    tel: "55 5345 8187",
+    horario: HOFICINA,
+    nota: "Aquí va tu caso si la afectación deriva de una obra"
+  },
+  {
+    tipo: "sedema",
+    rol: "Áreas protegidas",
+    nombre: "DGSANPAVA",
+    atiende: "Dirección General de Sistema de Áreas Naturales Protegidas y Áreas de Valor Ambiental. Resuelve el arbolado dentro de áreas naturales protegidas, bosques urbanos y barrancas",
+    tel: "55 5345 8187",
+    horario: HOFICINA,
+    nota: "Aquí va tu caso si el árbol está en un parque, una barranca o un área protegida"
+  },
+  {
+    tipo: "sedema",
+    rol: "Arbolado urbano",
+    nombre: "Dirección de Infraestructura Verde",
+    atiende: "Programas de arbolado urbano, inventario, plantación y coordinación con las alcaldías",
+    tel: "55 5345 8187",
+    horario: HOFICINA
+  },
+  {
+    tipo: "sedema",
+    rol: "Producción de planta",
+    nombre: "Vivero Nezahualcóyotl",
+    atiende: "Producción del arbolado que se planta en calles, camellones y parques de la ciudad",
+    tel: "Por publicar",
+    sede: "Ciudad de México · dirección por publicar",
+    horario: HOFICINA,
+    nota: "La planta no se vende al público: se entrega a programas institucionales y alcaldías"
+  },
+  {
+    tipo: "sedema",
+    rol: "Producción de planta",
+    nombre: "Vivero Yecapixtla",
+    atiende: "Producción y endurecimiento de planta de mayor talla antes de su traslado a la ciudad",
+    tel: "Por publicar",
+    sede: "Yecapixtla, Morelos",
+    horario: HOFICINA
+  },
+  {
+    tipo: "dependencia",
+    rol: "Denuncia ambiental",
+    nombre: "PAOT",
+    atiende: "Procuraduría Ambiental y del Ordenamiento Territorial. Denuncias por poda, derribo o trasplante irregular y daño ambiental",
+    tel: "55 5265 0780",
+    correo: "denuncia.paot.cdmx.gob.mx",
+    horario: HOFICINA,
+    nota: "La denuncia es ciudadana y puede ser anónima"
+  },
+  {
+    tipo: "dependencia",
+    rol: "Investigación penal",
+    nombre: "Fiscalía Ambiental",
+    atiende: "Delitos ambientales cuando hay daño doloso al arbolado",
+    tel: "55 5345 5000",
+    horario: HOFICINA
+  },
+  {
+    tipo: "dependencia",
+    rol: "Servicios urbanos",
+    nombre: "SOBSE",
+    atiende: "Secretaría de Obras y Servicios. Mantenimiento del arbolado de la red vial primaria y retiro de residuo vegetal",
+    tel: "Por publicar",
+    horario: HOFICINA
+  },
+  {
+    tipo: "emergencia",
+    rol: "Emergencia",
+    nombre: "Número único de emergencias",
+    atiende: "Árbol caído sobre personas, autos o cables, y riesgo inminente de caída",
+    tel: "911",
+    horario: "Las veinticuatro horas, todos los días",
+    nota: "Responden Bomberos y Protección Civil. También por el botón de auxilio del C5"
+  },
+  {
+    tipo: "emergencia",
+    rol: "Orientación general",
+    nombre: "LOCATEL",
+    atiende: "Canaliza tu reporte cuando no sabes qué autoridad corresponde",
+    tel: "55 5658 1111",
+    horario: "Las veinticuatro horas, todos los días"
+  }
+];
+
+const TODOS = DEPENDENCIAS.concat(ALCALDIAS);
+
+const TIPOS = [
+  { id: "todos", etiqueta: "Todos" },
+  { id: "sedema", etiqueta: "Áreas de SEDEMA" },
+  { id: "dependencia", etiqueta: "Otras instituciones" },
+  { id: "alcaldia", etiqueta: "Alcaldías" },
+  { id: "emergencia", etiqueta: "Emergencia" }
+];
+
+class Component extends DCLogic {
+  state = { busqueda: "", tipo: "todos" };
+
+  coincide(c) {
+    const st = this.state;
+    const sinAcento = t => t.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+    const q = sinAcento(st.busqueda.trim());
+    if (st.tipo !== "todos" && c.tipo !== st.tipo) return false;
+    if (!q) return true;
+    const campos = [c.nombre, c.atiende, c.correo, c.rol, c.sigla, c.sede].filter(Boolean).join(" ");
+    return sinAcento(campos).indexOf(q) > -1;
+  }
+
+  renderVals() {
+    const st = this.state;
+    const sed = DEPENDENCIAS.filter(c => c.tipo === "sedema" && this.coincide(c));
+    const deps = DEPENDENCIAS.filter(c => c.tipo !== "sedema" && this.coincide(c));
+    const alcs = ALCALDIAS.filter(c => this.coincide(c));
+
+    return {
+      busqueda: st.busqueda,
+      escribir: e => this.setState({ busqueda: e.target.value }),
+      limpiar: () => this.setState({ busqueda: "", tipo: "todos" }),
+      filtros: TIPOS.map(t => {
+        const on = st.tipo === t.id;
+        const n = t.id === "todos" ? TODOS.length : TODOS.filter(c => c.tipo === t.id).length;
+        return {
+          etiqueta: t.etiqueta,
+          cuenta: String(n),
+          activo: on,
+          bg: on ? "var(--guinda-100)" : "var(--blanco)",
+          fg: on ? "var(--blanco)" : "var(--gris-100)",
+          borde: on ? "var(--guinda-100)" : "var(--gris-40)",
+          activar: () => this.setState({ tipo: t.id })
+        };
+      }),
+      haySedema: sed.length > 0,
+      hayDependencias: deps.length > 0,
+      hayAlcaldias: alcs.length > 0,
+      sinResultados: sed.length === 0 && deps.length === 0 && alcs.length === 0,
+      conteoSedema: sed.length === 1 ? "1 área" : sed.length + " áreas",
+      conteoDependencias: deps.length === 1 ? "1 contacto" : deps.length + " contactos",
+      conteoAlcaldias: alcs.length === 16 ? "las dieciséis" : alcs.length === 1 ? "1 alcaldía" : alcs.length + " alcaldías",
+      sedema: sed.map(c => ({
+        color: "var(--guinda-100)",
+        nombre: c.nombre,
+        rol: c.rol,
+        atiende: c.atiende,
+        tel: c.tel,
+        horario: c.horario,
+        tieneCorreo: !!c.correo,
+        correo: c.correo || "",
+        tieneSede: !!c.sede,
+        sede: c.sede || "",
+        tieneNota: !!c.nota,
+        nota: c.nota || ""
+      })),
+      dependencias: deps.map(c => ({
+        color: c.tipo === "emergencia" ? "var(--estado-error)" : "var(--guinda-100)",
+        nombre: c.nombre,
+        rol: c.rol,
+        atiende: c.atiende,
+        tel: c.tel,
+        horario: c.horario,
+        tieneCorreo: !!c.correo,
+        correo: c.correo || "",
+        tieneSede: !!c.sede,
+        sede: c.sede || "",
+        tieneNota: !!c.nota,
+        nota: c.nota || ""
+      })),
+      alcaldias: alcs.map(a => {
+        const dato = i => {
+          const k = a.campos[i] || { valor: "Falta el dato", falta: true };
+          return {
+            valor: k.valor,
+            color: k.falta ? "var(--negro)" : "var(--gris-100)",
+            fondo: k.falta ? "var(--estado-alerta)" : "transparent",
+            pad: k.falta ? "2px 8px" : "0",
+            peso: k.falta ? "700" : "400"
+          };
+        };
+        return {
+          nombre: a.nombre,
+          tel: dato(0),
+          correo: dato(1),
+          direccion: dato(2),
+          horario: dato(3)
+        };
+      })
+    };
+  }
+}
+</script>
+</body>
+</html>

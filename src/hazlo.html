@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/base.css">
+  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/styles.css">
+  <script src="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/_ds_bundle.js"></script>
+  <style>
+    body { margin: 0; background: var(--blanco); color: var(--gris-100); font-family: Roboto, system-ui, sans-serif; }
+    a { color: var(--guinda-100); text-decoration: underline; text-underline-offset: 2px; }
+    a:hover { color: var(--guinda-oscuro); }
+    *:focus-visible { outline: 3px solid var(--guinda-100); outline-offset: 2px; }
+    html { scroll-behavior: smooth; }
+  </style>
+</helmet>
+
+<div style="min-height: 100vh; display: flex; flex-direction: column; background: var(--blanco)">
+
+  <dc-import name="CabeceraSitio" activo="hazlo" con-emergencia="{{ verdadero }}" hint-size="100%,190px"></dc-import>
+
+  <nav aria-label="Ruta de navegación" style="background: var(--blanco)">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 14px 24px 12px; font-size: 14px; color: var(--gris-100)">
+      <a href="portada.dc.html">Inicio</a> <span aria-hidden="true" style="padding: 0 8px">·</span> <span style="color: var(--gris-100); font-weight: 700">Qué necesito hacer</span>
+    </div>
+  </nav>
+
+  <main id="contenido" style="flex: 1">
+
+    <section style="background: var(--marfil); border-bottom: 1px solid var(--dorado-40)">
+      <div style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 60px) 24px">
+        <h1 style="margin: 0 0 20px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(34px, 4.6vw, 54px); line-height: 1.06; letter-spacing: -0.015em; font-weight: 700; color: var(--guinda-100); text-wrap: pretty">¿Qué <em style="font-style: italic; color: var(--cafe)">necesito hacer</em>?</h1>
+        <p style="margin: 0; font-size: clamp(18px, 1.9vw, 22px); line-height: 1.55; max-width: 34em; text-wrap: pretty">Empieza por las dos preguntas si no sabes qué te toca, o salta directo a los procedimientos, a los casos o a las preguntas con el índice de arriba.</p>
+      </div>
+    </section>
+
+    <nav aria-label="Índice de la sección" style="position: sticky; top: 0; z-index: 20; background: var(--gris-10); border-top: 1px solid var(--gris-20); border-bottom: 1px solid var(--gris-40); box-shadow: 0 4px 8px rgba(26,26,26,0.06)">
+      <div style="max-width: 1240px; margin: 0 auto; padding: 10px 24px">
+        <ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; overflow-x: auto">
+          <li style="flex: none"><a href="#decisiones" style="display: flex; align-items: center; gap: 10px; padding: 11px 16px; text-decoration: none; color: var(--gris-100); min-height: 44px; box-sizing: border-box; white-space: nowrap; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; transition: background 150ms ease, border-color 150ms ease" style-hover="background: var(--marfil); border-color: var(--guinda-100); color: var(--guinda-100)"><span aria-hidden="true" style="width: 26px; height: 26px; flex: none; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; border: 1px solid var(--gris-40)">1</span><span style="font-size: 17px; font-weight: 700">Resuelve tu caso en dos preguntas</span></a></li>
+          <li style="flex: none"><a href="#procedimientos" style="display: flex; align-items: center; gap: 10px; padding: 11px 16px; text-decoration: none; color: var(--gris-100); min-height: 44px; box-sizing: border-box; white-space: nowrap; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; transition: background 150ms ease, border-color 150ms ease" style-hover="background: var(--marfil); border-color: var(--guinda-100); color: var(--guinda-100)"><span aria-hidden="true" style="width: 26px; height: 26px; flex: none; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; border: 1px solid var(--gris-40)">2</span><span style="font-size: 17px; font-weight: 700">Procedimientos</span></a></li>
+          <li style="flex: none"><a href="#casos" style="display: flex; align-items: center; gap: 10px; padding: 11px 16px; text-decoration: none; color: var(--gris-100); min-height: 44px; box-sizing: border-box; white-space: nowrap; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; transition: background 150ms ease, border-color 150ms ease" style-hover="background: var(--marfil); border-color: var(--guinda-100); color: var(--guinda-100)"><span aria-hidden="true" style="width: 26px; height: 26px; flex: none; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; border: 1px solid var(--gris-40)">3</span><span style="font-size: 17px; font-weight: 700">Casos cotidianos</span></a></li>
+          <li style="flex: none"><a href="#preguntas" style="display: flex; align-items: center; gap: 10px; padding: 11px 16px; text-decoration: none; color: var(--gris-100); min-height: 44px; box-sizing: border-box; white-space: nowrap; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; transition: background 150ms ease, border-color 150ms ease" style-hover="background: var(--marfil); border-color: var(--guinda-100); color: var(--guinda-100)"><span aria-hidden="true" style="width: 26px; height: 26px; flex: none; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; border: 1px solid var(--gris-40)">4</span><span style="font-size: 17px; font-weight: 700">Preguntas frecuentes</span></a></li>
+        </ol>
+      </div>
+    </nav>
+
+    <section id="decisiones" style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 60px) 24px; scroll-margin-top: 72px">
+      <div style="max-width: 42em; margin-bottom: 28px">
+        <h2 style="margin: 0 0 12px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(27px, 3.2vw, 36px); line-height: 1.15; font-weight: 700; color: var(--guinda-100)">Resuelve tu caso en dos preguntas</h2>
+        <p style="margin: 0; font-size: 19px; line-height: 1.6">Contesta dos preguntas y te decimos a quién acudir, qué documentos reunir y con qué fundamento legal.</p>
+      </div>
+
+      <div style="display: flex; gap: clamp(24px, 3vw, 48px); align-items: flex-start; flex-wrap: wrap">
+        <div style="flex: 3 1 520px; min-width: 0">
+          <div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-bottom: 18px">
+            <span style="font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700">{{ etiquetaPaso }}</span>
+            <div aria-hidden="true" style="flex: 1 1 160px; min-width: 120px; display: flex; gap: 6px">
+              <span style="flex: 1; height: 10px; background: {{ seg1 }}; border: 1px solid {{ seg1borde }}"></span>
+              <span style="flex: 1; height: 10px; background: {{ seg2 }}; border: 1px solid {{ seg2borde }}"></span>
+            </div>
+            <sc-if value="{{ puedeVolver }}" hint-placeholder-val="{{ false }}">
+              <button onClick="{{ volver }}" style="background: transparent; border: 1px solid var(--gris-40); border-radius: 4px; padding: 10px 16px; font-family: Roboto, sans-serif; font-size: 15px; font-weight: 500; color: var(--gris-100); cursor: pointer; min-height: 44px; white-space: nowrap; transition: border-color 150ms ease" style-hover="border-color: var(--guinda-100); color: var(--guinda-100)">← Volver</button>
+            </sc-if>
+            <sc-if value="{{ puedeVolver }}" hint-placeholder-val="{{ false }}">
+              <button onClick="{{ reiniciar }}" style="background: transparent; border: 0; padding: 10px 4px; font-family: Roboto, sans-serif; font-size: 15px; font-weight: 700; color: var(--guinda-100); cursor: pointer; text-decoration: underline; min-height: 44px">Empezar de nuevo</button>
+            </sc-if>
+          </div>
+
+          <sc-if value="{{ hayRuta }}" hint-placeholder-val="{{ false }}">
+            <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px">
+              <sc-for list="{{ ruta }}" as="r" hint-placeholder-count="1">
+                <span style="font-size: 14px; background: var(--dorado-20); border: 1px solid var(--dorado-40); color: var(--gris-100); padding: 6px 12px">{{ r.texto }}</span>
+              </sc-for>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ enPregunta }}" hint-placeholder-val="{{ true }}">
+            <div style="border: 1px solid var(--gris-20); border-top: 4px solid var(--guinda-100); background: var(--blanco); box-shadow: 0 4px 8px rgba(26,26,26,0.06); padding: clamp(22px, 3vw, 34px)">
+              <h3 style="margin: 0 0 10px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(24px, 2.6vw, 32px); line-height: 1.2; font-weight: 700; color: var(--guinda-100); text-wrap: pretty">{{ pregunta }}</h3>
+              <p style="margin: 0 0 24px; font-size: 18px; line-height: 1.55; color: var(--gris-100); max-width: 40em">{{ ayuda }}</p>
+              <div style="display: flex; flex-direction: column; gap: 12px">
+                <sc-for list="{{ opciones }}" as="o" hint-placeholder-count="4">
+                  <button onClick="{{ o.elegir }}" style="text-align: left; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; padding: 18px 20px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: center; min-height: 44px; transition: border-color 150ms ease, background 150ms ease, box-shadow 150ms ease" style-hover="border-color: var(--guinda-100); background: var(--gris-10); box-shadow: inset 4px 0 0 var(--guinda-100)">
+                    <span style="flex: 1">
+                      <span style="display: block; font-size: 19px; font-weight: 700; color: var(--guinda-100); line-height: 1.3">{{ o.etiqueta }}</span>
+                      <span style="display: block; margin-top: 6px; font-size: 17px; line-height: 1.5; color: var(--gris-100)">{{ o.detalle }}</span>
+                    </span>
+                    <span aria-hidden="true" style="flex: none; font-size: 22px; color: var(--dorado-100)">→</span>
+                  </button>
+                </sc-for>
+              </div>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ hayResultado }}" hint-placeholder-val="{{ false }}">
+            <div style="border: 1px solid var(--gris-20); border-top: 4px solid var(--guinda-100); background: var(--blanco); box-shadow: 0 4px 8px rgba(26,26,26,0.06)">
+              <div style="background: var(--marfil); border-bottom: 1px solid var(--dorado-40); padding: clamp(22px, 3vw, 34px)">
+                <span style="display: block; font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 12px">Tu resultado</span>
+                <h3 style="margin: 0 0 12px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(24px, 2.8vw, 34px); line-height: 1.15; font-weight: 700; color: var(--guinda-100); text-wrap: pretty">{{ resTitulo }}</h3>
+                <p style="margin: 0; font-size: 19px; line-height: 1.55; max-width: 40em">{{ resResumen }}</p>
+              </div>
+              <div style="padding: clamp(22px, 3vw, 34px); display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px">
+                <div>
+                  <h4 style="margin: 0 0 14px; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--gris-100)">Qué tienes que hacer</h4>
+                  <ol style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 14px">
+                    <sc-for list="{{ resPasos }}" as="p" hint-placeholder-count="3">
+                      <li style="display: grid; grid-template-columns: 28px minmax(0, 1fr); gap: 12px; align-items: start">
+                        <span style="font-size: 18px; font-weight: 700; color: var(--guinda-100)">{{ p.n }}</span>
+                        <span style="font-size: 17px; line-height: 1.55">{{ p.texto }}</span>
+                      </li>
+                    </sc-for>
+                  </ol>
+                </div>
+                <div>
+                  <h4 style="margin: 0 0 14px; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--gris-100)">Ten a la mano</h4>
+                  <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px">
+                    <sc-for list="{{ resDocumentos }}" as="d" hint-placeholder-count="3">
+                      <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start">
+                        <span aria-hidden="true" style="margin-top: 8px; width: 8px; height: 8px; background: var(--dorado-100); display: block"></span>
+                        <span style="font-size: 17px; line-height: 1.55">{{ d.texto }}</span>
+                      </li>
+                    </sc-for>
+                  </ul>
+                </div>
+              </div>
+              <div style="padding: 0 clamp(22px, 3vw, 34px) clamp(22px, 3vw, 34px)">
+                <blockquote style="margin: 0; background: var(--gris-10); border-left: 4px solid var(--guinda-100); padding: 18px 22px">
+                  <span style="display: block; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 8px">Fundamento</span>
+                  <p style="margin: 0 0 6px; font-size: 18px; line-height: 1.5; font-weight: 700; color: var(--guinda-100)">{{ resFundamento }}</p>
+                  <p style="margin: 0; font-size: 16px; line-height: 1.55; color: var(--gris-100)">{{ resNota }}</p>
+                </blockquote>
+              </div>
+              <div style="border-top: 1px solid var(--gris-20); padding: clamp(22px, 3vw, 34px); background: var(--gris-10)">
+                <h4 style="margin: 0 0 14px; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--gris-100)">A dónde acudir</h4>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px">
+                  <sc-for list="{{ resContactos }}" as="c" hint-placeholder-count="2">
+                    <div style="background: var(--blanco); border: 1px solid var(--gris-20); border-top: 3px solid var(--dorado-100); padding: 18px">
+                      <span style="display: block; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gris-100); font-weight: 700">{{ c.rol }}</span>
+                      <span style="display: block; margin: 6px 0 8px; font-size: 18px; font-weight: 700; color: var(--guinda-100); line-height: 1.3">{{ c.nombre }}</span>
+                      <span style="display: block; font-size: 20px; font-weight: 700; color: var(--gris-100)">{{ c.tel }}</span>
+                      <span style="display: block; margin-top: 6px; font-size: 16px; line-height: 1.5; color: var(--gris-100)">{{ c.nota }}</span>
+                    </div>
+                  </sc-for>
+                </div>
+                <div style="margin-top: 22px; display: flex; gap: 16px; flex-wrap: wrap">
+                  <button onClick="{{ reiniciar }}" style="background: var(--guinda-100); color: var(--blanco); border: 0; border-radius: 4px; padding: 14px 24px; font-family: Roboto, sans-serif; font-size: 17px; font-weight: 700; cursor: pointer; min-height: 48px; transition: background 150ms ease" style-hover="background: var(--guinda-oscuro)">Consultar otro caso</button>
+                  <a href="#procedimientos" style="background: transparent; color: var(--guinda-100); border: 2px solid var(--dorado-100); border-radius: 4px; padding: 13px 23px; font-size: 17px; font-weight: 700; text-decoration: none; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center; transition: background 150ms ease" style-hover="background: var(--dorado-20)">Ver el procedimiento completo</a>
+                </div>
+              </div>
+            </div>
+          </sc-if>
+        </div>
+
+        <aside style="flex: 1 1 260px; max-width: 320px; min-width: 0">
+          <div style="border: 1px solid var(--gris-20); background: var(--blanco); padding: 22px">
+            <h3 style="margin: 0 0 14px; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--gris-100)">Cómo funciona</h3>
+            <ol style="margin: 0 0 20px; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 14px">
+              <li style="display: grid; grid-template-columns: 26px minmax(0, 1fr); gap: 12px; align-items: start"><span style="font-size: 17px; font-weight: 700; color: var(--guinda-100)">1</span><span style="font-size: 16px; line-height: 1.55">Nos dices dónde está el árbol</span></li>
+              <li style="display: grid; grid-template-columns: 26px minmax(0, 1fr); gap: 12px; align-items: start"><span style="font-size: 17px; font-weight: 700; color: var(--guinda-100)">2</span><span style="font-size: 16px; line-height: 1.55">Nos dices qué quieres resolver</span></li>
+              <li style="display: grid; grid-template-columns: 26px minmax(0, 1fr); gap: 12px; align-items: start"><span style="font-size: 17px; font-weight: 700; color: var(--guinda-100)">3</span><span style="font-size: 16px; line-height: 1.55">Te damos la ruta, el contacto y el fundamento</span></li>
+            </ol>
+            <div style="border-top: 1px solid var(--gris-20); padding-top: 18px">
+              <p style="margin: 0; font-size: 16px; line-height: 1.55; color: var(--gris-100)">Esta orientación no es una resolución. La autoridad decide cada caso al revisar tu solicitud.</p>
+            </div>
+          </div>
+          <div style="margin-top: 20px; background: var(--guinda-100); color: var(--blanco); padding: 22px">
+            <h3 style="margin: 0 0 10px; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--dorado-40)">Si hay riesgo ahora</h3>
+            <p style="margin: 0 0 12px; font-size: 17px; line-height: 1.55; color: var(--blanco)">Un árbol caído sobre personas, autos o cables es una emergencia. No esperes el resultado de esta consulta.</p>
+            <div style="font-size: 34px; font-weight: 700; line-height: 1">911</div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="procedimientos" style="background: var(--gris-10); border-top: 1px solid var(--gris-20); border-bottom: 1px solid var(--gris-20); scroll-margin-top: 72px">
+      <div style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 60px) 24px">
+        <div style="max-width: 42em; margin-bottom: 28px">
+          <h2 style="margin: 0 0 12px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(27px, 3.2vw, 36px); line-height: 1.15; font-weight: 700; color: var(--guinda-100)">Procedimientos</h2>
+          <p style="margin: 0; font-size: 19px; line-height: 1.6">Las tres intervenciones reguladas siguen el mismo flujo: solicitud, dictamen, autorización, ejecución supervisada y restitución.</p>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 16px">
+          <sc-for list="{{ procedimientos }}" as="p" hint-placeholder-count="3">
+            <article style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid {{ p.color }}">
+              <button onClick="{{ p.alternar }}" aria-expanded="{{ p.abierto }}" style="width: 100%; text-align: left; background: transparent; border: 0; padding: 22px clamp(20px, 3vw, 28px); font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 20px; align-items: center; min-height: 44px" style-hover="background: var(--gris-10)">
+                <span style="flex: 1">
+                  <span style="display: block; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 8px">{{ p.orden }}</span>
+                  <span style="display: block; font-family: Cabin, Roboto, sans-serif; font-size: 25px; font-weight: 700; color: var(--guinda-100); line-height: 1.25">{{ p.nombre }}</span>
+                  <span style="display: block; margin-top: 8px; font-size: 17px; line-height: 1.55; color: var(--gris-100); max-width: 46em">{{ p.resumen }}</span>
+                </span>
+                <span aria-hidden="true" style="flex: none; font-size: 28px; line-height: 1; color: var(--dorado-100); font-weight: 700">{{ p.signo }}</span>
+              </button>
+              <sc-if value="{{ p.abierto }}" hint-placeholder-val="{{ false }}">
+                <div style="padding: 0 clamp(20px, 3vw, 28px) 26px">
+                  <dl style="margin: 0 0 24px; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); border-top: 1px solid var(--gris-20); border-left: 1px solid var(--gris-20)">
+                    <sc-for list="{{ p.meta }}" as="m" hint-placeholder-count="4">
+                      <div style="padding: 16px 18px; border-right: 1px solid var(--gris-20); border-bottom: 1px solid var(--gris-20)">
+                        <dt style="font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 6px">{{ m.clave }}</dt>
+                        <dd style="margin: 0; font-size: 17px; font-weight: 700; color: var(--guinda-100); line-height: 1.4">{{ m.valor }}</dd>
+                      </div>
+                    </sc-for>
+                  </dl>
+                  <ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 16px">
+                    <sc-for list="{{ p.pasos }}" as="s" hint-placeholder-count="5">
+                      <li style="display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 18px; align-items: start">
+                        <span aria-hidden="true" style="width: 40px; height: 40px; background: {{ p.color }}; color: var(--blanco); font-size: 17px; font-weight: 700; display: flex; align-items: center; justify-content: center">{{ s.n }}</span>
+                        <span>
+                          <span style="display: block; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 6px">{{ s.actor }}</span>
+                          <span style="display: block; font-size: 20px; font-weight: 700; color: var(--guinda-100); line-height: 1.3; margin-bottom: 8px">{{ s.titulo }}</span>
+                          <span style="display: block; font-size: 17px; line-height: 1.6; max-width: 46em">{{ s.texto }}</span>
+                          <span style="display: block; margin-top: 10px; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)">{{ s.fundamento }}</span>
+                        </span>
+                      </li>
+                    </sc-for>
+                  </ol>
+                </div>
+              </sc-if>
+            </article>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <section id="casos" style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 60px) 24px; scroll-margin-top: 72px">
+      <div style="max-width: 42em; margin-bottom: 24px">
+        <h2 style="margin: 0 0 12px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(27px, 3.2vw, 36px); line-height: 1.15; font-weight: 700; color: var(--guinda-100)">Diez casos cotidianos</h2>
+        <p style="margin: 0; font-size: 19px; line-height: 1.6">Qué hacer, qué no hacer y con qué fundamento, en las situaciones más frecuentes.</p>
+      </div>
+
+      <fieldset style="border: 0; margin: 0 0 24px; padding: 0">
+        <legend style="font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--gris-100); margin-bottom: 12px">Filtra por perfil</legend>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px">
+          <sc-for list="{{ perfiles }}" as="f" hint-placeholder-count="6">
+            <button onClick="{{ f.activar }}" aria-pressed="{{ f.activo }}" style="font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: {{ f.bg }}; color: {{ f.fg }}; border: 1px solid {{ f.borde }}; transition: background 150ms ease">{{ f.etiqueta }} <span style="font-size: 14px; opacity: 0.75">{{ f.cuenta }}</span></button>
+          </sc-for>
+        </div>
+      </fieldset>
+
+      <p style="margin: 0 0 20px; font-size: 19px; font-weight: 700; color: var(--guinda-100)">{{ conteoCasos }}</p>
+
+      <ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 16px">
+        <sc-for list="{{ casos }}" as="c" hint-placeholder-count="10">
+          <li id="{{ c.ancla }}" style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid {{ c.color }}; scroll-margin-top: 84px">
+            <button onClick="{{ c.alternar }}" aria-expanded="{{ c.abierto }}" style="width: 100%; text-align: left; background: transparent; border: 0; padding: 20px clamp(18px, 3vw, 26px); font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: flex-start; min-height: 44px" style-hover="background: var(--gris-10)">
+              <span style="flex: 1">
+                <span style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 10px">
+                  <span style="font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--blanco); background: {{ c.color }}; padding: 5px 10px; display: inline-flex; align-items: center; white-space: nowrap">{{ c.urgencia }}</span>
+                  <span style="font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--gris-100); background: var(--gris-10); border: 1px solid var(--gris-20); padding: 5px 10px; display: inline-flex; align-items: center; white-space: nowrap">{{ c.perfilEtiqueta }}</span>
+                </span>
+                <span style="display: block; font-size: 21px; font-weight: 700; color: var(--guinda-100); line-height: 1.3">{{ c.titulo }}</span>
+                <span style="display: block; margin-top: 6px; font-size: 17px; line-height: 1.5; color: var(--gris-100)">{{ c.autoridad }}</span>
+              </span>
+              <span aria-hidden="true" style="flex: none; font-size: 26px; line-height: 1; color: var(--dorado-100); font-weight: 700">{{ c.signo }}</span>
+            </button>
+            <sc-if value="{{ c.abierto }}" hint-placeholder-val="{{ false }}">
+              <div style="padding: 0 clamp(18px, 3vw, 26px) 24px">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 26px; padding-top: 4px; border-top: 1px solid var(--gris-20)">
+                  <div>
+                    <h3 style="margin: 18px 0 12px; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--estado-exito)">Qué hacer</h3>
+                    <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px">
+                      <sc-for list="{{ c.hacer }}" as="h" hint-placeholder-count="3">
+                        <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start"><span aria-hidden="true" style="margin-top: 8px; width: 8px; height: 8px; background: var(--estado-exito); display: block"></span><span style="font-size: 17px; line-height: 1.55">{{ h.texto }}</span></li>
+                      </sc-for>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 style="margin: 18px 0 12px; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--estado-error)">Qué no hacer</h3>
+                    <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px">
+                      <sc-for list="{{ c.noHacer }}" as="n" hint-placeholder-count="2">
+                        <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start"><span aria-hidden="true" style="margin-top: 8px; width: 8px; height: 8px; background: var(--estado-error); display: block"></span><span style="font-size: 17px; line-height: 1.55">{{ n.texto }}</span></li>
+                      </sc-for>
+                    </ul>
+                  </div>
+                </div>
+                <p style="margin: 22px 0 0; padding-left: 16px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)">{{ c.fundamento }}</p>
+              </div>
+            </sc-if>
+          </li>
+        </sc-for>
+      </ol>
+    </section>
+
+    <section id="preguntas" style="background: var(--gris-10); border-top: 1px solid var(--gris-20); scroll-margin-top: 72px">
+      <div style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 60px) 24px">
+        <div style="max-width: 42em; margin-bottom: 24px">
+          <h2 style="margin: 0 0 12px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(27px, 3.2vw, 36px); line-height: 1.15; font-weight: 700; color: var(--guinda-100)">Veinte preguntas rectoras</h2>
+          <p style="margin: 0; font-size: 19px; line-height: 1.6">Cada pregunta tiene su propio enlace: copia el vínculo del número para compartirla.</p>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 32px">
+          <sc-for list="{{ bloques }}" as="b" hint-placeholder-count="5">
+            <section>
+              <h3 style="margin: 0 0 4px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(23px, 2.6vw, 30px); line-height: 1.2; letter-spacing: -0.01em; font-weight: 700; color: var(--guinda-100); background: var(--marfil); border-left: 4px solid var(--guinda-100); padding: 14px 18px">{{ b.titulo }}</h3>
+              <ul style="list-style: none; margin: 0; padding: 0">
+                <sc-for list="{{ b.items }}" as="f" hint-placeholder-count="4">
+                  <li id="{{ f.ancla }}" style="border-bottom: 1px solid var(--gris-40); scroll-margin-top: 80px">
+                    <div style="display: flex; align-items: baseline; gap: 14px">
+                      <a href="{{ f.hash }}" aria-label="Enlace a esta pregunta" style="flex: none; padding: 20px 0; font-size: 16px; font-weight: 700; color: var(--guinda-100); text-decoration: none; min-width: 32px" style-hover="color: var(--guinda-100)">{{ f.num }}</a>
+                      <button onClick="{{ f.alternar }}" aria-expanded="{{ f.abierto }}" style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px">
+                        <span style="flex: 1; font-size: 19px; font-weight: 500; color: var(--gris-100); line-height: 1.35">{{ f.pregunta }}</span>
+                        <span aria-hidden="true" style="flex: none; font-size: 26px; line-height: 1; color: var(--dorado-100); font-weight: 700">{{ f.signo }}</span>
+                      </button>
+                    </div>
+                    <sc-if value="{{ f.abierto }}" hint-placeholder-val="{{ false }}">
+                      <div style="padding: 0 4px 22px 46px">
+                        <p style="margin: 0 0 12px; font-size: 18px; line-height: 1.6; max-width: 46em">{{ f.respuesta }}</p>
+                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)">{{ f.fundamento }}</p>
+                      </div>
+                    </sc-if>
+                  </li>
+                </sc-for>
+              </ul>
+            </section>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <dc-import name="Utilidad" fecha="18 de agosto de 2026" hint-size="100%,200px"></dc-import>
+
+  <dc-import name="PieSitio" hint-size="100%,440px"></dc-import>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const LEY = "Ley Ambiental de Protección a la Tierra en el Distrito Federal";
+const N = "NADF-001-RNAT-2015";
+
+const TEL = {
+  sedematel: { rol: "Orientación", nombre: "Atención ciudadana de SEDEMA", tel: "55 5345 8187", nota: "De lunes a viernes, de 9 a 18 h" },
+  alcaldia: { rol: "Autoridad competente", nombre: "Tu alcaldía · servicios urbanos", tel: "Consulta el directorio", nota: "Las dieciséis alcaldías atienden su vía pública" },
+  secretaria: { rol: "Autoridad competente", nombre: "La Secretaría del Medio Ambiente", tel: "55 5345 8187", nota: "Plaza de la Constitución 1, 3.er piso" },
+  paot: { rol: "Denuncia ambiental", nombre: "PAOT", tel: "55 5265 0780", nota: "denuncia.paot.cdmx.gob.mx" },
+  emergencia: { rol: "Emergencia", nombre: "Número único", tel: "911", nota: "Solo si el riesgo es inmediato" }
+};
+
+const LUGARES = [
+  { id: "via", etiqueta: "En la banqueta, camellón o vía pública", detalle: "Frente a tu casa, en la calle o en un camellón", contacto: TEL.alcaldia, nota: "El arbolado de vía pública lo administra la alcaldía donde está." },
+  { id: "predio", etiqueta: "Dentro de mi predio", detalle: "En tu jardín, patio o terreno, incluido un predio en obra", contacto: TEL.secretaria, nota: "El árbol de un predio privado también es un bien de interés público." },
+  { id: "publica", etiqueta: "En un parque o área verde pública", detalle: "Parque, deportivo, barranca o área natural protegida", contacto: TEL.secretaria, nota: "Según el área, la administra la Secretaría o la alcaldía." },
+  { id: "nose", etiqueta: "No sé de quién es ese terreno", detalle: "No distingues si es vía pública, predio o área pública", contacto: TEL.sedematel, nota: "Cuando la propiedad no es clara, se empieza por orientación telefónica." }
+];
+
+const ACCIONES = [
+  { id: "intervenir", etiqueta: "Podar, derribar o trasplantar", detalle: "Quieres intervenirlo y necesitas saber si requieres autorización" },
+  { id: "riesgo", etiqueta: "Reportar un árbol que puede caer", detalle: "Está inclinado, con ramas fracturadas o raíz expuesta" },
+  { id: "denunciar", etiqueta: "Denunciar algo que ya ocurrió", detalle: "Viste una poda o un derribo que parece irregular" },
+  { id: "patrimonial", etiqueta: "Proteger un árbol notable", detalle: "Quieres proponerlo para reconocimiento patrimonial" }
+];
+
+const RUTAS = {
+  "via:intervenir": { titulo: "Le toca a tu alcaldía", resumen: "La alcaldía dictamina, autoriza y ejecuta el trabajo en vía pública. No puedes intervenirlo ni contratar a nadie, aunque esté frente a tu casa.", pasos: ["Presenta tu solicitud en servicios urbanos de tu alcaldía", "Explica el motivo: obstrucción, riesgo o daño a la banqueta", "Espera la visita técnica que dictamina si procede", "Si autoriza, la alcaldía ejecuta o designa a quien lo hará"], documentos: ["Dirección exacta y fotografía del árbol completo", "Tu nombre, teléfono y correo", "Si hay daño a tu propiedad, fotografías del daño"], contactos: [TEL.alcaldia, TEL.sedematel] },
+  "predio:intervenir": { titulo: "Necesitas autorización de la Secretaría", resumen: "Primero se obtiene la autorización y solo después se contrata a quien hará el trabajo, que debe estar acreditado.", pasos: ["Pide el dictamen técnico a una persona acreditada", "Presenta la solicitud con ese dictamen", "Espera la resolución por escrito", "Contrata a un podador acreditado", "Cumple la medida de restitución"], documentos: ["Identificación oficial vigente", "Documento que acredite la propiedad o posesión", "Dictamen técnico del ejemplar", "Fotografías y croquis de ubicación"], contactos: [TEL.secretaria, TEL.sedematel] },
+  "publica:intervenir": { titulo: "Le toca a quien administra el área", resumen: "En un parque, barranca o área protegida la intervención la resuelve el administrador del área. Nadie ajeno puede intervenir el arbolado.", pasos: ["Identifica al administrador del área", "Presenta tu solicitud o reporte ante él", "Espera la valoración del personal responsable", "La intervención la ejecuta el administrador"], documentos: ["Nombre del área y ubicación del ejemplar", "Fotografía del árbol completo", "Tu nombre y teléfono"], contactos: [TEL.secretaria] },
+  "nose:intervenir": { titulo: "Primero hay que identificar el suelo", resumen: "Sin saber si es vía pública, predio privado o área pública no se puede saber quién autoriza. Ese es el primer paso.", pasos: ["Llama a atención ciudadana de SEDEMA con la dirección exacta", "Describe el entorno: banqueta, reja, patio, parque", "Con eso te indican la autoridad competente", "Sigue la ruta que corresponda"], documentos: ["Dirección exacta y referencias", "Fotografía del árbol y su entorno", "Tu nombre y teléfono"], contactos: [TEL.sedematel] },
+  "via:riesgo": { titulo: "Repórtalo hoy mismo a tu alcaldía", resumen: "Si ya cayó, si toca cables o si amenaza a personas, es una emergencia y va al 911 sin esperar nada más.", pasos: ["Si ya cayó o toca cables, llama al 911", "Si aún no cae, reporta a tu alcaldía y pide valoración", "Describe la falla: grieta, inclinación, rama fracturada", "Guarda el folio para dar seguimiento"], documentos: ["Dirección exacta y referencias", "Fotografías con la fecha visible", "Qué está en riesgo: personas, autos, cables"], contactos: [TEL.emergencia, TEL.alcaldia] },
+  "predio:riesgo": { titulo: "Pide el dictamen y avisa si alcanza a terceros", resumen: "La valoración corre por tu cuenta con una persona acreditada. Si el riesgo alcanza la vía pública o a un vecino, avisa además a tu alcaldía.", pasos: ["Si el peligro es inmediato, llama al 911", "Contrata el dictamen de una persona acreditada", "Si indica intervención, solicita la autorización", "Si el riesgo sale del predio, avisa a tu alcaldía"], documentos: ["Identificación oficial vigente", "Documento de propiedad o posesión", "Fotografías del ejemplar y de la falla"], contactos: [TEL.emergencia, TEL.secretaria] },
+  "publica:riesgo": { titulo: "Avisa a quien administra el área", resumen: "El reporte va al administrador del área. Si el riesgo es inmediato para quien pasa, llama al 911 primero.", pasos: ["Si el peligro es inmediato, llama al 911", "Identifica al administrador del área", "Reporta el ejemplar con su ubicación", "Guarda el folio"], documentos: ["Nombre del área y ubicación", "Fotografías con fecha visible", "Descripción de la falla"], contactos: [TEL.emergencia, TEL.secretaria] },
+  "nose:riesgo": { titulo: "Repórtalo aunque no sepas de quién es", resumen: "Para reportar un riesgo no necesitas saber de quién es el terreno. Da la dirección y quien recibe lo canaliza.", pasos: ["Si el peligro es inmediato, llama al 911", "Reporta a LOCATEL o a atención ciudadana de SEDEMA con la dirección", "Describe el entorno para identificar al competente", "Guarda el folio"], documentos: ["Dirección exacta y referencias", "Fotografías con fecha visible", "Qué está en riesgo"], contactos: [TEL.emergencia, TEL.sedematel] }
+};
+
+const ACC_BASE = {
+  intervenir: { titulo: "Necesitas autorización previa", resumen: "Ninguna persona puede podar, derribar ni trasplantar un árbol por su cuenta.", pasos: ["Pide el dictamen técnico del ejemplar", "Presenta tu solicitud de autorización", "Espera la resolución por escrito", "Contrata a un podador acreditado", "Cumple la restitución"], documentos: ["Identificación oficial vigente", "Dictamen técnico del ejemplar", "Fotografías del árbol completo"], fundamento: LEY + ", artículo 118 fracción III", nota: "Prohíbe intervenir árboles sin autorización previa de la autoridad competente.", extra: [TEL.sedematel] },
+  riesgo: { titulo: "Repórtalo hoy mismo", resumen: "Un árbol en riesgo se valora antes de intervenirlo.", pasos: ["Si el peligro es inmediato, llama al 911", "Levanta el reporte y pide valoración", "Describe qué está en riesgo", "Guarda el folio"], documentos: ["Dirección exacta", "Fotografías con fecha visible", "Descripción de la falla"], fundamento: N + ", criterios de valoración de riesgo", nota: "Define cuándo un ejemplar representa riesgo y qué intervención procede.", extra: [TEL.emergencia] },
+  denunciar: { titulo: "Denuncia ante la Procuraduría Ambiental", resumen: "Una poda o un derribo sin autorización es una infracción. Puedes denunciarla aunque no seas el dueño del predio.", pasos: ["Reúne la evidencia antes de que retiren las ramas", "Presenta la denuncia en línea o por teléfono", "Indica dirección, fecha y hora", "Conserva tu folio"], documentos: ["Fotografías o video con fecha visible", "Dirección exacta y fecha", "Datos del vehículo o de la empresa, si los viste"], fundamento: LEY + ", artículo 112 · Código Penal para el Distrito Federal, artículos 343 a 350", nota: "La Procuraduría investiga y, si procede, da vista a la autoridad que sanciona.", extra: [TEL.paot] },
+  patrimonial: { titulo: "Puedes proponerlo al registro patrimonial", resumen: "Un ejemplar puede reconocerse como patrimonial por su edad, tamaño, rareza o valor histórico.", pasos: ["Revisa los criterios en la sección Patrimoniales", "Fotografía el ejemplar completo y su tronco", "Mide el perímetro a 1.30 metros del suelo", "Envía tu propuesta a la Secretaría"], documentos: ["Fotografías del ejemplar y su entorno", "Ubicación precisa y perímetro del tronco", "Antecedentes históricos o culturales"], fundamento: LEY + ", artículo 118 bis", nota: "Prevé medidas especiales para ejemplares de valor excepcional.", extra: [TEL.sedematel] }
+};
+
+const PROCEDIMIENTOS = [
+  { id: "poda", orden: "Procedimiento 01", nombre: "Poda", color: "var(--dorado-100)", resumen: "Eliminación selectiva de ramas, follaje o raíces. Es la intervención más común y nunca debe superar la cuarta parte del árbol.", meta: [{ clave: "Autoridad", valor: "Tu alcaldía" }, { clave: "Respuesta", valor: "20 días hábiles" }, { clave: "Ejecución", valor: "20 días hábiles" }, { clave: "Norma", valor: N + ", numeral 6" }], pasos: [
+    { actor: "Ciudadanía", titulo: "Presenta tu solicitud", texto: "Ante la alcaldía donde está el árbol, por el Sistema Unificado de Atención Ciudadana, por LOCATEL al 55 5658 1111 o en la ventanilla de servicios urbanos. Aunque el árbol esté en tu predio, cualquier poda mayor requiere autorización.", fundamento: LEY + ", artículo 106" },
+    { actor: "Dictaminador acreditado", titulo: "Dictamen técnico", texto: "Una persona acreditada visita el sitio y documenta la información dasométrica, el estado estructural y sanitario, y justifica qué intervención procede. Verifica su acreditación antes de aceptar el servicio.", fundamento: N + ", numerales 5.2, 5.3 y 5.4" },
+    { actor: "Tu alcaldía", titulo: "Resolución y autorización", texto: "Resuelve en un plazo no mayor a veinte días hábiles. La autorización precisa el método permitido, el porcentaje máximo de follaje, el plazo de ejecución, quién puede ejecutar y cómo se manejan los residuos.", fundamento: LEY + ", artículo 106, párrafos tercero y quinto" },
+    { actor: "Verificación ciudadana", titulo: "Qué debes ver en sitio", texto: "Área acordonada y señalizada, ramas grandes bajadas con cuerdas y no en caída libre, y quien poda portando la autorización y su credencial vigente. Si falta algo, pide que se suspenda y reporta a atención ciudadana de SEDEMA o a la PAOT.", fundamento: N + ", numerales 6.1.1 a 6.1.10" },
+    { actor: "Alcaldía o Secretaría", titulo: "Supervisión y cierre", texto: "Personal técnico supervisa la ejecución. Si detecta anillado, cinchamiento, descortezado o desmoche, da parte para iniciar el procedimiento sancionatorio. Al cierre se verifica el área limpia y el porcentaje respetado.", fundamento: N + ", numerales 5.10.7 y 6.1.8" }
+  ] },
+  { id: "derribo", orden: "Procedimiento 02", nombre: "Derribo", color: "var(--estado-error)", resumen: "Eliminación total del árbol y cualquier acto que provoque su muerte. Solo procede en cuatro supuestos y siempre obliga a restituir.", meta: [{ clave: "Autoridad", valor: "Alcaldía o Secretaría" }, { clave: "Respuesta", valor: "20 días hábiles" }, { clave: "Restitución", valor: "De 2 a 16 árboles" }, { clave: "Norma", valor: N + ", numeral 7" }], pasos: [
+    { actor: "Ciudadanía y técnico", titulo: "Verifica que encaje en un supuesto legal", texto: "Son cuatro: riesgo real y presente para las personas o sus bienes, riesgo al patrimonio urbanístico, saneamiento del ejemplar, y afectación significativa a la infraestructura. No proceden la sombra, la caída de hojas ni la edad avanzada sin pérdida de vigor.", fundamento: LEY + ", artículo 106 fracciones I a IV" },
+    { actor: "Dictaminador acreditado", titulo: "Solicitud con dictamen", texto: "El dictamen debe acreditar el supuesto, demostrar que el riesgo no puede mitigarse con poda, apuntalamiento o trasplante, y aplicar la valoración que fija el puntaje.", fundamento: N + ", numerales 5.3 y 7.1, y anexo 3" },
+    { actor: "Alcaldía o Secretaría", titulo: "Determinación de la restitución", texto: "El puntaje define cuántos árboles hay que plantar: de 7 a 12 puntos, dos árboles; de 13 a 18, cuatro; de 19 a 24, ocho; de 25 a 28, dieciséis. En derribos por riesgo o saneamiento, la restitución es de uno a uno.", fundamento: N + ", numeral 9 y tablas 2, 3 y 4" },
+    { actor: "Ciudadanía", titulo: "Aviso previo y letrero", texto: "Antes de ejecutar hay que avisar a la alcaldía para que designe supervisión, fecha y hora. En el sitio va el letrero con el responsable, el número de proyecto y el periodo de ejecución.", fundamento: LEY + ", artículo 106 párrafo cuarto" },
+    { actor: "Personal acreditado", titulo: "Ejecución y destoconado", texto: "Derribo controlado en vía pública y predios, o direccional solo en espacios abiertos. Después se trocea, se elimina el tocón y las raíces principales, y los residuos se retiran en veinticuatro horas.", fundamento: N + ", numerales 7.2, 7.6, 7.7 y 11" },
+    { actor: "Consecuencias", titulo: "Qué pasa sin autorización", texto: "Se activan tres consecuencias a la vez: restitución máxima de dieciséis árboles, multa administrativa de hasta cien mil veces la unidad de medida, y sanción penal de dos a diez años, o de seis a veinte si el ejemplar está en área protegida, barranca o suelo de conservación.", fundamento: LEY + ", artículos 112 y 304 · Código Penal, artículos 343 a 350" }
+  ] },
+  { id: "trasplante", orden: "Procedimiento 03", nombre: "Trasplante", color: "var(--guinda-100)", resumen: "Extraer el árbol y plantarlo en otro sitio conservando su raíz. Se prefiere sobre el derribo cuando el ejemplar es viable.", meta: [{ clave: "Autoridad", valor: "Alcaldía o Secretaría" }, { clave: "Plazo crítico", valor: "48 horas tras el banqueo" }, { clave: "Norma complementaria", valor: "NADF-006-RNAT-2012" }, { clave: "Numeral", valor: N + ", numeral 8" }], pasos: [
+    { actor: "Ciudadanía", titulo: "Solicitud y dictamen de viabilidad", texto: "El dictamen evalúa si la especie tolera el trasplante, la edad y el vigor del ejemplar, su condición sanitaria, y si el sitio destino tiene suelo, espacio y riego apropiados.", fundamento: N + ", numerales 7.1.4 y 8.1" },
+    { actor: "Personal acreditado", titulo: "Banqueo: preparación del cepellón", texto: "Se cortan las raíces laterales por etapas, se espera el desarrollo de raíces secundarias y solo entonces se corta la raíz basal. El cepellón se arpilla con material biodegradable.", fundamento: N + ", numeral 8.5.1" },
+    { actor: "Personal técnico", titulo: "Extracción y traslado", texto: "El árbol se maneja siempre por el cepellón, nunca por el tronco, con trasplantadora o canastilla hidráulica. El trasplante debe ejecutarse como máximo cuarenta y ocho horas después del banqueo.", fundamento: N + ", numerales 8.5.2 y 8.5.2.1" },
+    { actor: "Personal técnico", titulo: "Sitio destino y plantación", texto: "La cepa se prepara antes: retiro de cascajo, mejoramiento de suelo y verificación de servicios subterráneos. Al plantar se cuida la verticalidad, se riega a saturación y se sueltan los amarres del cepellón.", fundamento: N + ", numerales 8.5.2.2 a 8.5.2.4" },
+    { actor: "Responsable del proyecto", titulo: "Mantenimiento y verificación", texto: "Riego periódico, monitoreo fitosanitario, revisión de tensores y poda de formación los primeros años. Si el ejemplar muere por mala ejecución, el resultado se equipara a un derribo y hay que restituir.", fundamento: LEY + ", artículo 109 párrafo final · " + N + ", numeral 9" }
+  ] }
+];
+
+const PERFILES = [
+  { id: "todos", etiqueta: "Todos los perfiles" },
+  { id: "vecino", etiqueta: "Vecino preocupado" },
+  { id: "obra", etiqueta: "Voy a construir" },
+  { id: "jardin", etiqueta: "Árbol en mi jardín" },
+  { id: "testigo", etiqueta: "Vi algo irregular" },
+  { id: "protector", etiqueta: "Protejo un árbol" }
+];
+
+const URG = { emergencia: "var(--estado-error)", pronto: "var(--cafe)", ordinario: "var(--guinda-100)" };
+
+const CASOS = [
+  { perfil: "vecino", urg: "emergencia", u: "Emergencia", titulo: "Un árbol cayó sobre un auto o sobre la banqueta", autoridad: "911 · Bomberos y Protección Civil", hacer: ["Llama al 911 y di si hay personas o vehículos atrapados", "Aleja a la gente a una vez y media la altura del árbol", "Si hay cables, reporta también a la CFE al 071", "Fotografía desde lejos para el seguro y el reporte"], noHacer: ["No muevas ramas ni cortes nada por tu cuenta", "No te acerques a los cables: pueden estar energizados"], fundamento: "Ley del Heroico Cuerpo de Bomberos de la Ciudad de México, artículo 6 fracción IX" },
+  { perfil: "vecino", urg: "pronto", u: "Atención pronta", titulo: "El árbol de mi calle quedó inclinado o levantó la banqueta", autoridad: "Tu alcaldía · servicios urbanos", hacer: ["Levanta el reporte y pide visita de valoración", "Fotografía el tronco, la base y el suelo levantado", "Guarda el folio del reporte", "Si la inclinación crece o cruje, escala al 911"], noHacer: ["No lo apuntales con materiales improvisados", "No cortes raíces: es la causa más común de que caiga"], fundamento: N + ", criterios de valoración de riesgo" },
+  { perfil: "obra", urg: "ordinario", u: "Trámite ordinario", titulo: "Voy a construir y hay árboles en el predio", autoridad: "La Secretaría, dentro de la resolución de impacto ambiental", hacer: ["Incluye el arbolado en el estudio de impacto ambiental", "Presenta el inventario con especie, diámetro y estado", "Considera el trasplante de los ejemplares viables", "Presupuesta la restitución: es obligatoria"], noHacer: ["No derribes antes de la resolución: la obra se suspende", "No dejes el arbolado para después del permiso de construcción"], fundamento: "Reglamento de Impacto Ambiental y Riesgo, artículos 137 a 141" },
+  { perfil: "obra", urg: "ordinario", u: "Trámite ordinario", titulo: "Autorizaron el derribo y quiero saber qué se planta a cambio", autoridad: "La Secretaría · medida de restitución", hacer: ["Revisa en la resolución cuántos ejemplares y de qué talla", "Cumple la medida en el plazo autorizado", "Documenta la plantación con fotografías", "Si no hay espacio, consulta dónde cumplirla"], noHacer: ["No la trates como recomendación: es obligatoria", "No sustituyas con especies distintas a las autorizadas"], fundamento: LEY + ", artículo 118" },
+  { perfil: "jardin", urg: "ordinario", u: "Trámite ordinario", titulo: "Quiero podar el árbol de mi jardín porque da mucha sombra", autoridad: "La Secretaría autoriza · podador acreditado ejecuta", hacer: ["Solicita la autorización antes de contratar a nadie", "Contrata el dictamen de una persona acreditada", "Verifica en el padrón que tenga acreditación vigente", "Conserva la autorización durante el trabajo"], noHacer: ["No supongas que por ser tu predio no necesitas permiso", "No permitas que retiren más de la cuarta parte del árbol"], fundamento: LEY + ", artículo 118 fracción III · " + N },
+  { perfil: "jardin", urg: "ordinario", u: "Trámite ordinario", titulo: "El árbol del vecino cuelga sobre mi patio", autoridad: "La Secretaría autoriza · acuerdo entre particulares", hacer: ["Habla primero con tu vecino y documenten el acuerdo", "La solicitud la presenta quien posee el predio del árbol", "Si hay riesgo para tu vivienda, pide el dictamen técnico"], noHacer: ["No cortes las ramas de tu lado: también requiere autorización", "No apliques herbicida ni sal a la raíz"], fundamento: LEY + ", artículo 118 fracción III" },
+  { perfil: "testigo", urg: "pronto", u: "Atención pronta", titulo: "Un vecino cortó un árbol de la calle sin permiso", autoridad: "PAOT · denuncia ambiental", hacer: ["Fotografía el tocón y las ramas antes de que las retiren", "Presenta la denuncia en línea o al 55 5265 0780", "Anota fecha, hora y datos del vehículo o la empresa", "Conserva tu folio para consultar el avance"], noHacer: ["No confrontes a quien lo hizo", "No esperes: la evidencia desaparece en horas"], fundamento: LEY + ", artículo 112 · Código Penal, artículos 343 a 350" },
+  { perfil: "testigo", urg: "pronto", u: "Atención pronta", titulo: "Me ofrecieron podar barato y sin papeles", autoridad: "La Secretaría · padrón de acreditaciones", hacer: ["Pide la credencial y verifica el folio en el padrón", "Confirma que la fotografía y la vigencia correspondan", "Exige ver el dictamen y la autorización antes de empezar"], noHacer: ["No pagues por adelantado sin verificar", "No aceptes que “así se hace siempre”: quien contrata responde"], fundamento: N + ", numeral 5.5" },
+  { perfil: "protector", urg: "ordinario", u: "Trámite ordinario", titulo: "Quiero que reconozcan un árbol muy viejo de mi barrio", autoridad: "La Secretaría · registro de árboles patrimoniales", hacer: ["Reúne fotografías del ejemplar completo y del tronco", "Mide el perímetro a 1.30 metros del suelo", "Documenta su historia y su valor para el barrio", "Envía la propuesta con la ubicación precisa"], noHacer: ["No coloques placas, clavos ni cercas al ejemplar", "No pintes el tronco: el encalado no lo protege"], fundamento: LEY + ", artículo 118 bis" },
+  { perfil: "protector", urg: "emergencia", u: "Emergencia", titulo: "Están talando en un parque o en una barranca", autoridad: "PAOT y la Secretaría · competencia exclusiva", hacer: ["Denuncia de inmediato ante la PAOT y avisa a la Secretaría", "Registra ubicación, hora y maquinaria presente", "Anota los datos del anuncio de obra o de la empresa"], noHacer: ["No entres a la zona ni intentes detener la maquinaria", "No difundas la ubicación antes de presentar la denuncia"], fundamento: LEY + ", artículos 9 y 10" }
+];
+
+const FAQS = [
+  { perfil: "vecino", p: "¿A quién le toca el árbol de mi calle?", r: "Depende del tipo de vialidad. En calles locales y colonias es tu alcaldía. En ejes viales, avenidas grandes y calzadas, la Secretaría autoriza y SOBSE ejecuta.", f: LEY + ", artículos 9 y 10" },
+  { perfil: "vecino", p: "¿Cuánto tarda una autorización?", r: "La autoridad debe resolver en un plazo no mayor a veinte días hábiles contados desde tu solicitud.", f: LEY + ", artículo 106" },
+  { perfil: "vecino", p: "El árbol de la banqueta dañó mi coche al caer, ¿quién paga?", r: "El reclamo se presenta ante la autoridad responsable del arbolado en ese sitio, normalmente tu alcaldía. Documenta con fotografías y con el folio del reporte.", f: "Ley Orgánica de Alcaldías, artículo 32 fracción V" },
+  { perfil: "vecino", p: "¿Puedo plantar un árbol frente a mi casa?", r: "Sí, coordinándolo con tu alcaldía: ella define la especie según el ancho de banqueta y el cableado, y las dimensiones del cajete.", f: "NADF-006-RNAT-2012" },
+  { perfil: "obra", p: "Voy a construir, ¿el arbolado va aparte?", r: "No. Cuando la afectación deriva de una obra sujeta a evaluación de impacto ambiental, la autorización del arbolado queda dentro de esa misma resolución.", f: "Reglamento de Impacto Ambiental y Riesgo, artículos 137 a 141" },
+  { perfil: "obra", p: "¿Cuántos árboles tengo que plantar si derribo uno?", r: "Entre dos y dieciséis, según el puntaje de valoración del dictamen. En derribos por riesgo o saneamiento la restitución es de uno a uno.", f: N + ", numeral 9 y tablas 2, 3 y 4" },
+  { perfil: "obra", p: "¿Puedo pagar en lugar de plantar?", r: "Solo por excepción, cuando la restitución física es jurídica o técnicamente imposible. En ese caso se aporta al Fondo Ambiental Público.", f: LEY + ", artículo 109" },
+  { perfil: "obra", p: "¿El trasplante es mejor que el derribo?", r: "Sí, y se privilegia cuando el ejemplar es viable. Debe ejecutarse en un máximo de cuarenta y ocho horas después del banqueo.", f: N + ", numerales 8.1 y 8.5.2" },
+  { perfil: "jardin", p: "¿Necesito permiso si el árbol está en mi jardín?", r: "Sí. El predio es tuyo, pero el árbol es un bien de interés público. Podarlo, derribarlo o trasplantarlo requiere autorización previa.", f: LEY + ", artículo 118 fracción III" },
+  { perfil: "jardin", p: "¿Cuánto se le puede quitar a un árbol en una poda?", r: "Como máximo la cuarta parte del follaje y las ramas, y solo si ese porcentaje está justificado en el dictamen técnico.", f: N + ", numeral 6" },
+  { perfil: "jardin", p: "¿Puedo cortar las raíces que levantan mi piso?", r: "No por tu cuenta. Cortar raíces es la causa más común de que un árbol termine cayendo, y se considera intervención no autorizada.", f: LEY + ", artículo 118 fracción III" },
+  { perfil: "jardin", p: "¿Qué documentos necesito si el árbol está en mi predio?", r: "Identificación oficial, documento que acredite la propiedad o posesión, dictamen técnico de persona acreditada, y fotografías con un croquis de ubicación.", f: N + ", numeral 5.3" },
+  { perfil: "testigo", p: "¿Dónde denuncio una poda o un derribo irregular?", r: "Ante la Procuraduría Ambiental y del Ordenamiento Territorial, en línea o al 55 5265 0780. La denuncia puede ser anónima.", f: "Ley Orgánica de la PAOT, artículo 5 fracciones I y XV" },
+  { perfil: "testigo", p: "¿Necesito pruebas para denunciar?", r: "Ayuda mucho: fotografías con fecha visible, dirección exacta y hora aproximada. Reúnelas antes de que retiren las ramas o el tocón.", f: "Ley Orgánica de la PAOT, artículo 5" },
+  { perfil: "testigo", p: "¿De cuánto es la multa por derribar sin permiso?", r: "Hasta cien mil veces la unidad de medida vigente, además de la obligación de restituir con el número máximo de árboles.", f: LEY + ", artículos 112 y 304" },
+  { perfil: "testigo", p: "¿Cómo verifico que un podador esté acreditado?", r: "Pide el folio y consúltalo en el padrón. Revisa que la fotografía corresponda a la persona y que la vigencia esté al día. Una credencial con tachaduras no es válida.", f: N + ", numeral 5.5" },
+  { perfil: "protector", p: "¿Qué es un árbol patrimonial?", r: "Un ejemplar notable, singular o monumental por su edad, tamaño, especie, o su valor paisajístico, histórico, cultural o social. Tiene protección más estricta.", f: LEY + ", artículo 118 bis" },
+  { perfil: "protector", p: "¿Se puede derribar un árbol patrimonial?", r: "Solo si hay riesgo real y presente acreditado en dictamen, y siempre que no pueda mitigarse con poda, apuntalamiento o trasplante. No se derriba a cambio de restitución.", f: LEY + ", artículos 34 y 118 bis" },
+  { perfil: "protector", p: "¿Cómo propongo un árbol al registro?", r: "Reúne fotografías del ejemplar y su entorno, la ubicación precisa, el perímetro del tronco a 1.30 metros del suelo y lo que sepas de su historia. Preséntalo en atención ciudadana.", f: LEY + ", artículo 118 bis" },
+  { perfil: "protector", p: "¿Qué es el desmoche y por qué está prohibido?", r: "Es cortar la copa o las ramas estructurales. Debilita al árbol, lo vuelve inestable y tiene el mismo régimen legal que un derribo.", f: N + ", numeral 6" }
+];
+
+class Component extends DCLogic {
+  state = { lugar: null, accion: null, proc: "poda", perfil: "todos", casos: {}, faqs: {} };
+
+  renderVals() {
+    const st = this.state;
+    const lugar = LUGARES.find(l => l.id === st.lugar) || null;
+    const accion = ACCIONES.find(a => a.id === st.accion) || null;
+    const listo = !!(lugar && accion);
+    const ruta = [];
+    if (lugar) ruta.push({ texto: lugar.etiqueta });
+    if (accion) ruta.push({ texto: accion.etiqueta });
+
+    const v = {
+      verdadero: true,
+      etiquetaPaso: listo ? "Consulta terminada" : "Paso " + (lugar ? 2 : 1) + " de 2",
+      seg1: "var(--guinda-100)",
+      seg1borde: "var(--guinda-100)",
+      seg2: listo || lugar ? "var(--guinda-100)" : "var(--blanco)",
+      seg2borde: listo || lugar ? "var(--guinda-100)" : "var(--gris-40)",
+      puedeVolver: !!lugar,
+      hayRuta: ruta.length > 0,
+      ruta,
+      enPregunta: !listo,
+      hayResultado: listo,
+      volver: () => this.setState(s => (s.accion ? { accion: null } : { lugar: null })),
+      reiniciar: () => this.setState({ lugar: null, accion: null })
+    };
+
+    if (!listo) {
+      const primera = !lugar;
+      v.pregunta = primera ? "¿Dónde está el árbol?" : "¿Qué quieres resolver?";
+      v.ayuda = primera
+        ? "De quién es el suelo donde crece el árbol define qué autoridad puede autorizar o atender el caso."
+        : "Elige la opción que más se parezca a tu situación. Puedes volver y cambiar tu respuesta.";
+      v.opciones = (primera ? LUGARES : ACCIONES).map(o => ({
+        etiqueta: o.etiqueta,
+        detalle: o.detalle,
+        elegir: () => this.setState(primera ? { lugar: o.id } : { accion: o.id })
+      }));
+    } else {
+      const base = ACC_BASE[accion.id];
+      const r = RUTAS[lugar.id + ":" + accion.id] || {};
+      const contactos = (r.contactos || [lugar.contacto].concat(base.extra)).filter((c, i, a) => a.indexOf(c) === i).slice(0, 3);
+      v.resTitulo = r.titulo || base.titulo;
+      v.resResumen = (r.resumen || base.resumen) + " " + lugar.nota;
+      v.resPasos = (r.pasos || base.pasos).map((texto, i) => ({ n: i + 1, texto }));
+      v.resDocumentos = (r.documentos || base.documentos).map(texto => ({ texto }));
+      v.resFundamento = base.fundamento;
+      v.resNota = base.nota;
+      v.resContactos = contactos;
+    }
+
+    v.procedimientos = PROCEDIMIENTOS.map(p => {
+      const abierto = st.proc === p.id;
+      return {
+        orden: p.orden,
+        nombre: p.nombre,
+        resumen: p.resumen,
+        color: p.color,
+        abierto,
+        signo: abierto ? "–" : "+",
+        meta: p.meta,
+        pasos: p.pasos.map((s, i) => ({ n: i + 1 < 10 ? "0" + (i + 1) : String(i + 1), actor: s.actor, titulo: s.titulo, texto: s.texto, fundamento: s.fundamento })),
+        alternar: () => this.setState(s => ({ proc: s.proc === p.id ? null : p.id }))
+      };
+    });
+
+    const casosFiltrados = CASOS.filter(c => st.perfil === "todos" || c.perfil === st.perfil);
+    v.perfiles = PERFILES.map(pf => {
+      const on = st.perfil === pf.id;
+      const n = pf.id === "todos" ? CASOS.length : CASOS.filter(c => c.perfil === pf.id).length;
+      return {
+        etiqueta: pf.etiqueta,
+        cuenta: String(n),
+        activo: on,
+        bg: on ? "var(--guinda-100)" : "var(--blanco)",
+        fg: on ? "var(--blanco)" : "var(--gris-100)",
+        borde: on ? "var(--guinda-100)" : "var(--gris-40)",
+        activar: () => this.setState({ perfil: pf.id })
+      };
+    });
+    v.conteoCasos = casosFiltrados.length === CASOS.length ? "Los diez casos" : casosFiltrados.length === 1 ? "1 caso para este perfil" : casosFiltrados.length + " casos para este perfil";
+    const ANCLAS = {
+      "Voy a construir y hay árboles en el predio": "caso-construccion",
+      "Quiero podar el árbol de mi jardín porque da mucha sombra": "caso-jardin-privado"
+    };
+    v.casos = casosFiltrados.map(c => {
+      const abierto = !!st.casos[c.titulo];
+      const pf = PERFILES.find(x => x.id === c.perfil) || {};
+      return {
+        titulo: c.titulo,
+        autoridad: c.autoridad,
+        urgencia: c.u,
+        perfilEtiqueta: pf.etiqueta || "",
+        ancla: ANCLAS[c.titulo] || "",
+        color: URG[c.urg] || "var(--guinda-100)",
+        abierto,
+        signo: abierto ? "–" : "+",
+        hacer: c.hacer.map(texto => ({ texto })),
+        noHacer: c.noHacer.map(texto => ({ texto })),
+        fundamento: c.fundamento,
+        alternar: () => this.setState(s => ({ casos: Object.assign({}, s.casos, { [c.titulo]: !s.casos[c.titulo] }) }))
+      };
+    });
+
+    let n = 0;
+    v.bloques = PERFILES.filter(pf => pf.id !== "todos").map(pf => ({
+      titulo: pf.etiqueta,
+      items: FAQS.filter(f => f.perfil === pf.id).map(f => {
+        n++;
+        const abierto = !!st.faqs[f.p];
+        const num = n < 10 ? "0" + n : String(n);
+        return {
+          num,
+          ancla: "p" + num,
+          hash: "#p" + num,
+          pregunta: f.p,
+          respuesta: f.r,
+          fundamento: f.f,
+          abierto,
+          signo: abierto ? "–" : "+",
+          alternar: () => this.setState(s => ({ faqs: Object.assign({}, s.faqs, { [f.p]: !s.faqs[f.p] }) }))
+        };
+      })
+    }));
+
+    return v;
+  }
+}
+</script>
+</body>
+</html>

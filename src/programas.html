@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/base.css">
+  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/styles.css">
+  <script src="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/_ds_bundle.js"></script>
+  <script src="./image-slot.js"></script>
+  <style>
+    body { margin: 0; background: var(--blanco); color: var(--gris-100); font-family: Roboto, system-ui, sans-serif; }
+    a { color: var(--guinda-100); text-decoration: underline; text-underline-offset: 2px; }
+    a:hover { color: var(--guinda-oscuro); }
+    *:focus-visible { outline: 3px solid var(--guinda-100); outline-offset: 2px; }
+  </style>
+</helmet>
+
+<div style="min-height: 100vh; display: flex; flex-direction: column; background: var(--blanco)">
+
+  <dc-import name="CabeceraSitio" activo="programas" hint-size="100%,190px"></dc-import>
+
+  <nav aria-label="Ruta de navegación" style="background: var(--blanco)">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 14px 24px 12px; font-size: 14px; color: var(--gris-100)">
+      <a href="portada.dc.html">Inicio</a> <span aria-hidden="true" style="padding: 0 8px">·</span> <span style="color: var(--gris-100); font-weight: 700">Programas</span>
+    </div>
+  </nav>
+
+  <main id="contenido" style="flex: 1">
+
+    <section style="background: var(--marfil); border-bottom: 1px solid var(--dorado-40)">
+      <div style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 60px) 24px">
+        <h1 style="margin: 0 0 20px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(34px, 4.6vw, 54px); line-height: 1.06; letter-spacing: -0.015em; font-weight: 700; color: var(--guinda-100); text-wrap: pretty"><em style="font-style: italic; color: var(--cafe)">Programas</em> de arbolado</h1>
+        <p style="margin: 0; font-size: clamp(18px, 1.9vw, 22px); line-height: 1.55; max-width: 34em; text-wrap: pretty">Los cinco programas con los que SEDEMA interviene el arbolado de la ciudad, cada uno con sus criterios y su procedimiento propio.</p>
+      </div>
+    </section>
+
+    <section style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 60px) 24px">
+      <ul style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 24px">
+
+        <li style="background: var(--blanco); border: 1px solid var(--gris-20); box-shadow: 0 4px 8px rgba(26,26,26,0.06); display: flex; flex-direction: column; overflow: hidden">
+          <div style="position: relative; width: 100%; aspect-ratio: 16 / 9; background: var(--gris-10); border-bottom: 1px solid var(--gris-20)">
+            <image-slot id="programa-patrimoniales" shape="rect" fit="cover" placeholder="Arrastra la fotografía de un ejemplar patrimonial"></image-slot>
+          </div>
+          <div style="padding: 28px 24px; display: flex; flex-direction: column; flex: 1">
+            <h2 style="margin: 8px 0 12px; font-family: Cabin, Roboto, sans-serif; font-size: 27px; font-weight: 700; color: var(--guinda-100); line-height: 1.2">Árboles patrimoniales</h2>
+            <p style="margin: 0 0 20px; font-size: 18px; line-height: 1.6">Los árboles notables, singulares y monumentales de la ciudad tienen un régimen de protección más estricto que el resto del arbolado. Cualquier persona puede proponer un ejemplar al registro.</p>
+            <ul style="margin: 0 0 22px; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px">
+              <li style="font-size: 15px; background: var(--gris-10); border: 1px solid var(--gris-20); padding: 5px 10px; flex: 0 0 auto; white-space: nowrap">Sitio dedicado</li>
+              <li style="font-size: 15px; background: var(--gris-10); border: 1px solid var(--gris-20); padding: 5px 10px; flex: 0 0 auto; white-space: nowrap">29 ejemplares</li>
+              <li style="font-size: 15px; background: var(--gris-10); border: 1px solid var(--gris-20); padding: 5px 10px; flex: 0 0 auto; white-space: nowrap">Propuesta ciudadana</li>
+            </ul>
+            <a href="https://guardianesdeltiempo.sedema.cdmx.gob.mx" target="_blank" rel="noopener" data-url-pendiente="Sustituir por la URL definitiva del sitio de árboles patrimoniales" style="margin-top: auto; align-self: flex-start; background: var(--guinda-100); color: var(--blanco); border-radius: 4px; padding: 14px 24px; font-size: 17px; font-weight: 700; text-decoration: none; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center; transition: background 150ms ease" style-hover="background: var(--guinda-oscuro); color: var(--blanco)">Ir al sitio de patrimoniales ↗</a>
+          </div>
+        </li>
+
+        <li style="background: var(--blanco); border: 1px solid var(--gris-20); box-shadow: 0 4px 8px rgba(26,26,26,0.06); display: flex; flex-direction: column; overflow: hidden">
+          <div style="position: relative; width: 100%; aspect-ratio: 16 / 9; background: var(--gris-10); border-bottom: 1px solid var(--gris-20)">
+            <image-slot id="programa-palmeras" shape="rect" fit="cover" placeholder="Arrastra la fotografía de una palmera en retiro o de su sustitución"></image-slot>
+          </div>
+          <div style="padding: 28px 24px; display: flex; flex-direction: column; flex: 1">
+            <h2 style="margin: 8px 0 12px; font-family: Cabin, Roboto, sans-serif; font-size: 27px; font-weight: 700; color: var(--guinda-100); line-height: 1.2">Retiro y sustitución de palmeras</h2>
+            <p style="margin: 0 0 20px; font-size: 18px; line-height: 1.6">Por qué se retiran las palmeras enfermas o en riesgo, con qué árboles se sustituyen y qué sigue si tienes una palmera en tu predio o frente a tu casa.</p>
+            <ul style="margin: 0 0 22px; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px">
+              <li style="font-size: 15px; background: var(--gris-10); border: 1px solid var(--gris-20); padding: 5px 10px; flex: 0 0 auto; white-space: nowrap">Plaga y hongo</li>
+              <li style="font-size: 15px; background: var(--gris-10); border: 1px solid var(--gris-20); padding: 5px 10px; flex: 0 0 auto; white-space: nowrap">Riesgo de caída</li>
+              <li style="font-size: 15px; background: var(--gris-10); border: 1px solid var(--gris-20); padding: 5px 10px; flex: 0 0 auto; white-space: nowrap">Especies nativas</li>
+            </ul>
+            <a href="palmeras.dc.html" style="margin-top: auto; align-self: flex-start; background: var(--guinda-100); color: var(--blanco); border-radius: 4px; padding: 14px 24px; font-size: 17px; font-weight: 700; text-decoration: none; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center; transition: background 150ms ease" style-hover="background: var(--guinda-oscuro); color: var(--blanco)">Ver el programa</a>
+          </div>
+        </li>
+        <li style="background: var(--blanco); border: 1px solid var(--gris-20); box-shadow: 0 4px 8px rgba(26,26,26,0.06); display: flex; flex-direction: column; overflow: hidden">
+          <div style="position: relative; width: 100%; aspect-ratio: 16 / 9; background: var(--gris-10); border-bottom: 1px solid var(--gris-20)">
+            <image-slot id="programa-inventario" shape="rect" fit="cover" placeholder="Arrastra una fotografía del levantamiento en campo"></image-slot>
+          </div>
+          <div style="padding: 28px 24px; display: flex; flex-direction: column; flex: 1">
+            <h2 style="margin: 8px 0 12px; font-family: Cabin, Roboto, sans-serif; font-size: 27px; font-weight: 700; color: var(--guinda-100); line-height: 1.2">Inventario del arbolado urbano</h2>
+            <p style="margin: 0 0 20px; font-size: 18px; line-height: 1.6">Cuántos árboles hay, dónde están, de qué especie son y en qué estado se encuentran. Es la base con la que se decide dónde intervenir primero.</p>
+            <ul style="margin: 0 0 22px; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px">
+              <li style="font-size: 15px; background: var(--gris-10); border: 1px solid var(--gris-20); padding: 5px 10px; flex: 0 0 auto; white-space: nowrap">7 datos por árbol</li>
+              <li style="font-size: 15px; background: var(--gris-10); border: 1px solid var(--gris-20); padding: 5px 10px; flex: 0 0 auto; white-space: nowrap">16 alcaldías</li>
+              <li style="font-size: 15px; background: var(--gris-10); border: 1px solid var(--gris-20); padding: 5px 10px; flex: 0 0 auto; white-space: nowrap">Datos abiertos</li>
+            </ul>
+            <a href="inventario.dc.html" style="margin-top: auto; align-self: flex-start; background: var(--guinda-100); color: var(--blanco); border-radius: 4px; padding: 14px 24px; font-size: 17px; font-weight: 700; text-decoration: none; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center; transition: background 150ms ease" style-hover="background: var(--guinda-oscuro); color: var(--blanco)">Ver el programa</a>
+          </div>
+        </li>
+        <li style="background: var(--blanco); border: 1px solid var(--gris-20); box-shadow: 0 4px 8px rgba(26,26,26,0.06); display: flex; flex-direction: column; overflow: hidden">
+          <div style="position: relative; width: 100%; aspect-ratio: 16 / 9; background: var(--gris-10); border-bottom: 1px solid var(--gris-20)">
+            <image-slot id="programa-reforestacion" shape="rect" fit="cover" placeholder="Arrastra una fotografía de una jornada de plantación"></image-slot>
+          </div>
+          <div style="padding: 28px 24px; display: flex; flex-direction: column; flex: 1">
+            <h2 style="margin: 8px 0 12px; font-family: Cabin, Roboto, sans-serif; font-size: 27px; font-weight: 700; color: var(--guinda-100); line-height: 1.2">Reforestación urbana</h2>
+            <p style="margin: 0 0 20px; font-size: 18px; line-height: 1.6">Plantar donde más falta sombra, no donde es más fácil. Incluye el avance del año y los criterios con que se priorizan las colonias.</p>
+            <ul style="margin: 0 0 22px; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px">
+              <li style="font-size: 15px; background: var(--gris-10); border: 1px solid var(--gris-20); padding: 5px 10px; flex: 0 0 auto; white-space: nowrap">5 criterios</li>
+              <li style="font-size: 15px; background: var(--gris-10); border: 1px solid var(--gris-20); padding: 5px 10px; flex: 0 0 auto; white-space: nowrap">Avance abierto</li>
+              <li style="font-size: 15px; background: var(--gris-10); border: 1px solid var(--gris-20); padding: 5px 10px; flex: 0 0 auto; white-space: nowrap">Mapa</li>
+            </ul>
+            <a href="reforestacion.dc.html" style="margin-top: auto; align-self: flex-start; background: var(--guinda-100); color: var(--blanco); border-radius: 4px; padding: 14px 24px; font-size: 17px; font-weight: 700; text-decoration: none; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center; transition: background 150ms ease" style-hover="background: var(--guinda-oscuro); color: var(--blanco)">Ver el programa</a>
+          </div>
+        </li>
+        <li style="background: var(--blanco); border: 1px solid var(--gris-20); box-shadow: 0 4px 8px rgba(26,26,26,0.06); display: flex; flex-direction: column; overflow: hidden">
+          <div style="position: relative; width: 100%; aspect-ratio: 16 / 9; background: var(--gris-10); border-bottom: 1px solid var(--gris-20)">
+            <image-slot id="programa-viveros" shape="rect" fit="cover" placeholder="Arrastra una fotografía de la producción en vivero"></image-slot>
+          </div>
+          <div style="padding: 28px 24px; display: flex; flex-direction: column; flex: 1">
+            <h2 style="margin: 8px 0 12px; font-family: Cabin, Roboto, sans-serif; font-size: 27px; font-weight: 700; color: var(--guinda-100); line-height: 1.2">Viveros Nezahualcóyotl y Yecapixtla</h2>
+            <p style="margin: 0 0 20px; font-size: 18px; line-height: 1.6">Dónde se produce el arbolado que se planta en la ciudad, cómo se forma un árbol urbano y por qué la planta del vivero no se vende al público.</p>
+            <ul style="margin: 0 0 22px; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px">
+              <li style="font-size: 15px; background: var(--gris-10); border: 1px solid var(--gris-20); padding: 5px 10px; flex: 0 0 auto; white-space: nowrap">2 viveros</li>
+              <li style="font-size: 15px; background: var(--gris-10); border: 1px solid var(--gris-20); padding: 5px 10px; flex: 0 0 auto; white-space: nowrap">5 etapas</li>
+              <li style="font-size: 15px; background: var(--gris-10); border: 1px solid var(--gris-20); padding: 5px 10px; flex: 0 0 auto; white-space: nowrap">Sin venta al público</li>
+            </ul>
+            <a href="viveros.dc.html" style="margin-top: auto; align-self: flex-start; background: var(--guinda-100); color: var(--blanco); border-radius: 4px; padding: 14px 24px; font-size: 17px; font-weight: 700; text-decoration: none; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center; transition: background 150ms ease" style-hover="background: var(--guinda-oscuro); color: var(--blanco)">Ver el programa</a>
+          </div>
+        </li>
+      </ul>
+
+      <div role="status" style="margin-top: 32px; background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--estado-info); padding: 22px 26px">
+        <strong style="display: block; font-size: 19px; margin-bottom: 8px; color: var(--negro)">Un programa no sustituye el trámite</strong>
+        <span style="font-size: 18px; line-height: 1.6">Aunque tu caso entre en un programa, la intervención sigue requiriendo autorización. Revisa <a href="hazlo.dc.html#procedimientos">los procedimientos</a> para saber qué documentos reunir.</span>
+      </div>
+    </section>
+
+  </main>
+
+  <dc-import name="Utilidad" fecha="18 de agosto de 2026" hint-size="100%,200px"></dc-import>
+
+  <dc-import name="PieSitio" hint-size="100%,440px"></dc-import>
+</div>
+
+</x-dc>
+</body>
+</html>

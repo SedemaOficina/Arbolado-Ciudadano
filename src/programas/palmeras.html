@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/base.css">
+  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/styles.css">
+  <script src="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/_ds_bundle.js"></script>
+  <script src="./image-slot.js"></script>
+  <style>
+    body { margin: 0; background: var(--blanco); color: var(--gris-100); font-family: Roboto, system-ui, sans-serif; }
+    a { color: var(--guinda-100); text-decoration: underline; text-underline-offset: 2px; }
+    a:hover { color: var(--guinda-oscuro); }
+    *:focus-visible { outline: 3px solid var(--guinda-100); outline-offset: 2px; }
+  </style>
+</helmet>
+
+<div style="min-height: 100vh; display: flex; flex-direction: column; background: var(--blanco)">
+
+  <dc-import name="CabeceraSitio" activo="programas" hint-size="100%,190px"></dc-import>
+
+  <nav aria-label="Ruta de navegación" style="background: var(--blanco)">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 14px 24px 12px; font-size: 14px; color: var(--gris-100)">
+      <a href="portada.dc.html">Inicio</a> <span aria-hidden="true" style="padding: 0 8px">·</span> <a href="programas.dc.html">Programas</a> <span aria-hidden="true" style="padding: 0 8px">·</span> <span style="color: var(--gris-100); font-weight: 700">Retiro y sustitución de palmeras</span>
+    </div>
+  </nav>
+
+  <main id="contenido" style="flex: 1">
+
+    <section style="background: var(--marfil); border-bottom: 1px solid var(--dorado-40)">
+      <div style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 60px) 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: clamp(28px, 4vw, 52px); align-items: center">
+        <div>
+          <h1 style="margin: 0 0 20px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(32px, 4.4vw, 50px); line-height: 1.06; letter-spacing: -0.015em; font-weight: 700; color: var(--guinda-100); text-wrap: pretty">Retiro y <em style="font-style: italic; color: var(--cafe)">sustitución</em> de palmeras</h1>
+          <p style="margin: 0 0 16px; font-size: clamp(18px, 1.9vw, 22px); line-height: 1.5; max-width: 32em; text-wrap: pretty">Muchas palmeras de la ciudad están enfermas, llegaron al final de su ciclo o representan un riesgo de caída. Cuando se retiran, en su lugar se plantan árboles que dan más sombra y más servicios ambientales.</p>
+          <p style="margin: 0; font-size: 18px; line-height: 1.6; max-width: 34em">Retirar una palmera no es quitar un árbol: es cambiarlo por uno que sí funciona para esta ciudad.</p>
+        </div>
+        <figure style="margin: 0">
+          <div style="position: relative; width: 100%; aspect-ratio: 4 / 3; background: var(--gris-10); border: 1px solid var(--dorado-40)">
+            <image-slot id="palmeras-hero" shape="rect" fit="cover" placeholder="Arrastra una fotografía del retiro o de la sustitución de una palmera"></image-slot>
+          </div>
+          <figcaption style="margin-top: 12px; padding-left: 12px; border-left: 3px solid var(--dorado-100); font-size: 15px; line-height: 1.5; color: var(--gris-100)">Sustitución de palmera por arbolado en la Ciudad de México. Fotografía institucional.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 60px) 24px">
+      <div style="max-width: 42em; margin-bottom: 32px">
+        <h2 style="margin: 0 0 12px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(26px, 3.2vw, 36px); line-height: 1.15; font-weight: 700; color: var(--guinda-100)">¿Por qué se retiran?</h2>
+        <p style="margin: 0; font-size: 19px; line-height: 1.6">Nunca por estética. Siempre por una de estas cuatro razones, y siempre con dictamen técnico.</p>
+      </div>
+
+      <ol style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 20px">
+        <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-top: 4px solid var(--guinda-100); padding: 24px 22px">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px">
+            <span aria-hidden="true" style="width: 36px; height: 36px; flex: none; background: var(--guinda-100); color: var(--blanco); font-family: Cabin, Roboto, sans-serif; font-size: 17px; font-weight: 700; display: flex; align-items: center; justify-content: center">1</span>
+            <h3 style="margin: 0; font-size: 21px; font-weight: 700; color: var(--guinda-100); line-height: 1.25">Plaga</h3>
+          </div>
+          <p style="margin: 0; font-size: 17px; line-height: 1.55">El picudo de las palmeras barrena el tronco por dentro. Cuando los síntomas se ven desde la calle, el daño estructural ya está hecho y no se revierte.</p>
+        </li>
+        <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-top: 4px solid var(--guinda-100); padding: 24px 22px">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px">
+            <span aria-hidden="true" style="width: 36px; height: 36px; flex: none; background: var(--guinda-100); color: var(--blanco); font-family: Cabin, Roboto, sans-serif; font-size: 17px; font-weight: 700; display: flex; align-items: center; justify-content: center">2</span>
+            <h3 style="margin: 0; font-size: 21px; font-weight: 700; color: var(--guinda-100); line-height: 1.25">Enfermedad</h3>
+          </div>
+          <p style="margin: 0; font-size: 17px; line-height: 1.55">Los hongos que atacan el sistema vascular secan la palmera de arriba hacia abajo. No hay tratamiento que la recupere una vez avanzada.</p>
+        </li>
+        <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-top: 4px solid var(--guinda-100); padding: 24px 22px">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px">
+            <span aria-hidden="true" style="width: 36px; height: 36px; flex: none; background: var(--guinda-100); color: var(--blanco); font-family: Cabin, Roboto, sans-serif; font-size: 17px; font-weight: 700; display: flex; align-items: center; justify-content: center">3</span>
+            <h3 style="margin: 0; font-size: 21px; font-weight: 700; color: var(--guinda-100); line-height: 1.25">Riesgo de caída</h3>
+          </div>
+          <p style="margin: 0; font-size: 17px; line-height: 1.55">Una palmera seca puede desprender hojas de varios kilos o vencerse completa. En avenidas y banquetas concurridas eso es un riesgo directo a las personas.</p>
+        </li>
+        <li style="background: var(--marfil); border: 1px solid var(--dorado-40); border-top: 4px solid var(--guinda-100); padding: 24px 22px">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px">
+            <span aria-hidden="true" style="width: 36px; height: 36px; flex: none; background: var(--dorado-100); color: var(--blanco); font-family: Cabin, Roboto, sans-serif; font-size: 17px; font-weight: 700; display: flex; align-items: center; justify-content: center">4</span>
+            <h3 style="margin: 0; font-size: 21px; font-weight: 700; color: var(--guinda-100); line-height: 1.25">Fin de su ciclo</h3>
+          </div>
+          <p style="margin: 0; font-size: 17px; line-height: 1.55">Muchas palmeras de la ciudad se plantaron hace décadas y llegaron al final de su vida útil. Ya no crecen, no se recuperan y su caída es cuestión de tiempo.</p>
+        </li>
+      </ol>
+
+      <div role="alert" style="margin-top: 28px; background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--estado-error); padding: 22px 26px">
+        <span style="display: block; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--estado-error); margin-bottom: 8px">Alerta grave</span>
+        <strong style="display: block; font-size: 19px; margin-bottom: 8px; color: var(--negro)">Una palmera seca no espera</strong>
+        <span style="font-size: 18px; line-height: 1.6">Si ves una palmera inclinada, con el cogollo seco o con hojas a punto de desprenderse sobre la banqueta, repórtala. Si el peligro es inmediato, llama al 911; si no, a tu alcaldía o a atención ciudadana de SEDEMA al 55 5345 8187.</span>
+      </div>
+    </section>
+
+    <section style="background: var(--gris-10); border-top: 1px solid var(--gris-20); border-bottom: 1px solid var(--gris-20)">
+      <div style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 60px) 24px">
+        <div style="max-width: 42em; margin-bottom: 32px">
+          <h2 style="margin: 0 0 12px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(26px, 3.2vw, 36px); line-height: 1.15; font-weight: 700; color: var(--guinda-100)">Qué se planta en su lugar</h2>
+          <p style="margin: 0; font-size: 19px; line-height: 1.6">Por cada palmera retirada se planta arbolado adecuado al sitio. La especie no la elige quien reporta: la define el dictamen según el ancho de banqueta, el cableado y el suelo.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-bottom: 28px">
+          <div style="background: var(--blanco); border: 1px solid var(--gris-20); padding: 24px">
+            <h3 style="margin: 0 0 12px; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--gris-100)">Lo que gana la calle</h3>
+            <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px">
+              <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start"><span aria-hidden="true" style="margin-top: 8px; width: 8px; height: 8px; background: var(--dorado-100); display: block"></span><span style="font-size: 17px; line-height: 1.55">Sombra real: una copa amplia baja la temperatura de la banqueta</span></li>
+              <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start"><span aria-hidden="true" style="margin-top: 8px; width: 8px; height: 8px; background: var(--dorado-100); display: block"></span><span style="font-size: 17px; line-height: 1.55">Captura de contaminantes y de agua de lluvia</span></li>
+              <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start"><span aria-hidden="true" style="margin-top: 8px; width: 8px; height: 8px; background: var(--dorado-100); display: block"></span><span style="font-size: 17px; line-height: 1.55">Refugio para aves e insectos polinizadores</span></li>
+              <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start"><span aria-hidden="true" style="margin-top: 8px; width: 8px; height: 8px; background: var(--dorado-100); display: block"></span><span style="font-size: 17px; line-height: 1.55">Menos riesgo: un árbol sano se poda y se mantiene, una palmera enferma no</span></li>
+            </ul>
+          </div>
+          <div style="background: var(--blanco); border: 1px solid var(--gris-20); padding: 24px">
+            <h3 style="margin: 0 0 12px; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--gris-100)">Cómo se elige la especie</h3>
+            <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px">
+              <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start"><span aria-hidden="true" style="margin-top: 8px; width: 8px; height: 8px; background: var(--dorado-100); display: block"></span><span style="font-size: 17px; line-height: 1.55">Se prefieren especies nativas o adaptadas a la ciudad</span></li>
+              <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start"><span aria-hidden="true" style="margin-top: 8px; width: 8px; height: 8px; background: var(--dorado-100); display: block"></span><span style="font-size: 17px; line-height: 1.55">El porte adulto debe caber sin chocar con el cableado</span></li>
+              <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start"><span aria-hidden="true" style="margin-top: 8px; width: 8px; height: 8px; background: var(--dorado-100); display: block"></span><span style="font-size: 17px; line-height: 1.55">La raíz no debe ser agresiva para banqueta ni tubería</span></li>
+              <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start"><span aria-hidden="true" style="margin-top: 8px; width: 8px; height: 8px; background: var(--dorado-100); display: block"></span><span style="font-size: 17px; line-height: 1.55">El cajete debe tener superficie suficiente para el desarrollo</span></li>
+            </ul>
+            <p style="margin: 16px 0 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)"><span style="font-weight: 700">NADF-006-RNAT-2012</span> · lineamientos de plantación y mantenimiento de arbolado urbano</p>
+          </div>
+        </div>
+
+        <div style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--guinda-100); padding: 24px 28px">
+          <h3 style="margin: 0 0 10px; font-size: 21px; font-weight: 700; color: var(--guinda-100)">La palmera no desaparece de la ciudad</h3>
+          <p style="margin: 0; font-size: 18px; line-height: 1.6">Las palmeras sanas se conservan y se mantienen, y las de valor histórico o paisajístico pueden entrar al <a href="https://guardianesdeltiempo.sedema.cdmx.gob.mx" target="_blank" rel="noopener" data-url-pendiente="Sustituir por la URL definitiva del sitio de árboles patrimoniales">régimen patrimonial</a>. El programa atiende a las enfermas y a las que ya representan un riesgo.</p>
+        </div>
+      </div>
+    </section>
+
+    <section style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 60px) 24px">
+      <div style="max-width: 42em; margin-bottom: 32px">
+        <h2 style="margin: 0 0 12px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(26px, 3.2vw, 36px); line-height: 1.15; font-weight: 700; color: var(--guinda-100)">Cómo se hace el retiro</h2>
+        <p style="margin: 0; font-size: 19px; line-height: 1.6">El mismo procedimiento que cualquier derribo autorizado, con dos particularidades: el manejo de la plaga y la sustitución obligatoria.</p>
+      </div>
+
+      <ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 16px">
+        <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--guinda-100); padding: 24px 28px; display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 20px; align-items: start">
+          <span aria-hidden="true" style="width: 44px; height: 44px; background: var(--guinda-100); color: var(--blanco); font-family: Cabin, Roboto, sans-serif; font-size: 19px; font-weight: 700; display: flex; align-items: center; justify-content: center">1</span>
+          <span>
+            <span style="display: block; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 6px">Ciudadanía o cuadrilla</span>
+            <span style="display: block; font-size: 21px; font-weight: 700; color: var(--guinda-100); margin-bottom: 8px; line-height: 1.3">Reporte o detección en recorrido</span>
+            <span style="display: block; font-size: 18px; line-height: 1.6">El caso entra por reporte ciudadano o por los recorridos de revisión. Se registra la ubicación y el estado del ejemplar.</span>
+          </span>
+        </li>
+        <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--guinda-100); padding: 24px 28px; display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 20px; align-items: start">
+          <span aria-hidden="true" style="width: 44px; height: 44px; background: var(--guinda-100); color: var(--blanco); font-family: Cabin, Roboto, sans-serif; font-size: 19px; font-weight: 700; display: flex; align-items: center; justify-content: center">2</span>
+          <span>
+            <span style="display: block; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 6px">Dictaminador acreditado</span>
+            <span style="display: block; font-size: 21px; font-weight: 700; color: var(--guinda-100); margin-bottom: 8px; line-height: 1.3">Dictamen fitosanitario</span>
+            <span style="display: block; font-size: 18px; line-height: 1.6">Determina si hay plaga o enfermedad, si el ejemplar es recuperable y si representa riesgo. Sin este documento no procede el retiro.</span>
+            <span style="display: block; margin-top: 10px; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)">NADF-001-RNAT-2015, numeral 5.3</span>
+          </span>
+        </li>
+        <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--guinda-100); padding: 24px 28px; display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 20px; align-items: start">
+          <span aria-hidden="true" style="width: 44px; height: 44px; background: var(--guinda-100); color: var(--blanco); font-family: Cabin, Roboto, sans-serif; font-size: 19px; font-weight: 700; display: flex; align-items: center; justify-content: center">3</span>
+          <span>
+            <span style="display: block; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 6px">Alcaldía o SEDEMA</span>
+            <span style="display: block; font-size: 21px; font-weight: 700; color: var(--guinda-100); margin-bottom: 8px; line-height: 1.3">Autorización con medida de sustitución</span>
+            <span style="display: block; font-size: 18px; line-height: 1.6">La resolución indica el retiro y, en el mismo acto, cuántos árboles se plantan, de qué talla y en qué sitio. La sustitución no es opcional.</span>
+            <span style="display: block; margin-top: 10px; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículos 106 y 118</span>
+          </span>
+        </li>
+        <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--guinda-100); padding: 24px 28px; display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 20px; align-items: start">
+          <span aria-hidden="true" style="width: 44px; height: 44px; background: var(--guinda-100); color: var(--blanco); font-family: Cabin, Roboto, sans-serif; font-size: 19px; font-weight: 700; display: flex; align-items: center; justify-content: center">4</span>
+          <span>
+            <span style="display: block; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 6px">Personal acreditado</span>
+            <span style="display: block; font-size: 21px; font-weight: 700; color: var(--guinda-100); margin-bottom: 8px; line-height: 1.3">Retiro y manejo del residuo</span>
+            <span style="display: block; font-size: 18px; line-height: 1.6">El área se acordona y el ejemplar se secciona con descenso controlado. Si hubo plaga, el residuo no se tritura para acolchado: va a disposición final designada, para no propagarla.</span>
+            <span style="display: block; margin-top: 10px; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)">NADF-001-RNAT-2015, numerales 7.6 y 11</span>
+          </span>
+        </li>
+        <li style="background: var(--marfil); border: 1px solid var(--dorado-40); border-left: 4px solid var(--guinda-100); padding: 24px 28px; display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 20px; align-items: start">
+          <span aria-hidden="true" style="width: 44px; height: 44px; background: var(--dorado-100); color: var(--blanco); font-family: Cabin, Roboto, sans-serif; font-size: 19px; font-weight: 700; display: flex; align-items: center; justify-content: center">5</span>
+          <span>
+            <span style="display: block; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 6px">Responsable del programa</span>
+            <span style="display: block; font-size: 21px; font-weight: 700; color: var(--guinda-100); margin-bottom: 8px; line-height: 1.3">Plantación y seguimiento</span>
+            <span style="display: block; font-size: 18px; line-height: 1.6">Se prepara el cajete, se planta el arbolado sustituto y se le da mantenimiento los primeros años: riego, revisión de tensores y poda de formación.</span>
+          </span>
+        </li>
+      </ol>
+    </section>
+
+    <section style="background: var(--gris-10); border-top: 1px solid var(--gris-20)">
+      <div style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 60px) 24px">
+        <div style="max-width: 42em; margin-bottom: 28px">
+          <h2 style="margin: 0 0 12px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(26px, 3.2vw, 36px); line-height: 1.15; font-weight: 700; color: var(--guinda-100)">¿Y si la palmera es mía?</h2>
+          <p style="margin: 0; font-size: 19px; line-height: 1.6">Si está dentro de tu predio, el trámite lo inicias tú. Si está en la banqueta, es de la ciudad y lo atiende tu alcaldía.</p>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 20px">
+          <div style="background: var(--blanco); border: 1px solid var(--gris-20); border-top: 4px solid var(--dorado-100); padding: 24px">
+            <h3 style="margin: 0 0 10px; font-size: 21px; font-weight: 700; color: var(--guinda-100)">Está en mi predio</h3>
+            <p style="margin: 0 0 14px; font-size: 17px; line-height: 1.55">Necesitas autorización aunque esté enferma. Contrata el dictamen con una persona acreditada, presenta la solicitud y cumple la sustitución que te indique la resolución.</p>
+            <a href="hazlo.dc.html#procedimientos" style="font-size: 17px; font-weight: 700">Ver el procedimiento →</a>
+          </div>
+          <div style="background: var(--blanco); border: 1px solid var(--gris-20); border-top: 4px solid var(--dorado-100); padding: 24px">
+            <h3 style="margin: 0 0 10px; font-size: 21px; font-weight: 700; color: var(--guinda-100)">Está en la banqueta</h3>
+            <p style="margin: 0 0 14px; font-size: 17px; line-height: 1.55">Repórtala a tu alcaldía con la dirección exacta y una fotografía. No la intervengas ni contrates a nadie: el arbolado de vía pública lo atiende la autoridad.</p>
+            <a href="directorio.dc.html#alcaldias" style="font-size: 17px; font-weight: 700">Ver el directorio →</a>
+          </div>
+          <div style="background: var(--blanco); border: 1px solid var(--gris-20); border-top: 4px solid var(--estado-error); padding: 24px">
+            <h3 style="margin: 0 0 10px; font-size: 21px; font-weight: 700; color: var(--guinda-100)">Está a punto de caer</h3>
+            <p style="margin: 0 0 14px; font-size: 17px; line-height: 1.55">No esperes el trámite. Si amenaza a personas, autos o cables, es una emergencia.</p>
+            <a href="emergencias.dc.html" style="font-size: 17px; font-weight: 700">Ver los tres niveles →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <dc-import name="Utilidad" fecha="18 de agosto de 2026" hint-size="100%,200px"></dc-import>
+
+  <dc-import name="PieSitio" hint-size="100%,440px"></dc-import>
+</div>
+
+</x-dc>
+</body>
+</html>

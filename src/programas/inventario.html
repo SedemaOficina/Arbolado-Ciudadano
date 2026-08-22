@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/base.css">
+  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/styles.css">
+  <script src="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/_ds_bundle.js"></script>
+  <script src="./image-slot.js"></script>
+  <style>
+    body { margin: 0; background: var(--blanco); color: var(--gris-100); font-family: Roboto, system-ui, sans-serif; }
+    a { color: var(--guinda-100); text-decoration: underline; text-underline-offset: 2px; }
+    a:hover { color: var(--guinda-oscuro); }
+    *:focus-visible { outline: 3px solid var(--guinda-100); outline-offset: 2px; }
+  </style>
+</helmet>
+
+<div style="min-height: 100vh; display: flex; flex-direction: column; background: var(--blanco)">
+
+  <dc-import name="CabeceraSitio" activo="programas" hint-size="100%,190px"></dc-import>
+
+  <nav aria-label="Ruta de navegación" style="background: var(--blanco)">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 14px 24px 12px; font-size: 14px; color: var(--gris-100)">
+      <a href="portada.dc.html">Inicio</a> <span aria-hidden="true" style="padding: 0 8px">·</span> <a href="programas.dc.html">Programas</a> <span aria-hidden="true" style="padding: 0 8px">·</span> <span style="color: var(--gris-100); font-weight: 700">Inventario del arbolado urbano</span>
+    </div>
+  </nav>
+
+  <main id="contenido" style="flex: 1">
+
+    <section style="background: var(--marfil); border-bottom: 1px solid var(--dorado-40)">
+      <div style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 60px) 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: clamp(28px, 4vw, 52px); align-items: center">
+        <div>
+          <h1 style="margin: 0 0 20px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(32px, 4.4vw, 50px); line-height: 1.06; letter-spacing: -0.015em; font-weight: 700; color: var(--guinda-100); text-wrap: pretty"><em style="font-style: italic; color: var(--cafe)">Inventario</em> del arbolado urbano</h1>
+          <p style="margin: 0 0 16px; font-size: clamp(18px, 1.9vw, 22px); line-height: 1.5; max-width: 32em; text-wrap: pretty">Saber cuántos árboles hay, dónde están, de qué especie son y en qué estado se encuentran. Sin eso no se puede planear una sola poda ni una sola plantación.</p>
+          <p style="margin: 0; font-size: 18px; line-height: 1.6; max-width: 34em">Cada ejemplar registrado tiene ubicación, especie, medidas y condición. Es la base de todo lo demás que hace la Secretaría con el arbolado.</p>
+        </div>
+        <figure style="margin: 0">
+          <div style="position: relative; width: 100%; aspect-ratio: 4 / 3; background: var(--gris-10); border: 1px solid var(--dorado-40)">
+            <image-slot id="inventario-hero" shape="rect" fit="cover" placeholder="Arrastra una fotografía del levantamiento en campo"></image-slot>
+          </div>
+          <figcaption style="margin-top: 12px; padding-left: 12px; border-left: 3px solid var(--dorado-100); font-size: 15px; line-height: 1.5; color: var(--gris-100)">Levantamiento de arbolado en campo. Fotografía institucional.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section style="border-bottom: 1px solid var(--gris-20)">
+      <div style="max-width: 1240px; margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr))">
+        <div style="padding: 24px 24px 24px 0; border-right: 1px solid var(--gris-20)">
+          <div style="font-size: 30px; font-weight: 700; color: var(--guinda-100); line-height: 1.1">Por publicar</div>
+          <div style="margin-top: 6px; font-size: 16px; line-height: 1.5; color: var(--gris-100)">ejemplares registrados hasta el último corte</div>
+        </div>
+        <div style="padding: 24px; border-right: 1px solid var(--gris-20)">
+          <div style="font-size: 30px; font-weight: 700; color: var(--guinda-100); line-height: 1.1">16 alcaldías</div>
+          <div style="margin-top: 6px; font-size: 16px; line-height: 1.5; color: var(--gris-100)">cubiertas por el levantamiento</div>
+        </div>
+        <div style="padding: 24px 0 24px 24px">
+          <div style="font-size: 30px; font-weight: 700; color: var(--guinda-100); line-height: 1.1">7 datos</div>
+          <div style="margin-top: 6px; font-size: 16px; line-height: 1.5; color: var(--gris-100)">se levantan por cada árbol</div>
+        </div>
+      </div>
+    </section>
+
+    <section style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 60px) 24px">
+      <div style="max-width: 42em; margin-bottom: 32px">
+        <h2 style="margin: 0 0 12px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(26px, 3.2vw, 36px); line-height: 1.15; font-weight: 700; color: var(--guinda-100)">Qué se registra de cada árbol</h2>
+        <p style="margin: 0; font-size: 19px; line-height: 1.6">Siete datos por ejemplar. Son los mismos que usa un dictamen técnico, así que el inventario sirve directo para resolver trámites.</p>
+      </div>
+
+      <ol style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px">
+        <sc-for list="{{ datos }}" as="d" hint-placeholder-count="7">
+          <li style="background: {{ d.fondo }}; border: 1px solid {{ d.borde }}; border-top: 4px solid {{ d.pleca }}; padding: 24px 22px">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px">
+              <span aria-hidden="true" style="width: 36px; height: 36px; flex: none; background: {{ d.pleca }}; color: var(--blanco); font-family: Cabin, Roboto, sans-serif; font-size: 17px; font-weight: 700; display: flex; align-items: center; justify-content: center">{{ d.n }}</span>
+              <h3 style="margin: 0; font-size: 21px; font-weight: 700; color: var(--guinda-100); line-height: 1.25">{{ d.titulo }}</h3>
+            </div>
+            <p style="margin: 0; font-size: 17px; line-height: 1.55">{{ d.texto }}</p>
+          </li>
+        </sc-for>
+      </ol>
+    </section>
+
+    <section style="background: var(--gris-10); border-top: 1px solid var(--gris-20); border-bottom: 1px solid var(--gris-20)">
+      <div style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 60px) 24px">
+        <div style="max-width: 42em; margin-bottom: 32px">
+          <h2 style="margin: 0 0 12px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(26px, 3.2vw, 36px); line-height: 1.15; font-weight: 700; color: var(--guinda-100)">Para qué sirve</h2>
+          <p style="margin: 0; font-size: 19px; line-height: 1.6">El inventario no es un fin: es la herramienta con la que se decide dónde intervenir primero.</p>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px">
+          <div style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--guinda-100); padding: 24px">
+            <h3 style="margin: 0 0 10px; font-size: 20px; font-weight: 700; color: var(--guinda-100)">Priorizar el riesgo</h3>
+            <p style="margin: 0; font-size: 17px; line-height: 1.55">Con la condición de cada ejemplar registrada, se atienden primero los que pueden caer y no los que solo molestan.</p>
+          </div>
+          <div style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--guinda-100); padding: 24px">
+            <h3 style="margin: 0 0 10px; font-size: 20px; font-weight: 700; color: var(--guinda-100)">Planear la plantación</h3>
+            <p style="margin: 0; font-size: 17px; line-height: 1.55">Muestra qué colonias tienen menos sombra por habitante, para llevar los árboles nuevos donde más faltan.</p>
+          </div>
+          <div style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--guinda-100); padding: 24px">
+            <h3 style="margin: 0 0 10px; font-size: 20px; font-weight: 700; color: var(--guinda-100)">Detectar plagas a tiempo</h3>
+            <p style="margin: 0; font-size: 17px; line-height: 1.55">Al comparar levantamientos se ve cómo avanza una plaga por zona, antes de que sea irreversible.</p>
+          </div>
+          <div style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--guinda-100); padding: 24px">
+            <h3 style="margin: 0 0 10px; font-size: 20px; font-weight: 700; color: var(--guinda-100)">Verificar la restitución</h3>
+            <p style="margin: 0; font-size: 17px; line-height: 1.55">Permite comprobar que los árboles que se debían plantar por un derribo autorizado sí se plantaron y siguen vivos.</p>
+          </div>
+          <div style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--guinda-100); padding: 24px">
+            <h3 style="margin: 0 0 10px; font-size: 20px; font-weight: 700; color: var(--guinda-100)">Sustentar dictámenes</h3>
+            <p style="margin: 0; font-size: 17px; line-height: 1.55">Quien dictamina parte de un registro previo del ejemplar, no de cero, y eso acorta los tiempos del trámite.</p>
+          </div>
+          <div style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--guinda-100); padding: 24px">
+            <h3 style="margin: 0 0 10px; font-size: 20px; font-weight: 700; color: var(--guinda-100)">Rendir cuentas</h3>
+            <p style="margin: 0; font-size: 17px; line-height: 1.55">Los datos son públicos: cualquier persona puede revisar cuántos árboles hay en su alcaldía y en qué estado están.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 60px) 24px">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: clamp(28px, 4vw, 48px)">
+        <div>
+          <h2 style="margin: 0 0 14px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(24px, 2.8vw, 32px); line-height: 1.15; font-weight: 700; color: var(--guinda-100)">Cómo se levanta</h2>
+          <ol style="margin: 0 0 20px; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 16px">
+            <li style="display: grid; grid-template-columns: 32px minmax(0, 1fr); gap: 14px; align-items: start"><span style="font-size: 18px; font-weight: 700; color: var(--guinda-100)">1</span><span style="font-size: 18px; line-height: 1.55">Personal técnico recorre calle por calle con dispositivo de captura y geolocalización</span></li>
+            <li style="display: grid; grid-template-columns: 32px minmax(0, 1fr); gap: 14px; align-items: start"><span style="font-size: 18px; font-weight: 700; color: var(--guinda-100)">2</span><span style="font-size: 18px; line-height: 1.55">Cada ejemplar recibe un identificador único que no cambia entre levantamientos</span></li>
+            <li style="display: grid; grid-template-columns: 32px minmax(0, 1fr); gap: 14px; align-items: start"><span style="font-size: 18px; font-weight: 700; color: var(--guinda-100)">3</span><span style="font-size: 18px; line-height: 1.55">Se miden altura, diámetro de tronco y de copa con el mismo criterio en toda la ciudad</span></li>
+            <li style="display: grid; grid-template-columns: 32px minmax(0, 1fr); gap: 14px; align-items: start"><span style="font-size: 18px; font-weight: 700; color: var(--guinda-100)">4</span><span style="font-size: 18px; line-height: 1.55">La información se valida y se publica como datos abiertos</span></li>
+          </ol>
+          <p style="margin: 0; padding-left: 16px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)"><span style="font-weight: 700">NADF-001-RNAT-2015, numeral 5.2</span> · criterios de medición dasométrica</p>
+        </div>
+        <div>
+          <h2 style="margin: 0 0 14px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(24px, 2.8vw, 32px); line-height: 1.15; font-weight: 700; color: var(--guinda-100)">Consulta los datos</h2>
+          <p style="margin: 0 0 20px; font-size: 18px; line-height: 1.6">El inventario se publica por alcaldía y por especie. Puedes revisarlo, descargarlo y usarlo.</p>
+          <div style="background: var(--blanco); border: 1px solid var(--gris-20); border-top: 4px solid var(--dorado-100); padding: 24px; margin-bottom: 20px">
+            <span style="display: block; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 6px">Formato</span>
+            <span style="display: block; font-size: 19px; font-weight: 700; color: var(--guinda-100)">Datos abiertos por alcaldía y especie</span>
+            <span style="display: block; margin-top: 6px; font-size: 16px; line-height: 1.5; color: var(--gris-100)">Aún no disponible</span>
+          </div>
+          <div role="status" style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--estado-info); padding: 22px 26px">
+            <strong style="display: block; font-size: 19px; margin-bottom: 8px; color: var(--negro)">Si el árbol de tu calle no aparece</strong>
+            <span style="font-size: 18px; line-height: 1.6">El levantamiento avanza por etapas y hay ejemplares aún sin registrar. Repórtalo a tu alcaldía o a atención ciudadana de SEDEMA al 55 5345 8187 y se incorpora al siguiente corte.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <dc-import name="Utilidad" fecha="18 de agosto de 2026" hint-size="100%,200px"></dc-import>
+
+  <dc-import name="PieSitio" hint-size="100%,440px"></dc-import>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const DATOS = [
+  { n: "1", titulo: "Ubicación", texto: "Coordenada exacta, calle y alcaldía. Permite encontrar el ejemplar en campo sin ambigüedad." },
+  { n: "2", titulo: "Especie", texto: "Nombre científico y nombre común. De ahí se derivan sus necesidades de riego, poda y espacio." },
+  { n: "3", titulo: "Medidas", texto: "Altura total, diámetro del tronco a 1.30 metros del suelo y diámetro de copa." },
+  { n: "4", titulo: "Condición", texto: "Estado físico y sanitario: vigor, presencia de plaga, daño mecánico o pudrición." },
+  { n: "5", titulo: "Riesgo", texto: "Si representa peligro para personas, bienes o infraestructura, y con qué urgencia." },
+  { n: "6", titulo: "Entorno", texto: "Tipo de sitio, ancho de banqueta, superficie de cajete y cercanía a cableado o tubería." },
+  { n: "7", titulo: "Historial", texto: "Intervenciones previas: podas, tratamientos, trasplantes y autorizaciones asociadas." }
+];
+
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      datos: DATOS.map((d, i) => ({
+        n: d.n,
+        titulo: d.titulo,
+        texto: d.texto,
+        fondo: i === 6 ? "var(--marfil)" : "var(--blanco)",
+        borde: i === 6 ? "var(--dorado-40)" : "var(--gris-20)",
+        pleca: i === 6 ? "var(--dorado-100)" : "var(--guinda-100)"
+      }))
+    };
+  }
+}
+</script>
+</body>
+</html>

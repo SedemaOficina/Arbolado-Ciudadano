@@ -1,0 +1,52 @@
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+ehthumbs.db
+Icon?
+
+# OneDrive
+*.tmp
+~$*
+
+# Editores
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.settings/
+
+# Node (por si se usa build tools en el futuro)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.env
+.env.local
+
+# Logs
+*.log
+logs/
+
+# Cache
+.cache/
+.temp/
+tmp/
+temp/
+
+# Archivos del sistema Claude Design (opcional, decidir)
+# *.dc.html
+
+# Archivos comprimidos temporales
+*.zip.bak
+*.tar
+*.gz
+
+# Documentos de trabajo intermedio
+*_borrador.*
+*_wip.*
+*_TEMP.*
+_scratch/

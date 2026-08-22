@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/base.css">
+  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/styles.css">
+  <script src="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/_ds_bundle.js"></script>
+  <style>
+    body { margin: 0; background: var(--blanco); color: var(--gris-100); font-family: Roboto, system-ui, sans-serif; }
+    a { color: var(--guinda-100); text-decoration: underline; text-underline-offset: 2px; }
+    a:hover { color: var(--guinda-oscuro); }
+    *:focus-visible { outline: 3px solid var(--guinda-100); outline-offset: 2px; }
+    html { scroll-behavior: smooth; }
+  </style>
+</helmet>
+
+<div style="min-height: 100vh; display: flex; flex-direction: column; background: var(--blanco)">
+
+  <dc-import name="CabeceraSitio" activo="responsabilidades" hint-size="100%,190px"></dc-import>
+
+  <nav aria-label="Ruta de navegación" style="background: var(--blanco)">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 14px 24px 12px; font-size: 14px; color: var(--gris-100)">
+      <a href="portada.dc.html">Inicio</a> <span aria-hidden="true" style="padding: 0 8px">·</span> <a href="responsabilidades.dc.html">Responsabilidades</a> <span aria-hidden="true" style="padding: 0 8px">·</span> <span style="color: var(--gris-100); font-weight: 700">Quiero ser podador o dictaminador</span>
+    </div>
+  </nav>
+
+  <main id="contenido" style="flex: 1">
+
+    <section style="background: var(--marfil); border-bottom: 1px solid var(--dorado-40)">
+      <div style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 60px) 24px">
+        <h1 style="margin: 0 0 20px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(32px, 4.4vw, 50px); line-height: 1.06; letter-spacing: -0.015em; font-weight: 700; color: var(--guinda-100); text-wrap: pretty">Quiero ser <em style="font-style: italic; color: var(--cafe)">podador</em> o dictaminador</h1>
+        <p style="margin: 0; font-size: clamp(18px, 1.9vw, 22px); line-height: 1.55; max-width: 36em; text-wrap: pretty">Para trabajar con el arbolado de la ciudad necesitas acreditación de SEDEMA. Aquí están los requisitos, el trámite, la vigencia y qué puedes hacer con cada tipo.</p>
+      </div>
+    </section>
+
+    <nav aria-label="Índice de la sección" style="position: sticky; top: 0; z-index: 20; background: var(--gris-10); border-top: 1px solid var(--gris-20); border-bottom: 1px solid var(--gris-40); box-shadow: 0 4px 8px rgba(26,26,26,0.06)">
+      <div style="max-width: 1240px; margin: 0 auto; padding: 10px 24px">
+        <ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; overflow-x: auto">
+          <li style="flex: none"><a href="#cual" style="display: flex; align-items: center; gap: 10px; padding: 11px 16px; text-decoration: none; color: var(--gris-100); min-height: 44px; box-sizing: border-box; white-space: nowrap; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; transition: background 150ms ease, border-color 150ms ease" style-hover="background: var(--marfil); border-color: var(--guinda-100); color: var(--guinda-100)"><span aria-hidden="true" style="width: 26px; height: 26px; flex: none; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; border: 1px solid var(--gris-40)">1</span><span style="font-size: 17px; font-weight: 700">¿Cuál me toca?</span></a></li>
+          <li style="flex: none"><a href="#requisitos" style="display: flex; align-items: center; gap: 10px; padding: 11px 16px; text-decoration: none; color: var(--gris-100); min-height: 44px; box-sizing: border-box; white-space: nowrap; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; transition: background 150ms ease, border-color 150ms ease" style-hover="background: var(--marfil); border-color: var(--guinda-100); color: var(--guinda-100)"><span aria-hidden="true" style="width: 26px; height: 26px; flex: none; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; border: 1px solid var(--gris-40)">2</span><span style="font-size: 17px; font-weight: 700">Requisitos</span></a></li>
+          <li style="flex: none"><a href="#tramite" style="display: flex; align-items: center; gap: 10px; padding: 11px 16px; text-decoration: none; color: var(--gris-100); min-height: 44px; box-sizing: border-box; white-space: nowrap; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; transition: background 150ms ease, border-color 150ms ease" style-hover="background: var(--marfil); border-color: var(--guinda-100); color: var(--guinda-100)"><span aria-hidden="true" style="width: 26px; height: 26px; flex: none; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; border: 1px solid var(--gris-40)">3</span><span style="font-size: 17px; font-weight: 700">El trámite</span></a></li>
+          <li style="flex: none"><a href="#obligaciones" style="display: flex; align-items: center; gap: 10px; padding: 11px 16px; text-decoration: none; color: var(--gris-100); min-height: 44px; box-sizing: border-box; white-space: nowrap; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; transition: background 150ms ease, border-color 150ms ease" style-hover="background: var(--marfil); border-color: var(--guinda-100); color: var(--guinda-100)"><span aria-hidden="true" style="width: 26px; height: 26px; flex: none; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; border: 1px solid var(--gris-40)">4</span><span style="font-size: 17px; font-weight: 700">Ya acreditado</span></a></li>
+        </ol>
+      </div>
+    </nav>
+
+    <section id="cual" style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 60px) 24px; scroll-margin-top: 84px">
+      <div style="max-width: 42em; margin-bottom: 32px">
+        <h2 style="margin: 0 0 12px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(26px, 3.2vw, 36px); line-height: 1.15; font-weight: 700; color: var(--guinda-100)">¿Cuál acreditación me toca?</h2>
+        <p style="margin: 0; font-size: 19px; line-height: 1.6">Son dos y no son intercambiables: una ejecuta el trabajo, la otra lo justifica técnicamente.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px">
+        <article style="background: var(--blanco); border: 1px solid var(--gris-20); border-top: 4px solid var(--guinda-100); padding: 28px 24px; box-shadow: 0 4px 8px rgba(26,26,26,0.06)">
+          <span style="display: block; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700">Ejecuta el trabajo</span>
+          <h3 style="margin: 8px 0 14px; font-family: Cabin, Roboto, sans-serif; font-size: 27px; font-weight: 700; color: var(--guinda-100); line-height: 1.2">Podador</h3>
+          <p style="margin: 0 0 18px; font-size: 18px; line-height: 1.6">Persona acreditada para realizar poda, derribo, trasplante y restitución de arbolado urbano.</p>
+          <div style="border-top: 1px solid var(--gris-20); padding-top: 16px">
+            <span style="display: block; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 10px">Qué puedes hacer</span>
+            <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px">
+              <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start"><span aria-hidden="true" style="margin-top: 8px; width: 8px; height: 8px; background: var(--dorado-100); display: block"></span><span style="font-size: 17px; line-height: 1.55">Ejecutar los trabajos que autorice la resolución</span></li>
+              <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start"><span aria-hidden="true" style="margin-top: 8px; width: 8px; height: 8px; background: var(--dorado-100); display: block"></span><span style="font-size: 17px; line-height: 1.55">Supervisar a la cuadrilla durante los cortes</span></li>
+              <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start"><span aria-hidden="true" style="margin-top: 8px; width: 8px; height: 8px; background: var(--dorado-100); display: block"></span><span style="font-size: 17px; line-height: 1.55">Realizar la plantación de la restitución</span></li>
+            </ul>
+            <p style="margin: 16px 0 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)"><span style="font-weight: 700">NADF-001-RNAT-2015, numeral 4</span></p>
+          </div>
+        </article>
+
+        <article style="background: var(--marfil); border: 1px solid var(--dorado-40); border-top: 4px solid var(--guinda-100); padding: 28px 24px; box-shadow: 0 4px 8px rgba(26,26,26,0.06)">
+          <span style="display: block; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700">Justifica la intervención</span>
+          <h3 style="margin: 8px 0 14px; font-family: Cabin, Roboto, sans-serif; font-size: 27px; font-weight: 700; color: var(--guinda-100); line-height: 1.2">Dictaminador</h3>
+          <p style="margin: 0 0 18px; font-size: 18px; line-height: 1.6">Persona acreditada para emitir dictámenes técnicos y diagnósticos de arbolado. Requiere formación profesional.</p>
+          <div style="border-top: 1px solid var(--dorado-40); padding-top: 16px">
+            <span style="display: block; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 10px">Qué puedes hacer</span>
+            <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px">
+              <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start"><span aria-hidden="true" style="margin-top: 8px; width: 8px; height: 8px; background: var(--dorado-100); display: block"></span><span style="font-size: 17px; line-height: 1.55">Emitir el dictamen técnico que sustenta la autorización</span></li>
+              <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start"><span aria-hidden="true" style="margin-top: 8px; width: 8px; height: 8px; background: var(--dorado-100); display: block"></span><span style="font-size: 17px; line-height: 1.55">Valorar riesgo, condición sanitaria y viabilidad de trasplante</span></li>
+              <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start"><span aria-hidden="true" style="margin-top: 8px; width: 8px; height: 8px; background: var(--dorado-100); display: block"></span><span style="font-size: 17px; line-height: 1.55">Aplicar la valoración que determina la restitución</span></li>
+            </ul>
+            <p style="margin: 16px 0 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)"><span style="font-weight: 700">NADF-001-RNAT-2015, numeral 5.4</span></p>
+          </div>
+        </article>
+      </div>
+
+      <div role="status" style="margin-top: 28px; background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--estado-info); padding: 22px 26px">
+        <strong style="display: block; font-size: 19px; margin-bottom: 8px; color: var(--negro)">Quien recoge esquilmos no necesita acreditación</strong>
+        <span style="font-size: 18px; line-height: 1.6">El personal de limpieza y de retiro de residuo vegetal está exento. Pero quien ejecuta y quien supervisa los cortes siempre debe estar acreditado.</span>
+      </div>
+    </section>
+
+    <section id="requisitos" style="background: var(--gris-10); border-top: 1px solid var(--gris-20); border-bottom: 1px solid var(--gris-20); scroll-margin-top: 84px">
+      <div style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 60px) 24px">
+        <div style="max-width: 42em; margin-bottom: 28px">
+          <h2 style="margin: 0 0 12px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(26px, 3.2vw, 36px); line-height: 1.15; font-weight: 700; color: var(--guinda-100)">Requisitos</h2>
+          <p style="margin: 0; font-size: 19px; line-height: 1.6">Verifica que cumples antes de iniciar el trámite.</p>
+        </div>
+
+        <div style="overflow-x: auto; border: 1px solid var(--gris-20); background: var(--blanco)">
+          <table style="width: 100%; border-collapse: collapse; font-size: 17px; min-width: 640px">
+            <thead>
+              <tr>
+                <th scope="col" style="text-align: left; padding: 14px 20px; background: var(--guinda-100); color: var(--blanco); font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase">Requisito</th>
+                <th scope="col" style="text-align: left; padding: 14px 20px; background: var(--guinda-100); color: var(--blanco); font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase">Podador</th>
+                <th scope="col" style="text-align: left; padding: 14px 20px; background: var(--guinda-100); color: var(--blanco); font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase">Dictaminador</th>
+              </tr>
+            </thead>
+            <tbody>
+              <sc-for list="{{ requisitos }}" as="r" hint-placeholder-count="7">
+                <tr>
+                  <th scope="row" style="text-align: left; padding: 16px 20px; border-bottom: 1px solid var(--gris-20); font-weight: 700; color: var(--gris-100); background: {{ r.fondo }}">{{ r.requisito }}</th>
+                  <td style="padding: 16px 20px; border-bottom: 1px solid var(--gris-20); line-height: 1.5; color: var(--gris-100); background: {{ r.fondo }}">{{ r.podador }}</td>
+                  <td style="padding: 16px 20px; border-bottom: 1px solid var(--gris-20); line-height: 1.5; color: var(--gris-100); background: {{ r.fondo }}">{{ r.dictaminador }}</td>
+                </tr>
+              </sc-for>
+            </tbody>
+          </table>
+        </div>
+
+        <p style="margin: 20px 0 0; padding-left: 16px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)"><span style="font-weight: 700">NADF-001-RNAT-2015, numerales 5.4 y 5.5</span> · requisitos de acreditación y características de la credencial</p>
+      </div>
+    </section>
+
+    <section id="tramite" style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 60px) 24px; scroll-margin-top: 84px">
+      <div style="max-width: 42em; margin-bottom: 32px">
+        <h2 style="margin: 0 0 12px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(26px, 3.2vw, 36px); line-height: 1.15; font-weight: 700; color: var(--guinda-100)">El trámite, paso a paso</h2>
+        <p style="margin: 0; font-size: 19px; line-height: 1.6">Se hace ante SEDEMA. Nadie puede gestionar tu acreditación por ti.</p>
+      </div>
+
+      <ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 16px">
+        <sc-for list="{{ pasos }}" as="p" hint-placeholder-count="6">
+          <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--guinda-100); padding: 24px 28px; display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 20px; align-items: start">
+            <span aria-hidden="true" style="width: 44px; height: 44px; background: var(--guinda-100); color: var(--blanco); font-family: Cabin, Roboto, sans-serif; font-size: 19px; font-weight: 700; display: flex; align-items: center; justify-content: center">{{ p.n }}</span>
+            <span>
+              <span style="display: block; font-size: 21px; font-weight: 700; color: var(--guinda-100); margin-bottom: 8px; line-height: 1.3">{{ p.titulo }}</span>
+              <span style="display: block; font-size: 18px; line-height: 1.6">{{ p.texto }}</span>
+              <sc-if value="{{ p.tieneNota }}" hint-placeholder-val="{{ false }}">
+                <span style="display: block; margin-top: 12px; background: var(--marfil); border-left: 3px solid var(--dorado-100); padding: 12px 16px; font-size: 17px; line-height: 1.55; color: var(--gris-100)">{{ p.nota }}</span>
+              </sc-if>
+            </span>
+          </li>
+        </sc-for>
+      </ol>
+
+      <div style="margin-top: 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px">
+        <div style="background: var(--blanco); border: 1px solid var(--gris-20); border-top: 4px solid var(--dorado-100); padding: 24px">
+          <span style="display: block; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 6px">Dónde se presenta</span>
+          <span style="display: block; font-size: 19px; font-weight: 700; color: var(--guinda-100); line-height: 1.35">Atención ciudadana de SEDEMA</span>
+          <span style="display: block; margin-top: 8px; font-size: 17px; line-height: 1.5; color: var(--gris-100)">Plaza de la Constitución 1, 3.er piso, Centro, Cuauhtémoc</span>
+        </div>
+        <div style="background: var(--blanco); border: 1px solid var(--gris-20); border-top: 4px solid var(--dorado-100); padding: 24px">
+          <span style="display: block; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 6px">Informes</span>
+          <span style="display: block; font-size: 19px; font-weight: 700; color: var(--guinda-100)">55 5345 8187</span>
+          <span style="display: block; margin-top: 8px; font-size: 17px; line-height: 1.5; color: var(--gris-100)">Atención ciudadana de SEDEMA · de lunes a viernes, de 9 a 18 h</span>
+        </div>
+        <div style="background: var(--blanco); border: 1px solid var(--gris-20); border-top: 4px solid var(--dorado-100); padding: 24px">
+          <span style="display: block; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 6px">Costo y convocatoria</span>
+          <span style="display: block; font-size: 19px; font-weight: 700; color: var(--guinda-100)">Por publicar</span>
+          <span style="display: block; margin-top: 8px; font-size: 17px; line-height: 1.5; color: var(--gris-100)">Las fechas del curso y el costo vigente se publican en la convocatoria</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="obligaciones" style="background: var(--gris-10); border-top: 1px solid var(--gris-20)">
+      <div style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 60px) 24px; scroll-margin-top: 84px">
+        <div style="max-width: 42em; margin-bottom: 28px">
+          <h2 style="margin: 0 0 12px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(26px, 3.2vw, 36px); line-height: 1.15; font-weight: 700; color: var(--guinda-100)">Ya estoy acreditado: qué me obliga</h2>
+          <p style="margin: 0; font-size: 19px; line-height: 1.6">La acreditación se puede suspender si no cumples estas obligaciones.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 28px">
+          <sc-for list="{{ obligaciones }}" as="o" hint-placeholder-count="6">
+            <div style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--guinda-100); padding: 24px">
+              <h3 style="margin: 0 0 10px; font-size: 20px; font-weight: 700; color: var(--guinda-100); line-height: 1.3">{{ o.titulo }}</h3>
+              <p style="margin: 0; font-size: 17px; line-height: 1.55">{{ o.texto }}</p>
+            </div>
+          </sc-for>
+        </div>
+
+        <div role="alert" style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--estado-error); padding: 24px 28px; margin-bottom: 28px">
+          <span style="display: block; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--estado-error); margin-bottom: 8px">Alerta grave</span>
+          <strong style="display: block; font-size: 20px; margin-bottom: 10px; color: var(--negro)">Trabajar sin acreditación vigente es una infracción</strong>
+          <p style="margin: 0 0 12px; font-size: 18px; line-height: 1.6">Los trabajos son irregulares, procede sanción y quien contrató también responde. Si tu acreditación venció, no ejerzas hasta renovarla.</p>
+          <p style="margin: 0; font-size: 16px; line-height: 1.55; color: var(--gris-100)">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículo 112 · NADF-001-RNAT-2015, numeral 5.5</p>
+        </div>
+
+        <div style="display: flex; gap: 16px; flex-wrap: wrap">
+          <a href="responsabilidades.dc.html#verificador" style="background: var(--guinda-100); color: var(--blanco); border-radius: 4px; padding: 14px 24px; font-size: 17px; font-weight: 700; text-decoration: none; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center; transition: background 150ms ease" style-hover="background: var(--guinda-oscuro); color: var(--blanco)">Consultar el padrón</a>
+          <a href="hazlo.dc.html#procedimientos" style="background: transparent; color: var(--guinda-100); border: 2px solid var(--dorado-100); border-radius: 4px; padding: 13px 23px; font-size: 17px; font-weight: 700; text-decoration: none; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center; transition: background 150ms ease" style-hover="background: var(--dorado-20)">Ver los procedimientos</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <dc-import name="Utilidad" fecha="18 de agosto de 2026" hint-size="100%,200px"></dc-import>
+
+  <dc-import name="PieSitio" hint-size="100%,440px"></dc-import>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const REQUISITOS = [
+  { requisito: "Edad", podador: "Mayor de edad", dictaminador: "Mayor de edad" },
+  { requisito: "Identificación", podador: "Identificación oficial vigente", dictaminador: "Identificación oficial vigente" },
+  { requisito: "Formación profesional", podador: "No se exige título", dictaminador: "Licenciatura en biología, ingeniería forestal, agronomía o carrera afín" },
+  { requisito: "Experiencia", podador: "Experiencia comprobable en trabajos de arbolado", dictaminador: "Dos años de experiencia comprobable" },
+  { requisito: "Curso oficial", podador: "Curso de capacitación aprobado", dictaminador: "Curso oficial aprobado" },
+  { requisito: "Evaluación", podador: "Evaluación teórica y práctica", dictaminador: "Evaluación teórica" },
+  { requisito: "Documentación del expediente", podador: "Solicitud, comprobante de domicilio y fotografías", dictaminador: "Solicitud, título o cédula, comprobante de domicilio y fotografías" }
+];
+
+const PASOS = [
+  { n: "1", titulo: "Verifica qué acreditación necesitas", texto: "Si vas a ejecutar cortes, es podador. Si vas a emitir dictámenes, es dictaminador y necesitas formación profesional. Nada impide obtener las dos, pero se tramitan por separado." },
+  { n: "2", titulo: "Reúne tu expediente", texto: "Identificación oficial, comprobante de domicilio, fotografías recientes y la documentación que acredite tu experiencia. Si vas por dictaminador, también título o cédula profesional.", nota: "Los documentos se presentan en original para cotejo y en copia para el expediente." },
+  { n: "3", titulo: "Consulta la convocatoria del curso", texto: "El curso oficial se abre por convocatoria. Ahí se publican las fechas, la sede, el costo vigente y los cupos disponibles. Sin curso aprobado no hay acreditación." },
+  { n: "4", titulo: "Presenta tu solicitud", texto: "En atención ciudadana de SEDEMA, con el expediente completo. Ahí se revisa que cumplas y se te informa la fecha de evaluación." },
+  { n: "5", titulo: "Aprueba la evaluación", texto: "Para podador hay una parte práctica: se evalúa el corte, el uso del equipo de protección y las medidas de seguridad del área de trabajo. Para dictaminador la evaluación es teórica." },
+  { n: "6", titulo: "Recibe tu credencial", texto: "La credencial trae tu nombre, fotografía, huella digital, número de folio, fecha de expedición, vigencia y firma del titular de SEDEMA. Es única, personal e intransferible.", nota: "Al recibirla, tu folio queda en el padrón público: cualquier persona podrá verificarte." }
+];
+
+const OBLIGACIONES = [
+  { titulo: "Portarla siempre", texto: "Durante los trabajos debes traer contigo la credencial vigente y la autorización del trabajo. La ciudadanía tiene derecho a pedirte las dos." },
+  { titulo: "Renovarla antes de que venza", texto: "Una acreditación vencida no habilita. Tramita la renovación con anticipación para no interrumpir tu trabajo." },
+  { titulo: "No prestarla", texto: "Es personal e intransferible. Prestarla o permitir que alguien más la use es causa de suspensión." },
+  { titulo: "Respetar el porcentaje autorizado", texto: "Una poda no debe superar la cuarta parte del ejemplar, y solo si el dictamen lo justifica. El desmoche se sanciona como derribo." },
+  { titulo: "Trabajar con seguridad", texto: "Equipo de protección completo, área acordonada y señalizada, y descenso de ramas con cuerdas. La supervisión puede detener los trabajos." },
+  { titulo: "Cumplir la restitución", texto: "Cuando el trabajo autorizado obliga a restituir arbolado, la medida es parte del trabajo, no un trámite aparte. El procedimiento completo, con el número de árboles que corresponde y los plazos, está en el módulo de procedimientos." },
+  { titulo: "Manejar bien el residuo", texto: "Retiro dentro de las veinticuatro horas siguientes. Si el ejemplar tenía plaga, el residuo va a disposición final designada, no a acolchado." }
+];
+
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      requisitos: REQUISITOS.map((r, i) => Object.assign({}, r, { fondo: i % 2 === 1 ? "var(--gris-10)" : "var(--blanco)" })),
+      pasos: PASOS.map(p => ({ n: p.n, titulo: p.titulo, texto: p.texto, tieneNota: !!p.nota, nota: p.nota || "" })),
+      obligaciones: OBLIGACIONES
+    };
+  }
+}
+</script>
+</body>
+</html>

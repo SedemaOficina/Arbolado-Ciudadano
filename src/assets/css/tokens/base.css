@@ -1,0 +1,50 @@
+/* ============================================================
+   SEDEMA / GCDMX — Base / reset ligero y utilidades de marca
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font-cuerpo);
+  font-size: var(--fs-cuerpo-2);
+  line-height: var(--lh-cuerpo);
+  color: var(--texto-fuerte);
+  background: var(--superficie-pagina);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ---- Tipos de texto institucionales ---- */
+.ds-titulo-1   { font-size: var(--fs-titulo-1);    font-weight: var(--fw-bold);    line-height: var(--lh-titulo); letter-spacing: var(--ls-titulo); color: var(--guinda-100); margin: 0; }
+.ds-titulo-2   { font-size: var(--fs-titulo-2);    font-weight: var(--fw-bold);    line-height: var(--lh-titulo); color: var(--gris-100); margin: 0; }
+.ds-subtitulo-1{ font-size: var(--fs-subtitulo-1); font-weight: var(--fw-medium);  line-height: var(--lh-titulo); color: var(--gris-100); margin: 0; }
+.ds-cuerpo-1   { font-size: var(--fs-cuerpo-1);    font-weight: var(--fw-regular); line-height: var(--lh-cuerpo); color: var(--gris-100); margin: 0; }
+.ds-cuerpo-2   { font-size: var(--fs-cuerpo-2);    font-weight: var(--fw-regular); line-height: var(--lh-cuerpo); color: var(--gris-100); margin: 0; }
+.ds-pie        { font-size: var(--fs-pie);         font-weight: var(--fw-regular); line-height: var(--lh-cuerpo); color: var(--gris-80);  margin: 0; }
+
+/* Etiqueta / pleca en mayúsculas */
+.ds-etiqueta {
+  font-size: var(--fs-pie);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-pleca);
+  color: var(--dorado-100);
+}
+
+/* ---- Enlaces ---- */
+a { color: var(--texto-enlace); text-decoration: underline; text-underline-offset: 2px; }
+a:hover { color: var(--guinda-oscuro); }
+
+/* ---- Pleca institucional (barra superior de acento) ---- */
+.ds-pleca-guinda { height: var(--pleca); background: var(--guinda-100); border: 0; }
+.ds-pleca-dorada { height: var(--pleca); background: var(--dorado-100); border: 0; }
+
+/* ---- Foco accesible ---- */
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: var(--borde-grueso) solid var(--foco-anillo);
+  outline-offset: 2px;
+}
+
+/* ---- Selección ---- */
+::selection { background: var(--guinda-20); color: var(--guinda-oscuro); }

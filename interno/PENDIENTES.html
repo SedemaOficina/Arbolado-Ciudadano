@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/tokens/base.css">
+  <link rel="stylesheet" href="_ds/sedema-design-system-22c075d0-d127-42cf-a894-cd82dba2a66d/styles.css">
+  <meta name="omelette-owns-print" content="true">
+  <style>
+    a { color: var(--guinda-100); }
+    a:hover { color: var(--guinda-oscuro); }
+    *:focus-visible { outline: 3px solid var(--guinda-100); outline-offset: 2px; }
+    @media print {
+      section { break-inside: avoid; }
+      tr, li { break-inside: avoid; }
+      @page { margin: 14mm; }
+    }
+  </style>
+</helmet>
+
+<div style="font-family: Roboto, system-ui, sans-serif; color: var(--gris-100); background: var(--blanco); min-height: 100vh">
+
+  <header style="background: var(--guinda-100); color: var(--blanco)">
+    <div style="max-width: 1120px; margin: 0 auto; padding: clamp(32px, 4vw, 52px) 24px">
+      <span style="display: block; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700; color: var(--dorado-40); margin-bottom: 14px">Documento de trabajo interno · no publicable</span>
+      <h1 style="margin: 0 0 16px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(30px, 4vw, 46px); line-height: 1.08; font-weight: 700; color: var(--blanco); max-width: 32em">Lo que falta para publicar el micrositio</h1>
+      <p style="margin: 0 0 20px; font-size: clamp(18px, 1.9vw, 21px); line-height: 1.55; max-width: 40em; color: var(--blanco)">Inventario de datos, bases, mapas y material gráfico pendientes. Micrositio de orientación ciudadana sobre arbolado urbano.</p>
+      <dl style="margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 18px; border-top: 1px solid var(--dorado-40); padding-top: 20px; max-width: 46em">
+        <div>
+          <dt style="font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--dorado-40); margin-bottom: 4px">Corte</dt>
+          <dd style="margin: 0; font-size: 18px; font-weight: 700; color: var(--blanco)">18 de agosto de 2026</dd>
+        </div>
+        <div>
+          <dt style="font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--dorado-40); margin-bottom: 4px">Área responsable</dt>
+          <dd style="margin: 0; font-size: 18px; font-weight: 700; color: var(--blanco)">TIMOG · SEDEMA</dd>
+        </div>
+        <div>
+          <dt style="font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--dorado-40); margin-bottom: 4px">Páginas del sitio</dt>
+          <dd style="margin: 0; font-size: 18px; font-weight: 700; color: var(--blanco)">12 más la biblioteca</dd>
+        </div>
+      </dl>
+    </div>
+  </header>
+
+  <nav aria-label="Contenido del documento" style="background: var(--marfil); border-bottom: 1px solid var(--dorado-40); position: sticky; top: 0; z-index: 20">
+    <div style="max-width: 1120px; margin: 0 auto; padding: 14px 24px">
+      <ol style="list-style: none; margin: 0; padding: 0; display: flex; gap: 10px; flex-wrap: wrap">
+        <li><a href="#resumen" style="display: inline-flex; align-items: center; min-height: 40px; padding: 8px 14px; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; font-size: 16px; font-weight: 700; text-decoration: none">1 · Resumen</a></li>
+        <li><a href="#bases" style="display: inline-flex; align-items: center; min-height: 40px; padding: 8px 14px; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; font-size: 16px; font-weight: 700; text-decoration: none">2 · Bases de datos</a></li>
+        <li><a href="#datos" style="display: inline-flex; align-items: center; min-height: 40px; padding: 8px 14px; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; font-size: 16px; font-weight: 700; text-decoration: none">3 · Datos por página</a></li>
+        <li><a href="#mapas" style="display: inline-flex; align-items: center; min-height: 40px; padding: 8px 14px; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; font-size: 16px; font-weight: 700; text-decoration: none">4 · Mapas</a></li>
+        <li><a href="#documentos" style="display: inline-flex; align-items: center; min-height: 40px; padding: 8px 14px; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; font-size: 16px; font-weight: 700; text-decoration: none">5 · Documentos y videos</a></li>
+        <li><a href="#tecnico" style="display: inline-flex; align-items: center; min-height: 40px; padding: 8px 14px; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; font-size: 16px; font-weight: 700; text-decoration: none">6 · Técnico</a></li>
+        <li><a href="#grafico" style="display: inline-flex; align-items: center; min-height: 40px; padding: 8px 14px; background: var(--guinda-100); color: var(--blanco); border: 1px solid var(--guinda-100); border-radius: 4px; font-size: 16px; font-weight: 700; text-decoration: none">7 · Índice de fotos</a></li>
+      </ol>
+    </div>
+  </nav>
+
+  <main style="max-width: 1120px; margin: 0 auto; padding: 0 24px clamp(40px, 5vw, 72px)">
+
+    <section id="resumen" style="padding: clamp(32px, 4vw, 52px) 0; scroll-margin-top: 76px">
+      <h2 style="margin: 0 0 20px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(26px, 3.2vw, 34px); line-height: 1.15; font-weight: 700; color: var(--guinda-100); border-bottom: 2px solid var(--guinda-100); padding-bottom: 12px">1 · Resumen de pendientes</h2>
+      <ul style="list-style: none; margin: 0 0 28px; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 16px">
+        <sc-for list="{{ resumen }}" as="r" hint-placeholder-count="5">
+          <li style="background: var(--marfil); border: 1px solid var(--dorado-40); border-top: 4px solid var(--guinda-100); padding: 22px 20px">
+            <span style="display: block; font-family: Cabin, Roboto, sans-serif; font-size: clamp(30px, 5vw, 40px); font-weight: 700; color: var(--guinda-100); line-height: 1; margin-bottom: 8px">{{ r.n }}</span>
+            <span style="display: block; font-size: 18px; font-weight: 700; color: var(--gris-100); line-height: 1.3; margin-bottom: 4px">{{ r.que }}</span>
+            <span style="display: block; font-size: 16px; line-height: 1.45; color: var(--gris-100)">{{ r.nota }}</span>
+          </li>
+        </sc-for>
+      </ul>
+
+      <div style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--estado-alerta); padding: 22px 26px">
+        <strong style="display: block; font-size: 19px; margin-bottom: 8px; color: var(--negro)">Cómo se marca lo pendiente en el sitio</strong>
+        <span style="font-size: 18px; line-height: 1.6">Todo dato faltante está resaltado en amarillo con la leyenda <span style="background: var(--estado-alerta); color: var(--negro); font-weight: 700; padding: 2px 8px">Falta el dato</span> o el texto <strong>Por publicar</strong>. Al cargar el dato real, el resaltado desaparece solo.</span>
+      </div>
+    </section>
+
+    <section id="bases" style="padding: clamp(32px, 4vw, 52px) 0; scroll-margin-top: 76px; border-top: 1px solid var(--gris-20)">
+      <h2 style="margin: 0 0 12px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(26px, 3.2vw, 34px); line-height: 1.15; font-weight: 700; color: var(--guinda-100); border-bottom: 2px solid var(--guinda-100); padding-bottom: 12px">2 · Bases de datos por cargar</h2>
+      <p style="margin: 0 0 28px; font-size: 18px; line-height: 1.6; max-width: 46em">Estas son las tres bases que el sitio consulta. Hoy funcionan con registros de demostración. Se entregan en hoja de cálculo con estas columnas exactas, sin combinar celdas y sin encabezados de más.</p>
+
+      <sc-for list="{{ bases }}" as="b" hint-placeholder-count="3">
+        <div style="margin-bottom: 32px; border: 1px solid var(--gris-20); background: var(--blanco)">
+          <div style="background: var(--marfil); border-bottom: 1px solid var(--dorado-40); padding: 22px 24px">
+            <div style="display: flex; gap: 14px; flex-wrap: wrap; align-items: baseline; margin-bottom: 8px">
+              <h3 style="margin: 0; font-family: Cabin, Roboto, sans-serif; font-size: 24px; font-weight: 700; color: var(--guinda-100); line-height: 1.25">{{ b.titulo }}</h3>
+              <span style="font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--blanco); background: var(--guinda-100); padding: 4px 10px">{{ b.prioridad }}</span>
+            </div>
+            <p style="margin: 0 0 10px; font-size: 17px; line-height: 1.55">{{ b.para }}</p>
+            <dl style="margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px">
+              <div>
+                <dt style="font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--gris-100)">Dónde se usa</dt>
+                <dd style="margin: 2px 0 0; font-size: 16px; line-height: 1.45">{{ b.donde }}</dd>
+              </div>
+              <div>
+                <dt style="font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--gris-100)">Formato</dt>
+                <dd style="margin: 2px 0 0; font-size: 16px; line-height: 1.45">{{ b.formato }}</dd>
+              </div>
+              <div>
+                <dt style="font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--gris-100)">Actualización</dt>
+                <dd style="margin: 2px 0 0; font-size: 16px; line-height: 1.45">{{ b.frecuencia }}</dd>
+              </div>
+            </dl>
+          </div>
+          <div style="padding: 22px 24px; overflow-x: auto">
+            <h4 style="margin: 0 0 14px; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--gris-100)">Columnas requeridas</h4>
+            <table style="width: 100%; border-collapse: collapse; min-width: 520px">
+              <thead>
+                <tr style="background: var(--gris-10)">
+                  <th scope="col" style="text-align: left; padding: 11px 14px; border: 1px solid var(--gris-20); font-size: 15px; font-weight: 700; color: var(--gris-100)">Columna</th>
+                  <th scope="col" style="text-align: left; padding: 11px 14px; border: 1px solid var(--gris-20); font-size: 15px; font-weight: 700; color: var(--gris-100)">Contenido</th>
+                  <th scope="col" style="text-align: left; padding: 11px 14px; border: 1px solid var(--gris-20); font-size: 15px; font-weight: 700; color: var(--gris-100)">Ejemplo</th>
+                </tr>
+              </thead>
+              <tbody>
+                <sc-for list="{{ b.columnas }}" as="col" hint-placeholder-count="5">
+                  <tr style="background: {{ col.fondo }}">
+                    <td style="padding: 11px 14px; border: 1px solid var(--gris-20); font-size: 16px; font-weight: 700; color: var(--guinda-100); white-space: nowrap">{{ col.nombre }}</td>
+                    <td style="padding: 11px 14px; border: 1px solid var(--gris-20); font-size: 16px; line-height: 1.45">{{ col.contenido }}</td>
+                    <td style="padding: 11px 14px; border: 1px solid var(--gris-20); font-size: 16px; line-height: 1.45; color: var(--gris-100)">{{ col.ejemplo }}</td>
+                  </tr>
+                </sc-for>
+              </tbody>
+            </table>
+            <p style="margin: 16px 0 0; padding-left: 16px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55">{{ b.nota }}</p>
+          </div>
+        </div>
+      </sc-for>
+    </section>
+
+    <section id="datos" style="padding: clamp(32px, 4vw, 52px) 0; scroll-margin-top: 76px; border-top: 1px solid var(--gris-20)">
+      <h2 style="margin: 0 0 12px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(26px, 3.2vw, 34px); line-height: 1.15; font-weight: 700; color: var(--guinda-100); border-bottom: 2px solid var(--guinda-100); padding-bottom: 12px">3 · Datos por página</h2>
+      <p style="margin: 0 0 24px; font-size: 18px; line-height: 1.6; max-width: 46em">Cada renglón es un dato que hoy aparece marcado en el sitio. La columna de quién lo entrega es la que hay que confirmar primero.</p>
+      <div style="overflow-x: auto">
+        <table style="width: 100%; border-collapse: collapse; min-width: 700px">
+          <thead>
+            <tr style="background: var(--guinda-100)">
+              <th scope="col" style="text-align: left; padding: 13px 14px; border: 1px solid var(--guinda-oscuro); font-size: 15px; font-weight: 700; color: var(--blanco)">Página</th>
+              <th scope="col" style="text-align: left; padding: 13px 14px; border: 1px solid var(--guinda-oscuro); font-size: 15px; font-weight: 700; color: var(--blanco)">Qué falta</th>
+              <th scope="col" style="text-align: left; padding: 13px 14px; border: 1px solid var(--guinda-oscuro); font-size: 15px; font-weight: 700; color: var(--blanco)">Cuántos</th>
+              <th scope="col" style="text-align: left; padding: 13px 14px; border: 1px solid var(--guinda-oscuro); font-size: 15px; font-weight: 700; color: var(--blanco)">Quién lo entrega</th>
+            </tr>
+          </thead>
+          <tbody>
+            <sc-for list="{{ faltantes }}" as="f" hint-placeholder-count="10">
+              <tr style="background: {{ f.fondo }}">
+                <td style="padding: 12px 14px; border: 1px solid var(--gris-20); font-size: 16px; font-weight: 700; color: var(--guinda-100)">{{ f.pagina }}</td>
+                <td style="padding: 12px 14px; border: 1px solid var(--gris-20); font-size: 16px; line-height: 1.45">{{ f.que }}</td>
+                <td style="padding: 12px 14px; border: 1px solid var(--gris-20); font-size: 16px; white-space: nowrap">{{ f.cuantos }}</td>
+                <td style="padding: 12px 14px; border: 1px solid var(--gris-20); font-size: 16px; line-height: 1.45; color: var(--gris-100)">{{ f.quien }}</td>
+              </tr>
+            </sc-for>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="mapas" style="padding: clamp(32px, 4vw, 52px) 0; scroll-margin-top: 76px; border-top: 1px solid var(--gris-20)">
+      <h2 style="margin: 0 0 12px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(26px, 3.2vw, 34px); line-height: 1.15; font-weight: 700; color: var(--guinda-100); border-bottom: 2px solid var(--guinda-100); padding-bottom: 12px">4 · Mapas por integrar</h2>
+      <p style="margin: 0 0 24px; font-size: 18px; line-height: 1.6; max-width: 46em">Hoy los mapas son provisionales: bloques por alcaldía o vista centrada en la zona. Para que sean geografía real hace falta la capa y las coordenadas.</p>
+      <ul style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px">
+        <sc-for list="{{ mapas }}" as="m" hint-placeholder-count="4">
+          <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-top: 4px solid var(--dorado-100); padding: 24px 22px">
+            <span style="display: block; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--gris-100); margin-bottom: 6px">{{ m.pagina }}</span>
+            <h3 style="margin: 0 0 10px; font-size: 20px; font-weight: 700; color: var(--guinda-100); line-height: 1.3">{{ m.titulo }}</h3>
+            <p style="margin: 0 0 14px; font-size: 17px; line-height: 1.55">{{ m.estado }}</p>
+            <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.5"><span style="font-weight: 700">Se necesita:</span> {{ m.necesita }}</p>
+          </li>
+        </sc-for>
+      </ul>
+    </section>
+
+    <section id="documentos" style="padding: clamp(32px, 4vw, 52px) 0; scroll-margin-top: 76px; border-top: 1px solid var(--gris-20)">
+      <h2 style="margin: 0 0 12px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(26px, 3.2vw, 34px); line-height: 1.15; font-weight: 700; color: var(--guinda-100); border-bottom: 2px solid var(--guinda-100); padding-bottom: 12px">5 · Documentos y videos del centro de recursos</h2>
+      <p style="margin: 0 0 24px; font-size: 18px; line-height: 1.6; max-width: 46em">Las fichas del centro de recursos ya existen con su descripción y su badge de tipo. Falta el archivo real detrás de cada botón de descarga.</p>
+      <div style="overflow-x: auto">
+        <table style="width: 100%; border-collapse: collapse; min-width: 640px">
+          <thead>
+            <tr style="background: var(--gris-10)">
+              <th scope="col" style="text-align: left; padding: 12px 14px; border: 1px solid var(--gris-20); font-size: 15px; font-weight: 700; color: var(--gris-100)">Recurso</th>
+              <th scope="col" style="text-align: left; padding: 12px 14px; border: 1px solid var(--gris-20); font-size: 15px; font-weight: 700; color: var(--gris-100)">Tipo</th>
+              <th scope="col" style="text-align: left; padding: 12px 14px; border: 1px solid var(--gris-20); font-size: 15px; font-weight: 700; color: var(--gris-100)">Qué se entrega</th>
+            </tr>
+          </thead>
+          <tbody>
+            <sc-for list="{{ recursos }}" as="rc" hint-placeholder-count="8">
+              <tr style="background: {{ rc.fondo }}">
+                <td style="padding: 12px 14px; border: 1px solid var(--gris-20); font-size: 16px; font-weight: 700; color: var(--guinda-100)">{{ rc.titulo }}</td>
+                <td style="padding: 12px 14px; border: 1px solid var(--gris-20); font-size: 16px; white-space: nowrap">{{ rc.tipo }}</td>
+                <td style="padding: 12px 14px; border: 1px solid var(--gris-20); font-size: 16px; line-height: 1.45">{{ rc.entrega }}</td>
+              </tr>
+            </sc-for>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="tecnico" style="padding: clamp(32px, 4vw, 52px) 0; scroll-margin-top: 76px; border-top: 1px solid var(--gris-20)">
+      <h2 style="margin: 0 0 12px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(26px, 3.2vw, 34px); line-height: 1.15; font-weight: 700; color: var(--guinda-100); border-bottom: 2px solid var(--guinda-100); padding-bottom: 12px">6 · Pendientes técnicos y de gobernanza</h2>
+      <ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 16px">
+        <sc-for list="{{ tecnicos }}" as="t" hint-placeholder-count="6">
+          <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid {{ t.color }}; padding: 20px 24px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 18px; align-items: start">
+            <div>
+              <h3 style="margin: 0 0 6px; font-size: 20px; font-weight: 700; color: var(--guinda-100); line-height: 1.3">{{ t.titulo }}</h3>
+              <p style="margin: 0; font-size: 17px; line-height: 1.55">{{ t.texto }}</p>
+            </div>
+            <span style="font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: {{ t.color }}; border: 1px solid {{ t.color }}; padding: 5px 10px; white-space: nowrap">{{ t.nivel }}</span>
+          </li>
+        </sc-for>
+      </ol>
+    </section>
+
+    <section id="grafico" style="padding: clamp(32px, 4vw, 52px) 0; scroll-margin-top: 76px; border-top: 4px solid var(--guinda-100)">
+      <h2 style="margin: 0 0 12px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(26px, 3.2vw, 34px); line-height: 1.15; font-weight: 700; color: var(--guinda-100)">7 · Índice de material gráfico</h2>
+      <p style="margin: 0 0 20px; font-size: 19px; line-height: 1.6; max-width: 46em">Para el área de diseño. Cada espacio de imagen del sitio tiene aquí su clave, su encuadre y qué debe mostrar. Los archivos se entregan con el nombre de la clave.</p>
+
+      <div style="background: var(--marfil); border: 1px solid var(--dorado-40); padding: 24px 26px; margin-bottom: 32px">
+        <h3 style="margin: 0 0 14px; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--gris-100)">Especificación de entrega</h3>
+        <ul style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px">
+          <sc-for list="{{ especs }}" as="e" hint-placeholder-count="6">
+            <li style="display: grid; grid-template-columns: 8px minmax(0, 1fr); gap: 12px; align-items: start">
+              <span aria-hidden="true" style="margin-top: 8px; width: 8px; height: 8px; background: var(--guinda-100); display: block"></span>
+              <span style="font-size: 17px; line-height: 1.5"><span style="font-weight: 700">{{ e.clave }}</span> {{ e.valor }}</span>
+            </li>
+          </sc-for>
+        </ul>
+      </div>
+
+      <sc-for list="{{ grupos }}" as="g" hint-placeholder-count="5">
+        <div style="margin-bottom: 34px">
+          <div style="display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; border-bottom: 2px solid var(--dorado-100); padding-bottom: 10px; margin-bottom: 18px">
+            <h3 style="margin: 0; font-family: Cabin, Roboto, sans-serif; font-size: 24px; font-weight: 700; color: var(--guinda-100)">{{ g.nombre }}</h3>
+            <span style="font-size: 16px; color: var(--gris-100)">{{ g.cuenta }}</span>
+          </div>
+          <div style="overflow-x: auto">
+            <table style="width: 100%; border-collapse: collapse; min-width: 720px">
+              <thead>
+                <tr style="background: var(--gris-10)">
+                  <th scope="col" style="text-align: left; padding: 12px 14px; border: 1px solid var(--gris-20); font-size: 15px; font-weight: 700; color: var(--gris-100)">Clave del archivo</th>
+                  <th scope="col" style="text-align: left; padding: 12px 14px; border: 1px solid var(--gris-20); font-size: 15px; font-weight: 700; color: var(--gris-100)">Qué debe mostrar</th>
+                  <th scope="col" style="text-align: left; padding: 12px 14px; border: 1px solid var(--gris-20); font-size: 15px; font-weight: 700; color: var(--gris-100)">Proporción</th>
+                  <th scope="col" style="text-align: left; padding: 12px 14px; border: 1px solid var(--gris-20); font-size: 15px; font-weight: 700; color: var(--gris-100)">Ancho mínimo</th>
+                </tr>
+              </thead>
+              <tbody>
+                <sc-for list="{{ g.fotos }}" as="ft" hint-placeholder-count="5">
+                  <tr style="background: {{ ft.fondo }}">
+                    <td style="padding: 12px 14px; border: 1px solid var(--gris-20); font-size: 16px; font-weight: 700; color: var(--guinda-100); white-space: nowrap">{{ ft.clave }}</td>
+                    <td style="padding: 12px 14px; border: 1px solid var(--gris-20); font-size: 16px; line-height: 1.45">{{ ft.que }}</td>
+                    <td style="padding: 12px 14px; border: 1px solid var(--gris-20); font-size: 16px; white-space: nowrap">{{ ft.ratio }}</td>
+                    <td style="padding: 12px 14px; border: 1px solid var(--gris-20); font-size: 16px; white-space: nowrap">{{ ft.ancho }}</td>
+                  </tr>
+                </sc-for>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </sc-for>
+
+      <div style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--estado-info); padding: 24px 26px; margin-bottom: 24px">
+        <strong style="display: block; font-size: 20px; margin-bottom: 10px; color: var(--negro)">Logotipos: qué falta pedir</strong>
+        <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px">
+          <sc-for list="{{ logos }}" as="lg" hint-placeholder-count="4">
+            <li style="display: grid; grid-template-columns: 8px minmax(0, 1fr); gap: 12px; align-items: start">
+              <span aria-hidden="true" style="margin-top: 8px; width: 8px; height: 8px; background: var(--estado-info); display: block"></span>
+              <span style="font-size: 17px; line-height: 1.55">{{ lg }}</span>
+            </li>
+          </sc-for>
+        </ul>
+      </div>
+
+      <div style="background: var(--marfil); border: 1px solid var(--dorado-40); padding: 24px 26px">
+        <strong style="display: block; font-size: 20px; margin-bottom: 10px; color: var(--guinda-100)">Cómo se entrega la carpeta</strong>
+        <p style="margin: 0 0 12px; font-size: 18px; line-height: 1.6">Una carpeta por grupo, con el nombre del grupo, y dentro cada archivo con el nombre exacto de su clave más la extensión. Ejemplo: <span style="font-family: monospace; background: var(--blanco); border: 1px solid var(--gris-20); padding: 2px 8px">portada/portada7-hero.jpg</span></p>
+        <p style="margin: 0; font-size: 18px; line-height: 1.6">Incluye una hoja con el crédito de cada fotografía: autor, fecha y lugar. Sin ese dato no se puede publicar.</p>
+      </div>
+    </section>
+
+    <section style="padding: clamp(28px, 3vw, 40px) 0; border-top: 1px solid var(--gris-20)">
+      <p style="margin: 0; font-size: 17px; line-height: 1.6; color: var(--gris-100); max-width: 46em">Documento generado a partir del estado actual del micrositio. Toda pieza final, impresa o digital, requiere autorización previa de la Dirección de Identidad Gráfica antes de publicarse.</p>
+    </section>
+
+  </main>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const RESUMEN = [
+  { n: "2", que: "Bases por cargar", nota: "Podadores y dictaminadores; el registro patrimonial ya está conectado" },
+  { n: "64", que: "Datos marcados", nota: "Alcaldías, viveros, metas e indicadores" },
+  { n: "4", que: "Mapas", nota: "Provisionales, sin capa geográfica real" },
+  { n: "31", que: "Recursos", nota: "Documentos, guías, listados y videos" },
+  { n: "24", que: "Fotografías", nota: "Espacios de imagen esperando archivo" }
+];
+
+const BASES = [
+  {
+    titulo: "Padrón de podadores acreditados",
+    prioridad: "Prioridad alta",
+    para: "Alimenta el verificador que la ciudadanía usa para confirmar si quien le ofrece un servicio está autorizado.",
+    donde: "Responsabilidades · verificador; Centro de recursos",
+    formato: "Hoja de cálculo o CSV, codificación UTF-8",
+    frecuencia: "Mensual, o al alta de cada acreditación",
+    nota: "Hoy el verificador responde con cuatro registros de demostración. Sin el padrón real, la función no debe publicarse: da una respuesta falsa.",
+    columnas: [
+      { nombre: "folio", contenido: "Número de folio de la credencial, tal como está impreso", ejemplo: "SEDEMA-POD-2026-0184" },
+      { nombre: "nombre", contenido: "Nombre completo de la persona acreditada", ejemplo: "Nombre Apellido Apellido" },
+      { nombre: "tipo", contenido: "podador", ejemplo: "podador" },
+      { nombre: "estado", contenido: "vigente · vencida · suspendida", ejemplo: "vigente" },
+      { nombre: "vigencia", contenido: "Fecha de término, en formato año-mes-día", ejemplo: "2027-03-31" },
+      { nombre: "expedicion", contenido: "Fecha de expedición, en formato año-mes-día", ejemplo: "2026-03-31" }
+    ]
+  },
+  {
+    titulo: "Padrón de dictaminadores acreditados",
+    prioridad: "Prioridad alta",
+    para: "Permite verificar a quien firma el dictamen técnico que justifica una poda, un derribo o un trasplante.",
+    donde: "Responsabilidades · verificador; Centro de recursos",
+    formato: "Hoja de cálculo o CSV, codificación UTF-8",
+    frecuencia: "Mensual, o al alta de cada acreditación",
+    nota: "Puede venir en la misma hoja que el padrón de podadores, siempre que la columna de tipo distinga uno de otro.",
+    columnas: [
+      { nombre: "folio", contenido: "Número de folio de la credencial", ejemplo: "SEDEMA-DIC-2026-0057" },
+      { nombre: "nombre", contenido: "Nombre completo de la persona acreditada", ejemplo: "Nombre Apellido Apellido" },
+      { nombre: "tipo", contenido: "dictaminador", ejemplo: "dictaminador" },
+      { nombre: "estado", contenido: "vigente · vencida · suspendida", ejemplo: "vigente" },
+      { nombre: "vigencia", contenido: "Fecha de término, en formato año-mes-día", ejemplo: "2027-06-30" },
+      { nombre: "profesion", contenido: "Profesión con que se acreditó", ejemplo: "Ingeniería forestal" }
+    ]
+  },
+  {
+    titulo: "Registro de árboles patrimoniales",
+    prioridad: "Conectado",
+    para: "Da contenido a la página de árboles patrimoniales. Ya está conectado y lee la hoja publicada en vivo.",
+    donde: "Árboles patrimoniales · sección del registro",
+    formato: "Hoja de Google publicada como CSV, ya conectada",
+    frecuencia: "Automática: al guardar en la hoja, cambia en el sitio",
+    nota: "Pendiente: el campo Link al decreto trae el nombre del archivo, no una dirección web. Para que el botón de consulta funcione, hace falta la URL completa del decreto o subir los PDF al sitio. Falta también una fotografía por ejemplar.",
+    columnas: [
+      { nombre: "id", contenido: "Clave del ejemplar en el registro", ejemplo: "PAT-001" },
+      { nombre: "nombre_comun", contenido: "Nombre con que se le conoce", ejemplo: "Ahuehuete del Sargento" },
+      { nombre: "especie", contenido: "Nombre científico de la especie", ejemplo: "Taxodium mucronatum" },
+      { nombre: "alcaldia", contenido: "Alcaldía donde se encuentra", ejemplo: "Tlalpan" },
+      { nombre: "lat", contenido: "Latitud en grados decimales", ejemplo: "19.302341" },
+      { nombre: "lon", contenido: "Longitud en grados decimales", ejemplo: "-99.190228" },
+      { nombre: "edad_estimada", contenido: "Edad estimada en años, o rango", ejemplo: "más de 700" },
+      { nombre: "criterio", contenido: "Criterio por el que fue reconocido", ejemplo: "Edad y valor histórico" },
+      { nombre: "fecha_registro", contenido: "Fecha de reconocimiento", ejemplo: "2025-11-14" }
+    ]
+  }
+];
+
+const FALTANTES = [
+  { pagina: "Directorio", que: "Teléfono con extensión, correo, dirección y horario de las dieciséis alcaldías", cuantos: "64 datos", quien: "Enlace de cada alcaldía" },
+  { pagina: "Directorio", que: "Confirmar extensión y correo de las áreas de la Secretaría", cuantos: "6 fichas", quien: "TIMOG" },
+  { pagina: "Viveros", que: "Dirección, horario, teléfono y coordenadas de Nezahualcóyotl y Yecapixtla", cuantos: "8 datos", quien: "Dirección de Infraestructura Verde" },
+  { pagina: "Viveros", que: "Especies en producción de cada vivero", cuantos: "2 listados", quien: "Responsable de cada vivero" },
+  { pagina: "Política de arbolado", que: "Visión y ejes de la política sexenal", cuantos: "1 texto", quien: "TIMOG" },
+  { pagina: "Política de arbolado", que: "Metas 2024-2030 con línea base y objetivo", cuantos: "4 metas", quien: "TIMOG" },
+  { pagina: "Política de arbolado", que: "Indicadores con su valor y fecha de corte", cuantos: "4 indicadores", quien: "TIMOG" },
+  { pagina: "Política de arbolado", que: "Nombre, objetivo y cobertura de los programas vigentes", cuantos: "4 fichas", quien: "TIMOG" },
+  { pagina: "Reforestación urbana", que: "Árboles plantados, sobrevivencia y colonias atendidas", cuantos: "4 cifras", quien: "Dirección de Infraestructura Verde" },
+  { pagina: "Reforestación urbana", que: "Meta y avance por alcaldía prioritaria", cuantos: "10 datos", quien: "Dirección de Infraestructura Verde" },
+  { pagina: "Inventario", que: "Total de ejemplares levantados y fecha del último corte", cuantos: "2 datos", quien: "DGEIRA" },
+  { pagina: "Retiro de palmeras", que: "Palmeras retiradas y sustituidas en el año", cuantos: "2 cifras", quien: "Dirección de Infraestructura Verde" },
+  { pagina: "Acreditación", que: "Costo vigente del trámite y sede de evaluación", cuantos: "2 datos", quien: "DGSANPAVA" },
+  { pagina: "Árboles patrimoniales", que: "Dirección web de cada decreto, o los PDF para subirlos al sitio", cuantos: "29 decretos", quien: "DGEIRA" },
+  { pagina: "Árboles patrimoniales", que: "Una fotografía por ejemplar del registro", cuantos: "29 fotos", quien: "Comunicación · diseño" },
+  { pagina: "Todas", que: "Confirmar el teléfono y el correo de atención ciudadana que aparece en el pie", cuantos: "1 revisión", quien: "TIMOG" }
+];
+
+const MAPAS = [
+  { pagina: "Reforestación urbana", titulo: "Zonas prioritarias de plantación", estado: "Hoy son bloques de color por alcaldía, no geografía real.", necesita: "Capa de colonias con su nivel de prioridad, en GeoJSON o shapefile, derivada del inventario y del índice de marginación." },
+  { pagina: "Viveros", titulo: "Ubicación de los dos viveros", estado: "El mapa embebido se centra en la zona, no en la entrada del vivero.", necesita: "Coordenadas exactas de la entrada de cada vivero, en grados decimales." },
+  { pagina: "Árboles patrimoniales", titulo: "Ubicación de los ejemplares", estado: "No existe todavía; el mapa vive en el proyecto Guardianes del tiempo.", necesita: "Definir si el mapa se replica aquí o se deja solo en Guardianes. Si se replica, las coordenadas del registro patrimonial." },
+  { pagina: "Directorio", titulo: "Sedes de atención", estado: "No existe; hoy solo hay dirección en texto.", necesita: "Decidir si conviene un mapa por sede. Requiere la dirección normalizada de las dieciséis alcaldías." }
+];
+
+const RECURSOS = [
+  { titulo: "NADF-001-RNAT-2015", tipo: "Norma", entrega: "PDF de la norma publicada en la Gaceta Oficial, con su fecha" },
+  { titulo: "Ley Ambiental de Protección a la Tierra", tipo: "Ley", entrega: "PDF de la última reforma vigente, o enlace al portal oficial" },
+  { titulo: "Formato de solicitud de poda o derribo", tipo: "Formato", entrega: "PDF llenable, con los campos y el sello del área" },
+  { titulo: "Guía de poda correcta", tipo: "Guía", entrega: "PDF diseñado, más versión en imagen para redes" },
+  { titulo: "Cómo se lee un dictamen técnico", tipo: "Guía", entrega: "PDF con un dictamen de ejemplo anotado" },
+  { titulo: "Identificación de riesgo arbóreo", tipo: "Infografía", entrega: "Imagen a 2400 px de ancho más su PDF" },
+  { titulo: "Cuidados del árbol de banqueta", tipo: "Guía", entrega: "PDF diseñado" },
+  { titulo: "Padrón de podadores", tipo: "Datos", entrega: "Hoja de cálculo del apartado 2, más su versión pública en PDF" },
+  { titulo: "Padrón de dictaminadores", tipo: "Datos", entrega: "Hoja de cálculo del apartado 2, más su versión pública en PDF" },
+  { titulo: "Especies recomendadas para banqueta", tipo: "Listado", entrega: "Hoja de cálculo por ancho de banqueta y porte" },
+  { titulo: "Registro de árboles patrimoniales", tipo: "Listado", entrega: "Hoja del apartado 2, más una ficha por ejemplar" },
+  { titulo: "Inventario de arbolado urbano", tipo: "Datos abiertos", entrega: "Enlace al portal de datos abiertos de la ciudad" },
+  { titulo: "Qué hacer si un árbol cae", tipo: "Video", entrega: "Video con subtítulos, más miniatura a 1280 por 720" },
+  { titulo: "Una poda bien hecha", tipo: "Video", entrega: "Video con subtítulos, más miniatura a 1280 por 720" },
+  { titulo: "Guardianes del tiempo", tipo: "Video", entrega: "Video con subtítulos, más miniatura a 1280 por 720" }
+];
+
+const TECNICOS = [
+  { titulo: "Autorización de la Dirección de Identidad Gráfica", texto: "El micrositio es borrador de trabajo. Antes de publicar requiere autorización por escrito, con el correo de solicitud a autorizacionimagen@cdmx.gob.mx.", nivel: "Bloqueante", color: "var(--estado-error)" },
+  { titulo: "Logotipo calado de la Secretaría", texto: "Falta la versión blanca del logotipo para los bloques de fondo guinda. Hoy se usa la versión a una tinta, que no es la correcta sobre oscuro.", nivel: "Bloqueante", color: "var(--estado-error)" },
+  { titulo: "Padrón real en el verificador", texto: "Mientras responda con datos de demostración, el verificador puede dar por vigente a alguien que no lo está. O se carga el padrón, o se oculta la función.", nivel: "Bloqueante", color: "var(--estado-error)" },
+  { titulo: "Set de iconos oficial", texto: "Los iconos actuales son Lucide, elegidos por coherencia de trazo con el manual. Si la Dirección de Identidad Gráfica tiene un set propio, se reemplazan.", nivel: "Importante", color: "var(--guinda-100)" },
+  { titulo: "URL definitiva del sitio de árboles patrimoniales", texto: "La página de patrimoniales se retiró del micrositio: ahora los cuatro enlaces salen a un sitio dedicado. Provisionalmente apuntan a guardianesdeltiempo.sedema.cdmx.gob.mx. Hay que sustituir esa dirección en portada, índice de programas, palmeras y el buscador de la cabecera.", nivel: "Bloqueante", color: "var(--estado-error)" },
+  { titulo: "Página de no encontrado", texto: "Falta la pantalla para cuando alguien llegue a una ruta que ya no existe, con las rutas más buscadas.", nivel: "Deseable", color: "var(--dorado-100)" },
+  { titulo: "Créditos de fotografía", texto: "Cada imagen necesita autor, fecha y lugar. Es requisito para publicar y hoy no existe el registro.", nivel: "Importante", color: "var(--guinda-100)" },
+  { titulo: "Medición de uso", texto: "Definir si el sitio lleva medición de visitas y si el botón de utilidad al pie de cada página reporta a algún lado. Hoy solo responde en pantalla.", nivel: "Deseable", color: "var(--dorado-100)" }
+];
+
+const ESPECS = [
+  { clave: "Formato:", valor: "JPG para fotografía, PNG solo si necesita transparencia" },
+  { clave: "Perfil de color:", valor: "sRGB" },
+  { clave: "Peso máximo:", valor: "400 kB por imagen, ya optimizada" },
+  { clave: "Estilo:", valor: "Fotografía documental real, tonos naturales, sin filtros fuertes" },
+  { clave: "Personas:", valor: "Con carta de consentimiento, o encuadre donde no sean identificables" },
+  { clave: "Sin texto:", valor: "La imagen no lleva texto, marca de agua ni logotipo encima" }
+];
+
+const FOTOS = [
+  { grupo: "Portada", clave: "portada7-hero", que: "Arbolado urbano de la ciudad: una calle arbolada reconocible, en horizontal", ratio: "4 por 3", ancho: "1600 px" },
+  { grupo: "Portada", clave: "aviso-1", que: "Jornada de plantación: personas plantando, con herramienta y planta en contenedor", ratio: "3 por 2", ancho: "1600 px" },
+  { grupo: "Portada", clave: "aviso-2", que: "Verificación de credencial: una credencial en mano, sin datos personales legibles", ratio: "3 por 2", ancho: "1600 px" },
+  { grupo: "Portada", clave: "aviso-3", que: "Ejemplar patrimonial: árbol monumental completo, con referencia de escala humana", ratio: "3 por 2", ancho: "1600 px" },
+  { grupo: "Portada", clave: "aviso-4", que: "Temporada de lluvias: árbol inclinado o rama caída, con cinta de acordonamiento", ratio: "3 por 2", ancho: "1600 px" },
+  { grupo: "Portada", clave: "aviso-5", que: "Palmera en retiro, o el árbol que la sustituyó ya plantado", ratio: "3 por 2", ancho: "1600 px" },
+
+  { grupo: "Índice de programas", clave: "programa-patrimoniales", que: "Ejemplar patrimonial, encuadre distinto al de la portada", ratio: "16 por 9", ancho: "1600 px" },
+  { grupo: "Índice de programas", clave: "programa-palmeras", que: "Retiro de palmera con equipo, o su sustitución recién plantada", ratio: "16 por 9", ancho: "1600 px" },
+  { grupo: "Índice de programas", clave: "programa-inventario", que: "Levantamiento en campo: persona midiendo o registrando un ejemplar", ratio: "16 por 9", ancho: "1600 px" },
+  { grupo: "Índice de programas", clave: "programa-reforestacion", que: "Jornada de plantación en grupo, plano amplio", ratio: "16 por 9", ancho: "1600 px" },
+  { grupo: "Índice de programas", clave: "programa-viveros", que: "Producción en vivero: hileras de planta en contenedor", ratio: "16 por 9", ancho: "1600 px" },
+
+  { grupo: "Páginas de programa", clave: "palmeras-hero", que: "Palmera enferma o en proceso de retiro, plano medio", ratio: "16 por 9", ancho: "1800 px" },
+  { grupo: "Páginas de programa", clave: "inventario-hero", que: "Cuadrilla levantando datos en la calle, con tableta o formato", ratio: "16 por 9", ancho: "1800 px" },
+  { grupo: "Páginas de programa", clave: "reforestacion-hero", que: "Plantación en una colonia con poca sombra, contexto urbano visible", ratio: "16 por 9", ancho: "1800 px" },
+  { grupo: "Páginas de programa", clave: "viveros-hero", que: "Vista general de un vivero, con la escala de la producción", ratio: "16 por 9", ancho: "1800 px" },
+
+  { grupo: "Galería de viveros", clave: "vivero-neza-foto-1", que: "Nezahualcóyotl: vista general del vivero", ratio: "4 por 3", ancho: "1200 px" },
+  { grupo: "Galería de viveros", clave: "vivero-neza-foto-2", que: "Nezahualcóyotl: producción en contenedor", ratio: "4 por 3", ancho: "1200 px" },
+  { grupo: "Galería de viveros", clave: "vivero-neza-foto-3", que: "Nezahualcóyotl: poda de formación de la planta", ratio: "4 por 3", ancho: "1200 px" },
+  { grupo: "Galería de viveros", clave: "vivero-neza-foto-4", que: "Nezahualcóyotl: carga de planta para entrega", ratio: "4 por 3", ancho: "1200 px" },
+  { grupo: "Galería de viveros", clave: "vivero-yecapixtla-foto-1", que: "Yecapixtla: vista general del vivero", ratio: "4 por 3", ancho: "1200 px" },
+  { grupo: "Galería de viveros", clave: "vivero-yecapixtla-foto-2", que: "Yecapixtla: planta de mayor talla", ratio: "4 por 3", ancho: "1200 px" },
+  { grupo: "Galería de viveros", clave: "vivero-yecapixtla-foto-3", que: "Yecapixtla: área de endurecimiento", ratio: "4 por 3", ancho: "1200 px" },
+  { grupo: "Galería de viveros", clave: "vivero-yecapixtla-foto-4", que: "Yecapixtla: traslado de planta a la ciudad", ratio: "4 por 3", ancho: "1200 px" },
+
+  { grupo: "Política y centro de recursos", clave: "politica-portada", que: "Imagen de apertura de la política: la ciudad y su arbolado, plano amplio", ratio: "16 por 9", ancho: "2000 px" },
+  { grupo: "Política y centro de recursos", clave: "programa-1", que: "Fotografía del primer programa vigente, por definir con su ficha", ratio: "16 por 9", ancho: "1400 px" },
+  { grupo: "Política y centro de recursos", clave: "programa-2", que: "Fotografía del segundo programa vigente", ratio: "16 por 9", ancho: "1400 px" },
+  { grupo: "Política y centro de recursos", clave: "programa-3", que: "Fotografía del tercer programa vigente", ratio: "16 por 9", ancho: "1400 px" },
+  { grupo: "Política y centro de recursos", clave: "programa-4", que: "Fotografía del cuarto programa vigente", ratio: "16 por 9", ancho: "1400 px" },
+  { grupo: "Política y centro de recursos", clave: "recurso-riesgo-7", que: "Infografía de riesgo arbóreo: grietas, inclinación y ramas secas señaladas", ratio: "4 por 3", ancho: "2400 px" },
+  { grupo: "Política y centro de recursos", clave: "foto-jornadas", que: "Portada de la galería de jornadas de plantación", ratio: "4 por 3", ancho: "1600 px" },
+  { grupo: "Política y centro de recursos", clave: "foto-patrimoniales", que: "Portada de la galería de los ejemplares patrimoniales", ratio: "4 por 3", ancho: "1600 px" },
+  { grupo: "Política y centro de recursos", clave: "foto-barrancas", que: "Portada de la galería de barrancas y bosques urbanos", ratio: "4 por 3", ancho: "1600 px" },
+  { grupo: "Política y centro de recursos", clave: "video-caida-7", que: "Miniatura del video sobre árbol caído", ratio: "16 por 9", ancho: "1280 px" },
+  { grupo: "Política y centro de recursos", clave: "video-poda-7", que: "Miniatura del video sobre poda correcta", ratio: "16 por 9", ancho: "1280 px" },
+  { grupo: "Política y centro de recursos", clave: "video-patrimonio-7", que: "Miniatura del video de Guardianes del tiempo", ratio: "16 por 9", ancho: "1280 px" }
+];
+
+const LOGOS = [
+  "Versión calada, en blanco, de la firma Gobierno de la Ciudad de México más Secretaría del Medio Ambiente, en SVG. Es la que falta y bloquea los bloques de fondo guinda.",
+  "Confirmar que la firma en color y en escala de grises que ya está en el proyecto es la vigente del manual 2024-2030.",
+  "Logotipos institucionales en SVG de PAOT, Fiscalía Ambiental, Secretaría de Seguridad Ciudadana, Bomberos y SOBSE, para el mapa de competencias.",
+  "Definir qué se usa para las alcaldías: no hay un logotipo único de las dieciséis. Hoy se usa una marca tipográfica hecha con la tipografía institucional."
+];
+
+class Component extends DCLogic {
+  renderVals() {
+    const alterna = (arr, i) => Object.assign({}, arr, { fondo: i % 2 === 1 ? "var(--gris-10)" : "var(--blanco)" });
+    const nombres = [];
+    FOTOS.forEach(f => { if (nombres.indexOf(f.grupo) < 0) nombres.push(f.grupo); });
+    return {
+      resumen: RESUMEN,
+      bases: BASES.map(b => Object.assign({}, b, {
+        columnas: b.columnas.map((c, i) => alterna(c, i))
+      })),
+      faltantes: FALTANTES.map((f, i) => alterna(f, i)),
+      mapas: MAPAS,
+      recursos: RECURSOS.map((r, i) => alterna(r, i)),
+      tecnicos: TECNICOS,
+      especs: ESPECS,
+      logos: LOGOS,
+      grupos: nombres.map(n => {
+        const fotos = FOTOS.filter(f => f.grupo === n);
+        return {
+          nombre: n,
+          cuenta: fotos.length === 1 ? "1 imagen" : fotos.length + " imágenes",
+          fotos: fotos.map((f, i) => alterna(f, i))
+        };
+      })
+    };
+  }
+}
+</script>
+</body>
+</html>
