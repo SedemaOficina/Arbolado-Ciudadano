@@ -6,6 +6,30 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.0.0/).
 
 ---
 
+## 22 de agosto de 2026 · Compilación a HTML publicable
+
+El sitio dejó de depender del runtime de Claude Design. Las páginas se
+publican como HTML, CSS y JavaScript estándar.
+
+- Se transpilaron las quince páginas: se expandieron los `sc-for` con datos
+  reales, se resolvieron las expresiones `{{ }}`, se inlinaron los
+  componentes compartidos de cabecera, pie y utilidad, y se eliminaron los
+  envoltorios `x-dc`, `helmet` y `dc-import`.
+- Se corrigieron los 74 enlaces internos que apuntaban a archivos `.dc.html`
+  inexistentes y las rutas relativas de las páginas en subcarpeta.
+- Se consolidó el CSS en `assets/css/tokens.css` y `assets/css/sitio.css`,
+  con la ruta de las tipografías Roboto y Cabin corregida.
+- La interactividad (buscador, carrusel, árbol de decisiones, filtros,
+  acordeones y verificador de padrón) se conserva con Alpine.js sobre un
+  prerenderizado estático que funciona sin JavaScript.
+- Se añadieron `<title>`, meta description, canonical y Open Graph por
+  página, además de `robots.txt`, `sitemap.xml`, `404.html` y `.nojekyll`.
+- Los logotipos y fotografías faltantes se marcan con el sistema visual
+  amarillo "Falta el dato".
+- Se incorporó `herramientas/` con el compilador para poder regenerar el
+  sitio si se vuelve a editar en Claude Design.
+
+
 ## [21.0.0] · 2026-08-18 · Última versión validada
 
 ### Cambios estructurales

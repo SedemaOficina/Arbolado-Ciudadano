@@ -50,3 +50,10 @@ temp/
 *_wip.*
 *_TEMP.*
 _scratch/
+
+# Compilación del sitio
+herramientas/node_modules/
+herramientas/package-lock.json
+
+# Archivos retirados de la migración de Claude Design (eliminar manualmente)
+_por_eliminar/

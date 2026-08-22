@@ -2,7 +2,7 @@
 
 Documento vivo · Actualizar conforme se resuelven pendientes.
 
-Última actualización: 20 de agosto de 2026
+Última actualización: 22 de agosto de 2026
 
 ---
 
@@ -20,16 +20,40 @@ Documento vivo · Actualizar conforme se resuelven pendientes.
 
 ### Material gráfico
 
-- [ ] Fotografías institucionales reales (15-20 piezas)
+Todo espacio sin material real está marcado en el sitio con el sistema
+visual amarillo "Falta el dato". No debe publicarse con estos marcadores
+visibles.
+
+- [ ] Fotografías institucionales reales (16 espacios marcados en el sitio)
 - [ ] Cada foto con crédito completo (autor, fecha, lugar)
-- [ ] Logotipos SEDEMA y CDMX en SVG optimizado
+- [ ] Logotipos institucionales. El sitio referencia estos archivos y hoy
+      muestra marcadores generados en su lugar:
+
+  | Archivo esperado | Dónde se usa |
+  |---|---|
+  | `docs/assets/img/logos/firma-sedema-rgb.svg` | Cabecera de todas las páginas |
+  | `docs/assets/img/logos/paot.svg` | Responsabilidades · PAOT |
+  | `docs/assets/img/logos/bomberos.svg` | Responsabilidades · Bomberos |
+  | `docs/assets/img/logos/fiscalia.svg` | Responsabilidades · Fiscalía Ambiental |
+  | `docs/assets/img/logos/ssc.svg` | Responsabilidades · Seguridad Ciudadana |
+  | `docs/assets/img/logos/favicon.svg` | Ícono de pestaña (hay uno provisional) |
+
+  Basta sustituir cada archivo conservando el nombre. Si el material llega
+  en JPG o PNG, hay que actualizar además la extensión en
+  `herramientas/compilar.mjs` y recompilar.
 
 ### Técnicos
 
 - [ ] Confirmar que subdominio Guardianes esté montado
-- [ ] Verificar anclas dinámicas `#{{ c.ancla }}` en hazlo
-- [ ] Meta descriptions por página (SEO)
-- [ ] Titles descriptivos por página
+- [ ] Verificar anclas dinámicas de los casos en hazlo
+- [x] Meta descriptions por página (SEO) · 22 ago 2026
+- [x] Titles descriptivos por página · 22 ago 2026
+- [x] Compilación a HTML puro sin runtime de Claude Design · 22 ago 2026
+- [x] `robots.txt`, `sitemap.xml`, `404.html` y `.nojekyll` · 22 ago 2026
+- [ ] Vendorizar Alpine.js en `assets/js/` si se decide eliminar la
+      dependencia del CDN jsdelivr
+- [ ] Sustituir el padrón de demostración del verificador por la consulta
+      al sistema real de SEDEMA (hoy son tres registros de ejemplo)
 
 ### Gobernanza
 
