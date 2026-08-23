@@ -163,3 +163,87 @@ a:hover { color: var(--guinda-oscuro); }
   
 
   
+
+/* ============================================================
+   CAPA BOSQUE · presencia de arbolado en la interfaz
+   Verde y café son secundarios del símbolo GCDMX. El guinda
+   conserva títulos, botones primarios y firma institucional.
+   ============================================================ */
+
+/* Pleca institucional de tres tramos en el borde superior */
+body::before{
+  content:"";display:block;height:5px;
+  background:linear-gradient(90deg,
+    var(--guinda-100) 0 34%,
+    var(--dorado-100) 34% 67%,
+    var(--verde-medio) 67% 100%);
+}
+
+/* --- Navegación principal: banda de follaje --- */
+header nav{
+  background:var(--verde-bosque) !important;
+  border-top-color:var(--verde-bosque) !important;
+}
+header nav .om-nav-ancha a{
+  color:#DDE9D6 !important;
+  background:transparent !important;
+  border-bottom-color:transparent !important;
+}
+header nav .om-nav-ancha a:hover{
+  background:rgba(255,255,255,.10) !important;
+  color:#FFFFFF !important;
+}
+header nav .om-nav-ancha a[aria-current="page"]{
+  color:#FFFFFF !important;
+  background:rgba(255,255,255,.13) !important;
+  border-bottom-color:var(--dorado-100) !important;
+}
+header nav .om-nav-movil button{
+  background:rgba(255,255,255,.94) !important;
+  border-color:var(--verde-medio) !important;
+}
+
+/* --- Luz filtrada por la copa sobre la banda de entrada --- */
+main > section:first-of-type{position:relative;isolation:isolate;}
+main > section:first-of-type::before{
+  content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background-image:
+    radial-gradient(ellipse 60% 70% at 8% 12%,  rgba(45,122,62,.13), transparent 60%),
+    radial-gradient(ellipse 45% 55% at 88% 4%,  rgba(139,111,71,.12), transparent 62%),
+    radial-gradient(ellipse 55% 60% at 72% 88%, rgba(45,122,62,.09), transparent 60%),
+    radial-gradient(ellipse 40% 50% at 30% 96%, rgba(178,142,92,.10), transparent 62%);
+}
+main > section:first-of-type > div{position:relative;z-index:1;}
+
+/* --- Color por sección: el riel de la tarjeta identifica su destino --- */
+main a[style*="border-top: 4px"][href*="hazlo"]            { border-top-color:var(--guinda-100) !important; }
+main a[style*="border-top: 4px"][href*="responsabilidades"]{ border-top-color:var(--tierra) !important; }
+main a[style*="border-top: 4px"][href*="programas"]        { border-top-color:var(--verde-medio) !important; }
+main a[style*="border-top: 4px"][href*="directorio"]       { border-top-color:var(--verde-bosque) !important; }
+main a[style*="border-top: 4px"][href*="politica"]         { border-top-color:var(--dorado-100) !important; }
+/* Emergencias conserva el rojo de alerta que ya trae la página */
+
+/* --- Bandas alternas con presencia de follaje --- */
+main > section[style*="--gris-10"]{
+  background:var(--verde-niebla) !important;
+  border-top-color:var(--verde-borde) !important;
+  border-bottom-color:var(--verde-borde) !important;
+}
+
+/* --- Pie: suelo de bosque --- */
+footer[style*="--guinda-oscuro"]{
+  background:linear-gradient(180deg, var(--verde-bosque) 0%, #14351D 100%) !important;
+}
+
+.ds-pleca-dorada{background:var(--tierra);}
+
+/* --- Marcadores de pendiente: inconfundibles, pero dejan de gritar --- */
+.falta-dato{
+  background:repeating-linear-gradient(135deg,
+    var(--arena) 0 16px,
+    #EAE2D0 16px 32px) !important;
+  border:2px dashed var(--tierra-claro) !important;
+  color:var(--gris-80) !important;
+}
+.falta-dato__sello{ background:var(--amarillo) !important; color:var(--negro) !important; }
+.falta-dato__texto{ color:var(--gris-80) !important; }
