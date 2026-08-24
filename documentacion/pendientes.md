@@ -49,6 +49,18 @@ visibles.
 
 - [x] URL definitiva del sitio de árboles patrimoniales · 23 ago 2026
       https://sedemaoficina.github.io/arboles-patrimoniales
+- [ ] **Validar el fundamento de los árboles patrimoniales.** La Ley Ambiental de
+      la Ciudad de México, vigente desde el 19 de julio de 2024, ya no contiene
+      ninguna disposición sobre árboles patrimoniales: el antiguo artículo 118 bis
+      no tiene sustituto. Cuatro fundamentos del sitio quedaron marcados en
+      amarillo. Confirmar el artículo 55 de la Ley de Patrimonio Cultural, Natural
+      y Biocultural, que no obra en los archivos del proyecto, y con eso cerrar
+      también la contradicción con el sitio de patrimoniales.
+- [ ] **Validación jurídica del cambio de fundamentos.** El 24 de agosto se
+      sustituyeron cuarenta y dos citas de la ley abrogada. Las mecánicas están
+      verificadas contra el texto vigente; conviene que el área jurídica revise
+      las que cambiaron de artículo: 9 y 10 por 7.º y 8.º, y el antiguo 118
+      fracción III por los artículos 106, 109 y 112.
 - [ ] **Alinear competencias con el sitio de patrimoniales.** Ese sitio indica que
       la solicitud se presenta ante la Secretaría de Cultura, con fundamento en el
       artículo 55 de la Ley de Patrimonio Cultural, Natural y Biocultural, y no

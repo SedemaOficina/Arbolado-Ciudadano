@@ -6,6 +6,60 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.0.0/).
 
 ---
 
+## 24 de agosto de 2026 · El sitio citaba una ley abrogada
+
+Las quince páginas fundaban su contenido jurídico en la Ley Ambiental de
+Protección a la Tierra en el Distrito Federal. El Decreto que expide la Ley
+Ambiental de la Ciudad de México, publicado en la Gaceta Oficial el 18 de julio
+de 2024 con última reforma del 24 de diciembre de 2025, la abroga en su artículo
+TRANSITORIO TERCERO. Eran cuarenta y dos citas en doce páginas.
+
+Un dato revelador del descuido: el enlace del pie ya apuntaba al ancla de la ley
+vigente, pero el texto visible nombraba la abrogada.
+
+- **Las citas vivían en dos capas.** Además del HTML prerenderizado, las fichas
+  de trámite, los casos cotidianos y las preguntas frecuentes construyen su
+  fundamento en `docs/assets/js/sitio.js` a partir de una constante `LEY`. Se
+  corrigieron las dos capas; de otro modo Alpine habría repuesto el texto viejo
+  al hidratar.
+- **Veintinueve citas eran mecánicas.** El capítulo de arbolado conservó la
+  numeración: los artículos 106, 108, 109, 111, 112, 121 y 136, y también el 7.º,
+  el 18 y el 34, dicen lo mismo con el mismo número en la ley vigente. Solo
+  cambió el nombre del ordenamiento.
+- **Los artículos 9 y 10 sí cambiaron.** Las atribuciones de la Secretaría están
+  ahora en el artículo 7.º y las de las Alcaldías en el 8.º. Tres citas
+  corregidas.
+- **El artículo 118 fracción III desapareció.** El 118 vigente regula el
+  establecimiento de Áreas de Valor Ambiental. La obligación de contar con
+  autorización previa quedó referida al artículo 106; la restitución máxima y la
+  equiparación a derribo de todo acto que provoque la muerte del árbol, al 109; y
+  la responsabilidad penal, al 112.
+- **La cita de la portada era literal y ya no existía.** Se sustituyó por el
+  texto literal del artículo 106, párrafo tercero, de la ley vigente.
+- **La multa estaba mal acotada.** La respuesta decía «hasta cien mil veces la
+  unidad de medida» sin condición. El artículo 304 fracción I fija ese rango solo
+  para suelo de conservación y áreas de valor ambiental; en los demás casos
+  aplica el artículo 305, de mil a diez mil. La respuesta y su fundamento se
+  precisaron.
+- **Cuatro citas quedaron marcadas en amarillo.** La ley vigente ya no regula los
+  árboles patrimoniales, así que el fundamento del artículo 118 bis no tiene
+  sustituto en este ordenamiento. Se marcaron con el sistema `dato-pendiente` en
+  lugar de dejar publicada una cita equivocada. La vía probable es la Ley de
+  Patrimonio Cultural, Natural y Biocultural, artículo 55, ante la Secretaría de
+  Cultura, lo que además apunta a resolver la contradicción abierta con el sitio
+  de árboles patrimoniales.
+- **Lo que no cambia.** El TRANSITORIO SEXTO mantiene vigentes los reglamentos de
+  la ley abrogada en lo que no se opongan, y la NADF-001-RNAT-2015 no resulta
+  afectada. Esas citas se conservan.
+
+Verificación en Chromium sin cabeza con Alpine servido en local, sobre las trece
+páginas con contenido: cero menciones a la ley abrogada, cero referencias a los
+artículos 118, 112 y 304 en su forma anterior, sin errores de página ni de
+consola y con los cuatro marcadores amarillos renderizando como HTML y no como
+texto escapado.
+
+---
+
 ## 24 de agosto de 2026 · Paleta ampliada y acento por módulo
 
 Las quince páginas se veían iguales. La causa no era falta de matices: el guinda
