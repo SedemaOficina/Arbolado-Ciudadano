@@ -1,0 +1,689 @@
+From c48c6f6bca341d9b118cc9017edd0492c84c6103 Mon Sep 17 00:00:00 2001
+From: "Claude (SEDEMA)" <noreply@anthropic.com>
+Date: Mon, 24 Aug 2026 03:35:45 +0000
+Subject: [PATCH] fix(juridico): sustituye la ley abrogada por la Ley Ambiental
+ de la CDMX
+
+El sitio fundaba 42 afirmaciones en la Ley Ambiental de Proteccion a la
+Tierra, abrogada por el Transitorio TERCERO del Decreto que expide la Ley
+Ambiental de la Ciudad de Mexico. Se corrigen las dos capas -HTML
+prerenderizado y datos en sitio.js-, se reencauzan los articulos 9 y 10 a
+7.o y 8.o, se recompone el antiguo 118 fraccion III sobre los articulos
+106, 109 y 112, se acota el monto de la multa y se marcan en amarillo los
+cuatro fundamentos de arboles patrimoniales, que la ley vigente ya no
+regula.
+
+Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>
+Claude-Session: https://claude.ai/code/session_01RJajJotaMwuYQjXHD5n4os
+---
+ CHANGELOG.md                           | 54 ++++++++++++++++++++++++++
+ docs/assets/js/sitio.js                | 36 ++++++++---------
+ docs/directorio.html                   |  2 +-
+ docs/emergencias.html                  |  4 +-
+ docs/hazlo.html                        | 46 +++++++++++-----------
+ docs/index.html                        |  8 ++--
+ docs/politica.html                     |  6 +--
+ docs/programas.html                    |  2 +-
+ docs/programas/inventario.html         |  2 +-
+ docs/programas/palmeras.html           |  4 +-
+ docs/programas/reforestacion.html      |  2 +-
+ docs/responsabilidades.html            | 10 ++---
+ docs/responsabilidades/acreditate.html |  4 +-
+ docs/territorio.html                   |  2 +-
+ documentacion/pendientes.md            | 12 ++++++
+ interno/PENDIENTES.html                |  2 +-
+ interno/biblioteca.html                |  2 +-
+ 17 files changed, 132 insertions(+), 66 deletions(-)
+
+diff --git a/CHANGELOG.md b/CHANGELOG.md
+index 1537d42..05ffe08 100644
+--- a/CHANGELOG.md
++++ b/CHANGELOG.md
+@@ -6,6 +6,60 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.0.0/).
+ 
+ ---
+ 
++## 24 de agosto de 2026 · El sitio citaba una ley abrogada
++
++Las quince páginas fundaban su contenido jurídico en la Ley Ambiental de
++Protección a la Tierra en el Distrito Federal. El Decreto que expide la Ley
++Ambiental de la Ciudad de México, publicado en la Gaceta Oficial el 18 de julio
++de 2024 con última reforma del 24 de diciembre de 2025, la abroga en su artículo
++TRANSITORIO TERCERO. Eran cuarenta y dos citas en doce páginas.
++
++Un dato revelador del descuido: el enlace del pie ya apuntaba al ancla de la ley
++vigente, pero el texto visible nombraba la abrogada.
++
++- **Las citas vivían en dos capas.** Además del HTML prerenderizado, las fichas
++  de trámite, los casos cotidianos y las preguntas frecuentes construyen su
++  fundamento en `docs/assets/js/sitio.js` a partir de una constante `LEY`. Se
++  corrigieron las dos capas; de otro modo Alpine habría repuesto el texto viejo
++  al hidratar.
++- **Veintinueve citas eran mecánicas.** El capítulo de arbolado conservó la
++  numeración: los artículos 106, 108, 109, 111, 112, 121 y 136, y también el 7.º,
++  el 18 y el 34, dicen lo mismo con el mismo número en la ley vigente. Solo
++  cambió el nombre del ordenamiento.
++- **Los artículos 9 y 10 sí cambiaron.** Las atribuciones de la Secretaría están
++  ahora en el artículo 7.º y las de las Alcaldías en el 8.º. Tres citas
++  corregidas.
++- **El artículo 118 fracción III desapareció.** El 118 vigente regula el
++  establecimiento de Áreas de Valor Ambiental. La obligación de contar con
++  autorización previa quedó referida al artículo 106; la restitución máxima y la
++  equiparación a derribo de todo acto que provoque la muerte del árbol, al 109; y
++  la responsabilidad penal, al 112.
++- **La cita de la portada era literal y ya no existía.** Se sustituyó por el
++  texto literal del artículo 106, párrafo tercero, de la ley vigente.
++- **La multa estaba mal acotada.** La respuesta decía «hasta cien mil veces la
++  unidad de medida» sin condición. El artículo 304 fracción I fija ese rango solo
++  para suelo de conservación y áreas de valor ambiental; en los demás casos
++  aplica el artículo 305, de mil a diez mil. La respuesta y su fundamento se
++  precisaron.
++- **Cuatro citas quedaron marcadas en amarillo.** La ley vigente ya no regula los
++  árboles patrimoniales, así que el fundamento del artículo 118 bis no tiene
++  sustituto en este ordenamiento. Se marcaron con el sistema `dato-pendiente` en
++  lugar de dejar publicada una cita equivocada. La vía probable es la Ley de
++  Patrimonio Cultural, Natural y Biocultural, artículo 55, ante la Secretaría de
++  Cultura, lo que además apunta a resolver la contradicción abierta con el sitio
++  de árboles patrimoniales.
++- **Lo que no cambia.** El TRANSITORIO SEXTO mantiene vigentes los reglamentos de
++  la ley abrogada en lo que no se opongan, y la NADF-001-RNAT-2015 no resulta
++  afectada. Esas citas se conservan.
++
++Verificación en Chromium sin cabeza con Alpine servido en local, sobre las trece
++páginas con contenido: cero menciones a la ley abrogada, cero referencias a los
++artículos 118, 112 y 304 en su forma anterior, sin errores de página ni de
++consola y con los cuatro marcadores amarillos renderizando como HTML y no como
++texto escapado.
++
++---
++
+ ## 24 de agosto de 2026 · Paleta ampliada y acento por módulo
+ 
+ Las quince páginas se veían iguales. La causa no era falta de matices: el guinda
+diff --git a/docs/assets/js/sitio.js b/docs/assets/js/sitio.js
+index 5506e48..00c18f9 100644
+--- a/docs/assets/js/sitio.js
++++ b/docs/assets/js/sitio.js
+@@ -272,7 +272,7 @@ return Component; }); };
+ 
+ window.dchazlo = function(props){ return dcAdaptar(props, function(DCLogic){
+ 
+-const LEY = "Ley Ambiental de Protección a la Tierra en el Distrito Federal";
++const LEY = "Ley Ambiental de la Ciudad de México";
+ const N = "NADF-001-RNAT-2015";
+ 
+ const TEL = {
+@@ -309,10 +309,10 @@ const RUTAS = {
+ };
+ 
+ const ACC_BASE = {
+-  intervenir: { titulo: "Necesitas autorización previa", resumen: "Ninguna persona puede podar, derribar ni trasplantar un árbol por su cuenta.", pasos: ["Pide el dictamen técnico del ejemplar", "Presenta tu solicitud de autorización", "Espera la resolución por escrito", "Contrata a un podador acreditado", "Cumple la restitución"], documentos: ["Identificación oficial vigente", "Dictamen técnico del ejemplar", "Fotografías del árbol completo"], fundamento: LEY + ", artículo 118 fracción III", nota: "Prohíbe intervenir árboles sin autorización previa de la autoridad competente.", extra: [TEL.sedematel] },
++  intervenir: { titulo: "Necesitas autorización previa", resumen: "Ninguna persona puede podar, derribar ni trasplantar un árbol por su cuenta.", pasos: ["Pide el dictamen técnico del ejemplar", "Presenta tu solicitud de autorización", "Espera la resolución por escrito", "Contrata a un podador acreditado", "Cumple la restitución"], documentos: ["Identificación oficial vigente", "Dictamen técnico del ejemplar", "Fotografías del árbol completo"], fundamento: LEY + ", artículos 106 y 109", nota: "Prohíbe intervenir árboles sin autorización previa de la autoridad competente.", extra: [TEL.sedematel] },
+   riesgo: { titulo: "Repórtalo hoy mismo", resumen: "Un árbol en riesgo se valora antes de intervenirlo.", pasos: ["Si el peligro es inmediato, llama al 911", "Levanta el reporte y pide valoración", "Describe qué está en riesgo", "Guarda el folio"], documentos: ["Dirección exacta", "Fotografías con fecha visible", "Descripción de la falla"], fundamento: N + ", criterios de valoración de riesgo", nota: "Define cuándo un ejemplar representa riesgo y qué intervención procede.", extra: [TEL.emergencia] },
+   denunciar: { titulo: "Denuncia ante la Procuraduría Ambiental", resumen: "Una poda o un derribo sin autorización es una infracción. Puedes denunciarla aunque no seas el dueño del predio.", pasos: ["Reúne la evidencia antes de que retiren las ramas", "Presenta la denuncia en línea o por teléfono", "Indica dirección, fecha y hora", "Conserva tu folio"], documentos: ["Fotografías o video con fecha visible", "Dirección exacta y fecha", "Datos del vehículo o de la empresa, si los viste"], fundamento: LEY + ", artículo 112 · Código Penal para el Distrito Federal, artículos 343 a 350", nota: "La Procuraduría investiga y, si procede, da vista a la autoridad que sanciona.", extra: [TEL.paot] },
+-  patrimonial: { titulo: "Consulta el registro patrimonial", resumen: "Un ejemplar puede reconocerse como patrimonial por su edad, tamaño, rareza o valor histórico.", pasos: ["Consulta el registro y los criterios en el sitio de árboles patrimoniales", "Fotografía el ejemplar completo y su tronco", "Mide el perímetro a 1.30 metros del suelo", "Revisa ahí ante qué autoridad se presenta la solicitud y cuándo abre la convocatoria"], documentos: ["Fotografías del ejemplar y su entorno", "Ubicación precisa y perímetro del tronco", "Antecedentes históricos o culturales"], fundamento: LEY + ", artículo 118 bis", nota: "Prevé medidas especiales para ejemplares de valor excepcional. La convocatoria para proponer nuevos ejemplares está cerrada por ahora.", extra: [TEL.sedematel] }
++  patrimonial: { titulo: "Consulta el registro patrimonial", resumen: "Un ejemplar puede reconocerse como patrimonial por su edad, tamaño, rareza o valor histórico.", pasos: ["Consulta el registro y los criterios en el sitio de árboles patrimoniales", "Fotografía el ejemplar completo y su tronco", "Mide el perímetro a 1.30 metros del suelo", "Revisa ahí ante qué autoridad se presenta la solicitud y cuándo abre la convocatoria"], documentos: ["Fotografías del ejemplar y su entorno", "Ubicación precisa y perímetro del tronco", "Antecedentes históricos o culturales"], fundamento: "<span class='dato-pendiente'>Fundamento por confirmar: la Ley Ambiental de la Ciudad de México ya no regula los árboles patrimoniales</span>", nota: "Prevé medidas especiales para ejemplares de valor excepcional. La convocatoria para proponer nuevos ejemplares está cerrada por ahora.", extra: [TEL.sedematel] }
+ };
+ 
+ const PROCEDIMIENTOS = [
+@@ -329,7 +329,7 @@ const PROCEDIMIENTOS = [
+     { actor: "Alcaldía o Secretaría", titulo: "Determinación de la restitución", texto: "El puntaje define cuántos árboles hay que plantar: de 7 a 12 puntos, dos árboles; de 13 a 18, cuatro; de 19 a 24, ocho; de 25 a 28, dieciséis. En derribos por riesgo o saneamiento, la restitución es de uno a uno.", fundamento: N + ", numeral 9 y tablas 2, 3 y 4" },
+     { actor: "Ciudadanía", titulo: "Aviso previo y letrero", texto: "Antes de ejecutar hay que avisar a la alcaldía para que designe supervisión, fecha y hora. En el sitio va el letrero con el responsable, el número de proyecto y el periodo de ejecución.", fundamento: LEY + ", artículo 106 párrafo cuarto" },
+     { actor: "Personal acreditado", titulo: "Ejecución y destoconado", texto: "Derribo controlado en vía pública y predios, o direccional solo en espacios abiertos. Después se trocea, se elimina el tocón y las raíces principales, y los residuos se retiran en veinticuatro horas.", fundamento: N + ", numerales 7.2, 7.6, 7.7 y 11" },
+-    { actor: "Consecuencias", titulo: "Qué pasa sin autorización", texto: "Se activan tres consecuencias a la vez: restitución máxima de dieciséis árboles, multa administrativa de hasta cien mil veces la unidad de medida, y sanción penal de dos a diez años, o de seis a veinte si el ejemplar está en área protegida, barranca o suelo de conservación.", fundamento: LEY + ", artículos 112 y 304 · Código Penal, artículos 343 a 350" }
++    { actor: "Consecuencias", titulo: "Qué pasa sin autorización", texto: "Se activan tres consecuencias a la vez: restitución máxima de dieciséis árboles, multa administrativa de hasta cien mil veces la unidad de medida, y sanción penal de dos a diez años, o de seis a veinte si el ejemplar está en área protegida, barranca o suelo de conservación.", fundamento: LEY + ", artículos 109 y 112 · sanción administrativa: artículo 304 fracción I en suelo de conservación y áreas de valor ambiental, artículo 305 en los demás casos · Código Penal, artículos 343 a 350" }
+   ] },
+   { id: "trasplante", orden: "Procedimiento 03", nombre: "Trasplante", color: "var(--guinda-100)", resumen: "Extraer el árbol y plantarlo en otro sitio conservando su raíz. Se prefiere sobre el derribo cuando el ejemplar es viable.", meta: [{ clave: "Autoridad", valor: "Alcaldía o Secretaría" }, { clave: "Plazo crítico", valor: "48 horas tras el banqueo" }, { clave: "Norma complementaria", valor: "NADF-006-RNAT-2012" }, { clave: "Numeral", valor: N + ", numeral 8" }], pasos: [
+     { actor: "Ciudadanía", titulo: "Solicitud y dictamen de viabilidad", texto: "El dictamen evalúa si la especie tolera el trasplante, la edad y el vigor del ejemplar, su condición sanitaria, y si el sitio destino tiene suelo, espacio y riego apropiados.", fundamento: N + ", numerales 7.1.4 y 8.1" },
+@@ -355,17 +355,17 @@ const CASOS = [
+   { perfil: "vecino", urg: "emergencia", u: "Emergencia", titulo: "Un árbol cayó sobre un auto o sobre la banqueta", autoridad: "911 · Bomberos y Protección Civil", hacer: ["Llama al 911 y di si hay personas o vehículos atrapados", "Aleja a la gente a una vez y media la altura del árbol", "Si hay cables, reporta también a la CFE al 071", "Fotografía desde lejos para el seguro y el reporte"], noHacer: ["No muevas ramas ni cortes nada por tu cuenta", "No te acerques a los cables: pueden estar energizados"], fundamento: "Ley del Heroico Cuerpo de Bomberos de la Ciudad de México, artículo 6 fracción IX" },
+   { perfil: "vecino", urg: "pronto", u: "Atención pronta", titulo: "El árbol de mi calle quedó inclinado o levantó la banqueta", autoridad: "Tu alcaldía · servicios urbanos", hacer: ["Levanta el reporte y pide visita de valoración", "Fotografía el tronco, la base y el suelo levantado", "Guarda el folio del reporte", "Si la inclinación crece o cruje, escala al 911"], noHacer: ["No lo apuntales con materiales improvisados", "No cortes raíces: es la causa más común de que caiga"], fundamento: N + ", criterios de valoración de riesgo" },
+   { perfil: "obra", urg: "ordinario", u: "Trámite ordinario", titulo: "Voy a construir y hay árboles en el predio", autoridad: "La Secretaría, dentro de la resolución de impacto ambiental", hacer: ["Incluye el arbolado en el estudio de impacto ambiental", "Presenta el inventario con especie, diámetro y estado", "Considera el trasplante de los ejemplares viables", "Presupuesta la restitución: es obligatoria"], noHacer: ["No derribes antes de la resolución: la obra se suspende", "No dejes el arbolado para después del permiso de construcción"], fundamento: "Reglamento de Impacto Ambiental y Riesgo, artículos 137 a 141" },
+-  { perfil: "obra", urg: "ordinario", u: "Trámite ordinario", titulo: "Autorizaron el derribo y quiero saber qué se planta a cambio", autoridad: "La Secretaría · medida de restitución", hacer: ["Revisa en la resolución cuántos ejemplares y de qué talla", "Cumple la medida en el plazo autorizado", "Documenta la plantación con fotografías", "Si no hay espacio, consulta dónde cumplirla"], noHacer: ["No la trates como recomendación: es obligatoria", "No sustituyas con especies distintas a las autorizadas"], fundamento: LEY + ", artículo 118" },
+-  { perfil: "jardin", urg: "ordinario", u: "Trámite ordinario", titulo: "Quiero podar el árbol de mi jardín porque da mucha sombra", autoridad: "La Secretaría autoriza · podador acreditado ejecuta", hacer: ["Solicita la autorización antes de contratar a nadie", "Contrata el dictamen de una persona acreditada", "Verifica en el padrón que tenga acreditación vigente", "Conserva la autorización durante el trabajo"], noHacer: ["No supongas que por ser tu predio no necesitas permiso", "No permitas que retiren más de la cuarta parte del árbol"], fundamento: LEY + ", artículo 118 fracción III · " + N },
+-  { perfil: "jardin", urg: "ordinario", u: "Trámite ordinario", titulo: "El árbol del vecino cuelga sobre mi patio", autoridad: "La Secretaría autoriza · acuerdo entre particulares", hacer: ["Habla primero con tu vecino y documenten el acuerdo", "La solicitud la presenta quien posee el predio del árbol", "Si hay riesgo para tu vivienda, pide el dictamen técnico"], noHacer: ["No cortes las ramas de tu lado: también requiere autorización", "No apliques herbicida ni sal a la raíz"], fundamento: LEY + ", artículo 118 fracción III" },
++  { perfil: "obra", urg: "ordinario", u: "Trámite ordinario", titulo: "Autorizaron el derribo y quiero saber qué se planta a cambio", autoridad: "La Secretaría · medida de restitución", hacer: ["Revisa en la resolución cuántos ejemplares y de qué talla", "Cumple la medida en el plazo autorizado", "Documenta la plantación con fotografías", "Si no hay espacio, consulta dónde cumplirla"], noHacer: ["No la trates como recomendación: es obligatoria", "No sustituyas con especies distintas a las autorizadas"], fundamento: LEY + ", artículo 109" },
++  { perfil: "jardin", urg: "ordinario", u: "Trámite ordinario", titulo: "Quiero podar el árbol de mi jardín porque da mucha sombra", autoridad: "La Secretaría autoriza · podador acreditado ejecuta", hacer: ["Solicita la autorización antes de contratar a nadie", "Contrata el dictamen de una persona acreditada", "Verifica en el padrón que tenga acreditación vigente", "Conserva la autorización durante el trabajo"], noHacer: ["No supongas que por ser tu predio no necesitas permiso", "No permitas que retiren más de la cuarta parte del árbol"], fundamento: LEY + ", artículo 106 · " + N },
++  { perfil: "jardin", urg: "ordinario", u: "Trámite ordinario", titulo: "El árbol del vecino cuelga sobre mi patio", autoridad: "La Secretaría autoriza · acuerdo entre particulares", hacer: ["Habla primero con tu vecino y documenten el acuerdo", "La solicitud la presenta quien posee el predio del árbol", "Si hay riesgo para tu vivienda, pide el dictamen técnico"], noHacer: ["No cortes las ramas de tu lado: también requiere autorización", "No apliques herbicida ni sal a la raíz"], fundamento: LEY + ", artículos 106 y 109, último párrafo" },
+   { perfil: "testigo", urg: "pronto", u: "Atención pronta", titulo: "Un vecino cortó un árbol de la calle sin permiso", autoridad: "PAOT · denuncia ambiental", hacer: ["Fotografía el tocón y las ramas antes de que las retiren", "Presenta la denuncia en línea o al 55 5265 0780", "Anota fecha, hora y datos del vehículo o la empresa", "Conserva tu folio para consultar el avance"], noHacer: ["No confrontes a quien lo hizo", "No esperes: la evidencia desaparece en horas"], fundamento: LEY + ", artículo 112 · Código Penal, artículos 343 a 350" },
+   { perfil: "testigo", urg: "pronto", u: "Atención pronta", titulo: "Me ofrecieron podar barato y sin papeles", autoridad: "La Secretaría · padrón de acreditaciones", hacer: ["Pide la credencial y verifica el folio en el padrón", "Confirma que la fotografía y la vigencia correspondan", "Exige ver el dictamen y la autorización antes de empezar"], noHacer: ["No pagues por adelantado sin verificar", "No aceptes que “así se hace siempre”: quien contrata responde"], fundamento: N + ", numeral 5.5" },
+-  { perfil: "protector", urg: "ordinario", u: "Trámite ordinario", titulo: "Quiero que reconozcan un árbol muy viejo de mi barrio", autoridad: "La Secretaría · registro de árboles patrimoniales", hacer: ["Reúne fotografías del ejemplar completo y del tronco", "Mide el perímetro a 1.30 metros del suelo", "Documenta su historia y su valor para el barrio", "Envía la propuesta con la ubicación precisa"], noHacer: ["No coloques placas, clavos ni cercas al ejemplar", "No pintes el tronco: el encalado no lo protege"], fundamento: LEY + ", artículo 118 bis" },
+-  { perfil: "protector", urg: "emergencia", u: "Emergencia", titulo: "Están talando en un parque o en una barranca", autoridad: "PAOT y la Secretaría · competencia exclusiva", hacer: ["Denuncia de inmediato ante la PAOT y avisa a la Secretaría", "Registra ubicación, hora y maquinaria presente", "Anota los datos del anuncio de obra o de la empresa"], noHacer: ["No entres a la zona ni intentes detener la maquinaria", "No difundas la ubicación antes de presentar la denuncia"], fundamento: LEY + ", artículos 9 y 10" }
++  { perfil: "protector", urg: "ordinario", u: "Trámite ordinario", titulo: "Quiero que reconozcan un árbol muy viejo de mi barrio", autoridad: "La Secretaría · registro de árboles patrimoniales", hacer: ["Reúne fotografías del ejemplar completo y del tronco", "Mide el perímetro a 1.30 metros del suelo", "Documenta su historia y su valor para el barrio", "Envía la propuesta con la ubicación precisa"], noHacer: ["No coloques placas, clavos ni cercas al ejemplar", "No pintes el tronco: el encalado no lo protege"], fundamento: "<span class='dato-pendiente'>Fundamento por confirmar: la Ley Ambiental de la Ciudad de México ya no regula los árboles patrimoniales</span>" },
++  { perfil: "protector", urg: "emergencia", u: "Emergencia", titulo: "Están talando en un parque o en una barranca", autoridad: "PAOT y la Secretaría · competencia exclusiva", hacer: ["Denuncia de inmediato ante la PAOT y avisa a la Secretaría", "Registra ubicación, hora y maquinaria presente", "Anota los datos del anuncio de obra o de la empresa"], noHacer: ["No entres a la zona ni intentes detener la maquinaria", "No difundas la ubicación antes de presentar la denuncia"], fundamento: LEY + ", artículos 7.º y 8.º" }
+ ];
+ 
+ const FAQS = [
+-  { perfil: "vecino", p: "¿A quién le toca el árbol de mi calle?", r: "Depende del tipo de vialidad. En calles locales y colonias es tu alcaldía. En ejes viales, avenidas grandes y calzadas, la Secretaría autoriza y SOBSE ejecuta.", f: LEY + ", artículos 9 y 10" },
++  { perfil: "vecino", p: "¿A quién le toca el árbol de mi calle?", r: "Depende del tipo de vialidad. En calles locales y colonias es tu alcaldía. En ejes viales, avenidas grandes y calzadas, la Secretaría autoriza y SOBSE ejecuta.", f: LEY + ", artículos 7.º y 8.º" },
+   { perfil: "vecino", p: "¿Cuánto tarda una autorización?", r: "La autoridad debe resolver en un plazo no mayor a veinte días hábiles contados desde tu solicitud.", f: LEY + ", artículo 106" },
+   { perfil: "vecino", p: "El árbol de la banqueta dañó mi coche al caer, ¿quién paga?", r: "El reclamo se presenta ante la autoridad responsable del arbolado en ese sitio, normalmente tu alcaldía. Documenta con fotografías y con el folio del reporte.", f: "Ley Orgánica de Alcaldías, artículo 32 fracción V" },
+   { perfil: "vecino", p: "¿Puedo plantar un árbol frente a mi casa?", r: "Sí, coordinándolo con tu alcaldía: ella define la especie según el ancho de banqueta y el cableado, y las dimensiones del cajete.", f: "NADF-006-RNAT-2012" },
+@@ -373,17 +373,17 @@ const FAQS = [
+   { perfil: "obra", p: "¿Cuántos árboles tengo que plantar si derribo uno?", r: "Entre dos y dieciséis, según el puntaje de valoración del dictamen. En derribos por riesgo o saneamiento la restitución es de uno a uno.", f: N + ", numeral 9 y tablas 2, 3 y 4" },
+   { perfil: "obra", p: "¿Puedo pagar en lugar de plantar?", r: "Solo por excepción, cuando la restitución física es jurídica o técnicamente imposible. En ese caso se aporta al Fondo Ambiental Público.", f: LEY + ", artículo 109" },
+   { perfil: "obra", p: "¿El trasplante es mejor que el derribo?", r: "Sí, y se privilegia cuando el ejemplar es viable. Debe ejecutarse en un máximo de cuarenta y ocho horas después del banqueo.", f: N + ", numerales 8.1 y 8.5.2" },
+-  { perfil: "jardin", p: "¿Necesito permiso si el árbol está en mi jardín?", r: "Sí. El predio es tuyo, pero el árbol es un bien de interés público. Podarlo, derribarlo o trasplantarlo requiere autorización previa.", f: LEY + ", artículo 118 fracción III" },
++  { perfil: "jardin", p: "¿Necesito permiso si el árbol está en mi jardín?", r: "Sí. El predio es tuyo, pero el árbol es un bien de interés público. Podarlo, derribarlo o trasplantarlo requiere autorización previa.", f: LEY + ", artículo 106" },
+   { perfil: "jardin", p: "¿Cuánto se le puede quitar a un árbol en una poda?", r: "Como máximo la cuarta parte del follaje y las ramas, y solo si ese porcentaje está justificado en el dictamen técnico.", f: N + ", numeral 6" },
+-  { perfil: "jardin", p: "¿Puedo cortar las raíces que levantan mi piso?", r: "No por tu cuenta. Cortar raíces es la causa más común de que un árbol termine cayendo, y se considera intervención no autorizada.", f: LEY + ", artículo 118 fracción III" },
++  { perfil: "jardin", p: "¿Puedo cortar las raíces que levantan mi piso?", r: "No por tu cuenta. Cortar raíces es la causa más común de que un árbol termine cayendo, y se considera intervención no autorizada.", f: LEY + ", artículos 106 y 109, último párrafo" },
+   { perfil: "jardin", p: "¿Qué documentos necesito si el árbol está en mi predio?", r: "Identificación oficial, documento que acredite la propiedad o posesión, dictamen técnico de persona acreditada, y fotografías con un croquis de ubicación.", f: N + ", numeral 5.3" },
+   { perfil: "testigo", p: "¿Dónde denuncio una poda o un derribo irregular?", r: "Ante la Procuraduría Ambiental y del Ordenamiento Territorial, en línea o al 55 5265 0780. La denuncia puede ser anónima.", f: "Ley Orgánica de la PAOT, artículo 5 fracciones I y XV" },
+   { perfil: "testigo", p: "¿Necesito pruebas para denunciar?", r: "Ayuda mucho: fotografías con fecha visible, dirección exacta y hora aproximada. Reúnelas antes de que retiren las ramas o el tocón.", f: "Ley Orgánica de la PAOT, artículo 5" },
+-  { perfil: "testigo", p: "¿De cuánto es la multa por derribar sin permiso?", r: "Hasta cien mil veces la unidad de medida vigente, además de la obligación de restituir con el número máximo de árboles.", f: LEY + ", artículos 112 y 304" },
++  { perfil: "testigo", p: "¿De cuánto es la multa por derribar sin permiso?", r: "Depende de dónde estaba el árbol: hasta diez mil veces la unidad de medida en la vía pública, y hasta cien mil si estaba en suelo de conservación o en un área de valor ambiental. En los dos casos hay que restituir con el número máximo de árboles.", f: LEY + ", artículos 109, 304 fracción I y 305" },
+   { perfil: "testigo", p: "¿Cómo verifico que un podador esté acreditado?", r: "Pide el folio y consúltalo en el padrón. Revisa que la fotografía corresponda a la persona y que la vigencia esté al día. Una credencial con tachaduras no es válida.", f: N + ", numeral 5.5" },
+-  { perfil: "protector", p: "¿Qué es un árbol patrimonial?", r: "Un ejemplar notable, singular o monumental por su edad, tamaño, especie, o su valor paisajístico, histórico, cultural o social. Tiene protección más estricta.", f: LEY + ", artículo 118 bis" },
+-  { perfil: "protector", p: "¿Se puede derribar un árbol patrimonial?", r: "Solo si hay riesgo real y presente acreditado en dictamen, y siempre que no pueda mitigarse con poda, apuntalamiento o trasplante. No se derriba a cambio de restitución.", f: LEY + ", artículos 34 y 118 bis" },
+-  { perfil: "protector", p: "¿Cómo propongo un árbol al registro?", r: "Reúne fotografías del ejemplar y su entorno, la ubicación precisa, el perímetro del tronco a 1.30 metros del suelo y lo que sepas de su historia. El sitio de árboles patrimoniales indica ante qué autoridad se presenta la solicitud. La convocatoria está cerrada por ahora.", f: LEY + ", artículo 118 bis" },
++  { perfil: "protector", p: "¿Qué es un árbol patrimonial?", r: "Un ejemplar notable, singular o monumental por su edad, tamaño, especie, o su valor paisajístico, histórico, cultural o social. Tiene protección más estricta.", f: "<span class='dato-pendiente'>Fundamento por confirmar: la Ley Ambiental de la Ciudad de México ya no regula los árboles patrimoniales</span>" },
++  { perfil: "protector", p: "¿Se puede derribar un árbol patrimonial?", r: "Solo si hay riesgo real y presente acreditado en dictamen, y siempre que no pueda mitigarse con poda, apuntalamiento o trasplante. No se derriba a cambio de restitución.", f: LEY + ", artículo 106 fracción II · " + "<span class='dato-pendiente'>Fundamento por confirmar: la Ley Ambiental de la Ciudad de México ya no regula los árboles patrimoniales</span>" },
++  { perfil: "protector", p: "¿Cómo propongo un árbol al registro?", r: "Reúne fotografías del ejemplar y su entorno, la ubicación precisa, el perímetro del tronco a 1.30 metros del suelo y lo que sepas de su historia. El sitio de árboles patrimoniales indica ante qué autoridad se presenta la solicitud. La convocatoria está cerrada por ahora.", f: "<span class='dato-pendiente'>Fundamento por confirmar: la Ley Ambiental de la Ciudad de México ya no regula los árboles patrimoniales</span>" },
+   { perfil: "protector", p: "¿Qué es el desmoche y por qué está prohibido?", r: "Es cortar la copa o las ramas estructurales. Debilita al árbol, lo vuelve inestable y tiene el mismo régimen legal que un derribo.", f: N + ", numeral 6" }
+ ];
+ 
+@@ -521,7 +521,7 @@ return Component; }); };
+ 
+ window.dcresponsabilidades = function(props){ return dcAdaptar(props, function(DCLogic){
+ 
+-const LEY = "Ley Ambiental de Protección a la Tierra en el Distrito Federal";
++const LEY = "Ley Ambiental de la Ciudad de México";
+ const N = "NADF-001-RNAT-2015";
+ 
+ const FILTROS = [
+@@ -996,7 +996,7 @@ const CATEGORIAS = [
+ ];
+ 
+ const RECURSOS = [
+-  { cat: "documentos", tipo: "doc", corto: "Ley Ambiental", titulo: "Ley Ambiental de Protección a la Tierra en el Distrito Federal", texto: "Texto vigente. Los artículos 104 a 118 bis rigen todo lo relativo al arbolado urbano.", formato: "Sitio oficial", peso: "Consejería Jurídica", url: "https://data.consejeria.cdmx.gob.mx/index.php/leyes/leyes#ley-ambiental-de-la-ciudad-de-m%C3%A9xico" },
++  { cat: "documentos", tipo: "doc", corto: "Ley Ambiental", titulo: "Ley Ambiental de la Ciudad de México", texto: "Texto vigente desde el 19 de julio de 2024. Abrogó la Ley Ambiental de Protección a la Tierra. Los artículos 104 a 115 rigen lo relativo al arbolado urbano y a las áreas verdes.", formato: "Sitio oficial", peso: "Consejería Jurídica", url: "https://data.consejeria.cdmx.gob.mx/index.php/leyes/leyes#ley-ambiental-de-la-ciudad-de-m%C3%A9xico" },
+   { cat: "documentos", tipo: "doc", corto: "NADF-001", titulo: "NADF-001-RNAT-2015", texto: "Requisitos técnicos para poda, derribo, trasplante y restitución de arbolado urbano.", formato: "PDF", peso: "Documento oficial", url: "http://data.sedema.cdmx.gob.mx/sedema/images/archivos/sedema/leyes-reglamentos/normas/locales/NADF-001-RNAT-2016.pdf" },
+   { cat: "documentos", tipo: "doc", corto: "NADF-006", titulo: "NADF-006-RNAT-2012", texto: "Requisitos para la plantación y el mantenimiento de arbolado en la ciudad.", formato: "PDF", peso: "Documento oficial", url: "http://data.sedema.cdmx.gob.mx/sitios/conadf/documentos/NADF-006-RNAT-2016.pdf" },
+   { cat: "documentos", tipo: "doc", corto: "Código Penal", titulo: "Código Penal · delitos ambientales", texto: "Artículos 343 a 350: las conductas y las penas por daño al arbolado.", formato: "PDF", peso: "Pendiente" },
+diff --git a/docs/directorio.html b/docs/directorio.html
+index 152d760..7972cda 100644
+--- a/docs/directorio.html
++++ b/docs/directorio.html
+@@ -1393,7 +1393,7 @@ a:hover { color: var(--guinda-oscuro); }
+     <div>
+       <h2 style="margin: 0 0 14px; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--dorado-60)">Marco normativo</h2>
+       <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px">
+-        <li><a class="ih10" style="font-size: 17px; line-height: 1.5; color: var(--blanco); text-decoration: underline; text-underline-offset: 3px" href="https://data.consejeria.cdmx.gob.mx/index.php/leyes/leyes#ley-ambiental-de-la-ciudad-de-m%C3%A9xico" target="_blank" rel="noopener">Ley Ambiental de Protección a la Tierra en el Distrito Federal</a></li>
++        <li><a class="ih10" style="font-size: 17px; line-height: 1.5; color: var(--blanco); text-decoration: underline; text-underline-offset: 3px" href="https://data.consejeria.cdmx.gob.mx/index.php/leyes/leyes#ley-ambiental-de-la-ciudad-de-m%C3%A9xico" target="_blank" rel="noopener">Ley Ambiental de la Ciudad de México</a></li>
+         <li><a class="ih10" style="font-size: 17px; line-height: 1.5; color: var(--blanco); text-decoration: underline; text-underline-offset: 3px" href="http://data.sedema.cdmx.gob.mx/sedema/images/archivos/sedema/leyes-reglamentos/normas/locales/NADF-001-RNAT-2016.pdf" target="_blank" rel="noopener">NADF-001-RNAT-2015 · poda, derribo y trasplante</a></li>
+         <li><a class="ih10" style="font-size: 17px; line-height: 1.5; color: var(--blanco); text-decoration: underline; text-underline-offset: 3px" href="http://data.sedema.cdmx.gob.mx/sitios/conadf/documentos/NADF-006-RNAT-2016.pdf" target="_blank" rel="noopener">NADF-006-RNAT-2012 · plantación y mantenimiento</a></li>
+       </ul>
+diff --git a/docs/emergencias.html b/docs/emergencias.html
+index 5a7bbac..a6d5be3 100644
+--- a/docs/emergencias.html
++++ b/docs/emergencias.html
+@@ -288,7 +288,7 @@ a:hover { color: var(--guinda-oscuro); }
+           <span style="display: block; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--estado-error); margin-bottom: 8px">Alerta grave</span>
+           <strong style="display: block; font-size: 20px; margin-bottom: 10px; color: var(--negro)">Nunca intervengas el árbol por tu cuenta</strong>
+           <p style="margin: 0 0 12px; font-size: 18px; line-height: 1.6">Hay riesgo de electrocución, de caída secundaria y de lesión por motosierra, además de responsabilidad penal por intervención no autorizada.</p>
+-          <p style="margin: 0; font-size: 17px; line-height: 1.55; color: var(--gris-100)">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículo 118 fracción III</p>
++          <p style="margin: 0; font-size: 17px; line-height: 1.55; color: var(--gris-100)">Ley Ambiental de la Ciudad de México, artículos 106 y 112 · Código Penal para el Distrito Federal, artículos 343 a 350</p>
+         </div>
+       </div>
+     </section>
+@@ -382,7 +382,7 @@ a:hover { color: var(--guinda-oscuro); }
+     <div>
+       <h2 style="margin: 0 0 14px; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--dorado-60)">Marco normativo</h2>
+       <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px">
+-        <li><a class="ih10" style="font-size: 17px; line-height: 1.5; color: var(--blanco); text-decoration: underline; text-underline-offset: 3px" href="https://data.consejeria.cdmx.gob.mx/index.php/leyes/leyes#ley-ambiental-de-la-ciudad-de-m%C3%A9xico" target="_blank" rel="noopener">Ley Ambiental de Protección a la Tierra en el Distrito Federal</a></li>
++        <li><a class="ih10" style="font-size: 17px; line-height: 1.5; color: var(--blanco); text-decoration: underline; text-underline-offset: 3px" href="https://data.consejeria.cdmx.gob.mx/index.php/leyes/leyes#ley-ambiental-de-la-ciudad-de-m%C3%A9xico" target="_blank" rel="noopener">Ley Ambiental de la Ciudad de México</a></li>
+         <li><a class="ih10" style="font-size: 17px; line-height: 1.5; color: var(--blanco); text-decoration: underline; text-underline-offset: 3px" href="http://data.sedema.cdmx.gob.mx/sedema/images/archivos/sedema/leyes-reglamentos/normas/locales/NADF-001-RNAT-2016.pdf" target="_blank" rel="noopener">NADF-001-RNAT-2015 · poda, derribo y trasplante</a></li>
+         <li><a class="ih10" style="font-size: 17px; line-height: 1.5; color: var(--blanco); text-decoration: underline; text-underline-offset: 3px" href="http://data.sedema.cdmx.gob.mx/sitios/conadf/documentos/NADF-006-RNAT-2016.pdf" target="_blank" rel="noopener">NADF-006-RNAT-2012 · plantación y mantenimiento</a></li>
+       </ul>
+diff --git a/docs/hazlo.html b/docs/hazlo.html
+index 4ae2269..f7bfb95 100644
+--- a/docs/hazlo.html
++++ b/docs/hazlo.html
+@@ -398,7 +398,7 @@ a:hover { color: var(--guinda-oscuro); }
+                           <span style="display: block; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 6px" x-html="s.actor">Ciudadanía</span>
+                           <span style="display: block; font-size: 20px; font-weight: 700; color: var(--guinda-100); line-height: 1.3; margin-bottom: 8px" x-html="s.titulo">Presenta tu solicitud</span>
+                           <span style="display: block; font-size: 17px; line-height: 1.6; max-width: 46em" x-html="s.texto">Ante la alcaldía donde está el árbol, por el Sistema Unificado de Atención Ciudadana, por LOCATEL al 55 5658 1111 o en la ventanilla de servicios urbanos. Aunque el árbol esté en tu predio, cualquier poda mayor requiere autorización.</span>
+-                          <span style="display: block; margin-top: 10px; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="s.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículo 106</span>
++                          <span style="display: block; margin-top: 10px; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="s.fundamento">Ley Ambiental de la Ciudad de México, artículo 106</span>
+                         </span>
+                       </li>
+                     
+@@ -418,7 +418,7 @@ a:hover { color: var(--guinda-oscuro); }
+                           <span style="display: block; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 6px" x-html="s.actor">Tu alcaldía</span>
+                           <span style="display: block; font-size: 20px; font-weight: 700; color: var(--guinda-100); line-height: 1.3; margin-bottom: 8px" x-html="s.titulo">Resolución y autorización</span>
+                           <span style="display: block; font-size: 17px; line-height: 1.6; max-width: 46em" x-html="s.texto">Resuelve en un plazo no mayor a veinte días hábiles. La autorización precisa el método permitido, el porcentaje máximo de follaje, el plazo de ejecución, quién puede ejecutar y cómo se manejan los residuos.</span>
+-                          <span style="display: block; margin-top: 10px; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="s.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículo 106, párrafos tercero y quinto</span>
++                          <span style="display: block; margin-top: 10px; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="s.fundamento">Ley Ambiental de la Ciudad de México, artículo 106, párrafos tercero y quinto</span>
+                         </span>
+                       </li>
+                     
+@@ -502,7 +502,7 @@ a:hover { color: var(--guinda-oscuro); }
+                           <span style="display: block; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 6px" x-html="s.actor">Ciudadanía y técnico</span>
+                           <span style="display: block; font-size: 20px; font-weight: 700; color: var(--guinda-100); line-height: 1.3; margin-bottom: 8px" x-html="s.titulo">Verifica que encaje en un supuesto legal</span>
+                           <span style="display: block; font-size: 17px; line-height: 1.6; max-width: 46em" x-html="s.texto">Son cuatro: riesgo real y presente para las personas o sus bienes, riesgo al patrimonio urbanístico, saneamiento del ejemplar, y afectación significativa a la infraestructura. No proceden la sombra, la caída de hojas ni la edad avanzada sin pérdida de vigor.</span>
+-                          <span style="display: block; margin-top: 10px; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="s.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículo 106 fracciones I a IV</span>
++                          <span style="display: block; margin-top: 10px; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="s.fundamento">Ley Ambiental de la Ciudad de México, artículo 106 fracciones I a IV</span>
+                         </span>
+                       </li>
+                     
+@@ -532,7 +532,7 @@ a:hover { color: var(--guinda-oscuro); }
+                           <span style="display: block; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 6px" x-html="s.actor">Ciudadanía</span>
+                           <span style="display: block; font-size: 20px; font-weight: 700; color: var(--guinda-100); line-height: 1.3; margin-bottom: 8px" x-html="s.titulo">Aviso previo y letrero</span>
+                           <span style="display: block; font-size: 17px; line-height: 1.6; max-width: 46em" x-html="s.texto">Antes de ejecutar hay que avisar a la alcaldía para que designe supervisión, fecha y hora. En el sitio va el letrero con el responsable, el número de proyecto y el periodo de ejecución.</span>
+-                          <span style="display: block; margin-top: 10px; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="s.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículo 106 párrafo cuarto</span>
++                          <span style="display: block; margin-top: 10px; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="s.fundamento">Ley Ambiental de la Ciudad de México, artículo 106 párrafo cuarto</span>
+                         </span>
+                       </li>
+                     
+@@ -552,7 +552,7 @@ a:hover { color: var(--guinda-oscuro); }
+                           <span style="display: block; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 6px" x-html="s.actor">Consecuencias</span>
+                           <span style="display: block; font-size: 20px; font-weight: 700; color: var(--guinda-100); line-height: 1.3; margin-bottom: 8px" x-html="s.titulo">Qué pasa sin autorización</span>
+                           <span style="display: block; font-size: 17px; line-height: 1.6; max-width: 46em" x-html="s.texto">Se activan tres consecuencias a la vez: restitución máxima de dieciséis árboles, multa administrativa de hasta cien mil veces la unidad de medida, y sanción penal de dos a diez años, o de seis a veinte si el ejemplar está en área protegida, barranca o suelo de conservación.</span>
+-                          <span style="display: block; margin-top: 10px; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="s.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículos 112 y 304 · Código Penal, artículos 343 a 350</span>
++                          <span style="display: block; margin-top: 10px; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="s.fundamento">Ley Ambiental de la Ciudad de México, artículos 109 y 112 · sanción administrativa: artículo 304 fracción I en suelo de conservación y áreas de valor ambiental, artículo 305 en los demás casos · Código Penal, artículos 343 a 350</span>
+                         </span>
+                       </li>
+                     <template x-for="(s, _k1198658965) in p.pasos" :key="_k1198658965">
+@@ -656,7 +656,7 @@ a:hover { color: var(--guinda-oscuro); }
+                           <span style="display: block; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 6px" x-html="s.actor">Responsable del proyecto</span>
+                           <span style="display: block; font-size: 20px; font-weight: 700; color: var(--guinda-100); line-height: 1.3; margin-bottom: 8px" x-html="s.titulo">Mantenimiento y verificación</span>
+                           <span style="display: block; font-size: 17px; line-height: 1.6; max-width: 46em" x-html="s.texto">Riego periódico, monitoreo fitosanitario, revisión de tensores y poda de formación los primeros años. Si el ejemplar muere por mala ejecución, el resultado se equipara a un derribo y hay que restituir.</span>
+-                          <span style="display: block; margin-top: 10px; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="s.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículo 109 párrafo final · NADF-001-RNAT-2015, numeral 9</span>
++                          <span style="display: block; margin-top: 10px; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="s.fundamento">Ley Ambiental de la Ciudad de México, artículo 109 párrafo final · NADF-001-RNAT-2015, numeral 9</span>
+                         </span>
+                       </li>
+                     <template x-for="(s, _k1198658965) in p.pasos" :key="_k1198658965">
+@@ -927,7 +927,7 @@ a:hover { color: var(--guinda-oscuro); }
+                     </ul>
+                   </div>
+                 </div>
+-                <p style="margin: 22px 0 0; padding-left: 16px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="c.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículo 118</p>
++                <p style="margin: 22px 0 0; padding-left: 16px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="c.fundamento">Ley Ambiental de la Ciudad de México, artículo 109</p>
+               </div>
+           </li>
+         
+@@ -974,7 +974,7 @@ a:hover { color: var(--guinda-oscuro); }
+                     </ul>
+                   </div>
+                 </div>
+-                <p style="margin: 22px 0 0; padding-left: 16px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="c.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículo 118 fracción III · NADF-001-RNAT-2015</p>
++                <p style="margin: 22px 0 0; padding-left: 16px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="c.fundamento">Ley Ambiental de la Ciudad de México, artículo 106 · NADF-001-RNAT-2015</p>
+               </div>
+           </li>
+         
+@@ -1019,7 +1019,7 @@ a:hover { color: var(--guinda-oscuro); }
+                     </ul>
+                   </div>
+                 </div>
+-                <p style="margin: 22px 0 0; padding-left: 16px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="c.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículo 118 fracción III</p>
++                <p style="margin: 22px 0 0; padding-left: 16px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="c.fundamento">Ley Ambiental de la Ciudad de México, artículos 106 y 109, último párrafo</p>
+               </div>
+           </li>
+         
+@@ -1066,7 +1066,7 @@ a:hover { color: var(--guinda-oscuro); }
+                     </ul>
+                   </div>
+                 </div>
+-                <p style="margin: 22px 0 0; padding-left: 16px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="c.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículo 112 · Código Penal, artículos 343 a 350</p>
++                <p style="margin: 22px 0 0; padding-left: 16px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="c.fundamento">Ley Ambiental de la Ciudad de México, artículo 112 · Código Penal, artículos 343 a 350</p>
+               </div>
+           </li>
+         
+@@ -1158,7 +1158,7 @@ a:hover { color: var(--guinda-oscuro); }
+                     </ul>
+                   </div>
+                 </div>
+-                <p style="margin: 22px 0 0; padding-left: 16px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="c.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículo 118 bis</p>
++                <p style="margin: 22px 0 0; padding-left: 16px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="c.fundamento"><span class="dato-pendiente">Fundamento por confirmar: la Ley Ambiental de la Ciudad de México ya no regula los árboles patrimoniales</span></p>
+               </div>
+           </li>
+         
+@@ -1203,7 +1203,7 @@ a:hover { color: var(--guinda-oscuro); }
+                     </ul>
+                   </div>
+                 </div>
+-                <p style="margin: 22px 0 0; padding-left: 16px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="c.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículos 9 y 10</p>
++                <p style="margin: 22px 0 0; padding-left: 16px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="c.fundamento">Ley Ambiental de la Ciudad de México, artículos 7.º y 8.º</p>
+               </div>
+           </li>
+         <template x-for="(c, _k296089474) in v.casos" :key="_k296089474">
+@@ -1268,7 +1268,7 @@ a:hover { color: var(--guinda-oscuro); }
+                     </div>
+                     <div x-show="f.abierto" style="padding: 0 4px 22px 46px; display:none">
+                         <p style="margin: 0 0 12px; font-size: 18px; line-height: 1.6; max-width: 46em" x-html="f.respuesta">Depende del tipo de vialidad. En calles locales y colonias es tu alcaldía. En ejes viales, avenidas grandes y calzadas, la Secretaría autoriza y SOBSE ejecuta.</p>
+-                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículos 9 y 10</p>
++                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento">Ley Ambiental de la Ciudad de México, artículos 7.º y 8.º</p>
+                       </div>
+                   </li>
+                 
+@@ -1282,7 +1282,7 @@ a:hover { color: var(--guinda-oscuro); }
+                     </div>
+                     <div x-show="f.abierto" style="padding: 0 4px 22px 46px; display:none">
+                         <p style="margin: 0 0 12px; font-size: 18px; line-height: 1.6; max-width: 46em" x-html="f.respuesta">La autoridad debe resolver en un plazo no mayor a veinte días hábiles contados desde tu solicitud.</p>
+-                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículo 106</p>
++                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento">Ley Ambiental de la Ciudad de México, artículo 106</p>
+                       </div>
+                   </li>
+                 
+@@ -1373,7 +1373,7 @@ a:hover { color: var(--guinda-oscuro); }
+                     </div>
+                     <div x-show="f.abierto" style="padding: 0 4px 22px 46px; display:none">
+                         <p style="margin: 0 0 12px; font-size: 18px; line-height: 1.6; max-width: 46em" x-html="f.respuesta">Solo por excepción, cuando la restitución física es jurídica o técnicamente imposible. En ese caso se aporta al Fondo Ambiental Público.</p>
+-                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículo 109</p>
++                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento">Ley Ambiental de la Ciudad de México, artículo 109</p>
+                       </div>
+                   </li>
+                 
+@@ -1422,7 +1422,7 @@ a:hover { color: var(--guinda-oscuro); }
+                     </div>
+                     <div x-show="f.abierto" style="padding: 0 4px 22px 46px; display:none">
+                         <p style="margin: 0 0 12px; font-size: 18px; line-height: 1.6; max-width: 46em" x-html="f.respuesta">Sí. El predio es tuyo, pero el árbol es un bien de interés público. Podarlo, derribarlo o trasplantarlo requiere autorización previa.</p>
+-                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículo 118 fracción III</p>
++                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento">Ley Ambiental de la Ciudad de México, artículo 106</p>
+                       </div>
+                   </li>
+                 
+@@ -1450,7 +1450,7 @@ a:hover { color: var(--guinda-oscuro); }
+                     </div>
+                     <div x-show="f.abierto" style="padding: 0 4px 22px 46px; display:none">
+                         <p style="margin: 0 0 12px; font-size: 18px; line-height: 1.6; max-width: 46em" x-html="f.respuesta">No por tu cuenta. Cortar raíces es la causa más común de que un árbol termine cayendo, y se considera intervención no autorizada.</p>
+-                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículo 118 fracción III</p>
++                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento">Ley Ambiental de la Ciudad de México, artículos 106 y 109, último párrafo</p>
+                       </div>
+                   </li>
+                 
+@@ -1526,8 +1526,8 @@ a:hover { color: var(--guinda-oscuro); }
+                       </button>
+                     </div>
+                     <div x-show="f.abierto" style="padding: 0 4px 22px 46px; display:none">
+-                        <p style="margin: 0 0 12px; font-size: 18px; line-height: 1.6; max-width: 46em" x-html="f.respuesta">Hasta cien mil veces la unidad de medida vigente, además de la obligación de restituir con el número máximo de árboles.</p>
+-                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículos 112 y 304</p>
++                        <p style="margin: 0 0 12px; font-size: 18px; line-height: 1.6; max-width: 46em" x-html="f.respuesta">Depende de dónde estaba el árbol: hasta diez mil veces la unidad de medida en la vía pública, y hasta cien mil si estaba en suelo de conservación o en un área de valor ambiental. En los dos casos hay que restituir con el número máximo de árboles.</p>
++                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento">Ley Ambiental de la Ciudad de México, artículos 109, 304 fracción I y 305</p>
+                       </div>
+                   </li>
+                 
+@@ -1576,7 +1576,7 @@ a:hover { color: var(--guinda-oscuro); }
+                     </div>
+                     <div x-show="f.abierto" style="padding: 0 4px 22px 46px; display:none">
+                         <p style="margin: 0 0 12px; font-size: 18px; line-height: 1.6; max-width: 46em" x-html="f.respuesta">Un ejemplar notable, singular o monumental por su edad, tamaño, especie, o su valor paisajístico, histórico, cultural o social. Tiene protección más estricta.</p>
+-                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículo 118 bis</p>
++                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento"><span class="dato-pendiente">Fundamento por confirmar: la Ley Ambiental de la Ciudad de México ya no regula los árboles patrimoniales</span></p>
+                       </div>
+                   </li>
+                 
+@@ -1590,7 +1590,7 @@ a:hover { color: var(--guinda-oscuro); }
+                     </div>
+                     <div x-show="f.abierto" style="padding: 0 4px 22px 46px; display:none">
+                         <p style="margin: 0 0 12px; font-size: 18px; line-height: 1.6; max-width: 46em" x-html="f.respuesta">Solo si hay riesgo real y presente acreditado en dictamen, y siempre que no pueda mitigarse con poda, apuntalamiento o trasplante. No se derriba a cambio de restitución.</p>
+-                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículos 34 y 118 bis</p>
++                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento">Ley Ambiental de la Ciudad de México, artículo 106 fracción II · <span class="dato-pendiente">Fundamento por confirmar: la Ley Ambiental de la Ciudad de México ya no regula los árboles patrimoniales</span></p>
+                       </div>
+                   </li>
+                 
+@@ -1604,7 +1604,7 @@ a:hover { color: var(--guinda-oscuro); }
+                     </div>
+                     <div x-show="f.abierto" style="padding: 0 4px 22px 46px; display:none">
+                         <p style="margin: 0 0 12px; font-size: 18px; line-height: 1.6; max-width: 46em" x-html="f.respuesta">Reúne fotografías del ejemplar y su entorno, la ubicación precisa, el perímetro del tronco a 1.30 metros del suelo y lo que sepas de su historia. El sitio de árboles patrimoniales indica ante qué autoridad se presenta la solicitud. La convocatoria está cerrada por ahora.</p>
+-                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículo 118 bis</p>
++                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento"><span class="dato-pendiente">Fundamento por confirmar: la Ley Ambiental de la Ciudad de México ya no regula los árboles patrimoniales</span></p>
+                       </div>
+                   </li>
+                 
+@@ -1732,7 +1732,7 @@ a:hover { color: var(--guinda-oscuro); }
+     <div>
+       <h2 style="margin: 0 0 14px; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--dorado-60)">Marco normativo</h2>
+       <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px">
+-        <li><a class="ih10" style="font-size: 17px; line-height: 1.5; color: var(--blanco); text-decoration: underline; text-underline-offset: 3px" href="https://data.consejeria.cdmx.gob.mx/index.php/leyes/leyes#ley-ambiental-de-la-ciudad-de-m%C3%A9xico" target="_blank" rel="noopener">Ley Ambiental de Protección a la Tierra en el Distrito Federal</a></li>
++        <li><a class="ih10" style="font-size: 17px; line-height: 1.5; color: var(--blanco); text-decoration: underline; text-underline-offset: 3px" href="https://data.consejeria.cdmx.gob.mx/index.php/leyes/leyes#ley-ambiental-de-la-ciudad-de-m%C3%A9xico" target="_blank" rel="noopener">Ley Ambiental de la Ciudad de México</a></li>
+         <li><a class="ih10" style="font-size: 17px; line-height: 1.5; color: var(--blanco); text-decoration: underline; text-underline-offset: 3px" href="http://data.sedema.cdmx.gob.mx/sedema/images/archivos/sedema/leyes-reglamentos/normas/locales/NADF-001-RNAT-2016.pdf" target="_blank" rel="noopener">NADF-001-RNAT-2015 · poda, derribo y trasplante</a></li>
+         <li><a class="ih10" style="font-size: 17px; line-height: 1.5; color: var(--blanco); text-decoration: underline; text-underline-offset: 3px" href="http://data.sedema.cdmx.gob.mx/sitios/conadf/documentos/NADF-006-RNAT-2016.pdf" target="_blank" rel="noopener">NADF-006-RNAT-2012 · plantación y mantenimiento</a></li>
+       </ul>
+diff --git a/docs/index.html b/docs/index.html
+index c8c122f..25cc5f9 100644
+--- a/docs/index.html
++++ b/docs/index.html
+@@ -347,9 +347,9 @@ a:hover { color: var(--guinda-oscuro); }
+           <p style="margin: 0 0 20px; font-size: 18px; line-height: 1.6">El arbolado urbano es un bien de interés público, incluso dentro de un predio privado. Podar, derribar o trasplantar requiere autorización previa.</p>
+           <blockquote style="margin: 0; background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--guinda-100); padding: 22px 26px">
+             <span style="display: block; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--gris-100); margin-bottom: 12px">Fundamento</span>
+-            <p style="margin: 0 0 14px; font-size: 18px; line-height: 1.6; font-style: italic">“Queda prohibido derribar, podar o trasplantar árboles sin autorización previa de la autoridad competente.”</p>
+-            <cite style="font-style: normal; display: block; font-size: 17px; line-height: 1.5; font-weight: 700; color: var(--guinda-100)">Artículo 118, fracción III</cite>
+-            <span style="display: block; margin-top: 4px; font-size: 17px; line-height: 1.5; color: var(--gris-100)">Ley Ambiental de Protección a la Tierra en el Distrito Federal</span>
++            <p style="margin: 0 0 14px; font-size: 18px; line-height: 1.6; font-style: italic">“Para realizar la poda, derribo o trasplante de árboles […] se requiere contar con autorización previa de la Alcaldía respectiva.”</p>
++            <cite style="font-style: normal; display: block; font-size: 17px; line-height: 1.5; font-weight: 700; color: var(--guinda-100)">Artículo 106, párrafo tercero</cite>
++            <span style="display: block; margin-top: 4px; font-size: 17px; line-height: 1.5; color: var(--gris-100)">Ley Ambiental de la Ciudad de México</span>
+           </blockquote>
+         </div>
+         <div>
+@@ -433,7 +433,7 @@ a:hover { color: var(--guinda-oscuro); }
+     <div>
+       <h2 style="margin: 0 0 14px; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--dorado-60)">Marco normativo</h2>
+       <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px">
+-        <li><a class="ih10" style="font-size: 17px; line-height: 1.5; color: var(--blanco); text-decoration: underline; text-underline-offset: 3px" href="https://data.consejeria.cdmx.gob.mx/index.php/leyes/leyes#ley-ambiental-de-la-ciudad-de-m%C3%A9xico" target="_blank" rel="noopener">Ley Ambiental de Protección a la Tierra en el Distrito Federal</a></li>
++        <li><a class="ih10" style="font-size: 17px; line-height: 1.5; color: var(--blanco); text-decoration: underline; text-underline-offset: 3px" href="https://data.consejeria.cdmx.gob.mx/index.php/leyes/leyes#ley-ambiental-de-la-ciudad-de-m%C3%A9xico" target="_blank" rel="noopener">Ley Ambiental de la Ciudad de México</a></li>
+         <li><a class="ih10" style="font-size: 17px; line-height: 1.5; color: var(--blanco); text-decoration: underline; text-underline-offset: 3px" href="http://data.sedema.cdmx.gob.mx/sedema/images/archivos/sedema/leyes-reglamentos/normas/locales/NADF-001-RNAT-2016.pdf" target="_blank" rel="noopener">NADF-001-RNAT-2015 · poda, derribo y trasplante</a></li>
+         <li><a class="ih10" style="font-size: 17px; line-height: 1.5; color: var(--blanco); text-decoration: underline; text-underline-offset: 3px" href="http://data.sedema.cdmx.gob.mx/sitios/conadf/documentos/NADF-006-RNAT-2016.pdf" target="_blank" rel="noopener">NADF-006-RNAT-2012 · plantación y mantenimiento</a></li>
+       </ul>
+diff --git a/docs/politica.html b/docs/politica.html
+index d1d004c..749d1f1 100644
+--- a/docs/politica.html
++++ b/docs/politica.html
+@@ -549,8 +549,8 @@ a:hover { color: var(--guinda-oscuro); }
+ 
+               <div style="padding: 22px; display: flex; flex-direction: column; flex: 1">
+                 <span style="font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gris-100); font-weight: 700" x-html="r.categoria">Documentos</span>
+-                <h3 style="margin: 8px 0; font-size: 20px; font-weight: 700; color: var(--guinda-100); line-height: 1.3" x-html="r.titulo">Ley Ambiental de Protección a la Tierra en el Distrito Federal</h3>
+-                <p style="margin: 0 0 18px; font-size: 17px; line-height: 1.55" x-html="r.texto">Texto vigente. Los artículos 104 a 118 bis rigen todo lo relativo al arbolado urbano.</p>
++                <h3 style="margin: 8px 0; font-size: 20px; font-weight: 700; color: var(--guinda-100); line-height: 1.3" x-html="r.titulo">Ley Ambiental de la Ciudad de México</h3>
++                <p style="margin: 0 0 18px; font-size: 17px; line-height: 1.55" x-html="r.texto">Texto vigente desde el 19 de julio de 2024. Abrogó la Ley Ambiental de Protección a la Tierra. Los artículos 104 a 115 rigen lo relativo al arbolado urbano y a las áreas verdes.</p>
+                 <div style="margin-top: auto; border-top: 1px solid var(--gris-20); padding-top: 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap">
+                   <span style="font-size: 15px; color: var(--gris-100)" x-html="r.peso">Consejería Jurídica</span>
+                   <a x-show="r.disponible" class="ih4" style="background: var(--guinda-100); color: var(--blanco); border-radius: 4px; padding: 12px 20px; font-size: 16px; font-weight: 700; text-decoration: none; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 8px; transition: background 150ms ease" href="https://data.consejeria.cdmx.gob.mx/index.php/leyes/leyes#ley-ambiental-de-la-ciudad-de-m%C3%A9xico" target="_blank" rel="noopener" :href="dcRuta(r.url)">Descargar <span aria-hidden="true">↓</span></a>
+@@ -1807,7 +1807,7 @@ a:hover { color: var(--guinda-oscuro); }
+     <div>
+       <h2 style="margin: 0 0 14px; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--dorado-60)">Marco normativo</h2>
+       <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px">
+-        <li><a class="ih10" style="font-size: 17px; line-height: 1.5; color: var(--blanco); text-decoration: underline; text-underline-offset: 3px" href="https://data.consejeria.cdmx.gob.mx/index.php/leyes/leyes#ley-ambiental-de-la-ciudad-de-m%C3%A9xico" target="_blank" rel="noopener">Ley Ambiental de Protección a la Tierra en el Distrito Federal</a></li>
++        <li><a class="ih10" style="font-size: 17px; line-height: 1.5; color: var(--blanco); text-decoration: underline; text-underline-offset: 3px" href="https://data.consejeria.cdmx.gob.mx/index.php/leyes/leyes#ley-ambiental-de-la-ciudad-de-m%C3%A9xico" target="_blank" rel="noopener">Ley Ambiental de la Ciudad de México</a></li>
+         <li><a class="ih10" style="font-size: 17px; line-height: 1.5; color: var(--blanco); text-decoration: underline; text-underline-offset: 3px" href="http://data.sedema.cdmx.gob.mx/sedema/images/archivos/sedema/leyes-reglamentos/normas/locales/NADF-001-RNAT-2016.pdf" target="_blank" rel="noopener">NADF-001-RNAT-2015 · poda, derribo y trasplante</a></li>
+         <li><a class="ih10" style="font-size: 17px; line-height: 1.5; color: var(--blanco); text-decoration: underline; text-underline-offset: 3px" href="http://data.sedema.cdmx.gob.mx/sitios/conadf/documentos/NADF-006-RNAT-2016.pdf" target="_blank" rel="noopener">NADF-006-RNAT-2012 · plantación y mantenimiento</a></li>
+       </ul>
+diff --git a/docs/programas.html b/docs/programas.html
+index d92c098..5c3c981 100644
+--- a/docs/programas.html
++++ b/docs/programas.html
+@@ -339,7 +339,7 @@ a:hover { color: var(--guinda-oscuro); }
+     <div>
+       <h2 style="margin: 0 0 14px; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--dorado-60)">Marco normativo</h2>
+       <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px">
+-        <li><a class="ih10" style="font-size: 17px; line-height: 1.5; color: var(--blanco); text-decoration: underline; text-underline-offset: 3px" href="https://data.consejeria.cdmx.gob.mx/index.php/leyes/leyes#ley-ambiental-de-la-ciudad-de-m%C3%A9xico" target="_blank" rel="noopener">Ley Ambiental de Protección a la Tierra en el Distrito Federal</a></li>
++        <li><a class="ih10" style="font-size: 17px; line-height: 1.5; color: var(--blanco); text-decoration: underline; text-underline-offset: 3px" href="https://data.consejeria.cdmx.gob.mx/index.php/leyes/leyes#ley-ambiental-de-la-ciudad-de-m%C3%A9xico" target="_blank" rel="noopener">Ley Ambiental de la Ciudad de México</a></li>
+         <li><a class="ih10" style="font-size: 17px; line-height: 1.5; color: var(--blanco); text-decoration: underline; text-underline-offset: 3px" href="http://data.sedema.cdmx.gob.mx/sedema/images/archivos/sedema/leyes-reglamentos/normas/locales/NADF-001-RNAT-2016.pdf" target="_blank" rel="noopener">NADF-001-RNAT-2015 · poda, derribo y trasplante</a></li>
+         <li><a class="ih10" style="font-size: 17px; line-height: 1.5; color: var(--blanco); text-decoration: underline; text-underline-offset: 3px" href="http://data.sedema.cdmx.gob.mx/sitios/conadf/documentos/NADF-006-RNAT-2016.pdf" target="_blank" rel="noopener">NADF-006-RNAT-2012 · plantación y mantenimiento</a></li>
+       </ul>
+diff --git a/docs/programas/inventario.html b/docs/programas/inventario.html
+index e351fc8..cd45155 100644
+--- a/docs/programas/inventario.html
++++ b/docs/programas/inventario.html
+@@ -405,7 +405,7 @@ a:hover { color: var(--guinda-oscuro); }
+     <div>
+       <h2 style="margin: 0 0 14px; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--dorado-60)">Marco normativo</h2>
+       <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px">
+-        <li><a class="ih10" style="font-size: 17px; line-height: 1.5; color: var(--blanco); text-decoration: underline; text-underline-offset: 3px" href="https://data.consejeria.cdmx.gob.mx/index.php/leyes/leyes#ley-ambiental-de-la-ciudad-de-m%C3%A9xico" target="_blank" rel="noopener">Ley Ambiental de Protección a la Tierra en el Distrito Federal</a></li>
++        <li><a class="ih10" style="font-size: 17px; line-height: 1.5; color: var(--blanco); text-decoration: underline; text-underline-offset: 3px" href="https://data.consejeria.cdmx.gob.mx/index.php/leyes/leyes#ley-ambiental-de-la-ciudad-de-m%C3%A9xico" target="_blank" rel="noopener">Ley Ambiental de la Ciudad de México</a></li>
+         <li><a class="ih10" style="font-size: 17px; line-height: 1.5; color: var(--blanco); text-decoration: underline; text-underline-offset: 3px" href="http://data.sedema.cdmx.gob.mx/sedema/images/archivos/sedema/leyes-reglamentos/normas/locales/NADF-001-RNAT-2016.pdf" target="_blank" rel="noopener">NADF-001-RNAT-2015 · poda, derribo y trasplante</a></li>
+         <li><a class="ih10" style="font-size: 17px; line-height: 1.5; color: var(--blanco); text-decoration: underline; text-underline-offset: 3px" href="http://data.sedema.cdmx.gob.mx/sitios/conadf/documentos/NADF-006-RNAT-2016.pdf" target="_blank" rel="noopener">NADF-006-RNAT-2012 · plantación y mantenimiento</a></li>
+       </ul>
+diff --git a/docs/programas/palmeras.html b/docs/programas/palmeras.html
+index d448f5b..dff2b34 100644
+--- a/docs/programas/palmeras.html
++++ b/docs/programas/palmeras.html
+@@ -300,7 +300,7 @@ a:hover { color: var(--guinda-oscuro); }
+             <span style="display: block; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 6px">Alcaldía o SEDEMA</span>
+             <span style="display: block; font-size: 21px; font-weight: 700; color: var(--guinda-100); margin-bottom: 8px; line-height: 1.3">Autorización con medida de sustitución</span>
+             <span style="display: block; font-size: 18px; line-height: 1.6">La resolución indica el retiro y, en el mismo acto, cuántos árboles se plantan, de qué talla y en qué sitio. La sustitución no es opcional.</span>
+-            <span style="display: block; margin-top: 10px; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículos 106 y 118</span>
++            <span style="display: block; margin-top: 10px; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)">Ley Ambiental de la Ciudad de México, artículos 106 y 109</span>
+           </span>
+         </li>
+         <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--guinda-100); padding: 24px 28px; display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 20px; align-items: start">
+@@ -417,7 +417,7 @@ a:hover { color: var(--guinda-oscuro); }
+     <div>
+       <h2 style="margin: 0 0 14px; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--dorado-60)">Marco normativo</h2>
+       <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px">
+-        <li><a class="ih10" style="font-size: 17px; line-height: 1.5; color: var(--blanco); text-decoration: underline; text-underline-offset: 3px" href="https://data.consejeria.cdmx.gob.mx/index.php/leyes/leyes#ley-ambiental-de-la-ciudad-de-m%C3%A9xico" target="_blank" rel="noopener">Ley Ambiental de Protección a la Tierra en el Distrito Federal</a></li>
++        <li><a class="ih10" style="font-size: 17px; line-height: 1.5; color: var(--blanco); text-decoration: underline; text-underline-offset: 3px" href="https://data.consejeria.cdmx.gob.mx/index.php/leyes/leyes#ley-ambiental-de-la-ciudad-de-m%C3%A9xico" target="_blank" rel="noopener">Ley Ambiental de la Ciudad de México</a></li>
+         <li><a class="ih10" style="font-size: 17px; line-height: 1.5; color: var(--blanco); text-decoration: underline; text-underline-offset: 3px" href="http://data.sedema.cdmx.gob.mx/sedema/images/archivos/sedema/leyes-reglamentos/normas/locales/NADF-001-RNAT-2016.pdf" target="_blank" rel="noopener">NADF-001-RNAT-2015 · poda, derribo y trasplante</a></li>
+         <li><a class="ih10" style="font-size: 17px; line-height: 1.5; color: var(--blanco); text-decoration: underline; text-underline-offset: 3px" href="http://data.sedema.cdmx.gob.mx/sitios/conadf/documentos/NADF-006-RNAT-2016.pdf" target="_blank" rel="noopener">NADF-006-RNAT-2012 · plantación y mantenimiento</a></li>
+       </ul>
+diff --git a/docs/programas/reforestacion.html b/docs/programas/reforestacion.html
+index 5019b91..2889f79 100644
+--- a/docs/programas/reforestacion.html
++++ b/docs/programas/reforestacion.html
+@@ -561,7 +561,7 @@ a:hover { color: var(--guinda-oscuro); }
+     <div>
+       <h2 style="margin: 0 0 14px; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--dorado-60)">Marco normativo</h2>
+       <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px">
+-        <li><a class="ih10" style="font-size: 17px; line-height: 1.5; color: var(--blanco); text-decoration: underline; text-underline-offset: 3px" href="https://data.consejeria.cdmx.gob.mx/index.php/leyes/leyes#ley-ambiental-de-la-ciudad-de-m%C3%A9xico" target="_blank" rel="noopener">Ley Ambiental de Protección a la Tierra en el Distrito Federal</a></li>
++        <li><a class="ih10" style="font-size: 17px; line-height: 1.5; color: var(--blanco); text-decoration: underline; text-underline-offset: 3px" href="https://data.consejeria.cdmx.gob.mx/index.php/leyes/leyes#ley-ambiental-de-la-ciudad-de-m%C3%A9xico" target="_blank" rel="noopener">Ley Ambiental de la Ciudad de México</a></li>
+         <li><a class="ih10" style="font-size: 17px; line-height: 1.5; color: var(--blanco); text-decoration: underline; text-underline-offset: 3px" href="http://data.sedema.cdmx.gob.mx/sedema/images/archivos/sedema/leyes-reglamentos/normas/locales/NADF-001-RNAT-2016.pdf" target="_blank" rel="noopener">NADF-001-RNAT-2015 · poda, derribo y trasplante</a></li>
+         <li><a class="ih10" style="font-size: 17px; line-height: 1.5; color: var(--blanco); text-decoration: underline; text-underline-offset: 3px" href="http://data.sedema.cdmx.gob.mx/sitios/conadf/documentos/NADF-006-RNAT-2016.pdf" target="_blank" rel="noopener">NADF-006-RNAT-2012 · plantación y mantenimiento</a></li>
+       </ul>
+diff --git a/docs/responsabilidades.html b/docs/responsabilidades.html
+index 0a7a76c..7cfb2e9 100644
+--- a/docs/responsabilidades.html
++++ b/docs/responsabilidades.html
+@@ -251,7 +251,7 @@ a:hover { color: var(--guinda-oscuro); }
+ 
+       <div style="background: var(--gris-10); border-left: 4px solid var(--guinda-100); padding: 24px 28px">
+         <p style="margin: 0 0 12px; font-size: 19px; line-height: 1.6"><strong style="color: var(--guinda-100)">La regla en una oración.</strong> El gobierno central atiende las vialidades primarias, las alcaldías atienden las vialidades secundarias y los predios de su demarcación, y las áreas naturales protegidas y de valor ambiental son competencia exclusiva de SEDEMA.</p>
+-        <p style="margin: 0; font-size: 17px; line-height: 1.55; color: var(--gris-100)">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículos 9 y 10 · Ley Orgánica de Alcaldías, artículo 32 fracción V</p>
++        <p style="margin: 0; font-size: 17px; line-height: 1.55; color: var(--gris-100)">Ley Ambiental de la Ciudad de México, artículos 7.º y 8.º · Ley Orgánica de Alcaldías, artículo 32 fracción V</p>
+       </div>
+ 
+       <div style="margin-top: 24px; background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--estado-info); padding: 22px 26px; max-width: 46em" role="status">
+@@ -329,7 +329,7 @@ a:hover { color: var(--guinda-oscuro); }
+               </ul>
+               <div style="margin-top: auto; border-top: 1px solid var(--gris-20); padding-top: 16px">
+                 <span style="display: block; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 8px">Fundamento</span>
+-                <p style="margin: 0; font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="a.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículos 7.º, 18, 34, 108, 111, 121 y 136 · Reglamento de Impacto Ambiental y Riesgo, artículos 137 a 141 · NADF-001-RNAT-2015</p>
++                <p style="margin: 0; font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="a.fundamento">Ley Ambiental de la Ciudad de México, artículos 7.º, 18, 34, 108, 111, 121 y 136 · Reglamento de Impacto Ambiental y Riesgo, artículos 137 a 141 · NADF-001-RNAT-2015</p>
+                 <p x-show="a.tieneAviso" style="margin: 14px 0 0; background: var(--marfil); border-left: 3px solid var(--dorado-100); padding: 12px 16px; font-size: 17px; line-height: 1.55; color: var(--gris-100); display:none" x-html="a.aviso"></p>
+               </div>
+             </article>
+@@ -369,7 +369,7 @@ a:hover { color: var(--guinda-oscuro); }
+               </ul>
+               <div style="margin-top: auto; border-top: 1px solid var(--gris-20); padding-top: 16px">
+                 <span style="display: block; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 8px">Fundamento</span>
+-                <p style="margin: 0; font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="a.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículo 106 · Ley Orgánica de Alcaldías, artículo 32 fracción V</p>
++                <p style="margin: 0; font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="a.fundamento">Ley Ambiental de la Ciudad de México, artículo 106 · Ley Orgánica de Alcaldías, artículo 32 fracción V</p>
+                 <p x-show="a.tieneAviso" style="margin: 14px 0 0; background: var(--marfil); border-left: 3px solid var(--dorado-100); padding: 12px 16px; font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="a.aviso">Excepción: si el árbol está en un bosque urbano, una barranca o un área natural protegida, la competencia es de SEDEMA.</p>
+               </div>
+             </article>
+@@ -474,7 +474,7 @@ a:hover { color: var(--guinda-oscuro); }
+               </ul>
+               <div style="margin-top: auto; border-top: 1px solid var(--gris-20); padding-top: 16px">
+                 <span style="display: block; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 8px">Fundamento</span>
+-                <p style="margin: 0; font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="a.fundamento">Código Penal para el Distrito Federal, artículos 343 a 350 · Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículo 112</p>
++                <p style="margin: 0; font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="a.fundamento">Código Penal para el Distrito Federal, artículos 343 a 350 · Ley Ambiental de la Ciudad de México, artículo 112</p>
+                 <p x-show="a.tieneAviso" style="margin: 14px 0 0; background: var(--marfil); border-left: 3px solid var(--dorado-100); padding: 12px 16px; font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="a.aviso">Si una persona servidora pública participa en el ilícito, la sanción se agrava conforme al artículo 350 del Código Penal.</p>
+               </div>
+             </article>
+@@ -755,7 +755,7 @@ a:hover { color: var(--guinda-oscuro); }
+     <div>
+       <h2 style="margin: 0 0 14px; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--dorado-60)">Marco normativo</h2>
+       <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px">
+-        <li><a class="ih10" style="font-size: 17px; line-height: 1.5; color: var(--blanco); text-decoration: underline; text-underline-offset: 3px" href="https://data.consejeria.cdmx.gob.mx/index.php/leyes/leyes#ley-ambiental-de-la-ciudad-de-m%C3%A9xico" target="_blank" rel="noopener">Ley Ambiental de Protección a la Tierra en el Distrito Federal</a></li>
++        <li><a class="ih10" style="font-size: 17px; line-height: 1.5; color: var(--blanco); text-decoration: underline; text-underline-offset: 3px" href="https://data.consejeria.cdmx.gob.mx/index.php/leyes/leyes#ley-ambiental-de-la-ciudad-de-m%C3%A9xico" target="_blank" rel="noopener">Ley Ambiental de la Ciudad de México</a></li>
+         <li><a class="ih10" style="font-size: 17px; line-height: 1.5; color: var(--blanco); text-decoration: underline; text-underline-offset: 3px" href="http://data.sedema.cdmx.gob.mx/sedema/images/archivos/sedema/leyes-reglamentos/normas/locales/NADF-001-RNAT-2016.pdf" target="_blank" rel="noopener">NADF-001-RNAT-2015 · poda, derribo y trasplante</a></li>
+         <li><a class="ih10" style="font-size: 17px; line-height: 1.5; color: var(--blanco); text-decoration: underline; text-underline-offset: 3px" href="http://data.sedema.cdmx.gob.mx/sitios/conadf/documentos/NADF-006-RNAT-2016.pdf" target="_blank" rel="noopener">NADF-006-RNAT-2012 · plantación y mantenimiento</a></li>
+       </ul>
+diff --git a/docs/responsabilidades/acreditate.html b/docs/responsabilidades/acreditate.html
+index a84b672..c9b1772 100644
+--- a/docs/responsabilidades/acreditate.html
++++ b/docs/responsabilidades/acreditate.html
+@@ -438,7 +438,7 @@ a:hover { color: var(--guinda-oscuro); }
+           <span style="display: block; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--estado-error); margin-bottom: 8px">Alerta grave</span>
+           <strong style="display: block; font-size: 20px; margin-bottom: 10px; color: var(--negro)">Trabajar sin acreditación vigente es una infracción</strong>
+           <p style="margin: 0 0 12px; font-size: 18px; line-height: 1.6">Los trabajos son irregulares, procede sanción y quien contrató también responde. Si tu acreditación venció, no ejerzas hasta renovarla.</p>
+-          <p style="margin: 0; font-size: 17px; line-height: 1.55; color: var(--gris-100)">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículo 112 · NADF-001-RNAT-2015, numeral 5.5</p>
++          <p style="margin: 0; font-size: 17px; line-height: 1.55; color: var(--gris-100)">Ley Ambiental de la Ciudad de México, artículo 112 · NADF-001-RNAT-2015, numeral 5.5</p>
+         </div>
+ 
+         <div style="display: flex; gap: 16px; flex-wrap: wrap">
+@@ -516,7 +516,7 @@ a:hover { color: var(--guinda-oscuro); }
+     <div>
+       <h2 style="margin: 0 0 14px; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--dorado-60)">Marco normativo</h2>
+       <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px">
+-        <li><a class="ih10" style="font-size: 17px; line-height: 1.5; color: var(--blanco); text-decoration: underline; text-underline-offset: 3px" href="https://data.consejeria.cdmx.gob.mx/index.php/leyes/leyes#ley-ambiental-de-la-ciudad-de-m%C3%A9xico" target="_blank" rel="noopener">Ley Ambiental de Protección a la Tierra en el Distrito Federal</a></li>
++        <li><a class="ih10" style="font-size: 17px; line-height: 1.5; color: var(--blanco); text-decoration: underline; text-underline-offset: 3px" href="https://data.consejeria.cdmx.gob.mx/index.php/leyes/leyes#ley-ambiental-de-la-ciudad-de-m%C3%A9xico" target="_blank" rel="noopener">Ley Ambiental de la Ciudad de México</a></li>
+         <li><a class="ih10" style="font-size: 17px; line-height: 1.5; color: var(--blanco); text-decoration: underline; text-underline-offset: 3px" href="http://data.sedema.cdmx.gob.mx/sedema/images/archivos/sedema/leyes-reglamentos/normas/locales/NADF-001-RNAT-2016.pdf" target="_blank" rel="noopener">NADF-001-RNAT-2015 · poda, derribo y trasplante</a></li>
+         <li><a class="ih10" style="font-size: 17px; line-height: 1.5; color: var(--blanco); text-decoration: underline; text-underline-offset: 3px" href="http://data.sedema.cdmx.gob.mx/sitios/conadf/documentos/NADF-006-RNAT-2016.pdf" target="_blank" rel="noopener">NADF-006-RNAT-2012 · plantación y mantenimiento</a></li>
+       </ul>
+diff --git a/docs/territorio.html b/docs/territorio.html
+index ef4bffa..be2ccbe 100644
+--- a/docs/territorio.html
++++ b/docs/territorio.html
+@@ -445,7 +445,7 @@
+     <div>
+       <h2 style="margin: 0 0 14px; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--dorado-60)">Marco normativo</h2>
+       <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px">
+-        <li><a class="ih10" style="font-size: 17px; line-height: 1.5; color: var(--blanco); text-decoration: underline; text-underline-offset: 3px" href="https://data.consejeria.cdmx.gob.mx/index.php/leyes/leyes#ley-ambiental-de-la-ciudad-de-m%C3%A9xico" target="_blank" rel="noopener">Ley Ambiental de Protección a la Tierra en el Distrito Federal</a></li>
++        <li><a class="ih10" style="font-size: 17px; line-height: 1.5; color: var(--blanco); text-decoration: underline; text-underline-offset: 3px" href="https://data.consejeria.cdmx.gob.mx/index.php/leyes/leyes#ley-ambiental-de-la-ciudad-de-m%C3%A9xico" target="_blank" rel="noopener">Ley Ambiental de la Ciudad de México</a></li>
+         <li><a class="ih10" style="font-size: 17px; line-height: 1.5; color: var(--blanco); text-decoration: underline; text-underline-offset: 3px" href="http://data.sedema.cdmx.gob.mx/sedema/images/archivos/sedema/leyes-reglamentos/normas/locales/NADF-001-RNAT-2016.pdf" target="_blank" rel="noopener">NADF-001-RNAT-2015 · poda, derribo y trasplante</a></li>
+         <li><a class="ih10" style="font-size: 17px; line-height: 1.5; color: var(--blanco); text-decoration: underline; text-underline-offset: 3px" href="http://data.sedema.cdmx.gob.mx/sitios/conadf/documentos/NADF-006-RNAT-2016.pdf" target="_blank" rel="noopener">NADF-006-RNAT-2012 · plantación y mantenimiento</a></li>
+       </ul>
+diff --git a/documentacion/pendientes.md b/documentacion/pendientes.md
+index eceaa23..9acbedc 100644
+--- a/documentacion/pendientes.md
++++ b/documentacion/pendientes.md
+@@ -49,6 +49,18 @@ visibles.
+ 
+ - [x] URL definitiva del sitio de árboles patrimoniales · 23 ago 2026
+       https://sedemaoficina.github.io/arboles-patrimoniales
++- [ ] **Validar el fundamento de los árboles patrimoniales.** La Ley Ambiental de
++      la Ciudad de México, vigente desde el 19 de julio de 2024, ya no contiene
++      ninguna disposición sobre árboles patrimoniales: el antiguo artículo 118 bis
++      no tiene sustituto. Cuatro fundamentos del sitio quedaron marcados en
++      amarillo. Confirmar el artículo 55 de la Ley de Patrimonio Cultural, Natural
++      y Biocultural, que no obra en los archivos del proyecto, y con eso cerrar
++      también la contradicción con el sitio de patrimoniales.
++- [ ] **Validación jurídica del cambio de fundamentos.** El 24 de agosto se
++      sustituyeron cuarenta y dos citas de la ley abrogada. Las mecánicas están
++      verificadas contra el texto vigente; conviene que el área jurídica revise
++      las que cambiaron de artículo: 9 y 10 por 7.º y 8.º, y el antiguo 118
++      fracción III por los artículos 106, 109 y 112.
+ - [ ] **Alinear competencias con el sitio de patrimoniales.** Ese sitio indica que
+       la solicitud se presenta ante la Secretaría de Cultura, con fundamento en el
+       artículo 55 de la Ley de Patrimonio Cultural, Natural y Biocultural, y no
+diff --git a/interno/PENDIENTES.html b/interno/PENDIENTES.html
+index 81a9fa2..caad406 100644
+--- a/interno/PENDIENTES.html
++++ b/interno/PENDIENTES.html
+@@ -388,7 +388,7 @@ const MAPAS = [
+ 
+ const RECURSOS = [
+   { titulo: "NADF-001-RNAT-2015", tipo: "Norma", entrega: "PDF de la norma publicada en la Gaceta Oficial, con su fecha" },
+-  { titulo: "Ley Ambiental de Protección a la Tierra", tipo: "Ley", entrega: "PDF de la última reforma vigente, o enlace al portal oficial" },
++  { titulo: "Ley Ambiental de la Ciudad de México", tipo: "Ley", entrega: "PDF de la última reforma vigente (24 de diciembre de 2025), o enlace al portal oficial" },
+   { titulo: "Formato de solicitud de poda o derribo", tipo: "Formato", entrega: "PDF llenable, con los campos y el sello del área" },
+   { titulo: "Guía de poda correcta", tipo: "Guía", entrega: "PDF diseñado, más versión en imagen para redes" },
+   { titulo: "Cómo se lee un dictamen técnico", tipo: "Guía", entrega: "PDF con un dictamen de ejemplo anotado" },
+diff --git a/interno/biblioteca.html b/interno/biblioteca.html
+index 3eeb544..0fc3336 100644
+--- a/interno/biblioteca.html
++++ b/interno/biblioteca.html
+@@ -272,7 +272,7 @@
+             <span style="display: block; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--gris-100); margin-bottom: 12px">Fundamento</span>
+             <p style="margin: 0 0 14px; font-size: 19px; line-height: 1.6; font-style: italic; color: var(--gris-100)">“Queda prohibido derribar, podar o trasplantar árboles sin autorización previa de la autoridad competente.”</p>
+             <cite style="font-style: normal; display: block; font-size: 17px; line-height: 1.5; font-weight: 700; color: var(--guinda-100)">Artículo 118, fracción III</cite>
+-            <span style="display: block; margin-top: 4px; font-size: 16px; line-height: 1.5; color: var(--gris-100)">Ley Ambiental de Protección a la Tierra en el Distrito Federal</span>
++            <span style="display: block; margin-top: 4px; font-size: 16px; line-height: 1.5; color: var(--gris-100)">Ley Ambiental de la Ciudad de México</span>
+           </blockquote>
+         </div>
+ 
+-- 
+2.43.0
+
