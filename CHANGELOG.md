@@ -6,6 +6,36 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.0.0/).
 
 ---
 
+## 23 de agosto de 2026 · Árboles patrimoniales y sistema de formas
+
+Se corrigió el destino del sitio de árboles patrimoniales, que apuntaba a un
+subdominio que no existe, y se ajustó el contenido que anunciaba una convocatoria
+cerrada.
+
+- Las doce referencias a `guardianesdeltiempo.sedema.cdmx.gob.mx` pasaron a
+  `https://sedemaoficina.github.io/arboles-patrimoniales`, y se retiraron los
+  marcadores de URL pendiente.
+- El aviso de portada anunciaba una convocatoria abierta para proponer ejemplares.
+  El registro publica que está cerrada, así que el aviso ahora invita a consultar
+  el registro.
+- El árbol de decisiones y la pregunta frecuente sobre cómo proponer un ejemplar
+  remitían a atención ciudadana de la Secretaría del Medio Ambiente. El registro
+  señala que la solicitud se presenta ante la Secretaría de Cultura. El texto se
+  corrigió para remitir al sitio de patrimoniales en lugar de afirmar una
+  autoridad sin verificar. Queda pendiente alinear ambos sitios.
+
+Se añadió además un sistema de formas, porque la primera versión de la dirección
+visual había dejado todo contenedor con la misma silueta rectangular:
+
+- **Sello.** Los tokens numéricos vuelven a ser circulares. La regla que
+  neutralizaba esquinas se había llevado también los círculos deliberados.
+- **Hoja.** Dos esquinas opuestas abiertas, reservado a la lámina y al botón de
+  acción principal. Es la marca de la casa.
+- **Etiqueta de herbario.** Esquina cortada en las viñetas de dato, como el cartón
+  que cuelga del ejemplar.
+- Se retiró la caja completa de los bloques que ya llevan filete lateral, y se
+  diferenció el grosor de los filetes según su jerarquía.
+
 ## 23 de agosto de 2026 · Dirección visual de lámina botánica
 
 El sitio cambió de lenguaje. Deja el blanco con tarjetas flotantes y adopta

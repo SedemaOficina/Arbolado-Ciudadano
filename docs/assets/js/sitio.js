@@ -125,7 +125,7 @@ const INDICE = [
   { seccion: "Responsabilidades", titulo: "Quiero acreditarme", detalle: "Requisitos y trámite de podador o dictaminador", href: "responsabilidades/acreditate.html", claves: "acreditarme acreditacion curso requisitos podador dictaminador trabajar" },
   { seccion: "Emergencias", titulo: "Árbol caído o a punto de caer", detalle: "Los tres niveles y a quién llamar", href: "emergencias.html", claves: "emergencia caido cayo riesgo urgente 911 bomberos cable inclinado tormenta" },
   { seccion: "Emergencias", titulo: "Denunciar una poda irregular", detalle: "La denuncia ante PAOT puede ser anónima", href: "emergencias.html", claves: "denuncia denunciar irregular sin permiso paot anonima testigo" },
-  { seccion: "Programas", titulo: "Árboles patrimoniales", detalle: "Criterios, régimen y cómo proponer un ejemplar", href: "https://guardianesdeltiempo.sedema.cdmx.gob.mx", claves: "patrimonial patrimoniales ahuehuete antiguo historico proponer guardianes" },
+  { seccion: "Programas", titulo: "Árboles patrimoniales", detalle: "Registro público, criterios y régimen de protección", href: "https://sedemaoficina.github.io/arboles-patrimoniales", claves: "patrimonial patrimoniales ahuehuete antiguo historico proponer guardianes" },
   { seccion: "Programas", titulo: "Reforestación urbana", detalle: "Priorización con enfoque de justicia ambiental y avance", href: "programas/reforestacion.html", claves: "reforestacion plantar plantacion jornada sombra justicia ambiental avance adoptar" },
   { seccion: "Programas", titulo: "Retiro y sustitución de palmeras", detalle: "Por qué se retiran y qué se planta después", href: "programas/palmeras.html", claves: "palmera palmeras retiro sustitucion plaga picudo" },
   { seccion: "Programas", titulo: "Inventario del arbolado", detalle: "Qué datos se levantan y para qué sirven", href: "programas/inventario.html", claves: "inventario censo datos abiertos ejemplares registro" },
@@ -217,12 +217,12 @@ const AVISOS = [
   },
   {
     slot: "aviso-3",
-    pie: "Arrastra la imagen del aviso: convocatoria de árboles patrimoniales",
+    pie: "Arrastra la imagen del aviso: registro de árboles patrimoniales",
     fecha: "5 de agosto de 2026",
-    titulo: "Convocatoria abierta para proponer árboles patrimoniales",
-    texto: "Si conoces un ejemplar antiguo, monumental o con valor para tu barrio, puedes proponerlo. La Secretaría revisa cada propuesta con criterios técnicos e históricos.",
-    cta: "Proponer un ejemplar",
-    href: "https://guardianesdeltiempo.sedema.cdmx.gob.mx"
+    titulo: "Consulta el registro de árboles patrimoniales",
+    texto: "El registro público reúne los ejemplares declarados patrimonio natural de la ciudad, con su ubicación, sus medidas y el marco legal que los protege. La convocatoria para proponer nuevos ejemplares está cerrada por ahora.",
+    cta: "Ver el registro",
+    href: "https://sedemaoficina.github.io/arboles-patrimoniales"
   },
   {
     slot: "aviso-4",
@@ -312,7 +312,7 @@ const ACC_BASE = {
   intervenir: { titulo: "Necesitas autorización previa", resumen: "Ninguna persona puede podar, derribar ni trasplantar un árbol por su cuenta.", pasos: ["Pide el dictamen técnico del ejemplar", "Presenta tu solicitud de autorización", "Espera la resolución por escrito", "Contrata a un podador acreditado", "Cumple la restitución"], documentos: ["Identificación oficial vigente", "Dictamen técnico del ejemplar", "Fotografías del árbol completo"], fundamento: LEY + ", artículo 118 fracción III", nota: "Prohíbe intervenir árboles sin autorización previa de la autoridad competente.", extra: [TEL.sedematel] },
   riesgo: { titulo: "Repórtalo hoy mismo", resumen: "Un árbol en riesgo se valora antes de intervenirlo.", pasos: ["Si el peligro es inmediato, llama al 911", "Levanta el reporte y pide valoración", "Describe qué está en riesgo", "Guarda el folio"], documentos: ["Dirección exacta", "Fotografías con fecha visible", "Descripción de la falla"], fundamento: N + ", criterios de valoración de riesgo", nota: "Define cuándo un ejemplar representa riesgo y qué intervención procede.", extra: [TEL.emergencia] },
   denunciar: { titulo: "Denuncia ante la Procuraduría Ambiental", resumen: "Una poda o un derribo sin autorización es una infracción. Puedes denunciarla aunque no seas el dueño del predio.", pasos: ["Reúne la evidencia antes de que retiren las ramas", "Presenta la denuncia en línea o por teléfono", "Indica dirección, fecha y hora", "Conserva tu folio"], documentos: ["Fotografías o video con fecha visible", "Dirección exacta y fecha", "Datos del vehículo o de la empresa, si los viste"], fundamento: LEY + ", artículo 112 · Código Penal para el Distrito Federal, artículos 343 a 350", nota: "La Procuraduría investiga y, si procede, da vista a la autoridad que sanciona.", extra: [TEL.paot] },
-  patrimonial: { titulo: "Puedes proponerlo al registro patrimonial", resumen: "Un ejemplar puede reconocerse como patrimonial por su edad, tamaño, rareza o valor histórico.", pasos: ["Revisa los criterios en la sección Patrimoniales", "Fotografía el ejemplar completo y su tronco", "Mide el perímetro a 1.30 metros del suelo", "Envía tu propuesta a la Secretaría"], documentos: ["Fotografías del ejemplar y su entorno", "Ubicación precisa y perímetro del tronco", "Antecedentes históricos o culturales"], fundamento: LEY + ", artículo 118 bis", nota: "Prevé medidas especiales para ejemplares de valor excepcional.", extra: [TEL.sedematel] }
+  patrimonial: { titulo: "Consulta el registro patrimonial", resumen: "Un ejemplar puede reconocerse como patrimonial por su edad, tamaño, rareza o valor histórico.", pasos: ["Consulta el registro y los criterios en el sitio de árboles patrimoniales", "Fotografía el ejemplar completo y su tronco", "Mide el perímetro a 1.30 metros del suelo", "Revisa ahí ante qué autoridad se presenta la solicitud y cuándo abre la convocatoria"], documentos: ["Fotografías del ejemplar y su entorno", "Ubicación precisa y perímetro del tronco", "Antecedentes históricos o culturales"], fundamento: LEY + ", artículo 118 bis", nota: "Prevé medidas especiales para ejemplares de valor excepcional. La convocatoria para proponer nuevos ejemplares está cerrada por ahora.", extra: [TEL.sedematel] }
 };
 
 const PROCEDIMIENTOS = [
@@ -383,7 +383,7 @@ const FAQS = [
   { perfil: "testigo", p: "¿Cómo verifico que un podador esté acreditado?", r: "Pide el folio y consúltalo en el padrón. Revisa que la fotografía corresponda a la persona y que la vigencia esté al día. Una credencial con tachaduras no es válida.", f: N + ", numeral 5.5" },
   { perfil: "protector", p: "¿Qué es un árbol patrimonial?", r: "Un ejemplar notable, singular o monumental por su edad, tamaño, especie, o su valor paisajístico, histórico, cultural o social. Tiene protección más estricta.", f: LEY + ", artículo 118 bis" },
   { perfil: "protector", p: "¿Se puede derribar un árbol patrimonial?", r: "Solo si hay riesgo real y presente acreditado en dictamen, y siempre que no pueda mitigarse con poda, apuntalamiento o trasplante. No se derriba a cambio de restitución.", f: LEY + ", artículos 34 y 118 bis" },
-  { perfil: "protector", p: "¿Cómo propongo un árbol al registro?", r: "Reúne fotografías del ejemplar y su entorno, la ubicación precisa, el perímetro del tronco a 1.30 metros del suelo y lo que sepas de su historia. Preséntalo en atención ciudadana.", f: LEY + ", artículo 118 bis" },
+  { perfil: "protector", p: "¿Cómo propongo un árbol al registro?", r: "Reúne fotografías del ejemplar y su entorno, la ubicación precisa, el perímetro del tronco a 1.30 metros del suelo y lo que sepas de su historia. El sitio de árboles patrimoniales indica ante qué autoridad se presenta la solicitud. La convocatoria está cerrada por ahora.", f: LEY + ", artículo 118 bis" },
   { perfil: "protector", p: "¿Qué es el desmoche y por qué está prohibido?", r: "Es cortar la copa o las ramas estructurales. Debilita al árbol, lo vuelve inestable y tiene el mismo régimen legal que un derribo.", f: N + ", numeral 6" }
 ];
 

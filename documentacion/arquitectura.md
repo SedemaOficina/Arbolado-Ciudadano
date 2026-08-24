@@ -26,7 +26,7 @@ Cada perfil tiene destino diferenciado:
 | 2 · Voy a construir | `/hazlo.html#caso-construccion` |
 | 3 · Podar árbol de jardín | `/hazlo.html#caso-jardin-privado` |
 | 4 · Poda sospechosa | `/responsabilidades.html#denunciar` |
-| 5 · Proteger árbol notable | `https://guardianesdeltiempo.sedema.cdmx.gob.mx` |
+| 5 · Proteger árbol notable | `https://sedemaoficina.github.io/arboles-patrimoniales` |
 
 ## Las 7 secciones
 

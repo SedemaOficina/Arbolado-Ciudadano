@@ -112,7 +112,7 @@ ${URLS.map(([u,p,f])=>`  <url>
 w('.nojekyll', '');
 
 /* ---------- Redirección de árboles patrimoniales ---------- */
-const DESTINO = 'https://guardianesdeltiempo.sedema.cdmx.gob.mx';
+const DESTINO = 'https://sedemaoficina.github.io/arboles-patrimoniales';
 w('programas/patrimoniales.html', `<!DOCTYPE html>
 <html lang="es-MX" data-raiz="../">
 <head>

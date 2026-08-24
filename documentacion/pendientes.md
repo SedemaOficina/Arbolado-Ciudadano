@@ -47,7 +47,18 @@ visibles.
 
 ### Técnicos
 
-- [ ] Confirmar que subdominio Guardianes esté montado
+- [x] URL definitiva del sitio de árboles patrimoniales · 23 ago 2026
+      https://sedemaoficina.github.io/arboles-patrimoniales
+- [ ] **Alinear competencias con el sitio de patrimoniales.** Ese sitio indica que
+      la solicitud se presenta ante la Secretaría de Cultura, con fundamento en el
+      artículo 55 de la Ley de Patrimonio Cultural, Natural y Biocultural, y no
+      ante la Secretaría del Medio Ambiente. Este micrositio citaba el artículo
+      118 bis de la Ley Ambiental y remitía a atención ciudadana de SEDEMA. Se
+      corrigió el texto para no afirmar la autoridad equivocada, pero **falta
+      verificar cuál es el circuito correcto y dejar los dos sitios diciendo lo
+      mismo**.
+- [ ] Revisar la cifra de 29 ejemplares patrimoniales que aparece en la ficha del
+      programa: no se pudo confirmar contra el registro publicado.
 - [ ] Verificar anclas dinámicas de los casos en hazlo
 - [x] Meta descriptions por página (SEO) · 22 ago 2026
 - [x] Titles descriptivos por página · 22 ago 2026

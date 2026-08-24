@@ -34,7 +34,7 @@ Inicio, Hazlo, Responsabilidades, Emergencias, Programas, Directorio, La Políti
 Patrimoniales tenía identidad y voz editorial distinta al resto del sitio (más contemplativa, cultural). Forzarlo dentro del sitio institucional le restaba carácter y complicaba la navegación.
 
 ### Decisión
-Migrar a subdominio propio (`guardianesdeltiempo.sedema.cdmx.gob.mx`) con identidad visual diferenciada (morado jacaranda, ilustración protagonista, Anton condensed).
+Migrar a subdominio propio (`sedemaoficina.github.io/arboles-patrimoniales`) con identidad visual diferenciada (morado jacaranda, ilustración protagonista, Anton condensed).
 
 ### Consecuencias
 - Positivo: cada proyecto respira con su propia identidad

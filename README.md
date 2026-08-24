@@ -23,7 +23,7 @@ Siete secciones organizadas por tarea ciudadana:
 
 **Guardianes del tiempo · Árboles Patrimoniales CDMX**
 Sitio dedicado autónomo con identidad diferenciada, alojado en subdominio propio:
-`guardianesdeltiempo.sedema.cdmx.gob.mx`
+`sedemaoficina.github.io/arboles-patrimoniales`
 
 ---
 
