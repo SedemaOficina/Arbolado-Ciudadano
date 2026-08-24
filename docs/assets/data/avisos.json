@@ -1,5 +1,5 @@
 {
-  "_lee_esto": "Vitrina de destacados de la portada. Para publicar un aviso nuevo solo se edita este archivo: no se toca HTML. El aviso desaparece solo el día siguiente a 'vigencia_hasta'. Si 'imagen' está vacío se dibuja la lámina botánica por código, de modo que ningún aviso obliga a mostrar el sello 'Falta el dato'. Se muestran los cinco primeros por 'orden'.",
+  "_lee_esto": "Vitrina de destacados de la portada. Para publicar un aviso nuevo solo se edita este archivo: no se toca HTML. El aviso desaparece solo el día siguiente a 'vigencia_hasta'. Si 'imagen' está vacío se dibuja la lámina botánica por código, de modo que ningún aviso obliga a mostrar el sello 'Falta el dato'. Se muestran los cinco primeros por 'orden'. Conforme venzan los avisos de temporada, la vitrina se queda con los permanentes; si algún día no queda ninguno vigente, la vitrina se oculta sola y la portada abre con la franja de acceso rápido y el titular.",
   "_campos": {
     "orden": "Entero. Posición en la vitrina. El 1 es el que se ve al abrir la página.",
     "etiqueta": "Versalita superior. Máximo 24 caracteres.",
@@ -11,11 +11,6 @@
     "fondo": "[claro, oscuro] del degradado de la lámina.",
     "semilla": "Entero. Cambia el ejemplar de árbol dibujado.",
     "imagen": "Ruta a fotografía institucional. Si está vacío se usa la lámina."
-  },
-  "_revision": {
-    "responsable": "POR DEFINIR",
-    "periodicidad": "quincenal",
-    "ultima_revision": "2026-08-24"
   },
   "avisos": [
     {
