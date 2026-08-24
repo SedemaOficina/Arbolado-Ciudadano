@@ -1,0 +1,205 @@
+/* ============================================================
+   Arbolado Ciudadano · SEDEMA CDMX
+   paleta.css — Paleta ampliada y acento por módulo.
+   Se carga DESPUÉS de sitio.css. No sustituye tokens.css:
+   solo añade valores nuevos y reencauza el color de titulares.
+
+   Diagnóstico que resuelve: el guinda institucional teñía 937
+   titulares y enlaces en las quince páginas, de modo que todas
+   se veían iguales y el guinda dejaba de significar «acción
+   principal». Aquí el guinda se reserva a rellenos sólidos
+   —botón primario, plecas, franjas— y el color de titular pasa
+   a ser el acento del módulo.
+   ============================================================ */
+
+:root{
+  /* ---------- Herbario: la gama verde ---------- */
+  --salvia:        #7E9276;
+  --salvia-honda:  #4F6249;
+  --olivo:         #54652C;
+  /* --herbario ya existe: #3C5A38 */
+  --selva:         #1F3A2B;
+
+  /* ---------- Tierra y madera ---------- */
+  --ocre:          #B0812B;
+  --ocre-hondo:    #78550F;
+  --terracota:     #914C2C;
+  /* --tierra #8B6F47 y --corteza #5A4632 ya existen */
+
+  /* ---------- Agua: el contrapunto frío ---------- */
+  --agua:          #28635F;
+  --agua-claro:    #CFDEDA;
+
+  /* ---------- Institucional ---------- */
+  --guinda-hondo:  #6B1730;
+  --dorado-hondo:  #6E5219;
+  --dorado-claro:  #DAC7A0;
+  --emergencia:    #B3261E;
+
+  /* ---------- Rellenos suaves (pareja de cada acento) ---------- */
+  --relleno-salvia:    #D5DECF;
+  --relleno-olivo:     #DCE0C6;
+  --relleno-selva:     #CBD8CD;
+  --relleno-corteza:   #E0D2C2;
+  --relleno-agua:      #CFDEDA;
+  --relleno-ocre:      #EADCB8;
+  --relleno-terracota: #EBD2C4;
+  --relleno-guinda:    #E6D2D7;
+  --relleno-tinta:     #DCD7CB;
+  --relleno-emergencia:#F0DAD6;
+
+  /* ---------- Semánticos: alias, no colores nuevos ---------- */
+  --sem-procede:    var(--herbario);
+  --sem-informa:    var(--agua);
+  --sem-precaucion: var(--ocre-hondo);
+  --sem-sancion:    var(--guinda-hondo);
+  --sem-pendiente:  var(--ocre);
+  /* El rojo #B3261E es exclusivo de la franja 911. Las sanciones
+     usan guinda hondo: autoridad, no alarma. */
+
+  /* ---------- Acento por defecto ---------- */
+  --acento:       var(--herbario);
+  --acento-suave: var(--relleno-salvia);
+}
+
+/* ============================================================
+   Acento por módulo. Se declara una sola vez, en <body class="…">.
+   El guinda no aparece aquí a propósito.
+   ============================================================ */
+.m-inicio         { --acento:#3C5A38; --acento-suave:var(--relleno-salvia); }
+.m-hazlo          { --acento:#54652C; --acento-suave:var(--relleno-olivo); }
+.m-competencias   { --acento:#5A4632; --acento-suave:var(--relleno-corteza); }
+.m-acreditate     { --acento:#28635F; --acento-suave:var(--relleno-agua); }
+.m-emergencias    { --acento:#6B1730; --acento-suave:var(--relleno-guinda); }
+/* El rojo #B3261E no es acento de ninguna página: vive solo en el bloque 911. */
+.m-programas      { --acento:#1F3A2B; --acento-suave:var(--relleno-selva); }
+.m-reforestacion  { --acento:#4F6249; --acento-suave:var(--relleno-salvia); }
+.m-viveros        { --acento:#54652C; --acento-suave:var(--relleno-olivo); }
+.m-inventario     { --acento:#28635F; --acento-suave:var(--relleno-agua); }
+.m-palmeras       { --acento:#78550F; --acento-suave:var(--relleno-ocre); }
+.m-patrimoniales  { --acento:#6E5219; --acento-suave:var(--relleno-ocre); }
+.m-politica       { --acento:#2F2A22; --acento-suave:var(--relleno-tinta); }
+.m-directorio     { --acento:#914C2C; --acento-suave:var(--relleno-terracota); }
+.m-territorio     { --acento:#1F3A2B; --acento-suave:var(--relleno-selva); }
+
+/* ============================================================
+   Reencauce del titular. Solo dentro de <main>: la cabecera y el
+   pie conservan el guinda institucional.
+   El color pasa al acento; los rellenos sólidos NO se tocan, así
+   que el botón primario y las plecas siguen en guinda.
+   ============================================================ */
+/* Bicolor del titular: el título va en tinta y la cursiva lleva el acento.
+   Los demás elementos que llevaban guinda —enlaces, cifras, etiquetas— sí
+   toman el acento, de modo que el color sigue presente en la página. */
+main [style*="color: var(--guinda-100)"]{ color: var(--acento) !important; }
+main h1[style*="color: var(--guinda-100)"],
+main h2[style*="color: var(--guinda-100)"],
+main h3[style*="color: var(--guinda-100)"],
+main h4[style*="color: var(--guinda-100)"]{ color: var(--tinta) !important; }
+main h1 em, main h2 em, main h3 em, main h4 em{ color: var(--acento) !important; }
+main [style*="border-top: 4px solid var(--guinda-100)"]{ border-top-color: var(--acento) !important; }
+main [style*="border-left: 4px solid var(--guinda-100)"]{ border-left-color: var(--acento) !important; }
+main [style*="border-bottom: 2px solid var(--guinda-100)"]{ border-bottom-color: var(--acento) !important; }
+main .ds-pleca-guinda{ background: var(--acento) !important; }
+main .ds-titulo-1{ color: var(--acento); }
+
+/* Marcadores y filetes sólidos en <span>: pasan al acento. Solo <span>:
+   un <div> o un <aside> con fondo guinda es un bloque de aviso, no un
+   numeral, y debe conservar su color. */
+main span[style*="background: var(--guinda-100)"]{ background: var(--acento) !important; }
+
+/* Relleno suave del módulo donde antes había dorado claro plano */
+main [style*="background: var(--dorado-40)"]{ background: var(--acento-suave) !important; }
+
+/* Excepciones que devuelven el guinda a su oficio */
+main a[style*="background: var(--guinda-100)"],
+main button[style*="background: var(--guinda-100)"]{ color: var(--blanco) !important; }
+main a[style*="background: var(--guinda-100)"] *,
+main button[style*="background: var(--guinda-100)"] *{ color: var(--blanco) !important; }
+main [style*="background: var(--guinda-100)"] [style*="color: var(--guinda-100)"]{ color: var(--blanco) !important; }
+header [style*="color: var(--guinda-100)"], footer [style*="color: var(--guinda-100)"]{ color: var(--guinda-100) !important; }
+
+/* La franja de emergencia y el 911 no dependen del módulo */
+[style*="var(--estado-error)"]{ }
+main [style*="background: var(--estado-error)"] [style*="color: var(--guinda-100)"]{ color: var(--blanco) !important; }
+
+/* ============================================================
+   Banda honda: una por página. Es lo que rompe la planicie del
+   crema. Uso: <section class="banda-honda"> … </section>
+   ============================================================ */
+.banda-honda{
+  background: var(--tinta) !important;
+  color: var(--papel-alto) !important;
+  border-top: 4px solid var(--dorado-100) !important;
+  border-bottom: 1px solid var(--corteza) !important;
+}
+.banda-honda .banda-honda__caja{ max-width:1240px; margin:0 auto; padding:0 20px; }
+.banda-honda h1, .banda-honda h2, .banda-honda h3, .banda-honda h4{ color: var(--papel-alto) !important; }
+.banda-honda h1 em, .banda-honda h2 em, .banda-honda h3 em, .banda-honda h4 em{ color: var(--dorado-claro) !important; }
+.banda-honda p, .banda-honda li{ color: #E3DCCB; }
+.banda-honda .ds-etiqueta{ color: var(--salvia) !important; }
+.banda-honda a{ color: var(--dorado-claro); text-decoration-color: var(--dorado-100); }
+.banda-honda a:hover, .banda-honda a:focus-visible{ color: var(--blanco); }
+.banda-honda [style*="color: var(--guinda-100)"]{ color: var(--dorado-claro) !important; }
+.banda-honda [style*="color: var(--gris-100)"], .banda-honda [style*="color: var(--gris-80)"]{ color: #E3DCCB !important; }
+.banda-honda [style*="color: var(--negro)"]{ color: var(--papel-alto) !important; }
+.banda-honda [style*="background: var(--blanco)"], .banda-honda [style*="background: var(--marfil)"],
+.banda-honda [style*="background: var(--gris-10)"]{ background: #3A342A !important; }
+.banda-honda [style*="background: var(--dorado-40)"]{ background: #4A4234 !important; }
+.banda-honda strong, .banda-honda b{ color: var(--papel-alto); }
+/* Estados en banda oscura: se aclaran para conservar contraste */
+.banda-honda [style*="color: var(--estado-error)"]{ color:#F0A79F !important; }
+.banda-honda [style*="color: var(--estado-exito)"]{ color:#A8C9A0 !important; }
+.banda-honda [style*="color: var(--estado-info)"]{ color:#A9C8DE !important; }
+.banda-honda [style*="color: var(--cafe)"], .banda-honda [style*="color: var(--dorado-100)"]{ color: var(--dorado-claro) !important; }
+.banda-honda [style*="border"]{ border-color: rgba(218,199,160,.32) !important; }
+
+
+/* ------------------------------------------------------------
+   Controles de formulario dentro de la banda honda.
+   Campos, filtros, acordeones e interruptores conservan
+   contraste AA y un foco visible sobre fondo oscuro.
+   ------------------------------------------------------------ */
+.banda-honda input, .banda-honda select, .banda-honda textarea{
+  background:#26221B !important; color:var(--papel-alto) !important;
+  border:1px solid #7A7162 !important;
+}
+.banda-honda input::placeholder, .banda-honda textarea::placeholder{ color:#A79E8C !important; }
+.banda-honda label, .banda-honda legend{ color:#E3DCCB !important; }
+.banda-honda summary{ color:var(--papel-alto) !important; }
+.banda-honda summary::marker{ color:var(--dorado-claro); }
+.banda-honda button, .banda-honda [role="button"]{
+  background:transparent !important; color:var(--dorado-claro) !important;
+  border:1px solid var(--dorado-100) !important;
+}
+.banda-honda button:hover, .banda-honda button:focus-visible,
+.banda-honda [role="button"]:hover, .banda-honda [role="button"]:focus-visible{
+  background:#3A342A !important; color:var(--papel-alto) !important;
+}
+.banda-honda a[style*="background: var(--guinda-100)"],
+.banda-honda button[style*="background: var(--guinda-100)"]{
+  background:var(--guinda-100) !important; color:var(--blanco) !important; border:0 !important;
+}
+.banda-honda [aria-pressed="true"], .banda-honda [aria-selected="true"], .banda-honda [aria-current]{
+  background:var(--dorado-100) !important; color:#1A1712 !important; border-color:var(--dorado-100) !important;
+}
+.banda-honda :focus-visible{ outline:3px solid var(--dorado-claro) !important; outline-offset:2px; }
+/* Marcadores dentro de la banda: relleno claro y numeral en tinta,
+   para que se despeguen del fondo oscuro. */
+.banda-honda span[style*="background: var(--guinda-100)"],
+.banda-honda span[style*="background: var(--acento)"]{
+  background: var(--acento-suave) !important; color: var(--tinta) !important;
+}
+.banda-honda table th{ background:#3A342A !important; color:var(--dorado-claro) !important; }
+.banda-honda table td{ border-color:rgba(218,199,160,.22) !important; }
+.banda-honda hr{ border-color:rgba(218,199,160,.28) !important; }
+.banda-honda svg [fill="var(--guinda-100)"]{ fill:var(--dorado-claro) !important; }
+
+/* ============================================================
+   Impresión: el acento se convierte en tinta.
+   ============================================================ */
+@media print{
+  main [style*="color: var(--guinda-100)"]{ color: #000 !important; }
+  .banda-honda{ background: #fff; color: #000; border-top: 2px solid #000; }
+  .banda-honda h2, .banda-honda h3, .banda-honda p, .banda-honda li{ color: #000 !important; }
+}

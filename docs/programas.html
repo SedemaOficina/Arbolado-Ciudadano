@@ -17,13 +17,14 @@
 <link rel="icon" href="assets/img/logos/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/css/tokens.css">
 <link rel="stylesheet" href="assets/css/sitio.css">
+<link rel="stylesheet" href="assets/css/paleta.css">
 <style>
 a:hover { color: var(--guinda-oscuro); }
 </style>
 <script src="assets/js/sitio.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.15.0/dist/cdn.min.js"></script>
 </head>
-<body>
+<body class="m-programas">
 
 
 
@@ -261,9 +262,12 @@ a:hover { color: var(--guinda-oscuro); }
         </li>
       </ul>
 
-      <div style="margin-top: 32px; background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--estado-info); padding: 22px 26px" role="status">
-        <strong style="display: block; font-size: 19px; margin-bottom: 8px; color: var(--negro)">Un programa no sustituye el trámite</strong>
-        <span style="font-size: 18px; line-height: 1.6">Aunque tu caso entre en un programa, la intervención sigue requiriendo autorización. Revisa <a href="hazlo.html#procedimientos">los procedimientos</a> para saber qué documentos reunir.</span>
+    </section>
+
+    <section class="banda-honda" aria-labelledby="tramite-aviso">
+      <div class="banda-honda__caja" style="padding-top: clamp(34px, 4.5vw, 56px); padding-bottom: clamp(34px, 4.5vw, 56px)">
+        <h2 style="margin: 0 0 12px; font-family: var(--font-titulo); font-size: clamp(25px, 3vw, 34px); line-height: 1.18; font-weight: 700" id="tramite-aviso">Un programa no <em style="font-style: italic">sustituye el trámite</em></h2>
+        <p style="margin: 0; font-size: 18px; line-height: 1.6; max-width: 52em">Aunque tu caso entre en un programa, la intervención sigue requiriendo autorización. Revisa <a href="hazlo.html#procedimientos">los procedimientos</a> para saber qué documentos reunir.</p>
       </div>
     </section>
 

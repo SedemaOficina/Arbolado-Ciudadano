@@ -6,6 +6,55 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.0.0/).
 
 ---
 
+## 24 de agosto de 2026 · Paleta ampliada y acento por módulo
+
+Las quince páginas se veían iguales. La causa no era falta de matices: el guinda
+institucional teñía novecientos treinta y siete titulares y enlaces, y los siete
+colores de la paleta ocupaban casi la misma banda de luminosidad sobre un único
+fondo crema. No había rango de valor, contrapunto frío ni diferencia entre un
+módulo y otro.
+
+- **Archivo nuevo `docs/assets/css/paleta.css`**, cargado después de `sitio.css`.
+  Añade dieciséis valores a la paleta —cinco verdes, cuatro tierras, el agua como
+  único tono frío, y guinda hondo, dorado hondo y dorado claro en la capa
+  institucional— sin retirar ninguno de los existentes.
+- **El guinda vuelve a su oficio.** Queda reservado a la cabecera, al pie, al
+  botón primario y a la sección activa de la navegación.
+- **Titular a dos tintas.** Dentro de `<main>` el título va en tinta y la
+  cursiva lleva el acento del módulo. Los enlaces, las cifras y las etiquetas
+  que antes eran guinda también toman el acento, de modo que el color sigue
+  presente sin volver a teñir la página entera de un solo tono.
+- **Un acento por módulo.** Cada página declara su clase en el `<body>`
+  (`m-inicio`, `m-hazlo`, `m-competencias`, `m-acreditate`, `m-emergencias`,
+  `m-programas`, `m-reforestacion`, `m-viveros`, `m-inventario`, `m-palmeras`,
+  `m-patrimoniales`, `m-politica`, `m-directorio`, `m-territorio`) y hereda
+  `--acento` y `--acento-suave`.
+- **El rojo deja de compartirse.** `#B3261E` no es acento de ninguna página:
+  vive solo en el bloque 911 y en los avisos de riesgo inmediato. Los avisos
+  «Si hay riesgo ahora» de `hazlo` y `responsabilidades`, que estaban en guinda,
+  pasaron a rojo. La página de emergencias titula en guinda hondo `#6B1730`
+  —autoridad, no alarma— para que el rojo del 911 no compita con nada.
+- **Banda honda.** Componente `.banda-honda` aplicado a una sección por página en
+  las catorce páginas con contenido, para romper la planicie del crema. Se monta
+  sobre la sección existente sin alterar su retícula ni su relleno. Incluye
+  tratamiento oscuro verificado de campos, filtros, acordeones, botones,
+  encabezados de tabla y foco de teclado; los marcadores numéricos pasan a
+  relleno claro con numeral en tinta. En `programas` el aviso «Un programa no
+  sustituye el trámite» se promovió de recuadro lateral a banda propia.
+- **Contraste verificado.** Todos los acentos superan 4.5:1 sobre los cuatro
+  fondos del sitio (papel, blanco de ficha, marfil y gris 10). Salvia, dorado,
+  ocre y tierra quedan como decorativos con pareja de texto asignada.
+- Verificación en Chromium sin cabeza sobre las quince páginas: sin errores de
+  consola propios, sin desbordamiento horizontal y con el acento resolviendo en
+  todas.
+
+Verificación adicional con Alpine.js servido en local, para comprobar el
+comportamiento de las secciones hidratadas dentro de la banda oscura. El
+desbordamiento horizontal de cinco píxeles que reporta el navegador es previo al
+cambio: se midió idéntico en el commit anterior.
+
+---
+
 ## 23 de agosto de 2026 · Árboles patrimoniales y sistema de formas
 
 Se corrigió el destino del sitio de árboles patrimoniales, que apuntaba a un

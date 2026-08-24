@@ -2,7 +2,7 @@
 
 Documento vivo · Actualizar conforme se resuelven pendientes.
 
-Última actualización: 22 de agosto de 2026
+Última actualización: 24 de agosto de 2026
 
 ---
 
@@ -125,3 +125,19 @@ visibles.
 - [ ] Multi-idioma (nahuatl, inglés)
 - [ ] Chat bot de orientación básica
 - [ ] Integración con SUAC (Sistema Único de Atención Ciudadana)
+
+---
+
+## Paleta ampliada · pendientes abiertos (24 de agosto de 2026)
+
+- [x] Banda honda en las catorce páginas con contenido, con tratamiento oscuro
+      de campos, filtros, acordeones y foco de teclado.
+- [ ] En `programas.html` la banda queda al final de la página, junto a la tira
+      de «¿Te sirvió esta página?» y al pie oscuro. Valorar si conviene moverla
+      a la mitad de la página.
+- [ ] Los sellos amarillos «Falta el dato» dentro de la banda oscura son muy
+      luminosos. Revisar cuando lleguen las fotografías institucionales.
+- [ ] Revisar con la Dirección de Comunicación que el uso del guinda quede
+      acotado a cabecera, pie, botón primario y navegación activa.
+- [ ] Confirmar que el rojo `#B3261E` no aparece en ningún contenido de sanciones.
+
