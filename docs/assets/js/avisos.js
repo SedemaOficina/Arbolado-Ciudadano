@@ -8,6 +8,7 @@
      · 0 avisos vigentes → la vitrina se oculta entera
      · 1 aviso vigente   → se pinta fijo, sin flechas, puntos ni pausa
      · autoplay de 9 s con alto permanente al primer clic o toque
+     · los puntos de paso van sobre el banner; no hay barra inferior
      · pausa temporal al pasar el ratón o al enfocar con el tabulador
      · sin arranque automático bajo prefers-reduced-motion
      · teclado ← → y gesto de deslizar en pantallas táctiles
@@ -26,11 +27,10 @@
     var pista  = vitrina.querySelector(".av-pista");
     var puntos = vitrina.querySelector(".av-puntos");
     var cuenta = vitrina.querySelector(".av-cuenta");
-    var btnPau = vitrina.querySelector(".av-pausa");
     var quieto = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     var ruta   = vitrina.getAttribute("data-fuente") || "assets/data/avisos.json";
 
-    var datos = [], i = 0, reloj = null, corriendo = false;
+    var datos = [], i = 0, reloj = null, corriendo = false, manda = false;
 
     fetch(ruta, { cache: "no-cache" })
       .then(function (r) { if (!r.ok) throw new Error("avisos.json respondió " + r.status); return r.json(); })
@@ -59,13 +59,11 @@
       if (datos.length === 1) {
         vitrina.querySelectorAll(".av-flecha").forEach(function (b) { b.hidden = true; });
         if (puntos) puntos.hidden = true;
-        if (btnPau) btnPau.hidden = true;
         if (cuenta) cuenta.hidden = true;
       } else {
         datos.forEach(function (a, n) { puntos.appendChild(punto(a, n)); });
         vitrina.querySelector(".av-flecha.prev").addEventListener("click", function () { manual(i - 1); });
         vitrina.querySelector(".av-flecha.next").addEventListener("click", function () { manual(i + 1); });
-        if (btnPau) btnPau.addEventListener("click", function () { corriendo ? detener(true) : reanudar(); });
         interaccion();
       }
 
@@ -141,21 +139,20 @@
     function manual(n) { detener(true); pinta(n); }
 
     function reanudar() {
-      if (quieto || datos.length < 2) return;
+      if (quieto || manda || datos.length < 2) return;
       corriendo = true;
-      if (btnPau) btnPau.textContent = "Pausar";
       pista.setAttribute("aria-live", "off");
       clearInterval(reloj);
       reloj = setInterval(function () { pinta(i + 1); }, TIEMPO);
       pinta(i);
     }
 
-    /* definitivo: la persona tomó el control y ya no se reanuda solo */
+    /* definitivo: la persona tomó el control y la rotación ya no se reanuda */
     function detener(definitivo) {
+      if (definitivo) manda = true;
       clearInterval(reloj); reloj = null; corriendo = false;
       if (puntos) Array.prototype.forEach.call(puntos.children, function (li) { li.classList.remove("corriendo"); });
       pista.setAttribute("aria-live", "polite");
-      if (definitivo && btnPau) btnPau.textContent = "Reanudar";
     }
 
     function interaccion() {
