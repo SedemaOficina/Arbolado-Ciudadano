@@ -1,0 +1,203 @@
+/* ════════════════════════════════════════════════════════════════
+   Arbolado Ciudadano · Vitrina de destacados de la portada
+   Cargar después de tokens.css, sitio.css y paleta.css.
+   Usa exclusivamente los tokens del sitio: si cambia la paleta,
+   este bloque cambia con ella.
+   ════════════════════════════════════════════════════════════════ */
+
+/* ── 1. Cintillo de urgencia · fijo, nunca rota ─────────────────── */
+.av-911{
+  display:block; padding:0;
+  background:var(--guinda-oscuro); color:#F6E9EC;
+  text-decoration:none; border-bottom:1px solid #4A0F20;
+  font-family:var(--font-cuerpo); font-size:17px; line-height:1.4;
+}
+.av-911 .av-911-caja{
+  max-width:1240px; margin:0 auto; padding:10px 24px;
+  display:flex; align-items:center; gap:16px; flex-wrap:wrap;
+}
+.av-911:hover, .av-911:focus-visible{ background:#83203F; color:#FFF3F6; }
+.av-911 .av-911-et{
+  font-family:var(--font-titulo); font-size:13px; letter-spacing:.18em;
+  text-transform:uppercase; font-weight:700; color:var(--dorado-100); white-space:nowrap;
+}
+.av-911 .av-911-num{
+  font-family:var(--font-titulo); font-size:26px; font-weight:700;
+  color:#FFFFFF; margin-left:auto; white-space:nowrap; line-height:1;
+}
+.av-911 .av-911-num small{
+  font-family:var(--font-cuerpo); font-size:15px; font-weight:400;
+  color:#EDC8D3; margin-right:9px;
+}
+
+/* ── 2. Vitrina ─────────────────────────────────────────────────── */
+.av{ position:relative; background:var(--marfil); }
+.av-marco{
+  position:relative; overflow:hidden;
+  height:302px;
+  border-bottom:1px solid var(--dorado-40);
+}
+.av-pista{ list-style:none; margin:0; padding:0; height:100%; }
+.av-lam{
+  position:absolute; inset:0; opacity:0; visibility:hidden;
+  transition:opacity 500ms ease;
+}
+.av-lam.on{ opacity:1; visibility:visible; }
+.av-lam > canvas, .av-lam > img{
+  position:absolute; inset:0; width:100%; height:100%;
+  display:block; object-fit:cover;
+}
+.av-lam::after{
+  content:""; position:absolute; inset:0;
+  background:linear-gradient(100deg, rgba(10,14,10,.74) 0%, rgba(10,14,10,.42) 48%, rgba(10,14,10,.06) 80%);
+}
+.av-rot{
+  position:relative; z-index:2;
+  max-width:1240px; margin:0 auto; height:100%;
+  padding:20px 24px; box-sizing:border-box;
+  display:flex; flex-direction:column; justify-content:flex-end;
+  color:#FBF7EC;
+}
+.av-rot > div{ max-width:min(620px, 62%); }
+.av-rot .av-et{
+  display:inline-block; font-family:var(--font-titulo); font-size:12px;
+  letter-spacing:.18em; text-transform:uppercase; font-weight:700;
+  margin:0 0 9px; padding:4px 10px;
+  background:rgba(9,13,9,.46); border-left:2px solid currentColor;
+}
+.av-rot .av-tit{
+  font-family:var(--font-titulo); font-weight:700;
+  font-size:clamp(23px, 2.9vw, 34px); line-height:1.1; letter-spacing:-.012em;
+  margin:0 0 8px; color:#FBF7EC; text-wrap:pretty;
+  text-shadow:0 2px 20px rgba(8,14,9,.62);
+}
+.av-rot .av-baj{
+  font-family:var(--font-cuerpo); font-size:17px; line-height:1.5;
+  margin:0 0 14px; color:#E9ECE1; max-width:44em;
+  text-shadow:0 1px 14px rgba(8,14,9,.72);
+  display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;
+}
+.av-rot .av-cierre{
+  display:block; font-family:var(--font-cuerpo); font-size:14px; font-weight:700;
+  color:var(--dorado-40); margin:-6px 0 12px;
+}
+.av-rot .av-cta{
+  align-self:flex-start;
+  background:var(--guinda-100); color:var(--blanco);
+  font-family:var(--font-cuerpo); font-weight:700; font-size:16px;
+  padding:11px 22px; text-decoration:none !important; border-radius:4px;
+  min-height:44px; box-sizing:border-box; display:inline-flex; align-items:center;
+  transition:background 150ms ease;
+}
+.av-rot .av-cta:hover{ background:var(--guinda-oscuro); color:var(--blanco); }
+
+.av-flecha{
+  position:absolute; z-index:3; top:50%; transform:translateY(-50%);
+  width:48px; height:48px; border-radius:50%;
+  border:2px solid rgba(251,247,236,.5);
+  background:rgba(12,18,13,.34); color:#FBF7EC;
+  font-family:var(--font-cuerpo); font-size:20px; line-height:1; cursor:pointer;
+  display:inline-flex; align-items:center; justify-content:center;
+  transition:background 150ms ease, border-color 150ms ease;
+}
+.av-flecha:hover{ background:rgba(12,18,13,.7); border-color:var(--dorado-100); }
+.av-flecha.prev{ left:14px; } .av-flecha.next{ right:14px; }
+
+/* Barra inferior */
+.av-barra{ background:var(--marfil); border-bottom:1px solid var(--dorado-40); }
+.av-barra > div{
+  max-width:1240px; margin:0 auto; padding:11px 24px;
+  display:flex; align-items:center; gap:20px; flex-wrap:wrap;
+}
+.av-barra .av-rotulo{
+  font-family:var(--font-titulo); font-size:13px; letter-spacing:.18em;
+  text-transform:uppercase; font-weight:700; color:var(--gris-100);
+  margin:0; white-space:nowrap;
+}
+.av-puntos{ list-style:none; display:flex; gap:8px; margin:0; padding:0; }
+.av-puntos button{
+  display:block; width:34px; height:10px; min-height:0; padding:0; cursor:pointer;
+  border:1px solid var(--dorado-100); background:transparent;
+  position:relative; overflow:hidden;
+}
+.av-puntos li.on button{ border-color:var(--guinda-100); }
+.av-puntos li.on button::after{
+  content:""; position:absolute; inset:0; background:var(--guinda-100);
+  transform-origin:left; transform:scaleX(1);
+}
+.av-puntos li.on.corriendo button::after{ animation:av-avance var(--av-tiempo, 9s) linear forwards; }
+@keyframes av-avance{ from{ transform:scaleX(0); } to{ transform:scaleX(1); } }
+.av-cuenta{ font-family:var(--font-cuerpo); font-size:17px; font-weight:700; color:var(--gris-100); font-variant-numeric:tabular-nums; }
+.av-barra .av-der{ margin-left:auto; display:flex; align-items:center; gap:18px; }
+.av-pausa{
+  background:transparent; border:1px solid var(--dorado-100); cursor:pointer;
+  font-family:var(--font-cuerpo); font-size:15px; color:var(--gris-100);
+  padding:7px 14px; border-radius:4px; min-height:0;
+  transition:background 150ms ease;
+}
+.av-pausa:hover{ background:var(--gris-10); }
+.av-todos{ font-family:var(--font-cuerpo); font-size:17px; font-weight:700; white-space:nowrap; }
+
+/* ── 3. Acceso rápido · devuelve el trámite a la primera pantalla ── */
+.av-acceso{ background:var(--selva); border-bottom:1px solid #16281D; }
+.av-acceso > div{
+  max-width:1240px; margin:0 auto; padding:12px 24px;
+  display:flex; align-items:center; gap:clamp(14px, 2vw, 28px); flex-wrap:wrap;
+}
+.av-acceso .av-lead{
+  font-family:var(--font-titulo); font-size:19px; font-style:italic;
+  color:#CBDAC3; margin:0;
+}
+.av-acceso a{
+  font-family:var(--font-cuerpo); font-size:17px; color:#E7EEE2; text-decoration:none;
+  border-bottom:1px solid rgba(231,238,226,.36); padding-bottom:3px;
+  transition:border-color 150ms ease, color 150ms ease;
+}
+.av-acceso a:hover{ border-bottom-color:var(--dorado-100); color:#FFFFFF; }
+.av-acceso a.av-primario{
+  background:var(--guinda-100); color:var(--blanco); font-weight:700; border:0;
+  text-decoration:none !important;
+  padding:12px 22px; border-radius:4px; margin-left:auto;
+  min-height:44px; box-sizing:border-box; display:inline-flex; align-items:center;
+  transition:background 150ms ease;
+}
+.av-acceso a.av-primario:hover{ background:var(--guinda-oscuro); color:var(--blanco); }
+
+/* ── Lámina del titular (sustituye el recuadro de fotografía) ────── */
+.av-lamina-hero{
+  position:relative; width:100%; aspect-ratio:4 / 3;
+  background:var(--blanco); border:1px solid var(--dorado-40);
+}
+.av-lamina-hero > canvas{ position:absolute; inset:0; width:100%; height:100%; display:block; }
+
+/* ── Estados ────────────────────────────────────────────────────── */
+.av [hidden], .av-barra [hidden]{ display:none !important; }
+.av[hidden]{ display:none !important; }
+
+/* Pantallas de poca altura (laptops de 13"): la vitrina se compacta y la
+   bajada cede su lugar, para que el titular del sitio asome bajo el pliegue. */
+@media (max-height: 880px){
+  .av-marco{ height:228px; }
+  .av-rot .av-baj{ display:none; }
+}
+
+@media (max-width: 860px){
+  .av-marco{ height:clamp(238px, 42vh, 300px); }
+  .av-rot > div{ max-width:none; }
+  .av-rot .av-baj{ display:none; }
+  /* En celular las flechas estorbarían sobre el texto: se navega
+     deslizando o con los puntos de la barra. */
+  .av-flecha{ display:none; }
+  .av-barra > div{ padding:10px 20px; gap:14px; }
+  .av-barra .av-rotulo{ width:100%; }
+  .av-barra .av-der{ margin-left:0; width:100%; justify-content:space-between; }
+  .av-acceso .av-lead{ width:100%; }
+  .av-acceso a.av-primario{ margin-left:0; }
+  .av-911{ font-size:16px; }
+  .av-911 .av-911-caja{ gap:6px 12px; padding:10px 20px; }
+  .av-911 .av-911-num{ margin-left:0; font-size:23px; }
+}
+@media (prefers-reduced-motion: reduce){
+  .av-lam{ transition:none; }
+  .av-puntos li.on.corriendo button::after{ animation:none; }
+}

@@ -1,0 +1,102 @@
+{
+  "_lee_esto": "Vitrina de destacados de la portada. Para publicar un aviso nuevo solo se edita este archivo: no se toca HTML. El aviso desaparece solo el día siguiente a 'vigencia_hasta'. Si 'imagen' está vacío se dibuja la lámina botánica por código, de modo que ningún aviso obliga a mostrar el sello 'Falta el dato'. Se muestran los cinco primeros por 'orden'.",
+  "_campos": {
+    "orden": "Entero. Posición en la vitrina. El 1 es el que se ve al abrir la página.",
+    "etiqueta": "Versalita superior. Máximo 24 caracteres.",
+    "titulo": "Máximo 60 caracteres.",
+    "bajada": "Máximo 200 caracteres. Se oculta en celular por diseño.",
+    "cierre_visible": "Texto en dorado bajo la bajada. Vacío si el aviso no tiene fecha límite.",
+    "vigencia_hasta": "AAAA-MM-DD. Al pasar la fecha el aviso deja de mostrarse.",
+    "color": "Tinta de la etiqueta. Tomar de la paleta ampliada del sitio.",
+    "fondo": "[claro, oscuro] del degradado de la lámina.",
+    "semilla": "Entero. Cambia el ejemplar de árbol dibujado.",
+    "imagen": "Ruta a fotografía institucional. Si está vacío se usa la lámina."
+  },
+  "_revision": {
+    "responsable": "POR DEFINIR",
+    "periodicidad": "quincenal",
+    "ultima_revision": "2026-08-24"
+  },
+  "avisos": [
+    {
+      "id": "jornada-plantacion",
+      "orden": 1,
+      "etiqueta": "Participación",
+      "fecha": "18 de agosto de 2026",
+      "titulo": "Jornada de plantación en las colonias con menos sombra",
+      "bajada": "La Secretaría abre el registro para participar en las jornadas de este año. Se planta donde el diagnóstico identificó menor cobertura de copa por habitante.",
+      "cierre_visible": "Registro abierto",
+      "cta": "Cómo participar",
+      "enlace": "programas/reforestacion.html#participar",
+      "vigencia_hasta": "2026-11-30",
+      "color": "#CBDAC3",
+      "fondo": ["#5C7452", "#1A2415"],
+      "semilla": 5,
+      "imagen": ""
+    },
+    {
+      "id": "verifica-credencial",
+      "orden": 2,
+      "etiqueta": "Antes de contratar",
+      "fecha": "12 de agosto de 2026",
+      "titulo": "Verifica la credencial antes de dejar que alguien pode tu árbol",
+      "bajada": "Quien poda arbolado de la ciudad necesita acreditación vigente. Consulta el padrón con el folio de la credencial y evita un cobro indebido.",
+      "cierre_visible": "",
+      "cta": "Consultar el padrón",
+      "enlace": "responsabilidades.html#verificador",
+      "vigencia_hasta": "2027-12-31",
+      "color": "#CFDEDA",
+      "fondo": ["#2E6E69", "#0F2422"],
+      "semilla": 8,
+      "imagen": ""
+    },
+    {
+      "id": "temporada-lluvias",
+      "orden": 3,
+      "etiqueta": "Temporada de lluvias",
+      "fecha": "28 de julio de 2026",
+      "titulo": "Temporada de lluvias: qué hacer si un árbol se inclina",
+      "bajada": "Con viento y suelo saturado aumentan las caídas. Consulta los tres niveles de atención y el teléfono que corresponde a cada situación.",
+      "cierre_visible": "Vigente durante la temporada de lluvias",
+      "cta": "Ver qué hacer",
+      "enlace": "emergencias.html",
+      "vigencia_hasta": "2026-11-15",
+      "color": "#E0D1BE",
+      "fondo": ["#8A2743", "#220C14"],
+      "semilla": 13,
+      "imagen": ""
+    },
+    {
+      "id": "registro-patrimoniales",
+      "orden": 4,
+      "etiqueta": "Registro público",
+      "fecha": "5 de agosto de 2026",
+      "titulo": "Consulta el registro de árboles patrimoniales",
+      "bajada": "Reúne los ejemplares declarados patrimonio natural de la ciudad, con su ubicación, sus medidas y el marco legal que los protege. La convocatoria para proponer nuevos ejemplares está cerrada por ahora.",
+      "cierre_visible": "",
+      "cta": "Ver el registro",
+      "enlace": "https://sedemaoficina.github.io/arboles-patrimoniales",
+      "vigencia_hasta": "2027-12-31",
+      "color": "#DAC7A0",
+      "fondo": ["#7E5F1B", "#22190A"],
+      "semilla": 17,
+      "imagen": ""
+    },
+    {
+      "id": "retiro-palmeras",
+      "orden": 5,
+      "etiqueta": "Programa",
+      "fecha": "15 de julio de 2026",
+      "titulo": "Por qué se retiran palmeras y qué se planta en su lugar",
+      "bajada": "El picudo y la enfermedad las han vuelto un riesgo. Cada palmera retirada se sustituye por especies que sí dan sombra a la ciudad.",
+      "cierre_visible": "",
+      "cta": "Conocer el programa",
+      "enlace": "programas/palmeras.html",
+      "vigencia_hasta": "2027-06-30",
+      "color": "#D9B77E",
+      "fondo": ["#6E5528", "#1E1710"],
+      "semilla": 23,
+      "imagen": ""
+    }
+  ]
+}
