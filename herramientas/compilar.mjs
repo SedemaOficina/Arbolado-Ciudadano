@@ -395,6 +395,13 @@ function compilarPagina(relFuente, relSalida){
     else contenido = '<div style="display:contents" x-data="'+fab+'()">'+contenido+'</div>';
   }
 
+  // Capa lámina: las tipografías del sitio se resuelven por token, no en línea
+  contenido = contenido
+    .replace(/font-family: Cabin, Roboto, sans-serif/g, 'font-family: var(--font-titulo)')
+    .replace(/font-family: Cabin, sans-serif/g, 'font-family: var(--font-titulo)')
+    .replace(/font-family: Roboto, system-ui, sans-serif/g, 'font-family: var(--font-cuerpo)')
+    .replace(/font-family: Roboto, sans-serif/g, 'font-family: var(--font-cuerpo)');
+
   const meta = META[relSalida] || {titulo:'Arbolado Ciudadano · SEDEMA CDMX', desc:''};
   const raiz = '../'.repeat(profundidad);
   // Logotipos construidos dentro de la lógica (React.createElement): se corrigen aquí

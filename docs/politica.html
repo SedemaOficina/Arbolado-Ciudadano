@@ -49,7 +49,7 @@ a:hover { color: var(--guinda-oscuro); }
       </div>
       <search class="om-buscador" style="margin-left: auto; flex: 1 1 260px; max-width: 400px; position: relative">
         <label style="display: block; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--gris-100); margin-bottom: 6px" for="buscador-sitio">Buscar en el sitio</label>
-        <input style="width: 100%; box-sizing: border-box; font-family: Roboto, sans-serif; font-size: 16px; padding: 11px 14px; border: 1px solid var(--gris-40); border-radius: 4px; min-height: 44px; background: var(--blanco); color: var(--gris-100)" type="search" id="buscador-sitio" placeholder="poda, denuncia, permiso, vivero" autocomplete="off" aria-controls="resultados-sitio" :value="v.q" @input="v.escribir($event)" :aria-expanded="v.abierto">
+        <input style="width: 100%; box-sizing: border-box; font-family: var(--font-cuerpo); font-size: 16px; padding: 11px 14px; border: 1px solid var(--gris-40); border-radius: 4px; min-height: 44px; background: var(--blanco); color: var(--gris-100)" type="search" id="buscador-sitio" placeholder="poda, denuncia, permiso, vivero" autocomplete="off" aria-controls="resultados-sitio" :value="v.q" @input="v.escribir($event)" :aria-expanded="v.abierto">
         <div x-show="v.abierto" style="position: absolute; top: 100%; left: 0; right: 0; z-index: 50; margin-top: 4px; background: var(--blanco); border: 1px solid var(--gris-40); box-shadow: 0 8px 20px rgba(26,26,26,0.16); max-height: 62vh; overflow-y: auto; display:none" id="resultados-sitio">
             <ul x-show="v.hayResultados" style="list-style: none; margin: 0; padding: 0; display:none">
                 <template x-for="(r, _k845317270) in v.resultados" :key="_k845317270">
@@ -62,7 +62,7 @@ a:hover { color: var(--guinda-oscuro); }
                   </li>
                 </template>
               </ul>
-            <p x-show="v.sinResultados" style="margin: 0; padding: 16px; font-size: 16px; line-height: 1.55; color: var(--gris-100); display:none">No encontramos esa palabra. Prueba con poda, derribo, permiso, denuncia, vivero o el nombre de tu alcaldía.</p>
+            <p x-show="v.sinResultados" style="margin: 0; padding: 16px; font-size: 17px; line-height: 1.55; color: var(--gris-100); display:none">No encontramos esa palabra. Prueba con poda, derribo, permiso, denuncia, vivero o el nombre de tu alcaldía.</p>
           </div>
       </search>
     </div>
@@ -88,7 +88,7 @@ a:hover { color: var(--guinda-oscuro); }
       </div>
 
       <div class="om-nav-movil" style="max-width: 1240px; margin: 0 auto; padding: 10px 20px">
-        <button class="ih3" style="width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 14px; min-height: 52px; padding: 12px 16px; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; font-family: Roboto, sans-serif; font-size: 17px; font-weight: 700; color: var(--guinda-100); cursor: pointer; transition: background 150ms ease" aria-controls="menu-movil" @click="v.alternarMenu($event)" :aria-expanded="v.menuAbierto">
+        <button class="ih3" style="width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 14px; min-height: 52px; padding: 12px 16px; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; font-family: var(--font-cuerpo); font-size: 17px; font-weight: 700; color: var(--guinda-100); cursor: pointer; transition: background 150ms ease" aria-controls="menu-movil" @click="v.alternarMenu($event)" :aria-expanded="v.menuAbierto">
           <span style="display: flex; align-items: center; gap: 12px">
             <span style="display: flex; flex-direction: column; gap: 4px; flex: none" aria-hidden="true">
               <span style="display: block; width: 20px; height: 2px; background: var(--guinda-100)"></span>
@@ -177,7 +177,7 @@ a:hover { color: var(--guinda-oscuro); }
     <section style="background: var(--marfil); border-bottom: 1px solid var(--dorado-40)">
       <div style="max-width: 1240px; margin: 0 auto; padding: clamp(44px, 6vw, 88px) 24px">
         <div style="max-width: 30em">
-          <h1 style="margin: 0 0 26px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(36px, 5.2vw, 62px); line-height: 1.02; letter-spacing: -0.02em; font-weight: 700; color: var(--guinda-100); text-wrap: pretty">Una ciudad se mide por <em style="font-style: italic; color: var(--cafe)">la sombra</em> que deja a quien viene.</h1>
+          <h1 style="margin: 0 0 26px; font-family: var(--font-titulo); font-size: clamp(36px, 5.2vw, 62px); line-height: 1.02; letter-spacing: -0.02em; font-weight: 700; color: var(--guinda-100); text-wrap: pretty">Una ciudad se mide por <em style="font-style: italic; color: var(--cafe)">la sombra</em> que deja a quien viene.</h1>
           <p style="margin: 0; font-size: clamp(19px, 2vw, 24px); line-height: 1.5; text-wrap: pretty">La política de arbolado urbano de la Ciudad de México: qué se busca, con qué metas, cómo se mide y dónde consultar todo lo que la sustenta.</p>
         </div>
       </div>
@@ -187,7 +187,7 @@ a:hover { color: var(--guinda-oscuro); }
       <div style="position: relative; width: 100%; aspect-ratio: 21 / 9; min-height: 260px; background: var(--gris-10); border-bottom: 1px solid var(--gris-20)">
         <div class="falta-dato falta-dato--imagen" data-forma="rect" role="img" aria-label="Imagen institucional pendiente"><span class="falta-dato__sello">Falta el dato</span><span class="falta-dato__texto">Arrastra una fotografía documental de la política de arbolado</span></div>
       </div>
-      <figcaption style="max-width: 1240px; margin: 0 auto; padding: 12px 24px 0; font-size: 15px; line-height: 1.5; color: var(--gris-100)">Jornada de plantación en la Ciudad de México. Fotografía institucional.</figcaption>
+      <figcaption style="max-width: 1240px; margin: 0 auto; padding: 12px 24px 0; font-size: 17px; line-height: 1.5; color: var(--gris-100)">Jornada de plantación en la Ciudad de México. Fotografía institucional.</figcaption>
     </figure>
 
     <nav style="position: sticky; top: 0; z-index: 20; background: var(--gris-10); border-top: 1px solid var(--gris-20); border-bottom: 1px solid var(--gris-40); box-shadow: 0 4px 8px rgba(26,26,26,0.06); margin-top: clamp(28px, 3vw, 40px)" aria-label="Índice de la sección">
@@ -210,13 +210,13 @@ a:hover { color: var(--guinda-oscuro); }
 
     <section style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 64px) 24px; scroll-margin-top: 72px" id="sexenal">
       <div style="max-width: 40em; margin-bottom: 36px">
-        <h2 style="margin: 0 0 14px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(28px, 3.4vw, 40px); line-height: 1.12; font-weight: 700; color: var(--guinda-100)">Política sexenal</h2>
+        <h2 style="margin: 0 0 14px; font-family: var(--font-titulo); font-size: clamp(28px, 3.4vw, 40px); line-height: 1.12; font-weight: 700; color: var(--guinda-100)">Política sexenal</h2>
         <p style="margin: 0; font-size: 20px; line-height: 1.6">Visión, metas al 2030 e indicadores de avance.</p>
       </div>
 
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: clamp(28px, 4vw, 48px); margin-bottom: 40px">
         <div>
-          <h3 style="margin: 0 0 14px; font-family: Cabin, Roboto, sans-serif; font-size: 26px; font-weight: 700; color: var(--guinda-100); line-height: 1.25">La visión</h3>
+          <h3 style="margin: 0 0 14px; font-family: var(--font-titulo); font-size: 26px; font-weight: 700; color: var(--guinda-100); line-height: 1.25">La visión</h3>
           <p style="margin: 0 0 16px; font-size: 19px; line-height: 1.65">La Ciudad de México trabaja para que su arbolado urbano crezca en cantidad, en salud y en distribución justa entre alcaldías, con manejo técnico y participación de quienes viven cada calle.</p>
         </div>
         <div style="background: var(--gris-10); border-left: 4px solid var(--guinda-100); padding: 24px 28px">
@@ -229,7 +229,7 @@ a:hover { color: var(--guinda-oscuro); }
         </div>
       </div>
 
-      <h3 style="margin: 0 0 20px; font-family: Cabin, Roboto, sans-serif; font-size: 26px; font-weight: 700; color: var(--guinda-100)">Metas 2024–2030</h3>
+      <h3 style="margin: 0 0 20px; font-family: var(--font-titulo); font-size: 26px; font-weight: 700; color: var(--guinda-100)">Metas 2024–2030</h3>
       <div style="overflow-x: auto; border: 1px solid var(--gris-20); margin-bottom: 40px">
         <table style="width: 100%; border-collapse: collapse; font-size: 17px; min-width: 620px">
           <thead>
@@ -275,42 +275,42 @@ a:hover { color: var(--guinda-oscuro); }
         </table>
       </div>
 
-      <h3 style="margin: 0 0 20px; font-family: Cabin, Roboto, sans-serif; font-size: 26px; font-weight: 700; color: var(--guinda-100)">Indicadores de avance</h3>
+      <h3 style="margin: 0 0 20px; font-family: var(--font-titulo); font-size: 26px; font-weight: 700; color: var(--guinda-100)">Indicadores de avance</h3>
       <ul style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px">
         
           <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-top: 4px solid var(--dorado-100); padding: 24px" data-pr>
             <span style="display: block; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 10px" x-html="i.nombre">Plantación anual</span>
-            <span style="display: block; font-family: Cabin, Roboto, sans-serif; font-size: clamp(30px, 5vw, 40px); font-weight: 700; color: var(--guinda-100); line-height: 1" x-html="i.valor">Por publicar</span>
+            <span style="display: block; font-family: var(--font-titulo); font-size: clamp(30px, 5vw, 40px); font-weight: 700; color: var(--guinda-100); line-height: 1" x-html="i.valor">Por publicar</span>
             <span style="display: block; margin: 12px 0 10px; height: 8px; background: var(--gris-20)"><span style="display: block; height: 8px; background: var(--guinda-100); width: 38%" :style="`display: block; height: 8px; background: var(--guinda-100); width: ${i.pct}`"></span></span>
-            <span style="display: block; font-size: 16px; line-height: 1.5; color: var(--gris-100)" x-html="i.nota">Avance por publicar</span>
+            <span style="display: block; font-size: 17px; line-height: 1.5; color: var(--gris-100)" x-html="i.nota">Avance por publicar</span>
           </li>
         
           <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-top: 4px solid var(--dorado-100); padding: 24px" data-pr>
             <span style="display: block; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 10px" x-html="i.nombre">Reportes atendidos</span>
-            <span style="display: block; font-family: Cabin, Roboto, sans-serif; font-size: clamp(30px, 5vw, 40px); font-weight: 700; color: var(--guinda-100); line-height: 1" x-html="i.valor">Por publicar</span>
+            <span style="display: block; font-family: var(--font-titulo); font-size: clamp(30px, 5vw, 40px); font-weight: 700; color: var(--guinda-100); line-height: 1" x-html="i.valor">Por publicar</span>
             <span style="display: block; margin: 12px 0 10px; height: 8px; background: var(--gris-20)"><span style="display: block; height: 8px; background: var(--guinda-100); width: 62%" :style="`display: block; height: 8px; background: var(--guinda-100); width: ${i.pct}`"></span></span>
-            <span style="display: block; font-size: 16px; line-height: 1.5; color: var(--gris-100)" x-html="i.nota">Avance por publicar</span>
+            <span style="display: block; font-size: 17px; line-height: 1.5; color: var(--gris-100)" x-html="i.nota">Avance por publicar</span>
           </li>
         
           <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-top: 4px solid var(--dorado-100); padding: 24px" data-pr>
             <span style="display: block; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 10px" x-html="i.nombre">Cobertura de copa</span>
-            <span style="display: block; font-family: Cabin, Roboto, sans-serif; font-size: clamp(30px, 5vw, 40px); font-weight: 700; color: var(--guinda-100); line-height: 1" x-html="i.valor">Por publicar</span>
+            <span style="display: block; font-family: var(--font-titulo); font-size: clamp(30px, 5vw, 40px); font-weight: 700; color: var(--guinda-100); line-height: 1" x-html="i.valor">Por publicar</span>
             <span style="display: block; margin: 12px 0 10px; height: 8px; background: var(--gris-20)"><span style="display: block; height: 8px; background: var(--guinda-100); width: 24%" :style="`display: block; height: 8px; background: var(--guinda-100); width: ${i.pct}`"></span></span>
-            <span style="display: block; font-size: 16px; line-height: 1.5; color: var(--gris-100)" x-html="i.nota">Avance por publicar</span>
+            <span style="display: block; font-size: 17px; line-height: 1.5; color: var(--gris-100)" x-html="i.nota">Avance por publicar</span>
           </li>
         
           <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-top: 4px solid var(--dorado-100); padding: 24px" data-pr>
             <span style="display: block; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 10px" x-html="i.nombre">Personas acreditadas</span>
-            <span style="display: block; font-family: Cabin, Roboto, sans-serif; font-size: clamp(30px, 5vw, 40px); font-weight: 700; color: var(--guinda-100); line-height: 1" x-html="i.valor">Por publicar</span>
+            <span style="display: block; font-family: var(--font-titulo); font-size: clamp(30px, 5vw, 40px); font-weight: 700; color: var(--guinda-100); line-height: 1" x-html="i.valor">Por publicar</span>
             <span style="display: block; margin: 12px 0 10px; height: 8px; background: var(--gris-20)"><span style="display: block; height: 8px; background: var(--guinda-100); width: 80%" :style="`display: block; height: 8px; background: var(--guinda-100); width: ${i.pct}`"></span></span>
-            <span style="display: block; font-size: 16px; line-height: 1.5; color: var(--gris-100)" x-html="i.nota">Avance por publicar</span>
+            <span style="display: block; font-size: 17px; line-height: 1.5; color: var(--gris-100)" x-html="i.nota">Avance por publicar</span>
           </li>
         <template x-for="(i, _k1055944084) in v.indicadores" :key="_k1055944084">
           <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-top: 4px solid var(--dorado-100); padding: 24px">
             <span style="display: block; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 10px" x-html="i.nombre"></span>
-            <span style="display: block; font-family: Cabin, Roboto, sans-serif; font-size: clamp(30px, 5vw, 40px); font-weight: 700; color: var(--guinda-100); line-height: 1" x-html="i.valor"></span>
+            <span style="display: block; font-family: var(--font-titulo); font-size: clamp(30px, 5vw, 40px); font-weight: 700; color: var(--guinda-100); line-height: 1" x-html="i.valor"></span>
             <span style="display: block; margin: 12px 0 10px; height: 8px; background: var(--gris-20)"><span :style="`display: block; height: 8px; background: var(--guinda-100); width: ${i.pct}`"></span></span>
-            <span style="display: block; font-size: 16px; line-height: 1.5; color: var(--gris-100)" x-html="i.nota"></span>
+            <span style="display: block; font-size: 17px; line-height: 1.5; color: var(--gris-100)" x-html="i.nota"></span>
           </li>
         </template>
       </ul>
@@ -319,7 +319,7 @@ a:hover { color: var(--guinda-oscuro); }
     <section style="background: var(--gris-10); border-top: 1px solid var(--gris-20); border-bottom: 1px solid var(--gris-20); scroll-margin-top: 72px" id="programas">
       <div style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 64px) 24px">
         <div style="max-width: 40em; margin-bottom: 32px">
-          <h2 style="margin: 0 0 14px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(28px, 3.4vw, 40px); line-height: 1.12; font-weight: 700; color: var(--guinda-100)">Programas vigentes</h2>
+          <h2 style="margin: 0 0 14px; font-family: var(--font-titulo); font-size: clamp(28px, 3.4vw, 40px); line-height: 1.12; font-weight: 700; color: var(--guinda-100)">Programas vigentes</h2>
           <p style="margin: 0; font-size: 20px; line-height: 1.6">Los programas institucionales con los que se ejecuta la política.</p>
         </div>
 
@@ -333,7 +333,7 @@ a:hover { color: var(--guinda-oscuro); }
                 <span style="font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700" x-html="p.etapa">Programa vigente</span>
                 <h3 style="margin: 8px 0 10px; font-size: 22px; font-weight: 700; color: var(--guinda-100); line-height: 1.25" x-html="p.nombre">Programa por publicar</h3>
                 <p style="margin: 0 0 16px; font-size: 17px; line-height: 1.55" x-html="p.texto">La ficha de este programa se publicará con su objetivo, su cobertura y a quién está dirigido.</p>
-                <span style="margin-top: auto; padding-top: 14px; border-top: 1px solid var(--gris-20); font-size: 16px; color: var(--gris-100)" x-html="p.nota">Periodo y área responsable por publicar</span>
+                <span style="margin-top: auto; padding-top: 14px; border-top: 1px solid var(--gris-20); font-size: 17px; color: var(--gris-100)" x-html="p.nota">Periodo y área responsable por publicar</span>
               </div>
             </li>
           
@@ -345,7 +345,7 @@ a:hover { color: var(--guinda-oscuro); }
                 <span style="font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700" x-html="p.etapa">Programa vigente</span>
                 <h3 style="margin: 8px 0 10px; font-size: 22px; font-weight: 700; color: var(--guinda-100); line-height: 1.25" x-html="p.nombre">Programa por publicar</h3>
                 <p style="margin: 0 0 16px; font-size: 17px; line-height: 1.55" x-html="p.texto">La ficha de este programa se publicará con su objetivo, su cobertura y a quién está dirigido.</p>
-                <span style="margin-top: auto; padding-top: 14px; border-top: 1px solid var(--gris-20); font-size: 16px; color: var(--gris-100)" x-html="p.nota">Periodo y área responsable por publicar</span>
+                <span style="margin-top: auto; padding-top: 14px; border-top: 1px solid var(--gris-20); font-size: 17px; color: var(--gris-100)" x-html="p.nota">Periodo y área responsable por publicar</span>
               </div>
             </li>
           
@@ -357,7 +357,7 @@ a:hover { color: var(--guinda-oscuro); }
                 <span style="font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700" x-html="p.etapa">Programa vigente</span>
                 <h3 style="margin: 8px 0 10px; font-size: 22px; font-weight: 700; color: var(--guinda-100); line-height: 1.25" x-html="p.nombre">Programa por publicar</h3>
                 <p style="margin: 0 0 16px; font-size: 17px; line-height: 1.55" x-html="p.texto">La ficha de este programa se publicará con su objetivo, su cobertura y a quién está dirigido.</p>
-                <span style="margin-top: auto; padding-top: 14px; border-top: 1px solid var(--gris-20); font-size: 16px; color: var(--gris-100)" x-html="p.nota">Periodo y área responsable por publicar</span>
+                <span style="margin-top: auto; padding-top: 14px; border-top: 1px solid var(--gris-20); font-size: 17px; color: var(--gris-100)" x-html="p.nota">Periodo y área responsable por publicar</span>
               </div>
             </li>
           
@@ -369,7 +369,7 @@ a:hover { color: var(--guinda-oscuro); }
                 <span style="font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700" x-html="p.etapa">Programa vigente</span>
                 <h3 style="margin: 8px 0 10px; font-size: 22px; font-weight: 700; color: var(--guinda-100); line-height: 1.25" x-html="p.nombre">Programa por publicar</h3>
                 <p style="margin: 0 0 16px; font-size: 17px; line-height: 1.55" x-html="p.texto">La ficha de este programa se publicará con su objetivo, su cobertura y a quién está dirigido.</p>
-                <span style="margin-top: auto; padding-top: 14px; border-top: 1px solid var(--gris-20); font-size: 16px; color: var(--gris-100)" x-html="p.nota">Periodo y área responsable por publicar</span>
+                <span style="margin-top: auto; padding-top: 14px; border-top: 1px solid var(--gris-20); font-size: 17px; color: var(--gris-100)" x-html="p.nota">Periodo y área responsable por publicar</span>
               </div>
             </li>
           <template x-for="(p, _k1324086770) in v.programas" :key="_k1324086770">
@@ -381,7 +381,7 @@ a:hover { color: var(--guinda-oscuro); }
                 <span style="font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700" x-html="p.etapa"></span>
                 <h3 style="margin: 8px 0 10px; font-size: 22px; font-weight: 700; color: var(--guinda-100); line-height: 1.25" x-html="p.nombre"></h3>
                 <p style="margin: 0 0 16px; font-size: 17px; line-height: 1.55" x-html="p.texto"></p>
-                <span style="margin-top: auto; padding-top: 14px; border-top: 1px solid var(--gris-20); font-size: 16px; color: var(--gris-100)" x-html="p.nota"></span>
+                <span style="margin-top: auto; padding-top: 14px; border-top: 1px solid var(--gris-20); font-size: 17px; color: var(--gris-100)" x-html="p.nota"></span>
               </div>
             </li>
           </template>
@@ -391,7 +391,7 @@ a:hover { color: var(--guinda-oscuro); }
 
     <section style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 64px) 24px; scroll-margin-top: 72px" id="publicaciones">
       <div style="max-width: 40em; margin-bottom: 32px">
-        <h2 style="margin: 0 0 14px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(28px, 3.4vw, 40px); line-height: 1.12; font-weight: 700; color: var(--guinda-100)">Publicaciones rectoras</h2>
+        <h2 style="margin: 0 0 14px; font-family: var(--font-titulo); font-size: clamp(28px, 3.4vw, 40px); line-height: 1.12; font-weight: 700; color: var(--guinda-100)">Publicaciones rectoras</h2>
         <p style="margin: 0; font-size: 20px; line-height: 1.6">Los documentos que fijan el marco de todo lo demás.</p>
       </div>
 
@@ -401,14 +401,14 @@ a:hover { color: var(--guinda-oscuro); }
             <div style="flex: none; width: 92px; aspect-ratio: 3 / 4; background: var(--marfil); border: 1px solid var(--dorado-40); box-shadow: 0 4px 8px rgba(26,26,26,0.12); display: flex; flex-direction: column">
               <div style="height: 8px; background: var(--guinda-100)"></div>
               <div style="flex: 1; padding: 10px 8px; display: flex; flex-direction: column; justify-content: space-between">
-                <span style="font-family: Cabin, Roboto, sans-serif; font-size: 11px; font-weight: 700; line-height: 1.2; color: var(--guinda-100)" x-html="d.corto">Programa ambiental</span>
+                <span style="font-family: var(--font-titulo); font-size: 11px; font-weight: 700; line-height: 1.2; color: var(--guinda-100)" x-html="d.corto">Programa ambiental</span>
                 <span style="font-size: 8px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gris-100); font-weight: 700">SEDEMA</span>
               </div>
             </div>
             <div style="flex: 1; min-width: 0; display: flex; flex-direction: column">
               <span style="font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gris-100); font-weight: 700" x-html="d.formato">Documento rector</span>
               <h3 style="margin: 6px 0 8px; font-size: 19px; font-weight: 700; color: var(--guinda-100); line-height: 1.3" x-html="d.titulo">Programa ambiental y de cambio climático</h3>
-              <p style="margin: 0 0 16px; font-size: 16px; line-height: 1.5; color: var(--gris-100)" x-html="d.texto">El instrumento que enmarca la política ambiental de la ciudad para el sexenio.</p>
+              <p style="margin: 0 0 16px; font-size: 17px; line-height: 1.5; color: var(--gris-100)" x-html="d.texto">El instrumento que enmarca la política ambiental de la ciudad para el sexenio.</p>
               <a x-show="d.disponible" class="ih4" style="margin-top: auto; align-self: flex-start; background: var(--guinda-100); color: var(--blanco); border-radius: 4px; padding: 11px 18px; font-size: 16px; font-weight: 700; text-decoration: none; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 8px; transition: background 150ms ease; display:none" href="#" target="_blank" rel="noopener" :href="dcRuta(d.url)">Consultar <span aria-hidden="true">↓</span></a>
               <span x-show="d.pendiente" style="margin-top: auto; align-self: flex-start; font-size: 15px; font-weight: 700; color: var(--gris-100); background: var(--gris-10); border: 1px solid var(--gris-40); padding: 10px 16px; display: inline-flex; align-items: center; min-height: 44px; box-sizing: border-box">Aún no disponible</span>
             </div>
@@ -418,14 +418,14 @@ a:hover { color: var(--guinda-oscuro); }
             <div style="flex: none; width: 92px; aspect-ratio: 3 / 4; background: var(--marfil); border: 1px solid var(--dorado-40); box-shadow: 0 4px 8px rgba(26,26,26,0.12); display: flex; flex-direction: column">
               <div style="height: 8px; background: var(--guinda-100)"></div>
               <div style="flex: 1; padding: 10px 8px; display: flex; flex-direction: column; justify-content: space-between">
-                <span style="font-family: Cabin, Roboto, sans-serif; font-size: 11px; font-weight: 700; line-height: 1.2; color: var(--guinda-100)" x-html="d.corto">Arbolado urbano</span>
+                <span style="font-family: var(--font-titulo); font-size: 11px; font-weight: 700; line-height: 1.2; color: var(--guinda-100)" x-html="d.corto">Arbolado urbano</span>
                 <span style="font-size: 8px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gris-100); font-weight: 700">SEDEMA</span>
               </div>
             </div>
             <div style="flex: 1; min-width: 0; display: flex; flex-direction: column">
               <span style="font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gris-100); font-weight: 700" x-html="d.formato">Documento rector</span>
               <h3 style="margin: 6px 0 8px; font-size: 19px; font-weight: 700; color: var(--guinda-100); line-height: 1.3" x-html="d.titulo">Estrategia de arbolado urbano</h3>
-              <p style="margin: 0 0 16px; font-size: 16px; line-height: 1.5; color: var(--gris-100)" x-html="d.texto">Los criterios técnicos y las metas de manejo del arbolado de la ciudad.</p>
+              <p style="margin: 0 0 16px; font-size: 17px; line-height: 1.5; color: var(--gris-100)" x-html="d.texto">Los criterios técnicos y las metas de manejo del arbolado de la ciudad.</p>
               <a x-show="d.disponible" class="ih4" style="margin-top: auto; align-self: flex-start; background: var(--guinda-100); color: var(--blanco); border-radius: 4px; padding: 11px 18px; font-size: 16px; font-weight: 700; text-decoration: none; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 8px; transition: background 150ms ease; display:none" href="#" target="_blank" rel="noopener" :href="dcRuta(d.url)">Consultar <span aria-hidden="true">↓</span></a>
               <span x-show="d.pendiente" style="margin-top: auto; align-self: flex-start; font-size: 15px; font-weight: 700; color: var(--gris-100); background: var(--gris-10); border: 1px solid var(--gris-40); padding: 10px 16px; display: inline-flex; align-items: center; min-height: 44px; box-sizing: border-box">Aún no disponible</span>
             </div>
@@ -435,14 +435,14 @@ a:hover { color: var(--guinda-oscuro); }
             <div style="flex: none; width: 92px; aspect-ratio: 3 / 4; background: var(--marfil); border: 1px solid var(--dorado-40); box-shadow: 0 4px 8px rgba(26,26,26,0.12); display: flex; flex-direction: column">
               <div style="height: 8px; background: var(--guinda-100)"></div>
               <div style="flex: 1; padding: 10px 8px; display: flex; flex-direction: column; justify-content: space-between">
-                <span style="font-family: Cabin, Roboto, sans-serif; font-size: 11px; font-weight: 700; line-height: 1.2; color: var(--guinda-100)" x-html="d.corto">Informe anual</span>
+                <span style="font-family: var(--font-titulo); font-size: 11px; font-weight: 700; line-height: 1.2; color: var(--guinda-100)" x-html="d.corto">Informe anual</span>
                 <span style="font-size: 8px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gris-100); font-weight: 700">SEDEMA</span>
               </div>
             </div>
             <div style="flex: 1; min-width: 0; display: flex; flex-direction: column">
               <span style="font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gris-100); font-weight: 700" x-html="d.formato">Informe</span>
               <h3 style="margin: 6px 0 8px; font-size: 19px; font-weight: 700; color: var(--guinda-100); line-height: 1.3" x-html="d.titulo">Informe anual de avance</h3>
-              <p style="margin: 0 0 16px; font-size: 16px; line-height: 1.5; color: var(--gris-100)" x-html="d.texto">Los resultados del año, con indicadores y ejecución por alcaldía.</p>
+              <p style="margin: 0 0 16px; font-size: 17px; line-height: 1.5; color: var(--gris-100)" x-html="d.texto">Los resultados del año, con indicadores y ejecución por alcaldía.</p>
               <a x-show="d.disponible" class="ih4" style="margin-top: auto; align-self: flex-start; background: var(--guinda-100); color: var(--blanco); border-radius: 4px; padding: 11px 18px; font-size: 16px; font-weight: 700; text-decoration: none; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 8px; transition: background 150ms ease; display:none" href="#" target="_blank" rel="noopener" :href="dcRuta(d.url)">Consultar <span aria-hidden="true">↓</span></a>
               <span x-show="d.pendiente" style="margin-top: auto; align-self: flex-start; font-size: 15px; font-weight: 700; color: var(--gris-100); background: var(--gris-10); border: 1px solid var(--gris-40); padding: 10px 16px; display: inline-flex; align-items: center; min-height: 44px; box-sizing: border-box">Aún no disponible</span>
             </div>
@@ -452,14 +452,14 @@ a:hover { color: var(--guinda-oscuro); }
             <div style="flex: none; width: 92px; aspect-ratio: 3 / 4; background: var(--marfil); border: 1px solid var(--dorado-40); box-shadow: 0 4px 8px rgba(26,26,26,0.12); display: flex; flex-direction: column">
               <div style="height: 8px; background: var(--guinda-100)"></div>
               <div style="flex: 1; padding: 10px 8px; display: flex; flex-direction: column; justify-content: space-between">
-                <span style="font-family: Cabin, Roboto, sans-serif; font-size: 11px; font-weight: 700; line-height: 1.2; color: var(--guinda-100)" x-html="d.corto"></span>
+                <span style="font-family: var(--font-titulo); font-size: 11px; font-weight: 700; line-height: 1.2; color: var(--guinda-100)" x-html="d.corto"></span>
                 <span style="font-size: 8px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gris-100); font-weight: 700">SEDEMA</span>
               </div>
             </div>
             <div style="flex: 1; min-width: 0; display: flex; flex-direction: column">
               <span style="font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gris-100); font-weight: 700" x-html="d.formato"></span>
               <h3 style="margin: 6px 0 8px; font-size: 19px; font-weight: 700; color: var(--guinda-100); line-height: 1.3" x-html="d.titulo"></h3>
-              <p style="margin: 0 0 16px; font-size: 16px; line-height: 1.5; color: var(--gris-100)" x-html="d.texto"></p>
+              <p style="margin: 0 0 16px; font-size: 17px; line-height: 1.5; color: var(--gris-100)" x-html="d.texto"></p>
               <a x-show="d.disponible" class="ih4" style="margin-top: auto; align-self: flex-start; background: var(--guinda-100); color: var(--blanco); border-radius: 4px; padding: 11px 18px; font-size: 16px; font-weight: 700; text-decoration: none; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 8px; transition: background 150ms ease" target="_blank" rel="noopener" :href="dcRuta(d.url)">Consultar <span aria-hidden="true">↓</span></a>
               <span x-show="d.pendiente" style="margin-top: auto; align-self: flex-start; font-size: 15px; font-weight: 700; color: var(--gris-100); background: var(--gris-10); border: 1px solid var(--gris-40); padding: 10px 16px; display: inline-flex; align-items: center; min-height: 44px; box-sizing: border-box">Aún no disponible</span>
             </div>
@@ -471,7 +471,7 @@ a:hover { color: var(--guinda-oscuro); }
     <section style="background: var(--gris-10); border-top: 1px solid var(--gris-20); border-bottom: 1px solid var(--gris-20); scroll-margin-top: 72px" id="recursos">
       <div style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 64px) 24px">
         <div style="max-width: 40em; margin-bottom: 28px">
-          <h2 style="margin: 0 0 14px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(28px, 3.4vw, 40px); line-height: 1.12; font-weight: 700; color: var(--guinda-100)">Centro de recursos</h2>
+          <h2 style="margin: 0 0 14px; font-family: var(--font-titulo); font-size: clamp(28px, 3.4vw, 40px); line-height: 1.12; font-weight: 700; color: var(--guinda-100)">Centro de recursos</h2>
           <p style="margin: 0; font-size: 20px; line-height: 1.6">Documentos, libros, guías, listados, fotografías y videos. Cada ficha muestra su portada o su miniatura antes de que la abras.</p>
         </div>
 
@@ -479,21 +479,21 @@ a:hover { color: var(--guinda-oscuro); }
           <legend style="font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--gris-100); margin-bottom: 12px">Filtra por tipo</legend>
           <div style="display: flex; flex-wrap: wrap; gap: 8px">
             
-              <button style="font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: var(--guinda-100); color: var(--blanco); border: 1px solid var(--guinda-100); transition: background 150ms ease" aria-pressed="true" @click="f.activar($event)" :aria-pressed="f.activo" data-pr :style="`font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `">Todos </span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta">21</span></button>
+              <button style="font-family: var(--font-cuerpo); font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: var(--guinda-100); color: var(--blanco); border: 1px solid var(--guinda-100); transition: background 150ms ease" aria-pressed="true" @click="f.activar($event)" :aria-pressed="f.activo" data-pr :style="`font-family: var(--font-cuerpo); font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `">Todos </span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta">21</span></button>
             
-              <button style="font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: var(--blanco); color: var(--gris-100); border: 1px solid var(--gris-40); transition: background 150ms ease" @click="f.activar($event)" :aria-pressed="f.activo" data-pr :style="`font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `">Documentos </span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta">4</span></button>
+              <button style="font-family: var(--font-cuerpo); font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: var(--blanco); color: var(--gris-100); border: 1px solid var(--gris-40); transition: background 150ms ease" @click="f.activar($event)" :aria-pressed="f.activo" data-pr :style="`font-family: var(--font-cuerpo); font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `">Documentos </span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta">4</span></button>
             
-              <button style="font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: var(--blanco); color: var(--gris-100); border: 1px solid var(--gris-40); transition: background 150ms ease" @click="f.activar($event)" :aria-pressed="f.activo" data-pr :style="`font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `">Libros </span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta">2</span></button>
+              <button style="font-family: var(--font-cuerpo); font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: var(--blanco); color: var(--gris-100); border: 1px solid var(--gris-40); transition: background 150ms ease" @click="f.activar($event)" :aria-pressed="f.activo" data-pr :style="`font-family: var(--font-cuerpo); font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `">Libros </span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta">2</span></button>
             
-              <button style="font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: var(--blanco); color: var(--gris-100); border: 1px solid var(--gris-40); transition: background 150ms ease" @click="f.activar($event)" :aria-pressed="f.activo" data-pr :style="`font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `">Guías </span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta">4</span></button>
+              <button style="font-family: var(--font-cuerpo); font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: var(--blanco); color: var(--gris-100); border: 1px solid var(--gris-40); transition: background 150ms ease" @click="f.activar($event)" :aria-pressed="f.activo" data-pr :style="`font-family: var(--font-cuerpo); font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `">Guías </span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta">4</span></button>
             
-              <button style="font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: var(--blanco); color: var(--gris-100); border: 1px solid var(--gris-40); transition: background 150ms ease" @click="f.activar($event)" :aria-pressed="f.activo" data-pr :style="`font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `">Listados </span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta">5</span></button>
+              <button style="font-family: var(--font-cuerpo); font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: var(--blanco); color: var(--gris-100); border: 1px solid var(--gris-40); transition: background 150ms ease" @click="f.activar($event)" :aria-pressed="f.activo" data-pr :style="`font-family: var(--font-cuerpo); font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `">Listados </span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta">5</span></button>
             
-              <button style="font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: var(--blanco); color: var(--gris-100); border: 1px solid var(--gris-40); transition: background 150ms ease" @click="f.activar($event)" :aria-pressed="f.activo" data-pr :style="`font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `">Fotografías </span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta">3</span></button>
+              <button style="font-family: var(--font-cuerpo); font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: var(--blanco); color: var(--gris-100); border: 1px solid var(--gris-40); transition: background 150ms ease" @click="f.activar($event)" :aria-pressed="f.activo" data-pr :style="`font-family: var(--font-cuerpo); font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `">Fotografías </span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta">3</span></button>
             
-              <button style="font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: var(--blanco); color: var(--gris-100); border: 1px solid var(--gris-40); transition: background 150ms ease" @click="f.activar($event)" :aria-pressed="f.activo" data-pr :style="`font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `">Videos </span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta">3</span></button>
+              <button style="font-family: var(--font-cuerpo); font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: var(--blanco); color: var(--gris-100); border: 1px solid var(--gris-40); transition: background 150ms ease" @click="f.activar($event)" :aria-pressed="f.activo" data-pr :style="`font-family: var(--font-cuerpo); font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `">Videos </span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta">3</span></button>
             <template x-for="(f, _k321900499) in v.filtros" :key="_k321900499">
-              <button @click="f.activar($event)" :aria-pressed="f.activo" :style="`font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `"></span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta"></span></button>
+              <button @click="f.activar($event)" :aria-pressed="f.activo" :style="`font-family: var(--font-cuerpo); font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `"></span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta"></span></button>
             </template>
           </div>
         </fieldset>
@@ -509,7 +509,7 @@ a:hover { color: var(--guinda-oscuro); }
                     <div style="width: 42%; height: 88%; background: var(--marfil); border: 1px solid var(--dorado-40); border-bottom: 0; box-shadow: 0 4px 8px rgba(26,26,26,0.18); display: flex; flex-direction: column">
                       <div style="height: 7px; background: var(--guinda-100)" :style="`height: 7px; background: ${r.color}`"></div>
                       <div style="flex: 1; padding: 12px 10px; display: flex; flex-direction: column; gap: 8px">
-                        <span style="font-family: Cabin, Roboto, sans-serif; font-size: 11px; font-weight: 700; line-height: 1.25; color: var(--guinda-100)" x-html="r.corto">Ley Ambiental</span>
+                        <span style="font-family: var(--font-titulo); font-size: 11px; font-weight: 700; line-height: 1.25; color: var(--guinda-100)" x-html="r.corto">Ley Ambiental</span>
                         <span style="display: block; height: 2px; width: 60%; background: var(--dorado-40)"></span>
                         <span style="display: block; height: 2px; width: 84%; background: var(--gris-20)"></span>
                         <span style="display: block; height: 2px; width: 76%; background: var(--gris-20)"></span>
@@ -565,7 +565,7 @@ a:hover { color: var(--guinda-oscuro); }
                     <div style="width: 42%; height: 88%; background: var(--marfil); border: 1px solid var(--dorado-40); border-bottom: 0; box-shadow: 0 4px 8px rgba(26,26,26,0.18); display: flex; flex-direction: column">
                       <div style="height: 7px; background: var(--guinda-100)" :style="`height: 7px; background: ${r.color}`"></div>
                       <div style="flex: 1; padding: 12px 10px; display: flex; flex-direction: column; gap: 8px">
-                        <span style="font-family: Cabin, Roboto, sans-serif; font-size: 11px; font-weight: 700; line-height: 1.25; color: var(--guinda-100)" x-html="r.corto">NADF-001</span>
+                        <span style="font-family: var(--font-titulo); font-size: 11px; font-weight: 700; line-height: 1.25; color: var(--guinda-100)" x-html="r.corto">NADF-001</span>
                         <span style="display: block; height: 2px; width: 60%; background: var(--dorado-40)"></span>
                         <span style="display: block; height: 2px; width: 84%; background: var(--gris-20)"></span>
                         <span style="display: block; height: 2px; width: 76%; background: var(--gris-20)"></span>
@@ -621,7 +621,7 @@ a:hover { color: var(--guinda-oscuro); }
                     <div style="width: 42%; height: 88%; background: var(--marfil); border: 1px solid var(--dorado-40); border-bottom: 0; box-shadow: 0 4px 8px rgba(26,26,26,0.18); display: flex; flex-direction: column">
                       <div style="height: 7px; background: var(--guinda-100)" :style="`height: 7px; background: ${r.color}`"></div>
                       <div style="flex: 1; padding: 12px 10px; display: flex; flex-direction: column; gap: 8px">
-                        <span style="font-family: Cabin, Roboto, sans-serif; font-size: 11px; font-weight: 700; line-height: 1.25; color: var(--guinda-100)" x-html="r.corto">NADF-006</span>
+                        <span style="font-family: var(--font-titulo); font-size: 11px; font-weight: 700; line-height: 1.25; color: var(--guinda-100)" x-html="r.corto">NADF-006</span>
                         <span style="display: block; height: 2px; width: 60%; background: var(--dorado-40)"></span>
                         <span style="display: block; height: 2px; width: 84%; background: var(--gris-20)"></span>
                         <span style="display: block; height: 2px; width: 76%; background: var(--gris-20)"></span>
@@ -677,7 +677,7 @@ a:hover { color: var(--guinda-oscuro); }
                     <div style="width: 42%; height: 88%; background: var(--marfil); border: 1px solid var(--dorado-40); border-bottom: 0; box-shadow: 0 4px 8px rgba(26,26,26,0.18); display: flex; flex-direction: column">
                       <div style="height: 7px; background: var(--guinda-100)" :style="`height: 7px; background: ${r.color}`"></div>
                       <div style="flex: 1; padding: 12px 10px; display: flex; flex-direction: column; gap: 8px">
-                        <span style="font-family: Cabin, Roboto, sans-serif; font-size: 11px; font-weight: 700; line-height: 1.25; color: var(--guinda-100)" x-html="r.corto">Código Penal</span>
+                        <span style="font-family: var(--font-titulo); font-size: 11px; font-weight: 700; line-height: 1.25; color: var(--guinda-100)" x-html="r.corto">Código Penal</span>
                         <span style="display: block; height: 2px; width: 60%; background: var(--dorado-40)"></span>
                         <span style="display: block; height: 2px; width: 84%; background: var(--gris-20)"></span>
                         <span style="display: block; height: 2px; width: 76%; background: var(--gris-20)"></span>
@@ -733,7 +733,7 @@ a:hover { color: var(--guinda-oscuro); }
                     <div style="width: 42%; height: 88%; background: var(--marfil); border: 1px solid var(--dorado-40); border-bottom: 0; box-shadow: 0 4px 8px rgba(26,26,26,0.18); display: flex; flex-direction: column">
                       <div style="height: 7px; background: var(--guinda-oscuro)" :style="`height: 7px; background: ${r.color}`"></div>
                       <div style="flex: 1; padding: 12px 10px; display: flex; flex-direction: column; gap: 8px">
-                        <span style="font-family: Cabin, Roboto, sans-serif; font-size: 11px; font-weight: 700; line-height: 1.25; color: var(--guinda-100)" x-html="r.corto">Árboles de la ciudad</span>
+                        <span style="font-family: var(--font-titulo); font-size: 11px; font-weight: 700; line-height: 1.25; color: var(--guinda-100)" x-html="r.corto">Árboles de la ciudad</span>
                         <span style="display: block; height: 2px; width: 60%; background: var(--dorado-40)"></span>
                         <span style="display: block; height: 2px; width: 84%; background: var(--gris-20)"></span>
                         <span style="display: block; height: 2px; width: 76%; background: var(--gris-20)"></span>
@@ -789,7 +789,7 @@ a:hover { color: var(--guinda-oscuro); }
                     <div style="width: 42%; height: 88%; background: var(--marfil); border: 1px solid var(--dorado-40); border-bottom: 0; box-shadow: 0 4px 8px rgba(26,26,26,0.18); display: flex; flex-direction: column">
                       <div style="height: 7px; background: var(--guinda-oscuro)" :style="`height: 7px; background: ${r.color}`"></div>
                       <div style="flex: 1; padding: 12px 10px; display: flex; flex-direction: column; gap: 8px">
-                        <span style="font-family: Cabin, Roboto, sans-serif; font-size: 11px; font-weight: 700; line-height: 1.25; color: var(--guinda-100)" x-html="r.corto">Barrancas</span>
+                        <span style="font-family: var(--font-titulo); font-size: 11px; font-weight: 700; line-height: 1.25; color: var(--guinda-100)" x-html="r.corto">Barrancas</span>
                         <span style="display: block; height: 2px; width: 60%; background: var(--dorado-40)"></span>
                         <span style="display: block; height: 2px; width: 84%; background: var(--gris-20)"></span>
                         <span style="display: block; height: 2px; width: 76%; background: var(--gris-20)"></span>
@@ -845,7 +845,7 @@ a:hover { color: var(--guinda-oscuro); }
                     <div style="width: 42%; height: 88%; background: var(--marfil); border: 1px solid var(--dorado-40); border-bottom: 0; box-shadow: 0 4px 8px rgba(26,26,26,0.18); display: flex; flex-direction: column">
                       <div style="height: 7px; background: var(--dorado-100)" :style="`height: 7px; background: ${r.color}`"></div>
                       <div style="flex: 1; padding: 12px 10px; display: flex; flex-direction: column; gap: 8px">
-                        <span style="font-family: Cabin, Roboto, sans-serif; font-size: 11px; font-weight: 700; line-height: 1.25; color: var(--guinda-100)" x-html="r.corto">Poda correcta</span>
+                        <span style="font-family: var(--font-titulo); font-size: 11px; font-weight: 700; line-height: 1.25; color: var(--guinda-100)" x-html="r.corto">Poda correcta</span>
                         <span style="display: block; height: 2px; width: 60%; background: var(--dorado-40)"></span>
                         <span style="display: block; height: 2px; width: 84%; background: var(--gris-20)"></span>
                         <span style="display: block; height: 2px; width: 76%; background: var(--gris-20)"></span>
@@ -901,7 +901,7 @@ a:hover { color: var(--guinda-oscuro); }
                     <div style="width: 42%; height: 88%; background: var(--marfil); border: 1px solid var(--dorado-40); border-bottom: 0; box-shadow: 0 4px 8px rgba(26,26,26,0.18); display: flex; flex-direction: column">
                       <div style="height: 7px; background: var(--dorado-100)" :style="`height: 7px; background: ${r.color}`"></div>
                       <div style="flex: 1; padding: 12px 10px; display: flex; flex-direction: column; gap: 8px">
-                        <span style="font-family: Cabin, Roboto, sans-serif; font-size: 11px; font-weight: 700; line-height: 1.25; color: var(--guinda-100)" x-html="r.corto">Leer un dictamen</span>
+                        <span style="font-family: var(--font-titulo); font-size: 11px; font-weight: 700; line-height: 1.25; color: var(--guinda-100)" x-html="r.corto">Leer un dictamen</span>
                         <span style="display: block; height: 2px; width: 60%; background: var(--dorado-40)"></span>
                         <span style="display: block; height: 2px; width: 84%; background: var(--gris-20)"></span>
                         <span style="display: block; height: 2px; width: 76%; background: var(--gris-20)"></span>
@@ -957,7 +957,7 @@ a:hover { color: var(--guinda-oscuro); }
                     <div style="width: 42%; height: 88%; background: var(--marfil); border: 1px solid var(--dorado-40); border-bottom: 0; box-shadow: 0 4px 8px rgba(26,26,26,0.18); display: flex; flex-direction: column">
                       <div style="height: 7px; background: var(--dorado-100)" :style="`height: 7px; background: ${r.color}`"></div>
                       <div style="flex: 1; padding: 12px 10px; display: flex; flex-direction: column; gap: 8px">
-                        <span style="font-family: Cabin, Roboto, sans-serif; font-size: 11px; font-weight: 700; line-height: 1.25; color: var(--guinda-100)" x-html="r.corto">Riesgo arbóreo</span>
+                        <span style="font-family: var(--font-titulo); font-size: 11px; font-weight: 700; line-height: 1.25; color: var(--guinda-100)" x-html="r.corto">Riesgo arbóreo</span>
                         <span style="display: block; height: 2px; width: 60%; background: var(--dorado-40)"></span>
                         <span style="display: block; height: 2px; width: 84%; background: var(--gris-20)"></span>
                         <span style="display: block; height: 2px; width: 76%; background: var(--gris-20)"></span>
@@ -1013,7 +1013,7 @@ a:hover { color: var(--guinda-oscuro); }
                     <div style="width: 42%; height: 88%; background: var(--marfil); border: 1px solid var(--dorado-40); border-bottom: 0; box-shadow: 0 4px 8px rgba(26,26,26,0.18); display: flex; flex-direction: column">
                       <div style="height: 7px; background: var(--dorado-100)" :style="`height: 7px; background: ${r.color}`"></div>
                       <div style="flex: 1; padding: 12px 10px; display: flex; flex-direction: column; gap: 8px">
-                        <span style="font-family: Cabin, Roboto, sans-serif; font-size: 11px; font-weight: 700; line-height: 1.25; color: var(--guinda-100)" x-html="r.corto">Árbol de banqueta</span>
+                        <span style="font-family: var(--font-titulo); font-size: 11px; font-weight: 700; line-height: 1.25; color: var(--guinda-100)" x-html="r.corto">Árbol de banqueta</span>
                         <span style="display: block; height: 2px; width: 60%; background: var(--dorado-40)"></span>
                         <span style="display: block; height: 2px; width: 84%; background: var(--gris-20)"></span>
                         <span style="display: block; height: 2px; width: 76%; background: var(--gris-20)"></span>
@@ -1069,7 +1069,7 @@ a:hover { color: var(--guinda-oscuro); }
                     <div style="width: 42%; height: 88%; background: var(--marfil); border: 1px solid var(--dorado-40); border-bottom: 0; box-shadow: 0 4px 8px rgba(26,26,26,0.18); display: flex; flex-direction: column">
                       <div style="height: 7px; background: var(--cafe)" :style="`height: 7px; background: ${r.color}`"></div>
                       <div style="flex: 1; padding: 12px 10px; display: flex; flex-direction: column; gap: 8px">
-                        <span style="font-family: Cabin, Roboto, sans-serif; font-size: 11px; font-weight: 700; line-height: 1.25; color: var(--guinda-100)" x-html="r.corto">Padrón de podadores</span>
+                        <span style="font-family: var(--font-titulo); font-size: 11px; font-weight: 700; line-height: 1.25; color: var(--guinda-100)" x-html="r.corto">Padrón de podadores</span>
                         <span style="display: block; height: 2px; width: 60%; background: var(--dorado-40)"></span>
                         <span style="display: block; height: 2px; width: 84%; background: var(--gris-20)"></span>
                         <span style="display: block; height: 2px; width: 76%; background: var(--gris-20)"></span>
@@ -1125,7 +1125,7 @@ a:hover { color: var(--guinda-oscuro); }
                     <div style="width: 42%; height: 88%; background: var(--marfil); border: 1px solid var(--dorado-40); border-bottom: 0; box-shadow: 0 4px 8px rgba(26,26,26,0.18); display: flex; flex-direction: column">
                       <div style="height: 7px; background: var(--cafe)" :style="`height: 7px; background: ${r.color}`"></div>
                       <div style="flex: 1; padding: 12px 10px; display: flex; flex-direction: column; gap: 8px">
-                        <span style="font-family: Cabin, Roboto, sans-serif; font-size: 11px; font-weight: 700; line-height: 1.25; color: var(--guinda-100)" x-html="r.corto">Padrón de dictaminadores</span>
+                        <span style="font-family: var(--font-titulo); font-size: 11px; font-weight: 700; line-height: 1.25; color: var(--guinda-100)" x-html="r.corto">Padrón de dictaminadores</span>
                         <span style="display: block; height: 2px; width: 60%; background: var(--dorado-40)"></span>
                         <span style="display: block; height: 2px; width: 84%; background: var(--gris-20)"></span>
                         <span style="display: block; height: 2px; width: 76%; background: var(--gris-20)"></span>
@@ -1181,7 +1181,7 @@ a:hover { color: var(--guinda-oscuro); }
                     <div style="width: 42%; height: 88%; background: var(--marfil); border: 1px solid var(--dorado-40); border-bottom: 0; box-shadow: 0 4px 8px rgba(26,26,26,0.18); display: flex; flex-direction: column">
                       <div style="height: 7px; background: var(--cafe)" :style="`height: 7px; background: ${r.color}`"></div>
                       <div style="flex: 1; padding: 12px 10px; display: flex; flex-direction: column; gap: 8px">
-                        <span style="font-family: Cabin, Roboto, sans-serif; font-size: 11px; font-weight: 700; line-height: 1.25; color: var(--guinda-100)" x-html="r.corto">Especies</span>
+                        <span style="font-family: var(--font-titulo); font-size: 11px; font-weight: 700; line-height: 1.25; color: var(--guinda-100)" x-html="r.corto">Especies</span>
                         <span style="display: block; height: 2px; width: 60%; background: var(--dorado-40)"></span>
                         <span style="display: block; height: 2px; width: 84%; background: var(--gris-20)"></span>
                         <span style="display: block; height: 2px; width: 76%; background: var(--gris-20)"></span>
@@ -1237,7 +1237,7 @@ a:hover { color: var(--guinda-oscuro); }
                     <div style="width: 42%; height: 88%; background: var(--marfil); border: 1px solid var(--dorado-40); border-bottom: 0; box-shadow: 0 4px 8px rgba(26,26,26,0.18); display: flex; flex-direction: column">
                       <div style="height: 7px; background: var(--cafe)" :style="`height: 7px; background: ${r.color}`"></div>
                       <div style="flex: 1; padding: 12px 10px; display: flex; flex-direction: column; gap: 8px">
-                        <span style="font-family: Cabin, Roboto, sans-serif; font-size: 11px; font-weight: 700; line-height: 1.25; color: var(--guinda-100)" x-html="r.corto">Registro patrimonial</span>
+                        <span style="font-family: var(--font-titulo); font-size: 11px; font-weight: 700; line-height: 1.25; color: var(--guinda-100)" x-html="r.corto">Registro patrimonial</span>
                         <span style="display: block; height: 2px; width: 60%; background: var(--dorado-40)"></span>
                         <span style="display: block; height: 2px; width: 84%; background: var(--gris-20)"></span>
                         <span style="display: block; height: 2px; width: 76%; background: var(--gris-20)"></span>
@@ -1293,7 +1293,7 @@ a:hover { color: var(--guinda-oscuro); }
                     <div style="width: 42%; height: 88%; background: var(--marfil); border: 1px solid var(--dorado-40); border-bottom: 0; box-shadow: 0 4px 8px rgba(26,26,26,0.18); display: flex; flex-direction: column">
                       <div style="height: 7px; background: var(--cafe)" :style="`height: 7px; background: ${r.color}`"></div>
                       <div style="flex: 1; padding: 12px 10px; display: flex; flex-direction: column; gap: 8px">
-                        <span style="font-family: Cabin, Roboto, sans-serif; font-size: 11px; font-weight: 700; line-height: 1.25; color: var(--guinda-100)" x-html="r.corto">Inventario</span>
+                        <span style="font-family: var(--font-titulo); font-size: 11px; font-weight: 700; line-height: 1.25; color: var(--guinda-100)" x-html="r.corto">Inventario</span>
                         <span style="display: block; height: 2px; width: 60%; background: var(--dorado-40)"></span>
                         <span style="display: block; height: 2px; width: 84%; background: var(--gris-20)"></span>
                         <span style="display: block; height: 2px; width: 76%; background: var(--gris-20)"></span>
@@ -1349,7 +1349,7 @@ a:hover { color: var(--guinda-oscuro); }
                     <div style="width: 42%; height: 88%; background: var(--marfil); border: 1px solid var(--dorado-40); border-bottom: 0; box-shadow: 0 4px 8px rgba(26,26,26,0.18); display: flex; flex-direction: column">
                       <div style="height: 7px; background: var(--azul)" :style="`height: 7px; background: ${r.color}`"></div>
                       <div style="flex: 1; padding: 12px 10px; display: flex; flex-direction: column; gap: 8px">
-                        <span style="font-family: Cabin, Roboto, sans-serif; font-size: 11px; font-weight: 700; line-height: 1.25; color: var(--guinda-100)" x-html="r.corto">Jornadas</span>
+                        <span style="font-family: var(--font-titulo); font-size: 11px; font-weight: 700; line-height: 1.25; color: var(--guinda-100)" x-html="r.corto">Jornadas</span>
                         <span style="display: block; height: 2px; width: 60%; background: var(--dorado-40)"></span>
                         <span style="display: block; height: 2px; width: 84%; background: var(--gris-20)"></span>
                         <span style="display: block; height: 2px; width: 76%; background: var(--gris-20)"></span>
@@ -1405,7 +1405,7 @@ a:hover { color: var(--guinda-oscuro); }
                     <div style="width: 42%; height: 88%; background: var(--marfil); border: 1px solid var(--dorado-40); border-bottom: 0; box-shadow: 0 4px 8px rgba(26,26,26,0.18); display: flex; flex-direction: column">
                       <div style="height: 7px; background: var(--azul)" :style="`height: 7px; background: ${r.color}`"></div>
                       <div style="flex: 1; padding: 12px 10px; display: flex; flex-direction: column; gap: 8px">
-                        <span style="font-family: Cabin, Roboto, sans-serif; font-size: 11px; font-weight: 700; line-height: 1.25; color: var(--guinda-100)" x-html="r.corto">Patrimoniales</span>
+                        <span style="font-family: var(--font-titulo); font-size: 11px; font-weight: 700; line-height: 1.25; color: var(--guinda-100)" x-html="r.corto">Patrimoniales</span>
                         <span style="display: block; height: 2px; width: 60%; background: var(--dorado-40)"></span>
                         <span style="display: block; height: 2px; width: 84%; background: var(--gris-20)"></span>
                         <span style="display: block; height: 2px; width: 76%; background: var(--gris-20)"></span>
@@ -1461,7 +1461,7 @@ a:hover { color: var(--guinda-oscuro); }
                     <div style="width: 42%; height: 88%; background: var(--marfil); border: 1px solid var(--dorado-40); border-bottom: 0; box-shadow: 0 4px 8px rgba(26,26,26,0.18); display: flex; flex-direction: column">
                       <div style="height: 7px; background: var(--azul)" :style="`height: 7px; background: ${r.color}`"></div>
                       <div style="flex: 1; padding: 12px 10px; display: flex; flex-direction: column; gap: 8px">
-                        <span style="font-family: Cabin, Roboto, sans-serif; font-size: 11px; font-weight: 700; line-height: 1.25; color: var(--guinda-100)" x-html="r.corto">Barrancas</span>
+                        <span style="font-family: var(--font-titulo); font-size: 11px; font-weight: 700; line-height: 1.25; color: var(--guinda-100)" x-html="r.corto">Barrancas</span>
                         <span style="display: block; height: 2px; width: 60%; background: var(--dorado-40)"></span>
                         <span style="display: block; height: 2px; width: 84%; background: var(--gris-20)"></span>
                         <span style="display: block; height: 2px; width: 76%; background: var(--gris-20)"></span>
@@ -1517,7 +1517,7 @@ a:hover { color: var(--guinda-oscuro); }
                     <div style="width: 42%; height: 88%; background: var(--marfil); border: 1px solid var(--dorado-40); border-bottom: 0; box-shadow: 0 4px 8px rgba(26,26,26,0.18); display: flex; flex-direction: column">
                       <div style="height: 7px; background: var(--estado-error)" :style="`height: 7px; background: ${r.color}`"></div>
                       <div style="flex: 1; padding: 12px 10px; display: flex; flex-direction: column; gap: 8px">
-                        <span style="font-family: Cabin, Roboto, sans-serif; font-size: 11px; font-weight: 700; line-height: 1.25; color: var(--guinda-100)" x-html="r.corto">Video</span>
+                        <span style="font-family: var(--font-titulo); font-size: 11px; font-weight: 700; line-height: 1.25; color: var(--guinda-100)" x-html="r.corto">Video</span>
                         <span style="display: block; height: 2px; width: 60%; background: var(--dorado-40)"></span>
                         <span style="display: block; height: 2px; width: 84%; background: var(--gris-20)"></span>
                         <span style="display: block; height: 2px; width: 76%; background: var(--gris-20)"></span>
@@ -1573,7 +1573,7 @@ a:hover { color: var(--guinda-oscuro); }
                     <div style="width: 42%; height: 88%; background: var(--marfil); border: 1px solid var(--dorado-40); border-bottom: 0; box-shadow: 0 4px 8px rgba(26,26,26,0.18); display: flex; flex-direction: column">
                       <div style="height: 7px; background: var(--estado-error)" :style="`height: 7px; background: ${r.color}`"></div>
                       <div style="flex: 1; padding: 12px 10px; display: flex; flex-direction: column; gap: 8px">
-                        <span style="font-family: Cabin, Roboto, sans-serif; font-size: 11px; font-weight: 700; line-height: 1.25; color: var(--guinda-100)" x-html="r.corto">Video</span>
+                        <span style="font-family: var(--font-titulo); font-size: 11px; font-weight: 700; line-height: 1.25; color: var(--guinda-100)" x-html="r.corto">Video</span>
                         <span style="display: block; height: 2px; width: 60%; background: var(--dorado-40)"></span>
                         <span style="display: block; height: 2px; width: 84%; background: var(--gris-20)"></span>
                         <span style="display: block; height: 2px; width: 76%; background: var(--gris-20)"></span>
@@ -1629,7 +1629,7 @@ a:hover { color: var(--guinda-oscuro); }
                     <div style="width: 42%; height: 88%; background: var(--marfil); border: 1px solid var(--dorado-40); border-bottom: 0; box-shadow: 0 4px 8px rgba(26,26,26,0.18); display: flex; flex-direction: column">
                       <div style="height: 7px; background: var(--estado-error)" :style="`height: 7px; background: ${r.color}`"></div>
                       <div style="flex: 1; padding: 12px 10px; display: flex; flex-direction: column; gap: 8px">
-                        <span style="font-family: Cabin, Roboto, sans-serif; font-size: 11px; font-weight: 700; line-height: 1.25; color: var(--guinda-100)" x-html="r.corto">Video</span>
+                        <span style="font-family: var(--font-titulo); font-size: 11px; font-weight: 700; line-height: 1.25; color: var(--guinda-100)" x-html="r.corto">Video</span>
                         <span style="display: block; height: 2px; width: 60%; background: var(--dorado-40)"></span>
                         <span style="display: block; height: 2px; width: 84%; background: var(--gris-20)"></span>
                         <span style="display: block; height: 2px; width: 76%; background: var(--gris-20)"></span>
@@ -1685,7 +1685,7 @@ a:hover { color: var(--guinda-oscuro); }
                     <div style="width: 42%; height: 88%; background: var(--marfil); border: 1px solid var(--dorado-40); border-bottom: 0; box-shadow: 0 4px 8px rgba(26,26,26,0.18); display: flex; flex-direction: column">
                       <div :style="`height: 7px; background: ${r.color}`"></div>
                       <div style="flex: 1; padding: 12px 10px; display: flex; flex-direction: column; gap: 8px">
-                        <span style="font-family: Cabin, Roboto, sans-serif; font-size: 11px; font-weight: 700; line-height: 1.25; color: var(--guinda-100)" x-html="r.corto"></span>
+                        <span style="font-family: var(--font-titulo); font-size: 11px; font-weight: 700; line-height: 1.25; color: var(--guinda-100)" x-html="r.corto"></span>
                         <span style="display: block; height: 2px; width: 60%; background: var(--dorado-40)"></span>
                         <span style="display: block; height: 2px; width: 84%; background: var(--gris-20)"></span>
                         <span style="display: block; height: 2px; width: 76%; background: var(--gris-20)"></span>
@@ -1743,16 +1743,16 @@ a:hover { color: var(--guinda-oscuro); }
   
 
 
-<section x-data="dcUtilidad({&quot;fecha&quot;:&quot;18 de agosto de 2026&quot;})" style="background: var(--gris-10); border-top: 1px solid var(--gris-20); border-bottom: 1px solid var(--gris-20); font-family: Roboto, system-ui, sans-serif; color: var(--gris-100)" aria-labelledby="utilidad">
+<section x-data="dcUtilidad({&quot;fecha&quot;:&quot;18 de agosto de 2026&quot;})" style="background: var(--gris-10); border-top: 1px solid var(--gris-20); border-bottom: 1px solid var(--gris-20); font-family: var(--font-cuerpo); color: var(--gris-100)" aria-labelledby="utilidad">
   <div style="max-width: 1240px; margin: 0 auto; padding: clamp(26px, 3vw, 36px) 24px; display: flex; gap: 28px; flex-wrap: wrap; align-items: flex-start; justify-content: space-between">
 
     <div style="flex: 1 1 320px; max-width: 42em">
-      <h2 style="margin: 0 0 10px; font-family: Cabin, Roboto, sans-serif; font-size: 23px; line-height: 1.25; font-weight: 700; color: var(--guinda-100)" id="utilidad">¿Te sirvió esta página?</h2>
+      <h2 style="margin: 0 0 10px; font-family: var(--font-titulo); font-size: 23px; line-height: 1.25; font-weight: 700; color: var(--guinda-100)" id="utilidad">¿Te sirvió esta página?</h2>
       <div x-show="v.sinResponder">
           <p style="margin: 0 0 16px; font-size: 17px; line-height: 1.6">Tu respuesta nos dice qué información falta o no se entiende. No pedimos datos personales.</p>
           <div style="display: flex; gap: 12px; flex-wrap: wrap">
-            <button class="ih9" style="background: var(--guinda-100); color: var(--blanco); border: 0; border-radius: 4px; padding: 13px 26px; font-family: Roboto, sans-serif; font-size: 17px; font-weight: 700; cursor: pointer; min-height: 48px; transition: background 150ms ease" @click="v.votarSi($event)">Sí</button>
-            <button class="ih8" style="background: transparent; color: var(--guinda-100); border: 2px solid var(--dorado-100); border-radius: 4px; padding: 12px 25px; font-family: Roboto, sans-serif; font-size: 17px; font-weight: 700; cursor: pointer; min-height: 48px; transition: background 150ms ease" @click="v.votarNo($event)">No</button>
+            <button class="ih9" style="background: var(--guinda-100); color: var(--blanco); border: 0; border-radius: 4px; padding: 13px 26px; font-family: var(--font-cuerpo); font-size: 17px; font-weight: 700; cursor: pointer; min-height: 48px; transition: background 150ms ease" @click="v.votarSi($event)">Sí</button>
+            <button class="ih8" style="background: transparent; color: var(--guinda-100); border: 2px solid var(--dorado-100); border-radius: 4px; padding: 12px 25px; font-family: var(--font-cuerpo); font-size: 17px; font-weight: 700; cursor: pointer; min-height: 48px; transition: background 150ms ease" @click="v.votarNo($event)">No</button>
           </div>
         </div>
       <p x-show="v.dijoSi" style="margin: 0; font-size: 18px; line-height: 1.6; background: var(--blanco); border-left: 4px solid var(--estado-exito); padding: 16px 20px; display:none" role="status">Gracias. Si algo quedó pendiente, puedes escribir a <a href="mailto:atencionciudadana@sedema.cdmx.gob.mx">atencionciudadana@sedema.cdmx.gob.mx</a>.</p>

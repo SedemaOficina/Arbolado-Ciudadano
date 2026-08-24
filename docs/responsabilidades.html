@@ -49,7 +49,7 @@ a:hover { color: var(--guinda-oscuro); }
       </div>
       <search class="om-buscador" style="margin-left: auto; flex: 1 1 260px; max-width: 400px; position: relative">
         <label style="display: block; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--gris-100); margin-bottom: 6px" for="buscador-sitio">Buscar en el sitio</label>
-        <input style="width: 100%; box-sizing: border-box; font-family: Roboto, sans-serif; font-size: 16px; padding: 11px 14px; border: 1px solid var(--gris-40); border-radius: 4px; min-height: 44px; background: var(--blanco); color: var(--gris-100)" type="search" id="buscador-sitio" placeholder="poda, denuncia, permiso, vivero" autocomplete="off" aria-controls="resultados-sitio" :value="v.q" @input="v.escribir($event)" :aria-expanded="v.abierto">
+        <input style="width: 100%; box-sizing: border-box; font-family: var(--font-cuerpo); font-size: 16px; padding: 11px 14px; border: 1px solid var(--gris-40); border-radius: 4px; min-height: 44px; background: var(--blanco); color: var(--gris-100)" type="search" id="buscador-sitio" placeholder="poda, denuncia, permiso, vivero" autocomplete="off" aria-controls="resultados-sitio" :value="v.q" @input="v.escribir($event)" :aria-expanded="v.abierto">
         <div x-show="v.abierto" style="position: absolute; top: 100%; left: 0; right: 0; z-index: 50; margin-top: 4px; background: var(--blanco); border: 1px solid var(--gris-40); box-shadow: 0 8px 20px rgba(26,26,26,0.16); max-height: 62vh; overflow-y: auto; display:none" id="resultados-sitio">
             <ul x-show="v.hayResultados" style="list-style: none; margin: 0; padding: 0; display:none">
                 <template x-for="(r, _k845317270) in v.resultados" :key="_k845317270">
@@ -62,7 +62,7 @@ a:hover { color: var(--guinda-oscuro); }
                   </li>
                 </template>
               </ul>
-            <p x-show="v.sinResultados" style="margin: 0; padding: 16px; font-size: 16px; line-height: 1.55; color: var(--gris-100); display:none">No encontramos esa palabra. Prueba con poda, derribo, permiso, denuncia, vivero o el nombre de tu alcaldía.</p>
+            <p x-show="v.sinResultados" style="margin: 0; padding: 16px; font-size: 17px; line-height: 1.55; color: var(--gris-100); display:none">No encontramos esa palabra. Prueba con poda, derribo, permiso, denuncia, vivero o el nombre de tu alcaldía.</p>
           </div>
       </search>
     </div>
@@ -88,7 +88,7 @@ a:hover { color: var(--guinda-oscuro); }
       </div>
 
       <div class="om-nav-movil" style="max-width: 1240px; margin: 0 auto; padding: 10px 20px">
-        <button class="ih3" style="width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 14px; min-height: 52px; padding: 12px 16px; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; font-family: Roboto, sans-serif; font-size: 17px; font-weight: 700; color: var(--guinda-100); cursor: pointer; transition: background 150ms ease" aria-controls="menu-movil" @click="v.alternarMenu($event)" :aria-expanded="v.menuAbierto">
+        <button class="ih3" style="width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 14px; min-height: 52px; padding: 12px 16px; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; font-family: var(--font-cuerpo); font-size: 17px; font-weight: 700; color: var(--guinda-100); cursor: pointer; transition: background 150ms ease" aria-controls="menu-movil" @click="v.alternarMenu($event)" :aria-expanded="v.menuAbierto">
           <span style="display: flex; align-items: center; gap: 12px">
             <span style="display: flex; flex-direction: column; gap: 4px; flex: none" aria-hidden="true">
               <span style="display: block; width: 20px; height: 2px; background: var(--guinda-100)"></span>
@@ -176,7 +176,7 @@ a:hover { color: var(--guinda-oscuro); }
 
     <section style="background: var(--marfil); border-bottom: 1px solid var(--dorado-40)">
       <div style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 60px) 24px">
-        <h1 style="margin: 0 0 20px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(34px, 4.6vw, 54px); line-height: 1.06; letter-spacing: -0.015em; font-weight: 700; color: var(--guinda-100); text-wrap: pretty">Quién hace <em style="font-style: italic; color: var(--cafe)">qué</em></h1>
+        <h1 style="margin: 0 0 20px; font-family: var(--font-titulo); font-size: clamp(34px, 4.6vw, 54px); line-height: 1.06; letter-spacing: -0.015em; font-weight: 700; color: var(--guinda-100); text-wrap: pretty">Quién hace <em style="font-style: italic; color: var(--cafe)">qué</em></h1>
         <p style="margin: 0; font-size: clamp(18px, 1.9vw, 22px); line-height: 1.55; max-width: 34em; text-wrap: pretty">La autoridad que puede autorizar o atender un caso depende de dónde está el árbol. Una regla lo resuelve casi siempre; la matriz lo confirma.</p>
       </div>
     </section>
@@ -194,7 +194,7 @@ a:hover { color: var(--guinda-oscuro); }
 
     <section style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 60px) 24px; scroll-margin-top: 72px" id="logica">
       <div style="max-width: 42em; margin-bottom: 32px">
-        <h2 style="margin: 0 0 12px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(27px, 3.2vw, 36px); line-height: 1.15; font-weight: 700; color: var(--guinda-100)">La lógica de competencias</h2>
+        <h2 style="margin: 0 0 12px; font-family: var(--font-titulo); font-size: clamp(27px, 3.2vw, 36px); line-height: 1.15; font-weight: 700; color: var(--guinda-100)">La lógica de competencias</h2>
         <p style="margin: 0; font-size: 19px; line-height: 1.6">No se reparte por tipo de trabajo ni por tamaño del árbol. Se reparte por el suelo donde crece. Con entender eso resuelves la mayoría de los casos.</p>
       </div>
 
@@ -206,11 +206,11 @@ a:hover { color: var(--guinda-oscuro); }
           <div style="border-top: 1px solid var(--gris-20); padding-top: 16px">
             <span style="display: block; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 10px">Por ejemplo</span>
             <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px">
-              <li style="font-size: 15px; background: var(--gris-10); border: 1px solid var(--gris-20); padding: 5px 10px; flex: 0 0 auto; white-space: nowrap">Eje Central</li>
-              <li style="font-size: 15px; background: var(--gris-10); border: 1px solid var(--gris-20); padding: 5px 10px; flex: 0 0 auto; white-space: nowrap">Anillo Periférico</li>
-              <li style="font-size: 15px; background: var(--gris-10); border: 1px solid var(--gris-20); padding: 5px 10px; flex: 0 0 auto; white-space: nowrap">Paseo de la Reforma</li>
-              <li style="font-size: 15px; background: var(--gris-10); border: 1px solid var(--gris-20); padding: 5px 10px; flex: 0 0 auto; white-space: nowrap">Insurgentes</li>
-              <li style="font-size: 15px; background: var(--gris-10); border: 1px solid var(--gris-20); padding: 5px 10px; flex: 0 0 auto; white-space: nowrap">Calzada de Tlalpan</li>
+              <li style="font-size: 16px; background: var(--gris-10); border: 1px solid var(--gris-20); padding: 5px 10px; flex: 0 0 auto; white-space: nowrap">Eje Central</li>
+              <li style="font-size: 16px; background: var(--gris-10); border: 1px solid var(--gris-20); padding: 5px 10px; flex: 0 0 auto; white-space: nowrap">Anillo Periférico</li>
+              <li style="font-size: 16px; background: var(--gris-10); border: 1px solid var(--gris-20); padding: 5px 10px; flex: 0 0 auto; white-space: nowrap">Paseo de la Reforma</li>
+              <li style="font-size: 16px; background: var(--gris-10); border: 1px solid var(--gris-20); padding: 5px 10px; flex: 0 0 auto; white-space: nowrap">Insurgentes</li>
+              <li style="font-size: 16px; background: var(--gris-10); border: 1px solid var(--gris-20); padding: 5px 10px; flex: 0 0 auto; white-space: nowrap">Calzada de Tlalpan</li>
             </ul>
           </div>
         </article>
@@ -222,11 +222,11 @@ a:hover { color: var(--guinda-oscuro); }
           <div style="border-top: 1px solid var(--gris-20); padding-top: 16px">
             <span style="display: block; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 10px">Por ejemplo</span>
             <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px">
-              <li style="font-size: 15px; background: var(--gris-10); border: 1px solid var(--gris-20); padding: 5px 10px; flex: 0 0 auto; white-space: nowrap">Calles de tu colonia</li>
-              <li style="font-size: 15px; background: var(--gris-10); border: 1px solid var(--gris-20); padding: 5px 10px; flex: 0 0 auto; white-space: nowrap">Cerradas y privadas</li>
-              <li style="font-size: 15px; background: var(--gris-10); border: 1px solid var(--gris-20); padding: 5px 10px; flex: 0 0 auto; white-space: nowrap">Callejones</li>
-              <li style="font-size: 15px; background: var(--gris-10); border: 1px solid var(--gris-20); padding: 5px 10px; flex: 0 0 auto; white-space: nowrap">Andadores vecinales</li>
-              <li style="font-size: 15px; background: var(--gris-10); border: 1px solid var(--gris-20); padding: 5px 10px; flex: 0 0 auto; white-space: nowrap">El jardín de tu casa</li>
+              <li style="font-size: 16px; background: var(--gris-10); border: 1px solid var(--gris-20); padding: 5px 10px; flex: 0 0 auto; white-space: nowrap">Calles de tu colonia</li>
+              <li style="font-size: 16px; background: var(--gris-10); border: 1px solid var(--gris-20); padding: 5px 10px; flex: 0 0 auto; white-space: nowrap">Cerradas y privadas</li>
+              <li style="font-size: 16px; background: var(--gris-10); border: 1px solid var(--gris-20); padding: 5px 10px; flex: 0 0 auto; white-space: nowrap">Callejones</li>
+              <li style="font-size: 16px; background: var(--gris-10); border: 1px solid var(--gris-20); padding: 5px 10px; flex: 0 0 auto; white-space: nowrap">Andadores vecinales</li>
+              <li style="font-size: 16px; background: var(--gris-10); border: 1px solid var(--gris-20); padding: 5px 10px; flex: 0 0 auto; white-space: nowrap">El jardín de tu casa</li>
             </ul>
           </div>
         </article>
@@ -238,11 +238,11 @@ a:hover { color: var(--guinda-oscuro); }
           <div style="border-top: 1px solid var(--dorado-40); padding-top: 16px">
             <span style="display: block; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 10px">Por ejemplo</span>
             <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px">
-              <li style="font-size: 15px; background: var(--blanco); border: 1px solid var(--dorado-40); padding: 5px 10px; flex: 0 0 auto; white-space: nowrap">Bosque de Chapultepec</li>
-              <li style="font-size: 15px; background: var(--blanco); border: 1px solid var(--dorado-40); padding: 5px 10px; flex: 0 0 auto; white-space: nowrap">Desierto de los Leones</li>
-              <li style="font-size: 15px; background: var(--blanco); border: 1px solid var(--dorado-40); padding: 5px 10px; flex: 0 0 auto; white-space: nowrap">Xochimilco</li>
-              <li style="font-size: 15px; background: var(--blanco); border: 1px solid var(--dorado-40); padding: 5px 10px; flex: 0 0 auto; white-space: nowrap">Barrancas</li>
-              <li style="font-size: 15px; background: var(--blanco); border: 1px solid var(--dorado-40); padding: 5px 10px; flex: 0 0 auto; white-space: nowrap">Áreas naturales protegidas</li>
+              <li style="font-size: 16px; background: var(--blanco); border: 1px solid var(--dorado-40); padding: 5px 10px; flex: 0 0 auto; white-space: nowrap">Bosque de Chapultepec</li>
+              <li style="font-size: 16px; background: var(--blanco); border: 1px solid var(--dorado-40); padding: 5px 10px; flex: 0 0 auto; white-space: nowrap">Desierto de los Leones</li>
+              <li style="font-size: 16px; background: var(--blanco); border: 1px solid var(--dorado-40); padding: 5px 10px; flex: 0 0 auto; white-space: nowrap">Xochimilco</li>
+              <li style="font-size: 16px; background: var(--blanco); border: 1px solid var(--dorado-40); padding: 5px 10px; flex: 0 0 auto; white-space: nowrap">Barrancas</li>
+              <li style="font-size: 16px; background: var(--blanco); border: 1px solid var(--dorado-40); padding: 5px 10px; flex: 0 0 auto; white-space: nowrap">Áreas naturales protegidas</li>
             </ul>
           </div>
         </article>
@@ -250,7 +250,7 @@ a:hover { color: var(--guinda-oscuro); }
 
       <div style="background: var(--gris-10); border-left: 4px solid var(--guinda-100); padding: 24px 28px">
         <p style="margin: 0 0 12px; font-size: 19px; line-height: 1.6"><strong style="color: var(--guinda-100)">La regla en una oración.</strong> El gobierno central atiende las vialidades primarias, las alcaldías atienden las vialidades secundarias y los predios de su demarcación, y las áreas naturales protegidas y de valor ambiental son competencia exclusiva de SEDEMA.</p>
-        <p style="margin: 0; font-size: 16px; line-height: 1.55; color: var(--gris-100)">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículos 9 y 10 · Ley Orgánica de Alcaldías, artículo 32 fracción V</p>
+        <p style="margin: 0; font-size: 17px; line-height: 1.55; color: var(--gris-100)">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículos 9 y 10 · Ley Orgánica de Alcaldías, artículo 32 fracción V</p>
       </div>
 
       <div style="margin-top: 24px; background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--estado-info); padding: 22px 26px; max-width: 46em" role="status">
@@ -262,7 +262,7 @@ a:hover { color: var(--guinda-oscuro); }
     <section style="background: var(--gris-10); border-top: 1px solid var(--gris-20); border-bottom: 1px solid var(--gris-20); scroll-margin-top: 72px" id="matriz">
       <div style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 60px) 24px">
         <div style="max-width: 42em; margin-bottom: 28px">
-          <h2 style="margin: 0 0 12px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(27px, 3.2vw, 36px); line-height: 1.15; font-weight: 700; color: var(--guinda-100)">Matriz de autoridades</h2>
+          <h2 style="margin: 0 0 12px; font-family: var(--font-titulo); font-size: clamp(27px, 3.2vw, 36px); line-height: 1.15; font-weight: 700; color: var(--guinda-100)">Matriz de autoridades</h2>
           <p style="margin: 0; font-size: 19px; line-height: 1.6">Filtra por dónde está el árbol o por el tipo de caso y verás solo a quienes intervienen.</p>
         </div>
 
@@ -270,21 +270,21 @@ a:hover { color: var(--guinda-oscuro); }
           <legend style="font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--gris-100); margin-bottom: 12px">Filtra por ubicación o caso</legend>
           <div style="display: flex; flex-wrap: wrap; gap: 8px">
             
-              <button style="font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: var(--guinda-100); color: var(--blanco); border: 1px solid var(--guinda-100); transition: background 150ms ease" aria-pressed="true" @click="f.activar($event)" :aria-pressed="f.activo" data-pr :style="`font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `">Todas </span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta">5</span></button>
+              <button style="font-family: var(--font-cuerpo); font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: var(--guinda-100); color: var(--blanco); border: 1px solid var(--guinda-100); transition: background 150ms ease" aria-pressed="true" @click="f.activar($event)" :aria-pressed="f.activo" data-pr :style="`font-family: var(--font-cuerpo); font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `">Todas </span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta">5</span></button>
             
-              <button style="font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: var(--blanco); color: var(--gris-100); border: 1px solid var(--gris-40); transition: background 150ms ease" @click="f.activar($event)" :aria-pressed="f.activo" data-pr :style="`font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `">Vialidad primaria </span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta">1</span></button>
+              <button style="font-family: var(--font-cuerpo); font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: var(--blanco); color: var(--gris-100); border: 1px solid var(--gris-40); transition: background 150ms ease" @click="f.activar($event)" :aria-pressed="f.activo" data-pr :style="`font-family: var(--font-cuerpo); font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `">Vialidad primaria </span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta">1</span></button>
             
-              <button style="font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: var(--blanco); color: var(--gris-100); border: 1px solid var(--gris-40); transition: background 150ms ease" @click="f.activar($event)" :aria-pressed="f.activo" data-pr :style="`font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `">Vialidad secundaria </span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta">2</span></button>
+              <button style="font-family: var(--font-cuerpo); font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: var(--blanco); color: var(--gris-100); border: 1px solid var(--gris-40); transition: background 150ms ease" @click="f.activar($event)" :aria-pressed="f.activo" data-pr :style="`font-family: var(--font-cuerpo); font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `">Vialidad secundaria </span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta">2</span></button>
             
-              <button style="font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: var(--blanco); color: var(--gris-100); border: 1px solid var(--gris-40); transition: background 150ms ease" @click="f.activar($event)" :aria-pressed="f.activo" data-pr :style="`font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `">Predio privado </span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta">2</span></button>
+              <button style="font-family: var(--font-cuerpo); font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: var(--blanco); color: var(--gris-100); border: 1px solid var(--gris-40); transition: background 150ms ease" @click="f.activar($event)" :aria-pressed="f.activo" data-pr :style="`font-family: var(--font-cuerpo); font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `">Predio privado </span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta">2</span></button>
             
-              <button style="font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: var(--blanco); color: var(--gris-100); border: 1px solid var(--gris-40); transition: background 150ms ease" @click="f.activar($event)" :aria-pressed="f.activo" data-pr :style="`font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `">Áreas protegidas </span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta">1</span></button>
+              <button style="font-family: var(--font-cuerpo); font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: var(--blanco); color: var(--gris-100); border: 1px solid var(--gris-40); transition: background 150ms ease" @click="f.activar($event)" :aria-pressed="f.activo" data-pr :style="`font-family: var(--font-cuerpo); font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `">Áreas protegidas </span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta">1</span></button>
             
-              <button style="font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: var(--blanco); color: var(--gris-100); border: 1px solid var(--gris-40); transition: background 150ms ease" @click="f.activar($event)" :aria-pressed="f.activo" data-pr :style="`font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `">Emergencia </span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta">1</span></button>
+              <button style="font-family: var(--font-cuerpo); font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: var(--blanco); color: var(--gris-100); border: 1px solid var(--gris-40); transition: background 150ms ease" @click="f.activar($event)" :aria-pressed="f.activo" data-pr :style="`font-family: var(--font-cuerpo); font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `">Emergencia </span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta">1</span></button>
             
-              <button style="font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: var(--blanco); color: var(--gris-100); border: 1px solid var(--gris-40); transition: background 150ms ease" @click="f.activar($event)" :aria-pressed="f.activo" data-pr :style="`font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `">Denuncia </span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta">2</span></button>
+              <button style="font-family: var(--font-cuerpo); font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: var(--blanco); color: var(--gris-100); border: 1px solid var(--gris-40); transition: background 150ms ease" @click="f.activar($event)" :aria-pressed="f.activo" data-pr :style="`font-family: var(--font-cuerpo); font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `">Denuncia </span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta">2</span></button>
             <template x-for="(f, _k321900499) in v.filtros" :key="_k321900499">
-              <button @click="f.activar($event)" :aria-pressed="f.activo" :style="`font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `"></span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta"></span></button>
+              <button @click="f.activar($event)" :aria-pressed="f.activo" :style="`font-family: var(--font-cuerpo); font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `"></span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta"></span></button>
             </template>
           </div>
         </fieldset>
@@ -296,8 +296,8 @@ a:hover { color: var(--guinda-oscuro); }
             <article style="background: var(--blanco); border: 1px solid var(--gris-20); border-top: 4px solid var(--guinda-100); padding: 26px 24px; display: flex; flex-direction: column; box-shadow: 0 4px 8px rgba(26,26,26,0.06)" data-pr>
               <div style="height: 76px; margin-bottom: 18px; display: flex; align-items: center" x-html="a.logoEl"><span style="display:flex;flex-direction:column;justify-content:center;gap:10px;height:100%"><img src="assets/img/logos/firma-sedema-rgb.svg" alt="" style="max-height:60px;max-width:100%;width:auto;display:block"></span></div>
               <span style="font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700" x-html="a.rol">Autoridad ambiental</span>
-              <h3 style="margin: 8px 0 4px; font-family: Cabin, Roboto, sans-serif; font-size: 26px; font-weight: 700; color: var(--guinda-100); line-height: 1.2" x-html="a.sigla">SEDEMA</h3>
-              <p style="margin: 0 0 18px; font-size: 16px; line-height: 1.5; color: var(--gris-100)" x-html="a.nombre">Secretaría del Medio Ambiente de la Ciudad de México</p>
+              <h3 style="margin: 8px 0 4px; font-family: var(--font-titulo); font-size: 26px; font-weight: 700; color: var(--guinda-100); line-height: 1.2" x-html="a.sigla">SEDEMA</h3>
+              <p style="margin: 0 0 18px; font-size: 17px; line-height: 1.5; color: var(--gris-100)" x-html="a.nombre">Secretaría del Medio Ambiente de la Ciudad de México</p>
               <ul style="margin: 0 0 20px; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px">
                 
                   <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start" data-pr>
@@ -328,16 +328,16 @@ a:hover { color: var(--guinda-oscuro); }
               </ul>
               <div style="margin-top: auto; border-top: 1px solid var(--gris-20); padding-top: 16px">
                 <span style="display: block; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 8px">Fundamento</span>
-                <p style="margin: 0; font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="a.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículos 7.º, 18, 34, 108, 111, 121 y 136 · Reglamento de Impacto Ambiental y Riesgo, artículos 137 a 141 · NADF-001-RNAT-2015</p>
-                <p x-show="a.tieneAviso" style="margin: 14px 0 0; background: var(--marfil); border-left: 3px solid var(--dorado-100); padding: 12px 16px; font-size: 16px; line-height: 1.55; color: var(--gris-100); display:none" x-html="a.aviso"></p>
+                <p style="margin: 0; font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="a.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículos 7.º, 18, 34, 108, 111, 121 y 136 · Reglamento de Impacto Ambiental y Riesgo, artículos 137 a 141 · NADF-001-RNAT-2015</p>
+                <p x-show="a.tieneAviso" style="margin: 14px 0 0; background: var(--marfil); border-left: 3px solid var(--dorado-100); padding: 12px 16px; font-size: 17px; line-height: 1.55; color: var(--gris-100); display:none" x-html="a.aviso"></p>
               </div>
             </article>
           
             <article style="background: var(--blanco); border: 1px solid var(--gris-20); border-top: 4px solid var(--guinda-100); padding: 26px 24px; display: flex; flex-direction: column; box-shadow: 0 4px 8px rgba(26,26,26,0.06)" data-pr>
               <div style="height: 76px; margin-bottom: 18px; display: flex; align-items: center" x-html="a.logoEl"><span style="display:inline-flex;align-items:center;height:44px;padding:0 16px;background:var(--guinda-100);color:var(--blanco);font-size:17px;font-weight:700;letter-spacing:0.04em">LAS 16 ALCALDÍAS</span></div>
               <span style="font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700" x-html="a.rol">Autoridad territorial</span>
-              <h3 style="margin: 8px 0 4px; font-family: Cabin, Roboto, sans-serif; font-size: 26px; font-weight: 700; color: var(--guinda-100); line-height: 1.2" x-html="a.sigla">Alcaldías</h3>
-              <p style="margin: 0 0 18px; font-size: 16px; line-height: 1.5; color: var(--gris-100)" x-html="a.nombre">Las dieciséis alcaldías de la Ciudad de México</p>
+              <h3 style="margin: 8px 0 4px; font-family: var(--font-titulo); font-size: 26px; font-weight: 700; color: var(--guinda-100); line-height: 1.2" x-html="a.sigla">Alcaldías</h3>
+              <p style="margin: 0 0 18px; font-size: 17px; line-height: 1.5; color: var(--gris-100)" x-html="a.nombre">Las dieciséis alcaldías de la Ciudad de México</p>
               <ul style="margin: 0 0 20px; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px">
                 
                   <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start" data-pr>
@@ -368,16 +368,16 @@ a:hover { color: var(--guinda-oscuro); }
               </ul>
               <div style="margin-top: auto; border-top: 1px solid var(--gris-20); padding-top: 16px">
                 <span style="display: block; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 8px">Fundamento</span>
-                <p style="margin: 0; font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="a.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículo 106 · Ley Orgánica de Alcaldías, artículo 32 fracción V</p>
-                <p x-show="a.tieneAviso" style="margin: 14px 0 0; background: var(--marfil); border-left: 3px solid var(--dorado-100); padding: 12px 16px; font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="a.aviso">Excepción: si el árbol está en un bosque urbano, una barranca o un área natural protegida, la competencia es de SEDEMA.</p>
+                <p style="margin: 0; font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="a.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículo 106 · Ley Orgánica de Alcaldías, artículo 32 fracción V</p>
+                <p x-show="a.tieneAviso" style="margin: 14px 0 0; background: var(--marfil); border-left: 3px solid var(--dorado-100); padding: 12px 16px; font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="a.aviso">Excepción: si el árbol está en un bosque urbano, una barranca o un área natural protegida, la competencia es de SEDEMA.</p>
               </div>
             </article>
           
             <article style="background: var(--blanco); border: 1px solid var(--gris-20); border-top: 4px solid var(--guinda-100); padding: 26px 24px; display: flex; flex-direction: column; box-shadow: 0 4px 8px rgba(26,26,26,0.06)" data-pr>
               <div style="height: 76px; margin-bottom: 18px; display: flex; align-items: center" x-html="a.logoEl"><span style="display:flex;flex-direction:column;justify-content:center;gap:10px;height:100%"><img src="assets/img/logos/paot.svg" alt="" style="max-height:60px;max-width:100%;width:auto;display:block"></span></div>
               <span style="font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700" x-html="a.rol">Procuraduría ambiental</span>
-              <h3 style="margin: 8px 0 4px; font-family: Cabin, Roboto, sans-serif; font-size: 26px; font-weight: 700; color: var(--guinda-100); line-height: 1.2" x-html="a.sigla">PAOT</h3>
-              <p style="margin: 0 0 18px; font-size: 16px; line-height: 1.5; color: var(--gris-100)" x-html="a.nombre">Procuraduría Ambiental y del Ordenamiento Territorial</p>
+              <h3 style="margin: 8px 0 4px; font-family: var(--font-titulo); font-size: 26px; font-weight: 700; color: var(--guinda-100); line-height: 1.2" x-html="a.sigla">PAOT</h3>
+              <p style="margin: 0 0 18px; font-size: 17px; line-height: 1.5; color: var(--gris-100)" x-html="a.nombre">Procuraduría Ambiental y del Ordenamiento Territorial</p>
               <ul style="margin: 0 0 20px; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px">
                 
                   <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start" data-pr>
@@ -408,16 +408,16 @@ a:hover { color: var(--guinda-oscuro); }
               </ul>
               <div style="margin-top: auto; border-top: 1px solid var(--gris-20); padding-top: 16px">
                 <span style="display: block; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 8px">Fundamento</span>
-                <p style="margin: 0; font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="a.fundamento">Ley Orgánica de la Procuraduría Ambiental y del Ordenamiento Territorial, artículo 5 fracciones I y XV</p>
-                <p x-show="a.tieneAviso" style="margin: 14px 0 0; background: var(--marfil); border-left: 3px solid var(--dorado-100); padding: 12px 16px; font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="a.aviso">La denuncia es ciudadana y puede ser anónima. No necesitas ser el dueño del predio.</p>
+                <p style="margin: 0; font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="a.fundamento">Ley Orgánica de la Procuraduría Ambiental y del Ordenamiento Territorial, artículo 5 fracciones I y XV</p>
+                <p x-show="a.tieneAviso" style="margin: 14px 0 0; background: var(--marfil); border-left: 3px solid var(--dorado-100); padding: 12px 16px; font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="a.aviso">La denuncia es ciudadana y puede ser anónima. No necesitas ser el dueño del predio.</p>
               </div>
             </article>
           
             <article style="background: var(--blanco); border: 1px solid var(--gris-20); border-top: 4px solid var(--guinda-100); padding: 26px 24px; display: flex; flex-direction: column; box-shadow: 0 4px 8px rgba(26,26,26,0.06)" data-pr>
               <div style="height: 76px; margin-bottom: 18px; display: flex; align-items: center" x-html="a.logoEl"><span style="display:flex;flex-direction:column;justify-content:center;gap:10px;height:100%"><img src="assets/img/logos/bomberos.svg" alt="" style="max-height:60px;max-width:100%;width:auto;display:block"></span></div>
               <span style="font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700" x-html="a.rol">Emergencia</span>
-              <h3 style="margin: 8px 0 4px; font-family: Cabin, Roboto, sans-serif; font-size: 26px; font-weight: 700; color: var(--guinda-100); line-height: 1.2" x-html="a.sigla">Bomberos</h3>
-              <p style="margin: 0 0 18px; font-size: 16px; line-height: 1.5; color: var(--gris-100)" x-html="a.nombre">Heroico Cuerpo de Bomberos de la Ciudad de México</p>
+              <h3 style="margin: 8px 0 4px; font-family: var(--font-titulo); font-size: 26px; font-weight: 700; color: var(--guinda-100); line-height: 1.2" x-html="a.sigla">Bomberos</h3>
+              <p style="margin: 0 0 18px; font-size: 17px; line-height: 1.5; color: var(--gris-100)" x-html="a.nombre">Heroico Cuerpo de Bomberos de la Ciudad de México</p>
               <ul style="margin: 0 0 20px; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px">
                 
                   <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start" data-pr>
@@ -438,16 +438,16 @@ a:hover { color: var(--guinda-oscuro); }
               </ul>
               <div style="margin-top: auto; border-top: 1px solid var(--gris-20); padding-top: 16px">
                 <span style="display: block; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 8px">Fundamento</span>
-                <p style="margin: 0; font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="a.fundamento">Ley del Heroico Cuerpo de Bomberos de la Ciudad de México, artículo 6 fracción IX</p>
-                <p x-show="a.tieneAviso" style="margin: 14px 0 0; background: var(--marfil); border-left: 3px solid var(--dorado-100); padding: 12px 16px; font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="a.aviso">El acceso es por el 911. Si el árbol está dañado pero sin riesgo activo, acude a tu alcaldía o a SEDEMA.</p>
+                <p style="margin: 0; font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="a.fundamento">Ley del Heroico Cuerpo de Bomberos de la Ciudad de México, artículo 6 fracción IX</p>
+                <p x-show="a.tieneAviso" style="margin: 14px 0 0; background: var(--marfil); border-left: 3px solid var(--dorado-100); padding: 12px 16px; font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="a.aviso">El acceso es por el 911. Si el árbol está dañado pero sin riesgo activo, acude a tu alcaldía o a SEDEMA.</p>
               </div>
             </article>
           
             <article style="background: var(--blanco); border: 1px solid var(--gris-20); border-top: 4px solid var(--guinda-100); padding: 26px 24px; display: flex; flex-direction: column; box-shadow: 0 4px 8px rgba(26,26,26,0.06)" data-pr>
               <div style="height: 76px; margin-bottom: 18px; display: flex; align-items: center" x-html="a.logoEl"><span style="display:flex;flex-direction:column;justify-content:center;gap:10px;height:100%"><img src="assets/img/logos/fiscalia.svg" alt="" style="max-height:32px;max-width:100%;width:auto;display:block"><img src="assets/img/logos/ssc.svg" alt="" style="max-height:32px;max-width:100%;width:auto;display:block"></span></div>
               <span style="font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700" x-html="a.rol">Investigación penal</span>
-              <h3 style="margin: 8px 0 4px; font-family: Cabin, Roboto, sans-serif; font-size: 26px; font-weight: 700; color: var(--guinda-100); line-height: 1.2" x-html="a.sigla">Fiscalía Ambiental</h3>
-              <p style="margin: 0 0 18px; font-size: 16px; line-height: 1.5; color: var(--gris-100)" x-html="a.nombre">Fiscalía General de Justicia y Secretaría de Seguridad Ciudadana</p>
+              <h3 style="margin: 8px 0 4px; font-family: var(--font-titulo); font-size: 26px; font-weight: 700; color: var(--guinda-100); line-height: 1.2" x-html="a.sigla">Fiscalía Ambiental</h3>
+              <p style="margin: 0 0 18px; font-size: 17px; line-height: 1.5; color: var(--gris-100)" x-html="a.nombre">Fiscalía General de Justicia y Secretaría de Seguridad Ciudadana</p>
               <ul style="margin: 0 0 20px; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px">
                 
                   <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start" data-pr>
@@ -473,16 +473,16 @@ a:hover { color: var(--guinda-oscuro); }
               </ul>
               <div style="margin-top: auto; border-top: 1px solid var(--gris-20); padding-top: 16px">
                 <span style="display: block; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 8px">Fundamento</span>
-                <p style="margin: 0; font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="a.fundamento">Código Penal para el Distrito Federal, artículos 343 a 350 · Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículo 112</p>
-                <p x-show="a.tieneAviso" style="margin: 14px 0 0; background: var(--marfil); border-left: 3px solid var(--dorado-100); padding: 12px 16px; font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="a.aviso">Si una persona servidora pública participa en el ilícito, la sanción se agrava conforme al artículo 350 del Código Penal.</p>
+                <p style="margin: 0; font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="a.fundamento">Código Penal para el Distrito Federal, artículos 343 a 350 · Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículo 112</p>
+                <p x-show="a.tieneAviso" style="margin: 14px 0 0; background: var(--marfil); border-left: 3px solid var(--dorado-100); padding: 12px 16px; font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="a.aviso">Si una persona servidora pública participa en el ilícito, la sanción se agrava conforme al artículo 350 del Código Penal.</p>
               </div>
             </article>
           <template x-for="(a, _k1905416534) in v.autoridades" :key="_k1905416534">
             <article style="background: var(--blanco); border: 1px solid var(--gris-20); border-top: 4px solid var(--guinda-100); padding: 26px 24px; display: flex; flex-direction: column; box-shadow: 0 4px 8px rgba(26,26,26,0.06)">
               <div style="height: 76px; margin-bottom: 18px; display: flex; align-items: center" x-html="a.logoEl"></div>
               <span style="font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700" x-html="a.rol"></span>
-              <h3 style="margin: 8px 0 4px; font-family: Cabin, Roboto, sans-serif; font-size: 26px; font-weight: 700; color: var(--guinda-100); line-height: 1.2" x-html="a.sigla"></h3>
-              <p style="margin: 0 0 18px; font-size: 16px; line-height: 1.5; color: var(--gris-100)" x-html="a.nombre"></p>
+              <h3 style="margin: 8px 0 4px; font-family: var(--font-titulo); font-size: 26px; font-weight: 700; color: var(--guinda-100); line-height: 1.2" x-html="a.sigla"></h3>
+              <p style="margin: 0 0 18px; font-size: 17px; line-height: 1.5; color: var(--gris-100)" x-html="a.nombre"></p>
               <ul style="margin: 0 0 20px; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px">
                 <template x-for="(f, _k1791468575) in a.funciones" :key="_k1791468575">
                   <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start">
@@ -493,8 +493,8 @@ a:hover { color: var(--guinda-oscuro); }
               </ul>
               <div style="margin-top: auto; border-top: 1px solid var(--gris-20); padding-top: 16px">
                 <span style="display: block; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 8px">Fundamento</span>
-                <p style="margin: 0; font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="a.fundamento"></p>
-                <p x-show="a.tieneAviso" style="margin: 14px 0 0; background: var(--marfil); border-left: 3px solid var(--dorado-100); padding: 12px 16px; font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="a.aviso"></p>
+                <p style="margin: 0; font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="a.fundamento"></p>
+                <p x-show="a.tieneAviso" style="margin: 14px 0 0; background: var(--marfil); border-left: 3px solid var(--dorado-100); padding: 12px 16px; font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="a.aviso"></p>
               </div>
             </article>
           </template>
@@ -504,7 +504,7 @@ a:hover { color: var(--guinda-oscuro); }
 
     <section style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 60px) 24px; scroll-margin-top: 72px" id="verificador">
       <div style="max-width: 42em; margin-bottom: 28px">
-        <h2 style="margin: 0 0 12px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(27px, 3.2vw, 36px); line-height: 1.15; font-weight: 700; color: var(--guinda-100)">Verificar acreditaciones</h2>
+        <h2 style="margin: 0 0 12px; font-family: var(--font-titulo); font-size: clamp(27px, 3.2vw, 36px); line-height: 1.15; font-weight: 700; color: var(--guinda-100)">Verificar acreditaciones</h2>
         <p style="margin: 0; font-size: 19px; line-height: 1.6">Quien pode, derribe, trasplante o dictamine arbolado urbano debe tener acreditación vigente de SEDEMA. Antes de contratar o de aceptar un dictamen, verifícalo.</p>
       </div>
 
@@ -516,40 +516,40 @@ a:hover { color: var(--guinda-oscuro); }
 
             <div style="display: flex; gap: 4px; border-bottom: 1px solid var(--gris-20); margin-bottom: 22px" role="tablist" aria-label="Forma de búsqueda">
               
-                <button style="background: transparent; border: 0; border-bottom: 3px solid var(--guinda-100); padding: 12px 16px; font-family: Roboto, sans-serif; font-size: 17px; font-weight: 700; color: var(--guinda-100); cursor: pointer; min-height: 44px" role="tab" aria-selected="true" :aria-selected="p.activo" @click="p.activar($event)" x-html="p.etiqueta" data-pr :style="`background: transparent; border: 0; border-bottom: 3px solid ${p.borde}; padding: 12px 16px; font-family: Roboto, sans-serif; font-size: 17px; font-weight: 700; color: ${p.color}; cursor: pointer; min-height: 44px`">Por número de folio</button>
+                <button style="background: transparent; border: 0; border-bottom: 3px solid var(--guinda-100); padding: 12px 16px; font-family: var(--font-cuerpo); font-size: 17px; font-weight: 700; color: var(--guinda-100); cursor: pointer; min-height: 44px" role="tab" aria-selected="true" :aria-selected="p.activo" @click="p.activar($event)" x-html="p.etiqueta" data-pr :style="`background: transparent; border: 0; border-bottom: 3px solid ${p.borde}; padding: 12px 16px; font-family: var(--font-cuerpo); font-size: 17px; font-weight: 700; color: ${p.color}; cursor: pointer; min-height: 44px`">Por número de folio</button>
               
-                <button style="background: transparent; border: 0; border-bottom: 3px solid transparent; padding: 12px 16px; font-family: Roboto, sans-serif; font-size: 17px; font-weight: 700; color: var(--gris-100); cursor: pointer; min-height: 44px" role="tab" :aria-selected="p.activo" @click="p.activar($event)" x-html="p.etiqueta" data-pr :style="`background: transparent; border: 0; border-bottom: 3px solid ${p.borde}; padding: 12px 16px; font-family: Roboto, sans-serif; font-size: 17px; font-weight: 700; color: ${p.color}; cursor: pointer; min-height: 44px`">Por nombre</button>
+                <button style="background: transparent; border: 0; border-bottom: 3px solid transparent; padding: 12px 16px; font-family: var(--font-cuerpo); font-size: 17px; font-weight: 700; color: var(--gris-100); cursor: pointer; min-height: 44px" role="tab" :aria-selected="p.activo" @click="p.activar($event)" x-html="p.etiqueta" data-pr :style="`background: transparent; border: 0; border-bottom: 3px solid ${p.borde}; padding: 12px 16px; font-family: var(--font-cuerpo); font-size: 17px; font-weight: 700; color: ${p.color}; cursor: pointer; min-height: 44px`">Por nombre</button>
               <template x-for="(p, _k280156573) in v.pestanas" :key="_k280156573">
-                <button role="tab" :aria-selected="p.activo" @click="p.activar($event)" x-html="p.etiqueta" :style="`background: transparent; border: 0; border-bottom: 3px solid ${p.borde}; padding: 12px 16px; font-family: Roboto, sans-serif; font-size: 17px; font-weight: 700; color: ${p.color}; cursor: pointer; min-height: 44px`"></button>
+                <button role="tab" :aria-selected="p.activo" @click="p.activar($event)" x-html="p.etiqueta" :style="`background: transparent; border: 0; border-bottom: 3px solid ${p.borde}; padding: 12px 16px; font-family: var(--font-cuerpo); font-size: 17px; font-weight: 700; color: ${p.color}; cursor: pointer; min-height: 44px`"></button>
               </template>
             </div>
 
             <div style="display: flex; gap: 16px; align-items: flex-end; flex-wrap: wrap">
               <div style="flex: 2 1 220px">
                 <label style="display: block; font-size: 16px; font-weight: 700; margin-bottom: 8px" for="consulta" x-html="v.etiquetaCampo">Número de folio</label>
-                <input style="width: 100%; box-sizing: border-box; font-family: Roboto, sans-serif; font-size: 17px; padding: 12px 14px; border: 1px solid var(--gris-40); border-radius: 4px; min-height: 48px; background: var(--blanco); color: var(--gris-100)" type="text" id="consulta" placeholder="SEDEMA-POD-2024-00125" autocomplete="off" :value="v.consulta" @input="v.escribir($event)" :placeholder="v.ejemploCampo">
+                <input style="width: 100%; box-sizing: border-box; font-family: var(--font-cuerpo); font-size: 17px; padding: 12px 14px; border: 1px solid var(--gris-40); border-radius: 4px; min-height: 48px; background: var(--blanco); color: var(--gris-100)" type="text" id="consulta" placeholder="SEDEMA-POD-2024-00125" autocomplete="off" :value="v.consulta" @input="v.escribir($event)" :placeholder="v.ejemploCampo">
               </div>
               <div style="flex: 1 1 150px">
                 <label style="display: block; font-size: 16px; font-weight: 700; margin-bottom: 8px" for="tipo">Tipo</label>
-                <select style="width: 100%; box-sizing: border-box; font-family: Roboto, sans-serif; font-size: 17px; padding: 12px 14px; border: 1px solid var(--gris-40); border-radius: 4px; min-height: 48px; background: var(--blanco); color: var(--gris-100)" id="tipo" value="cualquiera" :value="v.tipo" @change="v.cambiarTipo($event)">
+                <select style="width: 100%; box-sizing: border-box; font-family: var(--font-cuerpo); font-size: 17px; padding: 12px 14px; border: 1px solid var(--gris-40); border-radius: 4px; min-height: 48px; background: var(--blanco); color: var(--gris-100)" id="tipo" value="cualquiera" :value="v.tipo" @change="v.cambiarTipo($event)">
                   <option value="cualquiera">Cualquiera</option>
                   <option value="podador">Podador</option>
                   <option value="dictaminador">Dictaminador</option>
                 </select>
               </div>
-              <button class="ih9" style="background: var(--guinda-100); color: var(--blanco); border: 0; border-radius: 4px; padding: 14px 26px; font-family: Roboto, sans-serif; font-size: 17px; font-weight: 700; cursor: pointer; min-height: 48px; white-space: nowrap; transition: background 150ms ease" @click="v.verificar($event)">Verificar</button>
+              <button class="ih9" style="background: var(--guinda-100); color: var(--blanco); border: 0; border-radius: 4px; padding: 14px 26px; font-family: var(--font-cuerpo); font-size: 17px; font-weight: 700; cursor: pointer; min-height: 48px; white-space: nowrap; transition: background 150ms ease" @click="v.verificar($event)">Verificar</button>
             </div>
 
             <div style="margin-top: 18px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap">
-              <span style="font-size: 16px; color: var(--gris-100)">Prueba con un folio:</span>
+              <span style="font-size: 17px; color: var(--gris-100)">Prueba con un folio:</span>
               
-                <button class="ih13" style="background: var(--gris-10); border: 1px solid var(--gris-40); border-radius: 4px; padding: 8px 12px; font-family: Roboto, sans-serif; font-size: 15px; color: var(--gris-100); cursor: pointer; min-height: 44px; transition: border-color 150ms ease" @click="e.usar($event)" x-html="e.folio" data-pr>SEDEMA-POD-2024-00125</button>
+                <button class="ih13" style="background: var(--gris-10); border: 1px solid var(--gris-40); border-radius: 4px; padding: 8px 12px; font-family: var(--font-cuerpo); font-size: 15px; color: var(--gris-100); cursor: pointer; min-height: 44px; transition: border-color 150ms ease" @click="e.usar($event)" x-html="e.folio" data-pr>SEDEMA-POD-2024-00125</button>
               
-                <button class="ih13" style="background: var(--gris-10); border: 1px solid var(--gris-40); border-radius: 4px; padding: 8px 12px; font-family: Roboto, sans-serif; font-size: 15px; color: var(--gris-100); cursor: pointer; min-height: 44px; transition: border-color 150ms ease" @click="e.usar($event)" x-html="e.folio" data-pr>SEDEMA-POD-2021-00342</button>
+                <button class="ih13" style="background: var(--gris-10); border: 1px solid var(--gris-40); border-radius: 4px; padding: 8px 12px; font-family: var(--font-cuerpo); font-size: 15px; color: var(--gris-100); cursor: pointer; min-height: 44px; transition: border-color 150ms ease" @click="e.usar($event)" x-html="e.folio" data-pr>SEDEMA-POD-2021-00342</button>
               
-                <button class="ih13" style="background: var(--gris-10); border: 1px solid var(--gris-40); border-radius: 4px; padding: 8px 12px; font-family: Roboto, sans-serif; font-size: 15px; color: var(--gris-100); cursor: pointer; min-height: 44px; transition: border-color 150ms ease" @click="e.usar($event)" x-html="e.folio" data-pr>SEDEMA-DIC-2022-00521</button>
+                <button class="ih13" style="background: var(--gris-10); border: 1px solid var(--gris-40); border-radius: 4px; padding: 8px 12px; font-family: var(--font-cuerpo); font-size: 15px; color: var(--gris-100); cursor: pointer; min-height: 44px; transition: border-color 150ms ease" @click="e.usar($event)" x-html="e.folio" data-pr>SEDEMA-DIC-2022-00521</button>
               <template x-for="(e, _k1475623904) in v.ejemplos" :key="_k1475623904">
-                <button class="ih13" style="background: var(--gris-10); border: 1px solid var(--gris-40); border-radius: 4px; padding: 8px 12px; font-family: Roboto, sans-serif; font-size: 15px; color: var(--gris-100); cursor: pointer; min-height: 44px; transition: border-color 150ms ease" @click="e.usar($event)" x-html="e.folio"></button>
+                <button class="ih13" style="background: var(--gris-10); border: 1px solid var(--gris-40); border-radius: 4px; padding: 8px 12px; font-family: var(--font-cuerpo); font-size: 15px; color: var(--gris-100); cursor: pointer; min-height: 44px; transition: border-color 150ms ease" @click="e.usar($event)" x-html="e.folio"></button>
               </template>
             </div>
 
@@ -575,7 +575,7 @@ a:hover { color: var(--guinda-oscuro); }
                     </div>
                   </template>
                 </dl>
-              <p style="margin: 0; padding: 0 clamp(20px, 3vw, 30px) 22px; font-size: 16px; line-height: 1.6; color: var(--gris-100)" x-html="v.resNota"></p>
+              <p style="margin: 0; padding: 0 clamp(20px, 3vw, 30px) 22px; font-size: 17px; line-height: 1.6; color: var(--gris-100)" x-html="v.resNota"></p>
             </div>
 
           <div style="margin-top: 22px; background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--estado-error); padding: 22px 26px" role="alert">
@@ -589,14 +589,14 @@ a:hover { color: var(--guinda-oscuro); }
           <div style="background: var(--blanco); border: 1px solid var(--gris-20); padding: 22px">
             <h3 style="margin: 0 0 14px; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--gris-100)">Los seis elementos de una credencial</h3>
             <ol style="margin: 0 0 18px; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px">
-              <li style="display: grid; grid-template-columns: 26px minmax(0, 1fr); gap: 12px; align-items: start"><span style="font-size: 16px; font-weight: 700; color: var(--guinda-100)">1</span><span style="font-size: 16px; line-height: 1.55">Número de folio, con el formato SEDEMA-POD o SEDEMA-DIC</span></li>
-              <li style="display: grid; grid-template-columns: 26px minmax(0, 1fr); gap: 12px; align-items: start"><span style="font-size: 16px; font-weight: 700; color: var(--guinda-100)">2</span><span style="font-size: 16px; line-height: 1.55">Fotografía que coincide con la persona</span></li>
-              <li style="display: grid; grid-template-columns: 26px minmax(0, 1fr); gap: 12px; align-items: start"><span style="font-size: 16px; font-weight: 700; color: var(--guinda-100)">3</span><span style="font-size: 16px; line-height: 1.55">Vigencia al día</span></li>
-              <li style="display: grid; grid-template-columns: 26px minmax(0, 1fr); gap: 12px; align-items: start"><span style="font-size: 16px; font-weight: 700; color: var(--guinda-100)">4</span><span style="font-size: 16px; line-height: 1.55">Firma del titular de SEDEMA</span></li>
-              <li style="display: grid; grid-template-columns: 26px minmax(0, 1fr); gap: 12px; align-items: start"><span style="font-size: 16px; font-weight: 700; color: var(--guinda-100)">5</span><span style="font-size: 16px; line-height: 1.55">Huella digital del titular</span></li>
-              <li style="display: grid; grid-template-columns: 26px minmax(0, 1fr); gap: 12px; align-items: start"><span style="font-size: 16px; font-weight: 700; color: var(--guinda-100)">6</span><span style="font-size: 16px; line-height: 1.55">Tipo de acreditación: podador o dictaminador</span></li>
+              <li style="display: grid; grid-template-columns: 26px minmax(0, 1fr); gap: 12px; align-items: start"><span style="font-size: 17px; font-weight: 700; color: var(--guinda-100)">1</span><span style="font-size: 17px; line-height: 1.55">Número de folio, con el formato SEDEMA-POD o SEDEMA-DIC</span></li>
+              <li style="display: grid; grid-template-columns: 26px minmax(0, 1fr); gap: 12px; align-items: start"><span style="font-size: 17px; font-weight: 700; color: var(--guinda-100)">2</span><span style="font-size: 17px; line-height: 1.55">Fotografía que coincide con la persona</span></li>
+              <li style="display: grid; grid-template-columns: 26px minmax(0, 1fr); gap: 12px; align-items: start"><span style="font-size: 17px; font-weight: 700; color: var(--guinda-100)">3</span><span style="font-size: 17px; line-height: 1.55">Vigencia al día</span></li>
+              <li style="display: grid; grid-template-columns: 26px minmax(0, 1fr); gap: 12px; align-items: start"><span style="font-size: 17px; font-weight: 700; color: var(--guinda-100)">4</span><span style="font-size: 17px; line-height: 1.55">Firma del titular de SEDEMA</span></li>
+              <li style="display: grid; grid-template-columns: 26px minmax(0, 1fr); gap: 12px; align-items: start"><span style="font-size: 17px; font-weight: 700; color: var(--guinda-100)">5</span><span style="font-size: 17px; line-height: 1.55">Huella digital del titular</span></li>
+              <li style="display: grid; grid-template-columns: 26px minmax(0, 1fr); gap: 12px; align-items: start"><span style="font-size: 17px; font-weight: 700; color: var(--guinda-100)">6</span><span style="font-size: 17px; line-height: 1.55">Tipo de acreditación: podador o dictaminador</span></li>
             </ol>
-            <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)"><span style="color: var(--gris-100); font-weight: 700">NADF-001-RNAT-2015, numeral 5.5</span> · la acreditación es única, personal e intransferible</p>
+            <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)"><span style="color: var(--gris-100); font-weight: 700">NADF-001-RNAT-2015, numeral 5.5</span> · la acreditación es única, personal e intransferible</p>
           </div>
 
           <div style="margin-top: 20px; background: var(--blanco); border: 1px solid var(--gris-20); padding: 22px">
@@ -618,7 +618,7 @@ a:hover { color: var(--guinda-oscuro); }
     <section style="background: var(--gris-10); border-top: 1px solid var(--gris-20); scroll-margin-top: 72px" id="denunciar">
       <div style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 60px) 24px">
         <div style="max-width: 44em; margin-bottom: 28px">
-          <h2 style="margin: 0 0 12px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(27px, 3.2vw, 36px); line-height: 1.15; font-weight: 700; color: var(--guinda-100)">Cómo denuncias ante la PAOT</h2>
+          <h2 style="margin: 0 0 12px; font-family: var(--font-titulo); font-size: clamp(27px, 3.2vw, 36px); line-height: 1.15; font-weight: 700; color: var(--guinda-100)">Cómo denuncias ante la PAOT</h2>
           <p style="margin: 0; font-size: 19px; line-height: 1.6">Antes de denunciar, tienes derecho a preguntarle dos cosas a quien esté podando o derribando. La respuesta te dice si hay algo que denunciar.</p>
         </div>
 
@@ -626,11 +626,11 @@ a:hover { color: var(--guinda-oscuro); }
           <h3 style="margin: 0 0 20px; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--gris-100)">Las dos preguntas que debes hacer</h3>
           <ol style="list-style: none; margin: 0 0 24px; padding: 0; display: flex; flex-direction: column; gap: 18px">
             <li style="display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 18px; align-items: start">
-              <span style="font-family: Cabin, Roboto, sans-serif; font-size: 32px; font-weight: 700; color: var(--dorado-100); line-height: 1" aria-hidden="true">01</span>
+              <span style="font-family: var(--font-titulo); font-size: 32px; font-weight: 700; color: var(--dorado-100); line-height: 1" aria-hidden="true">01</span>
               <span style="font-size: clamp(19px, 2vw, 22px); line-height: 1.45; font-weight: 700; color: var(--guinda-100)">¿Cuenta con la autorización de la Alcaldía o de SEDEMA?</span>
             </li>
             <li style="display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 18px; align-items: start">
-              <span style="font-family: Cabin, Roboto, sans-serif; font-size: 32px; font-weight: 700; color: var(--dorado-100); line-height: 1" aria-hidden="true">02</span>
+              <span style="font-family: var(--font-titulo); font-size: 32px; font-weight: 700; color: var(--dorado-100); line-height: 1" aria-hidden="true">02</span>
               <span style="font-size: clamp(19px, 2vw, 22px); line-height: 1.45; font-weight: 700; color: var(--guinda-100)">¿Cuenta con acreditación de podador emitida por SEDEMA?</span>
             </li>
           </ol>
@@ -647,7 +647,7 @@ a:hover { color: var(--guinda-oscuro); }
           </div>
         </div>
 
-        <h3 style="margin: 0 0 18px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(21px, 2.4vw, 27px); font-weight: 700; color: var(--guinda-100)">Las tres vías para denunciar</h3>
+        <h3 style="margin: 0 0 18px; font-family: var(--font-titulo); font-size: clamp(21px, 2.4vw, 27px); font-weight: 700; color: var(--guinda-100)">Las tres vías para denunciar</h3>
         <ul style="list-style: none; margin: 0 0 28px; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px">
           <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-top: 4px solid var(--guinda-100); padding: 24px 22px">
             <h4 style="margin: 0 0 10px; font-size: 20px; font-weight: 700; color: var(--guinda-100)">Por internet</h4>
@@ -682,7 +682,7 @@ a:hover { color: var(--guinda-oscuro); }
           <a class="ih8" style="background: transparent; color: var(--guinda-100); border: 2px solid var(--dorado-100); border-radius: 4px; padding: 13px 25px; font-size: 17px; font-weight: 700; text-decoration: none; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center; transition: background 150ms ease" href="#verificador">Verificar una acreditación</a>
         </div>
 
-        <p style="margin: 22px 0 0; padding-left: 16px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)"><span style="font-weight: 700">Artículo 5, fracción I, de la Ley Orgánica de la Procuraduría Ambiental y del Ordenamiento Territorial de la Ciudad de México</span> · la PAOT recibe y atiende denuncias ciudadanas por violaciones a la normatividad ambiental y de ordenamiento territorial</p>
+        <p style="margin: 22px 0 0; padding-left: 16px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)"><span style="font-weight: 700">Artículo 5, fracción I, de la Ley Orgánica de la Procuraduría Ambiental y del Ordenamiento Territorial de la Ciudad de México</span> · la PAOT recibe y atiende denuncias ciudadanas por violaciones a la normatividad ambiental y de ordenamiento territorial</p>
       </div>
     </section>
 
@@ -691,16 +691,16 @@ a:hover { color: var(--guinda-oscuro); }
   
 
 
-<section x-data="dcUtilidad({&quot;fecha&quot;:&quot;18 de agosto de 2026&quot;})" style="background: var(--gris-10); border-top: 1px solid var(--gris-20); border-bottom: 1px solid var(--gris-20); font-family: Roboto, system-ui, sans-serif; color: var(--gris-100)" aria-labelledby="utilidad">
+<section x-data="dcUtilidad({&quot;fecha&quot;:&quot;18 de agosto de 2026&quot;})" style="background: var(--gris-10); border-top: 1px solid var(--gris-20); border-bottom: 1px solid var(--gris-20); font-family: var(--font-cuerpo); color: var(--gris-100)" aria-labelledby="utilidad">
   <div style="max-width: 1240px; margin: 0 auto; padding: clamp(26px, 3vw, 36px) 24px; display: flex; gap: 28px; flex-wrap: wrap; align-items: flex-start; justify-content: space-between">
 
     <div style="flex: 1 1 320px; max-width: 42em">
-      <h2 style="margin: 0 0 10px; font-family: Cabin, Roboto, sans-serif; font-size: 23px; line-height: 1.25; font-weight: 700; color: var(--guinda-100)" id="utilidad">¿Te sirvió esta página?</h2>
+      <h2 style="margin: 0 0 10px; font-family: var(--font-titulo); font-size: 23px; line-height: 1.25; font-weight: 700; color: var(--guinda-100)" id="utilidad">¿Te sirvió esta página?</h2>
       <div x-show="v.sinResponder">
           <p style="margin: 0 0 16px; font-size: 17px; line-height: 1.6">Tu respuesta nos dice qué información falta o no se entiende. No pedimos datos personales.</p>
           <div style="display: flex; gap: 12px; flex-wrap: wrap">
-            <button class="ih9" style="background: var(--guinda-100); color: var(--blanco); border: 0; border-radius: 4px; padding: 13px 26px; font-family: Roboto, sans-serif; font-size: 17px; font-weight: 700; cursor: pointer; min-height: 48px; transition: background 150ms ease" @click="v.votarSi($event)">Sí</button>
-            <button class="ih8" style="background: transparent; color: var(--guinda-100); border: 2px solid var(--dorado-100); border-radius: 4px; padding: 12px 25px; font-family: Roboto, sans-serif; font-size: 17px; font-weight: 700; cursor: pointer; min-height: 48px; transition: background 150ms ease" @click="v.votarNo($event)">No</button>
+            <button class="ih9" style="background: var(--guinda-100); color: var(--blanco); border: 0; border-radius: 4px; padding: 13px 26px; font-family: var(--font-cuerpo); font-size: 17px; font-weight: 700; cursor: pointer; min-height: 48px; transition: background 150ms ease" @click="v.votarSi($event)">Sí</button>
+            <button class="ih8" style="background: transparent; color: var(--guinda-100); border: 2px solid var(--dorado-100); border-radius: 4px; padding: 12px 25px; font-family: var(--font-cuerpo); font-size: 17px; font-weight: 700; cursor: pointer; min-height: 48px; transition: background 150ms ease" @click="v.votarNo($event)">No</button>
           </div>
         </div>
       <p x-show="v.dijoSi" style="margin: 0; font-size: 18px; line-height: 1.6; background: var(--blanco); border-left: 4px solid var(--estado-exito); padding: 16px 20px; display:none" role="status">Gracias. Si algo quedó pendiente, puedes escribir a <a href="mailto:atencionciudadana@sedema.cdmx.gob.mx">atencionciudadana@sedema.cdmx.gob.mx</a>.</p>

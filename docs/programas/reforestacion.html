@@ -49,7 +49,7 @@ a:hover { color: var(--guinda-oscuro); }
       </div>
       <search class="om-buscador" style="margin-left: auto; flex: 1 1 260px; max-width: 400px; position: relative">
         <label style="display: block; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--gris-100); margin-bottom: 6px" for="buscador-sitio">Buscar en el sitio</label>
-        <input style="width: 100%; box-sizing: border-box; font-family: Roboto, sans-serif; font-size: 16px; padding: 11px 14px; border: 1px solid var(--gris-40); border-radius: 4px; min-height: 44px; background: var(--blanco); color: var(--gris-100)" type="search" id="buscador-sitio" placeholder="poda, denuncia, permiso, vivero" autocomplete="off" aria-controls="resultados-sitio" :value="v.q" @input="v.escribir($event)" :aria-expanded="v.abierto">
+        <input style="width: 100%; box-sizing: border-box; font-family: var(--font-cuerpo); font-size: 16px; padding: 11px 14px; border: 1px solid var(--gris-40); border-radius: 4px; min-height: 44px; background: var(--blanco); color: var(--gris-100)" type="search" id="buscador-sitio" placeholder="poda, denuncia, permiso, vivero" autocomplete="off" aria-controls="resultados-sitio" :value="v.q" @input="v.escribir($event)" :aria-expanded="v.abierto">
         <div x-show="v.abierto" style="position: absolute; top: 100%; left: 0; right: 0; z-index: 50; margin-top: 4px; background: var(--blanco); border: 1px solid var(--gris-40); box-shadow: 0 8px 20px rgba(26,26,26,0.16); max-height: 62vh; overflow-y: auto; display:none" id="resultados-sitio">
             <ul x-show="v.hayResultados" style="list-style: none; margin: 0; padding: 0; display:none">
                 <template x-for="(r, _k845317270) in v.resultados" :key="_k845317270">
@@ -62,7 +62,7 @@ a:hover { color: var(--guinda-oscuro); }
                   </li>
                 </template>
               </ul>
-            <p x-show="v.sinResultados" style="margin: 0; padding: 16px; font-size: 16px; line-height: 1.55; color: var(--gris-100); display:none">No encontramos esa palabra. Prueba con poda, derribo, permiso, denuncia, vivero o el nombre de tu alcaldía.</p>
+            <p x-show="v.sinResultados" style="margin: 0; padding: 16px; font-size: 17px; line-height: 1.55; color: var(--gris-100); display:none">No encontramos esa palabra. Prueba con poda, derribo, permiso, denuncia, vivero o el nombre de tu alcaldía.</p>
           </div>
       </search>
     </div>
@@ -88,7 +88,7 @@ a:hover { color: var(--guinda-oscuro); }
       </div>
 
       <div class="om-nav-movil" style="max-width: 1240px; margin: 0 auto; padding: 10px 20px">
-        <button class="ih3" style="width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 14px; min-height: 52px; padding: 12px 16px; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; font-family: Roboto, sans-serif; font-size: 17px; font-weight: 700; color: var(--guinda-100); cursor: pointer; transition: background 150ms ease" aria-controls="menu-movil" @click="v.alternarMenu($event)" :aria-expanded="v.menuAbierto">
+        <button class="ih3" style="width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 14px; min-height: 52px; padding: 12px 16px; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; font-family: var(--font-cuerpo); font-size: 17px; font-weight: 700; color: var(--guinda-100); cursor: pointer; transition: background 150ms ease" aria-controls="menu-movil" @click="v.alternarMenu($event)" :aria-expanded="v.menuAbierto">
           <span style="display: flex; align-items: center; gap: 12px">
             <span style="display: flex; flex-direction: column; gap: 4px; flex: none" aria-hidden="true">
               <span style="display: block; width: 20px; height: 2px; background: var(--guinda-100)"></span>
@@ -177,7 +177,7 @@ a:hover { color: var(--guinda-oscuro); }
     <section style="background: var(--marfil); border-bottom: 1px solid var(--dorado-40)">
       <div style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 60px) 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: clamp(28px, 4vw, 52px); align-items: center">
         <div>
-          <h1 style="margin: 0 0 20px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(32px, 4.4vw, 50px); line-height: 1.06; letter-spacing: -0.015em; font-weight: 700; color: var(--guinda-100); text-wrap: pretty"><em style="font-style: italic; color: var(--cafe)">Reforestación</em> urbana</h1>
+          <h1 style="margin: 0 0 20px; font-family: var(--font-titulo); font-size: clamp(32px, 4.4vw, 50px); line-height: 1.06; letter-spacing: -0.015em; font-weight: 700; color: var(--guinda-100); text-wrap: pretty"><em style="font-style: italic; color: var(--cafe)">Reforestación</em> urbana</h1>
           <p style="margin: 0 0 16px; font-size: clamp(18px, 1.9vw, 22px); line-height: 1.5; max-width: 32em; text-wrap: pretty">Plantar donde más falta, no donde es más fácil. El programa lleva árboles nuevos a las colonias con menos sombra por habitante y reporta su avance de forma abierta.</p>
           <p style="margin: 0; font-size: 18px; line-height: 1.6; max-width: 34em">La sombra no está repartida por igual en la ciudad. Corregir esa desigualdad es el criterio que ordena el programa.</p>
         </div>
@@ -185,7 +185,7 @@ a:hover { color: var(--guinda-oscuro); }
           <div style="position: relative; width: 100%; aspect-ratio: 4 / 3; background: var(--gris-10); border: 1px solid var(--dorado-40)">
             <div class="falta-dato falta-dato--imagen" data-forma="rect" role="img" aria-label="Imagen institucional pendiente"><span class="falta-dato__sello">Falta el dato</span><span class="falta-dato__texto">Arrastra una fotografía de una jornada de plantación</span></div>
           </div>
-          <figcaption style="margin-top: 12px; padding-left: 12px; border-left: 3px solid var(--dorado-100); font-size: 15px; line-height: 1.5; color: var(--gris-100)">Jornada de plantación en la Ciudad de México. Fotografía institucional.</figcaption>
+          <figcaption style="margin-top: 12px; padding-left: 12px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.5; color: var(--gris-100)">Jornada de plantación en la Ciudad de México. Fotografía institucional.</figcaption>
         </figure>
       </div>
     </section>
@@ -202,7 +202,7 @@ a:hover { color: var(--guinda-oscuro); }
 
     <section style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 60px) 24px; scroll-margin-top: 84px" id="justicia">
       <div style="max-width: 44em; margin-bottom: 32px">
-        <h2 style="margin: 0 0 12px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(26px, 3.2vw, 36px); line-height: 1.15; font-weight: 700; color: var(--guinda-100)">Cómo se prioriza: enfoque de justicia ambiental</h2>
+        <h2 style="margin: 0 0 12px; font-family: var(--font-titulo); font-size: clamp(26px, 3.2vw, 36px); line-height: 1.15; font-weight: 700; color: var(--guinda-100)">Cómo se prioriza: enfoque de justicia ambiental</h2>
         <p style="margin: 0 0 16px; font-size: 19px; line-height: 1.6">Las colonias con menos árboles suelen ser las que tienen menos ingreso, más calor y menos áreas verdes cerca. Plantar por igual en toda la ciudad mantendría esa brecha.</p>
         <p style="margin: 0; font-size: 19px; line-height: 1.6">Por eso el programa no reparte parejo: ordena las zonas con cinco criterios y atiende primero a las que están peor.</p>
       </div>
@@ -211,47 +211,47 @@ a:hover { color: var(--guinda-oscuro); }
         
           <li style="background: var(--marfil); border: 1px solid var(--dorado-40); border-top: 4px solid var(--guinda-100); padding: 24px 22px">
             <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px">
-              <span style="width: 36px; height: 36px; flex: none; background: var(--guinda-100); color: var(--blanco); font-family: Cabin, Roboto, sans-serif; font-size: 17px; font-weight: 700; display: flex; align-items: center; justify-content: center" aria-hidden="true">1</span>
+              <span style="width: 36px; height: 36px; flex: none; background: var(--guinda-100); color: var(--blanco); font-family: var(--font-titulo); font-size: 17px; font-weight: 700; display: flex; align-items: center; justify-content: center" aria-hidden="true">1</span>
               <h3 style="margin: 0; font-size: 20px; font-weight: 700; color: var(--guinda-100); line-height: 1.25">Sombra por habitante</h3>
             </div>
             <p style="margin: 0 0 12px; font-size: 17px; line-height: 1.55">Cuántos metros cuadrados de copa hay por persona en la colonia. Es el criterio que más pesa: mide directamente lo que falta.</p>
-            <p style="margin: 0; font-size: 16px; line-height: 1.5; color: var(--gris-100)"><span style="font-weight: 700">Se mide con:</span><span> Cobertura de copa del inventario, dividida entre población</span></p>
+            <p style="margin: 0; font-size: 17px; line-height: 1.5; color: var(--gris-100)"><span style="font-weight: 700">Se mide con:</span><span> Cobertura de copa del inventario, dividida entre población</span></p>
           </li>
         
           <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-top: 4px solid var(--dorado-100); padding: 24px 22px">
             <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px">
-              <span style="width: 36px; height: 36px; flex: none; background: var(--dorado-100); color: var(--blanco); font-family: Cabin, Roboto, sans-serif; font-size: 17px; font-weight: 700; display: flex; align-items: center; justify-content: center" aria-hidden="true">2</span>
+              <span style="width: 36px; height: 36px; flex: none; background: var(--dorado-100); color: var(--blanco); font-family: var(--font-titulo); font-size: 17px; font-weight: 700; display: flex; align-items: center; justify-content: center" aria-hidden="true">2</span>
               <h3 style="margin: 0; font-size: 20px; font-weight: 700; color: var(--guinda-100); line-height: 1.25">Temperatura de superficie</h3>
             </div>
             <p style="margin: 0 0 12px; font-size: 17px; line-height: 1.55">Las colonias sin árboles concentran calor. Se identifican las islas de calor y se atienden primero.</p>
-            <p style="margin: 0; font-size: 16px; line-height: 1.5; color: var(--gris-100)"><span style="font-weight: 700">Se mide con:</span><span> Temperatura de superficie por manzana</span></p>
+            <p style="margin: 0; font-size: 17px; line-height: 1.5; color: var(--gris-100)"><span style="font-weight: 700">Se mide con:</span><span> Temperatura de superficie por manzana</span></p>
           </li>
         
           <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-top: 4px solid var(--dorado-100); padding: 24px 22px">
             <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px">
-              <span style="width: 36px; height: 36px; flex: none; background: var(--dorado-100); color: var(--blanco); font-family: Cabin, Roboto, sans-serif; font-size: 17px; font-weight: 700; display: flex; align-items: center; justify-content: center" aria-hidden="true">3</span>
+              <span style="width: 36px; height: 36px; flex: none; background: var(--dorado-100); color: var(--blanco); font-family: var(--font-titulo); font-size: 17px; font-weight: 700; display: flex; align-items: center; justify-content: center" aria-hidden="true">3</span>
               <h3 style="margin: 0; font-size: 20px; font-weight: 700; color: var(--guinda-100); line-height: 1.25">Distancia a un área verde</h3>
             </div>
             <p style="margin: 0 0 12px; font-size: 17px; line-height: 1.55">Si no hay un parque a menos de cuatrocientos metros caminando, la colonia sube de prioridad.</p>
-            <p style="margin: 0; font-size: 16px; line-height: 1.5; color: var(--gris-100)"><span style="font-weight: 700">Se mide con:</span><span> Distancia a pie al área verde pública más cercana</span></p>
+            <p style="margin: 0; font-size: 17px; line-height: 1.5; color: var(--gris-100)"><span style="font-weight: 700">Se mide con:</span><span> Distancia a pie al área verde pública más cercana</span></p>
           </li>
         
           <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-top: 4px solid var(--dorado-100); padding: 24px 22px">
             <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px">
-              <span style="width: 36px; height: 36px; flex: none; background: var(--dorado-100); color: var(--blanco); font-family: Cabin, Roboto, sans-serif; font-size: 17px; font-weight: 700; display: flex; align-items: center; justify-content: center" aria-hidden="true">4</span>
+              <span style="width: 36px; height: 36px; flex: none; background: var(--dorado-100); color: var(--blanco); font-family: var(--font-titulo); font-size: 17px; font-weight: 700; display: flex; align-items: center; justify-content: center" aria-hidden="true">4</span>
               <h3 style="margin: 0; font-size: 20px; font-weight: 700; color: var(--guinda-100); line-height: 1.25">Grado de marginación</h3>
             </div>
             <p style="margin: 0 0 12px; font-size: 17px; line-height: 1.55">Las colonias con mayor marginación han recibido históricamente menos inversión en área verde. El programa corrige esa deuda.</p>
-            <p style="margin: 0; font-size: 16px; line-height: 1.5; color: var(--gris-100)"><span style="font-weight: 700">Se mide con:</span><span> Índice de marginación por unidad territorial</span></p>
+            <p style="margin: 0; font-size: 17px; line-height: 1.5; color: var(--gris-100)"><span style="font-weight: 700">Se mide con:</span><span> Índice de marginación por unidad territorial</span></p>
           </li>
         
           <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-top: 4px solid var(--dorado-100); padding: 24px 22px">
             <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px">
-              <span style="width: 36px; height: 36px; flex: none; background: var(--dorado-100); color: var(--blanco); font-family: Cabin, Roboto, sans-serif; font-size: 17px; font-weight: 700; display: flex; align-items: center; justify-content: center" aria-hidden="true">5</span>
+              <span style="width: 36px; height: 36px; flex: none; background: var(--dorado-100); color: var(--blanco); font-family: var(--font-titulo); font-size: 17px; font-weight: 700; display: flex; align-items: center; justify-content: center" aria-hidden="true">5</span>
               <h3 style="margin: 0; font-size: 20px; font-weight: 700; color: var(--guinda-100); line-height: 1.25">Espacio para que el árbol viva</h3>
             </div>
             <p style="margin: 0 0 12px; font-size: 17px; line-height: 1.55">No basta querer plantar: hace falta banqueta suficiente, suelo permeable y ausencia de cableado. Si no hay espacio, se busca otro sitio en la misma colonia.</p>
-            <p style="margin: 0; font-size: 16px; line-height: 1.5; color: var(--gris-100)"><span style="font-weight: 700">Se mide con:</span><span> Ancho de banqueta, tipo de suelo y cableado aéreo</span></p>
+            <p style="margin: 0; font-size: 17px; line-height: 1.5; color: var(--gris-100)"><span style="font-weight: 700">Se mide con:</span><span> Ancho de banqueta, tipo de suelo y cableado aéreo</span></p>
           </li>
         
       </ol>
@@ -270,7 +270,7 @@ a:hover { color: var(--guinda-oscuro); }
     <section style="background: var(--gris-10); border-top: 1px solid var(--gris-20); border-bottom: 1px solid var(--gris-20); scroll-margin-top: 84px" id="avance">
       <div style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 60px) 24px">
         <div style="max-width: 44em; margin-bottom: 28px">
-          <h2 style="margin: 0 0 12px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(26px, 3.2vw, 36px); line-height: 1.15; font-weight: 700; color: var(--guinda-100)">Avance del programa</h2>
+          <h2 style="margin: 0 0 12px; font-family: var(--font-titulo); font-size: clamp(26px, 3.2vw, 36px); line-height: 1.15; font-weight: 700; color: var(--guinda-100)">Avance del programa</h2>
           <p style="margin: 0; font-size: 19px; line-height: 1.6">Cuatro cifras que se actualizan con cada corte.</p>
         </div>
 
@@ -278,35 +278,35 @@ a:hover { color: var(--guinda-oscuro); }
           
             <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-top: 4px solid var(--dorado-100); padding: 24px">
               <span style="display: block; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 10px">Árboles plantados</span>
-              <span style="display: block; font-family: Cabin, Roboto, sans-serif; font-size: 34px; font-weight: 700; color: var(--guinda-100); line-height: 1.1">Por publicar</span>
+              <span style="display: block; font-family: var(--font-titulo); font-size: 34px; font-weight: 700; color: var(--guinda-100); line-height: 1.1">Por publicar</span>
               <span style="display: block; margin: 14px 0 10px; height: 10px; background: var(--gris-20)"><span style="display: block; height: 10px; background: var(--guinda-100); width: 0%"></span></span>
-              <span style="display: block; font-size: 16px; line-height: 1.5; color: var(--gris-100)">Acumulado del año en curso</span>
+              <span style="display: block; font-size: 17px; line-height: 1.5; color: var(--gris-100)">Acumulado del año en curso</span>
             </li>
           
             <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-top: 4px solid var(--dorado-100); padding: 24px">
               <span style="display: block; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 10px">Sobrevivencia a tres años</span>
-              <span style="display: block; font-family: Cabin, Roboto, sans-serif; font-size: 34px; font-weight: 700; color: var(--guinda-100); line-height: 1.1">Por publicar</span>
+              <span style="display: block; font-family: var(--font-titulo); font-size: 34px; font-weight: 700; color: var(--guinda-100); line-height: 1.1">Por publicar</span>
               <span style="display: block; margin: 14px 0 10px; height: 10px; background: var(--gris-20)"><span style="display: block; height: 10px; background: var(--guinda-100); width: 0%"></span></span>
-              <span style="display: block; font-size: 16px; line-height: 1.5; color: var(--gris-100)">Del total plantado en el ciclo anterior</span>
+              <span style="display: block; font-size: 17px; line-height: 1.5; color: var(--gris-100)">Del total plantado en el ciclo anterior</span>
             </li>
           
             <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-top: 4px solid var(--dorado-100); padding: 24px">
               <span style="display: block; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 10px">Plantación en zonas prioritarias</span>
-              <span style="display: block; font-family: Cabin, Roboto, sans-serif; font-size: 34px; font-weight: 700; color: var(--guinda-100); line-height: 1.1">Por publicar</span>
+              <span style="display: block; font-family: var(--font-titulo); font-size: 34px; font-weight: 700; color: var(--guinda-100); line-height: 1.1">Por publicar</span>
               <span style="display: block; margin: 14px 0 10px; height: 10px; background: var(--gris-20)"><span style="display: block; height: 10px; background: var(--guinda-100); width: 0%"></span></span>
-              <span style="display: block; font-size: 16px; line-height: 1.5; color: var(--gris-100)">Proporción que se planta en las colonias de prioridad alta</span>
+              <span style="display: block; font-size: 17px; line-height: 1.5; color: var(--gris-100)">Proporción que se planta en las colonias de prioridad alta</span>
             </li>
           
             <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-top: 4px solid var(--dorado-100); padding: 24px">
               <span style="display: block; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 10px">Colonias atendidas</span>
-              <span style="display: block; font-family: Cabin, Roboto, sans-serif; font-size: 34px; font-weight: 700; color: var(--guinda-100); line-height: 1.1">Por publicar</span>
+              <span style="display: block; font-family: var(--font-titulo); font-size: 34px; font-weight: 700; color: var(--guinda-100); line-height: 1.1">Por publicar</span>
               <span style="display: block; margin: 14px 0 10px; height: 10px; background: var(--gris-20)"><span style="display: block; height: 10px; background: var(--guinda-100); width: 0%"></span></span>
-              <span style="display: block; font-size: 16px; line-height: 1.5; color: var(--gris-100)">De las que la priorización identificó</span>
+              <span style="display: block; font-size: 17px; line-height: 1.5; color: var(--gris-100)">De las que la priorización identificó</span>
             </li>
           
         </ul>
 
-        <h3 style="margin: 0 0 12px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(21px, 2.4vw, 27px); font-weight: 700; color: var(--guinda-100)">Dónde se está plantando</h3>
+        <h3 style="margin: 0 0 12px; font-family: var(--font-titulo); font-size: clamp(21px, 2.4vw, 27px); font-weight: 700; color: var(--guinda-100)">Dónde se está plantando</h3>
         <p style="margin: 0 0 16px; font-size: 18px; line-height: 1.6; max-width: 44em">Vista provisional por alcaldía. Cuando se integren los datos del inventario, el mapa mostrará las colonias con su nivel de prioridad.</p>
         <div style="border: 1px solid var(--gris-20); background: var(--blanco)">
           <div style="padding: 20px; background: var(--gris-10); border-bottom: 1px solid var(--gris-20)">
@@ -395,14 +395,14 @@ a:hover { color: var(--guinda-oscuro); }
             </ul>
           </div>
           <div style="padding: 16px 20px; display: flex; gap: 20px; flex-wrap: wrap; align-items: center">
-            <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 16px; color: var(--gris-100)"><span style="width: 14px; height: 14px; background: var(--guinda-100); display: inline-block" aria-hidden="true"></span>Prioridad alta</span>
-            <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 16px; color: var(--gris-100)"><span style="width: 14px; height: 14px; background: var(--guinda-oscuro); display: inline-block" aria-hidden="true"></span>Prioridad media</span>
-            <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 16px; color: var(--gris-100)"><span style="width: 14px; height: 14px; background: var(--dorado-40); display: inline-block" aria-hidden="true"></span>Seguimiento</span>
+            <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 17px; color: var(--gris-100)"><span style="width: 14px; height: 14px; background: var(--guinda-100); display: inline-block" aria-hidden="true"></span>Prioridad alta</span>
+            <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 17px; color: var(--gris-100)"><span style="width: 14px; height: 14px; background: var(--guinda-oscuro); display: inline-block" aria-hidden="true"></span>Prioridad media</span>
+            <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 17px; color: var(--gris-100)"><span style="width: 14px; height: 14px; background: var(--dorado-40); display: inline-block" aria-hidden="true"></span>Seguimiento</span>
           </div>
         </div>
-        <p style="margin: 12px 0 28px; font-size: 16px; line-height: 1.5; color: var(--negro); background: var(--estado-alerta); padding: 8px 12px; display: inline-block; font-weight: 700">Mapa provisional: son bloques por alcaldía, no geografía real. Los polígonos por colonia se integran con los datos del inventario</p>
+        <p style="margin: 12px 0 28px; font-size: 17px; line-height: 1.5; color: var(--negro); background: var(--estado-alerta); padding: 8px 12px; display: inline-block; font-weight: 700">Mapa provisional: son bloques por alcaldía, no geografía real. Los polígonos por colonia se integran con los datos del inventario</p>
 
-        <h3 style="margin: 0 0 18px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(21px, 2.4vw, 27px); font-weight: 700; color: var(--guinda-100)">Avance por alcaldía prioritaria</h3>
+        <h3 style="margin: 0 0 18px; font-family: var(--font-titulo); font-size: clamp(21px, 2.4vw, 27px); font-weight: 700; color: var(--guinda-100)">Avance por alcaldía prioritaria</h3>
         <div style="overflow-x: auto; border: 1px solid var(--gris-20); background: var(--blanco)">
           <table style="width: 100%; border-collapse: collapse; font-size: 17px; min-width: 620px">
             <thead>
@@ -453,13 +453,13 @@ a:hover { color: var(--guinda-oscuro); }
             </tbody>
           </table>
         </div>
-        <p style="margin: 18px 0 0; font-size: 16px; line-height: 1.55; color: var(--gris-100)">Las cifras del avance se publican con cada corte. La tabla completa de las dieciséis alcaldías se descargará como datos abiertos.</p>
+        <p style="margin: 18px 0 0; font-size: 17px; line-height: 1.55; color: var(--gris-100)">Las cifras del avance se publican con cada corte. La tabla completa de las dieciséis alcaldías se descargará como datos abiertos.</p>
       </div>
     </section>
 
     <section style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 60px) 24px; scroll-margin-top: 84px" id="participar">
       <div style="max-width: 44em; margin-bottom: 28px">
-        <h2 style="margin: 0 0 12px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(26px, 3.2vw, 36px); line-height: 1.15; font-weight: 700; color: var(--guinda-100)">Cómo participo</h2>
+        <h2 style="margin: 0 0 12px; font-family: var(--font-titulo); font-size: clamp(26px, 3.2vw, 36px); line-height: 1.15; font-weight: 700; color: var(--guinda-100)">Cómo participo</h2>
         <p style="margin: 0; font-size: 19px; line-height: 1.6">Puedes proponer un sitio, sumarte a una jornada o adoptar el cuidado de un árbol recién plantado.</p>
       </div>
 
@@ -497,16 +497,16 @@ a:hover { color: var(--guinda-oscuro); }
   
 
 
-<section x-data="dcUtilidad({&quot;fecha&quot;:&quot;18 de agosto de 2026&quot;})" style="background: var(--gris-10); border-top: 1px solid var(--gris-20); border-bottom: 1px solid var(--gris-20); font-family: Roboto, system-ui, sans-serif; color: var(--gris-100)" aria-labelledby="utilidad">
+<section x-data="dcUtilidad({&quot;fecha&quot;:&quot;18 de agosto de 2026&quot;})" style="background: var(--gris-10); border-top: 1px solid var(--gris-20); border-bottom: 1px solid var(--gris-20); font-family: var(--font-cuerpo); color: var(--gris-100)" aria-labelledby="utilidad">
   <div style="max-width: 1240px; margin: 0 auto; padding: clamp(26px, 3vw, 36px) 24px; display: flex; gap: 28px; flex-wrap: wrap; align-items: flex-start; justify-content: space-between">
 
     <div style="flex: 1 1 320px; max-width: 42em">
-      <h2 style="margin: 0 0 10px; font-family: Cabin, Roboto, sans-serif; font-size: 23px; line-height: 1.25; font-weight: 700; color: var(--guinda-100)" id="utilidad">¿Te sirvió esta página?</h2>
+      <h2 style="margin: 0 0 10px; font-family: var(--font-titulo); font-size: 23px; line-height: 1.25; font-weight: 700; color: var(--guinda-100)" id="utilidad">¿Te sirvió esta página?</h2>
       <div x-show="v.sinResponder">
           <p style="margin: 0 0 16px; font-size: 17px; line-height: 1.6">Tu respuesta nos dice qué información falta o no se entiende. No pedimos datos personales.</p>
           <div style="display: flex; gap: 12px; flex-wrap: wrap">
-            <button class="ih9" style="background: var(--guinda-100); color: var(--blanco); border: 0; border-radius: 4px; padding: 13px 26px; font-family: Roboto, sans-serif; font-size: 17px; font-weight: 700; cursor: pointer; min-height: 48px; transition: background 150ms ease" @click="v.votarSi($event)">Sí</button>
-            <button class="ih8" style="background: transparent; color: var(--guinda-100); border: 2px solid var(--dorado-100); border-radius: 4px; padding: 12px 25px; font-family: Roboto, sans-serif; font-size: 17px; font-weight: 700; cursor: pointer; min-height: 48px; transition: background 150ms ease" @click="v.votarNo($event)">No</button>
+            <button class="ih9" style="background: var(--guinda-100); color: var(--blanco); border: 0; border-radius: 4px; padding: 13px 26px; font-family: var(--font-cuerpo); font-size: 17px; font-weight: 700; cursor: pointer; min-height: 48px; transition: background 150ms ease" @click="v.votarSi($event)">Sí</button>
+            <button class="ih8" style="background: transparent; color: var(--guinda-100); border: 2px solid var(--dorado-100); border-radius: 4px; padding: 12px 25px; font-family: var(--font-cuerpo); font-size: 17px; font-weight: 700; cursor: pointer; min-height: 48px; transition: background 150ms ease" @click="v.votarNo($event)">No</button>
           </div>
         </div>
       <p x-show="v.dijoSi" style="margin: 0; font-size: 18px; line-height: 1.6; background: var(--blanco); border-left: 4px solid var(--estado-exito); padding: 16px 20px; display:none" role="status">Gracias. Si algo quedó pendiente, puedes escribir a <a href="mailto:atencionciudadana@sedema.cdmx.gob.mx">atencionciudadana@sedema.cdmx.gob.mx</a>.</p>

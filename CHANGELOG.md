@@ -6,6 +6,43 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.0.0/).
 
 ---
 
+## 23 de agosto de 2026 · Dirección visual de lámina botánica
+
+El sitio cambió de lenguaje. Deja el blanco con tarjetas flotantes y adopta
+papel, tinta y herbario, con el guinda y el dorado en su papel de firma
+institucional.
+
+- Se incorporaron Cormorant Garamond para títulos e índices y Spectral para el
+  texto de lectura, servidas desde el propio repositorio. Roboto se conserva para
+  los controles de formulario y los datos de contacto, donde una sans se reconoce
+  antes como algo que se usa.
+- La escala neutra completa se reencauzó a papel y tinta: 2,300 usos de color en
+  el sitio cambiaron de temperatura sin tocar una sola página a mano.
+- Cada sección tiene su lámina: un árbol dibujado por código sobre canvas, con
+  una especie distinta por página. Donde había un espacio de fotografía pendiente,
+  la lámina lo ocupa; donde no lo hay, entra como filigrana discreta al margen.
+  La página de palmeras se dejó sin lámina: la silueta de una palmera no se
+  construye con este trazo y una ilustración falsa desinforma.
+- Se añadió una pleca institucional de guinda y dorado, y la navegación pasó a
+  versalitas sobre papel.
+- Los marcadores de contenido pendiente se calmaron a un tramado de arena y
+  tierra, conservando el sello amarillo. Dejaron de ser lo más visible de cada
+  página.
+
+Verificación de lectura ciudadana sobre las trece páginas publicables: sin
+errores de consola, sin recursos faltantes, sin desbordamiento horizontal y sin
+un solo par de colores por debajo del contraste AA. El piso de texto de lectura
+subió a 17 píxeles y el dorado dejó de usarse como color tipográfico.
+
+## 23 de agosto de 2026 · Análisis territorial
+
+Se añadió `docs/territorio.html`, esqueleto anotado de la sección de análisis
+territorial del arbolado, con la tesis de que la copa no está repartida pareja
+entre las dieciséis alcaldías. La página lleva `noindex` y aviso visible de
+construcción: no debe enlazarse desde la navegación pública hasta contar con
+datos validados y metodología declarada.
+
+
 ## 22 de agosto de 2026 · Compilación a HTML publicable
 
 El sitio dejó de depender del runtime de Claude Design. Las páginas se

@@ -49,7 +49,7 @@ a:hover { color: var(--guinda-oscuro); }
       </div>
       <search class="om-buscador" style="margin-left: auto; flex: 1 1 260px; max-width: 400px; position: relative">
         <label style="display: block; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--gris-100); margin-bottom: 6px" for="buscador-sitio">Buscar en el sitio</label>
-        <input style="width: 100%; box-sizing: border-box; font-family: Roboto, sans-serif; font-size: 16px; padding: 11px 14px; border: 1px solid var(--gris-40); border-radius: 4px; min-height: 44px; background: var(--blanco); color: var(--gris-100)" type="search" id="buscador-sitio" placeholder="poda, denuncia, permiso, vivero" autocomplete="off" aria-controls="resultados-sitio" :value="v.q" @input="v.escribir($event)" :aria-expanded="v.abierto">
+        <input style="width: 100%; box-sizing: border-box; font-family: var(--font-cuerpo); font-size: 16px; padding: 11px 14px; border: 1px solid var(--gris-40); border-radius: 4px; min-height: 44px; background: var(--blanco); color: var(--gris-100)" type="search" id="buscador-sitio" placeholder="poda, denuncia, permiso, vivero" autocomplete="off" aria-controls="resultados-sitio" :value="v.q" @input="v.escribir($event)" :aria-expanded="v.abierto">
         <div x-show="v.abierto" style="position: absolute; top: 100%; left: 0; right: 0; z-index: 50; margin-top: 4px; background: var(--blanco); border: 1px solid var(--gris-40); box-shadow: 0 8px 20px rgba(26,26,26,0.16); max-height: 62vh; overflow-y: auto; display:none" id="resultados-sitio">
             <ul x-show="v.hayResultados" style="list-style: none; margin: 0; padding: 0; display:none">
                 <template x-for="(r, _k845317270) in v.resultados" :key="_k845317270">
@@ -62,7 +62,7 @@ a:hover { color: var(--guinda-oscuro); }
                   </li>
                 </template>
               </ul>
-            <p x-show="v.sinResultados" style="margin: 0; padding: 16px; font-size: 16px; line-height: 1.55; color: var(--gris-100); display:none">No encontramos esa palabra. Prueba con poda, derribo, permiso, denuncia, vivero o el nombre de tu alcaldía.</p>
+            <p x-show="v.sinResultados" style="margin: 0; padding: 16px; font-size: 17px; line-height: 1.55; color: var(--gris-100); display:none">No encontramos esa palabra. Prueba con poda, derribo, permiso, denuncia, vivero o el nombre de tu alcaldía.</p>
           </div>
       </search>
     </div>
@@ -88,7 +88,7 @@ a:hover { color: var(--guinda-oscuro); }
       </div>
 
       <div class="om-nav-movil" style="max-width: 1240px; margin: 0 auto; padding: 10px 20px">
-        <button class="ih3" style="width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 14px; min-height: 52px; padding: 12px 16px; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; font-family: Roboto, sans-serif; font-size: 17px; font-weight: 700; color: var(--guinda-100); cursor: pointer; transition: background 150ms ease" aria-controls="menu-movil" @click="v.alternarMenu($event)" :aria-expanded="v.menuAbierto">
+        <button class="ih3" style="width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 14px; min-height: 52px; padding: 12px 16px; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; font-family: var(--font-cuerpo); font-size: 17px; font-weight: 700; color: var(--guinda-100); cursor: pointer; transition: background 150ms ease" aria-controls="menu-movil" @click="v.alternarMenu($event)" :aria-expanded="v.menuAbierto">
           <span style="display: flex; align-items: center; gap: 12px">
             <span style="display: flex; flex-direction: column; gap: 4px; flex: none" aria-hidden="true">
               <span style="display: block; width: 20px; height: 2px; background: var(--guinda-100)"></span>
@@ -176,7 +176,7 @@ a:hover { color: var(--guinda-oscuro); }
 
     <section style="background: var(--marfil); border-bottom: 1px solid var(--dorado-40)">
       <div style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 60px) 24px">
-        <h1 style="margin: 0 0 20px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(34px, 4.6vw, 54px); line-height: 1.06; letter-spacing: -0.015em; font-weight: 700; color: var(--guinda-100); text-wrap: pretty">¿Qué <em style="font-style: italic; color: var(--cafe)">necesito hacer</em>?</h1>
+        <h1 style="margin: 0 0 20px; font-family: var(--font-titulo); font-size: clamp(34px, 4.6vw, 54px); line-height: 1.06; letter-spacing: -0.015em; font-weight: 700; color: var(--guinda-100); text-wrap: pretty">¿Qué <em style="font-style: italic; color: var(--cafe)">necesito hacer</em>?</h1>
         <p style="margin: 0; font-size: clamp(18px, 1.9vw, 22px); line-height: 1.55; max-width: 34em; text-wrap: pretty">Empieza por las dos preguntas si no sabes qué te toca, o salta directo a los procedimientos, a los casos o a las preguntas con el índice de arriba.</p>
       </div>
     </section>
@@ -194,7 +194,7 @@ a:hover { color: var(--guinda-oscuro); }
 
     <section style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 60px) 24px; scroll-margin-top: 72px" id="decisiones">
       <div style="max-width: 42em; margin-bottom: 28px">
-        <h2 style="margin: 0 0 12px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(27px, 3.2vw, 36px); line-height: 1.15; font-weight: 700; color: var(--guinda-100)">Resuelve tu caso en dos preguntas</h2>
+        <h2 style="margin: 0 0 12px; font-family: var(--font-titulo); font-size: clamp(27px, 3.2vw, 36px); line-height: 1.15; font-weight: 700; color: var(--guinda-100)">Resuelve tu caso en dos preguntas</h2>
         <p style="margin: 0; font-size: 19px; line-height: 1.6">Contesta dos preguntas y te decimos a quién acudir, qué documentos reunir y con qué fundamento legal.</p>
       </div>
 
@@ -206,8 +206,8 @@ a:hover { color: var(--guinda-oscuro); }
               <span style="flex: 1; height: 10px; background: var(--guinda-100); border: 1px solid var(--guinda-100)" :style="`flex: 1; height: 10px; background: ${v.seg1}; border: 1px solid ${v.seg1borde}`"></span>
               <span style="flex: 1; height: 10px; background: var(--blanco); border: 1px solid var(--gris-40)" :style="`flex: 1; height: 10px; background: ${v.seg2}; border: 1px solid ${v.seg2borde}`"></span>
             </div>
-            <button x-show="v.puedeVolver" class="ih13" style="background: transparent; border: 1px solid var(--gris-40); border-radius: 4px; padding: 10px 16px; font-family: Roboto, sans-serif; font-size: 15px; font-weight: 500; color: var(--gris-100); cursor: pointer; min-height: 44px; white-space: nowrap; transition: border-color 150ms ease; display:none" @click="v.volver($event)">← Volver</button>
-            <button x-show="v.puedeVolver" style="background: transparent; border: 0; padding: 10px 4px; font-family: Roboto, sans-serif; font-size: 15px; font-weight: 700; color: var(--guinda-100); cursor: pointer; text-decoration: underline; min-height: 44px; display:none" @click="v.reiniciar($event)">Empezar de nuevo</button>
+            <button x-show="v.puedeVolver" class="ih13" style="background: transparent; border: 1px solid var(--gris-40); border-radius: 4px; padding: 10px 16px; font-family: var(--font-cuerpo); font-size: 15px; font-weight: 500; color: var(--gris-100); cursor: pointer; min-height: 44px; white-space: nowrap; transition: border-color 150ms ease; display:none" @click="v.volver($event)">← Volver</button>
+            <button x-show="v.puedeVolver" style="background: transparent; border: 0; padding: 10px 4px; font-family: var(--font-cuerpo); font-size: 15px; font-weight: 700; color: var(--guinda-100); cursor: pointer; text-decoration: underline; min-height: 44px; display:none" @click="v.reiniciar($event)">Empezar de nuevo</button>
           </div>
 
           <div x-show="v.hayRuta" style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; display:none">
@@ -217,11 +217,11 @@ a:hover { color: var(--guinda-oscuro); }
             </div>
 
           <div x-show="v.enPregunta" style="border: 1px solid var(--gris-20); border-top: 4px solid var(--guinda-100); background: var(--blanco); box-shadow: 0 4px 8px rgba(26,26,26,0.06); padding: clamp(22px, 3vw, 34px)">
-              <h3 style="margin: 0 0 10px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(24px, 2.6vw, 32px); line-height: 1.2; font-weight: 700; color: var(--guinda-100); text-wrap: pretty" x-html="v.pregunta">¿Dónde está el árbol?</h3>
+              <h3 style="margin: 0 0 10px; font-family: var(--font-titulo); font-size: clamp(24px, 2.6vw, 32px); line-height: 1.2; font-weight: 700; color: var(--guinda-100); text-wrap: pretty" x-html="v.pregunta">¿Dónde está el árbol?</h3>
               <p style="margin: 0 0 24px; font-size: 18px; line-height: 1.55; color: var(--gris-100); max-width: 40em" x-html="v.ayuda">De quién es el suelo donde crece el árbol define qué autoridad puede autorizar o atender el caso.</p>
               <div style="display: flex; flex-direction: column; gap: 12px">
                 
-                  <button class="ih14" style="text-align: left; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; padding: 18px 20px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: center; min-height: 44px; transition: border-color 150ms ease, background 150ms ease, box-shadow 150ms ease" @click="o.elegir($event)" data-pr>
+                  <button class="ih14" style="text-align: left; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; padding: 18px 20px; font-family: var(--font-cuerpo); cursor: pointer; display: flex; gap: 18px; align-items: center; min-height: 44px; transition: border-color 150ms ease, background 150ms ease, box-shadow 150ms ease" @click="o.elegir($event)" data-pr>
                     <span style="flex: 1">
                       <span style="display: block; font-size: 19px; font-weight: 700; color: var(--guinda-100); line-height: 1.3" x-html="o.etiqueta">En la banqueta, camellón o vía pública</span>
                       <span style="display: block; margin-top: 6px; font-size: 17px; line-height: 1.5; color: var(--gris-100)" x-html="o.detalle">Frente a tu casa, en la calle o en un camellón</span>
@@ -229,7 +229,7 @@ a:hover { color: var(--guinda-oscuro); }
                     <span style="flex: none; font-size: 22px; color: var(--dorado-100)" aria-hidden="true">→</span>
                   </button>
                 
-                  <button class="ih14" style="text-align: left; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; padding: 18px 20px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: center; min-height: 44px; transition: border-color 150ms ease, background 150ms ease, box-shadow 150ms ease" @click="o.elegir($event)" data-pr>
+                  <button class="ih14" style="text-align: left; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; padding: 18px 20px; font-family: var(--font-cuerpo); cursor: pointer; display: flex; gap: 18px; align-items: center; min-height: 44px; transition: border-color 150ms ease, background 150ms ease, box-shadow 150ms ease" @click="o.elegir($event)" data-pr>
                     <span style="flex: 1">
                       <span style="display: block; font-size: 19px; font-weight: 700; color: var(--guinda-100); line-height: 1.3" x-html="o.etiqueta">Dentro de mi predio</span>
                       <span style="display: block; margin-top: 6px; font-size: 17px; line-height: 1.5; color: var(--gris-100)" x-html="o.detalle">En tu jardín, patio o terreno, incluido un predio en obra</span>
@@ -237,7 +237,7 @@ a:hover { color: var(--guinda-oscuro); }
                     <span style="flex: none; font-size: 22px; color: var(--dorado-100)" aria-hidden="true">→</span>
                   </button>
                 
-                  <button class="ih14" style="text-align: left; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; padding: 18px 20px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: center; min-height: 44px; transition: border-color 150ms ease, background 150ms ease, box-shadow 150ms ease" @click="o.elegir($event)" data-pr>
+                  <button class="ih14" style="text-align: left; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; padding: 18px 20px; font-family: var(--font-cuerpo); cursor: pointer; display: flex; gap: 18px; align-items: center; min-height: 44px; transition: border-color 150ms ease, background 150ms ease, box-shadow 150ms ease" @click="o.elegir($event)" data-pr>
                     <span style="flex: 1">
                       <span style="display: block; font-size: 19px; font-weight: 700; color: var(--guinda-100); line-height: 1.3" x-html="o.etiqueta">En un parque o área verde pública</span>
                       <span style="display: block; margin-top: 6px; font-size: 17px; line-height: 1.5; color: var(--gris-100)" x-html="o.detalle">Parque, deportivo, barranca o área natural protegida</span>
@@ -245,7 +245,7 @@ a:hover { color: var(--guinda-oscuro); }
                     <span style="flex: none; font-size: 22px; color: var(--dorado-100)" aria-hidden="true">→</span>
                   </button>
                 
-                  <button class="ih14" style="text-align: left; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; padding: 18px 20px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: center; min-height: 44px; transition: border-color 150ms ease, background 150ms ease, box-shadow 150ms ease" @click="o.elegir($event)" data-pr>
+                  <button class="ih14" style="text-align: left; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; padding: 18px 20px; font-family: var(--font-cuerpo); cursor: pointer; display: flex; gap: 18px; align-items: center; min-height: 44px; transition: border-color 150ms ease, background 150ms ease, box-shadow 150ms ease" @click="o.elegir($event)" data-pr>
                     <span style="flex: 1">
                       <span style="display: block; font-size: 19px; font-weight: 700; color: var(--guinda-100); line-height: 1.3" x-html="o.etiqueta">No sé de quién es ese terreno</span>
                       <span style="display: block; margin-top: 6px; font-size: 17px; line-height: 1.5; color: var(--gris-100)" x-html="o.detalle">No distingues si es vía pública, predio o área pública</span>
@@ -253,7 +253,7 @@ a:hover { color: var(--guinda-oscuro); }
                     <span style="flex: none; font-size: 22px; color: var(--dorado-100)" aria-hidden="true">→</span>
                   </button>
                 <template x-for="(o, _k1901197859) in v.opciones" :key="_k1901197859">
-                  <button class="ih14" style="text-align: left; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; padding: 18px 20px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: center; min-height: 44px; transition: border-color 150ms ease, background 150ms ease, box-shadow 150ms ease" @click="o.elegir($event)">
+                  <button class="ih14" style="text-align: left; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; padding: 18px 20px; font-family: var(--font-cuerpo); cursor: pointer; display: flex; gap: 18px; align-items: center; min-height: 44px; transition: border-color 150ms ease, background 150ms ease, box-shadow 150ms ease" @click="o.elegir($event)">
                     <span style="flex: 1">
                       <span style="display: block; font-size: 19px; font-weight: 700; color: var(--guinda-100); line-height: 1.3" x-html="o.etiqueta"></span>
                       <span style="display: block; margin-top: 6px; font-size: 17px; line-height: 1.5; color: var(--gris-100)" x-html="o.detalle"></span>
@@ -267,7 +267,7 @@ a:hover { color: var(--guinda-oscuro); }
           <div x-show="v.hayResultado" style="border: 1px solid var(--gris-20); border-top: 4px solid var(--guinda-100); background: var(--blanco); box-shadow: 0 4px 8px rgba(26,26,26,0.06); display:none">
               <div style="background: var(--marfil); border-bottom: 1px solid var(--dorado-40); padding: clamp(22px, 3vw, 34px)">
                 <span style="display: block; font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 12px">Tu resultado</span>
-                <h3 style="margin: 0 0 12px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(24px, 2.8vw, 34px); line-height: 1.15; font-weight: 700; color: var(--guinda-100); text-wrap: pretty" x-html="v.resTitulo"></h3>
+                <h3 style="margin: 0 0 12px; font-family: var(--font-titulo); font-size: clamp(24px, 2.8vw, 34px); line-height: 1.15; font-weight: 700; color: var(--guinda-100); text-wrap: pretty" x-html="v.resTitulo"></h3>
                 <p style="margin: 0; font-size: 19px; line-height: 1.55; max-width: 40em" x-html="v.resResumen"></p>
               </div>
               <div style="padding: clamp(22px, 3vw, 34px); display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px">
@@ -298,7 +298,7 @@ a:hover { color: var(--guinda-oscuro); }
                 <blockquote style="margin: 0; background: var(--gris-10); border-left: 4px solid var(--guinda-100); padding: 18px 22px">
                   <span style="display: block; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 8px">Fundamento</span>
                   <p style="margin: 0 0 6px; font-size: 18px; line-height: 1.5; font-weight: 700; color: var(--guinda-100)" x-html="v.resFundamento"></p>
-                  <p style="margin: 0; font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="v.resNota"></p>
+                  <p style="margin: 0; font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="v.resNota"></p>
                 </blockquote>
               </div>
               <div style="border-top: 1px solid var(--gris-20); padding: clamp(22px, 3vw, 34px); background: var(--gris-10)">
@@ -309,12 +309,12 @@ a:hover { color: var(--guinda-oscuro); }
                       <span style="display: block; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gris-100); font-weight: 700" x-html="c.rol"></span>
                       <span style="display: block; margin: 6px 0 8px; font-size: 18px; font-weight: 700; color: var(--guinda-100); line-height: 1.3" x-html="c.nombre"></span>
                       <span style="display: block; font-size: 20px; font-weight: 700; color: var(--gris-100)" x-html="c.tel"></span>
-                      <span style="display: block; margin-top: 6px; font-size: 16px; line-height: 1.5; color: var(--gris-100)" x-html="c.nota"></span>
+                      <span style="display: block; margin-top: 6px; font-size: 17px; line-height: 1.5; color: var(--gris-100)" x-html="c.nota"></span>
                     </div>
                   </template>
                 </div>
                 <div style="margin-top: 22px; display: flex; gap: 16px; flex-wrap: wrap">
-                  <button class="ih9" style="background: var(--guinda-100); color: var(--blanco); border: 0; border-radius: 4px; padding: 14px 24px; font-family: Roboto, sans-serif; font-size: 17px; font-weight: 700; cursor: pointer; min-height: 48px; transition: background 150ms ease" @click="v.reiniciar($event)">Consultar otro caso</button>
+                  <button class="ih9" style="background: var(--guinda-100); color: var(--blanco); border: 0; border-radius: 4px; padding: 14px 24px; font-family: var(--font-cuerpo); font-size: 17px; font-weight: 700; cursor: pointer; min-height: 48px; transition: background 150ms ease" @click="v.reiniciar($event)">Consultar otro caso</button>
                   <a class="ih8" style="background: transparent; color: var(--guinda-100); border: 2px solid var(--dorado-100); border-radius: 4px; padding: 13px 23px; font-size: 17px; font-weight: 700; text-decoration: none; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center; transition: background 150ms ease" href="#procedimientos">Ver el procedimiento completo</a>
                 </div>
               </div>
@@ -325,12 +325,12 @@ a:hover { color: var(--guinda-oscuro); }
           <div style="border: 1px solid var(--gris-20); background: var(--blanco); padding: 22px">
             <h3 style="margin: 0 0 14px; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--gris-100)">Cómo funciona</h3>
             <ol style="margin: 0 0 20px; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 14px">
-              <li style="display: grid; grid-template-columns: 26px minmax(0, 1fr); gap: 12px; align-items: start"><span style="font-size: 17px; font-weight: 700; color: var(--guinda-100)">1</span><span style="font-size: 16px; line-height: 1.55">Nos dices dónde está el árbol</span></li>
-              <li style="display: grid; grid-template-columns: 26px minmax(0, 1fr); gap: 12px; align-items: start"><span style="font-size: 17px; font-weight: 700; color: var(--guinda-100)">2</span><span style="font-size: 16px; line-height: 1.55">Nos dices qué quieres resolver</span></li>
-              <li style="display: grid; grid-template-columns: 26px minmax(0, 1fr); gap: 12px; align-items: start"><span style="font-size: 17px; font-weight: 700; color: var(--guinda-100)">3</span><span style="font-size: 16px; line-height: 1.55">Te damos la ruta, el contacto y el fundamento</span></li>
+              <li style="display: grid; grid-template-columns: 26px minmax(0, 1fr); gap: 12px; align-items: start"><span style="font-size: 17px; font-weight: 700; color: var(--guinda-100)">1</span><span style="font-size: 17px; line-height: 1.55">Nos dices dónde está el árbol</span></li>
+              <li style="display: grid; grid-template-columns: 26px minmax(0, 1fr); gap: 12px; align-items: start"><span style="font-size: 17px; font-weight: 700; color: var(--guinda-100)">2</span><span style="font-size: 17px; line-height: 1.55">Nos dices qué quieres resolver</span></li>
+              <li style="display: grid; grid-template-columns: 26px minmax(0, 1fr); gap: 12px; align-items: start"><span style="font-size: 17px; font-weight: 700; color: var(--guinda-100)">3</span><span style="font-size: 17px; line-height: 1.55">Te damos la ruta, el contacto y el fundamento</span></li>
             </ol>
             <div style="border-top: 1px solid var(--gris-20); padding-top: 18px">
-              <p style="margin: 0; font-size: 16px; line-height: 1.55; color: var(--gris-100)">Esta orientación no es una resolución. La autoridad decide cada caso al revisar tu solicitud.</p>
+              <p style="margin: 0; font-size: 17px; line-height: 1.55; color: var(--gris-100)">Esta orientación no es una resolución. La autoridad decide cada caso al revisar tu solicitud.</p>
             </div>
           </div>
           <div style="margin-top: 20px; background: var(--guinda-100); color: var(--blanco); padding: 22px">
@@ -345,17 +345,17 @@ a:hover { color: var(--guinda-oscuro); }
     <section style="background: var(--gris-10); border-top: 1px solid var(--gris-20); border-bottom: 1px solid var(--gris-20); scroll-margin-top: 72px" id="procedimientos">
       <div style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 60px) 24px">
         <div style="max-width: 42em; margin-bottom: 28px">
-          <h2 style="margin: 0 0 12px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(27px, 3.2vw, 36px); line-height: 1.15; font-weight: 700; color: var(--guinda-100)">Procedimientos</h2>
+          <h2 style="margin: 0 0 12px; font-family: var(--font-titulo); font-size: clamp(27px, 3.2vw, 36px); line-height: 1.15; font-weight: 700; color: var(--guinda-100)">Procedimientos</h2>
           <p style="margin: 0; font-size: 19px; line-height: 1.6">Las tres intervenciones reguladas siguen el mismo flujo: solicitud, dictamen, autorización, ejecución supervisada y restitución.</p>
         </div>
 
         <div style="display: flex; flex-direction: column; gap: 16px">
           
             <article style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--dorado-100)" data-pr :style="`background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid ${p.color}`">
-              <button class="ih15" style="width: 100%; text-align: left; background: transparent; border: 0; padding: 22px clamp(20px, 3vw, 28px); font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 20px; align-items: center; min-height: 44px" aria-expanded="true" @click="p.alternar($event)" :aria-expanded="p.abierto">
+              <button class="ih15" style="width: 100%; text-align: left; background: transparent; border: 0; padding: 22px clamp(20px, 3vw, 28px); font-family: var(--font-cuerpo); cursor: pointer; display: flex; gap: 20px; align-items: center; min-height: 44px" aria-expanded="true" @click="p.alternar($event)" :aria-expanded="p.abierto">
                 <span style="flex: 1">
                   <span style="display: block; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 8px" x-html="p.orden">Procedimiento 01</span>
-                  <span style="display: block; font-family: Cabin, Roboto, sans-serif; font-size: 25px; font-weight: 700; color: var(--guinda-100); line-height: 1.25" x-html="p.nombre">Poda</span>
+                  <span style="display: block; font-family: var(--font-titulo); font-size: 25px; font-weight: 700; color: var(--guinda-100); line-height: 1.25" x-html="p.nombre">Poda</span>
                   <span style="display: block; margin-top: 8px; font-size: 17px; line-height: 1.55; color: var(--gris-100); max-width: 46em" x-html="p.resumen">Eliminación selectiva de ramas, follaje o raíces. Es la intervención más común y nunca debe superar la cuarta parte del árbol.</span>
                 </span>
                 <span style="flex: none; font-size: 28px; line-height: 1; color: var(--dorado-100); font-weight: 700" aria-hidden="true" x-html="p.signo">–</span>
@@ -397,7 +397,7 @@ a:hover { color: var(--guinda-oscuro); }
                           <span style="display: block; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 6px" x-html="s.actor">Ciudadanía</span>
                           <span style="display: block; font-size: 20px; font-weight: 700; color: var(--guinda-100); line-height: 1.3; margin-bottom: 8px" x-html="s.titulo">Presenta tu solicitud</span>
                           <span style="display: block; font-size: 17px; line-height: 1.6; max-width: 46em" x-html="s.texto">Ante la alcaldía donde está el árbol, por el Sistema Unificado de Atención Ciudadana, por LOCATEL al 55 5658 1111 o en la ventanilla de servicios urbanos. Aunque el árbol esté en tu predio, cualquier poda mayor requiere autorización.</span>
-                          <span style="display: block; margin-top: 10px; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="s.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículo 106</span>
+                          <span style="display: block; margin-top: 10px; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="s.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículo 106</span>
                         </span>
                       </li>
                     
@@ -407,7 +407,7 @@ a:hover { color: var(--guinda-oscuro); }
                           <span style="display: block; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 6px" x-html="s.actor">Dictaminador acreditado</span>
                           <span style="display: block; font-size: 20px; font-weight: 700; color: var(--guinda-100); line-height: 1.3; margin-bottom: 8px" x-html="s.titulo">Dictamen técnico</span>
                           <span style="display: block; font-size: 17px; line-height: 1.6; max-width: 46em" x-html="s.texto">Una persona acreditada visita el sitio y documenta la información dasométrica, el estado estructural y sanitario, y justifica qué intervención procede. Verifica su acreditación antes de aceptar el servicio.</span>
-                          <span style="display: block; margin-top: 10px; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="s.fundamento">NADF-001-RNAT-2015, numerales 5.2, 5.3 y 5.4</span>
+                          <span style="display: block; margin-top: 10px; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="s.fundamento">NADF-001-RNAT-2015, numerales 5.2, 5.3 y 5.4</span>
                         </span>
                       </li>
                     
@@ -417,7 +417,7 @@ a:hover { color: var(--guinda-oscuro); }
                           <span style="display: block; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 6px" x-html="s.actor">Tu alcaldía</span>
                           <span style="display: block; font-size: 20px; font-weight: 700; color: var(--guinda-100); line-height: 1.3; margin-bottom: 8px" x-html="s.titulo">Resolución y autorización</span>
                           <span style="display: block; font-size: 17px; line-height: 1.6; max-width: 46em" x-html="s.texto">Resuelve en un plazo no mayor a veinte días hábiles. La autorización precisa el método permitido, el porcentaje máximo de follaje, el plazo de ejecución, quién puede ejecutar y cómo se manejan los residuos.</span>
-                          <span style="display: block; margin-top: 10px; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="s.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículo 106, párrafos tercero y quinto</span>
+                          <span style="display: block; margin-top: 10px; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="s.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículo 106, párrafos tercero y quinto</span>
                         </span>
                       </li>
                     
@@ -427,7 +427,7 @@ a:hover { color: var(--guinda-oscuro); }
                           <span style="display: block; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 6px" x-html="s.actor">Verificación ciudadana</span>
                           <span style="display: block; font-size: 20px; font-weight: 700; color: var(--guinda-100); line-height: 1.3; margin-bottom: 8px" x-html="s.titulo">Qué debes ver en sitio</span>
                           <span style="display: block; font-size: 17px; line-height: 1.6; max-width: 46em" x-html="s.texto">Área acordonada y señalizada, ramas grandes bajadas con cuerdas y no en caída libre, y quien poda portando la autorización y su credencial vigente. Si falta algo, pide que se suspenda y reporta a atención ciudadana de SEDEMA o a la PAOT.</span>
-                          <span style="display: block; margin-top: 10px; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="s.fundamento">NADF-001-RNAT-2015, numerales 6.1.1 a 6.1.10</span>
+                          <span style="display: block; margin-top: 10px; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="s.fundamento">NADF-001-RNAT-2015, numerales 6.1.1 a 6.1.10</span>
                         </span>
                       </li>
                     
@@ -437,7 +437,7 @@ a:hover { color: var(--guinda-oscuro); }
                           <span style="display: block; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 6px" x-html="s.actor">Alcaldía o Secretaría</span>
                           <span style="display: block; font-size: 20px; font-weight: 700; color: var(--guinda-100); line-height: 1.3; margin-bottom: 8px" x-html="s.titulo">Supervisión y cierre</span>
                           <span style="display: block; font-size: 17px; line-height: 1.6; max-width: 46em" x-html="s.texto">Personal técnico supervisa la ejecución. Si detecta anillado, cinchamiento, descortezado o desmoche, da parte para iniciar el procedimiento sancionatorio. Al cierre se verifica el área limpia y el porcentaje respetado.</span>
-                          <span style="display: block; margin-top: 10px; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="s.fundamento">NADF-001-RNAT-2015, numerales 5.10.7 y 6.1.8</span>
+                          <span style="display: block; margin-top: 10px; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="s.fundamento">NADF-001-RNAT-2015, numerales 5.10.7 y 6.1.8</span>
                         </span>
                       </li>
                     <template x-for="(s, _k1198658965) in p.pasos" :key="_k1198658965">
@@ -447,7 +447,7 @@ a:hover { color: var(--guinda-oscuro); }
                           <span style="display: block; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 6px" x-html="s.actor"></span>
                           <span style="display: block; font-size: 20px; font-weight: 700; color: var(--guinda-100); line-height: 1.3; margin-bottom: 8px" x-html="s.titulo"></span>
                           <span style="display: block; font-size: 17px; line-height: 1.6; max-width: 46em" x-html="s.texto"></span>
-                          <span style="display: block; margin-top: 10px; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="s.fundamento"></span>
+                          <span style="display: block; margin-top: 10px; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="s.fundamento"></span>
                         </span>
                       </li>
                     </template>
@@ -456,10 +456,10 @@ a:hover { color: var(--guinda-oscuro); }
             </article>
           
             <article style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--estado-error)" data-pr :style="`background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid ${p.color}`">
-              <button class="ih15" style="width: 100%; text-align: left; background: transparent; border: 0; padding: 22px clamp(20px, 3vw, 28px); font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 20px; align-items: center; min-height: 44px" @click="p.alternar($event)" :aria-expanded="p.abierto">
+              <button class="ih15" style="width: 100%; text-align: left; background: transparent; border: 0; padding: 22px clamp(20px, 3vw, 28px); font-family: var(--font-cuerpo); cursor: pointer; display: flex; gap: 20px; align-items: center; min-height: 44px" @click="p.alternar($event)" :aria-expanded="p.abierto">
                 <span style="flex: 1">
                   <span style="display: block; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 8px" x-html="p.orden">Procedimiento 02</span>
-                  <span style="display: block; font-family: Cabin, Roboto, sans-serif; font-size: 25px; font-weight: 700; color: var(--guinda-100); line-height: 1.25" x-html="p.nombre">Derribo</span>
+                  <span style="display: block; font-family: var(--font-titulo); font-size: 25px; font-weight: 700; color: var(--guinda-100); line-height: 1.25" x-html="p.nombre">Derribo</span>
                   <span style="display: block; margin-top: 8px; font-size: 17px; line-height: 1.55; color: var(--gris-100); max-width: 46em" x-html="p.resumen">Eliminación total del árbol y cualquier acto que provoque su muerte. Solo procede en cuatro supuestos y siempre obliga a restituir.</span>
                 </span>
                 <span style="flex: none; font-size: 28px; line-height: 1; color: var(--dorado-100); font-weight: 700" aria-hidden="true" x-html="p.signo">+</span>
@@ -501,7 +501,7 @@ a:hover { color: var(--guinda-oscuro); }
                           <span style="display: block; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 6px" x-html="s.actor">Ciudadanía y técnico</span>
                           <span style="display: block; font-size: 20px; font-weight: 700; color: var(--guinda-100); line-height: 1.3; margin-bottom: 8px" x-html="s.titulo">Verifica que encaje en un supuesto legal</span>
                           <span style="display: block; font-size: 17px; line-height: 1.6; max-width: 46em" x-html="s.texto">Son cuatro: riesgo real y presente para las personas o sus bienes, riesgo al patrimonio urbanístico, saneamiento del ejemplar, y afectación significativa a la infraestructura. No proceden la sombra, la caída de hojas ni la edad avanzada sin pérdida de vigor.</span>
-                          <span style="display: block; margin-top: 10px; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="s.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículo 106 fracciones I a IV</span>
+                          <span style="display: block; margin-top: 10px; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="s.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículo 106 fracciones I a IV</span>
                         </span>
                       </li>
                     
@@ -511,7 +511,7 @@ a:hover { color: var(--guinda-oscuro); }
                           <span style="display: block; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 6px" x-html="s.actor">Dictaminador acreditado</span>
                           <span style="display: block; font-size: 20px; font-weight: 700; color: var(--guinda-100); line-height: 1.3; margin-bottom: 8px" x-html="s.titulo">Solicitud con dictamen</span>
                           <span style="display: block; font-size: 17px; line-height: 1.6; max-width: 46em" x-html="s.texto">El dictamen debe acreditar el supuesto, demostrar que el riesgo no puede mitigarse con poda, apuntalamiento o trasplante, y aplicar la valoración que fija el puntaje.</span>
-                          <span style="display: block; margin-top: 10px; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="s.fundamento">NADF-001-RNAT-2015, numerales 5.3 y 7.1, y anexo 3</span>
+                          <span style="display: block; margin-top: 10px; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="s.fundamento">NADF-001-RNAT-2015, numerales 5.3 y 7.1, y anexo 3</span>
                         </span>
                       </li>
                     
@@ -521,7 +521,7 @@ a:hover { color: var(--guinda-oscuro); }
                           <span style="display: block; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 6px" x-html="s.actor">Alcaldía o Secretaría</span>
                           <span style="display: block; font-size: 20px; font-weight: 700; color: var(--guinda-100); line-height: 1.3; margin-bottom: 8px" x-html="s.titulo">Determinación de la restitución</span>
                           <span style="display: block; font-size: 17px; line-height: 1.6; max-width: 46em" x-html="s.texto">El puntaje define cuántos árboles hay que plantar: de 7 a 12 puntos, dos árboles; de 13 a 18, cuatro; de 19 a 24, ocho; de 25 a 28, dieciséis. En derribos por riesgo o saneamiento, la restitución es de uno a uno.</span>
-                          <span style="display: block; margin-top: 10px; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="s.fundamento">NADF-001-RNAT-2015, numeral 9 y tablas 2, 3 y 4</span>
+                          <span style="display: block; margin-top: 10px; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="s.fundamento">NADF-001-RNAT-2015, numeral 9 y tablas 2, 3 y 4</span>
                         </span>
                       </li>
                     
@@ -531,7 +531,7 @@ a:hover { color: var(--guinda-oscuro); }
                           <span style="display: block; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 6px" x-html="s.actor">Ciudadanía</span>
                           <span style="display: block; font-size: 20px; font-weight: 700; color: var(--guinda-100); line-height: 1.3; margin-bottom: 8px" x-html="s.titulo">Aviso previo y letrero</span>
                           <span style="display: block; font-size: 17px; line-height: 1.6; max-width: 46em" x-html="s.texto">Antes de ejecutar hay que avisar a la alcaldía para que designe supervisión, fecha y hora. En el sitio va el letrero con el responsable, el número de proyecto y el periodo de ejecución.</span>
-                          <span style="display: block; margin-top: 10px; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="s.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículo 106 párrafo cuarto</span>
+                          <span style="display: block; margin-top: 10px; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="s.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículo 106 párrafo cuarto</span>
                         </span>
                       </li>
                     
@@ -541,7 +541,7 @@ a:hover { color: var(--guinda-oscuro); }
                           <span style="display: block; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 6px" x-html="s.actor">Personal acreditado</span>
                           <span style="display: block; font-size: 20px; font-weight: 700; color: var(--guinda-100); line-height: 1.3; margin-bottom: 8px" x-html="s.titulo">Ejecución y destoconado</span>
                           <span style="display: block; font-size: 17px; line-height: 1.6; max-width: 46em" x-html="s.texto">Derribo controlado en vía pública y predios, o direccional solo en espacios abiertos. Después se trocea, se elimina el tocón y las raíces principales, y los residuos se retiran en veinticuatro horas.</span>
-                          <span style="display: block; margin-top: 10px; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="s.fundamento">NADF-001-RNAT-2015, numerales 7.2, 7.6, 7.7 y 11</span>
+                          <span style="display: block; margin-top: 10px; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="s.fundamento">NADF-001-RNAT-2015, numerales 7.2, 7.6, 7.7 y 11</span>
                         </span>
                       </li>
                     
@@ -551,7 +551,7 @@ a:hover { color: var(--guinda-oscuro); }
                           <span style="display: block; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 6px" x-html="s.actor">Consecuencias</span>
                           <span style="display: block; font-size: 20px; font-weight: 700; color: var(--guinda-100); line-height: 1.3; margin-bottom: 8px" x-html="s.titulo">Qué pasa sin autorización</span>
                           <span style="display: block; font-size: 17px; line-height: 1.6; max-width: 46em" x-html="s.texto">Se activan tres consecuencias a la vez: restitución máxima de dieciséis árboles, multa administrativa de hasta cien mil veces la unidad de medida, y sanción penal de dos a diez años, o de seis a veinte si el ejemplar está en área protegida, barranca o suelo de conservación.</span>
-                          <span style="display: block; margin-top: 10px; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="s.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículos 112 y 304 · Código Penal, artículos 343 a 350</span>
+                          <span style="display: block; margin-top: 10px; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="s.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículos 112 y 304 · Código Penal, artículos 343 a 350</span>
                         </span>
                       </li>
                     <template x-for="(s, _k1198658965) in p.pasos" :key="_k1198658965">
@@ -561,7 +561,7 @@ a:hover { color: var(--guinda-oscuro); }
                           <span style="display: block; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 6px" x-html="s.actor"></span>
                           <span style="display: block; font-size: 20px; font-weight: 700; color: var(--guinda-100); line-height: 1.3; margin-bottom: 8px" x-html="s.titulo"></span>
                           <span style="display: block; font-size: 17px; line-height: 1.6; max-width: 46em" x-html="s.texto"></span>
-                          <span style="display: block; margin-top: 10px; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="s.fundamento"></span>
+                          <span style="display: block; margin-top: 10px; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="s.fundamento"></span>
                         </span>
                       </li>
                     </template>
@@ -570,10 +570,10 @@ a:hover { color: var(--guinda-oscuro); }
             </article>
           
             <article style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--guinda-100)" data-pr :style="`background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid ${p.color}`">
-              <button class="ih15" style="width: 100%; text-align: left; background: transparent; border: 0; padding: 22px clamp(20px, 3vw, 28px); font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 20px; align-items: center; min-height: 44px" @click="p.alternar($event)" :aria-expanded="p.abierto">
+              <button class="ih15" style="width: 100%; text-align: left; background: transparent; border: 0; padding: 22px clamp(20px, 3vw, 28px); font-family: var(--font-cuerpo); cursor: pointer; display: flex; gap: 20px; align-items: center; min-height: 44px" @click="p.alternar($event)" :aria-expanded="p.abierto">
                 <span style="flex: 1">
                   <span style="display: block; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 8px" x-html="p.orden">Procedimiento 03</span>
-                  <span style="display: block; font-family: Cabin, Roboto, sans-serif; font-size: 25px; font-weight: 700; color: var(--guinda-100); line-height: 1.25" x-html="p.nombre">Trasplante</span>
+                  <span style="display: block; font-family: var(--font-titulo); font-size: 25px; font-weight: 700; color: var(--guinda-100); line-height: 1.25" x-html="p.nombre">Trasplante</span>
                   <span style="display: block; margin-top: 8px; font-size: 17px; line-height: 1.55; color: var(--gris-100); max-width: 46em" x-html="p.resumen">Extraer el árbol y plantarlo en otro sitio conservando su raíz. Se prefiere sobre el derribo cuando el ejemplar es viable.</span>
                 </span>
                 <span style="flex: none; font-size: 28px; line-height: 1; color: var(--dorado-100); font-weight: 700" aria-hidden="true" x-html="p.signo">+</span>
@@ -615,7 +615,7 @@ a:hover { color: var(--guinda-oscuro); }
                           <span style="display: block; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 6px" x-html="s.actor">Ciudadanía</span>
                           <span style="display: block; font-size: 20px; font-weight: 700; color: var(--guinda-100); line-height: 1.3; margin-bottom: 8px" x-html="s.titulo">Solicitud y dictamen de viabilidad</span>
                           <span style="display: block; font-size: 17px; line-height: 1.6; max-width: 46em" x-html="s.texto">El dictamen evalúa si la especie tolera el trasplante, la edad y el vigor del ejemplar, su condición sanitaria, y si el sitio destino tiene suelo, espacio y riego apropiados.</span>
-                          <span style="display: block; margin-top: 10px; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="s.fundamento">NADF-001-RNAT-2015, numerales 7.1.4 y 8.1</span>
+                          <span style="display: block; margin-top: 10px; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="s.fundamento">NADF-001-RNAT-2015, numerales 7.1.4 y 8.1</span>
                         </span>
                       </li>
                     
@@ -625,7 +625,7 @@ a:hover { color: var(--guinda-oscuro); }
                           <span style="display: block; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 6px" x-html="s.actor">Personal acreditado</span>
                           <span style="display: block; font-size: 20px; font-weight: 700; color: var(--guinda-100); line-height: 1.3; margin-bottom: 8px" x-html="s.titulo">Banqueo: preparación del cepellón</span>
                           <span style="display: block; font-size: 17px; line-height: 1.6; max-width: 46em" x-html="s.texto">Se cortan las raíces laterales por etapas, se espera el desarrollo de raíces secundarias y solo entonces se corta la raíz basal. El cepellón se arpilla con material biodegradable.</span>
-                          <span style="display: block; margin-top: 10px; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="s.fundamento">NADF-001-RNAT-2015, numeral 8.5.1</span>
+                          <span style="display: block; margin-top: 10px; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="s.fundamento">NADF-001-RNAT-2015, numeral 8.5.1</span>
                         </span>
                       </li>
                     
@@ -635,7 +635,7 @@ a:hover { color: var(--guinda-oscuro); }
                           <span style="display: block; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 6px" x-html="s.actor">Personal técnico</span>
                           <span style="display: block; font-size: 20px; font-weight: 700; color: var(--guinda-100); line-height: 1.3; margin-bottom: 8px" x-html="s.titulo">Extracción y traslado</span>
                           <span style="display: block; font-size: 17px; line-height: 1.6; max-width: 46em" x-html="s.texto">El árbol se maneja siempre por el cepellón, nunca por el tronco, con trasplantadora o canastilla hidráulica. El trasplante debe ejecutarse como máximo cuarenta y ocho horas después del banqueo.</span>
-                          <span style="display: block; margin-top: 10px; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="s.fundamento">NADF-001-RNAT-2015, numerales 8.5.2 y 8.5.2.1</span>
+                          <span style="display: block; margin-top: 10px; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="s.fundamento">NADF-001-RNAT-2015, numerales 8.5.2 y 8.5.2.1</span>
                         </span>
                       </li>
                     
@@ -645,7 +645,7 @@ a:hover { color: var(--guinda-oscuro); }
                           <span style="display: block; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 6px" x-html="s.actor">Personal técnico</span>
                           <span style="display: block; font-size: 20px; font-weight: 700; color: var(--guinda-100); line-height: 1.3; margin-bottom: 8px" x-html="s.titulo">Sitio destino y plantación</span>
                           <span style="display: block; font-size: 17px; line-height: 1.6; max-width: 46em" x-html="s.texto">La cepa se prepara antes: retiro de cascajo, mejoramiento de suelo y verificación de servicios subterráneos. Al plantar se cuida la verticalidad, se riega a saturación y se sueltan los amarres del cepellón.</span>
-                          <span style="display: block; margin-top: 10px; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="s.fundamento">NADF-001-RNAT-2015, numerales 8.5.2.2 a 8.5.2.4</span>
+                          <span style="display: block; margin-top: 10px; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="s.fundamento">NADF-001-RNAT-2015, numerales 8.5.2.2 a 8.5.2.4</span>
                         </span>
                       </li>
                     
@@ -655,7 +655,7 @@ a:hover { color: var(--guinda-oscuro); }
                           <span style="display: block; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 6px" x-html="s.actor">Responsable del proyecto</span>
                           <span style="display: block; font-size: 20px; font-weight: 700; color: var(--guinda-100); line-height: 1.3; margin-bottom: 8px" x-html="s.titulo">Mantenimiento y verificación</span>
                           <span style="display: block; font-size: 17px; line-height: 1.6; max-width: 46em" x-html="s.texto">Riego periódico, monitoreo fitosanitario, revisión de tensores y poda de formación los primeros años. Si el ejemplar muere por mala ejecución, el resultado se equipara a un derribo y hay que restituir.</span>
-                          <span style="display: block; margin-top: 10px; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="s.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículo 109 párrafo final · NADF-001-RNAT-2015, numeral 9</span>
+                          <span style="display: block; margin-top: 10px; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="s.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículo 109 párrafo final · NADF-001-RNAT-2015, numeral 9</span>
                         </span>
                       </li>
                     <template x-for="(s, _k1198658965) in p.pasos" :key="_k1198658965">
@@ -665,7 +665,7 @@ a:hover { color: var(--guinda-oscuro); }
                           <span style="display: block; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 6px" x-html="s.actor"></span>
                           <span style="display: block; font-size: 20px; font-weight: 700; color: var(--guinda-100); line-height: 1.3; margin-bottom: 8px" x-html="s.titulo"></span>
                           <span style="display: block; font-size: 17px; line-height: 1.6; max-width: 46em" x-html="s.texto"></span>
-                          <span style="display: block; margin-top: 10px; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="s.fundamento"></span>
+                          <span style="display: block; margin-top: 10px; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="s.fundamento"></span>
                         </span>
                       </li>
                     </template>
@@ -674,10 +674,10 @@ a:hover { color: var(--guinda-oscuro); }
             </article>
           <template x-for="(p, _k1699750407) in v.procedimientos" :key="_k1699750407">
             <article :style="`background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid ${p.color}`">
-              <button class="ih15" style="width: 100%; text-align: left; background: transparent; border: 0; padding: 22px clamp(20px, 3vw, 28px); font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 20px; align-items: center; min-height: 44px" @click="p.alternar($event)" :aria-expanded="p.abierto">
+              <button class="ih15" style="width: 100%; text-align: left; background: transparent; border: 0; padding: 22px clamp(20px, 3vw, 28px); font-family: var(--font-cuerpo); cursor: pointer; display: flex; gap: 20px; align-items: center; min-height: 44px" @click="p.alternar($event)" :aria-expanded="p.abierto">
                 <span style="flex: 1">
                   <span style="display: block; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 8px" x-html="p.orden"></span>
-                  <span style="display: block; font-family: Cabin, Roboto, sans-serif; font-size: 25px; font-weight: 700; color: var(--guinda-100); line-height: 1.25" x-html="p.nombre"></span>
+                  <span style="display: block; font-family: var(--font-titulo); font-size: 25px; font-weight: 700; color: var(--guinda-100); line-height: 1.25" x-html="p.nombre"></span>
                   <span style="display: block; margin-top: 8px; font-size: 17px; line-height: 1.55; color: var(--gris-100); max-width: 46em" x-html="p.resumen"></span>
                 </span>
                 <span style="flex: none; font-size: 28px; line-height: 1; color: var(--dorado-100); font-weight: 700" aria-hidden="true" x-html="p.signo"></span>
@@ -699,7 +699,7 @@ a:hover { color: var(--guinda-oscuro); }
                           <span style="display: block; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gris-100); font-weight: 700; margin-bottom: 6px" x-html="s.actor"></span>
                           <span style="display: block; font-size: 20px; font-weight: 700; color: var(--guinda-100); line-height: 1.3; margin-bottom: 8px" x-html="s.titulo"></span>
                           <span style="display: block; font-size: 17px; line-height: 1.6; max-width: 46em" x-html="s.texto"></span>
-                          <span style="display: block; margin-top: 10px; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="s.fundamento"></span>
+                          <span style="display: block; margin-top: 10px; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="s.fundamento"></span>
                         </span>
                       </li>
                     </template>
@@ -713,7 +713,7 @@ a:hover { color: var(--guinda-oscuro); }
 
     <section style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 60px) 24px; scroll-margin-top: 72px" id="casos">
       <div style="max-width: 42em; margin-bottom: 24px">
-        <h2 style="margin: 0 0 12px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(27px, 3.2vw, 36px); line-height: 1.15; font-weight: 700; color: var(--guinda-100)">Diez casos cotidianos</h2>
+        <h2 style="margin: 0 0 12px; font-family: var(--font-titulo); font-size: clamp(27px, 3.2vw, 36px); line-height: 1.15; font-weight: 700; color: var(--guinda-100)">Diez casos cotidianos</h2>
         <p style="margin: 0; font-size: 19px; line-height: 1.6">Qué hacer, qué no hacer y con qué fundamento, en las situaciones más frecuentes.</p>
       </div>
 
@@ -721,19 +721,19 @@ a:hover { color: var(--guinda-oscuro); }
         <legend style="font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--gris-100); margin-bottom: 12px">Filtra por perfil</legend>
         <div style="display: flex; flex-wrap: wrap; gap: 8px">
           
-            <button style="font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: var(--guinda-100); color: var(--blanco); border: 1px solid var(--guinda-100); transition: background 150ms ease" aria-pressed="true" @click="f.activar($event)" :aria-pressed="f.activo" data-pr :style="`font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `">Todos los perfiles </span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta">10</span></button>
+            <button style="font-family: var(--font-cuerpo); font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: var(--guinda-100); color: var(--blanco); border: 1px solid var(--guinda-100); transition: background 150ms ease" aria-pressed="true" @click="f.activar($event)" :aria-pressed="f.activo" data-pr :style="`font-family: var(--font-cuerpo); font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `">Todos los perfiles </span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta">10</span></button>
           
-            <button style="font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: var(--blanco); color: var(--gris-100); border: 1px solid var(--gris-40); transition: background 150ms ease" @click="f.activar($event)" :aria-pressed="f.activo" data-pr :style="`font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `">Vecino preocupado </span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta">2</span></button>
+            <button style="font-family: var(--font-cuerpo); font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: var(--blanco); color: var(--gris-100); border: 1px solid var(--gris-40); transition: background 150ms ease" @click="f.activar($event)" :aria-pressed="f.activo" data-pr :style="`font-family: var(--font-cuerpo); font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `">Vecino preocupado </span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta">2</span></button>
           
-            <button style="font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: var(--blanco); color: var(--gris-100); border: 1px solid var(--gris-40); transition: background 150ms ease" @click="f.activar($event)" :aria-pressed="f.activo" data-pr :style="`font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `">Voy a construir </span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta">2</span></button>
+            <button style="font-family: var(--font-cuerpo); font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: var(--blanco); color: var(--gris-100); border: 1px solid var(--gris-40); transition: background 150ms ease" @click="f.activar($event)" :aria-pressed="f.activo" data-pr :style="`font-family: var(--font-cuerpo); font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `">Voy a construir </span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta">2</span></button>
           
-            <button style="font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: var(--blanco); color: var(--gris-100); border: 1px solid var(--gris-40); transition: background 150ms ease" @click="f.activar($event)" :aria-pressed="f.activo" data-pr :style="`font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `">Árbol en mi jardín </span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta">2</span></button>
+            <button style="font-family: var(--font-cuerpo); font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: var(--blanco); color: var(--gris-100); border: 1px solid var(--gris-40); transition: background 150ms ease" @click="f.activar($event)" :aria-pressed="f.activo" data-pr :style="`font-family: var(--font-cuerpo); font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `">Árbol en mi jardín </span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta">2</span></button>
           
-            <button style="font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: var(--blanco); color: var(--gris-100); border: 1px solid var(--gris-40); transition: background 150ms ease" @click="f.activar($event)" :aria-pressed="f.activo" data-pr :style="`font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `">Vi algo irregular </span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta">2</span></button>
+            <button style="font-family: var(--font-cuerpo); font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: var(--blanco); color: var(--gris-100); border: 1px solid var(--gris-40); transition: background 150ms ease" @click="f.activar($event)" :aria-pressed="f.activo" data-pr :style="`font-family: var(--font-cuerpo); font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `">Vi algo irregular </span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta">2</span></button>
           
-            <button style="font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: var(--blanco); color: var(--gris-100); border: 1px solid var(--gris-40); transition: background 150ms ease" @click="f.activar($event)" :aria-pressed="f.activo" data-pr :style="`font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `">Protejo un árbol </span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta">2</span></button>
+            <button style="font-family: var(--font-cuerpo); font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: var(--blanco); color: var(--gris-100); border: 1px solid var(--gris-40); transition: background 150ms ease" @click="f.activar($event)" :aria-pressed="f.activo" data-pr :style="`font-family: var(--font-cuerpo); font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `">Protejo un árbol </span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta">2</span></button>
           <template x-for="(f, _k1561135948) in v.perfiles" :key="_k1561135948">
-            <button @click="f.activar($event)" :aria-pressed="f.activo" :style="`font-family: Roboto, sans-serif; font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `"></span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta"></span></button>
+            <button @click="f.activar($event)" :aria-pressed="f.activo" :style="`font-family: var(--font-cuerpo); font-size: 16px; font-weight: 500; padding: 10px 14px; border-radius: 4px; cursor: pointer; min-height: 44px; height: auto; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; background: ${f.bg}; color: ${f.fg}; border: 1px solid ${f.borde}; transition: background 150ms ease`"><span x-html="`${f.etiqueta} `"></span><span style="font-size: 14px; opacity: 0.75" x-html="f.cuenta"></span></button>
           </template>
         </div>
       </fieldset>
@@ -743,7 +743,7 @@ a:hover { color: var(--guinda-oscuro); }
       <ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 16px">
         
           <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--estado-error); scroll-margin-top: 84px" :id="c.ancla" data-pr :style="`background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid ${c.color}; scroll-margin-top: 84px`">
-            <button class="ih15" style="width: 100%; text-align: left; background: transparent; border: 0; padding: 20px clamp(18px, 3vw, 26px); font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: flex-start; min-height: 44px" @click="c.alternar($event)" :aria-expanded="c.abierto">
+            <button class="ih15" style="width: 100%; text-align: left; background: transparent; border: 0; padding: 20px clamp(18px, 3vw, 26px); font-family: var(--font-cuerpo); cursor: pointer; display: flex; gap: 18px; align-items: flex-start; min-height: 44px" @click="c.alternar($event)" :aria-expanded="c.abierto">
               <span style="flex: 1">
                 <span style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 10px">
                   <span style="font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--blanco); background: var(--estado-error); padding: 5px 10px; display: inline-flex; align-items: center; white-space: nowrap" x-html="c.urgencia" :style="`font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--blanco); background: ${c.color}; padding: 5px 10px; display: inline-flex; align-items: center; white-space: nowrap`">Emergencia</span>
@@ -785,12 +785,12 @@ a:hover { color: var(--guinda-oscuro); }
                     </ul>
                   </div>
                 </div>
-                <p style="margin: 22px 0 0; padding-left: 16px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="c.fundamento">Ley del Heroico Cuerpo de Bomberos de la Ciudad de México, artículo 6 fracción IX</p>
+                <p style="margin: 22px 0 0; padding-left: 16px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="c.fundamento">Ley del Heroico Cuerpo de Bomberos de la Ciudad de México, artículo 6 fracción IX</p>
               </div>
           </li>
         
           <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--cafe); scroll-margin-top: 84px" :id="c.ancla" data-pr :style="`background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid ${c.color}; scroll-margin-top: 84px`">
-            <button class="ih15" style="width: 100%; text-align: left; background: transparent; border: 0; padding: 20px clamp(18px, 3vw, 26px); font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: flex-start; min-height: 44px" @click="c.alternar($event)" :aria-expanded="c.abierto">
+            <button class="ih15" style="width: 100%; text-align: left; background: transparent; border: 0; padding: 20px clamp(18px, 3vw, 26px); font-family: var(--font-cuerpo); cursor: pointer; display: flex; gap: 18px; align-items: flex-start; min-height: 44px" @click="c.alternar($event)" :aria-expanded="c.abierto">
               <span style="flex: 1">
                 <span style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 10px">
                   <span style="font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--blanco); background: var(--cafe); padding: 5px 10px; display: inline-flex; align-items: center; white-space: nowrap" x-html="c.urgencia" :style="`font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--blanco); background: ${c.color}; padding: 5px 10px; display: inline-flex; align-items: center; white-space: nowrap`">Atención pronta</span>
@@ -832,12 +832,12 @@ a:hover { color: var(--guinda-oscuro); }
                     </ul>
                   </div>
                 </div>
-                <p style="margin: 22px 0 0; padding-left: 16px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="c.fundamento">NADF-001-RNAT-2015, criterios de valoración de riesgo</p>
+                <p style="margin: 22px 0 0; padding-left: 16px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="c.fundamento">NADF-001-RNAT-2015, criterios de valoración de riesgo</p>
               </div>
           </li>
         
           <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--guinda-100); scroll-margin-top: 84px" id="caso-construccion" :id="c.ancla" data-pr :style="`background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid ${c.color}; scroll-margin-top: 84px`">
-            <button class="ih15" style="width: 100%; text-align: left; background: transparent; border: 0; padding: 20px clamp(18px, 3vw, 26px); font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: flex-start; min-height: 44px" @click="c.alternar($event)" :aria-expanded="c.abierto">
+            <button class="ih15" style="width: 100%; text-align: left; background: transparent; border: 0; padding: 20px clamp(18px, 3vw, 26px); font-family: var(--font-cuerpo); cursor: pointer; display: flex; gap: 18px; align-items: flex-start; min-height: 44px" @click="c.alternar($event)" :aria-expanded="c.abierto">
               <span style="flex: 1">
                 <span style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 10px">
                   <span style="font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--blanco); background: var(--guinda-100); padding: 5px 10px; display: inline-flex; align-items: center; white-space: nowrap" x-html="c.urgencia" :style="`font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--blanco); background: ${c.color}; padding: 5px 10px; display: inline-flex; align-items: center; white-space: nowrap`">Trámite ordinario</span>
@@ -879,12 +879,12 @@ a:hover { color: var(--guinda-oscuro); }
                     </ul>
                   </div>
                 </div>
-                <p style="margin: 22px 0 0; padding-left: 16px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="c.fundamento">Reglamento de Impacto Ambiental y Riesgo, artículos 137 a 141</p>
+                <p style="margin: 22px 0 0; padding-left: 16px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="c.fundamento">Reglamento de Impacto Ambiental y Riesgo, artículos 137 a 141</p>
               </div>
           </li>
         
           <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--guinda-100); scroll-margin-top: 84px" :id="c.ancla" data-pr :style="`background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid ${c.color}; scroll-margin-top: 84px`">
-            <button class="ih15" style="width: 100%; text-align: left; background: transparent; border: 0; padding: 20px clamp(18px, 3vw, 26px); font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: flex-start; min-height: 44px" @click="c.alternar($event)" :aria-expanded="c.abierto">
+            <button class="ih15" style="width: 100%; text-align: left; background: transparent; border: 0; padding: 20px clamp(18px, 3vw, 26px); font-family: var(--font-cuerpo); cursor: pointer; display: flex; gap: 18px; align-items: flex-start; min-height: 44px" @click="c.alternar($event)" :aria-expanded="c.abierto">
               <span style="flex: 1">
                 <span style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 10px">
                   <span style="font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--blanco); background: var(--guinda-100); padding: 5px 10px; display: inline-flex; align-items: center; white-space: nowrap" x-html="c.urgencia" :style="`font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--blanco); background: ${c.color}; padding: 5px 10px; display: inline-flex; align-items: center; white-space: nowrap`">Trámite ordinario</span>
@@ -926,12 +926,12 @@ a:hover { color: var(--guinda-oscuro); }
                     </ul>
                   </div>
                 </div>
-                <p style="margin: 22px 0 0; padding-left: 16px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="c.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículo 118</p>
+                <p style="margin: 22px 0 0; padding-left: 16px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="c.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículo 118</p>
               </div>
           </li>
         
           <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--guinda-100); scroll-margin-top: 84px" id="caso-jardin-privado" :id="c.ancla" data-pr :style="`background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid ${c.color}; scroll-margin-top: 84px`">
-            <button class="ih15" style="width: 100%; text-align: left; background: transparent; border: 0; padding: 20px clamp(18px, 3vw, 26px); font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: flex-start; min-height: 44px" @click="c.alternar($event)" :aria-expanded="c.abierto">
+            <button class="ih15" style="width: 100%; text-align: left; background: transparent; border: 0; padding: 20px clamp(18px, 3vw, 26px); font-family: var(--font-cuerpo); cursor: pointer; display: flex; gap: 18px; align-items: flex-start; min-height: 44px" @click="c.alternar($event)" :aria-expanded="c.abierto">
               <span style="flex: 1">
                 <span style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 10px">
                   <span style="font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--blanco); background: var(--guinda-100); padding: 5px 10px; display: inline-flex; align-items: center; white-space: nowrap" x-html="c.urgencia" :style="`font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--blanco); background: ${c.color}; padding: 5px 10px; display: inline-flex; align-items: center; white-space: nowrap`">Trámite ordinario</span>
@@ -973,12 +973,12 @@ a:hover { color: var(--guinda-oscuro); }
                     </ul>
                   </div>
                 </div>
-                <p style="margin: 22px 0 0; padding-left: 16px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="c.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículo 118 fracción III · NADF-001-RNAT-2015</p>
+                <p style="margin: 22px 0 0; padding-left: 16px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="c.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículo 118 fracción III · NADF-001-RNAT-2015</p>
               </div>
           </li>
         
           <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--guinda-100); scroll-margin-top: 84px" :id="c.ancla" data-pr :style="`background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid ${c.color}; scroll-margin-top: 84px`">
-            <button class="ih15" style="width: 100%; text-align: left; background: transparent; border: 0; padding: 20px clamp(18px, 3vw, 26px); font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: flex-start; min-height: 44px" @click="c.alternar($event)" :aria-expanded="c.abierto">
+            <button class="ih15" style="width: 100%; text-align: left; background: transparent; border: 0; padding: 20px clamp(18px, 3vw, 26px); font-family: var(--font-cuerpo); cursor: pointer; display: flex; gap: 18px; align-items: flex-start; min-height: 44px" @click="c.alternar($event)" :aria-expanded="c.abierto">
               <span style="flex: 1">
                 <span style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 10px">
                   <span style="font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--blanco); background: var(--guinda-100); padding: 5px 10px; display: inline-flex; align-items: center; white-space: nowrap" x-html="c.urgencia" :style="`font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--blanco); background: ${c.color}; padding: 5px 10px; display: inline-flex; align-items: center; white-space: nowrap`">Trámite ordinario</span>
@@ -1018,12 +1018,12 @@ a:hover { color: var(--guinda-oscuro); }
                     </ul>
                   </div>
                 </div>
-                <p style="margin: 22px 0 0; padding-left: 16px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="c.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículo 118 fracción III</p>
+                <p style="margin: 22px 0 0; padding-left: 16px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="c.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículo 118 fracción III</p>
               </div>
           </li>
         
           <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--cafe); scroll-margin-top: 84px" :id="c.ancla" data-pr :style="`background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid ${c.color}; scroll-margin-top: 84px`">
-            <button class="ih15" style="width: 100%; text-align: left; background: transparent; border: 0; padding: 20px clamp(18px, 3vw, 26px); font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: flex-start; min-height: 44px" @click="c.alternar($event)" :aria-expanded="c.abierto">
+            <button class="ih15" style="width: 100%; text-align: left; background: transparent; border: 0; padding: 20px clamp(18px, 3vw, 26px); font-family: var(--font-cuerpo); cursor: pointer; display: flex; gap: 18px; align-items: flex-start; min-height: 44px" @click="c.alternar($event)" :aria-expanded="c.abierto">
               <span style="flex: 1">
                 <span style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 10px">
                   <span style="font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--blanco); background: var(--cafe); padding: 5px 10px; display: inline-flex; align-items: center; white-space: nowrap" x-html="c.urgencia" :style="`font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--blanco); background: ${c.color}; padding: 5px 10px; display: inline-flex; align-items: center; white-space: nowrap`">Atención pronta</span>
@@ -1065,12 +1065,12 @@ a:hover { color: var(--guinda-oscuro); }
                     </ul>
                   </div>
                 </div>
-                <p style="margin: 22px 0 0; padding-left: 16px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="c.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículo 112 · Código Penal, artículos 343 a 350</p>
+                <p style="margin: 22px 0 0; padding-left: 16px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="c.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículo 112 · Código Penal, artículos 343 a 350</p>
               </div>
           </li>
         
           <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--cafe); scroll-margin-top: 84px" :id="c.ancla" data-pr :style="`background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid ${c.color}; scroll-margin-top: 84px`">
-            <button class="ih15" style="width: 100%; text-align: left; background: transparent; border: 0; padding: 20px clamp(18px, 3vw, 26px); font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: flex-start; min-height: 44px" @click="c.alternar($event)" :aria-expanded="c.abierto">
+            <button class="ih15" style="width: 100%; text-align: left; background: transparent; border: 0; padding: 20px clamp(18px, 3vw, 26px); font-family: var(--font-cuerpo); cursor: pointer; display: flex; gap: 18px; align-items: flex-start; min-height: 44px" @click="c.alternar($event)" :aria-expanded="c.abierto">
               <span style="flex: 1">
                 <span style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 10px">
                   <span style="font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--blanco); background: var(--cafe); padding: 5px 10px; display: inline-flex; align-items: center; white-space: nowrap" x-html="c.urgencia" :style="`font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--blanco); background: ${c.color}; padding: 5px 10px; display: inline-flex; align-items: center; white-space: nowrap`">Atención pronta</span>
@@ -1110,12 +1110,12 @@ a:hover { color: var(--guinda-oscuro); }
                     </ul>
                   </div>
                 </div>
-                <p style="margin: 22px 0 0; padding-left: 16px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="c.fundamento">NADF-001-RNAT-2015, numeral 5.5</p>
+                <p style="margin: 22px 0 0; padding-left: 16px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="c.fundamento">NADF-001-RNAT-2015, numeral 5.5</p>
               </div>
           </li>
         
           <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--guinda-100); scroll-margin-top: 84px" :id="c.ancla" data-pr :style="`background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid ${c.color}; scroll-margin-top: 84px`">
-            <button class="ih15" style="width: 100%; text-align: left; background: transparent; border: 0; padding: 20px clamp(18px, 3vw, 26px); font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: flex-start; min-height: 44px" @click="c.alternar($event)" :aria-expanded="c.abierto">
+            <button class="ih15" style="width: 100%; text-align: left; background: transparent; border: 0; padding: 20px clamp(18px, 3vw, 26px); font-family: var(--font-cuerpo); cursor: pointer; display: flex; gap: 18px; align-items: flex-start; min-height: 44px" @click="c.alternar($event)" :aria-expanded="c.abierto">
               <span style="flex: 1">
                 <span style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 10px">
                   <span style="font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--blanco); background: var(--guinda-100); padding: 5px 10px; display: inline-flex; align-items: center; white-space: nowrap" x-html="c.urgencia" :style="`font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--blanco); background: ${c.color}; padding: 5px 10px; display: inline-flex; align-items: center; white-space: nowrap`">Trámite ordinario</span>
@@ -1157,12 +1157,12 @@ a:hover { color: var(--guinda-oscuro); }
                     </ul>
                   </div>
                 </div>
-                <p style="margin: 22px 0 0; padding-left: 16px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="c.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículo 118 bis</p>
+                <p style="margin: 22px 0 0; padding-left: 16px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="c.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículo 118 bis</p>
               </div>
           </li>
         
           <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--estado-error); scroll-margin-top: 84px" :id="c.ancla" data-pr :style="`background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid ${c.color}; scroll-margin-top: 84px`">
-            <button class="ih15" style="width: 100%; text-align: left; background: transparent; border: 0; padding: 20px clamp(18px, 3vw, 26px); font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: flex-start; min-height: 44px" @click="c.alternar($event)" :aria-expanded="c.abierto">
+            <button class="ih15" style="width: 100%; text-align: left; background: transparent; border: 0; padding: 20px clamp(18px, 3vw, 26px); font-family: var(--font-cuerpo); cursor: pointer; display: flex; gap: 18px; align-items: flex-start; min-height: 44px" @click="c.alternar($event)" :aria-expanded="c.abierto">
               <span style="flex: 1">
                 <span style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 10px">
                   <span style="font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--blanco); background: var(--estado-error); padding: 5px 10px; display: inline-flex; align-items: center; white-space: nowrap" x-html="c.urgencia" :style="`font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--blanco); background: ${c.color}; padding: 5px 10px; display: inline-flex; align-items: center; white-space: nowrap`">Emergencia</span>
@@ -1202,12 +1202,12 @@ a:hover { color: var(--guinda-oscuro); }
                     </ul>
                   </div>
                 </div>
-                <p style="margin: 22px 0 0; padding-left: 16px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="c.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículos 9 y 10</p>
+                <p style="margin: 22px 0 0; padding-left: 16px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="c.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículos 9 y 10</p>
               </div>
           </li>
         <template x-for="(c, _k296089474) in v.casos" :key="_k296089474">
           <li :id="c.ancla" :style="`background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid ${c.color}; scroll-margin-top: 84px`">
-            <button class="ih15" style="width: 100%; text-align: left; background: transparent; border: 0; padding: 20px clamp(18px, 3vw, 26px); font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: flex-start; min-height: 44px" @click="c.alternar($event)" :aria-expanded="c.abierto">
+            <button class="ih15" style="width: 100%; text-align: left; background: transparent; border: 0; padding: 20px clamp(18px, 3vw, 26px); font-family: var(--font-cuerpo); cursor: pointer; display: flex; gap: 18px; align-items: flex-start; min-height: 44px" @click="c.alternar($event)" :aria-expanded="c.abierto">
               <span style="flex: 1">
                 <span style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 10px">
                   <span x-html="c.urgencia" :style="`font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--blanco); background: ${c.color}; padding: 5px 10px; display: inline-flex; align-items: center; white-space: nowrap`"></span>
@@ -1237,7 +1237,7 @@ a:hover { color: var(--guinda-oscuro); }
                     </ul>
                   </div>
                 </div>
-                <p style="margin: 22px 0 0; padding-left: 16px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="c.fundamento"></p>
+                <p style="margin: 22px 0 0; padding-left: 16px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="c.fundamento"></p>
               </div>
           </li>
         </template>
@@ -1247,83 +1247,83 @@ a:hover { color: var(--guinda-oscuro); }
     <section style="background: var(--gris-10); border-top: 1px solid var(--gris-20); scroll-margin-top: 72px" id="preguntas">
       <div style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 60px) 24px">
         <div style="max-width: 42em; margin-bottom: 24px">
-          <h2 style="margin: 0 0 12px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(27px, 3.2vw, 36px); line-height: 1.15; font-weight: 700; color: var(--guinda-100)">Veinte preguntas rectoras</h2>
+          <h2 style="margin: 0 0 12px; font-family: var(--font-titulo); font-size: clamp(27px, 3.2vw, 36px); line-height: 1.15; font-weight: 700; color: var(--guinda-100)">Veinte preguntas rectoras</h2>
           <p style="margin: 0; font-size: 19px; line-height: 1.6">Cada pregunta tiene su propio enlace: copia el vínculo del número para compartirla.</p>
         </div>
 
         <div style="display: flex; flex-direction: column; gap: 32px">
           
             <section data-pr>
-              <h3 style="margin: 0 0 4px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(23px, 2.6vw, 30px); line-height: 1.2; letter-spacing: -0.01em; font-weight: 700; color: var(--guinda-100); background: var(--marfil); border-left: 4px solid var(--guinda-100); padding: 14px 18px" x-html="b.titulo">Vecino preocupado</h3>
+              <h3 style="margin: 0 0 4px; font-family: var(--font-titulo); font-size: clamp(23px, 2.6vw, 30px); line-height: 1.2; letter-spacing: -0.01em; font-weight: 700; color: var(--guinda-100); background: var(--marfil); border-left: 4px solid var(--guinda-100); padding: 14px 18px" x-html="b.titulo">Vecino preocupado</h3>
               <ul style="list-style: none; margin: 0; padding: 0">
                 
                   <li style="border-bottom: 1px solid var(--gris-40); scroll-margin-top: 80px" id="p01" :id="f.ancla" data-pr>
                     <div style="display: flex; align-items: baseline; gap: 14px">
                       <a class="ih16" style="flex: none; padding: 20px 0; font-size: 16px; font-weight: 700; color: var(--guinda-100); text-decoration: none; min-width: 32px" href="#p01" aria-label="Enlace a esta pregunta" :href="dcRuta(f.hash)" x-html="f.num">01</a>
-                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
+                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: var(--font-cuerpo); cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
                         <span style="flex: 1; font-size: 19px; font-weight: 500; color: var(--gris-100); line-height: 1.35" x-html="f.pregunta">¿A quién le toca el árbol de mi calle?</span>
                         <span style="flex: none; font-size: 26px; line-height: 1; color: var(--dorado-100); font-weight: 700" aria-hidden="true" x-html="f.signo">+</span>
                       </button>
                     </div>
                     <div x-show="f.abierto" style="padding: 0 4px 22px 46px; display:none">
                         <p style="margin: 0 0 12px; font-size: 18px; line-height: 1.6; max-width: 46em" x-html="f.respuesta">Depende del tipo de vialidad. En calles locales y colonias es tu alcaldía. En ejes viales, avenidas grandes y calzadas, la Secretaría autoriza y SOBSE ejecuta.</p>
-                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículos 9 y 10</p>
+                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículos 9 y 10</p>
                       </div>
                   </li>
                 
                   <li style="border-bottom: 1px solid var(--gris-40); scroll-margin-top: 80px" id="p02" :id="f.ancla" data-pr>
                     <div style="display: flex; align-items: baseline; gap: 14px">
                       <a class="ih16" style="flex: none; padding: 20px 0; font-size: 16px; font-weight: 700; color: var(--guinda-100); text-decoration: none; min-width: 32px" href="#p02" aria-label="Enlace a esta pregunta" :href="dcRuta(f.hash)" x-html="f.num">02</a>
-                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
+                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: var(--font-cuerpo); cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
                         <span style="flex: 1; font-size: 19px; font-weight: 500; color: var(--gris-100); line-height: 1.35" x-html="f.pregunta">¿Cuánto tarda una autorización?</span>
                         <span style="flex: none; font-size: 26px; line-height: 1; color: var(--dorado-100); font-weight: 700" aria-hidden="true" x-html="f.signo">+</span>
                       </button>
                     </div>
                     <div x-show="f.abierto" style="padding: 0 4px 22px 46px; display:none">
                         <p style="margin: 0 0 12px; font-size: 18px; line-height: 1.6; max-width: 46em" x-html="f.respuesta">La autoridad debe resolver en un plazo no mayor a veinte días hábiles contados desde tu solicitud.</p>
-                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículo 106</p>
+                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículo 106</p>
                       </div>
                   </li>
                 
                   <li style="border-bottom: 1px solid var(--gris-40); scroll-margin-top: 80px" id="p03" :id="f.ancla" data-pr>
                     <div style="display: flex; align-items: baseline; gap: 14px">
                       <a class="ih16" style="flex: none; padding: 20px 0; font-size: 16px; font-weight: 700; color: var(--guinda-100); text-decoration: none; min-width: 32px" href="#p03" aria-label="Enlace a esta pregunta" :href="dcRuta(f.hash)" x-html="f.num">03</a>
-                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
+                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: var(--font-cuerpo); cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
                         <span style="flex: 1; font-size: 19px; font-weight: 500; color: var(--gris-100); line-height: 1.35" x-html="f.pregunta">El árbol de la banqueta dañó mi coche al caer, ¿quién paga?</span>
                         <span style="flex: none; font-size: 26px; line-height: 1; color: var(--dorado-100); font-weight: 700" aria-hidden="true" x-html="f.signo">+</span>
                       </button>
                     </div>
                     <div x-show="f.abierto" style="padding: 0 4px 22px 46px; display:none">
                         <p style="margin: 0 0 12px; font-size: 18px; line-height: 1.6; max-width: 46em" x-html="f.respuesta">El reclamo se presenta ante la autoridad responsable del arbolado en ese sitio, normalmente tu alcaldía. Documenta con fotografías y con el folio del reporte.</p>
-                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento">Ley Orgánica de Alcaldías, artículo 32 fracción V</p>
+                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento">Ley Orgánica de Alcaldías, artículo 32 fracción V</p>
                       </div>
                   </li>
                 
                   <li style="border-bottom: 1px solid var(--gris-40); scroll-margin-top: 80px" id="p04" :id="f.ancla" data-pr>
                     <div style="display: flex; align-items: baseline; gap: 14px">
                       <a class="ih16" style="flex: none; padding: 20px 0; font-size: 16px; font-weight: 700; color: var(--guinda-100); text-decoration: none; min-width: 32px" href="#p04" aria-label="Enlace a esta pregunta" :href="dcRuta(f.hash)" x-html="f.num">04</a>
-                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
+                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: var(--font-cuerpo); cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
                         <span style="flex: 1; font-size: 19px; font-weight: 500; color: var(--gris-100); line-height: 1.35" x-html="f.pregunta">¿Puedo plantar un árbol frente a mi casa?</span>
                         <span style="flex: none; font-size: 26px; line-height: 1; color: var(--dorado-100); font-weight: 700" aria-hidden="true" x-html="f.signo">+</span>
                       </button>
                     </div>
                     <div x-show="f.abierto" style="padding: 0 4px 22px 46px; display:none">
                         <p style="margin: 0 0 12px; font-size: 18px; line-height: 1.6; max-width: 46em" x-html="f.respuesta">Sí, coordinándolo con tu alcaldía: ella define la especie según el ancho de banqueta y el cableado, y las dimensiones del cajete.</p>
-                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento">NADF-006-RNAT-2012</p>
+                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento">NADF-006-RNAT-2012</p>
                       </div>
                   </li>
                 <template x-for="(f, _k11476046) in b.items" :key="_k11476046">
                   <li style="border-bottom: 1px solid var(--gris-40); scroll-margin-top: 80px" :id="f.ancla">
                     <div style="display: flex; align-items: baseline; gap: 14px">
                       <a class="ih16" style="flex: none; padding: 20px 0; font-size: 16px; font-weight: 700; color: var(--guinda-100); text-decoration: none; min-width: 32px" aria-label="Enlace a esta pregunta" :href="dcRuta(f.hash)" x-html="f.num"></a>
-                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
+                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: var(--font-cuerpo); cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
                         <span style="flex: 1; font-size: 19px; font-weight: 500; color: var(--gris-100); line-height: 1.35" x-html="f.pregunta"></span>
                         <span style="flex: none; font-size: 26px; line-height: 1; color: var(--dorado-100); font-weight: 700" aria-hidden="true" x-html="f.signo"></span>
                       </button>
                     </div>
                     <div x-show="f.abierto" style="padding: 0 4px 22px 46px">
                         <p style="margin: 0 0 12px; font-size: 18px; line-height: 1.6; max-width: 46em" x-html="f.respuesta"></p>
-                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento"></p>
+                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento"></p>
                       </div>
                   </li>
                 </template>
@@ -1331,76 +1331,76 @@ a:hover { color: var(--guinda-oscuro); }
             </section>
           
             <section data-pr>
-              <h3 style="margin: 0 0 4px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(23px, 2.6vw, 30px); line-height: 1.2; letter-spacing: -0.01em; font-weight: 700; color: var(--guinda-100); background: var(--marfil); border-left: 4px solid var(--guinda-100); padding: 14px 18px" x-html="b.titulo">Voy a construir</h3>
+              <h3 style="margin: 0 0 4px; font-family: var(--font-titulo); font-size: clamp(23px, 2.6vw, 30px); line-height: 1.2; letter-spacing: -0.01em; font-weight: 700; color: var(--guinda-100); background: var(--marfil); border-left: 4px solid var(--guinda-100); padding: 14px 18px" x-html="b.titulo">Voy a construir</h3>
               <ul style="list-style: none; margin: 0; padding: 0">
                 
                   <li style="border-bottom: 1px solid var(--gris-40); scroll-margin-top: 80px" id="p05" :id="f.ancla" data-pr>
                     <div style="display: flex; align-items: baseline; gap: 14px">
                       <a class="ih16" style="flex: none; padding: 20px 0; font-size: 16px; font-weight: 700; color: var(--guinda-100); text-decoration: none; min-width: 32px" href="#p05" aria-label="Enlace a esta pregunta" :href="dcRuta(f.hash)" x-html="f.num">05</a>
-                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
+                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: var(--font-cuerpo); cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
                         <span style="flex: 1; font-size: 19px; font-weight: 500; color: var(--gris-100); line-height: 1.35" x-html="f.pregunta">Voy a construir, ¿el arbolado va aparte?</span>
                         <span style="flex: none; font-size: 26px; line-height: 1; color: var(--dorado-100); font-weight: 700" aria-hidden="true" x-html="f.signo">+</span>
                       </button>
                     </div>
                     <div x-show="f.abierto" style="padding: 0 4px 22px 46px; display:none">
                         <p style="margin: 0 0 12px; font-size: 18px; line-height: 1.6; max-width: 46em" x-html="f.respuesta">No. Cuando la afectación deriva de una obra sujeta a evaluación de impacto ambiental, la autorización del arbolado queda dentro de esa misma resolución.</p>
-                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento">Reglamento de Impacto Ambiental y Riesgo, artículos 137 a 141</p>
+                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento">Reglamento de Impacto Ambiental y Riesgo, artículos 137 a 141</p>
                       </div>
                   </li>
                 
                   <li style="border-bottom: 1px solid var(--gris-40); scroll-margin-top: 80px" id="p06" :id="f.ancla" data-pr>
                     <div style="display: flex; align-items: baseline; gap: 14px">
                       <a class="ih16" style="flex: none; padding: 20px 0; font-size: 16px; font-weight: 700; color: var(--guinda-100); text-decoration: none; min-width: 32px" href="#p06" aria-label="Enlace a esta pregunta" :href="dcRuta(f.hash)" x-html="f.num">06</a>
-                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
+                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: var(--font-cuerpo); cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
                         <span style="flex: 1; font-size: 19px; font-weight: 500; color: var(--gris-100); line-height: 1.35" x-html="f.pregunta">¿Cuántos árboles tengo que plantar si derribo uno?</span>
                         <span style="flex: none; font-size: 26px; line-height: 1; color: var(--dorado-100); font-weight: 700" aria-hidden="true" x-html="f.signo">+</span>
                       </button>
                     </div>
                     <div x-show="f.abierto" style="padding: 0 4px 22px 46px; display:none">
                         <p style="margin: 0 0 12px; font-size: 18px; line-height: 1.6; max-width: 46em" x-html="f.respuesta">Entre dos y dieciséis, según el puntaje de valoración del dictamen. En derribos por riesgo o saneamiento la restitución es de uno a uno.</p>
-                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento">NADF-001-RNAT-2015, numeral 9 y tablas 2, 3 y 4</p>
+                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento">NADF-001-RNAT-2015, numeral 9 y tablas 2, 3 y 4</p>
                       </div>
                   </li>
                 
                   <li style="border-bottom: 1px solid var(--gris-40); scroll-margin-top: 80px" id="p07" :id="f.ancla" data-pr>
                     <div style="display: flex; align-items: baseline; gap: 14px">
                       <a class="ih16" style="flex: none; padding: 20px 0; font-size: 16px; font-weight: 700; color: var(--guinda-100); text-decoration: none; min-width: 32px" href="#p07" aria-label="Enlace a esta pregunta" :href="dcRuta(f.hash)" x-html="f.num">07</a>
-                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
+                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: var(--font-cuerpo); cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
                         <span style="flex: 1; font-size: 19px; font-weight: 500; color: var(--gris-100); line-height: 1.35" x-html="f.pregunta">¿Puedo pagar en lugar de plantar?</span>
                         <span style="flex: none; font-size: 26px; line-height: 1; color: var(--dorado-100); font-weight: 700" aria-hidden="true" x-html="f.signo">+</span>
                       </button>
                     </div>
                     <div x-show="f.abierto" style="padding: 0 4px 22px 46px; display:none">
                         <p style="margin: 0 0 12px; font-size: 18px; line-height: 1.6; max-width: 46em" x-html="f.respuesta">Solo por excepción, cuando la restitución física es jurídica o técnicamente imposible. En ese caso se aporta al Fondo Ambiental Público.</p>
-                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículo 109</p>
+                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículo 109</p>
                       </div>
                   </li>
                 
                   <li style="border-bottom: 1px solid var(--gris-40); scroll-margin-top: 80px" id="p08" :id="f.ancla" data-pr>
                     <div style="display: flex; align-items: baseline; gap: 14px">
                       <a class="ih16" style="flex: none; padding: 20px 0; font-size: 16px; font-weight: 700; color: var(--guinda-100); text-decoration: none; min-width: 32px" href="#p08" aria-label="Enlace a esta pregunta" :href="dcRuta(f.hash)" x-html="f.num">08</a>
-                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
+                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: var(--font-cuerpo); cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
                         <span style="flex: 1; font-size: 19px; font-weight: 500; color: var(--gris-100); line-height: 1.35" x-html="f.pregunta">¿El trasplante es mejor que el derribo?</span>
                         <span style="flex: none; font-size: 26px; line-height: 1; color: var(--dorado-100); font-weight: 700" aria-hidden="true" x-html="f.signo">+</span>
                       </button>
                     </div>
                     <div x-show="f.abierto" style="padding: 0 4px 22px 46px; display:none">
                         <p style="margin: 0 0 12px; font-size: 18px; line-height: 1.6; max-width: 46em" x-html="f.respuesta">Sí, y se privilegia cuando el ejemplar es viable. Debe ejecutarse en un máximo de cuarenta y ocho horas después del banqueo.</p>
-                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento">NADF-001-RNAT-2015, numerales 8.1 y 8.5.2</p>
+                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento">NADF-001-RNAT-2015, numerales 8.1 y 8.5.2</p>
                       </div>
                   </li>
                 <template x-for="(f, _k11476046) in b.items" :key="_k11476046">
                   <li style="border-bottom: 1px solid var(--gris-40); scroll-margin-top: 80px" :id="f.ancla">
                     <div style="display: flex; align-items: baseline; gap: 14px">
                       <a class="ih16" style="flex: none; padding: 20px 0; font-size: 16px; font-weight: 700; color: var(--guinda-100); text-decoration: none; min-width: 32px" aria-label="Enlace a esta pregunta" :href="dcRuta(f.hash)" x-html="f.num"></a>
-                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
+                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: var(--font-cuerpo); cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
                         <span style="flex: 1; font-size: 19px; font-weight: 500; color: var(--gris-100); line-height: 1.35" x-html="f.pregunta"></span>
                         <span style="flex: none; font-size: 26px; line-height: 1; color: var(--dorado-100); font-weight: 700" aria-hidden="true" x-html="f.signo"></span>
                       </button>
                     </div>
                     <div x-show="f.abierto" style="padding: 0 4px 22px 46px">
                         <p style="margin: 0 0 12px; font-size: 18px; line-height: 1.6; max-width: 46em" x-html="f.respuesta"></p>
-                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento"></p>
+                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento"></p>
                       </div>
                   </li>
                 </template>
@@ -1408,76 +1408,76 @@ a:hover { color: var(--guinda-oscuro); }
             </section>
           
             <section data-pr>
-              <h3 style="margin: 0 0 4px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(23px, 2.6vw, 30px); line-height: 1.2; letter-spacing: -0.01em; font-weight: 700; color: var(--guinda-100); background: var(--marfil); border-left: 4px solid var(--guinda-100); padding: 14px 18px" x-html="b.titulo">Árbol en mi jardín</h3>
+              <h3 style="margin: 0 0 4px; font-family: var(--font-titulo); font-size: clamp(23px, 2.6vw, 30px); line-height: 1.2; letter-spacing: -0.01em; font-weight: 700; color: var(--guinda-100); background: var(--marfil); border-left: 4px solid var(--guinda-100); padding: 14px 18px" x-html="b.titulo">Árbol en mi jardín</h3>
               <ul style="list-style: none; margin: 0; padding: 0">
                 
                   <li style="border-bottom: 1px solid var(--gris-40); scroll-margin-top: 80px" id="p09" :id="f.ancla" data-pr>
                     <div style="display: flex; align-items: baseline; gap: 14px">
                       <a class="ih16" style="flex: none; padding: 20px 0; font-size: 16px; font-weight: 700; color: var(--guinda-100); text-decoration: none; min-width: 32px" href="#p09" aria-label="Enlace a esta pregunta" :href="dcRuta(f.hash)" x-html="f.num">09</a>
-                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
+                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: var(--font-cuerpo); cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
                         <span style="flex: 1; font-size: 19px; font-weight: 500; color: var(--gris-100); line-height: 1.35" x-html="f.pregunta">¿Necesito permiso si el árbol está en mi jardín?</span>
                         <span style="flex: none; font-size: 26px; line-height: 1; color: var(--dorado-100); font-weight: 700" aria-hidden="true" x-html="f.signo">+</span>
                       </button>
                     </div>
                     <div x-show="f.abierto" style="padding: 0 4px 22px 46px; display:none">
                         <p style="margin: 0 0 12px; font-size: 18px; line-height: 1.6; max-width: 46em" x-html="f.respuesta">Sí. El predio es tuyo, pero el árbol es un bien de interés público. Podarlo, derribarlo o trasplantarlo requiere autorización previa.</p>
-                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículo 118 fracción III</p>
+                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículo 118 fracción III</p>
                       </div>
                   </li>
                 
                   <li style="border-bottom: 1px solid var(--gris-40); scroll-margin-top: 80px" id="p10" :id="f.ancla" data-pr>
                     <div style="display: flex; align-items: baseline; gap: 14px">
                       <a class="ih16" style="flex: none; padding: 20px 0; font-size: 16px; font-weight: 700; color: var(--guinda-100); text-decoration: none; min-width: 32px" href="#p10" aria-label="Enlace a esta pregunta" :href="dcRuta(f.hash)" x-html="f.num">10</a>
-                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
+                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: var(--font-cuerpo); cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
                         <span style="flex: 1; font-size: 19px; font-weight: 500; color: var(--gris-100); line-height: 1.35" x-html="f.pregunta">¿Cuánto se le puede quitar a un árbol en una poda?</span>
                         <span style="flex: none; font-size: 26px; line-height: 1; color: var(--dorado-100); font-weight: 700" aria-hidden="true" x-html="f.signo">+</span>
                       </button>
                     </div>
                     <div x-show="f.abierto" style="padding: 0 4px 22px 46px; display:none">
                         <p style="margin: 0 0 12px; font-size: 18px; line-height: 1.6; max-width: 46em" x-html="f.respuesta">Como máximo la cuarta parte del follaje y las ramas, y solo si ese porcentaje está justificado en el dictamen técnico.</p>
-                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento">NADF-001-RNAT-2015, numeral 6</p>
+                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento">NADF-001-RNAT-2015, numeral 6</p>
                       </div>
                   </li>
                 
                   <li style="border-bottom: 1px solid var(--gris-40); scroll-margin-top: 80px" id="p11" :id="f.ancla" data-pr>
                     <div style="display: flex; align-items: baseline; gap: 14px">
                       <a class="ih16" style="flex: none; padding: 20px 0; font-size: 16px; font-weight: 700; color: var(--guinda-100); text-decoration: none; min-width: 32px" href="#p11" aria-label="Enlace a esta pregunta" :href="dcRuta(f.hash)" x-html="f.num">11</a>
-                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
+                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: var(--font-cuerpo); cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
                         <span style="flex: 1; font-size: 19px; font-weight: 500; color: var(--gris-100); line-height: 1.35" x-html="f.pregunta">¿Puedo cortar las raíces que levantan mi piso?</span>
                         <span style="flex: none; font-size: 26px; line-height: 1; color: var(--dorado-100); font-weight: 700" aria-hidden="true" x-html="f.signo">+</span>
                       </button>
                     </div>
                     <div x-show="f.abierto" style="padding: 0 4px 22px 46px; display:none">
                         <p style="margin: 0 0 12px; font-size: 18px; line-height: 1.6; max-width: 46em" x-html="f.respuesta">No por tu cuenta. Cortar raíces es la causa más común de que un árbol termine cayendo, y se considera intervención no autorizada.</p>
-                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículo 118 fracción III</p>
+                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículo 118 fracción III</p>
                       </div>
                   </li>
                 
                   <li style="border-bottom: 1px solid var(--gris-40); scroll-margin-top: 80px" id="p12" :id="f.ancla" data-pr>
                     <div style="display: flex; align-items: baseline; gap: 14px">
                       <a class="ih16" style="flex: none; padding: 20px 0; font-size: 16px; font-weight: 700; color: var(--guinda-100); text-decoration: none; min-width: 32px" href="#p12" aria-label="Enlace a esta pregunta" :href="dcRuta(f.hash)" x-html="f.num">12</a>
-                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
+                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: var(--font-cuerpo); cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
                         <span style="flex: 1; font-size: 19px; font-weight: 500; color: var(--gris-100); line-height: 1.35" x-html="f.pregunta">¿Qué documentos necesito si el árbol está en mi predio?</span>
                         <span style="flex: none; font-size: 26px; line-height: 1; color: var(--dorado-100); font-weight: 700" aria-hidden="true" x-html="f.signo">+</span>
                       </button>
                     </div>
                     <div x-show="f.abierto" style="padding: 0 4px 22px 46px; display:none">
                         <p style="margin: 0 0 12px; font-size: 18px; line-height: 1.6; max-width: 46em" x-html="f.respuesta">Identificación oficial, documento que acredite la propiedad o posesión, dictamen técnico de persona acreditada, y fotografías con un croquis de ubicación.</p>
-                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento">NADF-001-RNAT-2015, numeral 5.3</p>
+                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento">NADF-001-RNAT-2015, numeral 5.3</p>
                       </div>
                   </li>
                 <template x-for="(f, _k11476046) in b.items" :key="_k11476046">
                   <li style="border-bottom: 1px solid var(--gris-40); scroll-margin-top: 80px" :id="f.ancla">
                     <div style="display: flex; align-items: baseline; gap: 14px">
                       <a class="ih16" style="flex: none; padding: 20px 0; font-size: 16px; font-weight: 700; color: var(--guinda-100); text-decoration: none; min-width: 32px" aria-label="Enlace a esta pregunta" :href="dcRuta(f.hash)" x-html="f.num"></a>
-                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
+                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: var(--font-cuerpo); cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
                         <span style="flex: 1; font-size: 19px; font-weight: 500; color: var(--gris-100); line-height: 1.35" x-html="f.pregunta"></span>
                         <span style="flex: none; font-size: 26px; line-height: 1; color: var(--dorado-100); font-weight: 700" aria-hidden="true" x-html="f.signo"></span>
                       </button>
                     </div>
                     <div x-show="f.abierto" style="padding: 0 4px 22px 46px">
                         <p style="margin: 0 0 12px; font-size: 18px; line-height: 1.6; max-width: 46em" x-html="f.respuesta"></p>
-                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento"></p>
+                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento"></p>
                       </div>
                   </li>
                 </template>
@@ -1485,76 +1485,76 @@ a:hover { color: var(--guinda-oscuro); }
             </section>
           
             <section data-pr>
-              <h3 style="margin: 0 0 4px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(23px, 2.6vw, 30px); line-height: 1.2; letter-spacing: -0.01em; font-weight: 700; color: var(--guinda-100); background: var(--marfil); border-left: 4px solid var(--guinda-100); padding: 14px 18px" x-html="b.titulo">Vi algo irregular</h3>
+              <h3 style="margin: 0 0 4px; font-family: var(--font-titulo); font-size: clamp(23px, 2.6vw, 30px); line-height: 1.2; letter-spacing: -0.01em; font-weight: 700; color: var(--guinda-100); background: var(--marfil); border-left: 4px solid var(--guinda-100); padding: 14px 18px" x-html="b.titulo">Vi algo irregular</h3>
               <ul style="list-style: none; margin: 0; padding: 0">
                 
                   <li style="border-bottom: 1px solid var(--gris-40); scroll-margin-top: 80px" id="p13" :id="f.ancla" data-pr>
                     <div style="display: flex; align-items: baseline; gap: 14px">
                       <a class="ih16" style="flex: none; padding: 20px 0; font-size: 16px; font-weight: 700; color: var(--guinda-100); text-decoration: none; min-width: 32px" href="#p13" aria-label="Enlace a esta pregunta" :href="dcRuta(f.hash)" x-html="f.num">13</a>
-                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
+                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: var(--font-cuerpo); cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
                         <span style="flex: 1; font-size: 19px; font-weight: 500; color: var(--gris-100); line-height: 1.35" x-html="f.pregunta">¿Dónde denuncio una poda o un derribo irregular?</span>
                         <span style="flex: none; font-size: 26px; line-height: 1; color: var(--dorado-100); font-weight: 700" aria-hidden="true" x-html="f.signo">+</span>
                       </button>
                     </div>
                     <div x-show="f.abierto" style="padding: 0 4px 22px 46px; display:none">
                         <p style="margin: 0 0 12px; font-size: 18px; line-height: 1.6; max-width: 46em" x-html="f.respuesta">Ante la Procuraduría Ambiental y del Ordenamiento Territorial, en línea o al 55 5265 0780. La denuncia puede ser anónima.</p>
-                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento">Ley Orgánica de la PAOT, artículo 5 fracciones I y XV</p>
+                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento">Ley Orgánica de la PAOT, artículo 5 fracciones I y XV</p>
                       </div>
                   </li>
                 
                   <li style="border-bottom: 1px solid var(--gris-40); scroll-margin-top: 80px" id="p14" :id="f.ancla" data-pr>
                     <div style="display: flex; align-items: baseline; gap: 14px">
                       <a class="ih16" style="flex: none; padding: 20px 0; font-size: 16px; font-weight: 700; color: var(--guinda-100); text-decoration: none; min-width: 32px" href="#p14" aria-label="Enlace a esta pregunta" :href="dcRuta(f.hash)" x-html="f.num">14</a>
-                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
+                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: var(--font-cuerpo); cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
                         <span style="flex: 1; font-size: 19px; font-weight: 500; color: var(--gris-100); line-height: 1.35" x-html="f.pregunta">¿Necesito pruebas para denunciar?</span>
                         <span style="flex: none; font-size: 26px; line-height: 1; color: var(--dorado-100); font-weight: 700" aria-hidden="true" x-html="f.signo">+</span>
                       </button>
                     </div>
                     <div x-show="f.abierto" style="padding: 0 4px 22px 46px; display:none">
                         <p style="margin: 0 0 12px; font-size: 18px; line-height: 1.6; max-width: 46em" x-html="f.respuesta">Ayuda mucho: fotografías con fecha visible, dirección exacta y hora aproximada. Reúnelas antes de que retiren las ramas o el tocón.</p>
-                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento">Ley Orgánica de la PAOT, artículo 5</p>
+                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento">Ley Orgánica de la PAOT, artículo 5</p>
                       </div>
                   </li>
                 
                   <li style="border-bottom: 1px solid var(--gris-40); scroll-margin-top: 80px" id="p15" :id="f.ancla" data-pr>
                     <div style="display: flex; align-items: baseline; gap: 14px">
                       <a class="ih16" style="flex: none; padding: 20px 0; font-size: 16px; font-weight: 700; color: var(--guinda-100); text-decoration: none; min-width: 32px" href="#p15" aria-label="Enlace a esta pregunta" :href="dcRuta(f.hash)" x-html="f.num">15</a>
-                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
+                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: var(--font-cuerpo); cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
                         <span style="flex: 1; font-size: 19px; font-weight: 500; color: var(--gris-100); line-height: 1.35" x-html="f.pregunta">¿De cuánto es la multa por derribar sin permiso?</span>
                         <span style="flex: none; font-size: 26px; line-height: 1; color: var(--dorado-100); font-weight: 700" aria-hidden="true" x-html="f.signo">+</span>
                       </button>
                     </div>
                     <div x-show="f.abierto" style="padding: 0 4px 22px 46px; display:none">
                         <p style="margin: 0 0 12px; font-size: 18px; line-height: 1.6; max-width: 46em" x-html="f.respuesta">Hasta cien mil veces la unidad de medida vigente, además de la obligación de restituir con el número máximo de árboles.</p>
-                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículos 112 y 304</p>
+                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículos 112 y 304</p>
                       </div>
                   </li>
                 
                   <li style="border-bottom: 1px solid var(--gris-40); scroll-margin-top: 80px" id="p16" :id="f.ancla" data-pr>
                     <div style="display: flex; align-items: baseline; gap: 14px">
                       <a class="ih16" style="flex: none; padding: 20px 0; font-size: 16px; font-weight: 700; color: var(--guinda-100); text-decoration: none; min-width: 32px" href="#p16" aria-label="Enlace a esta pregunta" :href="dcRuta(f.hash)" x-html="f.num">16</a>
-                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
+                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: var(--font-cuerpo); cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
                         <span style="flex: 1; font-size: 19px; font-weight: 500; color: var(--gris-100); line-height: 1.35" x-html="f.pregunta">¿Cómo verifico que un podador esté acreditado?</span>
                         <span style="flex: none; font-size: 26px; line-height: 1; color: var(--dorado-100); font-weight: 700" aria-hidden="true" x-html="f.signo">+</span>
                       </button>
                     </div>
                     <div x-show="f.abierto" style="padding: 0 4px 22px 46px; display:none">
                         <p style="margin: 0 0 12px; font-size: 18px; line-height: 1.6; max-width: 46em" x-html="f.respuesta">Pide el folio y consúltalo en el padrón. Revisa que la fotografía corresponda a la persona y que la vigencia esté al día. Una credencial con tachaduras no es válida.</p>
-                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento">NADF-001-RNAT-2015, numeral 5.5</p>
+                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento">NADF-001-RNAT-2015, numeral 5.5</p>
                       </div>
                   </li>
                 <template x-for="(f, _k11476046) in b.items" :key="_k11476046">
                   <li style="border-bottom: 1px solid var(--gris-40); scroll-margin-top: 80px" :id="f.ancla">
                     <div style="display: flex; align-items: baseline; gap: 14px">
                       <a class="ih16" style="flex: none; padding: 20px 0; font-size: 16px; font-weight: 700; color: var(--guinda-100); text-decoration: none; min-width: 32px" aria-label="Enlace a esta pregunta" :href="dcRuta(f.hash)" x-html="f.num"></a>
-                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
+                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: var(--font-cuerpo); cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
                         <span style="flex: 1; font-size: 19px; font-weight: 500; color: var(--gris-100); line-height: 1.35" x-html="f.pregunta"></span>
                         <span style="flex: none; font-size: 26px; line-height: 1; color: var(--dorado-100); font-weight: 700" aria-hidden="true" x-html="f.signo"></span>
                       </button>
                     </div>
                     <div x-show="f.abierto" style="padding: 0 4px 22px 46px">
                         <p style="margin: 0 0 12px; font-size: 18px; line-height: 1.6; max-width: 46em" x-html="f.respuesta"></p>
-                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento"></p>
+                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento"></p>
                       </div>
                   </li>
                 </template>
@@ -1562,76 +1562,76 @@ a:hover { color: var(--guinda-oscuro); }
             </section>
           
             <section data-pr>
-              <h3 style="margin: 0 0 4px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(23px, 2.6vw, 30px); line-height: 1.2; letter-spacing: -0.01em; font-weight: 700; color: var(--guinda-100); background: var(--marfil); border-left: 4px solid var(--guinda-100); padding: 14px 18px" x-html="b.titulo">Protejo un árbol</h3>
+              <h3 style="margin: 0 0 4px; font-family: var(--font-titulo); font-size: clamp(23px, 2.6vw, 30px); line-height: 1.2; letter-spacing: -0.01em; font-weight: 700; color: var(--guinda-100); background: var(--marfil); border-left: 4px solid var(--guinda-100); padding: 14px 18px" x-html="b.titulo">Protejo un árbol</h3>
               <ul style="list-style: none; margin: 0; padding: 0">
                 
                   <li style="border-bottom: 1px solid var(--gris-40); scroll-margin-top: 80px" id="p17" :id="f.ancla" data-pr>
                     <div style="display: flex; align-items: baseline; gap: 14px">
                       <a class="ih16" style="flex: none; padding: 20px 0; font-size: 16px; font-weight: 700; color: var(--guinda-100); text-decoration: none; min-width: 32px" href="#p17" aria-label="Enlace a esta pregunta" :href="dcRuta(f.hash)" x-html="f.num">17</a>
-                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
+                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: var(--font-cuerpo); cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
                         <span style="flex: 1; font-size: 19px; font-weight: 500; color: var(--gris-100); line-height: 1.35" x-html="f.pregunta">¿Qué es un árbol patrimonial?</span>
                         <span style="flex: none; font-size: 26px; line-height: 1; color: var(--dorado-100); font-weight: 700" aria-hidden="true" x-html="f.signo">+</span>
                       </button>
                     </div>
                     <div x-show="f.abierto" style="padding: 0 4px 22px 46px; display:none">
                         <p style="margin: 0 0 12px; font-size: 18px; line-height: 1.6; max-width: 46em" x-html="f.respuesta">Un ejemplar notable, singular o monumental por su edad, tamaño, especie, o su valor paisajístico, histórico, cultural o social. Tiene protección más estricta.</p>
-                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículo 118 bis</p>
+                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículo 118 bis</p>
                       </div>
                   </li>
                 
                   <li style="border-bottom: 1px solid var(--gris-40); scroll-margin-top: 80px" id="p18" :id="f.ancla" data-pr>
                     <div style="display: flex; align-items: baseline; gap: 14px">
                       <a class="ih16" style="flex: none; padding: 20px 0; font-size: 16px; font-weight: 700; color: var(--guinda-100); text-decoration: none; min-width: 32px" href="#p18" aria-label="Enlace a esta pregunta" :href="dcRuta(f.hash)" x-html="f.num">18</a>
-                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
+                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: var(--font-cuerpo); cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
                         <span style="flex: 1; font-size: 19px; font-weight: 500; color: var(--gris-100); line-height: 1.35" x-html="f.pregunta">¿Se puede derribar un árbol patrimonial?</span>
                         <span style="flex: none; font-size: 26px; line-height: 1; color: var(--dorado-100); font-weight: 700" aria-hidden="true" x-html="f.signo">+</span>
                       </button>
                     </div>
                     <div x-show="f.abierto" style="padding: 0 4px 22px 46px; display:none">
                         <p style="margin: 0 0 12px; font-size: 18px; line-height: 1.6; max-width: 46em" x-html="f.respuesta">Solo si hay riesgo real y presente acreditado en dictamen, y siempre que no pueda mitigarse con poda, apuntalamiento o trasplante. No se derriba a cambio de restitución.</p>
-                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículos 34 y 118 bis</p>
+                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículos 34 y 118 bis</p>
                       </div>
                   </li>
                 
                   <li style="border-bottom: 1px solid var(--gris-40); scroll-margin-top: 80px" id="p19" :id="f.ancla" data-pr>
                     <div style="display: flex; align-items: baseline; gap: 14px">
                       <a class="ih16" style="flex: none; padding: 20px 0; font-size: 16px; font-weight: 700; color: var(--guinda-100); text-decoration: none; min-width: 32px" href="#p19" aria-label="Enlace a esta pregunta" :href="dcRuta(f.hash)" x-html="f.num">19</a>
-                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
+                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: var(--font-cuerpo); cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
                         <span style="flex: 1; font-size: 19px; font-weight: 500; color: var(--gris-100); line-height: 1.35" x-html="f.pregunta">¿Cómo propongo un árbol al registro?</span>
                         <span style="flex: none; font-size: 26px; line-height: 1; color: var(--dorado-100); font-weight: 700" aria-hidden="true" x-html="f.signo">+</span>
                       </button>
                     </div>
                     <div x-show="f.abierto" style="padding: 0 4px 22px 46px; display:none">
                         <p style="margin: 0 0 12px; font-size: 18px; line-height: 1.6; max-width: 46em" x-html="f.respuesta">Reúne fotografías del ejemplar y su entorno, la ubicación precisa, el perímetro del tronco a 1.30 metros del suelo y lo que sepas de su historia. Preséntalo en atención ciudadana.</p>
-                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículo 118 bis</p>
+                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículo 118 bis</p>
                       </div>
                   </li>
                 
                   <li style="border-bottom: 1px solid var(--gris-40); scroll-margin-top: 80px" id="p20" :id="f.ancla" data-pr>
                     <div style="display: flex; align-items: baseline; gap: 14px">
                       <a class="ih16" style="flex: none; padding: 20px 0; font-size: 16px; font-weight: 700; color: var(--guinda-100); text-decoration: none; min-width: 32px" href="#p20" aria-label="Enlace a esta pregunta" :href="dcRuta(f.hash)" x-html="f.num">20</a>
-                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
+                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: var(--font-cuerpo); cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
                         <span style="flex: 1; font-size: 19px; font-weight: 500; color: var(--gris-100); line-height: 1.35" x-html="f.pregunta">¿Qué es el desmoche y por qué está prohibido?</span>
                         <span style="flex: none; font-size: 26px; line-height: 1; color: var(--dorado-100); font-weight: 700" aria-hidden="true" x-html="f.signo">+</span>
                       </button>
                     </div>
                     <div x-show="f.abierto" style="padding: 0 4px 22px 46px; display:none">
                         <p style="margin: 0 0 12px; font-size: 18px; line-height: 1.6; max-width: 46em" x-html="f.respuesta">Es cortar la copa o las ramas estructurales. Debilita al árbol, lo vuelve inestable y tiene el mismo régimen legal que un derribo.</p>
-                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento">NADF-001-RNAT-2015, numeral 6</p>
+                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento">NADF-001-RNAT-2015, numeral 6</p>
                       </div>
                   </li>
                 <template x-for="(f, _k11476046) in b.items" :key="_k11476046">
                   <li style="border-bottom: 1px solid var(--gris-40); scroll-margin-top: 80px" :id="f.ancla">
                     <div style="display: flex; align-items: baseline; gap: 14px">
                       <a class="ih16" style="flex: none; padding: 20px 0; font-size: 16px; font-weight: 700; color: var(--guinda-100); text-decoration: none; min-width: 32px" aria-label="Enlace a esta pregunta" :href="dcRuta(f.hash)" x-html="f.num"></a>
-                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
+                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: var(--font-cuerpo); cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
                         <span style="flex: 1; font-size: 19px; font-weight: 500; color: var(--gris-100); line-height: 1.35" x-html="f.pregunta"></span>
                         <span style="flex: none; font-size: 26px; line-height: 1; color: var(--dorado-100); font-weight: 700" aria-hidden="true" x-html="f.signo"></span>
                       </button>
                     </div>
                     <div x-show="f.abierto" style="padding: 0 4px 22px 46px">
                         <p style="margin: 0 0 12px; font-size: 18px; line-height: 1.6; max-width: 46em" x-html="f.respuesta"></p>
-                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento"></p>
+                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento"></p>
                       </div>
                   </li>
                 </template>
@@ -1639,20 +1639,20 @@ a:hover { color: var(--guinda-oscuro); }
             </section>
           <template x-for="(b, _k391334147) in v.bloques" :key="_k391334147">
             <section>
-              <h3 style="margin: 0 0 4px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(23px, 2.6vw, 30px); line-height: 1.2; letter-spacing: -0.01em; font-weight: 700; color: var(--guinda-100); background: var(--marfil); border-left: 4px solid var(--guinda-100); padding: 14px 18px" x-html="b.titulo"></h3>
+              <h3 style="margin: 0 0 4px; font-family: var(--font-titulo); font-size: clamp(23px, 2.6vw, 30px); line-height: 1.2; letter-spacing: -0.01em; font-weight: 700; color: var(--guinda-100); background: var(--marfil); border-left: 4px solid var(--guinda-100); padding: 14px 18px" x-html="b.titulo"></h3>
               <ul style="list-style: none; margin: 0; padding: 0">
                 <template x-for="(f, _k11476046) in b.items" :key="_k11476046">
                   <li style="border-bottom: 1px solid var(--gris-40); scroll-margin-top: 80px" :id="f.ancla">
                     <div style="display: flex; align-items: baseline; gap: 14px">
                       <a class="ih16" style="flex: none; padding: 20px 0; font-size: 16px; font-weight: 700; color: var(--guinda-100); text-decoration: none; min-width: 32px" aria-label="Enlace a esta pregunta" :href="dcRuta(f.hash)" x-html="f.num"></a>
-                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: Roboto, sans-serif; cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
+                      <button style="flex: 1; text-align: left; background: transparent; border: 0; padding: 20px 4px; font-family: var(--font-cuerpo); cursor: pointer; display: flex; gap: 18px; align-items: baseline; min-height: 44px" @click="f.alternar($event)" :aria-expanded="f.abierto">
                         <span style="flex: 1; font-size: 19px; font-weight: 500; color: var(--gris-100); line-height: 1.35" x-html="f.pregunta"></span>
                         <span style="flex: none; font-size: 26px; line-height: 1; color: var(--dorado-100); font-weight: 700" aria-hidden="true" x-html="f.signo"></span>
                       </button>
                     </div>
                     <div x-show="f.abierto" style="padding: 0 4px 22px 46px">
                         <p style="margin: 0 0 12px; font-size: 18px; line-height: 1.6; max-width: 46em" x-html="f.respuesta"></p>
-                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 16px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento"></p>
+                        <p style="margin: 0; padding-left: 14px; border-left: 3px solid var(--dorado-100); font-size: 17px; line-height: 1.55; color: var(--gris-100)" x-html="f.fundamento"></p>
                       </div>
                   </li>
                 </template>
@@ -1668,16 +1668,16 @@ a:hover { color: var(--guinda-oscuro); }
   
 
 
-<section x-data="dcUtilidad({&quot;fecha&quot;:&quot;18 de agosto de 2026&quot;})" style="background: var(--gris-10); border-top: 1px solid var(--gris-20); border-bottom: 1px solid var(--gris-20); font-family: Roboto, system-ui, sans-serif; color: var(--gris-100)" aria-labelledby="utilidad">
+<section x-data="dcUtilidad({&quot;fecha&quot;:&quot;18 de agosto de 2026&quot;})" style="background: var(--gris-10); border-top: 1px solid var(--gris-20); border-bottom: 1px solid var(--gris-20); font-family: var(--font-cuerpo); color: var(--gris-100)" aria-labelledby="utilidad">
   <div style="max-width: 1240px; margin: 0 auto; padding: clamp(26px, 3vw, 36px) 24px; display: flex; gap: 28px; flex-wrap: wrap; align-items: flex-start; justify-content: space-between">
 
     <div style="flex: 1 1 320px; max-width: 42em">
-      <h2 style="margin: 0 0 10px; font-family: Cabin, Roboto, sans-serif; font-size: 23px; line-height: 1.25; font-weight: 700; color: var(--guinda-100)" id="utilidad">¿Te sirvió esta página?</h2>
+      <h2 style="margin: 0 0 10px; font-family: var(--font-titulo); font-size: 23px; line-height: 1.25; font-weight: 700; color: var(--guinda-100)" id="utilidad">¿Te sirvió esta página?</h2>
       <div x-show="v.sinResponder">
           <p style="margin: 0 0 16px; font-size: 17px; line-height: 1.6">Tu respuesta nos dice qué información falta o no se entiende. No pedimos datos personales.</p>
           <div style="display: flex; gap: 12px; flex-wrap: wrap">
-            <button class="ih9" style="background: var(--guinda-100); color: var(--blanco); border: 0; border-radius: 4px; padding: 13px 26px; font-family: Roboto, sans-serif; font-size: 17px; font-weight: 700; cursor: pointer; min-height: 48px; transition: background 150ms ease" @click="v.votarSi($event)">Sí</button>
-            <button class="ih8" style="background: transparent; color: var(--guinda-100); border: 2px solid var(--dorado-100); border-radius: 4px; padding: 12px 25px; font-family: Roboto, sans-serif; font-size: 17px; font-weight: 700; cursor: pointer; min-height: 48px; transition: background 150ms ease" @click="v.votarNo($event)">No</button>
+            <button class="ih9" style="background: var(--guinda-100); color: var(--blanco); border: 0; border-radius: 4px; padding: 13px 26px; font-family: var(--font-cuerpo); font-size: 17px; font-weight: 700; cursor: pointer; min-height: 48px; transition: background 150ms ease" @click="v.votarSi($event)">Sí</button>
+            <button class="ih8" style="background: transparent; color: var(--guinda-100); border: 2px solid var(--dorado-100); border-radius: 4px; padding: 12px 25px; font-family: var(--font-cuerpo); font-size: 17px; font-weight: 700; cursor: pointer; min-height: 48px; transition: background 150ms ease" @click="v.votarNo($event)">No</button>
           </div>
         </div>
       <p x-show="v.dijoSi" style="margin: 0; font-size: 18px; line-height: 1.6; background: var(--blanco); border-left: 4px solid var(--estado-exito); padding: 16px 20px; display:none" role="status">Gracias. Si algo quedó pendiente, puedes escribir a <a href="mailto:atencionciudadana@sedema.cdmx.gob.mx">atencionciudadana@sedema.cdmx.gob.mx</a>.</p>

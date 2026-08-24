@@ -49,7 +49,7 @@ a:hover { color: var(--guinda-oscuro); }
       </div>
       <search class="om-buscador" style="margin-left: auto; flex: 1 1 260px; max-width: 400px; position: relative">
         <label style="display: block; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--gris-100); margin-bottom: 6px" for="buscador-sitio">Buscar en el sitio</label>
-        <input style="width: 100%; box-sizing: border-box; font-family: Roboto, sans-serif; font-size: 16px; padding: 11px 14px; border: 1px solid var(--gris-40); border-radius: 4px; min-height: 44px; background: var(--blanco); color: var(--gris-100)" type="search" id="buscador-sitio" placeholder="poda, denuncia, permiso, vivero" autocomplete="off" aria-controls="resultados-sitio" :value="v.q" @input="v.escribir($event)" :aria-expanded="v.abierto">
+        <input style="width: 100%; box-sizing: border-box; font-family: var(--font-cuerpo); font-size: 16px; padding: 11px 14px; border: 1px solid var(--gris-40); border-radius: 4px; min-height: 44px; background: var(--blanco); color: var(--gris-100)" type="search" id="buscador-sitio" placeholder="poda, denuncia, permiso, vivero" autocomplete="off" aria-controls="resultados-sitio" :value="v.q" @input="v.escribir($event)" :aria-expanded="v.abierto">
         <div x-show="v.abierto" style="position: absolute; top: 100%; left: 0; right: 0; z-index: 50; margin-top: 4px; background: var(--blanco); border: 1px solid var(--gris-40); box-shadow: 0 8px 20px rgba(26,26,26,0.16); max-height: 62vh; overflow-y: auto; display:none" id="resultados-sitio">
             <ul x-show="v.hayResultados" style="list-style: none; margin: 0; padding: 0; display:none">
                 <template x-for="(r, _k845317270) in v.resultados" :key="_k845317270">
@@ -62,7 +62,7 @@ a:hover { color: var(--guinda-oscuro); }
                   </li>
                 </template>
               </ul>
-            <p x-show="v.sinResultados" style="margin: 0; padding: 16px; font-size: 16px; line-height: 1.55; color: var(--gris-100); display:none">No encontramos esa palabra. Prueba con poda, derribo, permiso, denuncia, vivero o el nombre de tu alcaldía.</p>
+            <p x-show="v.sinResultados" style="margin: 0; padding: 16px; font-size: 17px; line-height: 1.55; color: var(--gris-100); display:none">No encontramos esa palabra. Prueba con poda, derribo, permiso, denuncia, vivero o el nombre de tu alcaldía.</p>
           </div>
       </search>
     </div>
@@ -88,7 +88,7 @@ a:hover { color: var(--guinda-oscuro); }
       </div>
 
       <div class="om-nav-movil" style="max-width: 1240px; margin: 0 auto; padding: 10px 20px">
-        <button class="ih3" style="width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 14px; min-height: 52px; padding: 12px 16px; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; font-family: Roboto, sans-serif; font-size: 17px; font-weight: 700; color: var(--guinda-100); cursor: pointer; transition: background 150ms ease" aria-controls="menu-movil" @click="v.alternarMenu($event)" :aria-expanded="v.menuAbierto">
+        <button class="ih3" style="width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 14px; min-height: 52px; padding: 12px 16px; background: var(--blanco); border: 1px solid var(--gris-40); border-radius: 4px; font-family: var(--font-cuerpo); font-size: 17px; font-weight: 700; color: var(--guinda-100); cursor: pointer; transition: background 150ms ease" aria-controls="menu-movil" @click="v.alternarMenu($event)" :aria-expanded="v.menuAbierto">
           <span style="display: flex; align-items: center; gap: 12px">
             <span style="display: flex; flex-direction: column; gap: 4px; flex: none" aria-hidden="true">
               <span style="display: block; width: 20px; height: 2px; background: var(--guinda-100)"></span>
@@ -176,7 +176,7 @@ a:hover { color: var(--guinda-oscuro); }
 
     <section style="border-bottom: 1px solid var(--gris-20)">
       <div style="max-width: 1240px; margin: 0 auto; padding: clamp(24px, 3vw, 36px) 24px clamp(20px, 2.5vw, 28px)">
-        <h1 style="margin: 0 0 12px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(30px, 4vw, 46px); line-height: 1.06; letter-spacing: -0.015em; font-weight: 700; color: var(--guinda-100); text-wrap: pretty">Cuando hay <em style="font-style: italic; color: var(--cafe)">riesgo</em></h1>
+        <h1 style="margin: 0 0 12px; font-family: var(--font-titulo); font-size: clamp(30px, 4vw, 46px); line-height: 1.06; letter-spacing: -0.015em; font-weight: 700; color: var(--guinda-100); text-wrap: pretty">Cuando hay <em style="font-style: italic; color: var(--cafe)">riesgo</em></h1>
         <p style="margin: 0; font-size: clamp(17px, 1.8vw, 20px); line-height: 1.5; max-width: 40em; text-wrap: pretty">Identifica el nivel y llama al número de ese nivel. Elegir bien evita saturar las líneas de emergencia y, sobre todo, evita subestimar un riesgo real.</p>
       </div>
     </section>
@@ -189,13 +189,13 @@ a:hover { color: var(--guinda-oscuro); }
           <article style="background: var(--blanco); border: 1px solid var(--gris-20); border-top: 8px solid var(--estado-error); display: flex; flex-direction: column">
             <div style="padding: 22px 22px 18px">
               <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px">
-                <span style="width: 40px; height: 40px; flex: none; background: var(--estado-error); color: var(--blanco); font-family: Cabin, Roboto, sans-serif; font-size: 21px; font-weight: 700; display: flex; align-items: center; justify-content: center" aria-hidden="true">1</span>
+                <span style="width: 40px; height: 40px; flex: none; background: var(--estado-error); color: var(--blanco); font-family: var(--font-titulo); font-size: 21px; font-weight: 700; display: flex; align-items: center; justify-content: center" aria-hidden="true">1</span>
                 <span style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--estado-error)">Riesgo inminente</span>
               </div>
               <p style="margin: 0 0 16px; font-size: 18px; line-height: 1.5; color: var(--gris-100)">El daño ya ocurrió o va a ocurrir en minutos.</p>
               <a class="ih4" style="display: block; text-decoration: none; background: var(--estado-error); color: var(--blanco); padding: 16px 20px; transition: background 150ms ease" href="tel:911">
                 <span style="display: block; font-size: clamp(32px, 6vw, 44px); font-weight: 700; line-height: 1">911</span>
-                <span style="display: block; margin-top: 4px; font-size: 16px; line-height: 1.4">Bomberos y Protección Civil</span>
+                <span style="display: block; margin-top: 4px; font-size: 17px; line-height: 1.4">Bomberos y Protección Civil</span>
               </a>
               <p style="margin: 14px 0 0; font-size: 17px; line-height: 1.5; color: var(--gris-100)">También por el botón de auxilio del C5. Si hay cables, llama además a la CFE al <strong style="color: var(--guinda-100)">071</strong>.</p>
             </div>
@@ -208,13 +208,13 @@ a:hover { color: var(--guinda-oscuro); }
           <article style="background: var(--blanco); border: 1px solid var(--gris-20); border-top: 8px solid var(--estado-alerta); display: flex; flex-direction: column">
             <div style="padding: 22px 22px 18px">
               <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px">
-                <span style="width: 40px; height: 40px; flex: none; background: var(--cafe); color: var(--blanco); font-family: Cabin, Roboto, sans-serif; font-size: 21px; font-weight: 700; display: flex; align-items: center; justify-content: center" aria-hidden="true">2</span>
+                <span style="width: 40px; height: 40px; flex: none; background: var(--cafe); color: var(--blanco); font-family: var(--font-titulo); font-size: 21px; font-weight: 700; display: flex; align-items: center; justify-content: center" aria-hidden="true">2</span>
                 <span style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--gris-100)">Riesgo próximo</span>
               </div>
               <p style="margin: 0 0 16px; font-size: 18px; line-height: 1.5; color: var(--gris-100)">El árbol está dañado y puede fallar en días o semanas.</p>
               <a class="ih4" style="display: block; text-decoration: none; background: var(--guinda-100); color: var(--blanco); padding: 16px 20px; transition: background 150ms ease" href="directorio.html#alcaldias">
                 <span style="display: block; font-size: 30px; font-weight: 700; line-height: 1.1">Tu alcaldía</span>
-                <span style="display: block; margin-top: 4px; font-size: 16px; line-height: 1.4">Ver los dieciséis contactos →</span>
+                <span style="display: block; margin-top: 4px; font-size: 17px; line-height: 1.4">Ver los dieciséis contactos →</span>
               </a>
               <p style="margin: 14px 0 0; font-size: 17px; line-height: 1.5; color: var(--gris-100)">Si no localizas a tu alcaldía, LOCATEL canaliza el reporte al <strong style="color: var(--guinda-100)">55 5658 1111</strong>, las veinticuatro horas.</p>
             </div>
@@ -227,13 +227,13 @@ a:hover { color: var(--guinda-oscuro); }
           <article style="background: var(--blanco); border: 1px solid var(--gris-20); border-top: 8px solid var(--dorado-100); display: flex; flex-direction: column">
             <div style="padding: 22px 22px 18px">
               <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px">
-                <span style="width: 40px; height: 40px; flex: none; background: var(--dorado-100); color: var(--blanco); font-family: Cabin, Roboto, sans-serif; font-size: 21px; font-weight: 700; display: flex; align-items: center; justify-content: center" aria-hidden="true">3</span>
+                <span style="width: 40px; height: 40px; flex: none; background: var(--dorado-100); color: var(--blanco); font-family: var(--font-titulo); font-size: 21px; font-weight: 700; display: flex; align-items: center; justify-content: center" aria-hidden="true">3</span>
                 <span style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--gris-100)">Riesgo evaluable</span>
               </div>
               <p style="margin: 0 0 16px; font-size: 18px; line-height: 1.5; color: var(--gris-100)">No hay peligro inmediato: hace falta una valoración técnica.</p>
               <a class="ih17" style="display: block; text-decoration: none; background: var(--marfil); color: var(--guinda-100); border: 1px solid var(--dorado-40); padding: 16px 20px; transition: background 150ms ease" href="tel:5553458187">
                 <span style="display: block; font-size: 27px; font-weight: 700; line-height: 1.1">55 5345 8187</span>
-                <span style="display: block; margin-top: 4px; font-size: 16px; line-height: 1.4; color: var(--gris-100)">Atención ciudadana de SEDEMA · de lunes a viernes, de 9 a 18 h</span>
+                <span style="display: block; margin-top: 4px; font-size: 17px; line-height: 1.4; color: var(--gris-100)">Atención ciudadana de SEDEMA · de lunes a viernes, de 9 a 18 h</span>
               </a>
               <p style="margin: 14px 0 0; font-size: 17px; line-height: 1.5; color: var(--gris-100)">También para casos en bosques urbanos, barrancas y áreas naturales protegidas.</p>
             </div>
@@ -247,7 +247,7 @@ a:hover { color: var(--guinda-oscuro); }
     </section>
 
     <section style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 56px) 24px">
-      <h2 style="margin: 0 0 12px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(24px, 3vw, 32px); line-height: 1.15; font-weight: 700; color: var(--guinda-100)">¿Cuál es mi nivel?</h2>
+      <h2 style="margin: 0 0 12px; font-family: var(--font-titulo); font-size: clamp(24px, 3vw, 32px); line-height: 1.15; font-weight: 700; color: var(--guinda-100)">¿Cuál es mi nivel?</h2>
       <p style="margin: 0 0 24px; font-size: 19px; line-height: 1.6; max-width: 42em">Busca lo que estás viendo en la primera columna.</p>
       <div style="overflow-x: auto; border: 1px solid var(--gris-20)">
         <table style="width: 100%; border-collapse: collapse; font-size: 17px; min-width: 640px">
@@ -275,7 +275,7 @@ a:hover { color: var(--guinda-oscuro); }
     <section style="background: var(--marfil); border-top: 1px solid var(--dorado-40); border-bottom: 1px solid var(--dorado-40)">
       <div style="max-width: 1240px; margin: 0 auto; padding: clamp(32px, 4vw, 52px) 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 28px">
         <div>
-          <h2 style="margin: 0 0 14px; font-family: Cabin, Roboto, sans-serif; font-size: clamp(23px, 2.6vw, 30px); line-height: 1.2; font-weight: 700; color: var(--guinda-100)">Mientras llega la ayuda</h2>
+          <h2 style="margin: 0 0 14px; font-family: var(--font-titulo); font-size: clamp(23px, 2.6vw, 30px); line-height: 1.2; font-weight: 700; color: var(--guinda-100)">Mientras llega la ayuda</h2>
           <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 14px">
             <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start"><span style="margin-top: 9px; width: 8px; height: 8px; background: var(--guinda-100); display: block" aria-hidden="true"></span><span style="font-size: 18px; line-height: 1.55">Aleja a las personas a una distancia de una vez y media la altura del árbol</span></li>
             <li style="display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 14px; align-items: start"><span style="margin-top: 9px; width: 8px; height: 8px; background: var(--guinda-100); display: block" aria-hidden="true"></span><span style="font-size: 18px; line-height: 1.55">Si puedes hacerlo sin riesgo, impide el paso de autos y peatones por debajo</span></li>
@@ -287,7 +287,7 @@ a:hover { color: var(--guinda-oscuro); }
           <span style="display: block; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--estado-error); margin-bottom: 8px">Alerta grave</span>
           <strong style="display: block; font-size: 20px; margin-bottom: 10px; color: var(--negro)">Nunca intervengas el árbol por tu cuenta</strong>
           <p style="margin: 0 0 12px; font-size: 18px; line-height: 1.6">Hay riesgo de electrocución, de caída secundaria y de lesión por motosierra, además de responsabilidad penal por intervención no autorizada.</p>
-          <p style="margin: 0; font-size: 16px; line-height: 1.55; color: var(--gris-100)">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículo 118 fracción III</p>
+          <p style="margin: 0; font-size: 17px; line-height: 1.55; color: var(--gris-100)">Ley Ambiental de Protección a la Tierra en el Distrito Federal, artículo 118 fracción III</p>
         </div>
       </div>
     </section>
@@ -318,16 +318,16 @@ a:hover { color: var(--guinda-oscuro); }
   
 
 
-<section x-data="dcUtilidad({&quot;fecha&quot;:&quot;18 de agosto de 2026&quot;})" style="background: var(--gris-10); border-top: 1px solid var(--gris-20); border-bottom: 1px solid var(--gris-20); font-family: Roboto, system-ui, sans-serif; color: var(--gris-100)" aria-labelledby="utilidad">
+<section x-data="dcUtilidad({&quot;fecha&quot;:&quot;18 de agosto de 2026&quot;})" style="background: var(--gris-10); border-top: 1px solid var(--gris-20); border-bottom: 1px solid var(--gris-20); font-family: var(--font-cuerpo); color: var(--gris-100)" aria-labelledby="utilidad">
   <div style="max-width: 1240px; margin: 0 auto; padding: clamp(26px, 3vw, 36px) 24px; display: flex; gap: 28px; flex-wrap: wrap; align-items: flex-start; justify-content: space-between">
 
     <div style="flex: 1 1 320px; max-width: 42em">
-      <h2 style="margin: 0 0 10px; font-family: Cabin, Roboto, sans-serif; font-size: 23px; line-height: 1.25; font-weight: 700; color: var(--guinda-100)" id="utilidad">¿Te sirvió esta página?</h2>
+      <h2 style="margin: 0 0 10px; font-family: var(--font-titulo); font-size: 23px; line-height: 1.25; font-weight: 700; color: var(--guinda-100)" id="utilidad">¿Te sirvió esta página?</h2>
       <div x-show="v.sinResponder">
           <p style="margin: 0 0 16px; font-size: 17px; line-height: 1.6">Tu respuesta nos dice qué información falta o no se entiende. No pedimos datos personales.</p>
           <div style="display: flex; gap: 12px; flex-wrap: wrap">
-            <button class="ih9" style="background: var(--guinda-100); color: var(--blanco); border: 0; border-radius: 4px; padding: 13px 26px; font-family: Roboto, sans-serif; font-size: 17px; font-weight: 700; cursor: pointer; min-height: 48px; transition: background 150ms ease" @click="v.votarSi($event)">Sí</button>
-            <button class="ih8" style="background: transparent; color: var(--guinda-100); border: 2px solid var(--dorado-100); border-radius: 4px; padding: 12px 25px; font-family: Roboto, sans-serif; font-size: 17px; font-weight: 700; cursor: pointer; min-height: 48px; transition: background 150ms ease" @click="v.votarNo($event)">No</button>
+            <button class="ih9" style="background: var(--guinda-100); color: var(--blanco); border: 0; border-radius: 4px; padding: 13px 26px; font-family: var(--font-cuerpo); font-size: 17px; font-weight: 700; cursor: pointer; min-height: 48px; transition: background 150ms ease" @click="v.votarSi($event)">Sí</button>
+            <button class="ih8" style="background: transparent; color: var(--guinda-100); border: 2px solid var(--dorado-100); border-radius: 4px; padding: 12px 25px; font-family: var(--font-cuerpo); font-size: 17px; font-weight: 700; cursor: pointer; min-height: 48px; transition: background 150ms ease" @click="v.votarNo($event)">No</button>
           </div>
         </div>
       <p x-show="v.dijoSi" style="margin: 0; font-size: 18px; line-height: 1.6; background: var(--blanco); border-left: 4px solid var(--estado-exito); padding: 16px 20px; display:none" role="status">Gracias. Si algo quedó pendiente, puedes escribir a <a href="mailto:atencionciudadana@sedema.cdmx.gob.mx">atencionciudadana@sedema.cdmx.gob.mx</a>.</p>

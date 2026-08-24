@@ -3,22 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Programas de arbolado urbano · SEDEMA CDMX</title>
-<meta name="description" content="Portafolio operativo de la Secretaría del Medio Ambiente: reforestación urbana, retiro y sustitución de palmeras, inventario del arbolado, viveros y árboles patrimoniales.">
+<title>Análisis territorial del arbolado · borrador · SEDEMA CDMX</title>
+<meta name="description" content="Distribución del arbolado urbano entre las dieciséis alcaldías de la Ciudad de México. Página en construcción.">
+<meta name="robots" content="noindex, nofollow">
 <meta name="author" content="Secretaría del Medio Ambiente de la Ciudad de México">
-<link rel="canonical" href="https://sedemaoficina.github.io/Arbolado-Ciudadano/programas.html">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="El ABC del arbolado urbano · SEDEMA CDMX">
-<meta property="og:title" content="Programas de arbolado urbano · SEDEMA CDMX">
-<meta property="og:description" content="Portafolio operativo de la Secretaría del Medio Ambiente: reforestación urbana, retiro y sustitución de palmeras, inventario del arbolado, viveros y árboles patrimoniales.">
-<meta property="og:url" content="https://sedemaoficina.github.io/Arbolado-Ciudadano/programas.html">
-<meta property="og:locale" content="es_MX">
 <meta name="theme-color" content="#9D2148">
 <link rel="icon" href="assets/img/logos/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/css/tokens.css">
 <link rel="stylesheet" href="assets/css/sitio.css">
 <style>
-a:hover { color: var(--guinda-oscuro); }
+/* Anotaciones de trabajo. Se eliminan al publicar junto con los bloques .nota-desarrollo */
+.nota-desarrollo{
+  margin: 26px 0 0; padding: 20px 24px;
+  background: #FFFDF2; border: 1px dashed var(--tierra-claro); border-left: 5px solid var(--amarillo);
+  font-family: var(--font-cuerpo); font-size: 15.5px; line-height: 1.55; color: var(--gris-100);
+}
+.nota-desarrollo__t{
+  margin: 0 0 10px; font-family: var(--font-titulo); font-size: 12px; font-weight: 700;
+  letter-spacing: .16em; text-transform: uppercase; color: var(--corteza);
+}
+.nota-desarrollo ul{ margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px }
+.nota-desarrollo code{ background: var(--gris-10); border: 1px solid var(--gris-20); padding: 1px 5px; font-size: .9em }
 </style>
 <script src="assets/js/sitio.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.15.0/dist/cdn.min.js"></script>
@@ -171,103 +176,207 @@ a:hover { color: var(--guinda-oscuro); }
     </div>
   </nav>
 
-  <main style="flex: 1" id="contenido">
+  <main id="contenido" style="flex: 1">
 
-    <section style="background: var(--marfil); border-bottom: 1px solid var(--dorado-40)">
-      <div style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 60px) 24px">
-        <h1 style="margin: 0 0 20px; font-family: var(--font-titulo); font-size: clamp(34px, 4.6vw, 54px); line-height: 1.06; letter-spacing: -0.015em; font-weight: 700; color: var(--guinda-100); text-wrap: pretty"><em style="font-style: italic; color: var(--cafe)">Programas</em> de arbolado</h1>
-        <p style="margin: 0; font-size: clamp(18px, 1.9vw, 22px); line-height: 1.55; max-width: 34em; text-wrap: pretty">Los cinco programas con los que SEDEMA interviene el arbolado de la ciudad, cada uno con sus criterios y su procedimiento propio.</p>
+  <!-- ================================================================
+       PÁGINA EN DESARROLLO · Análisis territorial del arbolado
+       Esqueleto con anotaciones. No publicable.
+       Retirar el aviso y las notas .nota-desarrollo antes de liberar.
+       ================================================================ -->
+
+  <div role="status" style="background: var(--amarillo); color: var(--negro); padding: 14px 24px; font-family: var(--font-cuerpo); font-size: 15px; font-weight: 500; text-align: center">
+    <strong>Página en construcción.</strong> Esqueleto de trabajo con anotaciones internas. No enlazar desde la navegación pública ni publicar hasta que tenga datos validados.
+  </div>
+
+  <!-- ============ 1 · TESIS ============ -->
+  <section style="background: var(--marfil); border-bottom: 1px solid var(--dorado-40)">
+    <div style="max-width: 1240px; margin: 0 auto; padding: clamp(40px, 6vw, 76px) 24px">
+      <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 22px">
+        <span aria-hidden="true" style="width: 40px; height: 2px; background: var(--dorado-100); display: inline-block"></span>
+        <span style="font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--guinda-100); font-weight: 700">Análisis territorial</span>
       </div>
-    </section>
+      <h1 style="margin: 0 0 22px; font-family: var(--font-titulo); font-size: clamp(32px, 5vw, 56px); line-height: 1.06; font-weight: 700; color: var(--guinda-100); max-width: 18ch; text-wrap: balance">El arbolado no está repartido parejo en la ciudad.</h1>
+      <p style="margin: 0 0 16px; font-size: clamp(18px, 2vw, 22px); line-height: 1.5; max-width: 44ch">Entre la alcaldía con más cobertura de copa y la que menos tiene, la diferencia es de <span class="dato-pendiente">tantas</span> veces. Esa brecha explica dónde se planta primero.</p>
+      <p style="margin: 0; font-size: 17px; line-height: 1.6; color: var(--gris-80); max-width: 52ch">Esta sección no es un trámite: es el diagnóstico con el que la Secretaría decide dónde intervenir.</p>
 
-    <section style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 5vw, 60px) 24px">
-      <ul style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 24px">
+      <div class="nota-desarrollo">
+        <p class="nota-desarrollo__t">Por desarrollar · tesis</p>
+        <ul>
+          <li>Confirmar la cifra de la brecha (razón entre la alcaldía de mayor y menor cobertura) con la fuente que se decida usar.</li>
+          <li>Definir si la unidad rectora es <b>cobertura de copa (%)</b>, <b>árboles por habitante</b> o <b>superficie verde per cápita</b>. Cambiar de unidad a media obra rehace toda la página: decidirlo antes de programar.</li>
+          <li>Redactar la tesis en una sola frase que se sostenga sin el mapa, para que funcione en redes y en la nota informativa.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-        <li style="background: var(--blanco); border: 1px solid var(--gris-20); box-shadow: 0 4px 8px rgba(26,26,26,0.06); display: flex; flex-direction: column; overflow: hidden">
-          <div style="position: relative; width: 100%; aspect-ratio: 16 / 9; background: var(--gris-10); border-bottom: 1px solid var(--gris-20)">
-            <div class="falta-dato falta-dato--imagen" data-forma="rect" role="img" aria-label="Imagen institucional pendiente"><span class="falta-dato__sello">Falta el dato</span><span class="falta-dato__texto">Arrastra la fotografía de un ejemplar patrimonial</span></div>
-          </div>
-          <div style="padding: 28px 24px; display: flex; flex-direction: column; flex: 1">
-            <h2 style="margin: 8px 0 12px; font-family: var(--font-titulo); font-size: 27px; font-weight: 700; color: var(--guinda-100); line-height: 1.2">Árboles patrimoniales</h2>
-            <p style="margin: 0 0 20px; font-size: 18px; line-height: 1.6">Los árboles notables, singulares y monumentales de la ciudad tienen un régimen de protección más estricto que el resto del arbolado. Cualquier persona puede proponer un ejemplar al registro.</p>
-            <ul style="margin: 0 0 22px; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px">
-              <li style="font-size: 16px; background: var(--gris-10); border: 1px solid var(--gris-20); padding: 5px 10px; flex: 0 0 auto; white-space: nowrap">Sitio dedicado</li>
-              <li style="font-size: 16px; background: var(--gris-10); border: 1px solid var(--gris-20); padding: 5px 10px; flex: 0 0 auto; white-space: nowrap">29 ejemplares</li>
-              <li style="font-size: 16px; background: var(--gris-10); border: 1px solid var(--gris-20); padding: 5px 10px; flex: 0 0 auto; white-space: nowrap">Propuesta ciudadana</li>
-            </ul>
-            <a class="ih4" style="margin-top: auto; align-self: flex-start; background: var(--guinda-100); color: var(--blanco); border-radius: 4px; padding: 14px 24px; font-size: 17px; font-weight: 700; text-decoration: none; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center; transition: background 150ms ease" href="https://guardianesdeltiempo.sedema.cdmx.gob.mx" target="_blank" rel="noopener" data-url-pendiente="Sustituir por la URL definitiva del sitio de árboles patrimoniales">Ir al sitio de patrimoniales ↗</a>
-          </div>
-        </li>
+  <!-- ============ 2 · CARTOGRAMA ============ -->
+  <section aria-labelledby="cartograma-titulo" style="max-width: 1240px; margin: 0 auto; padding: clamp(40px, 5vw, 64px) 24px">
+    <div style="max-width: 46em; margin-bottom: 28px">
+      <h2 id="cartograma-titulo" style="margin: 0 0 12px; font-family: var(--font-titulo); font-size: clamp(26px, 3.2vw, 36px); line-height: 1.14; font-weight: 700; color: var(--guinda-100)">Las dieciséis alcaldías, según su cobertura de copa</h2>
+      <p style="margin: 0; font-size: 18px; line-height: 1.6">Cada celda es una alcaldía, colocada según su posición aproximada en la ciudad. No es un mapa a escala: es un cartograma, y por eso todas las alcaldías pesan lo mismo aunque su superficie sea muy distinta.</p>
+    </div>
 
-        <li style="background: var(--blanco); border: 1px solid var(--gris-20); box-shadow: 0 4px 8px rgba(26,26,26,0.06); display: flex; flex-direction: column; overflow: hidden">
-          <div style="position: relative; width: 100%; aspect-ratio: 16 / 9; background: var(--gris-10); border-bottom: 1px solid var(--gris-20)">
-            <div class="falta-dato falta-dato--imagen" data-forma="rect" role="img" aria-label="Imagen institucional pendiente"><span class="falta-dato__sello">Falta el dato</span><span class="falta-dato__texto">Arrastra la fotografía de una palmera en retiro o de su sustitución</span></div>
-          </div>
-          <div style="padding: 28px 24px; display: flex; flex-direction: column; flex: 1">
-            <h2 style="margin: 8px 0 12px; font-family: var(--font-titulo); font-size: 27px; font-weight: 700; color: var(--guinda-100); line-height: 1.2">Retiro y sustitución de palmeras</h2>
-            <p style="margin: 0 0 20px; font-size: 18px; line-height: 1.6">Por qué se retiran las palmeras enfermas o en riesgo, con qué árboles se sustituyen y qué sigue si tienes una palmera en tu predio o frente a tu casa.</p>
-            <ul style="margin: 0 0 22px; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px">
-              <li style="font-size: 16px; background: var(--gris-10); border: 1px solid var(--gris-20); padding: 5px 10px; flex: 0 0 auto; white-space: nowrap">Plaga y hongo</li>
-              <li style="font-size: 16px; background: var(--gris-10); border: 1px solid var(--gris-20); padding: 5px 10px; flex: 0 0 auto; white-space: nowrap">Riesgo de caída</li>
-              <li style="font-size: 16px; background: var(--gris-10); border: 1px solid var(--gris-20); padding: 5px 10px; flex: 0 0 auto; white-space: nowrap">Especies nativas</li>
-            </ul>
-            <a class="ih4" style="margin-top: auto; align-self: flex-start; background: var(--guinda-100); color: var(--blanco); border-radius: 4px; padding: 14px 24px; font-size: 17px; font-weight: 700; text-decoration: none; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center; transition: background 150ms ease" href="programas/palmeras.html">Ver el programa</a>
-          </div>
+    <!-- Contenedor del cartograma. Se llenará con 16 celdas. -->
+    <div id="cartograma" style="border: 1px solid var(--gris-20); background: var(--blanco); padding: 20px">
+      <div class="falta-dato" style="min-height: 380px">
+        <span class="falta-dato__sello">Falta el dato</span>
+        <span class="falta-dato__texto">Cartograma de las dieciséis alcaldías. Requiere el indicador validado por alcaldía y la rampa de color acordada.</span>
+      </div>
+    </div>
+
+    <div class="nota-desarrollo">
+      <p class="nota-desarrollo__t">Por desarrollar · cartograma</p>
+      <ul>
+        <li><b>Estructura:</b> rejilla CSS de 4 columnas por 5 filas. Cada alcaldía se coloca con <code>grid-column</code> y <code>grid-row</code> según su posición geográfica aproximada. No requiere librería de mapas ni GeoJSON.</li>
+        <li><b>Alternativa:</b> si se quiere el contorno real, usar <code>docs/assets/data/alcaldias.geojson</code> (pendiente, ya listado en la documentación) y dibujarlo como SVG estático. Es más fiel pero castiga la legibilidad de las alcaldías chicas del centro, que son justamente las de menor cobertura.</li>
+        <li><b>Rampa de color:</b> cinco escalones, secuencial. Debe pasar contraste AA con el texto encima. Nunca usar rojo-verde: excluye a quien tiene daltonismo.</li>
+        <li><b>Accesibilidad:</b> el color no puede ser el único portador de información. Cada celda lleva su valor numérico visible y una tabla equivalente más abajo.</li>
+        <li><b>Interacción:</b> al pasar el cursor o tocar, la celda abre el detalle de esa alcaldía (dato, contacto de la alcaldía, qué programa opera ahí). Reutilizar los contactos que ya están en el directorio.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 3 · LECTURA ============ -->
+  <section aria-labelledby="lectura-titulo" style="background: var(--gris-10); border-top: 1px solid var(--gris-20); border-bottom: 1px solid var(--gris-20)">
+    <div style="max-width: 1240px; margin: 0 auto; padding: clamp(40px, 5vw, 64px) 24px">
+      <h2 id="lectura-titulo" style="margin: 0 0 12px; font-family: var(--font-titulo); font-size: clamp(26px, 3.2vw, 36px); line-height: 1.14; font-weight: 700; color: var(--guinda-100)">Qué se ve en el mapa</h2>
+      <p style="margin: 0 0 28px; font-size: 18px; line-height: 1.6; max-width: 46em">Tres lecturas que el cartograma vuelve evidentes.</p>
+
+      <ul style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 20px">
+        <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-top: 4px solid var(--verde-medio); padding: 26px 22px">
+          <span style="display: block; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--gris-80); margin-bottom: 10px">Hallazgo 1</span>
+          <p style="margin: 0 0 8px; font-size: 20px; font-weight: 700; color: var(--guinda-100); line-height: 1.25">El sur concentra la copa</p>
+          <p style="margin: 0; font-size: 17px; line-height: 1.55">Las alcaldías con suelo de conservación encabezan la lista. Buena parte de esa cobertura es bosque, no arbolado urbano, y no cumple la misma función de sombra en calle.</p>
         </li>
-        <li style="background: var(--blanco); border: 1px solid var(--gris-20); box-shadow: 0 4px 8px rgba(26,26,26,0.06); display: flex; flex-direction: column; overflow: hidden">
-          <div style="position: relative; width: 100%; aspect-ratio: 16 / 9; background: var(--gris-10); border-bottom: 1px solid var(--gris-20)">
-            <div class="falta-dato falta-dato--imagen" data-forma="rect" role="img" aria-label="Imagen institucional pendiente"><span class="falta-dato__sello">Falta el dato</span><span class="falta-dato__texto">Arrastra una fotografía del levantamiento en campo</span></div>
-          </div>
-          <div style="padding: 28px 24px; display: flex; flex-direction: column; flex: 1">
-            <h2 style="margin: 8px 0 12px; font-family: var(--font-titulo); font-size: 27px; font-weight: 700; color: var(--guinda-100); line-height: 1.2">Inventario del arbolado urbano</h2>
-            <p style="margin: 0 0 20px; font-size: 18px; line-height: 1.6">Cuántos árboles hay, dónde están, de qué especie son y en qué estado se encuentran. Es la base con la que se decide dónde intervenir primero.</p>
-            <ul style="margin: 0 0 22px; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px">
-              <li style="font-size: 16px; background: var(--gris-10); border: 1px solid var(--gris-20); padding: 5px 10px; flex: 0 0 auto; white-space: nowrap">7 datos por árbol</li>
-              <li style="font-size: 16px; background: var(--gris-10); border: 1px solid var(--gris-20); padding: 5px 10px; flex: 0 0 auto; white-space: nowrap">16 alcaldías</li>
-              <li style="font-size: 16px; background: var(--gris-10); border: 1px solid var(--gris-20); padding: 5px 10px; flex: 0 0 auto; white-space: nowrap">Datos abiertos</li>
-            </ul>
-            <a class="ih4" style="margin-top: auto; align-self: flex-start; background: var(--guinda-100); color: var(--blanco); border-radius: 4px; padding: 14px 24px; font-size: 17px; font-weight: 700; text-decoration: none; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center; transition: background 150ms ease" href="programas/inventario.html">Ver el programa</a>
-          </div>
+        <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-top: 4px solid var(--tierra); padding: 26px 22px">
+          <span style="display: block; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--gris-80); margin-bottom: 10px">Hallazgo 2</span>
+          <p style="margin: 0 0 8px; font-size: 20px; font-weight: 700; color: var(--guinda-100); line-height: 1.25">El oriente es el déficit</p>
+          <p style="margin: 0; font-size: 17px; line-height: 1.55">Donde vive más gente hay menos sombra. Es la coincidencia que sostiene el criterio de justicia ambiental del programa de reforestación.</p>
         </li>
-        <li style="background: var(--blanco); border: 1px solid var(--gris-20); box-shadow: 0 4px 8px rgba(26,26,26,0.06); display: flex; flex-direction: column; overflow: hidden">
-          <div style="position: relative; width: 100%; aspect-ratio: 16 / 9; background: var(--gris-10); border-bottom: 1px solid var(--gris-20)">
-            <div class="falta-dato falta-dato--imagen" data-forma="rect" role="img" aria-label="Imagen institucional pendiente"><span class="falta-dato__sello">Falta el dato</span><span class="falta-dato__texto">Arrastra una fotografía de una jornada de plantación</span></div>
-          </div>
-          <div style="padding: 28px 24px; display: flex; flex-direction: column; flex: 1">
-            <h2 style="margin: 8px 0 12px; font-family: var(--font-titulo); font-size: 27px; font-weight: 700; color: var(--guinda-100); line-height: 1.2">Reforestación urbana</h2>
-            <p style="margin: 0 0 20px; font-size: 18px; line-height: 1.6">Plantar donde más falta sombra, no donde es más fácil. Incluye el avance del año y los criterios con que se priorizan las colonias.</p>
-            <ul style="margin: 0 0 22px; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px">
-              <li style="font-size: 16px; background: var(--gris-10); border: 1px solid var(--gris-20); padding: 5px 10px; flex: 0 0 auto; white-space: nowrap">5 criterios</li>
-              <li style="font-size: 16px; background: var(--gris-10); border: 1px solid var(--gris-20); padding: 5px 10px; flex: 0 0 auto; white-space: nowrap">Avance abierto</li>
-              <li style="font-size: 16px; background: var(--gris-10); border: 1px solid var(--gris-20); padding: 5px 10px; flex: 0 0 auto; white-space: nowrap">Mapa</li>
-            </ul>
-            <a class="ih4" style="margin-top: auto; align-self: flex-start; background: var(--guinda-100); color: var(--blanco); border-radius: 4px; padding: 14px 24px; font-size: 17px; font-weight: 700; text-decoration: none; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center; transition: background 150ms ease" href="programas/reforestacion.html">Ver el programa</a>
-          </div>
-        </li>
-        <li style="background: var(--blanco); border: 1px solid var(--gris-20); box-shadow: 0 4px 8px rgba(26,26,26,0.06); display: flex; flex-direction: column; overflow: hidden">
-          <div style="position: relative; width: 100%; aspect-ratio: 16 / 9; background: var(--gris-10); border-bottom: 1px solid var(--gris-20)">
-            <div class="falta-dato falta-dato--imagen" data-forma="rect" role="img" aria-label="Imagen institucional pendiente"><span class="falta-dato__sello">Falta el dato</span><span class="falta-dato__texto">Arrastra una fotografía de la producción en vivero</span></div>
-          </div>
-          <div style="padding: 28px 24px; display: flex; flex-direction: column; flex: 1">
-            <h2 style="margin: 8px 0 12px; font-family: var(--font-titulo); font-size: 27px; font-weight: 700; color: var(--guinda-100); line-height: 1.2">Viveros Nezahualcóyotl y Yecapixtla</h2>
-            <p style="margin: 0 0 20px; font-size: 18px; line-height: 1.6">Dónde se produce el arbolado que se planta en la ciudad, cómo se forma un árbol urbano y por qué la planta del vivero no se vende al público.</p>
-            <ul style="margin: 0 0 22px; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px">
-              <li style="font-size: 16px; background: var(--gris-10); border: 1px solid var(--gris-20); padding: 5px 10px; flex: 0 0 auto; white-space: nowrap">2 viveros</li>
-              <li style="font-size: 16px; background: var(--gris-10); border: 1px solid var(--gris-20); padding: 5px 10px; flex: 0 0 auto; white-space: nowrap">5 etapas</li>
-              <li style="font-size: 16px; background: var(--gris-10); border: 1px solid var(--gris-20); padding: 5px 10px; flex: 0 0 auto; white-space: nowrap">Sin venta al público</li>
-            </ul>
-            <a class="ih4" style="margin-top: auto; align-self: flex-start; background: var(--guinda-100); color: var(--blanco); border-radius: 4px; padding: 14px 24px; font-size: 17px; font-weight: 700; text-decoration: none; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center; transition: background 150ms ease" href="programas/viveros.html">Ver el programa</a>
-          </div>
+        <li style="background: var(--blanco); border: 1px solid var(--gris-20); border-top: 4px solid var(--guinda-100); padding: 26px 22px">
+          <span style="display: block; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--gris-80); margin-bottom: 10px">Hallazgo 3</span>
+          <p style="margin: 0 0 8px; font-size: 20px; font-weight: 700; color: var(--guinda-100); line-height: 1.25">El centro no tiene dónde plantar</p>
+          <p style="margin: 0; font-size: 17px; line-height: 1.55">En las alcaldías centrales el límite no es la voluntad sino el espacio: banquetas angostas e infraestructura subterránea. Ahí la respuesta no es plantar más, sino plantar distinto.</p>
         </li>
       </ul>
 
-      <div style="margin-top: 32px; background: var(--blanco); border: 1px solid var(--gris-20); border-left: 4px solid var(--estado-info); padding: 22px 26px" role="status">
-        <strong style="display: block; font-size: 19px; margin-bottom: 8px; color: var(--negro)">Un programa no sustituye el trámite</strong>
-        <span style="font-size: 18px; line-height: 1.6">Aunque tu caso entre en un programa, la intervención sigue requiriendo autorización. Revisa <a href="hazlo.html#procedimientos">los procedimientos</a> para saber qué documentos reunir.</span>
+      <div class="nota-desarrollo">
+        <p class="nota-desarrollo__t">Por desarrollar · lectura</p>
+        <ul>
+          <li>Los tres hallazgos están redactados como hipótesis de trabajo. <b>Cada uno debe confirmarse contra el dato antes de publicar</b> y, si el dato los contradice, se reescriben o se eliminan.</li>
+          <li>Añadir a cada hallazgo su cifra de respaldo, no solo la afirmación cualitativa.</li>
+          <li>Distinguir explícitamente <b>cobertura forestal</b> de <b>arbolado urbano en vía pública</b>. Confundirlas es el error más común al leer estos mapas y desacredita el análisis completo.</li>
+        </ul>
       </div>
-    </section>
+    </div>
+  </section>
 
-  </main>
+  <!-- ============ 4 · TABLA ============ -->
+  <section aria-labelledby="tabla-titulo" style="max-width: 1240px; margin: 0 auto; padding: clamp(40px, 5vw, 64px) 24px">
+    <h2 id="tabla-titulo" style="margin: 0 0 12px; font-family: var(--font-titulo); font-size: clamp(26px, 3.2vw, 36px); line-height: 1.14; font-weight: 700; color: var(--guinda-100)">La tabla completa</h2>
+    <p style="margin: 0 0 24px; font-size: 18px; line-height: 1.6; max-width: 46em">El mismo dato del cartograma, ordenable y legible con lector de pantalla.</p>
+
+    <div class="tabla-envoltura" style="border: 1px solid var(--gris-20)">
+      <table style="width: 100%; border-collapse: collapse; font-size: 17px; min-width: 680px">
+        <caption style="text-align: left; padding: 14px 16px; font-size: 15px; color: var(--gris-80)">Cobertura de copa y población por alcaldía. Pendiente de datos validados.</caption>
+        <thead>
+          <tr style="background: var(--guinda-100); color: var(--blanco)">
+            <th scope="col" style="padding: 12px 16px; text-align: left">Alcaldía</th>
+            <th scope="col" style="padding: 12px 16px; text-align: right">Cobertura de copa</th>
+            <th scope="col" style="padding: 12px 16px; text-align: right">Habitantes</th>
+            <th scope="col" style="padding: 12px 16px; text-align: right">m² de copa por habitante</th>
+            <th scope="col" style="padding: 12px 16px; text-align: left">Programa que opera ahí</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td colspan="5" style="padding: 0; border: 0">
+              <div class="falta-dato" style="min-height: 180px; border: 0">
+                <span class="falta-dato__sello">Falta el dato</span>
+                <span class="falta-dato__texto">Dieciséis filas, una por alcaldía. Requiere el indicador validado y la cifra de población de la fuente que se acuerde.</span>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="nota-desarrollo">
+      <p class="nota-desarrollo__t">Por desarrollar · tabla</p>
+      <ul>
+        <li>Ordenamiento por columna con JavaScript ligero. Sin librerías.</li>
+        <li>Nombres oficiales completos de las alcaldías, como aparecen en el directorio del sitio.</li>
+        <li>Cada fila enlaza al contacto de esa alcaldía en <code>directorio.html#alcaldias</code>.</li>
+        <li>Usar <code>font-variant-numeric: tabular-nums</code> para que las cifras alineen.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 5 · POR QUÉ ============ -->
+  <section aria-labelledby="porque-titulo" style="background: var(--marfil); border-top: 1px solid var(--dorado-40); border-bottom: 1px solid var(--dorado-40)">
+    <div style="max-width: 1240px; margin: 0 auto; padding: clamp(40px, 5vw, 64px) 24px; max-width: 52em">
+      <h2 id="porque-titulo" style="margin: 0 0 12px; font-family: var(--font-titulo); font-size: clamp(26px, 3.2vw, 36px); line-height: 1.14; font-weight: 700; color: var(--guinda-100)">Por qué la ciudad quedó así</h2>
+      <p style="margin: 0 0 16px; font-size: 18px; line-height: 1.65">La distribución del arbolado no es un accidente ni una decisión reciente. Responde a la geografía del valle, al trazo histórico de la ciudad y al modo en que se urbanizó cada zona.</p>
+      <p style="margin: 0; font-size: 18px; line-height: 1.65; color: var(--gris-80)"><span class="dato-pendiente">Desarrollar tres o cuatro párrafos narrativos.</span></p>
+
+      <div class="nota-desarrollo">
+        <p class="nota-desarrollo__t">Por desarrollar · explicación</p>
+        <ul>
+          <li>Tres factores propuestos: <b>geografía</b> (suelo de conservación al sur y poniente), <b>historia urbana</b> (colonias planificadas con camellón contra crecimiento no planificado) y <b>densidad</b> (a mayor densidad, menos suelo disponible para plantar).</li>
+          <li>Redactar en prosa continua, sin viñetas: es una sección de lectura, no de consulta.</li>
+          <li>Integrar de manera narrativa la dimensión de igualdad territorial, sin abrir un apartado aparte para ella.</li>
+          <li>No atribuir la brecha a un gobierno en particular. El dato es estructural y de décadas.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 6 · QUÉ SE ESTÁ HACIENDO ============ -->
+  <section aria-labelledby="accion-titulo" style="max-width: 1240px; margin: 0 auto; padding: clamp(40px, 5vw, 64px) 24px">
+    <h2 id="accion-titulo" style="margin: 0 0 12px; font-family: var(--font-titulo); font-size: clamp(26px, 3.2vw, 36px); line-height: 1.14; font-weight: 700; color: var(--guinda-100)">Qué se está haciendo con esta información</h2>
+    <p style="margin: 0 0 24px; font-size: 18px; line-height: 1.6; max-width: 46em">El diagnóstico sirve si cambia dónde se planta. Estos son los programas que lo usan como criterio.</p>
+
+    <ul style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 18px">
+      <li><a href="programas/reforestacion.html" style="height: 100%; box-sizing: border-box; text-decoration: none; background: var(--blanco); border: 1px solid var(--gris-20); border-top: 4px solid var(--verde-medio); padding: 24px 22px; display: flex; flex-direction: column; gap: 10px">
+        <span style="font-size: 21px; font-weight: 700; color: var(--guinda-100); line-height: 1.25">Reforestación urbana</span>
+        <span style="font-size: 17px; line-height: 1.5; color: var(--gris-100)">Prioriza las colonias con menor cobertura de copa por habitante.</span>
+        <span style="margin-top: auto; padding-top: 12px; font-size: 17px; font-weight: 700; color: var(--guinda-100)">Ver el programa →</span>
+      </a></li>
+      <li><a href="programas/inventario.html" style="height: 100%; box-sizing: border-box; text-decoration: none; background: var(--blanco); border: 1px solid var(--gris-20); border-top: 4px solid var(--verde-medio); padding: 24px 22px; display: flex; flex-direction: column; gap: 10px">
+        <span style="font-size: 21px; font-weight: 700; color: var(--guinda-100); line-height: 1.25">Inventario del arbolado</span>
+        <span style="font-size: 17px; line-height: 1.5; color: var(--gris-100)">Es la fuente que alimenta este análisis y la que permite actualizarlo.</span>
+        <span style="margin-top: auto; padding-top: 12px; font-size: 17px; font-weight: 700; color: var(--guinda-100)">Ver el programa →</span>
+      </a></li>
+      <li><a href="politica.html" style="height: 100%; box-sizing: border-box; text-decoration: none; background: var(--blanco); border: 1px solid var(--gris-20); border-top: 4px solid var(--dorado-100); padding: 24px 22px; display: flex; flex-direction: column; gap: 10px">
+        <span style="font-size: 21px; font-weight: 700; color: var(--guinda-100); line-height: 1.25">La política de arbolado</span>
+        <span style="font-size: 17px; line-height: 1.5; color: var(--gris-100)">Metas e indicadores del sexenio, con la brecha territorial como línea base.</span>
+        <span style="margin-top: auto; padding-top: 12px; font-size: 17px; font-weight: 700; color: var(--guinda-100)">Ver la política →</span>
+      </a></li>
+    </ul>
+  </section>
+
+  <!-- ============ 7 · METODOLOGÍA ============ -->
+  <section aria-labelledby="metodo-titulo" style="background: var(--gris-10); border-top: 1px solid var(--gris-20)">
+    <div style="max-width: 1240px; margin: 0 auto; padding: clamp(36px, 4vw, 56px) 24px; max-width: 52em">
+      <h2 id="metodo-titulo" style="margin: 0 0 12px; font-family: var(--font-titulo); font-size: clamp(23px, 2.6vw, 30px); line-height: 1.15; font-weight: 700; color: var(--guinda-100)">Cómo se calculó y de dónde salen los datos</h2>
+      <p style="margin: 0 0 14px; font-size: 17px; line-height: 1.6"><span class="dato-pendiente">Fuente, año de corte, método de cálculo y periodicidad de actualización.</span></p>
+      <p style="margin: 0; font-size: 17px; line-height: 1.6; color: var(--gris-80)">Los datos de esta sección se publican también en formato abierto.</p>
+
+      <div class="nota-desarrollo">
+        <p class="nota-desarrollo__t">Por desarrollar · metodología</p>
+        <ul>
+          <li>Sin esta sección, el análisis no es publicable. Es lo primero que va a cuestionar quien no esté de acuerdo con el resultado.</li>
+          <li>Declarar con precisión: fuente, año de corte, resolución del insumo, definición operativa de "cobertura de copa" y quién hizo el cálculo.</li>
+          <li>Publicar el CSV o GeoJSON descargable junto a la página, y registrarlo en el portal de datos abiertos de la ciudad.</li>
+          <li>Fijar la periodicidad de actualización y cumplirla. Un dato territorial sin fecha de corte visible envejece mal y se vuelve un pasivo.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</main>
+
 
   
 
@@ -358,6 +467,7 @@ a:hover { color: var(--guinda-oscuro); }
 
 
 </div>
+
 
 
 </body>

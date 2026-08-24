@@ -158,92 +158,173 @@ a:hover { color: var(--guinda-oscuro); }
       .om-nav-ancha { display: none !important; }
       .om-nav-movil { display: block; }
     }
-  
-
-  
-
-  
 
 /* ============================================================
-   CAPA BOSQUE · presencia de arbolado en la interfaz
-   Verde y café son secundarios del símbolo GCDMX. El guinda
-   conserva títulos, botones primarios y firma institucional.
+   CAPA LÁMINA · aplicación de la dirección visual
+   Se monta sobre el HTML compilado, que trae estilos en línea.
+   De ahí el uso deliberado de !important en este bloque.
+   Prioridad de lectura ciudadana sobre el efecto gráfico.
    ============================================================ */
 
-/* Pleca institucional de tres tramos en el borde superior */
+/* --- Pleca institucional --- */
 body::before{
-  content:"";display:block;height:5px;
-  background:linear-gradient(90deg,
-    var(--guinda-100) 0 34%,
-    var(--dorado-100) 34% 67%,
-    var(--verde-medio) 67% 100%);
+  content:"";display:block;height:4px;
+  background:linear-gradient(90deg,var(--guinda-100) 0 62%,var(--dorado-100) 62% 100%);
 }
 
-/* --- Navegación principal: banda de follaje --- */
+/* --- Grano de papel --- */
+body::after{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:60;opacity:.40;
+  background-image:radial-gradient(rgba(90,78,52,.10) .6px,transparent .7px);
+  background-size:3px 3px;mix-blend-mode:multiply;
+}
+
+/* --- Cuerpo --- */
+body{
+  font-family:var(--font-cuerpo);
+  font-size:18px;line-height:1.65;
+  background:var(--papel);color:var(--gris-100);
+}
+
+/* --- El papel no flota: sin sombras ni esquinas redondeadas --- */
+main [style*="box-shadow"], header [style*="box-shadow"], footer [style*="box-shadow"]{ box-shadow:none !important; }
+main [style*="border-radius"], header [style*="border-radius"], footer [style*="border-radius"]{ border-radius:0 !important; }
+
+/* --- Títulos en Cormorant: pide más cuerpo y menos peso --- */
+h1,h2,h3,h4{ font-family:var(--font-titulo) !important; }
+h1{ font-weight:300 !important; font-size:clamp(38px,5.4vw,62px) !important; line-height:1.03 !important; letter-spacing:-.004em; }
+h2{ font-weight:400 !important; font-size:clamp(28px,3.6vw,42px) !important; line-height:1.09 !important; }
+h3{ font-weight:600 !important; font-size:clamp(21px,2.2vw,26px) !important; line-height:1.2 !important; }
+h1 em, h2 em, h3 em{ font-style:italic; color:var(--herbario) !important; font-weight:600; }
+
+/* --- Los controles de formulario se quedan en sans: son de uso, no de lectura --- */
+input, select, textarea, button{
+  font-family:var(--font-ui) !important;
+  font-size:17px !important;
+  min-height:48px;
+}
+input, select, textarea{ border:1px solid var(--gris-40) !important; background:var(--papel-alto) !important; }
+
+/* --- Navegación: versalitas sobre papel --- */
 header nav{
-  background:var(--verde-bosque) !important;
-  border-top-color:var(--verde-bosque) !important;
+  background:var(--papel-alto) !important;
+  border-top:1px solid var(--filete) !important;
+  border-bottom:1px solid var(--filete) !important;
 }
 header nav .om-nav-ancha a{
-  color:#DDE9D6 !important;
-  background:transparent !important;
-  border-bottom-color:transparent !important;
+  font-family:var(--font-titulo) !important;
+  font-size:17px !important;font-weight:600 !important;
+  letter-spacing:.13em;text-transform:uppercase;
+  color:var(--tinta-suave) !important;background:transparent !important;
+  border-bottom:2px solid transparent !important;
 }
-header nav .om-nav-ancha a:hover{
-  background:rgba(255,255,255,.10) !important;
-  color:#FFFFFF !important;
-}
-header nav .om-nav-ancha a[aria-current="page"]{
-  color:#FFFFFF !important;
-  background:rgba(255,255,255,.13) !important;
-  border-bottom-color:var(--dorado-100) !important;
-}
+header nav .om-nav-ancha a:hover{ color:var(--guinda-100) !important;border-bottom-color:var(--dorado-100) !important; }
+header nav .om-nav-ancha a[aria-current="page"]{ color:var(--guinda-100) !important;border-bottom-color:var(--guinda-100) !important;background:transparent !important; }
 header nav .om-nav-movil button{
-  background:rgba(255,255,255,.94) !important;
-  border-color:var(--verde-medio) !important;
+  font-family:var(--font-titulo) !important;font-size:19px !important;
+  background:var(--papel-alto) !important;border-color:var(--dorado-100) !important;
 }
 
-/* --- Luz filtrada por la copa sobre la banda de entrada --- */
-main > section:first-of-type{position:relative;isolation:isolate;}
-main > section:first-of-type::before{
-  content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
-  background-image:
-    radial-gradient(ellipse 60% 70% at 8% 12%,  rgba(45,122,62,.13), transparent 60%),
-    radial-gradient(ellipse 45% 55% at 88% 4%,  rgba(139,111,71,.12), transparent 62%),
-    radial-gradient(ellipse 55% 60% at 72% 88%, rgba(45,122,62,.09), transparent 60%),
-    radial-gradient(ellipse 40% 50% at 30% 96%, rgba(178,142,92,.10), transparent 62%);
-}
-main > section:first-of-type > div{position:relative;z-index:1;}
-
-/* --- Color por sección: el riel de la tarjeta identifica su destino --- */
-main a[style*="border-top: 4px"][href*="hazlo"]            { border-top-color:var(--guinda-100) !important; }
-main a[style*="border-top: 4px"][href*="responsabilidades"]{ border-top-color:var(--tierra) !important; }
-main a[style*="border-top: 4px"][href*="programas"]        { border-top-color:var(--verde-medio) !important; }
-main a[style*="border-top: 4px"][href*="directorio"]       { border-top-color:var(--verde-bosque) !important; }
-main a[style*="border-top: 4px"][href*="politica"]         { border-top-color:var(--dorado-100) !important; }
-/* Emergencias conserva el rojo de alerta que ya trae la página */
-
-/* --- Bandas alternas con presencia de follaje --- */
-main > section[style*="--gris-10"]{
-  background:var(--verde-niebla) !important;
-  border-top-color:var(--verde-borde) !important;
-  border-bottom-color:var(--verde-borde) !important;
+/* --- Fichas y tarjetas: papel con filete, sin relleno blanco --- */
+main a[style*="background: var(--blanco)"], main li[style*="background: var(--blanco)"]{
+  background:var(--papel-alto) !important;border-color:var(--filete) !important;
 }
 
-/* --- Pie: suelo de bosque --- */
-footer[style*="--guinda-oscuro"]{
-  background:linear-gradient(180deg, var(--verde-bosque) 0%, #14351D 100%) !important;
-}
+/* --- Pie: suelo de tinta --- */
+footer[style*="--guinda-oscuro"]{ background:var(--tinta) !important; }
 
-.ds-pleca-dorada{background:var(--tierra);}
-
-/* --- Marcadores de pendiente: inconfundibles, pero dejan de gritar --- */
+/* --- Marcadores de pendiente sobre papel --- */
 .falta-dato{
-  background:repeating-linear-gradient(135deg,
-    var(--arena) 0 16px,
-    #EAE2D0 16px 32px) !important;
-  border:2px dashed var(--tierra-claro) !important;
-  color:var(--gris-80) !important;
+  background:repeating-linear-gradient(135deg,var(--arena) 0 16px,#E8DFC9 16px 32px) !important;
+  border:2px dashed var(--tierra-claro) !important;color:var(--tinta-suave) !important;
 }
-.falta-dato__sello{ background:var(--amarillo) !important; color:var(--negro) !important; }
-.falta-dato__texto{ color:var(--gris-80) !important; }
+.falta-dato__sello{ background:var(--amarillo) !important;color:var(--negro) !important;font-family:var(--font-ui) !important; }
+.falta-dato__texto{ color:var(--tinta-suave) !important;font-family:var(--font-ui) !important; }
+
+/* ============================================================
+   LEGIBILIDAD CIUDADANA
+   El sitio lo consulta alguien con un problema y prisa.
+   Estas reglas mandan sobre cualquier decisión estética.
+   ============================================================ */
+
+/* Ningún texto de lectura por debajo de 17 px */
+main p, main li, main td, main dd{ font-size:max(17px,1em); }
+
+/* El destino de cada enlace de texto se ve sin pasar el cursor */
+main p a, main li a:not([style*="display: flex"]):not([style*="display:flex"]){
+  text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;
+}
+
+/* Área táctil mínima en todo lo que se toca */
+a[href^="tel:"]{ display:inline-block;min-height:44px;line-height:44px;font-family:var(--font-ui) !important;font-weight:500; }
+
+/* Foco siempre visible y grueso */
+:where(a,button,input,select,textarea,[tabindex]):focus-visible{
+  outline:3px solid var(--guinda-100) !important;outline-offset:2px;
+}
+
+/* La urgencia nunca se disfraza de decoración */
+[style*="--estado-error"]{ font-family:var(--font-ui) !important; }
+
+/* La lámina se retira cuando estorba: en pantalla chica manda el contenido */
+@media (max-width:760px){
+  .lamina-figura{ display:none !important; }
+  body::after{ opacity:.25; }
+  h1{ font-size:clamp(32px,8vw,42px) !important; }
+}
+
+/* Impresión y movimiento reducido ya definidos arriba se conservan */
+@media print{ body::after,body::before{ display:none !important; } }
+
+/* --- La lámina que ocupa el lugar principal de imagen --- */
+.lamina-figura{
+  position:relative;margin:0;display:flex;flex-direction:column;
+  width:100%;height:100%;min-height:340px;
+  background:linear-gradient(160deg,var(--papel-alto) 0%,var(--papel-hondo) 100%);
+  border:1px solid var(--filete);
+}
+.lamina-figura__num{
+  position:absolute;top:16px;left:18px;z-index:2;
+  font-family:var(--font-titulo);font-size:12px;font-weight:600;
+  letter-spacing:.30em;text-transform:uppercase;color:var(--tinta-suave);
+}
+.lamina-figura__lienzo{flex:1;width:100%;display:block;min-height:0}
+.lamina-figura__pie{
+  padding:0 18px 18px;position:relative;z-index:2;
+  border-top:1px solid var(--filete);margin:0 18px;padding-top:12px;
+}
+.lamina-figura__pie i{
+  display:block;font-family:var(--font-titulo);font-style:italic;
+  font-size:23px;line-height:1.15;color:var(--tinta);
+}
+.lamina-figura__pie span{
+  display:block;font-family:var(--font-ui);font-size:14.5px;line-height:1.45;
+  color:var(--tinta-suave);margin-top:4px;
+}
+@media (max-width:760px){
+  .lamina-figura{min-height:260px}
+}
+
+/* ============================================================
+   CORRECCIONES DE CONTRASTE
+   El dorado es un color de filete, no de texto: donde llevaba
+   carga tipográfica se sustituye por corteza, que sí cumple AA.
+   ============================================================ */
+[style*="color: var(--dorado-100)"]{ color:var(--corteza) !important; }
+[style*="background: var(--dorado-100)"]{ background:var(--corteza) !important; }
+[style*="background: var(--dorado-60)"]{ background:var(--corteza) !important; }
+[style*="color: var(--dorado-60)"]{ color:var(--corteza) !important; }
+:root{ --cafe:#7A4E12; }
+
+/* --- Filigrana: la lámina discreta de las páginas sin espacio de imagen --- */
+.lamina-filigrana{
+  position:absolute;right:0;top:0;bottom:0;width:min(38%,430px);
+  pointer-events:none;z-index:0;opacity:.20;
+}
+main > section:first-of-type{ position:relative; }
+main > section:first-of-type > div{ position:relative;z-index:1; }
+@media (max-width:900px){ .lamina-filigrana{ display:none; } }
+
+/* --- Navegación: cabe en un renglón en escritorio --- */
+header nav .om-nav-ancha a{ font-size:15px !important;letter-spacing:.05em;padding:14px 11px !important;white-space:nowrap; }
+@media (min-width:1180px){ header nav .om-nav-ancha a{ font-size:16px !important;letter-spacing:.07em;padding:14px 15px !important; } }

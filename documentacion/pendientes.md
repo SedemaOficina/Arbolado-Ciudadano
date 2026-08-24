@@ -24,7 +24,10 @@ Todo espacio sin material real está marcado en el sitio con el sistema
 visual amarillo "Falta el dato". No debe publicarse con estos marcadores
 visibles.
 
-- [ ] Fotografías institucionales reales (16 espacios marcados en el sitio)
+- [ ] Fotografías institucionales reales. La imagen principal de cada página la
+      ocupa hoy una lámina botánica generada por código; en cuanto llegue la
+      fotografía real de esa sección, sustituye a la lámina. Los demás espacios
+      siguen marcados en amarillo.
 - [ ] Cada foto con crédito completo (autor, fecha, lugar)
 - [ ] Logotipos institucionales. El sitio referencia estos archivos y hoy
       muestra marcadores generados en su lugar:

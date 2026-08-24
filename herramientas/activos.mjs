@@ -18,7 +18,7 @@ const w = (rel, contenido) => {
 };
 
 /* ---------- tokens.css ---------- */
-const orden = ['fonts.css','colors.css','typography.css','spacing.css'];
+const orden = ['fonts.css','colors.css','typography.css','spacing.css','lamina.css'];
 let tokens = `/* ============================================================
    Arbolado Ciudadano · SEDEMA CDMX
    tokens.css — Identidad institucional GCDMX 2024-2030.
