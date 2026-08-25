@@ -203,3 +203,76 @@ main [style*="background: var(--estado-error)"] [style*="color: var(--guinda-100
   .banda-honda{ background: #fff; color: #000; border-top: 2px solid #000; }
   .banda-honda h2, .banda-honda h3, .banda-honda p, .banda-honda li{ color: #000 !important; }
 }
+
+/* ============================================================
+   CORRECCIONES DE ACCESIBILIDAD · 25 de agosto de 2026
+   Ola uno de la auditoría 360. Este bloque va al final de
+   paleta.css porque es la última hoja que cargan las catorce
+   páginas: así corrige sin tocar el HTML de cada una.
+   Cada regla lleva el identificador del hallazgo que resuelve
+   y el contraste medido antes y después.
+   ============================================================ */
+
+/* ACC-01 · Titulares del pie ilegibles en doce páginas.
+   sitio.css reencauza cualquier texto en --dorado-60 o --dorado-100
+   hacia --corteza, sin acotar a main, y alcanza el pie oscuro.
+   Medido: #5A4632 sobre #2B2720 = 1.67:1 · exigido 3:1
+   Con esta regla: #DAC7A0 sobre #2B2720 = 8.95:1 */
+footer [style*="color: var(--dorado-60)"],
+footer [style*="color: var(--dorado-100)"]{ color:#DAC7A0 !important; }
+
+/* ACC-02 · El enlace «Saltar al contenido» nunca se hacía visible.
+   sitio.css:131 ya lo devuelve a left:0 al enfocarlo, pero el
+   left:-9999px vive en el atributo style= en línea y gana siempre. */
+.if0:focus,
+.if0:focus-visible{ left:0 !important; }
+
+/* ACC-03 · El botón «Denunciar en la PAOT» era invisible.
+   Su fondo blanco lo reescribía sitio.css a --papel-alto y su texto
+   guinda lo reescribía paleta.css a --blanco.
+   Medido: 1.02:1 · con esta regla: 6.84:1
+   Acotado al bloque de estado-error para no tocar el otro uso de
+   .ih17, que en emergencias.html es un enlace telefónico distinto. */
+[style*="background: var(--estado-error)"] a.ih17{
+  background:#F7F2E5 !important;
+  color:#9D2148 !important;
+}
+
+/* ACC-05 · Encabezado dorado sobre el bloque rojo de riesgo (hazlo).
+   Medido: 4.03:1 · exigido 4.5:1 · con esta regla: 5.95:1 */
+[style*="background: var(--estado-error)"] [style*="color: var(--dorado-40)"]{
+  color:var(--blanco) !important;
+}
+
+/* ACC-05 · Aviso amarillo dentro de banda oscura (reforestación).
+   La banda fuerza el texto a crema y lo deja sobre fondo de alerta.
+   Medido: 1.42:1 · con esta regla: 9.38:1 */
+.banda-honda [style*="background: var(--estado-alerta)"],
+.banda-honda [style*="background: var(--estado-alerta)"] *{
+  color:#2B2720 !important;
+}
+
+/* ACC-07 · Desbordamiento horizontal a 360 px y peor al ampliar.
+   No existía una sola regla de corte de palabra en las cuatro hojas:
+   un teléfono con correo en viveros desbordaba 28 px y una ruta de
+   archivo en territorio, 38 px (78 px a 320 px de ancho). */
+main p,
+main li,
+main span,
+main td,
+main dd,
+main code,
+main dt{ overflow-wrap:anywhere; }
+
+/* ACC-07 bis · A 320 px —el ancho que exige el criterio de reflujo, y el que
+   resulta de ampliar al 400 %— seis páginas seguían desbordando entre 4 y 9 px.
+   La causa no era el corte de palabra sino los mínimos de rejilla: con 24 px de
+   margen a cada lado quedan 272 px útiles, y varias rejillas piden 260 a 300.
+   Solo por debajo de 380 px, esas rejillas pasan a una columna. */
+@media (max-width: 380px){
+  main [style*="minmax(260px"],
+  main [style*="minmax(270px"],
+  main [style*="minmax(280px"],
+  main [style*="minmax(290px"],
+  main [style*="minmax(300px"]{ grid-template-columns:1fr !important; }
+}
