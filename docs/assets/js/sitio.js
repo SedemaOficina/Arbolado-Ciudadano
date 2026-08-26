@@ -89,15 +89,18 @@
     return RAIZ + h;
   };
 
-  /* --- Limpieza del prerenderizado estático antes de que Alpine hidrate --- */
+  /* --- Limpieza del prerenderizado estático antes de que Alpine hidrate ---
+     El prerenderizado SOLO se retira cuando Alpine confirma que va a montar.
+     Si Alpine no carga -- red que filtra el dominio, archivo ausente -- el HTML
+     estatico se queda en su sitio y la pagina sigue siendo legible y navegable.
+     No reponer aqui ninguna limpieza en DOMContentLoaded: eso borraba el
+     contenido y la navegacion de las catorce paginas cuando el script de Alpine
+     no respondia (auditoria COD-01, 25 de agosto de 2026). */
   function limpiar() {
     var nodos = document.querySelectorAll('[data-pr]');
     for (var i = 0; i < nodos.length; i++) nodos[i].parentNode.removeChild(nodos[i]);
   }
   document.addEventListener('alpine:init', limpiar);
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function () { if (!window.Alpine) limpiar(); });
-  }
 
   /* --- Fábricas de componentes generadas desde los archivos fuente --- */
 
@@ -285,7 +288,7 @@ const TEL = {
 
 const LUGARES = [
   { id: "via", etiqueta: "En la banqueta, camellón o vía pública", detalle: "Frente a tu casa, en la calle o en un camellón", contacto: TEL.alcaldia, nota: "El arbolado de vía pública lo administra la alcaldía donde está." },
-  { id: "predio", etiqueta: "Dentro de mi predio", detalle: "En tu jardín, patio o terreno, incluido un predio en obra", contacto: TEL.secretaria, nota: "El árbol de un predio privado también es un bien de interés público." },
+  { id: "predio", etiqueta: "Dentro de mi predio", detalle: "En tu jardín, patio o terreno, incluido un predio en obra", contacto: TEL.alcaldia, nota: "El árbol de un predio privado también es un bien de interés público: tu alcaldía dictamina y autoriza." },
   { id: "publica", etiqueta: "En un parque o área verde pública", detalle: "Parque, deportivo, barranca o área natural protegida", contacto: TEL.secretaria, nota: "Según el área, la administra la Secretaría o la alcaldía." },
   { id: "nose", etiqueta: "No sé de quién es ese terreno", detalle: "No distingues si es vía pública, predio o área pública", contacto: TEL.sedematel, nota: "Cuando la propiedad no es clara, se empieza por orientación telefónica." }
 ];
@@ -299,7 +302,7 @@ const ACCIONES = [
 
 const RUTAS = {
   "via:intervenir": { titulo: "Le toca a tu alcaldía", resumen: "La alcaldía dictamina, autoriza y ejecuta el trabajo en vía pública. No puedes intervenirlo ni contratar a nadie, aunque esté frente a tu casa.", pasos: ["Presenta tu solicitud en servicios urbanos de tu alcaldía", "Explica el motivo: obstrucción, riesgo o daño a la banqueta", "Espera la visita técnica que dictamina si procede", "Si autoriza, la alcaldía ejecuta o designa a quien lo hará"], documentos: ["Dirección exacta y fotografía del árbol completo", "Tu nombre, teléfono y correo", "Si hay daño a tu propiedad, fotografías del daño"], contactos: [TEL.alcaldia, TEL.sedematel] },
-  "predio:intervenir": { titulo: "Necesitas autorización de la Secretaría", resumen: "Primero se obtiene la autorización y solo después se contrata a quien hará el trabajo, que debe estar acreditado.", pasos: ["Pide el dictamen técnico a una persona acreditada", "Presenta la solicitud con ese dictamen", "Espera la resolución por escrito", "Contrata a un podador acreditado", "Cumple la medida de restitución"], documentos: ["Identificación oficial vigente", "Documento que acredite la propiedad o posesión", "Dictamen técnico del ejemplar", "Fotografías y croquis de ubicación"], contactos: [TEL.secretaria, TEL.sedematel] },
+  "predio:intervenir": { titulo: "Le toca a tu alcaldía", resumen: "Aunque el árbol esté en tu terreno, no puedes intervenirlo por tu cuenta. Tu alcaldía dictamina y autoriza. Primero pides la autorización. Solo cuando la tengas contratas a quien hará el trabajo, que debe estar acreditado.", pasos: ["Presenta tu solicitud en servicios urbanos de tu alcaldía", "Explica el motivo: riesgo, saneamiento, poda de mantenimiento o daño a la infraestructura", "Espera la visita y el dictamen técnico que emite la alcaldía", "Con la autorización por escrito, contrata a un podador acreditado", "Cumple la medida de restitución que fije la autorización"], documentos: ["Identificación oficial vigente", "Documento que acredite la propiedad o posesión", "Fotografías del árbol completo y croquis de ubicación", "El motivo de tu solicitud, en los términos del artículo 106"], contactos: [TEL.alcaldia, TEL.sedematel] },
   "publica:intervenir": { titulo: "Le toca a quien administra el área", resumen: "En un parque, barranca o área protegida la intervención la resuelve el administrador del área. Nadie ajeno puede intervenir el arbolado.", pasos: ["Identifica al administrador del área", "Presenta tu solicitud o reporte ante él", "Espera la valoración del personal responsable", "La intervención la ejecuta el administrador"], documentos: ["Nombre del área y ubicación del ejemplar", "Fotografía del árbol completo", "Tu nombre y teléfono"], contactos: [TEL.secretaria] },
   "nose:intervenir": { titulo: "Primero hay que identificar el suelo", resumen: "Sin saber si es vía pública, predio privado o área pública no se puede saber quién autoriza. Ese es el primer paso.", pasos: ["Llama a atención ciudadana de SEDEMA con la dirección exacta", "Describe el entorno: banqueta, reja, patio, parque", "Con eso te indican la autoridad competente", "Sigue la ruta que corresponda"], documentos: ["Dirección exacta y referencias", "Fotografía del árbol y su entorno", "Tu nombre y teléfono"], contactos: [TEL.sedematel] },
   "via:riesgo": { titulo: "Repórtalo hoy mismo a tu alcaldía", resumen: "Si ya cayó, si toca cables o si amenaza a personas, es una emergencia y va al 911 sin esperar nada más.", pasos: ["Si ya cayó o toca cables, llama al 911", "Si aún no cae, reporta a tu alcaldía y pide valoración", "Describe la falla: grieta, inclinación, rama fracturada", "Guarda el folio para dar seguimiento"], documentos: ["Dirección exacta y referencias", "Fotografías con la fecha visible", "Qué está en riesgo: personas, autos, cables"], contactos: [TEL.emergencia, TEL.alcaldia] },
@@ -356,8 +359,8 @@ const CASOS = [
   { perfil: "vecino", urg: "pronto", u: "Atención pronta", titulo: "El árbol de mi calle quedó inclinado o levantó la banqueta", autoridad: "Tu alcaldía · servicios urbanos", hacer: ["Levanta el reporte y pide visita de valoración", "Fotografía el tronco, la base y el suelo levantado", "Guarda el folio del reporte", "Si la inclinación crece o cruje, escala al 911"], noHacer: ["No lo apuntales con materiales improvisados", "No cortes raíces: es la causa más común de que caiga"], fundamento: N + ", criterios de valoración de riesgo" },
   { perfil: "obra", urg: "ordinario", u: "Trámite ordinario", titulo: "Voy a construir y hay árboles en el predio", autoridad: "La Secretaría, dentro de la resolución de impacto ambiental", hacer: ["Incluye el arbolado en el estudio de impacto ambiental", "Presenta el inventario con especie, diámetro y estado", "Considera el trasplante de los ejemplares viables", "Presupuesta la restitución: es obligatoria"], noHacer: ["No derribes antes de la resolución: la obra se suspende", "No dejes el arbolado para después del permiso de construcción"], fundamento: "Reglamento de Impacto Ambiental y Riesgo, artículos 137 a 141" },
   { perfil: "obra", urg: "ordinario", u: "Trámite ordinario", titulo: "Autorizaron el derribo y quiero saber qué se planta a cambio", autoridad: "La Secretaría · medida de restitución", hacer: ["Revisa en la resolución cuántos ejemplares y de qué talla", "Cumple la medida en el plazo autorizado", "Documenta la plantación con fotografías", "Si no hay espacio, consulta dónde cumplirla"], noHacer: ["No la trates como recomendación: es obligatoria", "No sustituyas con especies distintas a las autorizadas"], fundamento: LEY + ", artículo 109" },
-  { perfil: "jardin", urg: "ordinario", u: "Trámite ordinario", titulo: "Quiero podar el árbol de mi jardín porque da mucha sombra", autoridad: "La Secretaría autoriza · podador acreditado ejecuta", hacer: ["Solicita la autorización antes de contratar a nadie", "Contrata el dictamen de una persona acreditada", "Verifica en el padrón que tenga acreditación vigente", "Conserva la autorización durante el trabajo"], noHacer: ["No supongas que por ser tu predio no necesitas permiso", "No permitas que retiren más de la cuarta parte del árbol"], fundamento: LEY + ", artículo 106 · " + N },
-  { perfil: "jardin", urg: "ordinario", u: "Trámite ordinario", titulo: "El árbol del vecino cuelga sobre mi patio", autoridad: "La Secretaría autoriza · acuerdo entre particulares", hacer: ["Habla primero con tu vecino y documenten el acuerdo", "La solicitud la presenta quien posee el predio del árbol", "Si hay riesgo para tu vivienda, pide el dictamen técnico"], noHacer: ["No cortes las ramas de tu lado: también requiere autorización", "No apliques herbicida ni sal a la raíz"], fundamento: LEY + ", artículos 106 y 109, último párrafo" },
+  { perfil: "jardin", urg: "ordinario", u: "Trámite ordinario", titulo: "Quiero podar el árbol de mi jardín porque da mucha sombra", autoridad: "Tu alcaldía autoriza · podador acreditado ejecuta", hacer: ["Solicita la autorización en tu alcaldía antes de contratar a nadie", "Contrata el dictamen de una persona acreditada", "Verifica en el padrón que tenga acreditación vigente", "Conserva la autorización durante el trabajo"], noHacer: ["No supongas que por ser tu predio no necesitas permiso", "No permitas que retiren más de la cuarta parte del árbol"], fundamento: LEY + ", artículo 106, fracción III, y artículo 110 · " + N },
+  { perfil: "jardin", urg: "ordinario", u: "Trámite ordinario", titulo: "El árbol del vecino cuelga sobre mi patio", autoridad: "Tu alcaldía autoriza · acuerdo entre particulares", hacer: ["Habla primero con tu vecino y documenten el acuerdo", "La solicitud la presenta quien posee el predio del árbol", "Si hay riesgo para tu vivienda, pide el dictamen técnico"], noHacer: ["No cortes las ramas de tu lado: también requiere autorización", "No apliques herbicida ni sal a la raíz"], fundamento: LEY + ", artículos 106 y 109, último párrafo" },
   { perfil: "testigo", urg: "pronto", u: "Atención pronta", titulo: "Un vecino cortó un árbol de la calle sin permiso", autoridad: "PAOT · denuncia ambiental", hacer: ["Fotografía el tocón y las ramas antes de que las retiren", "Presenta la denuncia en línea o al 55 5265 0780", "Anota fecha, hora y datos del vehículo o la empresa", "Conserva tu folio para consultar el avance"], noHacer: ["No confrontes a quien lo hizo", "No esperes: la evidencia desaparece en horas"], fundamento: LEY + ", artículo 112 · Código Penal, artículos 343 a 350" },
   { perfil: "testigo", urg: "pronto", u: "Atención pronta", titulo: "Me ofrecieron podar barato y sin papeles", autoridad: "La Secretaría · padrón de acreditaciones", hacer: ["Pide la credencial y verifica el folio en el padrón", "Confirma que la fotografía y la vigencia correspondan", "Exige ver el dictamen y la autorización antes de empezar"], noHacer: ["No pagues por adelantado sin verificar", "No aceptes que “así se hace siempre”: quien contrata responde"], fundamento: N + ", numeral 5.5" },
   { perfil: "protector", urg: "ordinario", u: "Trámite ordinario", titulo: "Quiero que reconozcan un árbol muy viejo de mi barrio", autoridad: "La Secretaría · registro de árboles patrimoniales", hacer: ["Reúne fotografías del ejemplar completo y del tronco", "Mide el perímetro a 1.30 metros del suelo", "Documenta su historia y su valor para el barrio", "Envía la propuesta con la ubicación precisa"], noHacer: ["No coloques placas, clavos ni cercas al ejemplar", "No pintes el tronco: el encalado no lo protege"], fundamento: "<span class='dato-pendiente'>Fundamento por confirmar: la Ley Ambiental de la Ciudad de México ya no regula los árboles patrimoniales</span>" },
@@ -608,14 +611,19 @@ const AUTORIDADES = [
   }
 ];
 
-// Datos de demostración: el padrón definitivo se conecta al sistema de SEDEMA
-const PADRON = [
-  { folio: "SEDEMA-POD-2024-00125", nombre: "María Fernanda López García", tipo: "podador", estado: "vigente", expedicion: "15 de marzo de 2024", vigencia: "15 de marzo de 2027" },
-  { folio: "SEDEMA-POD-2021-00342", nombre: "Jorge Alberto Ramírez Solís", tipo: "podador", estado: "vencida", expedicion: "2 de febrero de 2021", vigencia: "2 de febrero de 2024" },
-  { folio: "SEDEMA-DIC-2022-00521", nombre: "Claudia Elena Torres Nava", tipo: "dictaminador", estado: "suspendida", expedicion: "9 de junio de 2022", vigencia: "9 de junio de 2025" }
-];
+/* Padrón de acreditaciones.
+   Los tres registros de demostración con nombre de persona se retiraron el 25 de
+   agosto de 2026 (auditoría CONT-02): producían un falso negativo sistemático
+   contra podadores realmente acreditados, y la búsqueda por subcadena devolvía
+   una ficha completa al escribir una sola letra.
+   Para reactivar el verificador: conectar PADRON al padrón real de la Secretaría
+   y poner PADRON_CONECTADO en true. Mientras sea false, la consulta responde con
+   el aviso de padrón en integración y remite a atención ciudadana. */
+const PADRON_CONECTADO = false;
+const PADRON = [];
 
 const ESTADOS = {
+  enIntegracion: { color: "var(--gris-60)", titulo: "El padrón todavía no está en línea", sub: "La consulta pública de acreditaciones está en integración. Por ahora, confirma la acreditación por teléfono.", nota: "Llama a atención ciudadana de la Secretaría al 55 5345 8187, de lunes a viernes de 9 a 18 h, con el folio y el nombre que aparecen en la credencial." },
   vigente: { color: "var(--estado-exito)", titulo: "Acreditación vigente", sub: "La persona está autorizada para realizar estos trabajos.", nota: "Pide ver la credencial física y confirma que la fotografía corresponda a la persona." },
   vencida: { color: "var(--cafe)", titulo: "Acreditación vencida", sub: "La persona no puede ejercer hasta renovar su acreditación.", nota: "Si te ofrece servicios con una acreditación vencida, no la contrates y denuncia ante la PAOT." },
   suspendida: { color: "var(--estado-error)", titulo: "Acreditación suspendida", sub: "La persona no puede realizar trabajos de arbolado.", nota: "Los trabajos ejecutados con una acreditación suspendida son irregulares y procede sanción." },
@@ -685,18 +693,20 @@ class Component extends DCLogic {
         };
       }),
       etiquetaCampo: st.pestana === "folio" ? "Número de folio" : "Nombre completo",
-      ejemploCampo: st.pestana === "folio" ? "SEDEMA-POD-2024-00125" : "María Fernanda López García",
+      ejemploCampo: st.pestana === "folio" ? "SEDEMA-POD-AAAA-00000" : "Nombre como aparece en la credencial",
       consulta: st.consulta,
       tipo: st.tipo,
       escribir: e => this.setState({ consulta: e.target.value }),
       cambiarTipo: e => this.setState({ tipo: e.target.value }),
       ejemplos: PADRON.map(p => ({ folio: p.folio, usar: () => this.setState({ pestana: "folio", consulta: p.folio, resultado: null }) })),
+      hayEjemplos: PADRON.length > 0,
       verificar: () => {
         const q = st.consulta.trim().toLowerCase();
         if (!q) { this.setState({ resultado: null }); return; }
+        if (!PADRON_CONECTADO) { this.setState({ resultado: { estado: "enIntegracion" } }); return; }
         const hit = PADRON.find(p => {
-          const campo = st.pestana === "folio" ? p.folio : p.nombre;
-          const coincide = campo.toLowerCase().indexOf(q) > -1;
+          const campo = (st.pestana === "folio" ? p.folio : p.nombre).trim().toLowerCase();
+          const coincide = campo === q;
           const tipoOk = st.tipo === "cualquiera" || st.tipo === p.tipo;
           return coincide && tipoOk;
         });
@@ -965,11 +975,14 @@ const METAS = [
   { meta: "Personas acreditadas en manejo de arbolado", base: "Por publicar", objetivo: "Por publicar" }
 ];
 
+/* Los porcentajes de avance se pusieron en 0 el 25 de agosto de 2026 (auditoría
+   DATO-01): las barras mostraban 38, 62, 24 y 80 % junto a un valor "Por publicar".
+   No reponer ninguna cifra aquí hasta que el indicador tenga valor real. */
 const INDICADORES = [
-  { nombre: "Plantación anual", valor: "Por publicar", pct: "38%", nota: "Avance por publicar" },
-  { nombre: "Reportes atendidos", valor: "Por publicar", pct: "62%", nota: "Avance por publicar" },
-  { nombre: "Cobertura de copa", valor: "Por publicar", pct: "24%", nota: "Avance por publicar" },
-  { nombre: "Personas acreditadas", valor: "Por publicar", pct: "80%", nota: "Avance por publicar" }
+  { nombre: "Plantación anual", valor: "Por publicar", pct: "0%", nota: "Avance por publicar" },
+  { nombre: "Reportes atendidos", valor: "Por publicar", pct: "0%", nota: "Avance por publicar" },
+  { nombre: "Cobertura de copa", valor: "Por publicar", pct: "0%", nota: "Avance por publicar" },
+  { nombre: "Personas acreditadas", valor: "Por publicar", pct: "0%", nota: "Avance por publicar" }
 ];
 
 const PROGRAMAS = [

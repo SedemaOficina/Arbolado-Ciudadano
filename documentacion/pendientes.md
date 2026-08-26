@@ -2,7 +2,64 @@
 
 Documento vivo · Actualizar conforme se resuelven pendientes.
 
-Última actualización: 24 de agosto de 2026
+Última actualización: 25 de agosto de 2026
+
+---
+
+## Auditoría 360 · estado de los siete bloqueantes (25 de agosto de 2026)
+
+La ola uno cerró cinco. Los dos que siguen abiertos no se resuelven programando.
+
+- [x] **El JavaScript borraba la página si el CDN no respondía** · 25 ago 2026
+      Alpine 3.15.0 autoalojado en `assets/js/alpine.min.js` y retirada la
+      limpieza en `DOMContentLoaded`. Pérdida máxima de texto: 75 % → 1 %.
+- [x] **El árbol de decisiones mandaba a la Secretaría lo que el artículo 106
+      asigna a la Alcaldía** · 25 ago 2026 · corregido en las dos capas.
+- [x] **Verificador con tres personas inventadas** · 25 ago 2026
+      Registros retirados, coincidencia exacta y aviso de padrón en integración.
+- [x] **Barras de avance con porcentajes fabricados** · 25 ago 2026 · las cuatro en 0.
+- [x] **Borrador interno servido al público** · 25 ago 2026
+      `territorio.html` movido a `herramientas/borradores/`.
+- [ ] **Directorio de las dieciséis alcaldías.** 64 campos en «Falta el dato»:
+      teléfono, correo, dirección y horario de cada una. Es la salida de la
+      mayoría de rutas del árbol de decisiones y el dato más buscado del sitio.
+      Mínimo viable: el número único de atención de cada alcaldía.
+- [ ] **Padrón real de acreditados.** Mientras no exista, el verificador responde
+      con el aviso de padrón en integración. Para reactivarlo: conectar `PADRON`
+      y poner `PADRON_CONECTADO` en `true` en `docs/assets/js/sitio.js`.
+
+### Lo que la auditoría dejó para la ola dos
+
+- [ ] Doce citas normativas con problema, tres de ellas verificadas incorrectas:
+      Ley Orgánica de Alcaldías 32-V (debe ser 32-IV, dos usos), el artículo 304-I
+      para la multa de cien mil unidades, y el reparto por tipo de vialidad con
+      SOBSE, que no tiene sustento en los artículos 7.º, 8.º ni 106.
+- [ ] Subir al proyecto los tres ordenamientos que sostienen citas del sitio y no
+      obran en los archivos: Ley del Heroico Cuerpo de Bomberos (6-IX), Ley de
+      Transparencia (6-I) y Ley de Patrimonio Cultural (55).
+- [ ] Cerrar dos de los cinco fundamentos patrimoniales en amarillo con el numeral
+      7.5 de la NADF-001-RNAT-2015, que sí obra en el proyecto y sí los sustenta.
+- [ ] El correo de la PAOT está sin arroba y se muestra a la vez como correo y
+      como dominio: `denuncia.paot.cdmx.gob.mx`.
+- [ ] El nombre de la norma no coincide con el archivo enlazado: el texto cita
+      NADF-001-RNAT-2015 y el pie descarga NADF-001-RNAT-2016.pdf. Igual con la
+      NADF-006 (2012 frente a 2016).
+- [ ] Decidir el carrusel de la portada: se autoavanza cada nueve segundos sin
+      mecanismo de pausa, lo que incumple el criterio 2.2.2 de WCAG en nivel AA.
+      Dos salidas: reponer el botón, o quitar el autoavance y dejarlo manual.
+- [ ] El buscador de cabecera anuncia un patrón ARIA que no implementa, y ninguna
+      lista del sitio anuncia sus cambios a un lector de pantalla.
+
+### Hallazgos nuevos detectados al aplicar la ola uno
+
+- [ ] **El dictamen técnico en predio privado.** La ficha pide a la persona traer
+      un dictamen hecho por alguien acreditado, pero el artículo 106, párrafo
+      quinto, dice que el dictamen lo emite la Alcaldía. La ola uno ajustó los
+      pasos; falta que el área jurídica confirme quién dictamina y en qué casos.
+- [ ] **Motivos fuera de las cuatro fracciones del 106.** El artículo permite
+      autorizar sólo por riesgo, patrimonio urbanístico, saneamiento y poda de
+      mantenimiento, o infraestructura. El sitio no dice qué pasa cuando el motivo
+      no es ninguno de esos. Definirlo con el área jurídica.
 
 ---
 

@@ -6,6 +6,83 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.0.0/).
 
 ---
 
+## 25 de agosto de 2026 · Ola uno de la auditoría 360
+
+Siete defectos bloqueaban la publicación. Esta entrega cierra cinco y deja los
+otros dos —el directorio de las dieciséis alcaldías y el padrón real— en manos de
+la gestión institucional.
+
+- **El propio JavaScript borraba la página cuando el CDN no respondía.**
+  `sitio.js` ejecutaba `limpiar()` en `DOMContentLoaded` si `window.Alpine` no
+  existía, y esa función elimina los nodos `[data-pr]` del prerenderizado sin nada
+  que los sustituya. Con Alpine servido desde jsDelivr, bastaba que una red
+  filtrara el dominio. Medido antes: directorio perdía el 75 % del texto, política
+  el 73 %, hazlo el 70 %, y **las catorce páginas se quedaban sin los catorce
+  enlaces de navegación**. Medido después: pérdida máxima del 1 % y ninguna página
+  pierde la navegación. Se hicieron dos cosas: **Alpine 3.15.0 se autoaloja** en
+  `assets/js/alpine.min.js` —la misma versión que ya estaba fijada, no una nueva—
+  y se retiró la limpieza en `DOMContentLoaded`. El prerenderizado ahora solo se
+  retira desde `alpine:init`, es decir, cuando Alpine confirma que va a montar. De
+  paso desaparece la única dependencia de un tercero comercial y la fuga de la IP
+  de quien navega hacia jsDelivr.
+
+- **El árbol de decisiones mandaba a la Secretaría lo que la ley asigna a la
+  Alcaldía.** La ruta de predio privado respondía «Necesitas autorización de la
+  Secretaría». El artículo 106, párrafo cuarto, de la Ley Ambiental faculta a la
+  Alcaldía en propiedades particulares para riesgo, patrimonio urbanístico,
+  saneamiento y poda por mantenimiento, e infraestructura; el artículo 110 añade
+  que las Alcaldías prestan el servicio de poda en propiedades particulares. La
+  portada del propio sitio y el Procedimiento 01 ya decían lo correcto: el sitio se
+  contradecía a sí mismo dos veces sobre el mismo acto. Se corrigieron cinco
+  lugares en `sitio.js` y tres en `hazlo.html` —las dos capas—: la ruta
+  `predio:intervenir`, el contacto del lugar «Dentro de mi predio», que pasa de la
+  Secretaría a la alcaldía, y los dos casos cotidianos de jardín. El fundamento del
+  caso de poda por sombra pasa a citar el artículo 106 fracción III y el 110.
+
+- **El verificador de acreditaciones operaba con tres personas inventadas.**
+  Cualquier folio real devolvía «no aparece en el padrón» junto al consejo de no
+  contratar y denunciar: un falso negativo sistemático contra podadores
+  legítimamente acreditados. Y la búsqueda comparaba por subcadena, de modo que
+  escribir la letra «s» devolvía la ficha completa de una de esas personas. Se
+  retiraron los tres registros, se sustituyó la coincidencia por subcadena por
+  **coincidencia exacta**, y mientras `PADRON_CONECTADO` sea `false` la consulta
+  responde con un aviso de padrón en integración que remite a atención ciudadana.
+  Reactivarlo el día que exista el padrón real es cambiar esa constante.
+
+- **Cuatro barras de avance mostraban porcentajes inventados.** Los indicadores de
+  la página de política llevaban `valor: "Por publicar"` y a la vez `pct` de 38,
+  62, 24 y 80 %. Una persona leía que el 80 % de la meta de personas acreditadas
+  estaba cumplida. Los cuatro quedan en 0 en las dos capas.
+
+- **Un borrador interno se servía al público.** `territorio.html` era alcanzable
+  por URL bajo la firma de la Secretaría, con dieciocho notas internas y el aviso
+  literal de no publicar. Se movió a `herramientas/borradores/`. La carpeta
+  publicada pasa de quince páginas a catorce; el sitemap ya no lo incluía.
+
+- **Cinco correcciones de accesibilidad**, todas en un bloque nuevo al final de
+  `paleta.css`, que es la última hoja que cargan las catorce páginas y por eso no
+  hizo falta tocar el HTML de cada una. Contrastes medidos antes y después:
+  titulares del pie 1.67:1 → **8.95:1** (48 nodos en doce páginas); botón
+  «Denunciar en la PAOT» 1.02:1 → **6.84:1**; encabezado sobre el bloque de riesgo
+  4.03:1 → **5.95:1**; aviso amarillo sobre banda oscura 1.42:1 → **9.38:1**. El
+  enlace «Saltar al contenido» ya se hace visible al enfocarlo —seguía en
+  `x=-9999` porque el `left` en línea ganaba a la hoja de estilo—. Y se cerró el
+  desbordamiento horizontal: ninguna página desborda ya a 320, 360, 768 ni 1280 px.
+  La causa era doble: no existía una sola regla de corte de palabra en las cuatro
+  hojas, y varias rejillas pedían un mínimo de 260 a 300 px cuando a 320 px solo
+  quedan 272 útiles.
+
+**Verificación ejecutada** sobre las catorce páginas: axe-core en modo WCAG 2.1 AA
+ya no reporta **ninguna** violación de contraste —antes las había en doce de quince
+páginas—; cero errores de consola; cero recursos con fallo; y las capas estática e
+hidratada siguen coincidiendo palabra por palabra en las tres páginas tocadas.
+
+**Sigue abierto de los siete bloqueantes:** el directorio de las dieciséis
+alcaldías, con sus 64 campos vacíos, y el padrón real de acreditados. Ninguno de
+los dos se resuelve programando.
+
+---
+
 ## 24 de agosto de 2026 · El sitio citaba una ley abrogada
 
 Las quince páginas fundaban su contenido jurídico en la Ley Ambiental de
