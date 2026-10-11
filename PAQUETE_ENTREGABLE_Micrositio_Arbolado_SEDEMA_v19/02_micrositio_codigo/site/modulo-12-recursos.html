@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Centro de recursos · Arbolado Urbano CDMX · SEDEMA</title>
+<meta name="description" content="Centro de descarga y consulta de documentos institucionales, libros, guías prácticas, listados, fotografías y videos sobre arbolado urbano de la Ciudad de México.">
+<link rel="stylesheet" href="assets/css/estilo.css">
+</head>
+<body>
+
+<header class="cabecera">
+  <div class="wrap">
+    <div class="marca">
+      <span class="eyebrow-brand">Gobierno de la Ciudad de México</span>
+      <a href="index.html" class="titulo">Secretaría del Medio Ambiente</a>
+      <span class="subtitulo">Arbolado Urbano</span>
+    </div>
+    <nav class="nav-modulos">
+      <a href="index.html">Inicio</a>
+      <a href="modulo-2-arbol.html">¿Qué necesito?</a>
+      <a href="modulo-3-competencias.html">A quién acudir</a>
+      <a href="modulo-7-patrimoniales.html">Patrimoniales</a>
+      <a href="modulo-9-faq.html">Preguntas frecuentes</a>
+      <a href="modulo-12-recursos.html" class="activo">Recursos</a>
+      <a href="modulo-6-emergencias.html" class="emergencia">Emergencia</a>
+    </nav>
+  </div>
+</header>
+
+<main class="compacto">
+
+<div class="breadcrumb"><a href="index.html">Inicio</a> · <strong>Centro de recursos</strong></div>
+
+<section class="modulo-header">
+  <span class="etiqueta">Módulo 12</span>
+  <h2>Centro de <em>recursos</em></h2>
+  <p>Biblioteca institucional de documentos, libros, guías prácticas, listados, fotografías y videos sobre el arbolado urbano de la Ciudad de México. Todos los materiales son de uso público y descarga libre con atribución a la fuente institucional correspondiente.</p>
+</section>
+
+<!-- BUSCADOR -->
+<div class="recursos-buscador">
+  <h3>Busca un <em>recurso</em></h3>
+  <p class="descr">Escribe una palabra clave (por ejemplo: poda, patrimonial, denuncia, ahuehuete) o filtra por tipo de material.</p>
+  <div class="formulario">
+    <div class="campo">
+      <label for="recursos-busqueda">Palabra clave</label>
+      <input type="text" id="recursos-busqueda" placeholder="Ej. patrimonial, denuncia, poda, especies…" autocomplete="off">
+    </div>
+    <button class="btn btn-sec" onclick="limpiarBusquedaRecursos()">Limpiar</button>
+  </div>
+</div>
+
+<!-- FILTROS POR TIPO -->
+<div class="recursos-filtros">
+  <button class="recursos-filtro-btn activo" data-tipo="todos">
+    <span class="rf-icono">📁</span>
+    <span class="rf-label">Todos</span>
+  </button>
+  <button class="recursos-filtro-btn" data-tipo="documento">
+    <span class="rf-icono">📄</span>
+    <span class="rf-label">Documentos</span>
+  </button>
+  <button class="recursos-filtro-btn" data-tipo="libro">
+    <span class="rf-icono">📚</span>
+    <span class="rf-label">Libros</span>
+  </button>
+  <button class="recursos-filtro-btn" data-tipo="guia">
+    <span class="rf-icono">🌿</span>
+    <span class="rf-label">Guías</span>
+  </button>
+  <button class="recursos-filtro-btn" data-tipo="listado">
+    <span class="rf-icono">📋</span>
+    <span class="rf-label">Listados</span>
+  </button>
+  <button class="recursos-filtro-btn" data-tipo="fotografia">
+    <span class="rf-icono">📷</span>
+    <span class="rf-label">Fotografías</span>
+  </button>
+  <button class="recursos-filtro-btn" data-tipo="video">
+    <span class="rf-icono">▶️</span>
+    <span class="rf-label">Videos</span>
+  </button>
+</div>
+
+<p id="recursos-contador" class="recursos-contador">Cargando recursos…</p>
+
+<!-- GRID DE RECURSOS -->
+<div id="recursos-grid" class="recursos-grid"></div>
+
+<!-- AVISO FINAL -->
+<div class="aviso aviso-info" style="margin-top:48px">
+  <strong>Sobre estos recursos.</strong> Los materiales son de dominio público con atribución a la Secretaría del Medio Ambiente de la Ciudad de México y a los autores institucionales que se indican en cada ficha. Para versiones editables, uso comercial o solicitudes específicas, escribe a <a href="mailto:atencionciudadana@sedema.cdmx.gob.mx">atencionciudadana@sedema.cdmx.gob.mx</a> o llama a SEDEMATEL al <strong>55 5278 9931</strong>.
+</div>
+
+<div class="aviso aviso-verde" style="margin-top:20px">
+  <strong>¿Tienes un recurso que aportar?</strong> Si eres parte de una institución académica, colectivo ciudadano u organización de la sociedad civil y cuentas con material relevante para el arbolado urbano de la CDMX (estudios, fotografías, videos, listados), escribe a SEDEMA para evaluar su incorporación al centro de recursos.
+</div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <h5>SEDEMA</h5>
+      <p>Plaza de la Constitución 1, 4° piso<br>Centro Histórico, Cuauhtémoc<br>Ciudad de México, CP 06000</p>
+    </div>
+    <div>
+      <h5>Atención ciudadana</h5>
+      <p>SEDEMATEL · 55 5278 9931<br>LOCATEL · 55 5658 1111<br>Emergencias · 911</p>
+    </div>
+    <div>
+      <h5>Denuncias ambientales</h5>
+      <p><a href="https://www.paot.cdmx.gob.mx" target="_blank" rel="noopener">PAOT · denuncia.paot.cdmx.gob.mx</a><br>Tel. 55 5265 0780</p>
+    </div>
+    <div>
+      <h5>Marco normativo</h5>
+      <p>Ley Ambiental CDMX<br>NADF-001-RNAT-2015<br>Reglamento de Impacto Ambiental</p>
+    </div>
+  </div>
+  <div class="copy">
+    Gobierno de la Ciudad de México · Secretaría del Medio Ambiente · 2026 · Todos los derechos reservados
+  </div>
+</footer>
+
+<script src="assets/js/sitio.js"></script>
+<script src="assets/js/recursos.js"></script>
+</body>
+</html>

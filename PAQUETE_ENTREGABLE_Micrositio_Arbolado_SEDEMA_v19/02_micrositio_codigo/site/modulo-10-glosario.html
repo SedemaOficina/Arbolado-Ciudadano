@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glosario ciudadano · Arbolado Urbano · SEDEMA CDMX</title>
+<meta name="description" content="40 términos técnico-jurídicos sobre arbolado urbano traducidos a lenguaje ciudadano con fundamento normativo: AVA, ANP, dictamen, restitución, esquilmo, UMA y más.">
+<link rel="stylesheet" href="assets/css/estilo.css">
+</head>
+<body>
+
+<div class="barra-gob">
+  <div class="wrap">
+    <span>Gobierno de la Ciudad de México · Secretaría del Medio Ambiente</span>
+    <a href="https://www.cdmx.gob.mx" target="_blank" rel="noopener">cdmx.gob.mx</a>
+  </div>
+</div>
+
+<header class="institucional">
+  <div class="wrap">
+    <div class="marca">
+      <div class="logo">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2c-2.5 2-4 4.5-4 7 0 1.5.5 2.8 1.3 3.8L8 14v8h8v-8l-1.3-1.2c.8-1 1.3-2.3 1.3-3.8 0-2.5-1.5-5-4-7z"/></svg>
+      </div>
+      <div class="tit">
+        <span class="pre">SEDEMA · CDMX</span>
+        <span class="nombre">Arbolado Urbano</span>
+      </div>
+      <button class="menu-toggle" onclick="toggleMenu()" aria-label="Menú">☰</button>
+    </div>
+    <nav class="principal">
+      <a href="index.html">Inicio</a>
+      <a href="modulo-2-arbol.html">¿Qué necesito?</a>
+      <a href="modulo-3-competencias.html">A quién acudir</a>
+      <a href="modulo-8-tramites.html">Trámites</a>
+      <a href="modulo-9-faq.html">Preguntas frecuentes</a>
+      <a href="modulo-12-recursos.html">Recursos</a>
+      <a href="modulo-6-emergencias.html" class="btn-emergencia">⚠ Emergencia</a>
+    </nav>
+  </div>
+</header>
+
+<main class="compacto">
+
+<div class="breadcrumb"><a href="index.html">Inicio</a> · <strong>Glosario ciudadano</strong></div>
+
+<section class="modulo-header">
+  <span class="etiqueta">Módulo 10</span>
+  <h2>Glosario <em>ciudadano</em></h2>
+  <p>Cuarenta términos técnico-jurídicos sobre arbolado urbano de la Ciudad de México, traducidos a lenguaje claro y con fundamento normativo verificable. Organizados en cinco categorías: autoridades, territorio, trámites, técnica y sanciones. Cada definición cita artículo y norma aplicable.</p>
+</section>
+
+<div class="glosario-buscador">
+  <h3>Busca un término</h3>
+  <p class="descr">Escribe la palabra que quieras consultar (incluso una sigla), filtra por categoría o navega por la primera letra. Las definiciones citan su base legal.</p>
+  <div class="formulario">
+    <div class="campo">
+      <label for="glosario-busqueda">Palabra o sigla</label>
+      <input type="text" id="glosario-busqueda" placeholder="Ej. AVA, dictamen, restitución, esquilmo…" autocomplete="off">
+    </div>
+    <button class="btn btn-sec" onclick="limpiarBusquedaGlosario()">Restablecer</button>
+  </div>
+  <div id="glosario-contador" class="glosario-contador"></div>
+</div>
+
+<div id="glosario-categorias" class="glosario-categorias"></div>
+
+<div id="glosario-alfabeto" class="glosario-alfabeto"></div>
+
+<div id="glosario-contenedor"></div>
+
+<div class="aviso aviso-info" style="margin-top:48px">
+  <strong>¿No encuentras el término que buscas?</strong> Llama a SEDEMATEL <strong>55 5278 9931</strong> o consulta las <a href="modulo-9-faq.html">Preguntas frecuentes</a>. Para denunciar irregularidades, acude a la <a href="https://www.paot.cdmx.gob.mx" target="_blank" rel="noopener">PAOT</a>.
+</div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <h5>SEDEMA</h5>
+      <p>Plaza de la Constitución 1, 4° piso<br>Centro Histórico, Cuauhtémoc<br>Ciudad de México, CP 06000</p>
+    </div>
+    <div>
+      <h5>Atención ciudadana</h5>
+      <p>SEDEMATEL · 55 5278 9931<br>LOCATEL · 55 5658 1111<br>Emergencias · 911</p>
+    </div>
+    <div>
+      <h5>Denuncias ambientales</h5>
+      <p><a href="https://www.paot.cdmx.gob.mx" target="_blank" rel="noopener">PAOT · denuncia.paot.cdmx.gob.mx</a><br>Tel. 55 5265 0780<br>Fiscalía Ambiental · 55 5345 5000</p>
+    </div>
+    <div>
+      <h5>Marco normativo</h5>
+      <p>Ley Ambiental CDMX<br>NADF-001-RNAT-2015<br>NADF-006-RNAT-2012</p>
+    </div>
+  </div>
+  <div class="copy">
+    Gobierno de la Ciudad de México · Secretaría del Medio Ambiente · 2026 · Todos los derechos reservados
+  </div>
+</footer>
+
+<script src="assets/js/sitio.js"></script>
+<script src="assets/js/glosario.js"></script>
+</body>
+</html>

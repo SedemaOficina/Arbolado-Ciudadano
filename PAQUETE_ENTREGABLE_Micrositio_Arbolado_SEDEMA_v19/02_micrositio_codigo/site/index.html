@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arbolado Urbano · SEDEMA · Gobierno de la Ciudad de México</title>
+<meta name="description" content="Tus dudas sobre el arbolado de la Ciudad de México, en un solo lugar. Orientación oficial sobre poda, derribo, trasplante, denuncias y trámites.">
+<link rel="stylesheet" href="assets/css/estilo.css">
+</head>
+<body>
+
+<div class="barra-gob">
+  <div class="wrap">
+    <span>Gobierno de la Ciudad de México · Secretaría del Medio Ambiente</span>
+    <a href="https://www.cdmx.gob.mx" target="_blank" rel="noopener">cdmx.gob.mx</a>
+  </div>
+</div>
+
+<header class="institucional">
+  <div class="wrap">
+    <div class="marca">
+      <div class="logo">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2c-2.5 2-4 4.5-4 7 0 1.5.5 2.8 1.3 3.8L8 14v8h8v-8l-1.3-1.2c.8-1 1.3-2.3 1.3-3.8 0-2.5-1.5-5-4-7z"/></svg>
+      </div>
+      <div class="tit">
+        <span class="pre">SEDEMA · CDMX</span>
+        <span class="nombre">Arbolado Urbano</span>
+      </div>
+      <button class="menu-toggle" onclick="toggleMenu()" aria-label="Menú">☰</button>
+    </div>
+    <nav class="principal">
+      <a href="index.html" class="activo">Inicio</a>
+      <a href="modulo-2-arbol.html">¿Qué necesito?</a>
+      <a href="modulo-3-competencias.html">A quién acudir</a>
+      <a href="modulo-8-tramites.html">Trámites</a>
+      <a href="modulo-9-faq.html">Preguntas frecuentes</a>
+      <a href="modulo-12-recursos.html">Recursos</a>
+      <a href="modulo-6-emergencias.html" class="btn-emergencia">⚠ Emergencia</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="texto">
+      <div class="eyebrow">Secretaría del Medio Ambiente</div>
+      <h1>Tus dudas sobre <em>el arbolado</em> de tu ciudad, en un solo lugar.</h1>
+      <p class="lead">Si tienes un árbol que te preocupa, una poda que necesitas o una intervención que quieres denunciar, aquí encuentras a quién acudir, qué trámite hacer y qué dice la ley.</p>
+      <div class="acciones">
+        <a href="#asistente-rapido" class="btn-primario">Resolver mi caso ahora <span class="flecha">↓</span></a>
+        <a href="#verificador-padron" class="btn-secundario">Verificar acreditación</a>
+      </div>
+    </div>
+    <div class="ilustracion">
+      <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" width="400" height="400">
+        <!-- halo -->
+        <circle cx="240" cy="190" r="170" fill="#E8F0E3" opacity="0.45"/>
+        <!-- copa exterior -->
+        <circle cx="240" cy="170" r="125" fill="#2D7A3E"/>
+        <!-- copa intermedia -->
+        <circle cx="200" cy="155" r="78" fill="#1E4D2B" opacity="0.55"/>
+        <circle cx="280" cy="190" r="68" fill="#1E4D2B" opacity="0.55"/>
+        <circle cx="265" cy="135" r="55" fill="#1E4D2B" opacity="0.45"/>
+        <!-- puntos hojas -->
+        <circle cx="180" cy="120" r="3" fill="#fff" opacity="0.7"/>
+        <circle cx="295" cy="180" r="2.5" fill="#fff" opacity="0.65"/>
+        <circle cx="240" cy="220" r="2.5" fill="#fff" opacity="0.55"/>
+        <circle cx="320" cy="140" r="2" fill="#fff" opacity="0.6"/>
+        <circle cx="210" cy="200" r="2" fill="#fff" opacity="0.5"/>
+        <!-- tronco -->
+        <rect x="232" y="290" width="16" height="72" fill="#8B6F47"/>
+        <!-- suelo -->
+        <line x1="155" y1="362" x2="325" y2="362" stroke="#8B6F47" stroke-width="1.5" opacity="0.7"/>
+        <line x1="148" y1="362" x2="158" y2="368" stroke="#8B6F47" stroke-width="1.5" opacity="0.7" stroke-linecap="round"/>
+        <line x1="332" y1="362" x2="322" y2="368" stroke="#8B6F47" stroke-width="1.5" opacity="0.7" stroke-linecap="round"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<main>
+
+<!-- ========== HERRAMIENTAS INTERACTIVAS ========== -->
+<section class="herramientas-hero">
+  <div class="herramientas-intro">
+    <div class="eyebrow">Herramientas en vivo</div>
+    <h2>Empieza <em>aquí</em>. Resuelve tu caso en segundos.</h2>
+    <p class="desc">Dos herramientas interactivas para resolver lo más consultado: identificar a la autoridad competente para tu caso y verificar si quien te ofrece servicios está acreditado por SEDEMA.</p>
+  </div>
+
+  <!-- ===== GRID DE 2 COLUMNAS: ASISTENTE + VERIFICADOR ===== -->
+  <div class="herramientas-grid">
+
+    <!-- A) ASISTENTE RÁPIDO -->
+    <div class="herramienta-bloque" id="asistente-rapido">
+      <div class="herramienta-cabecera">
+        <div class="herramienta-num">A</div>
+        <div class="herramienta-titulo">
+          <span class="eyebrow-mini">Asistente · 1 minuto</span>
+          <h3>¿Qué necesito <em>hacer</em>?</h3>
+          <p>Responde una pregunta a la vez y te llevamos a la autoridad correcta, con la base legal aplicable conforme a la Ley Ambiental CDMX y la NADF-001.</p>
+        </div>
+      </div>
+      <div id="arbol-home-contenedor" class="arbol-home-contenedor"></div>
+    </div>
+
+    <!-- B) VERIFICADOR DE PADRÓN -->
+    <div class="herramienta-bloque" id="verificador-padron">
+      <div class="herramienta-cabecera">
+        <div class="herramienta-num">B</div>
+        <div class="herramienta-titulo">
+          <span class="eyebrow-mini">Padrón oficial · Acreditaciones SEDEMA</span>
+          <h3>Consulta el <em>padrón oficial</em></h3>
+          <p>Antes de contratar a quien podará, derribará o dictaminará tu árbol, verifica que tenga acreditación vigente conforme a la NADF-001-RNAT-2015.</p>
+        </div>
+      </div>
+
+      <div class="verif-controles">
+        <div class="verif-grid">
+          <div class="campo">
+            <label for="folio-home">Número de folio</label>
+            <input type="text" id="folio-home" placeholder="Ej. SEDEMA-POD-2024-00125" autocomplete="off">
+          </div>
+          <div class="campo">
+            <label for="tipo-home">Tipo</label>
+            <select id="tipo-home">
+              <option value="cualquiera">Cualquiera</option>
+              <option value="podador">Podador</option>
+              <option value="dictaminador">Dictaminador</option>
+            </select>
+          </div>
+          <div class="campo campo-boton">
+            <button class="btn" onclick="verificarPadronHome()">Verificar</button>
+          </div>
+        </div>
+        <p class="verif-hint">¿No tienes folio? Pídelo a la persona antes de contratar. La credencial es <strong>única, personal e intransferible</strong>.</p>
+        <div class="verif-folios-ejemplo">
+          <span>Prueba con un folio:</span>
+          <button class="folio-chip" onclick="usarFolioEjemplo('SEDEMA-POD-2024-00125')">SEDEMA-POD-2024-00125</button>
+          <button class="folio-chip" onclick="usarFolioEjemplo('SEDEMA-POD-2021-00342')">SEDEMA-POD-2021-00342</button>
+          <button class="folio-chip" onclick="usarFolioEjemplo('SEDEMA-POD-2022-00521')">SEDEMA-POD-2022-00521</button>
+        </div>
+      </div>
+
+      <div id="verif-resultado" class="verif-resultado"></div>
+    </div>
+
+  </div>
+
+  <!-- ===== BLOQUE HERMANO: GUÍA VISUAL DE CREDENCIAL ===== -->
+  <div class="herramienta-bloque herramienta-bloque-ancho" id="guia-credencial">
+    <div class="credencial-guia">
+      <div class="credencial-guia-header">
+        <span class="eyebrow-mini">Identifica la credencial</span>
+        <h4>¿Cómo se ve una credencial <em>oficial</em>?</h4>
+        <p>Antes de contratar, solicita ver la credencial física de la persona. Estos son los seis elementos que debes verificar visualmente conforme a la NADF-001-RNAT-2015, numeral 5.5.</p>
+      </div>
+
+      <div class="credencial-ilustracion">
+        <!-- TARJETA DEMO -->
+        <svg viewBox="0 0 820 480" xmlns="http://www.w3.org/2000/svg" class="credencial-svg" role="img" aria-label="Credencial de acreditación SEDEMA demostrativa">
+          <defs>
+            <linearGradient id="bordeTop" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#1E4D2B"/>
+              <stop offset="50%" stop-color="#2D7A3E"/>
+              <stop offset="100%" stop-color="#b28e5c"/>
+            </linearGradient>
+            <linearGradient id="fotoBg" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#E8F0E3"/>
+              <stop offset="100%" stop-color="#C9D9C0"/>
+            </linearGradient>
+          </defs>
+
+          <!-- Sombra y tarjeta (desplazada para dar margen a marcadores) -->
+          <rect x="72" y="56" width="640" height="384" rx="10" fill="#000" opacity="0.08"/>
+          <rect x="70" y="50" width="640" height="384" rx="10" fill="#FFFAE9" stroke="#D1D1D1" stroke-width="1"/>
+          <rect x="70" y="50" width="640" height="8" rx="10" fill="url(#bordeTop)"/>
+
+          <!-- Encabezado institucional -->
+          <text x="92" y="86" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#9d2148" letter-spacing="1.5">GOBIERNO DE LA CIUDAD DE MÉXICO</text>
+          <text x="92" y="102" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#1A1A1A" letter-spacing="0.5">SECRETARÍA DEL MEDIO AMBIENTE</text>
+
+          <!-- Logo circular -->
+          <circle cx="680" cy="92" r="22" fill="#1E4D2B"/>
+          <path d="M680 80 c-3 2.5 -5 5.5 -5 8.5 0 1.9 0.6 3.5 1.6 4.8 L676 94.5 v9.5 h8 v-9.5 l-0.6 -1.2 c1 -1.3 1.6 -2.9 1.6 -4.8 0 -3 -2 -6 -5 -8.5z" fill="#fff"/>
+
+          <!-- Etiqueta de tipo -->
+          <rect x="92" y="120" width="130" height="22" rx="11" fill="#1E4D2B"/>
+          <text x="157" y="135" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#fff" text-anchor="middle" letter-spacing="2">ACREDITACIÓN</text>
+
+          <!-- Subtítulo -->
+          <text x="92" y="170" font-family="Source Serif 4, Georgia, serif" font-size="22" font-weight="600" fill="#1E4D2B">Podador autorizado</text>
+          <text x="92" y="189" font-family="Inter, sans-serif" font-size="11" fill="#5C5C5C" letter-spacing="0.3">Poda, derribo, trasplante y restitución de arbolado urbano</text>
+
+          <!-- Foto del titular -->
+          <rect x="92" y="212" width="120" height="150" rx="6" fill="url(#fotoBg)" stroke="#D1D1D1" stroke-width="1"/>
+          <circle cx="152" cy="270" r="28" fill="#9A9A9A" opacity="0.5"/>
+          <rect x="122" y="307" width="60" height="40" rx="20" fill="#9A9A9A" opacity="0.5"/>
+          <text x="152" y="378" font-family="Inter, sans-serif" font-size="9" fill="#818788" text-anchor="middle" letter-spacing="1">FOTOGRAFÍA</text>
+
+          <!-- Datos principales -->
+          <text x="238" y="230" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="#818788" letter-spacing="1.5">NOMBRE COMPLETO</text>
+          <text x="238" y="248" font-family="Source Serif 4, Georgia, serif" font-size="17" font-weight="600" fill="#1A1A1A">María Fernanda López García</text>
+
+          <text x="238" y="280" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="#818788" letter-spacing="1.5">NÚMERO DE FOLIO</text>
+          <text x="238" y="300" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="#9d2148" letter-spacing="0.5">SEDEMA-POD-2024-00125</text>
+
+          <text x="238" y="328" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="#818788" letter-spacing="1.5">EXPEDICIÓN</text>
+          <text x="238" y="344" font-family="Inter, sans-serif" font-size="13" font-weight="500" fill="#1A1A1A">15 / 03 / 2024</text>
+
+          <text x="400" y="328" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="#818788" letter-spacing="1.5">VIGENCIA HASTA</text>
+          <text x="400" y="344" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#027a35">15 / 03 / 2027</text>
+
+          <!-- Huella digital -->
+          <rect x="560" y="220" width="80" height="80" rx="4" fill="#F4F0F0" stroke="#D1D1D1" stroke-width="1"/>
+          <g transform="translate(600 260)" stroke="#818788" stroke-width="1" fill="none" opacity="0.7">
+            <ellipse cx="0" cy="0" rx="20" ry="24"/>
+            <ellipse cx="0" cy="0" rx="14" ry="18"/>
+            <ellipse cx="0" cy="0" rx="8" ry="12"/>
+            <ellipse cx="0" cy="0" rx="3" ry="6"/>
+          </g>
+          <text x="600" y="318" font-family="Inter, sans-serif" font-size="8" fill="#818788" text-anchor="middle" letter-spacing="1">HUELLA</text>
+
+          <!-- Firma -->
+          <path d="M 92 402 Q 118 387 143 402 T 193 400 Q 213 394 228 402" stroke="#1A1A1A" stroke-width="1.5" fill="none" opacity="0.7"/>
+          <line x1="92" y1="416" x2="268" y2="416" stroke="#5C5C5C" stroke-width="0.8"/>
+          <text x="92" y="430" font-family="Inter, sans-serif" font-size="8.5" fill="#5C5C5C" letter-spacing="0.5">Firma del titular de SEDEMA</text>
+
+          <!-- Leyenda -->
+          <text x="688" y="416" font-family="Inter, sans-serif" font-size="8" fill="#818788" text-anchor="end" letter-spacing="0.3" font-style="italic">Única, personal e intransferible</text>
+          <text x="688" y="428" font-family="Inter, sans-serif" font-size="7.5" fill="#9A9A9A" text-anchor="end" letter-spacing="0.3">NADF-001-RNAT-2015, numeral 5.5</text>
+
+          <!-- ====== MARCADORES NUMERADOS ====== -->
+          <!-- 1. Folio (a la derecha) -->
+          <g class="anotacion">
+            <line x1="478" y1="295" x2="755" y2="248" stroke="#9d2148" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="775" cy="244" r="16" fill="#9d2148"/>
+            <text x="775" y="250" font-family="Inter, sans-serif" font-size="15" font-weight="700" fill="#fff" text-anchor="middle">1</text>
+          </g>
+          <!-- 2. Foto (a la izquierda) -->
+          <g class="anotacion">
+            <line x1="92" y1="290" x2="44" y2="290" stroke="#9d2148" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="26" cy="290" r="16" fill="#9d2148"/>
+            <text x="26" y="296" font-family="Inter, sans-serif" font-size="15" font-weight="700" fill="#fff" text-anchor="middle">2</text>
+          </g>
+          <!-- 3. Vigencia (a la derecha-abajo) -->
+          <g class="anotacion">
+            <line x1="478" y1="344" x2="755" y2="344" stroke="#9d2148" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="775" cy="344" r="16" fill="#9d2148"/>
+            <text x="775" y="350" font-family="Inter, sans-serif" font-size="15" font-weight="700" fill="#fff" text-anchor="middle">3</text>
+          </g>
+          <!-- 4. Firma (abajo izquierda) -->
+          <g class="anotacion">
+            <line x1="160" y1="416" x2="160" y2="458" stroke="#9d2148" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="160" cy="466" r="14" fill="#9d2148"/>
+            <text x="160" y="471" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">4</text>
+          </g>
+          <!-- 5. Huella (derecha-arriba) -->
+          <g class="anotacion">
+            <line x1="640" y1="260" x2="755" y2="160" stroke="#9d2148" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="775" cy="148" r="16" fill="#9d2148"/>
+            <text x="775" y="154" font-family="Inter, sans-serif" font-size="15" font-weight="700" fill="#fff" text-anchor="middle">5</text>
+          </g>
+          <!-- 6. Tipo (arriba izquierda) -->
+          <g class="anotacion">
+            <line x1="157" y1="120" x2="157" y2="32" stroke="#9d2148" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="157" cy="20" r="16" fill="#9d2148"/>
+            <text x="157" y="26" font-family="Inter, sans-serif" font-size="15" font-weight="700" fill="#fff" text-anchor="middle">6</text>
+          </g>
+        </svg>
+
+        <!-- Leyenda numerada -->
+        <ol class="credencial-leyenda">
+          <li>
+            <span class="num-marca">1</span>
+            <div>
+              <strong>Número de folio</strong>
+              Formato <code>SEDEMA-POD-AAAA-NNNNN</code> para podadores o <code>SEDEMA-DIC-AAAA-NNNNN</code> para dictaminadores. Es el dato que ingresas arriba para verificar.
+            </div>
+          </li>
+          <li>
+            <span class="num-marca">2</span>
+            <div>
+              <strong>Fotografía del titular</strong>
+              Debe coincidir con la persona que tienes enfrente. Sin tachaduras, recortes ni alteraciones.
+            </div>
+          </li>
+          <li>
+            <span class="num-marca">3</span>
+            <div>
+              <strong>Vigencia</strong>
+              Fecha hasta la que la acreditación es válida. Si está vencida, la persona <strong>no puede ejercer</strong> hasta renovar.
+            </div>
+          </li>
+          <li>
+            <span class="num-marca">4</span>
+            <div>
+              <strong>Firma del titular de SEDEMA</strong>
+              Debe estar presente y legible. Una credencial sin firma del titular no es válida.
+            </div>
+          </li>
+          <li>
+            <span class="num-marca">5</span>
+            <div>
+              <strong>Huella digital</strong>
+              Elemento de identificación biométrica del titular de la credencial.
+            </div>
+          </li>
+          <li>
+            <span class="num-marca">6</span>
+            <div>
+              <strong>Tipo de acreditación</strong>
+              <code>ACREDITACIÓN</code> (podador) o <code>DICTAMINADOR</code>. Define qué trabajos puede realizar la persona.
+            </div>
+          </li>
+        </ol>
+
+        <div class="credencial-aviso">
+          <strong>Importante.</strong> Esta imagen es ilustrativa. La credencial oficial tiene los mismos elementos pero el diseño visual lo define SEDEMA. Si tienes dudas sobre la autenticidad de una credencial física, llama a SEDEMATEL al <strong>55 5278 9931</strong>.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="seccion-titulo">
+  <div class="eyebrow">Contenidos del sitio</div>
+  <h2>Explora <em>los temas</em></h2>
+  <p class="desc">Once módulos temáticos para resolver dudas concretas. Desde principios básicos hasta verificación de credenciales, denuncias y reconocimiento de árboles patrimoniales.</p>
+</section>
+
+<div class="grilla-modulos">
+
+  <a href="modulo-1-abc.html" class="modulo-card">
+    <span class="num">01 · INTRODUCCIÓN</span>
+    <h3>ABC del arbolado</h3>
+    <p>Cinco reglas básicas que todo habitante de la CDMX debe saber y los tres errores comunes que pueden costarte una sanción.</p>
+    <span class="flecha">Leer →</span>
+  </a>
+
+  <a href="modulo-2-arbol.html" class="modulo-card">
+    <span class="num">02 · ORIENTACIÓN</span>
+    <h3>¿Qué necesito hacer?</h3>
+    <p>Árbol de decisiones interactivo que te guía paso a paso hacia la autoridad correcta según tu situación específica.</p>
+    <span class="flecha">Comenzar →</span>
+  </a>
+
+  <a href="modulo-3-competencias.html" class="modulo-card">
+    <span class="num">03 · COMPETENCIAS</span>
+    <h3>¿A quién le toca qué?</h3>
+    <p>Mapa de competencias institucionales, verificador del padrón de podadores y catálogo de áreas bajo administración SEDEMA.</p>
+    <span class="flecha">Consultar →</span>
+  </a>
+
+  <a href="modulo-4-procedimientos.html" class="modulo-card">
+    <span class="num">04 · PROCEDIMIENTOS</span>
+    <h3>Poda, derribo y trasplante</h3>
+    <p>Flujo paso a paso de los tres procedimientos técnicos con actor responsable y fundamento normativo.</p>
+    <span class="flecha">Consultar →</span>
+  </a>
+
+  <a href="modulo-5-casos.html" class="modulo-card">
+    <span class="num">05 · CASOS</span>
+    <h3>Situaciones cotidianas</h3>
+    <p>25 casos reales resueltos con qué hacer, qué no hacer y fundamento normativo. Filtrables por lugar y urgencia.</p>
+    <span class="flecha">Consultar →</span>
+  </a>
+
+  <a href="modulo-6-emergencias.html" class="modulo-card emergencia">
+    <span class="num">06 · EMERGENCIAS</span>
+    <h3>Riesgos arbóreos</h3>
+    <p>Tres niveles de respuesta según el riesgo. Identifica si llamar al 911, a la Alcaldía o a SEDEMA.</p>
+    <span class="flecha">Consultar →</span>
+  </a>
+
+  <a href="modulo-7-patrimoniales.html" class="modulo-card">
+    <span class="num">07 · PATRIMONIO</span>
+    <h3>Árboles patrimoniales</h3>
+    <p>Régimen especial de protección, criterios técnicos y procedimiento para proponer un ejemplar al registro.</p>
+    <span class="flecha">Consultar →</span>
+  </a>
+
+  <a href="modulo-8-tramites.html" class="modulo-card">
+    <span class="num">08 · TRÁMITES</span>
+    <h3>Catálogo de trámites</h3>
+    <p>6 fichas estandarizadas de autorización, acreditación e impacto ambiental con requisitos, plazos y fundamento.</p>
+    <span class="flecha">Consultar →</span>
+  </a>
+
+  <a href="modulo-9-faq.html" class="modulo-card">
+    <span class="num">09 · DUDAS</span>
+    <h3>Preguntas frecuentes</h3>
+    <p>Las 50 dudas más comunes sobre arbolado urbano, resueltas en lenguaje claro con fundamento normativo.</p>
+    <span class="flecha">Consultar →</span>
+  </a>
+
+  <a href="modulo-10-glosario.html" class="modulo-card">
+    <span class="num">10 · GLOSARIO</span>
+    <h3>Glosario ciudadano</h3>
+    <p>40 términos técnicos traducidos a lenguaje claro: AVA, ANP, dictamen, esquilmo, restitución y más.</p>
+    <span class="flecha">Consultar →</span>
+  </a>
+
+  <a href="modulo-11-directorio.html" class="modulo-card">
+    <span class="num">11 · DIRECTORIO</span>
+    <h3>Directorio institucional</h3>
+    <p>Contactos de SEDEMA, las 16 Alcaldías, PAOT, SOBSE, Bomberos y CONANP con buscador y filtros.</p>
+    <span class="flecha">Consultar →</span>
+  </a>
+
+  <a href="modulo-12-recursos.html" class="modulo-card">
+    <span class="num">12 · RECURSOS</span>
+    <h3>Centro de recursos</h3>
+    <p>Biblioteca de documentos, libros, guías, listados, fotografías y videos institucionales sobre arbolado urbano.</p>
+    <span class="flecha">Consultar →</span>
+  </a>
+
+</div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <h5>SEDEMA</h5>
+      <p>Plaza de la Constitución 1, 4° piso<br>Centro Histórico, Cuauhtémoc<br>Ciudad de México, CP 06000</p>
+    </div>
+    <div>
+      <h5>Atención ciudadana</h5>
+      <p>SEDEMATEL · 55 5278 9931<br>LOCATEL · 55 5658 1111<br>Emergencias · 911</p>
+    </div>
+    <div>
+      <h5>Denuncias ambientales</h5>
+      <p><a href="https://www.paot.cdmx.gob.mx" target="_blank" rel="noopener">PAOT · denuncia.paot.cdmx.gob.mx</a><br>Tel. 55 5265 0780<br>Fiscalía Ambiental · 55 5345 5000</p>
+    </div>
+    <div>
+      <h5>Marco normativo</h5>
+      <p>Ley Ambiental CDMX<br>NADF-001-RNAT-2015<br>NADF-006-RNAT-2012</p>
+    </div>
+  </div>
+  <div class="copy">
+    Gobierno de la Ciudad de México · Secretaría del Medio Ambiente · 2026 · Todos los derechos reservados
+  </div>
+</footer>
+
+<script src="assets/js/sitio.js"></script>
+</body>
+</html>

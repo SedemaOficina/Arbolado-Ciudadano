@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>¿A quién le toca qué? · Arbolado Urbano · SEDEMA CDMX</title>
+<meta name="description" content="Mapa de competencias institucionales, verificador de acreditaciones y catálogo de áreas bajo administración de SEDEMA.">
+<link rel="stylesheet" href="assets/css/estilo.css">
+</head>
+<body>
+
+<div class="barra-gob">
+  <div class="wrap">
+    <span>Gobierno de la Ciudad de México · Secretaría del Medio Ambiente</span>
+    <a href="https://www.cdmx.gob.mx" target="_blank" rel="noopener">cdmx.gob.mx</a>
+  </div>
+</div>
+
+<header class="institucional">
+  <div class="wrap">
+    <div class="marca">
+      <div class="logo">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2c-2.5 2-4 4.5-4 7 0 1.5.5 2.8 1.3 3.8L8 14v8h8v-8l-1.3-1.2c.8-1 1.3-2.3 1.3-3.8 0-2.5-1.5-5-4-7z"/></svg>
+      </div>
+      <div class="tit">
+        <span class="pre">SEDEMA · CDMX</span>
+        <span class="nombre">Arbolado Urbano</span>
+      </div>
+      <button class="menu-toggle" onclick="toggleMenu()" aria-label="Menú">☰</button>
+    </div>
+    <nav class="principal">
+      <a href="index.html">Inicio</a>
+      <a href="modulo-2-arbol.html">¿Qué necesito?</a>
+      <a href="modulo-3-competencias.html" class="activo">A quién acudir</a>
+      <a href="modulo-8-tramites.html">Trámites</a>
+      <a href="modulo-9-faq.html">Preguntas frecuentes</a>
+      <a href="modulo-12-recursos.html">Recursos</a>
+      <a href="modulo-6-emergencias.html" class="btn-emergencia">⚠ Emergencia</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<div class="breadcrumb"><a href="index.html">Inicio</a> · <strong>A quién acudir</strong></div>
+
+<section class="modulo-header">
+  <span class="etiqueta">Módulo 03</span>
+  <h2>¿A quién le <em>toca qué</em>?</h2>
+  <p>Las autoridades competentes para el <strong>cuidado, mantenimiento y mejoramiento del arbolado urbano</strong> dependen de <strong>dónde se ubica el árbol</strong>.</p>
+</section>
+
+<!-- ========== REGLA DE ORO ========== -->
+<section class="regla-oro">
+  <div class="regla-oro-cabecera">
+    <span class="regla-oro-etiqueta">La regla de oro</span>
+    <h3>¿Quién atiende <em>cada árbol</em>?</h3>
+    <p class="regla-oro-desc">Esta es la confusión principal de la ciudadanía. Memorízala y sabrás a quién acudir el 90% de las veces.</p>
+  </div>
+
+  <div class="regla-oro-tarjetas">
+
+    <!-- TARJETA 1 · VIALIDAD PRIMARIA -->
+    <article class="regla-tarjeta regla-primaria">
+      <span class="regla-tipo">Vialidad primaria</span>
+      <div class="regla-autoridad">
+        <span class="regla-pildora">SEDEMA <span class="op-mas">+</span> SOBSE</span>
+      </div>
+      <p class="regla-descripcion">Ejes viales, avenidas principales, periféricos y calzadas.</p>
+      <div class="regla-ejemplos">
+        <span class="regla-ejemplos-titulo">Por ejemplo</span>
+        <ul>
+          <li>Eje Central</li>
+          <li>Anillo Periférico</li>
+          <li>Paseo de la Reforma</li>
+          <li>Insurgentes</li>
+          <li>Calzada de Tlalpan</li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- TARJETA 2 · VIALIDAD SECUNDARIA -->
+    <article class="regla-tarjeta regla-secundaria">
+      <span class="regla-tipo">Vialidad secundaria</span>
+      <div class="regla-autoridad">
+        <span class="regla-pildora">Alcaldía</span>
+      </div>
+      <p class="regla-descripcion">Calles locales, colonias, fraccionamientos y predios particulares bajo su demarcación.</p>
+      <div class="regla-ejemplos">
+        <span class="regla-ejemplos-titulo">Por ejemplo</span>
+        <ul>
+          <li>Calles de tu colonia</li>
+          <li>Cerradas y privadas</li>
+          <li>Callejones</li>
+          <li>Andadores vecinales</li>
+          <li>Jardín de tu casa</li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- TARJETA 3 · ANP / AVA -->
+    <article class="regla-tarjeta regla-anpava">
+      <span class="regla-tipo">ANP y áreas de valor ambiental</span>
+      <div class="regla-autoridad">
+        <span class="regla-pildora">SEDEMA <em>exclusivamente</em></span>
+      </div>
+      <p class="regla-descripcion">Zonas con régimen especial de protección ambiental.</p>
+      <div class="regla-ejemplos">
+        <span class="regla-ejemplos-titulo">Por ejemplo</span>
+        <ul>
+          <li>Bosque de Chapultepec</li>
+          <li>Desierto de los Leones</li>
+          <li>Xochimilco</li>
+          <li>Barrancas</li>
+          <li>ANP locales y federales</li>
+        </ul>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="regla-resumen">
+    <strong>La regla en una sola oración:</strong> El gobierno central (SEDEMA y SOBSE) atiende vialidades primarias. Las Alcaldías atienden vialidades secundarias y predios bajo su demarcación. Las áreas naturales protegidas y áreas de valor ambiental son competencia exclusiva de <strong>SEDEMA a través de la DGSANPAVA</strong>.
+  </div>
+
+  <p class="regla-fundamento">Ley Ambiental CDMX, arts. 9 y 10. Ley Orgánica de Alcaldías, art. 32 fracc. V.</p>
+</section>
+
+<div class="filtro-ubicacion">
+  <h4>Filtra por ubicación del árbol</h4>
+  <div class="opciones">
+    <button class="filtro-opcion activa" data-ubicacion="todos">Mostrar todos</button>
+    <button class="filtro-opcion" data-ubicacion="primaria">Vialidad primaria</button>
+    <button class="filtro-opcion" data-ubicacion="secundaria">Vialidad secundaria</button>
+    <button class="filtro-opcion" data-ubicacion="privado">Predio privado</button>
+    <button class="filtro-opcion" data-ubicacion="anpava">ANP / AVA</button>
+    <button class="filtro-opcion" data-ubicacion="emergencia">Emergencia</button>
+    <button class="filtro-opcion" data-ubicacion="denuncia">Denuncia</button>
+  </div>
+  <p style="margin-top:16px;font-size:13px;color:var(--gris);line-height:1.65"><strong>Vialidad primaria:</strong> ejes viales, avenidas principales, periféricos, calzadas. <strong>Vialidad secundaria:</strong> calles locales, colonias, fraccionamientos. <strong>ANP / AVA:</strong> áreas naturales protegidas y áreas de valor ambiental.</p>
+</div>
+
+<div class="matriz">
+
+  <div class="competencia sedema" data-ubicacion="todos primaria secundaria privado anpava">
+    <div class="actor">Autoridad ambiental</div>
+    <h4>SEDEMA</h4>
+    <div class="funciones">
+      <ul>
+        <li>Emite normas ambientales y lineamientos técnicos.</li>
+        <li>Acredita podadores y dictaminadores.</li>
+        <li>Autoriza derribo, poda y trasplante en proyectos sujetos a evaluación de impacto ambiental.</li>
+        <li><strong>Administra directamente</strong> Bosques Urbanos, Barrancas, ANP locales y coadyuva en ANP federales.</li>
+      </ul>
+    </div>
+    <div class="fundamento">
+      <strong>Fundamento:</strong> Ley Ambiental de la Ciudad de México, arts. 1º fr. VIII, 7º fr. IV, VIII, XIII, XIV y XVII, 18, 34, 108, 111, 121 y 136. Reglamento de Impacto Ambiental y Riesgo, arts. 137 a 141. Reglamento Interior, art. 184. NADF-001-RNAT-2015.
+    </div>
+  </div>
+
+  <div class="competencia sobse" data-ubicacion="todos primaria">
+    <div class="actor">Autoridad operativa</div>
+    <h4>SOBSE</h4>
+    <div class="funciones">
+      <ul>
+        <li>Presta servicios públicos de mantenimiento en la <strong>red vial primaria</strong>.</li>
+        <li>Mantiene áreas verdes y arbolado en camellones, alamedas y parques de jurisdicción central.</li>
+        <li>Ejecuta poda y derribo en vialidad primaria <em>conforme a autorización de SEDEMA</em>.</li>
+      </ul>
+    </div>
+    <div class="fundamento">
+      <strong>Fundamento:</strong> Ley Orgánica del Poder Ejecutivo y de la Administración Pública CDMX, art. 38, fracc. I.
+      <br><br><strong>Importante:</strong> SOBSE ejecuta el mantenimiento, pero la autorización ambiental sigue siendo competencia de SEDEMA.
+    </div>
+  </div>
+
+  <div class="competencia alcaldia" data-ubicacion="todos secundaria privado">
+    <div class="actor">Autoridad territorial</div>
+    <h4>Alcaldía</h4>
+    <div class="funciones">
+      <ul>
+        <li>Conserva, mantiene y protege el arbolado en <strong>vialidad secundaria</strong> y predios de su demarcación.</li>
+        <li>Autoriza poda, derribo o trasplante en casos de riesgo, saneamiento, mantenimiento o afectación a infraestructura.</li>
+        <li>Recibe y resuelve solicitudes ciudadanas en plazo no mayor a 20 días hábiles.</li>
+        <li>Toda autorización debe sustentarse en dictamen técnico.</li>
+      </ul>
+    </div>
+    <div class="fundamento">
+      <strong>Fundamento:</strong> Ley Ambiental CDMX, art. 106. Ley Orgánica de Alcaldías CDMX, art. 32, fracc. V.
+      <br><br><strong>Excepción:</strong> si el árbol está dentro de Bosque Urbano, Barranca o ANP, la competencia es de SEDEMA.
+    </div>
+  </div>
+
+  <div class="competencia paot" data-ubicacion="todos denuncia">
+    <div class="actor">Procuraduría ambiental</div>
+    <h4>PAOT</h4>
+    <div class="funciones">
+      <ul>
+        <li>Recibe y atiende denuncias ambientales y de ordenamiento territorial.</li>
+        <li>Formula y valida dictámenes técnicos y periciales de daño ambiental.</li>
+        <li>Emite opiniones para restauración o compensación ambiental.</li>
+        <li>Investiga intervenciones irregulares al arbolado.</li>
+      </ul>
+    </div>
+    <div class="fundamento">
+      <strong>Fundamento:</strong> Ley Orgánica de la PAOT, art. 5, fracciones I y XV.
+    </div>
+  </div>
+
+  <div class="competencia bomberos" data-ubicacion="todos emergencia">
+    <div class="actor">Emergencia</div>
+    <h4>Bomberos</h4>
+    <div class="funciones">
+      <ul>
+        <li>Secciona y retira árboles cuando representan <strong>riesgo inminente</strong> a personas o bienes.</li>
+        <li>Actúa en coordinación con Protección Civil y la autoridad correspondiente.</li>
+      </ul>
+    </div>
+    <div class="fundamento">
+      <strong>Fundamento:</strong> Ley del Heroico Cuerpo de Bomberos de la CDMX, art. 6, fracc. IX.
+      <br><br><strong>Llama al 911</strong> solo si el riesgo es inmediato. Para árboles dañados sin riesgo activo, acude a tu Alcaldía o SEDEMA.
+    </div>
+  </div>
+
+  <div class="competencia ssc" data-ubicacion="todos denuncia">
+    <div class="actor">Investigación penal</div>
+    <h4>SSC · Fiscalía</h4>
+    <div class="funciones">
+      <ul>
+        <li>Actúan en derribo, poda, trasplante o restitución de árboles en contravención a la normatividad.</li>
+        <li>Aplican disposiciones del Código Penal CDMX por delitos ambientales.</li>
+      </ul>
+    </div>
+    <div class="fundamento">
+      <strong>Fundamento:</strong> Código Penal para el Distrito Federal, arts. 343 a 350. Ley Ambiental CDMX, art. 112.
+      <br><br>Si un servidor público participa en el ilícito, se agrava la sanción (art. 350 CP).
+    </div>
+  </div>
+
+</div>
+
+<div class="card" style="margin-top:36px;background:var(--verde-suave);border-color:var(--verde-niebla)">
+  <h3>Regla rápida</h3>
+  <table class="datos-tabla">
+    <tr><td><strong>Vialidad primaria</strong></td><td>SOBSE ejecuta · SEDEMA autoriza</td></tr>
+    <tr><td><strong>Vialidad secundaria y predios públicos</strong></td><td>Alcaldía autoriza y ejecuta</td></tr>
+    <tr><td><strong>Predio privado (jardín, patio)</strong></td><td>Alcaldía. Si hay impacto ambiental mayor: SEDEMA</td></tr>
+    <tr><td><strong>Bosques Urbanos, Barrancas, ANP locales</strong></td><td>SEDEMA (administración directa)</td></tr>
+    <tr><td><strong>ANP federales en suelo CDMX</strong></td><td>CONANP titular · SEDEMA coadyuva</td></tr>
+    <tr><td><strong>Emergencia con riesgo inminente</strong></td><td>911 · Bomberos · Protección Civil</td></tr>
+    <tr><td><strong>Denuncia por intervención irregular</strong></td><td>PAOT (administrativa) · SSC y Fiscalía (penal)</td></tr>
+  </table>
+</div>
+
+<section id="verificador" class="modulo-header" style="margin-top:64px">
+  <span class="etiqueta">Verificación de credenciales</span>
+  <h2>Verifica al <em>podador</em> o dictaminador</h2>
+  <p>Toda persona que pode, derribe, trasplante o dictamine arbolado urbano en la Ciudad de México debe contar con acreditación vigente emitida por SEDEMA. Antes de contratar a alguien o aceptar un dictamen, verifícalo aquí.</p>
+</section>
+
+<div class="card">
+  <h3>¿Qué necesitas saber antes?</h3>
+  <dl class="def-box">
+    <dt>Podador</dt>
+    <dd>Persona física acreditada por SEDEMA para llevar a cabo trabajos de poda, derribo y trasplante de árboles. <em>(NADF-001-RNAT-2015, numeral 4)</em></dd>
+
+    <dt>Dictaminador</dt>
+    <dd>Persona acreditada por SEDEMA para realizar dictámenes técnicos o diagnósticos en materia de arbolado. Debe contar con licenciatura en Biología, Ingeniería Forestal, Agronomía o carrera afín, dos años de experiencia comprobable, y haber aprobado el curso oficial. <em>(NADF-001-RNAT-2015, numeral 5.4)</em></dd>
+
+    <dt>Acreditación</dt>
+    <dd>Documento oficial emitido por SEDEMA. Es <strong>única, personal e intransferible</strong>. Contiene nombre, fotografía, huella digital, número de folio, fecha de expedición, vigencia y firma del titular de la Secretaría. No es válida si presenta tachaduras o enmendaduras. <em>(NADF-001-RNAT-2015, numeral 5.5)</em></dd>
+
+    <dt>Dictamen técnico</dt>
+    <dd>Documento de validez jurídica y administrativa sustentado en elementos científicos y técnicos, elaborado por persona acreditada, que determina las condiciones del árbol y justifica si procede la poda, derribo o trasplante. <em>(NADF-001-RNAT-2015, numeral 5.3)</em></dd>
+  </dl>
+</div>
+
+<div class="card verificador">
+  <h3>Consulta el padrón oficial</h3>
+  <p style="margin-bottom:20px;color:var(--gris);font-size:14.5px;line-height:1.65">Busca por nombre completo o por número de folio. La acreditación es pública conforme al artículo 6 fracción I de la Ley de Transparencia, Acceso a la Información Pública y Rendición de Cuentas de la CDMX.</p>
+
+  <div class="tabs">
+    <button class="tab-btn activa" data-tab="folio">Por número de folio</button>
+    <button class="tab-btn" data-tab="nombre">Por nombre</button>
+  </div>
+
+  <div id="tab-folio" class="tab-contenido">
+    <div class="formulario">
+      <div class="campo">
+        <label for="folio">Número de folio</label>
+        <input type="text" id="folio" placeholder="Ej. SEDEMA-POD-2024-00125" autocomplete="off">
+      </div>
+      <div class="campo" style="flex:0 0 200px">
+        <label for="tipo-folio">Tipo</label>
+        <select id="tipo-folio">
+          <option value="cualquiera">Cualquiera</option>
+          <option value="podador">Podador</option>
+          <option value="dictaminador">Dictaminador</option>
+        </select>
+      </div>
+      <button class="btn" onclick="buscarPorFolio()">Verificar</button>
+    </div>
+  </div>
+
+  <div id="tab-nombre" class="tab-contenido" style="display:none">
+    <div class="formulario">
+      <div class="campo">
+        <label for="nombre">Nombre completo</label>
+        <input type="text" id="nombre" placeholder="Ej. María Fernanda López García" autocomplete="off">
+      </div>
+      <div class="campo" style="flex:0 0 200px">
+        <label for="tipo-nombre">Tipo</label>
+        <select id="tipo-nombre">
+          <option value="cualquiera">Cualquiera</option>
+          <option value="podador">Podador</option>
+          <option value="dictaminador">Dictaminador</option>
+        </select>
+      </div>
+      <button class="btn" onclick="buscarPorNombre()">Verificar</button>
+    </div>
+  </div>
+
+  <div class="leyenda">
+    <span><span class="punto" style="background:var(--verde-medio)"></span>Vigente</span>
+    <span><span class="punto" style="background:var(--ambar)"></span>Vencida</span>
+    <span><span class="punto" style="background:var(--rojo)"></span>Suspendida</span>
+    <span><span class="punto" style="background:var(--gris)"></span>No registrada</span>
+  </div>
+
+  <div id="resultado" class="resultado">
+    <div class="resultado-cabecera">
+      <div class="icono" id="resultado-icono">✓</div>
+      <div>
+        <h4 id="resultado-titulo">Acreditación vigente</h4>
+        <div class="sub-r" id="resultado-sub">La persona está autorizada para realizar trabajos</div>
+      </div>
+    </div>
+    <div class="resultado-cuerpo">
+      <table class="datos-tabla" id="resultado-tabla"></table>
+      <div id="resultado-aviso"></div>
+    </div>
+  </div>
+
+  <div class="aviso" style="margin-top:24px">
+    <strong>Si la credencial presenta tachaduras, enmendaduras o no coincide con la persona, no es válida.</strong> La acreditación debe contener fotografía, huella digital, folio, vigencia y firma del titular de la Secretaría (NADF-001-RNAT-2015, numeral 5.5).
+  </div>
+
+  <div class="aviso aviso-rojo">
+    <strong>El personal de recolección de esquilmos y limpieza queda exento de acreditación</strong>, pero quien ejecuta y supervisa los cortes <strong>siempre</strong> debe estar acreditado. Sin acreditación, los trabajos son irregulares y procede sanción conforme al Código Penal CDMX y artículo 112 de la Ley Ambiental.
+  </div>
+</div>
+
+<div class="cta-denuncia">
+  <div class="texto">
+    <h4>¿Te ofrecieron servicios sin acreditación?</h4>
+    <p>Denuncia ante la Procuraduría Ambiental y del Ordenamiento Territorial (PAOT). Tu denuncia es ciudadana y puede ser anónima.</p>
+  </div>
+  <a href="https://www.paot.cdmx.gob.mx" target="_blank" rel="noopener" class="btn">Denunciar en PAOT</a>
+</div>
+
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <h5>SEDEMA</h5>
+      <p>Plaza de la Constitución 1, 4° piso<br>Centro Histórico, Cuauhtémoc<br>Ciudad de México, CP 06000</p>
+    </div>
+    <div>
+      <h5>Atención ciudadana</h5>
+      <p>SEDEMATEL · 55 5278 9931<br>LOCATEL · 55 5658 1111<br>Emergencias · 911</p>
+    </div>
+    <div>
+      <h5>Denuncias ambientales</h5>
+      <p><a href="https://www.paot.cdmx.gob.mx" target="_blank" rel="noopener">PAOT · denuncia.paot.cdmx.gob.mx</a><br>Tel. 55 5265 0780<br>Fiscalía Ambiental · 55 5345 5000</p>
+    </div>
+    <div>
+      <h5>Marco normativo</h5>
+      <p>Ley Ambiental CDMX<br>NADF-001-RNAT-2015<br>NADF-006-RNAT-2012</p>
+    </div>
+  </div>
+  <div class="copy">
+    Gobierno de la Ciudad de México · Secretaría del Medio Ambiente · 2026 · Todos los derechos reservados
+  </div>
+</footer>
+
+<script src="assets/js/sitio.js"></script>
+</body>
+</html>
